@@ -78,6 +78,14 @@
     error_proyeccion: 4.045
     error_con_fuente: 3.369
     meses: 18
+  - fuentes:
+    - arr
+    coef:
+    - 3.317
+    - 0.0
+    error_proyeccion: 4.584
+    error_con_fuente: 4.296
+    meses: 14
   01.1.8:
   - fuentes:
     - sepa
@@ -236,6 +244,14 @@
     error_proyeccion: 4.045
     error_con_fuente: 3.222
     meses: 18
+  - fuentes:
+    - arr
+    coef:
+    - 3.317
+    - 0.0
+    error_proyeccion: 4.584
+    error_con_fuente: 4.296
+    meses: 14
   01.1.7:
   - fuentes:
     - may
@@ -430,6 +446,14 @@ completo:
     error_proyeccion: 4.045
     error_con_fuente: 3.106
     meses: 18
+  - fuentes:
+    - arr
+    coef:
+    - 3.317
+    - 0.0
+    error_proyeccion: 4.584
+    error_con_fuente: 4.296
+    meses: 14
   01.1.7:
   - fuentes:
     - may

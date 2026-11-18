@@ -27,6 +27,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | fx | 34 | 2,43 | 2,69 | no |
 | Aceites, grasas y manteca | SEPA | 18 | 0,97 | 0,91 | **sí** |
 | Aceites, grasas y manteca | sepa+fx | 18 | 0,97 | 1,05 | no |
+| Frutas | arr | 14 | 4,58 | 4,30 | sí, si falta la anterior |
 | Frutas | mayorista | 4 | 4,16 | 4,36 | no |
 | Frutas | SEPA | 18 | 4,04 | 3,37 | **sí** |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 3,86 | 3,85 | no |
@@ -63,6 +64,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | fx | 34 | 2,43 | 2,76 | no |
 | Aceites, grasas y manteca | SEPA | 18 | 0,97 | 0,88 | **sí** |
 | Aceites, grasas y manteca | sepa+fx | 18 | 0,97 | 0,94 | sí, si falta la anterior |
+| Frutas | arr | 14 | 4,58 | 4,30 | sí, si falta la anterior |
 | Frutas | mayorista | 4 | 4,16 | 4,32 | no |
 | Frutas | SEPA | 18 | 4,04 | 3,11 | **sí** |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 3,86 | 3,61 | **sí** |

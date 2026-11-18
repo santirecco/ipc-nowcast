@@ -29,7 +29,7 @@ OPCIONES = {
     "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"]],
     "01.1.4": [["sepa"], ["sepa", "fx"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"]],
-    "01.1.6": [["sepa"], ["may"]],
+    "01.1.6": [["sepa"], ["may"], ["arr"]],  # arrastre: mejora el error nacional a inicio de mes (nov-2026)
     "01.1.7": [["sepa"], ["may"]],
     "01.1.8": [["sepa"], ["sepa", "fx"]],
     "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"]],
@@ -50,7 +50,7 @@ OPCIONES = {
     "06.1": [["sepa"]],
 }
 SOLO_COMPLETO = {"06.1"}  # clases que solo se corrigen con el mes completo de precios
-ESTADISTICAS = {"ipc", "icl"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"ipc", "icl", "arr"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
            "01.1.8": "Azúcar, dulces y golosinas", "01.2.1": "Café, té, yerba y cacao",
@@ -61,7 +61,8 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
            "10": "Educación"}
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
-            "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)"}
+            "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
+            "arr": "arrastre del mes anterior (SEPA)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
@@ -140,6 +141,16 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     t = pd.DataFrame(filas)
     if t.empty:
         return t
+    # arrastre del mes anterior medido con SEPA (se conoce el día 1): sorpresa respecto de su mediana reciente
+    ra = sepa.SALIDA / "arrastre.csv"
+    if ra.exists():
+        ar = pd.read_csv(ra, dtype={"clase": str})
+        ar["mes"] = pd.to_datetime(ar.mes + "-01")
+        ar = ar[ar.cadenas >= 2][["mes", "region", "clase", "var_%"]].rename(columns={"var_%": "arr"}).sort_values("mes")
+        ar["arr_s"] = ar.arr - ar.groupby(["region", "clase"]).arr.transform(lambda x: x.shift(1).rolling(6, min_periods=3).median())
+        t = t.merge(ar, on=["mes", "region", "clase"], how="left")
+    else:
+        t["arr"], t["arr_s"] = np.nan, np.nan
     # tendencia del mayorista: mediana de sus variaciones (mes completo) en los 6 meses previos
     full = {"01.1.7": mayoristas.serie_mercado_central(None).get("01.1.7"),
             "01.1.6": mayoristas.serie_mercado_central(None).get("01.1.6"),
@@ -177,6 +188,9 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
     if "fx" in fuentes:
         cols.append(t["fx"].astype(float))
         cols.append(t["fx_l1"].astype(float))
+    if "arr" in fuentes:
+        cols.append(t["arr_s"].astype(float))
+        cols.append(-t["arr_s"].astype(float))
     if "icl" in fuentes:
         p = t.proy.astype(float)
         cols.append(t["icl_a"].astype(float) - p)
@@ -220,6 +234,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["ipc_l1"].notna() & t["ipc_p3"].notna()
     if "icl" in fuentes:
         ok &= t["icl_a"].notna() & t["icl_m"].notna()
+    if "arr" in fuentes:
+        ok &= t["arr_s"].notna()
     return ok
 
 
@@ -282,8 +298,16 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
                                    for o in utiles]
             # backtest: en cada mes y región, la predicción de la mejor opción disponible
             preds = pd.concat([o["oos"].assign(orden=k, fuentes=o["fuentes"]) for k, o in enumerate(utiles)])
-            preds = preds.sort_values("orden").drop_duplicates(["mes", "region"])
-            backtests.append(preds.assign(corte=corte)[["mes", "corte", "region", "clase", "fuentes", "real", "proy", "pred"]])
+            mejor = preds.sort_values("orden").drop_duplicates(["mes", "region"]).assign(solo_inicio=False)
+            # para el inicio de mes (solo fuentes estadísticas) se guarda aparte la mejor opción estadística,
+            # cuando la elegida con datos del mes no lo es
+            es_est = preds.fuentes.apply(lambda x: set(x.split("+")) <= ESTADISTICAS)
+            est = preds[es_est].sort_values("orden").drop_duplicates(["mes", "region"])
+            ya = set(zip(mejor[mejor.fuentes.apply(lambda x: set(x.split("+")) <= ESTADISTICAS)].mes,
+                         mejor[mejor.fuentes.apply(lambda x: set(x.split("+")) <= ESTADISTICAS)].region))
+            est = est[[(m, r) not in ya for m, r in zip(est.mes, est.region)]].assign(solo_inicio=True)
+            preds = pd.concat([mejor, est])
+            backtests.append(preds.assign(corte=corte)[["mes", "corte", "region", "clase", "fuentes", "real", "proy", "pred", "solo_inicio"]])
     RUTA_CALIB.write_text("# Generado por scripts/calibrar_adelantados.py: no editar a mano.\n"
                           "# Por clase, las combinaciones de fuentes que mejoran, de mejor a peor: se usa la primera con datos.\n"
                           + yaml.safe_dump(calib, allow_unicode=True, sort_keys=False), encoding="utf-8")
@@ -371,8 +395,12 @@ def informacion_historica(mes: pd.Timestamp, corte: str, solo_estadistica: bool 
         return []
     bt = pd.read_csv(RUTA_BT, dtype={"clase": str, "corte": str}, parse_dates=["mes"])
     bt = bt[(bt.mes == mes) & (bt.corte == corte)]
+    if "solo_inicio" not in bt:
+        bt = bt.assign(solo_inicio=False)
     est = bt.fuentes.apply(lambda x: set(str(x).split("+")) <= ESTADISTICAS)
     if solo_estadistica:
         bt = bt[est]
+    else:
+        bt = bt[~bt.solo_inicio.astype(bool)]
     return [{"region": f.region, "componente": f.clase, "fuente": f.fuentes, "valor": float(f.pred), "parte": 1.0,
              "estadistica": bool(e), "detalle": "backtest"} for (_, f), e in zip(bt.iterrows(), est.loc[bt.index])]

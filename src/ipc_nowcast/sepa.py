@@ -314,3 +314,22 @@ def recoleccion(dias: int = 60, origen: Path = CACHE) -> pd.DataFrame:
         for c, n in d.id_comercio.value_counts().items():
             filas.append({"fecha": p.stem, "cadena": CADENAS.get(str(c), f"Cadena {c}"), "productos": int(n)})
     return pd.DataFrame(filas)
+
+
+def arrastre(mes: str, desde_dia: int = 24, origen: Path = CACHE) -> pd.DataFrame:
+    """Arrastre que deja el mes anterior: precio de sus últimos días (desde `desde_dia`) contra su promedio, en %.
+    Se conoce el día 1 de `mes` y anticipa parte de su variación (INDEC compara promedios mensuales)."""
+    import polars as pl
+    previo = (pd.Timestamp(mes + "-01") - pd.offsets.MonthBegin(1)).strftime("%Y-%m")
+    pm = promedios_mensuales([previo], origen=origen)
+    archivos = [str(p) for p in sorted(origen.glob(f"{previo}-??.parquet")) if int(p.stem[-2:]) >= desde_dia]
+    if pm.empty or not archivos:
+        return pd.DataFrame()
+    lf = pl.scan_parquet(archivos).select("fecha", "id_comercio", "region", "id_producto", "clase", "precio")
+    fin = (lf.group_by("id_comercio", "region", "id_producto", "clase")
+             .agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique())
+             .collect(engine="streaming").to_pandas())
+    v = variacion(pm, fin, min_dias_act=2)
+    if not v.empty:
+        v.insert(0, "mes", mes)
+    return v

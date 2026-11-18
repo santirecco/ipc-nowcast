@@ -80,6 +80,17 @@ def main():
         todo.to_csv(ruta, index=False, float_format="%.4f")
         print(f"índices: {len(todo)} filas, meses {todo.mes.min()} a {todo.mes.max()}")
 
+    # arrastre que deja cada mes al siguiente (se conoce el día 1 del mes)
+    ra = sepa.SALIDA / "arrastre.csv"
+    previo_a = pd.read_csv(ra, dtype={"clase": str}) if ra.exists() else pd.DataFrame()
+    nuevos_a = [sepa.arrastre(m) for m in meses + [(pd.Period(meses[-1]) + 1).strftime("%Y-%m")]]
+    nuevos_a = [x for x in nuevos_a if not x.empty]
+    if nuevos_a:
+        nuevos_a = pd.concat(nuevos_a)
+        if not previo_a.empty:
+            previo_a = previo_a[~previo_a.mes.isin(nuevos_a.mes.unique())]
+        pd.concat([previo_a, nuevos_a]).sort_values(["mes", "region", "clase"]).to_csv(ra, index=False, float_format="%.4f")
+
     rec = sepa.recoleccion()
     if not rec.empty:
         rec.to_csv(sepa.SALIDA / "recoleccion.csv", index=False)
