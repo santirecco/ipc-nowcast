@@ -25,9 +25,34 @@ import numpy as np
 import pandas as pd
 import yaml
 
-from . import CONFIG, REGIONES, canasta, replica
+from . import CONFIG, DATA, REGIONES, canasta, replica
 
-PESO_CABA = 0.7  # surge del backtest 2025-2026 (ver reports/backtest.md)
+PESO_CABA = 0.7  # valor por defecto si no hay historia suficiente para estimarlo
+# El peso del IPC de la Ciudad en la víspera se estima con la historia: el que hubiera minimizado el error en los
+# meses anteriores (backtest), entre 0,3 y 0,8. En nov-2026 daba 0,5-0,55 (con 0,7 fijo el error era mayor).
+PESOS_CABA_GRILLA = np.round(np.arange(0.3, 0.801, 0.05), 2)
+MIN_MESES_PESO_CABA = 12  # un año completo (con 8 o 10 las primeras estimaciones eran inestables)
+
+
+def estimar_peso_caba(hist: pd.DataFrame) -> float:
+    """hist: columnas fin_de_mes, caba_corregido y real de meses ya publicados."""
+    h = hist.dropna(subset=["fin_de_mes", "caba_corregido", "real"])
+    if len(h) < MIN_MESES_PESO_CABA:
+        return PESO_CABA
+    err = [float((w * h.caba_corregido + (1 - w) * h.fin_de_mes - h.real).abs().mean()) for w in PESOS_CABA_GRILLA]
+    return float(PESOS_CABA_GRILLA[int(np.argmin(err))])
+
+
+def peso_caba_vigente() -> float:
+    """Peso estimado con todo el backtest guardado (para el pronóstico en vivo)."""
+    ruta = DATA / "nowcast" / "backtest.csv"
+    try:
+        b = pd.read_csv(ruta)
+        if "caba_corregido" not in b:
+            b["caba_corregido"] = b["caba"]
+        return estimar_peso_caba(b)
+    except Exception:  # noqa: BLE001
+        return PESO_CABA
 # Corrección estacional de la brecha IPC Ciudad vs. INDEC: solo para meses en que la brecha tuvo el mismo signo
 # todos los años anteriores (hoy: enero y julio, cuando turismo y servicios hacen subir más a la Ciudad).
 AJUSTE_CABA_UMBRAL = 0.2   # pp: correcciones menores se ignoran
@@ -201,7 +226,8 @@ class Nowcast:
         g = float(np.median(rel) * nivel(mes) * AJUSTE_CABA_FACTOR)
         return g if abs(g) >= AJUSTE_CABA_UMBRAL else 0.0
 
-    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None, usar_reglas=True):
+    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None, usar_reglas=True,
+                 peso_caba=None):
         celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual, extra, usar_reglas)
         w = self._pesos_mes(mes)
         w = w / w.sum() * 100
@@ -213,10 +239,15 @@ class Nowcast:
             if mes in v.index and not np.isnan(v.loc[mes]):
                 caba = float(v.loc[mes])
         ajuste = self.ajuste_caba(mes) if caba is not None else 0.0
-        final = PESO_CABA * (caba + ajuste) + (1 - PESO_CABA) * abajo_arriba if caba is not None else abajo_arriba
+        if peso_caba is None:
+            if not hasattr(self, "_peso_caba"):
+                self._peso_caba = peso_caba_vigente()
+            peso_caba = self._peso_caba
+        final = peso_caba * (caba + ajuste) + (1 - peso_caba) * abajo_arriba if caba is not None else abajo_arriba
         aporte = (celdas * w / 100).rename("incidencia_pp")
         return {
             "mes": mes, "estimacion": final, "abajo_arriba": abajo_arriba, "caba": caba, "ajuste_caba": ajuste,
+            "peso_caba": peso_caba if caba is not None else None,
             "celdas": pd.DataFrame({"variacion": celdas, "peso_%": w, "incidencia_pp": aporte}),
             "informacion": pd.DataFrame(aplicados),
         }
@@ -235,9 +266,18 @@ def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
         r0 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e0)
         r15 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e15)
         rc = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=ec)
-        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec)
+        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec, peso_caba=0.0)
         filas.append({"mes": mes, "real": real.loc[mes], "inicio_de_mes": r0["estimacion"],
                       "mitad_de_mes": r15["estimacion"], "fin_de_mes": rc["estimacion"],
-                      "caba": r1["caba"], "vispera_con_caba": r1["estimacion"],
+                      "caba": r1["caba"], "caba_corregido": (r1["caba"] + r1["ajuste_caba"]) if r1["caba"] is not None else np.nan,
                       "clases_con_datos": len(ec)})
-    return pd.DataFrame(filas).set_index("mes")
+    df = pd.DataFrame(filas).set_index("mes")
+    # víspera: el peso de la Ciudad de cada mes se estima solo con los meses anteriores (fuera de muestra)
+    pesos, visp = [], []
+    for i, (mes, f) in enumerate(df.iterrows()):
+        w = estimar_peso_caba(df.iloc[:i])
+        pesos.append(w)
+        visp.append(w * f.caba_corregido + (1 - w) * f.fin_de_mes if pd.notna(f.caba_corregido) else f.fin_de_mes)
+    df["peso_caba"] = pesos
+    df["vispera_con_caba"] = visp
+    return df

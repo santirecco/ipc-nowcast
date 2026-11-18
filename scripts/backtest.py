@@ -55,7 +55,8 @@ Se simula el pronóstico de cada mes usando solo la información disponible en e
   (ver reports/adelantados.md). En todos los momentos, las prepagas siguen su regla de ajuste (IPC de dos meses antes).
 - **Fin de mes:** lo mismo con el mes completo.
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
-  (peso {int(modelo.PESO_CABA * 100)}% IPC CABA / {int((1 - modelo.PESO_CABA) * 100)}% modelo). En los meses en que la Ciudad
+  (el peso de la Ciudad se estima cada mes con los meses anteriores: el que hubiera minimizado el error; hoy
+  {int(round(modelo.peso_caba_vigente() * 100))}% IPC CABA / {int(round((1 - modelo.peso_caba_vigente()) * 100))}% modelo). En los meses en que la Ciudad
   se desvió de INDEC con el mismo signo todos los años (enero y julio) se corrige el IPC CABA por ese desvío típico.
 
 El calendario de regulados y los supermercados online no tienen historia: su aporte se mide en la prueba en
