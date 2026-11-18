@@ -1,0 +1,14 @@
+clave,region,nombre_componente,fuente,detalle,dato,proyeccion,efecto_pp
+"Cuyo · Electricidad, gas y otros combustibles",Cuyo,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,2.184,-0.004
+Cuyo · Prepagas,Cuyo,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.206,0.028
+"GBA · Electricidad, gas y otros combustibles",GBA,"Electricidad, gas y otros combustibles",calendario de regulados,"Electricidad AMBA (Edenor/Edesur, promedio); Gas natural por redes (promedio nacional)",2.98,2.279,0.344
+GBA · Prepagas,GBA,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.454,-0.067
+GBA · Transporte público,GBA,Transporte público,calendario de regulados,"Colectivos CABA y Provincia de Bs. As. (líneas nacionales sin cambios); Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios)",2.34,3.218,-0.211
+"Noreste · Electricidad, gas y otros combustibles",Noreste,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,4.767,-0.733
+Noreste · Prepagas,Noreste,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.732,-0.144
+"Noroeste · Electricidad, gas y otros combustibles",Noroeste,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,3.046,-0.272
+Noroeste · Prepagas,Noroeste,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.402,-0.028
+"Pampeana · Electricidad, gas y otros combustibles",Pampeana,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,3.244,-0.277
+Pampeana · Prepagas,Pampeana,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.33,-0.011
+"Patagonia · Electricidad, gas y otros combustibles",Patagonia,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,2.38,-0.056
+Patagonia · Prepagas,Patagonia,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.041,0.114

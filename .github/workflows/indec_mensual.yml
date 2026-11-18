@@ -46,6 +46,7 @@ jobs:
           python scripts/actualizar_ipcba.py || true
           python scripts/backtest.py
           python scripts/nowcast.py
+          python scripts/exportar_tablero.py
       - name: Guardar resultados en el repo
         if: steps.bajar.outputs.nuevo == 'true'
         run: |

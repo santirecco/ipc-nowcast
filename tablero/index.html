@@ -1,0 +1,321 @@
+<meta name="dash-one-writer">
+<style>
+  .ipc { font-family: var(--font-anthropic-sans); color: var(--color-fg); display: flex; flex-direction: column; gap: var(--cds-gap-xl); }
+  .ipc-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; }
+  .ipc-lede { font-size: var(--cds-font-size-heading); margin: var(--cds-gap-sm) 0 0; line-height: 1.4; }
+  .ipc-muted { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+  .ipc h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-xs); }
+  .ipc-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--cds-gap-md); }
+  .ipc-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+  .ipc-card-label { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .ipc-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 2.4rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ipc-mid { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 1.6rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .ipc-chart { position: relative; min-height: 220px; }
+  .ipc-chart svg { display: block; overflow: visible; }
+  .ipc-chart .tick text { fill: var(--cds-text-secondary); font-size: var(--cds-font-size-caption); }
+  .ipc-chart .domain, .ipc-chart .tick line { stroke: var(--cds-chart-axis); }
+  .ipc-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .ipc-bars { display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-height: 220px; }
+  .ipc-bar-row { display: grid; grid-template-columns: minmax(120px, 38%) 1fr 4.5em; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); }
+  .ipc-bar-track { height: 14px; position: relative; }
+  .ipc-bar { height: 14px; border-radius: 3px; position: absolute; top: 0; }
+  .ipc-bar-val { text-align: right; font-variant-numeric: tabular-nums; }
+  @media (max-width: 520px) { .ipc-bar-row { grid-template-columns: 1fr 4.5em; } .ipc-bar-name { grid-column: 1 / -1; } }
+  .ipc-table-wrap { overflow-x: auto; }
+  .ipc-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .ipc-table th, .ipc-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); }
+  .ipc-table th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); }
+  .ipc-table .num { text-align: right; }
+  .ipc-legend { display: flex; gap: var(--cds-gap-md); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-xs); }
+  .ipc-sw { display: inline-block; width: 12px; height: 3px; vertical-align: middle; margin-right: 4px; }
+  .ipc details { font-size: var(--cds-font-size-body); }
+  .ipc details li { margin-bottom: 4px; }
+</style>
+
+<div class="ipc">
+  <header id="encabezado">
+    <h1 class="ipc-title">Pronóstico del IPC de INDEC</h1>
+    <p class="ipc-lede" id="resumen">Para <b data-draw="mes-nombre">—</b>, el modelo estima una inflación de <b data-draw="est" data-source="actual" data-field="estimacion" data-row="0">—</b> mensual, con un rango probable de <span data-draw="bajo" data-source="actual" data-field="rango_bajo" data-row="0">—</span> a <span data-draw="alto" data-source="actual" data-field="rango_alto" data-row="0">—</span>.</p>
+    <p class="ipc-muted">Calculado el <span data-draw="fecha-calc" data-source="actual" data-field="fecha_calculo" data-row="0">—</span>. Se recalcula todos los días con los precios nuevos.</p>
+  </header>
+
+  <section class="ipc-cards" id="tarjetas">
+    <div class="ipc-card" id="tarjeta-pronostico">
+      <span class="ipc-card-label">Pronóstico del mes (% mensual)</span>
+      <span class="ipc-big" data-draw="card-est" data-source="actual" data-field="estimacion" data-row="0">—</span>
+    </div>
+    <div class="ipc-card" id="tarjeta-modelo">
+      <span class="ipc-card-label">Solo modelo estadístico</span>
+      <span class="ipc-mid" data-draw="card-modelo" data-source="actual" data-field="solo_modelo" data-row="0">—</span>
+    </div>
+    <div class="ipc-card" id="tarjeta-caba">
+      <span class="ipc-card-label">IPC Ciudad de Bs. As. del mes</span>
+      <span class="ipc-mid" data-draw="card-caba" data-source="actual" data-field="ipc_caba" data-row="0">—</span>
+      <span class="ipc-muted" data-draw="card-caba-nota"></span>
+    </div>
+    <div class="ipc-card" id="tarjeta-rem">
+      <span class="ipc-card-label">REM del BCRA (referencia)</span>
+      <span class="ipc-mid" data-draw="card-rem" data-source="actual" data-field="rem" data-row="0">—</span>
+    </div>
+    <div class="ipc-card" id="tarjeta-indec">
+      <span class="ipc-card-label">Último dato de INDEC (<span data-draw="indec-mes" data-source="ultimo_indec" data-field="mes" data-row="0">—</span>)</span>
+      <span class="ipc-mid" data-draw="indec-val" data-source="ultimo_indec" data-field="indec" data-row="0">—</span>
+    </div>
+  </section>
+
+  <section id="evolucion">
+    <h2>Cómo va cambiando el pronóstico del mes</h2>
+    <p class="ipc-muted">Una estimación por día; la franja es el rango probable.</p>
+    <div class="ipc-chart" data-draw="evol" data-source="actual_mes"></div>
+  </section>
+
+  <section id="divisiones">
+    <h2>Qué empuja la inflación del mes</h2>
+    <p class="ipc-muted">Aporte de cada división a la variación nacional, en puntos porcentuales. Entre paréntesis, la variación estimada del rubro.</p>
+    <div class="ipc-bars" data-draw="div" data-source="divisiones"></div>
+  </section>
+
+  <section id="regiones">
+    <h2>Por región</h2>
+    <div class="ipc-table-wrap">
+      <table class="ipc-table" data-source="regiones" data-row-key="region">
+        <thead><tr><th data-field="region">Región</th><th class="num" data-field="peso">Peso en el índice %</th><th class="num" data-field="variacion">Variación estimada %</th><th class="num" data-field="incidencia">Aporte al nacional (pp)</th></tr></thead>
+        <tbody data-draw="tab-reg"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="informacion">
+    <h2>Información del mes ya incorporada</h2>
+    <p class="ipc-muted">Aumentos conocidos que reemplazan la proyección estadística de su componente. El efecto es sobre la variación de la división en esa región.</p>
+    <div class="ipc-table-wrap">
+      <table class="ipc-table" data-source="informacion" data-row-key="clave">
+        <thead><tr><th data-field="clave">Región · componente</th><th data-field="detalle">Detalle</th><th class="num" data-field="dato">Dato %</th><th class="num" data-field="proyeccion">Proyección estadística %</th><th class="num" data-field="efecto_pp">Efecto (pp)</th></tr></thead>
+        <tbody data-draw="tab-info"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="backtest">
+    <h2>Qué tan bien anduvo hacia atrás</h2>
+    <p>En los últimos 16 meses, el error promedio fue de <b data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</b> puntos al inicio del mes y de <b data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</b> puntos en la víspera del dato, cuando ya salió el IPC de la Ciudad.</p>
+    <div class="ipc-legend">
+      <span><span class="ipc-sw" data-draw="sw0"></span>INDEC</span>
+      <span><span class="ipc-sw" data-draw="sw1"></span>Modelo en la víspera</span>
+      <span><span class="ipc-sw" data-draw="sw2"></span>Modelo al inicio del mes</span>
+    </div>
+    <div class="ipc-chart" data-draw="bt" data-source="backtest"></div>
+  </section>
+
+  <section id="recoleccion">
+    <h2>Recolección de precios</h2>
+    <p>El último relevamiento tomó <b data-draw="rec-total" data-source="rec_total">—</b> productos con stock en 5 supermercados online.</p>
+    <div class="ipc-table-wrap">
+      <table class="ipc-table" data-source="rec_ultimo" data-row-key="cadena">
+        <thead><tr><th data-field="cadena">Cadena</th><th data-field="fecha">Fecha</th><th class="num" data-field="productos">Productos</th></tr></thead>
+        <tbody data-draw="tab-rec"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <details id="metodo">
+    <summary>Cómo se calcula</summary>
+    <ul>
+      <li><b>Réplica exacta de INDEC.</b> Los pesos de cada región y división se calibraron contra la serie oficial desde dic-2016: la réplica reproduce los 118 meses publicados sin diferencia en la décima.</li>
+      <li><b>Proyección estadística</b> de cada una de las 72 combinaciones región × división: persistencia, mediana de los últimos 3 meses y estacionalidad típica del mes respecto de la inflación núcleo.</li>
+      <li><b>Información del mes</b>: el calendario de aumentos regulados (luz, gas, transporte, prepagas) reemplaza la proyección de su componente, contando qué parte del aumento cae en el mes según la fecha de vigencia (arrastre). Desde diciembre se suman los índices propios de alimentos armados con unos 60 mil precios diarios de supermercados.</li>
+      <li><b>IPC de la Ciudad de Buenos Aires</b>: cuando se publica (unos días antes que INDEC) se combina con el modelo, 70% / 30%.</li>
+      <li><b>Rango probable</b>: cubre el 80% de los errores del backtest de los últimos 16 meses para ese momento del mes.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+  const fmtN = d3.formatLocale({ decimal: ',', thousands: '.', grouping: [3], currency: ['$', ''] });
+  const f1 = fmtN.format('.1f'), f2 = fmtN.format('.2f'), fInt = fmtN.format(',d');
+  const num = (v) => (v === null || v === undefined || v === '' ? null : +v);
+  const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  const nombreMes = (ym) => { const [y, m] = String(ym).split('-'); return `${MESES[+m - 1]} ${y}`; };
+  const fecha = (s) => { const [y, m, d] = String(s).split('-'); return `${d}/${m}/${y}`; };
+  window.ipcFmt = { f1, f2, fInt, num, nombreMes, fecha, MESES };
+
+  dash.calc('actual', {
+    inputs: ['pronostico'], title: 'Pronóstico más reciente',
+    description: 'Fila del último cálculo para el mes más reciente pronosticado.',
+    fn: (pronostico) => {
+      if (!pronostico.length) return [];
+      const ult = d3.max(pronostico, (r) => r.mes);
+      const filas = pronostico.filter((r) => r.mes === ult).sort((a, b) => d3.ascending(a.fecha_calculo, b.fecha_calculo));
+      const r = filas[filas.length - 1];
+      return [{ mes: r.mes, fecha_calculo: r.fecha_calculo, estimacion: +r.estimacion, rango_bajo: +r.rango_bajo, rango_alto: +r.rango_alto,
+        solo_modelo: +r.solo_modelo, ipc_caba: r.ipc_caba === null || r.ipc_caba === '' ? null : +r.ipc_caba, rem: r.rem === null || r.rem === '' ? null : +r.rem }];
+    },
+  });
+  dash.calc('actual_mes', {
+    inputs: ['pronostico'], title: 'Pronósticos diarios del mes en curso',
+    description: 'Todos los cálculos diarios para el mes más reciente.',
+    fn: (pronostico) => {
+      if (!pronostico.length) return [];
+      const ult = d3.max(pronostico, (r) => r.mes);
+      return pronostico.filter((r) => r.mes === ult).map((r) => ({ fecha_calculo: r.fecha_calculo, estimacion: +r.estimacion, rango_bajo: +r.rango_bajo, rango_alto: +r.rango_alto }))
+        .sort((a, b) => d3.ascending(a.fecha_calculo, b.fecha_calculo));
+    },
+  });
+  dash.calc('ultimo_indec', {
+    inputs: ['backtest'], title: 'Último dato oficial de INDEC',
+    fn: (backtest) => {
+      if (!backtest.length) return [];
+      const r = backtest.slice().sort((a, b) => d3.ascending(a.mes, b.mes)).pop();
+      return [{ mes: r.mes, indec: +r.indec }];
+    },
+  });
+  dash.calc('error_bt', {
+    inputs: ['backtest'], title: 'Error promedio del backtest (últimos 16 meses)',
+    description: 'Promedio del error absoluto contra INDEC, en puntos porcentuales.',
+    fn: (backtest) => {
+      const b = backtest.slice().sort((a, c) => d3.ascending(a.mes, c.mes)).slice(-16);
+      const mae = (col) => d3.mean(b.filter((r) => r[col] !== null && r[col] !== ''), (r) => Math.abs(+r[col] - +r.indec));
+      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
+    },
+  });
+  dash.calc('rec_ultimo', {
+    inputs: ['recoleccion'], title: 'Último relevamiento por cadena',
+    fn: (recoleccion) => {
+      if (!recoleccion.length) return [];
+      const ult = d3.max(recoleccion, (r) => r.fecha);
+      return recoleccion.filter((r) => r.fecha === ult).map((r) => ({ cadena: r.cadena, fecha: r.fecha, productos: +r.productos }));
+    },
+  });
+  dash.calc('rec_total', {
+    inputs: ['rec_ultimo'], title: 'Productos relevados en el último día',
+    fn: (rec_ultimo) => d3.sum(rec_ultimo || [], (r) => r.productos),
+  });
+</script>
+
+<script>
+  const { f1, f2, fInt, num, nombreMes, fecha } = window.ipcFmt;
+  const fila = () => { const a = dash.data('actual'); return a.status === 'ok' && a.data && a.data.length ? a.data[0] : null; };
+  const texto = (name, fn) => dash.draw(name, (el) => { const r = fila(); el.textContent = r ? fn(r) : '—'; });
+  texto('mes-nombre', (r) => nombreMes(r.mes));
+  texto('est', (r) => `${f1(r.estimacion)}%`);
+  texto('bajo', (r) => `${f1(r.rango_bajo)}%`);
+  texto('alto', (r) => `${f1(r.rango_alto)}%`);
+  texto('fecha-calc', (r) => fecha(r.fecha_calculo));
+  texto('card-est', (r) => `${f2(r.estimacion)}%`);
+  texto('card-modelo', (r) => `${f2(r.solo_modelo)}%`);
+  texto('card-caba', (r) => (r.ipc_caba === null ? 'Sin publicar' : `${f2(r.ipc_caba)}%`));
+  texto('card-caba-nota', (r) => (r.ipc_caba === null ? 'Sale unos días antes que INDEC; ahí se incorpora.' : 'Ya incorporado al pronóstico.'));
+  texto('card-rem', (r) => (r.rem === null ? 'Sin dato' : `${f1(r.rem)}%`));
+  dash.draw('indec-mes', (el) => { const u = dash.data('ultimo_indec'); el.textContent = u.status === 'ok' && u.data.length ? nombreMes(u.data[0].mes) : '—'; });
+  dash.draw('indec-val', (el) => { const u = dash.data('ultimo_indec'); el.textContent = u.status === 'ok' && u.data.length ? `${f1(u.data[0].indec)}%` : '—'; });
+  dash.draw('mae-ini', (el) => { const e = dash.data('error_bt'); const r = e.status === 'ok' ? (e.data || []).find((x) => x.momento === 'inicio') : null; el.textContent = r ? f2(r.error) : '—'; });
+  dash.draw('mae-vis', (el) => { const e = dash.data('error_bt'); const r = e.status === 'ok' ? (e.data || []).find((x) => x.momento === 'vispera') : null; el.textContent = r ? f2(r.error) : '—'; });
+  dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
+  ['sw0', 'sw1', 'sw2'].forEach((n, i) => dash.draw(n, (el) => { el.style.background = dash.colors[i]; if (i === 2) el.style.opacity = 0.7; }));
+
+  // tablas
+  const tabla = (name, src, cols) => dash.draw(name, (tb) => {
+    const d = dash.data(src);
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    for (const r of d.data) {
+      const tr = document.createElement('tr');
+      for (const [k, fmt, cls] of cols) {
+        const td = document.createElement('td');
+        if (cls) td.className = cls;
+        td.textContent = fmt ? fmt(r[k]) : r[k];
+        tr.appendChild(td);
+      }
+      tb.appendChild(tr);
+    }
+  });
+  tabla('tab-reg', 'regiones', [['region'], ['peso', (v) => f1(+v), 'num'], ['variacion', (v) => f2(+v), 'num'], ['incidencia', (v) => f2(+v), 'num']]);
+  tabla('tab-info', 'informacion', [['clave'], ['detalle'], ['dato', (v) => f2(+v), 'num'], ['proyeccion', (v) => f2(+v), 'num'], ['efecto_pp', (v) => (+v > 0 ? '+' : '') + f2(+v), 'num']]);
+  tabla('tab-rec', 'rec_ultimo', [['cadena', (v) => v.charAt(0).toUpperCase() + v.slice(1)], ['fecha', fecha], ['productos', (v) => fInt(+v), 'num']]);
+</script>
+
+<script>
+  const { f1: g1, f2: g2, nombreMes: nm, fecha: fe } = window.ipcFmt;
+
+  // barras de aporte por división
+  dash.draw('div', (el) => {
+    const d = dash.data('divisiones');
+    el.replaceChildren();
+    if (d.status !== 'ok') { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
+    const filas = d.data.map((r) => ({ ...r, incidencia: +r.incidencia, variacion: +r.variacion })).sort((a, b) => b.incidencia - a.incidencia);
+    const max = d3.max(filas, (r) => Math.abs(r.incidencia)) || 1;
+    for (const r of filas) {
+      const row = document.createElement('div'); row.className = 'ipc-bar-row';
+      const name = document.createElement('span'); name.className = 'ipc-bar-name'; name.textContent = `${r.nombre} (${g1(r.variacion)}%)`;
+      const track = document.createElement('div'); track.className = 'ipc-bar-track';
+      const bar = document.createElement('div'); bar.className = 'ipc-bar';
+      bar.style.width = `${(Math.abs(r.incidencia) / max) * 100}%`; bar.style.left = '0';
+      bar.style.background = r.incidencia >= 0 ? dash.colors[0] : 'var(--cds-chart-status-critical)';
+      track.appendChild(bar);
+      const val = document.createElement('span'); val.className = 'ipc-bar-val'; val.textContent = g2(r.incidencia);
+      row.append(name, track, val); el.appendChild(row);
+    }
+  });
+
+  // línea con banda: evolución del pronóstico del mes
+  dash.draw('evol', (el) => {
+    const d = dash.data('actual_mes');
+    el.replaceChildren();
+    if (d.status !== 'ok' || !d.data || !d.data.length) { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
+    const rows = d.data.map((r) => ({ ...r, t: d3.utcParse('%Y-%m-%d')(r.fecha_calculo) }));
+    const W = el.clientWidth || 600, H = 220, m = { t: 12, r: 16, b: 28, l: 40 };
+    const ext = d3.extent(rows, (r) => r.t);
+    const x = d3.scaleUtc().domain(ext[0].getTime() === ext[1].getTime() ? [d3.utcDay.offset(ext[0], -1), d3.utcDay.offset(ext[1], 1)] : ext).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain([Math.min(0, d3.min(rows, (r) => r.rango_bajo)), d3.max(rows, (r) => r.rango_alto) * 1.1]).nice().range([H - m.b, m.t]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+      .attr('aria-label', 'Evolución diaria del pronóstico del mes con su rango probable');
+    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(6, rows.length + 1)).tickFormat(d3.utcFormat('%d/%m')));
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => g1(v)));
+    svg.append('path').datum(rows).attr('d', d3.area().x((r) => x(r.t)).y0((r) => y(r.rango_bajo)).y1((r) => y(r.rango_alto)))
+      .style('fill', dash.colors[0]).style('opacity', 0.15);
+    if (rows.length === 1) {
+      svg.append('rect').attr('x', x(rows[0].t) - 6).attr('width', 12).attr('y', y(rows[0].rango_alto)).attr('height', y(rows[0].rango_bajo) - y(rows[0].rango_alto))
+        .style('fill', dash.colors[0]).style('opacity', 0.15);
+    }
+    svg.append('path').datum(rows).attr('d', d3.line().x((r) => x(r.t)).y((r) => y(r.estimacion))).style('fill', 'none').style('stroke', dash.colors[0]).style('stroke-width', 2);
+    svg.selectAll('circle').data(rows).join('circle').attr('cx', (r) => x(r.t)).attr('cy', (r) => y(r.estimacion)).attr('r', 4).style('fill', dash.colors[0]);
+    const last = rows[rows.length - 1];
+    svg.append('text').attr('x', Math.min(x(last.t) + 8, W - 40)).attr('y', y(last.estimacion) - 8).text(`${g1(last.estimacion)}%`)
+      .style('fill', 'var(--color-fg)').style('font-size', 'var(--cds-font-size-caption)');
+    const tip = document.createElement('div'); tip.className = 'ipc-tip'; tip.hidden = true; el.appendChild(tip);
+    svg.on('pointermove', (ev) => {
+      const [px] = d3.pointer(ev); const r = rows[d3.minIndex(rows, (q) => Math.abs(x(q.t) - px))];
+      tip.hidden = false; tip.textContent = `${fe(r.fecha_calculo)}: ${g2(r.estimacion)}% (${g1(r.rango_bajo)}–${g1(r.rango_alto)})`;
+      tip.style.left = `${Math.min(x(r.t) / W * el.clientWidth, el.clientWidth - 200)}px`; tip.style.top = '0px';
+    }).on('pointerleave', () => { tip.hidden = true; });
+  });
+
+  // backtest: INDEC vs modelo
+  dash.draw('bt', (el) => {
+    const d = dash.data('backtest');
+    el.replaceChildren();
+    if (d.status !== 'ok' || !d.data.length) { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
+    const rows = d.data.map((r) => ({ mes: r.mes, t: d3.utcParse('%Y-%m')(r.mes), indec: +r.indec, vispera: +r.vispera, inicio: +r.inicio_de_mes }))
+      .sort((a, b) => a.t - b.t).slice(-16);
+    const W = el.clientWidth || 600, H = 240, m = { t: 12, r: 16, b: 28, l: 40 };
+    const x = d3.scaleUtc().domain(d3.extent(rows, (r) => r.t)).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain([0, d3.max(rows, (r) => Math.max(r.indec, r.vispera, r.inicio)) * 1.1]).nice().range([H - m.b, m.t]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+      .attr('aria-label', 'Inflación mensual de INDEC comparada con el pronóstico del modelo en la víspera y al inicio del mes, últimos 16 meses');
+    svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(W < 500 ? 4 : 8).tickFormat(d3.utcFormat('%m/%y')));
+    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => g1(v)));
+    const series = [['indec', 0, 2.5, 1], ['vispera', 1, 2, 1], ['inicio', 2, 1.5, 0.7]];
+    for (const [k, c, w, o] of series) {
+      svg.append('path').datum(rows).attr('d', d3.line().x((r) => x(r.t)).y((r) => y(r[k])))
+        .style('fill', 'none').style('stroke', dash.colors[c]).style('stroke-width', w).style('opacity', o);
+    }
+    const guia = svg.append('line').attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--cds-chart-reference)').style('display', 'none');
+    const tip = document.createElement('div'); tip.className = 'ipc-tip'; tip.hidden = true; el.appendChild(tip);
+    svg.on('pointermove', (ev) => {
+      const [px] = d3.pointer(ev); const r = rows[d3.minIndex(rows, (q) => Math.abs(x(q.t) - px))];
+      guia.attr('x1', x(r.t)).attr('x2', x(r.t)).style('display', null);
+      tip.hidden = false; tip.textContent = `${nm(r.mes)} · INDEC ${g1(r.indec)}% · víspera ${g2(r.vispera)}% · inicio ${g2(r.inicio)}%`;
+      tip.style.left = `${Math.max(0, Math.min(x(r.t) / W * el.clientWidth - 120, el.clientWidth - 330))}px`; tip.style.top = '0px';
+    }).on('pointerleave', () => { tip.hidden = true; guia.style('display', 'none'); });
+  });
+</script>

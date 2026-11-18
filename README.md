@@ -25,6 +25,7 @@ data/processed Datos limpios y resultados intermedios
 src/           El código del modelo (paquete ipc_nowcast)
 scripts/       Los pasos que se corren, en orden
 reports/       Informes legibles que genera el modelo
+tablero/       Página del tablero (lee los CSV de data/tablero/)
 tests/         Controles automáticos (por ejemplo: que la réplica de INDEC siga siendo exacta)
 .github/       Tareas automáticas que corre GitHub (descargas diarias/mensuales)
 ```

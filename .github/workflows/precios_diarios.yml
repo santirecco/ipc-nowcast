@@ -34,7 +34,9 @@ jobs:
         continue-on-error: true
         run: python scripts/actualizar_ipcba.py
       - name: Pronóstico del mes
-        run: python scripts/nowcast.py
+        run: |
+          python scripts/nowcast.py
+          python scripts/exportar_tablero.py
       - name: Guardar datos en el repo
         run: |
           git config user.name "ipc-nowcast-bot"
