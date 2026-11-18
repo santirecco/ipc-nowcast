@@ -112,3 +112,20 @@ def test_regla_prepagas():
     prep = [it for it in info if it["componente"] == "06.4.1"]
     ipc = nc.V["Nacional"]["00"].loc[mes - pd.offsets.MonthBegin(2)]
     assert len(prep) == 6 and all(abs(it["valor"] - ipc) < 1e-9 for it in prep)
+
+
+def test_k_caba_por_rubro():
+    import numpy as np
+    import pandas as pd
+    from ipc_nowcast import modelo
+    meses = pd.date_range("2025-01-01", periods=14, freq="MS")
+    rng = np.random.default_rng(0)
+    filas = []
+    for m in meses:
+        real = 2 + rng.normal(0, 0.5)
+        # división 01: la Ciudad acierta; división 09: la Ciudad es ruido
+        filas.append({"mes": m, "div": "01", "var": real + 0.8, "real_div": real, "caba": real})
+        filas.append({"mes": m, "div": "09", "var": real, "real_div": real, "caba": real + rng.normal(0, 2)})
+    k = modelo.estimar_k_caba(pd.DataFrame(filas))
+    assert k["01"] == 1.0 and k["09"] == 0.0
+    assert modelo.estimar_k_caba(pd.DataFrame(filas[:10])) is None  # menos de 12 meses

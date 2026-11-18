@@ -43,6 +43,33 @@ def estimar_peso_caba(hist: pd.DataFrame) -> float:
     return float(PESOS_CABA_GRILLA[int(np.argmin(err))])
 
 
+# Víspera por rubro: cada división del GBA se corrige hacia la misma división del IPC de la Ciudad,
+# var = modelo + k_div * (ciudad - modelo), con k_div estimado con la historia (grilla 0-1, mínimo 12 meses).
+# Fuera de muestra (jul-25 a oct-26) baja el error de la víspera de 0,164 a 0,125 pp frente a mezclar solo el
+# nivel general. Si no hay historia suficiente se usa la mezcla del nivel general.
+RUTA_CABA_DIV = DATA / "nowcast" / "caba_divisiones.csv"
+K_CABA_GRILLA = np.round(np.arange(0, 1.001, 0.05), 2)
+
+
+def estimar_k_caba(hist: pd.DataFrame) -> dict | None:
+    """hist: mes, div, var (modelo a fin de mes, GBA), real_div (INDEC GBA) y caba (IPC Ciudad) de meses publicados."""
+    h = hist.dropna(subset=["var", "real_div", "caba"])
+    if h.empty or h.mes.nunique() < MIN_MESES_PESO_CABA:
+        return None
+    k = {}
+    for d, g in h.groupby("div"):
+        err = [float((g["var"] + x * (g.caba - g["var"]) - g.real_div).abs().mean()) for x in K_CABA_GRILLA]
+        k[str(d)] = float(K_CABA_GRILLA[int(np.argmin(err))])
+    return k
+
+
+def k_caba_vigente() -> dict | None:
+    try:
+        return estimar_k_caba(pd.read_csv(RUTA_CABA_DIV, dtype={"div": str}))
+    except Exception:  # noqa: BLE001
+        return None
+
+
 def peso_caba_vigente() -> float:
     """Peso estimado con todo el backtest guardado (para el pronóstico en vivo)."""
     ruta = DATA / "nowcast" / "backtest.csv"
@@ -226,8 +253,18 @@ class Nowcast:
         g = float(np.median(rel) * nivel(mes) * AJUSTE_CABA_FACTOR)
         return g if abs(g) >= AJUSTE_CABA_UMBRAL else 0.0
 
+    def caba_divisiones(self, mes) -> pd.Series:
+        """Variación % de cada división del IPC de la Ciudad en `mes` (vacía si no se publicó)."""
+        if self.ipcba is None:
+            return pd.Series(dtype=float)
+        v = self.ipcba.pct_change() * 100
+        v.index = v.index.to_period("M").to_timestamp()
+        if mes not in v.index:
+            return pd.Series(dtype=float)
+        return v.loc[mes].dropna()
+
     def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None, usar_reglas=True,
-                 peso_caba=None):
+                 peso_caba=None, k_caba="vigente"):
         celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual, extra, usar_reglas)
         w = self._pesos_mes(mes)
         w = w / w.sum() * 100
@@ -239,11 +276,25 @@ class Nowcast:
             if mes in v.index and not np.isnan(v.loc[mes]):
                 caba = float(v.loc[mes])
         ajuste = self.ajuste_caba(mes) if caba is not None else 0.0
-        if peso_caba is None:
-            if not hasattr(self, "_peso_caba"):
-                self._peso_caba = peso_caba_vigente()
-            peso_caba = self._peso_caba
-        final = peso_caba * (caba + ajuste) + (1 - peso_caba) * abajo_arriba if caba is not None else abajo_arriba
+        if k_caba == "vigente":
+            if not hasattr(self, "_k_caba"):
+                self._k_caba = k_caba_vigente()
+            k_caba = self._k_caba
+        if caba is not None and k_caba:
+            # víspera por rubro: el GBA se corrige con cada división de la Ciudad
+            cd = self.caba_divisiones(mes)
+            celdas = celdas.copy()
+            for (r, dv) in celdas.index:
+                if r == "GBA" and dv in cd.index and k_caba.get(dv, 0) > 0:
+                    celdas[(r, dv)] += k_caba[dv] * (cd[dv] - celdas[(r, dv)])
+            final = float((celdas * w).sum() / 100)
+            peso_caba = None
+        else:
+            if peso_caba is None:
+                if not hasattr(self, "_peso_caba"):
+                    self._peso_caba = peso_caba_vigente()
+                peso_caba = self._peso_caba
+            final = peso_caba * (caba + ajuste) + (1 - peso_caba) * abajo_arriba if caba is not None else abajo_arriba
         aporte = (celdas * w / 100).rename("incidencia_pp")
         return {
             "mes": mes, "estimacion": final, "abajo_arriba": abajo_arriba, "caba": caba, "ajuste_caba": ajuste,
@@ -258,7 +309,7 @@ def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
     que no tiene historia). Los indicadores adelantados entran con sus predicciones fuera de muestra."""
     from . import adelantados
     real = nc.V["Nacional"]["00"]
-    filas = []
+    filas, filas_div, celdas_fin = [], [], {}
     for mes in real.index[real.index >= pd.Timestamp(desde)]:
         e15 = adelantados.informacion_historica(mes, "15")
         e22 = adelantados.informacion_historica(mes, "22")
@@ -268,18 +319,40 @@ def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
         r15 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e15)
         r22 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e22)
         rc = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=ec)
-        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec, peso_caba=0.0)
+        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec, peso_caba=0.0, k_caba=None)
+        cd = nc.caba_divisiones(mes)
+        for (r, dv), f in rc["celdas"].iterrows():
+            if r == "GBA":
+                filas_div.append({"mes": mes, "div": dv, "var": f["variacion"], "peso": f["peso_%"],
+                                  "real_div": nc.V["GBA"][dv].get(mes, np.nan), "caba": cd.get(dv, np.nan)})
+        celdas_fin[mes] = rc["celdas"]
         filas.append({"mes": mes, "real": real.loc[mes], "inicio_de_mes": r0["estimacion"],
                       "mitad_de_mes": r15["estimacion"], "dia_22": r22["estimacion"], "fin_de_mes": rc["estimacion"],
                       "caba": r1["caba"], "caba_corregido": (r1["caba"] + r1["ajuste_caba"]) if r1["caba"] is not None else np.nan,
                       "clases_con_datos": len(ec)})
     df = pd.DataFrame(filas).set_index("mes")
-    # víspera: el peso de la Ciudad de cada mes se estima solo con los meses anteriores (fuera de muestra)
-    pesos, visp = [], []
+    hist = pd.DataFrame(filas_div)
+    RUTA_CABA_DIV.parent.mkdir(parents=True, exist_ok=True)
+    hist.to_csv(RUTA_CABA_DIV, index=False, float_format="%.4f")
+    # víspera fuera de muestra: con cada mes se usa solo lo aprendido de los meses anteriores. Si ya hay 12 meses,
+    # corrección por rubro del GBA; si no, mezcla del nivel general con el peso estimado (o el de por defecto)
+    pesos, visp, metodo = [], [], []
     for i, (mes, f) in enumerate(df.iterrows()):
+        k = estimar_k_caba(hist[hist.mes < mes])
         w = estimar_peso_caba(df.iloc[:i])
-        pesos.append(w)
-        visp.append(w * f.caba_corregido + (1 - w) * f.fin_de_mes if pd.notna(f.caba_corregido) else f.fin_de_mes)
+        if pd.isna(f.caba_corregido):
+            pesos.append(w); visp.append(f.fin_de_mes); metodo.append("")
+        elif k:
+            c = celdas_fin[mes]
+            cd = hist[hist.mes == mes].set_index("div").caba
+            var = c["variacion"].copy()
+            for (r, dv) in var.index:
+                if r == "GBA" and pd.notna(cd.get(dv, np.nan)):
+                    var[(r, dv)] += k.get(dv, 0) * (cd[dv] - var[(r, dv)])
+            pesos.append(np.nan); visp.append(float((var * c["peso_%"]).sum() / c["peso_%"].sum())); metodo.append("por rubro")
+        else:
+            pesos.append(w); visp.append(w * f.caba_corregido + (1 - w) * f.fin_de_mes); metodo.append("nivel general")
     df["peso_caba"] = pesos
     df["vispera_con_caba"] = visp
+    df["metodo_caba"] = metodo
     return df

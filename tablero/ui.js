@@ -21,7 +21,7 @@
   texto('card-modelo', (r) => `${f2(r.solo_modelo)}%`);
   texto('card-caba', (r) => (r.ipc_caba === null ? 'Todavía no salió' : `${f2(r.ipc_caba)}%`));
   texto('card-caba-nota', (r) => (r.ipc_caba === null ? 'Se publica unos días antes que INDEC y ese día se suma al pronóstico: es el dato que más lo afina.'
-    : r.ajuste_caba ? `Ya está en el pronóstico, corregido ${sg(r.ajuste_caba)} pp porque este mes la Ciudad suele desviarse del país.` : 'Ya está en el pronóstico, combinado con el modelo propio en la proporción que mejor anduvo en la historia (hoy, mitad y mitad).'));
+    : r.ajuste_caba ? `Ya está en el pronóstico, corregido ${sg(r.ajuste_caba)} pp porque este mes la Ciudad suele desviarse del país.` : 'Ya está en el pronóstico: cada rubro del GBA se corrige con el mismo rubro de la Ciudad, en la medida en que eso anduvo bien en la historia.'));
   texto('card-rem', (r) => (r.rem === null ? 'Sin dato' : `${f1(r.rem)}%`));
   dash.draw('frase-indec', (el) => {
     const r = fila(), u = ui();

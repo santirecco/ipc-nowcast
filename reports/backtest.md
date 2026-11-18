@@ -11,8 +11,9 @@ Se simula el pronóstico de cada mes usando solo la información disponible en e
 - **Día 22:** lo mismo con los precios hasta el día 22 (calibración propia; se usa desde el día 22 hasta fin de mes).
 - **Fin de mes:** lo mismo con el mes completo.
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
-  (el peso de la Ciudad se estima cada mes con los meses anteriores: el que hubiera minimizado el error; hoy
-  50% IPC CABA / 50% modelo). En los meses en que la Ciudad
+  Con 12 meses de historia o más, se usa por rubro: cada división del GBA se corrige hacia la misma división de la
+  Ciudad, var = modelo + k × (Ciudad − modelo), con k estimado con los meses anteriores. Antes de eso, se mezcla el
+  nivel general (peso estimado con la historia). En los meses en que la Ciudad
   se desvió de INDEC con el mismo signo todos los años (enero y julio) se corrige el IPC CABA por ese desvío típico.
 
 El calendario de regulados y los supermercados online no tienen historia: su aporte se mide en la prueba en
@@ -27,40 +28,40 @@ paralelo de los próximos meses. Los meses sin datos de SEPA (abril a junio de 2
 | jul-24 en adelante | Día 22 (+ precios hasta el día 22) | 0,36 | ±0,51 | 1,10 | 28 |
 | jul-24 en adelante | Fin de mes (+ precios del mes completo) | 0,34 | ±0,56 | 1,02 | 28 |
 | jul-24 en adelante | IPC CABA solo | 0,36 | ±0,58 | 1,07 | 28 |
-| jul-24 en adelante | Víspera (modelo + IPC CABA) | 0,30 | ±0,49 | 0,88 | 28 |
+| jul-24 en adelante | Víspera (modelo + IPC CABA) | 0,28 | ±0,49 | 0,88 | 28 |
 | 2025-2026 | Inicio de mes (solo estadística) | 0,42 | ±0,57 | 1,45 | 22 |
 | 2025-2026 | Mitad de mes (+ precios hasta el día 15) | 0,35 | ±0,42 | 1,07 | 22 |
 | 2025-2026 | Día 22 (+ precios hasta el día 22) | 0,34 | ±0,51 | 1,10 | 22 |
 | 2025-2026 | Fin de mes (+ precios del mes completo) | 0,32 | ±0,53 | 1,02 | 22 |
 | 2025-2026 | IPC CABA solo | 0,30 | ±0,52 | 0,93 | 22 |
-| 2025-2026 | Víspera (modelo + IPC CABA) | 0,24 | ±0,29 | 0,88 | 22 |
+| 2025-2026 | Víspera (modelo + IPC CABA) | 0,22 | ±0,32 | 0,88 | 22 |
 | últimos 16 meses | Inicio de mes (solo estadística) | 0,30 | ±0,44 | 0,63 | 16 |
 | últimos 16 meses | Mitad de mes (+ precios hasta el día 15) | 0,24 | ±0,35 | 0,50 | 16 |
 | últimos 16 meses | Día 22 (+ precios hasta el día 22) | 0,20 | ±0,30 | 0,51 | 16 |
 | últimos 16 meses | Fin de mes (+ precios del mes completo) | 0,16 | ±0,23 | 0,27 | 16 |
 | últimos 16 meses | IPC CABA solo | 0,23 | ±0,30 | 0,82 | 16 |
-| últimos 16 meses | Víspera (modelo + IPC CABA) | 0,16 | ±0,24 | 0,30 | 16 |
+| últimos 16 meses | Víspera (modelo + IPC CABA) | 0,13 | ±0,22 | 0,33 | 16 |
 
 ## Detalle mes a mes
 
 | Mes | INDEC | Inicio de mes | Mitad de mes | Día 22 | Fin de mes | IPC CABA | Víspera | Clases con datos propios |
 |---|---|---|---|---|---|---|---|---|
-| 10/2026 | 2,2 | 1,79 | 1,75 | 1,85 | 1,90 | 1,92 | 1,91 | 72 |
-| 09/2026 | 1,9 | 1,71 | 1,58 | 1,74 | 1,74 | 1,84 | 1,79 | 72 |
+| 10/2026 | 2,2 | 1,79 | 1,75 | 1,85 | 1,90 | 1,92 | 1,84 | 72 |
+| 09/2026 | 1,9 | 1,71 | 1,58 | 1,74 | 1,74 | 1,84 | 1,82 | 72 |
 | 08/2026 | 1,7 | 1,77 | 1,84 | 1,81 | 1,78 | 1,69 | 1,73 | 72 |
-| 07/2026 | 2,1 | 2,00 | 2,00 | 2,14 | 2,10 | 2,93 | 2,41 | 30 |
-| 06/2026 | 1,9 | 2,35 | 2,25 | 2,25 | 2,12 | 1,81 | 1,97 | 24 |
-| 05/2026 | 2,1 | 2,59 | 1,89 | 1,89 | 1,89 | 2,11 | 2,00 | 24 |
-| 04/2026 | 2,6 | 2,95 | 2,39 | 2,39 | 2,40 | 2,48 | 2,44 | 24 |
-| 03/2026 | 3,4 | 3,08 | 2,88 | 2,88 | 3,59 | 3,00 | 3,27 | 72 |
-| 02/2026 | 2,9 | 2,69 | 2,71 | 2,72 | 2,82 | 2,60 | 2,70 | 72 |
-| 01/2026 | 2,9 | 2,77 | 2,75 | 2,79 | 2,66 | 3,06 | 2,62 | 72 |
-| 12/2025 | 2,8 | 2,22 | 2,85 | 2,85 | 2,91 | 2,66 | 2,78 | 72 |
-| 11/2025 | 2,5 | 2,11 | 2,52 | 2,54 | 2,74 | 2,41 | 2,56 | 72 |
-| 10/2025 | 2,3 | 1,86 | 1,99 | 2,04 | 2,11 | 2,16 | 2,14 | 72 |
-| 09/2025 | 2,1 | 1,76 | 1,80 | 1,85 | 2,14 | 2,21 | 2,18 | 72 |
-| 08/2025 | 1,9 | 1,65 | 1,66 | 1,73 | 1,69 | 1,59 | 1,63 | 72 |
-| 07/2025 | 1,9 | 1,89 | 1,62 | 1,75 | 1,89 | 2,49 | 2,09 | 72 |
+| 07/2026 | 2,1 | 2,00 | 2,00 | 2,14 | 2,10 | 2,93 | 2,20 | 30 |
+| 06/2026 | 1,9 | 2,35 | 2,25 | 2,25 | 2,12 | 1,81 | 1,88 | 24 |
+| 05/2026 | 2,1 | 2,59 | 1,89 | 1,89 | 1,89 | 2,11 | 1,98 | 24 |
+| 04/2026 | 2,6 | 2,95 | 2,39 | 2,39 | 2,40 | 2,48 | 2,36 | 24 |
+| 03/2026 | 3,4 | 3,08 | 2,88 | 2,88 | 3,59 | 3,00 | 3,41 | 72 |
+| 02/2026 | 2,9 | 2,69 | 2,71 | 2,72 | 2,82 | 2,60 | 2,73 | 72 |
+| 01/2026 | 2,9 | 2,77 | 2,75 | 2,79 | 2,66 | 3,06 | 2,90 | 72 |
+| 12/2025 | 2,8 | 2,22 | 2,85 | 2,85 | 2,91 | 2,66 | 2,77 | 72 |
+| 11/2025 | 2,5 | 2,11 | 2,52 | 2,54 | 2,74 | 2,41 | 2,58 | 72 |
+| 10/2025 | 2,3 | 1,86 | 1,99 | 2,04 | 2,11 | 2,16 | 2,07 | 72 |
+| 09/2025 | 2,1 | 1,76 | 1,80 | 1,85 | 2,14 | 2,21 | 2,10 | 72 |
+| 08/2025 | 1,9 | 1,65 | 1,66 | 1,73 | 1,69 | 1,59 | 1,58 | 72 |
+| 07/2025 | 1,9 | 1,89 | 1,62 | 1,75 | 1,89 | 2,49 | 1,94 | 72 |
 | 06/2025 | 1,6 | 2,49 | 2,03 | 2,12 | 2,24 | 2,15 | 2,17 | 72 |
 | 05/2025 | 1,5 | 2,95 | 2,47 | 2,60 | 2,52 | 1,57 | 1,86 | 72 |
 | 04/2025 | 2,8 | 3,37 | 3,09 | 3,27 | 3,32 | 2,32 | 2,62 | 72 |

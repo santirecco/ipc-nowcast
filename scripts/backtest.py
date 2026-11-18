@@ -57,8 +57,9 @@ Se simula el pronóstico de cada mes usando solo la información disponible en e
 - **Día 22:** lo mismo con los precios hasta el día 22 (calibración propia; se usa desde el día 22 hasta fin de mes).
 - **Fin de mes:** lo mismo con el mes completo.
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
-  (el peso de la Ciudad se estima cada mes con los meses anteriores: el que hubiera minimizado el error; hoy
-  {int(round(modelo.peso_caba_vigente() * 100))}% IPC CABA / {int(round((1 - modelo.peso_caba_vigente()) * 100))}% modelo). En los meses en que la Ciudad
+  Con 12 meses de historia o más, se usa por rubro: cada división del GBA se corrige hacia la misma división de la
+  Ciudad, var = modelo + k × (Ciudad − modelo), con k estimado con los meses anteriores. Antes de eso, se mezcla el
+  nivel general (peso estimado con la historia). En los meses en que la Ciudad
   se desvió de INDEC con el mismo signo todos los años (enero y julio) se corrige el IPC CABA por ese desvío típico.
 
 El calendario de regulados y los supermercados online no tienen historia: su aporte se mide en la prueba en
