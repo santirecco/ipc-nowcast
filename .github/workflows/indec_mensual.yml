@@ -47,6 +47,7 @@ jobs:
           python scripts/backtest.py
           python scripts/nowcast.py
           python scripts/exportar_tablero.py
+          python scripts/generar_html.py
       - name: Guardar resultados en el repo
         if: steps.bajar.outputs.nuevo == 'true'
         run: |

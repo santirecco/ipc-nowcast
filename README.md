@@ -45,6 +45,11 @@ pytest                               # controles
 
 Las tareas de `.github/workflows/` hacen esto solas y guardan los resultados en el repo.
 
+## Tablero descargable
+
+`reports/tablero_ipc.html` es el tablero completo en un solo archivo (datos y gráficos adentro).
+Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("Download raw file").
+
 ## Tareas manuales (≈15 min por semana)
 
 - **Calendario de regulados**: revisar/cargar `config/regulados/AAAA-MM.yaml` con los aumentos del mes

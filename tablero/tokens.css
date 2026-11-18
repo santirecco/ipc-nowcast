@@ -1,0 +1,26 @@
+/* Variables de diseño para la versión descargable (paleta "Ocean"; modo oscuro automático). */
+:root {
+  --font-anthropic-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-anthropic-serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --cds-font-size-caption: 13px; --cds-font-size-body: 15px; --cds-font-size-heading: 18px; --cds-font-size-title: 28px;
+  --cds-font-weight-medium: 600;
+  --cds-radius: 8px;
+  --cds-dur-slow: 400ms; --cds-ease-out: cubic-bezier(.2, .8, .2, 1);
+  --color-bg: #f0f5fa; --color-panel: #ffffff; --color-fg: #0f2233; --color-fg-muted: #5a6d80; --color-border-line: #d8e2ec;
+  --color-ok: #006300; --color-warn: #734500; --color-bad: #8e2626;
+  --cds-text-secondary: #5a6d80; --cds-chart-grid: #e6edf4; --cds-chart-axis: #c9d5e1; --cds-chart-reference: #7a8b99;
+  --cds-surface-popover: #ffffff; --cds-border: #d8e2ec; --cds-shadow-popover: 0 6px 24px rgba(15, 34, 51, .12);
+  --c0: #1d4e89; --c1: #2a78d6; --c2: #1b9aaa; --c3: #62b6e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0b1219; --color-panel: #15202b; --color-fg: #f0efec; --color-fg-muted: #9aa3ab; --color-border-line: #26323e;
+    --color-ok: #0ca30c; --color-warn: #db9300; --color-bad: #ec7e7e;
+    --cds-text-secondary: #9aa3ab; --cds-chart-grid: #1f2a35; --cds-chart-axis: #2c3946; --cds-chart-reference: #93a3b1;
+    --cds-surface-popover: #1b2733; --cds-border: #2c3946; --cds-shadow-popover: 0 6px 24px rgba(0, 0, 0, .5);
+    --c0: #608fcc; --c1: #2f7fe8; --c2: #49b2c2; --c3: #81cffe;
+  }
+}
+html, body { margin: 0; background: var(--color-bg); }
+#dash-root { padding: 32px 20px 24px; }
+@media (max-width: 600px) { #dash-root { padding: 16px 10px; } }
