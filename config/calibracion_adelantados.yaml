@@ -7,9 +7,19 @@
     coef:
     - 0.429
     - 0.301
-    error_proyeccion: 3.363
-    error_con_fuente: 1.981
-    meses: 112
+    error_proyeccion: 3.489
+    error_con_fuente: 2.053
+    meses: 34
+  - fuentes:
+    - sepa_carne
+    - may
+    coef:
+    - 0.149
+    - 0.265
+    - 0.348
+    error_proyeccion: 2.517
+    error_con_fuente: 1.728
+    meses: 18
   - fuentes:
     - sepa
     - may
@@ -20,6 +30,13 @@
     error_proyeccion: 2.517
     error_con_fuente: 1.747
     meses: 18
+  - fuentes:
+    - sepa_carne
+    coef:
+    - 0.637
+    error_proyeccion: 2.517
+    error_con_fuente: 2.315
+    meses: 18
   01.1.4:
   - fuentes:
     - sepa
@@ -27,6 +44,16 @@
     - 0.669
     error_proyeccion: 0.999
     error_con_fuente: 0.816
+    meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.669
+    - 0.0
+    - 0.0
+    error_proyeccion: 0.999
+    error_con_fuente: 0.897
     meses: 18
   01.1.5:
   - fuentes:
@@ -60,6 +87,16 @@
     error_proyeccion: 0.869
     error_con_fuente: 0.79
     meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.58
+    - 0.0
+    - 0.046
+    error_proyeccion: 0.869
+    error_con_fuente: 0.849
+    meses: 18
   01.2.2:
   - fuentes:
     - sepa
@@ -68,6 +105,34 @@
     error_proyeccion: 0.747
     error_con_fuente: 0.698
     meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.405
+    - 0.0
+    - 0.045
+    error_proyeccion: 0.747
+    error_con_fuente: 0.7
+    meses: 18
+  07.2.2:
+  - fuentes:
+    - nafta
+    coef:
+    - 0.297
+    error_proyeccion: 2.067
+    error_con_fuente: 1.787
+    meses: 29
+  - fuentes:
+    - nafta
+    - fx
+    coef:
+    - 0.297
+    - 0.0
+    - 0.0
+    error_proyeccion: 2.067
+    error_con_fuente: 1.787
+    meses: 29
 completo:
   01.1.2:
   - fuentes:
@@ -75,9 +140,19 @@ completo:
     coef:
     - 0.338
     - 0.304
-    error_proyeccion: 3.363
-    error_con_fuente: 2.089
-    meses: 112
+    error_proyeccion: 3.489
+    error_con_fuente: 2.272
+    meses: 34
+  - fuentes:
+    - sepa_carne
+    - may
+    coef:
+    - 0.371
+    - 0.16
+    - 0.328
+    error_proyeccion: 2.517
+    error_con_fuente: 1.709
+    meses: 18
   - fuentes:
     - sepa
     - may
@@ -87,6 +162,13 @@ completo:
     - 0.353
     error_proyeccion: 2.517
     error_con_fuente: 1.831
+    meses: 18
+  - fuentes:
+    - sepa_carne
+    coef:
+    - 0.925
+    error_proyeccion: 2.517
+    error_con_fuente: 2.046
     meses: 18
   - fuentes:
     - sepa
@@ -103,6 +185,16 @@ completo:
     error_proyeccion: 0.999
     error_con_fuente: 0.888
     meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.717
+    - 0.0
+    - 0.0
+    error_proyeccion: 0.999
+    error_con_fuente: 0.935
+    meses: 18
   01.1.5:
   - fuentes:
     - sepa
@@ -110,6 +202,16 @@ completo:
     - 0.381
     error_proyeccion: 0.97
     error_con_fuente: 0.884
+    meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.536
+    - 0.0
+    - 0.133
+    error_proyeccion: 0.97
+    error_con_fuente: 0.947
     meses: 18
   01.1.6:
   - fuentes:
@@ -136,6 +238,16 @@ completo:
     error_proyeccion: 0.786
     error_con_fuente: 0.655
     meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.547
+    - 0.0
+    - 0.007
+    error_proyeccion: 0.786
+    error_con_fuente: 0.702
+    meses: 18
   01.2.1:
   - fuentes:
     - sepa
@@ -143,6 +255,16 @@ completo:
     - 0.735
     error_proyeccion: 0.869
     error_con_fuente: 0.73
+    meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.744
+    - 0.005
+    - 0.005
+    error_proyeccion: 0.869
+    error_con_fuente: 0.771
     meses: 18
   01.2.2:
   - fuentes:
@@ -152,3 +274,33 @@ completo:
     error_proyeccion: 0.747
     error_con_fuente: 0.651
     meses: 18
+  - fuentes:
+    - sepa
+    - fx
+    coef:
+    - 0.585
+    - 0.0
+    - 0.006
+    error_proyeccion: 0.747
+    error_con_fuente: 0.653
+    meses: 18
+  07.2.2:
+  - fuentes:
+    - nafta
+    coef:
+    - 0.439
+    - 0.309
+    error_proyeccion: 2.067
+    error_con_fuente: 1.465
+    meses: 29
+  - fuentes:
+    - nafta
+    - fx
+    coef:
+    - 0.439
+    - 0.309
+    - 0.0
+    - 0.0
+    error_proyeccion: 2.067
+    error_con_fuente: 1.465
+    meses: 29

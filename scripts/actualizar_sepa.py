@@ -62,10 +62,11 @@ def main():
     nuevos = []
     for m in meses:
         for corte in (15, None):
-            v = sepa.indices_del_mes(m, corte=corte)
-            if not v.empty:
-                v.insert(1, "corte", "15" if corte else "completo")
-                nuevos.append(v)
+            for fn in (sepa.indices_del_mes, sepa.indices_carne_fresca):
+                v = fn(m, corte=corte)
+                if not v.empty:
+                    v.insert(1, "corte", "15" if corte else "completo")
+                    nuevos.append(v)
     if nuevos:
         nuevos = pd.concat(nuevos)
         if not previo.empty:

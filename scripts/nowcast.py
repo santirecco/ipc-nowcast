@@ -66,7 +66,7 @@ def main():
     nc = modelo.Nowcast(d, a, fuentes.leer_ipcba())
     extra = adelantados.informacion(nc, mes, pd.Timestamp(hoy))
     r = nc.calcular(mes, super_mensual=sm, extra=extra)
-    sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False)["estimacion"]
+    sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False, usar_reglas=False)["estimacion"]
     con_caba = r["caba"] is not None
     momento = momento_del_mes(con_caba, extra, pd.Timestamp(hoy), mes)
     b = banda(momento)

@@ -49,9 +49,10 @@ def main():
 
 Se simula el pronóstico de cada mes usando solo la información disponible en ese momento:
 - **Inicio de mes:** solo la proyección estadística por región y división.
-- **Mitad de mes:** además, los alimentos con los precios hasta el día 15: góndolas de todo el país (SEPA, desde
-  septiembre de 2024), verduras y frutas mayoristas (Mercado Central, desde 2026) y hacienda (desde 2017). Cada clase
-  usa solo las fuentes que la mejoraron fuera de muestra (ver reports/adelantados.md).
+- **Mitad de mes:** además, los precios hasta el día 15: góndolas de todo el país (SEPA, desde septiembre de 2024),
+  verduras y frutas mayoristas (Mercado Central, desde 2026), hacienda (desde 2017) y combustibles (precio de YPF;
+  a mitad de mes solo el cambio del mes anterior). Cada clase usa solo las fuentes que la mejoraron fuera de muestra
+  (ver reports/adelantados.md). En todos los momentos, las prepagas siguen su regla de ajuste (IPC de dos meses antes).
 - **Fin de mes:** lo mismo con el mes completo.
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
   (peso {int(modelo.PESO_CABA * 100)}% IPC CABA / {int((1 - modelo.PESO_CABA) * 100)}% modelo). En los meses en que la Ciudad

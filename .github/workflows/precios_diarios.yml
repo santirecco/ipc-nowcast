@@ -4,6 +4,7 @@ name: Precios diarios y pronóstico
 #   1. baja los precios de los supermercados online
 #   2. baja los precios de SEPA del día anterior (todas las cadenas grandes del país)
 #   3. baja precios mayoristas: Mercado Central (verduras y frutas) y hacienda (carne)
+#      y también combustibles (YPF) y dólar mayorista (BCRA)
 #   4. actualiza el IPC de la Ciudad de Buenos Aires (sale unos días antes que INDEC)
 #   5. recalcula el pronóstico del mes y guarda todo en el repo
 # También se puede correr a mano desde la pestaña Actions ("Run workflow").
@@ -50,6 +51,9 @@ jobs:
       - name: Mayoristas (Mercado Central y hacienda)
         continue-on-error: true
         run: python scripts/actualizar_mayoristas.py
+      - name: Combustibles y dólar
+        continue-on-error: true
+        run: python scripts/actualizar_indicadores.py
       - name: IPC Ciudad de Buenos Aires
         continue-on-error: true
         run: python scripts/actualizar_ipcba.py

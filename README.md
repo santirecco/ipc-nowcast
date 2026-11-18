@@ -60,6 +60,8 @@ Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("D
 | SEPA – Precios Claros | ~17 cadenas grandes (Día, Carrefour, Coto, ChangoMás, Cencosud, La Anónima, Cooperativa Obrera, Toledo, Farmacity…), ~3.000 sucursales en las 24 provincias | Archivo diario del proyecto abierto [preciazo](https://github.com/catdevnull/preciazo) (el sitio oficial bloquea servidores) | desde ago-2024 (faltan abr–jun 2026) |
 | Mercado Central de Buenos Aires | Precio mayorista diario de ~100 especies de verduras y frutas | Planillas diarias publicadas en mercadocentral.gob.ar | desde ene-2026 |
 | Mercado Agroganadero (Cañuelas) | Precio de la hacienda por categoría | Consulta pública por rango de fechas | desde 2017 |
+| Combustibles (surtidores.com.ar) | Precio mensual de nafta súper, premium y gasoil de YPF en CABA | Tabla publicada en surtidores.com.ar (el dataset oficial de Energía está caído) | desde 2018 (se usa desde 2024) |
+| Dólar mayorista (BCRA) | Tipo de cambio de referencia A 3500 | API pública del BCRA | desde 2017 (probado: hoy no mejora el pronóstico) |
 | Supermercados online | ~60.000 productos con stock en Carrefour, Jumbo, Disco, Vea y Día (GBA) | API pública de las tiendas (VTEX) | desde 18-nov-2026 |
 | IPC Ciudad de Buenos Aires | Anticipo del dato nacional | API de series de datos.gob.ar | desde 2012 |
 

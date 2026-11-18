@@ -83,5 +83,32 @@ def test_item_de_division_entera():
     base, _ = nc.celdas(mes, usar_regulados=False, usar_super=False)
     extra = [{"region": "GBA", "componente": "10", "fuente": "prueba", "valor": 9.0, "parte": 0.5}]
     ajust, apl = nc.celdas(mes, usar_regulados=False, usar_super=False, extra=extra)
-    assert len(apl) == 1
+    assert len([x for x in apl if x["componente"] == "10"]) == 1
     assert abs(ajust[("GBA", "10")] - (0.5 * 9.0 + 0.5 * base[("GBA", "10")])) < 1e-9
+
+
+def test_tabla_surtidores():
+    from ipc_nowcast import indicadores
+    html = "<table><tr><td>2026</td><td>Enero</td>" + "".join(f"<td>{m}</td>" for m in ["Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]) + \
+           "</tr><tr><td>Super</td><td>1566</td><td>1609</td></tr><tr><td>2025</td><td>Enero</td>" + "".join(f"<td>{m}</td>" for m in ["Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]) + \
+           "</tr><tr><td>Super</td><td>1128</td></tr></table>"
+    t = indicadores.parsear_tabla_surtidores(html)
+    assert t[t.anio == 2026].precio.tolist() == [1566.0, 1609.0]
+    assert t[t.anio == 2025].precio.tolist() == [1128.0]
+
+
+def test_carne_fresca():
+    from ipc_nowcast.clasificador_sepa import es_carne_fresca
+    assert es_carne_fresca("BIFE ANCHO X KG") and es_carne_fresca("CUADRADA OFERTA")
+    assert not es_carne_fresca("LOMO DE CERDO") and not es_carne_fresca("PALETA DE MAQUILLAJES") and not es_carne_fresca("HAMBURGUESA DE CARNE")
+
+
+def test_regla_prepagas():
+    d = pd.read_parquet(DATA / "processed" / "indec_divisiones.parquet")
+    a = pd.read_parquet(DATA / "processed" / "indec_aperturas.parquet")
+    nc = modelo.Nowcast(d, a, None)
+    mes = d.periodo.max()  # un mes ya publicado: la regla usa el IPC de dos meses antes
+    info = nc.informacion_del_mes(mes, usar_regulados=False, usar_super=False)
+    prep = [it for it in info if it["componente"] == "06.4.1"]
+    ipc = nc.V["Nacional"]["00"].loc[mes - pd.offsets.MonthBegin(2)]
+    assert len(prep) == 6 and all(abs(it["valor"] - ipc) < 1e-9 for it in prep)

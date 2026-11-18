@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 
 from . import DATA
-from .clasificador_sepa import clasificar
+from .clasificador_sepa import clasificar, es_carne_fresca
 
 INDICE_URL = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/index.json"
 CACHE = DATA / "cache" / "sepa"
@@ -178,6 +178,14 @@ def procesar_dia(archivo_tar: str, fecha: str) -> pd.DataFrame:
     r = pl.concat(partes).to_pandas()
     descs = r.drop_duplicates("id_producto")[["id_producto", "desc"]]
     descs["clase"] = [clasificar(x) for x in descs.desc]
+    # catálogo de carne vacuna fresca (se acumula día a día; ver indices_carne_fresca)
+    fres = r[r.clase.isna() | (r.clase == "01.1.2")].drop_duplicates(["id_comercio", "id_producto"])
+    fres = fres[[es_carne_fresca(x) for x in fres.desc]]
+    if len(fres):
+        ruta_c = SALIDA / "carne_fresca_ids.csv"
+        prev = pd.read_csv(ruta_c, dtype=str) if ruta_c.exists() else pd.DataFrame(columns=["id_comercio", "id_producto", "desc"])
+        nuevo = fres[["id_comercio", "id_producto", "desc"]].astype(str)
+        pd.concat([prev, nuevo]).drop_duplicates(["id_comercio", "id_producto"]).to_csv(ruta_c, index=False)
     r = r.merge(descs[["id_producto", "clase"]], on="id_producto")
     r = r[r.clase.notna()].drop(columns="desc")
     r["fecha"] = fecha
@@ -222,7 +230,8 @@ def promedios_mensuales(meses: list[str], corte: int | None = None, origen: Path
               .collect(engine="streaming").to_pandas())
 
 
-def variacion(prev: pd.DataFrame, act: pd.DataFrame, min_dias_prev: int = 8, min_dias_act: int = 3) -> pd.DataFrame:
+def variacion(prev: pd.DataFrame, act: pd.DataFrame, min_dias_prev: int = 8, min_dias_act: int = 3,
+              min_productos: int = MIN_PRODUCTOS) -> pd.DataFrame:
     """Variación % por región y clase entre dos meses (promedios por producto)."""
     a = prev[prev.dias >= min_dias_prev]
     b = act[act.dias >= min_dias_act]
@@ -232,7 +241,7 @@ def variacion(prev: pd.DataFrame, act: pd.DataFrame, min_dias_prev: int = 8, min
     j["r"] = np.log(j.p_b / j.p_a)
     j = j[(j.r > np.log(RECORTE[0])) & (j.r < np.log(RECORTE[1]))]
     pc = j.groupby(["region", "clase", "id_comercio"]).agg(r=("r", "mean"), n=("r", "size")).reset_index()
-    pc = pc[pc.n >= MIN_PRODUCTOS]
+    pc = pc[pc.n >= min_productos]
     pr = pc.groupby(["region", "clase"]).agg(r=("r", "mean"), cadenas=("id_comercio", "nunique"), productos=("n", "sum")).reset_index()
     pr["var_%"] = (np.exp(pr.r) - 1) * 100
     return pr.drop(columns="r")
@@ -254,6 +263,33 @@ def indices_del_mes(mes: str, corte: int | None = None, origen: Path = CACHE) ->
     v["dias_mes"] = len(dias_act)
     v["dias_mes_anterior"] = dias_prev
     v["ultimo_dia"] = dias_act[-1] if dias_act else None
+    return v
+
+
+def indices_carne_fresca(mes: str, corte: int | None = None, origen: Path = CACHE) -> pd.DataFrame:
+    """Igual que indices_del_mes pero solo con cortes de carne vacuna fresca (clase "01.1.2v")."""
+    import polars as pl
+    ruta_c = SALIDA / "carne_fresca_ids.csv"
+    if not ruta_c.exists():
+        return pd.DataFrame()
+    claves = pl.from_pandas(pd.read_csv(ruta_c, dtype=str)[["id_comercio", "id_producto"]].drop_duplicates())
+    previo = (pd.Timestamp(mes + "-01") - pd.offsets.MonthBegin(1)).strftime("%Y-%m")
+    def prom(m, c):
+        fs = [str(p) for p in sorted(origen.glob(f"{m}-??.parquet")) if c is None or int(p.stem[-2:]) <= c]
+        if not fs:
+            return pd.DataFrame()
+        lf = (pl.scan_parquet(fs).filter(pl.col("clase") == "01.1.2").select("fecha", "id_comercio", "region", "id_producto", "precio")
+                .join(claves.lazy(), on=["id_comercio", "id_producto"]))
+        return (lf.group_by("id_comercio", "region", "id_producto").agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique())
+                  .collect().to_pandas().assign(clase="01.1.2v"))
+    a, b = prom(previo, None), prom(mes, corte)
+    if a.empty or b.empty:
+        return pd.DataFrame()
+    a, b = a.assign(mes=previo), b.assign(mes=mes)
+    v = variacion(a, b, min_productos=10)  # hay menos cortes frescos que productos envasados por cadena
+    if v.empty:
+        return v
+    v.insert(0, "mes", mes)
     return v
 
 

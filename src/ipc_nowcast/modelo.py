@@ -105,7 +105,8 @@ class Nowcast:
                 filas[(r, d)] = reg * w.loc[d, r] * self.piv[r][d].loc[ant] / self.piv[r]["00"].loc[ant]
         return pd.Series(filas)
 
-    def informacion_del_mes(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None) -> list[dict]:
+    def informacion_del_mes(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None,
+                            usar_reglas=True) -> list[dict]:
         """Lista de datos conocidos del mes que reemplazan parte de un componente:
         {region, componente, fuente, valor (var %), parte (0-1 del componente que cubre)}."""
         info = []
@@ -129,6 +130,17 @@ class Nowcast:
         extra = list(extra or [])
         cubiertos = {(it["region"], it["componente"]) for it in extra}
         info += extra
+        # Reglas conocidas de antemano: las prepagas ajustan por el IPC de dos meses antes (backtest 2025-26: error
+        # medio 0,2 pp contra 0,7 pp de la estadística). Solo si el calendario del mes no trae el dato.
+        ya = {(it["region"], it["componente"]) for it in info}
+        m2 = mes - pd.offsets.MonthBegin(2)
+        ipc = self.V["Nacional"]["00"]
+        if usar_reglas and m2 in ipc.index and pd.notna(ipc.loc[m2]):
+            for r in REGIONES:
+                if (r, "06.4.1") not in ya:
+                    info.append({"region": r, "componente": "06.4.1", "fuente": "regla: IPC de dos meses antes",
+                                 "valor": float(ipc.loc[m2]), "parte": 1.0,
+                                 "detalle": f"Las prepagas ajustan por la inflación de dos meses antes ({ipc.loc[m2]:.1f}%)".replace(".", ",")})
         if usar_super and super_mensual is not None and not super_mensual.empty:
             sm = super_mensual[(super_mensual.mes == mes) & super_mensual["var_mensual_%"].notna()]
             for _, f in sm.iterrows():
@@ -138,12 +150,12 @@ class Nowcast:
                              "valor": float(f["var_mensual_%"]), "parte": PARTE_SUPER, "detalle": f"{int(f.dias)} días"})
         return info
 
-    def celdas(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None):
+    def celdas(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None, usar_reglas=True):
         """Variación proyectada de cada celda región x división, con la información del mes incorporada."""
         cols = [(r, d) for r in REGIONES for d in replica.DIVISIONES]
         Y = pd.DataFrame({c: self.V[c[0]][c[1]] for c in cols})
         base = proyeccion_estadistica(Y, self.nucleo, mes)
-        info = self.informacion_del_mes(mes, usar_regulados, usar_super, super_mensual, extra)
+        info = self.informacion_del_mes(mes, usar_regulados, usar_super, super_mensual, extra, usar_reglas)
         if not info:
             return base, []
         comp_ef = canasta.peso_efectivo_en_division(self.ap, self.base_comp, mes)
@@ -189,8 +201,8 @@ class Nowcast:
         g = float(np.median(rel) * nivel(mes) * AJUSTE_CABA_FACTOR)
         return g if abs(g) >= AJUSTE_CABA_UMBRAL else 0.0
 
-    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None):
-        celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual, extra)
+    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None, usar_reglas=True):
+        celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual, extra, usar_reglas)
         w = self._pesos_mes(mes)
         w = w / w.sum() * 100
         abajo_arriba = float((celdas * w).sum() / 100)

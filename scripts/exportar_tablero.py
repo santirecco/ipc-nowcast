@@ -14,7 +14,8 @@ COMPONENTES = {"04.5": "Electricidad, gas y otros combustibles", "06.4.1": "Prep
                "07.2.2": "Combustibles", "02.2": "Tabaco", "08.3": "Telefonía e internet", "10": "Educación",
                "01.1.1": "Pan y cereales", "01.1.2": "Carnes", "01.1.4": "Lácteos y huevos", "01.1.5": "Aceites y grasas",
                "01.1.6": "Frutas", "01.1.7": "Verduras", "01.1.8": "Azúcar, dulces y golosinas",
-               "01.2.1": "Café, té y yerba", "01.2.2": "Aguas, gaseosas y jugos", "01.1.resto": "Otros alimentos"}
+               "01.2.1": "Café, té y yerba", "01.2.2": "Aguas, gaseosas y jugos", "01.1.resto": "Otros alimentos",
+               "07.1": "Compra de vehículos", "03.1": "Ropa", "05": "Equipamiento del hogar"}
 
 
 def main():
@@ -41,7 +42,13 @@ def main():
     if ruta.exists():
         i = pd.read_csv(ruta, dtype={"componente": str})
         i["nombre_componente"] = i.componente.map(COMPONENTES).fillna(i.componente)
-        i["grupo"] = ["Alimentos: precios reales del mes" if c.startswith("01") else "Tarifas y aumentos anunciados" for c in i.componente]
+        def grupo(c, f):
+            if c.startswith("01"):
+                return "Alimentos: precios reales del mes"
+            if f in ("calendario de regulados", "arrastre del mes anterior") or f.startswith("regla"):
+                return "Tarifas, aumentos anunciados y reglas de ajuste"
+            return "Combustibles y otros precios del mes"
+        i["grupo"] = [grupo(c, f) for c, f in zip(i.componente, i.fuente)]
         i["clave"] = i.region + " · " + i.nombre_componente + " · " + i.fuente
         if "efecto_nacional_pp" not in i:
             i["efecto_nacional_pp"], i["peso_celda_%"] = 0.0, 0.0

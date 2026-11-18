@@ -150,3 +150,20 @@ for _f, _c in EXTRA_FRASES:
     if (_f, _c) not in _FRASES:
         _FRASES.append((_f, _c))
 _FRASES.sort(key=lambda x: -len(x[0]))
+
+
+# Carne vacuna fresca (cortes al mostrador): la usa un índice aparte, porque la clase 01.1.2 de SEPA mezcla
+# fiambres, hamburguesas y congelados que se mueven distinto que la carne que mide INDEC.
+VACUNO_FRESCO = re.compile(
+    r"\b(asado|vacio|nalga|cuadril|peceto|bife|bola de lomo|lomo|matambre|falda|roast|osobuco|tapa de asado|tapa de nalga|"
+    r"carnaza|palomita|colita|entrana|picada|carne picada|paleta|cuadrada|tortuguita|aguja|marucha|blando|churrasco|"
+    r"ojo de bife|tapa de bife)\b")
+NO_FRESCO = re.compile(
+    r"\b(cerdo|pollo|pavo|soja|vegana?|vegetal|pescado|merluza|salmon|atun|fiambre|jamon|salame|hamburgues\w*|medallon\w*|"
+    r"rebozad\w*|congelad\w*|swift|paty|nuggets|empanad\w*|tarta|pizza|sopa|caldo|pure|salsa|ravioles|sorrentinos|tapas|"
+    r"alfajor|galletit\w*|jugo|queso|maquillaje\w*|banqueta|chocolate|choc|crema|sombras|silla)\b")
+
+
+def es_carne_fresca(descripcion: str) -> bool:
+    t = normalizar(descripcion)
+    return bool(VACUNO_FRESCO.search(t)) and not NO_FRESCO.search(t)
