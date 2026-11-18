@@ -41,7 +41,7 @@ jobs:
           restore-keys: sepa-
       - name: SEPA (Precios Claros, todo el país)
         continue-on-error: true
-        run: python scripts/actualizar_sepa.py
+        run: SEPA_TRABAJADORES=3 python scripts/actualizar_sepa.py
       - name: Guardar precios SEPA procesados (caché)
         if: always()
         uses: actions/cache/save@v4

@@ -22,7 +22,7 @@ from .modelo import proyeccion_componente
 
 CLASES = ["01.1.1", "01.1.2", "01.1.4", "01.1.5", "01.1.6", "01.1.7", "01.1.8", "01.2.1", "01.2.2",
           "07.2.2", "07.1", "03.1", "05",
-          "02.1", "05.6", "06.1", "12.1", "09.5", "11.1"]
+          "06.1", "09.5", "11.1"]
 # Combinaciones de fuentes que se prueban en cada clase (se usa la mejor que mejore fuera de muestra)
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"]],
@@ -43,12 +43,11 @@ OPCIONES = {
     # el del índice nacional, así que quedan afuera. Restaurantes y papelería sí mejoran el nacional.
     "11.1": [["ipc"]],
     "09.5": [["ipc"]],
-    # Rubros no alimentarios que SEPA también releva (limpieza, cuidado personal, medicamentos, bebidas alcohólicas)
-    "02.1": [["sepa"]],
-    "05.6": [["sepa"]],
+    # Rubros no alimentarios que SEPA también releva. Se probaron bebidas alcohólicas, limpieza, cuidado personal
+    # y medicamentos: solo medicamentos con el mes completo mejora el error nacional (a mitad de mes lo empeora).
     "06.1": [["sepa"]],
-    "12.1": [["sepa"]],
 }
+SOLO_COMPLETO = {"06.1"}  # clases que solo se corrigen con el mes completo de precios
 ESTADISTICAS = {"ipc"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
@@ -251,6 +250,8 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
         t = tabla(nc, corte)
         calib[corte] = {}
         for clase in CLASES:
+            if corte == "15" and clase in SOLO_COMPLETO:
+                continue
             opciones = evaluar_clase(t, clase)
             for o in opciones:
                 resumen.append({k: v for k, v in o.items() if k != "oos"} | {"corte": corte})

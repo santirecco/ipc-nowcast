@@ -10,6 +10,7 @@ Salidas:
   data/precios/sepa/indices_mensuales.csv   (variación por mes, región y clase; corte 15 y mes completo)
   data/precios/sepa/indices_diarios.csv     (mes en curso: variación acumulada con los días hasta cada fecha)
 """
+import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
 from datetime import date
@@ -21,7 +22,7 @@ import pandas as pd  # noqa: E402
 
 from ipc_nowcast import sepa  # noqa: E402
 
-TRABAJADORES = 2
+TRABAJADORES = int(os.environ.get("SEPA_TRABAJADORES", "2"))
 
 
 def _bajar(args):
@@ -50,6 +51,10 @@ def main():
         indice = sepa.indice_archivo()
         hechos = set(sepa.dias_en_cache())
         pendientes = [(f, indice[f]) for f in sorted(indice) if f[:7] in meses and f not in hechos]
+        # --cada N: para reprocesar historia más rápido, un día de cada N (el índice usa el promedio del mes)
+        cada = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--cada=")), 1)
+        if cada > 1:
+            pendientes = [p for p in pendientes if pd.Timestamp(p[0]).dayofyear % cada == 0]
         print(f"{len(pendientes)} días para bajar", flush=True)
         with ProcessPoolExecutor(TRABAJADORES) as ex:
             for f, estado in ex.map(_bajar, pendientes):

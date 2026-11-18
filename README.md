@@ -64,15 +64,16 @@ Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("D
 | Dólar mayorista (BCRA) | Tipo de cambio de referencia A 3500 | API pública del BCRA | desde 2017 (probado: hoy no mejora el pronóstico) |
 | Supermercados online | ~60.000 productos con stock en Carrefour, Jumbo, Disco, Vea y Día (GBA) | API pública de las tiendas (VTEX) | desde 18-nov-2026 |
 | IPC Ciudad de Buenos Aires | Anticipo del dato nacional | API de series de datos.gob.ar | desde 2012 |
+| REM del BCRA | Mediana de los analistas para la inflación mensual (solo referencia) | Planilla mensual publicada por el BCRA | se baja sola cada día |
 
 Los precios de SEPA procesados por día se guardan en el caché de GitHub Actions (`data/cache/sepa/`, no se suben
 al repo); al repo van solo los índices por mes, región y clase (`data/precios/sepa/`).
 
 ## Tareas manuales
 
-Ninguna obligatoria. El calendario de regulados lo revisa una tarea programada todos los lunes (busca aumentos
-anunciados y actualiza `config/regulados/`); conviene mirar sus cambios de vez en cuando. Opcional: cargar la
-mediana del REM del BCRA en `config/externos.yaml` cuando se publica (solo referencia).
+Ninguna. El calendario de regulados lo revisa una tarea programada todos los lunes (busca aumentos
+anunciados y actualiza `config/regulados/`); conviene mirar sus cambios de vez en cuando. El tablero muestra el
+estado de cada fuente (`data/tablero/fuentes.csv`): si alguna figura como "atrasada", dejó de publicar o cambió su sitio.
 
 ## Conceptos clave
 
