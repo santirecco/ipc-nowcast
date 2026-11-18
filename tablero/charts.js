@@ -177,6 +177,7 @@
     { k: 'vispera', nombre: 'Víspera', det: 'Modelo + IPC Ciudad, con todos los precios del mes', col: (r) => r.vispera, color: () => dash.colors[0], ancho: 2.2 },
     { k: 'fin', nombre: 'Fin de mes', det: 'Modelo con los precios del mes completo, sin IPC Ciudad', col: (r) => r.fin_de_mes, color: () => dash.colors[3] || dash.colors[1], ancho: 1.6, guion: '1 0' },
     { k: 'mitad', nombre: 'Mitad de mes', det: 'Modelo con los precios hasta el día 15', col: (r) => r.mitad_de_mes, color: () => dash.colors[2], ancho: 1.8 },
+    { k: 'dia22', nombre: 'Día 22', det: 'Modelo con los precios hasta el día 22', col: (r) => r.dia_22, color: () => dash.colors[4] || dash.colors[2], ancho: 1.6, guion: '6 3' },
     { k: 'inicio', nombre: 'Inicio de mes', det: 'Solo la proyección estadística', col: (r) => r.inicio_de_mes, color: 'var(--color-fg-muted)', ancho: 1.5, guion: '5 4' },
     { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: () => dash.colors[1], ancho: 1.5, guion: '2 3' },
   ];
@@ -223,7 +224,7 @@
           .attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r[s.k])).attr('r', 3.2).style('fill', colorDe(s));
       }
       // franja de error con signo (modelo − INDEC) del modelo visible más informado
-      const ref = [btError, 'vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      const ref = [btError, 'vispera', 'fin', 'dia22', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
       marcar(ref ? ref.k : null);
       const ey = H - m.b + 44;
       if (ref) {

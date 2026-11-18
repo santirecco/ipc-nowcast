@@ -19,6 +19,7 @@ from ipc_nowcast import CONFIG, DATA, REGIONES, REPORTS, adelantados, fuentes, i
 
 OUT = DATA / "nowcast"
 MOMENTOS = {"inicio_de_mes": "solo modelo estadístico", "mitad_de_mes": "con precios de la primera quincena",
+            "dia_22": "con precios hasta el día 22",
             "fin_de_mes": "con precios del mes completo", "vispera_con_caba": "con IPC de la Ciudad"}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
@@ -42,7 +43,9 @@ def momento_del_mes(con_caba: bool, extra: list, hoy: pd.Timestamp, mes: pd.Time
         return "vispera_con_caba"
     if not extra:
         return "inicio_de_mes"
-    return "fin_de_mes" if (hoy >= mes + pd.offsets.MonthEnd(0) or hoy.day >= 21) else "mitad_de_mes"
+    if hoy >= mes + pd.offsets.MonthEnd(0):
+        return "fin_de_mes"
+    return "dia_22" if hoy.day >= 22 else "mitad_de_mes"
 
 
 def main():

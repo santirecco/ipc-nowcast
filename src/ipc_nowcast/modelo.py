@@ -261,14 +261,16 @@ def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
     filas = []
     for mes in real.index[real.index >= pd.Timestamp(desde)]:
         e15 = adelantados.informacion_historica(mes, "15")
+        e22 = adelantados.informacion_historica(mes, "22")
         ec = adelantados.informacion_historica(mes, "completo")
         e0 = adelantados.informacion_historica(mes, "15", solo_estadistica=True)
         r0 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e0)
         r15 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e15)
+        r22 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e22)
         rc = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=ec)
         r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec, peso_caba=0.0)
         filas.append({"mes": mes, "real": real.loc[mes], "inicio_de_mes": r0["estimacion"],
-                      "mitad_de_mes": r15["estimacion"], "fin_de_mes": rc["estimacion"],
+                      "mitad_de_mes": r15["estimacion"], "dia_22": r22["estimacion"], "fin_de_mes": rc["estimacion"],
                       "caba": r1["caba"], "caba_corregido": (r1["caba"] + r1["ajuste_caba"]) if r1["caba"] is not None else np.nan,
                       "clases_con_datos": len(ec)})
     df = pd.DataFrame(filas).set_index("mes")

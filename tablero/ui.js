@@ -8,6 +8,7 @@
   const MOMENTOS = {
     inicio_de_mes: 'Inicio de mes: todavía solo con la historia',
     mitad_de_mes: 'Mitad de mes: ya usa precios reales del mes',
+    dia_22: 'Día 22: con precios de casi todo el mes',
     fin_de_mes: 'Fin de mes: con los precios del mes completo',
     vispera_con_caba: 'Víspera: ya salió el IPC de la Ciudad',
   };
@@ -40,7 +41,7 @@
   delta('delta-rem', 'vs_rem');
   delta('delta-indec', 'vs_indec');
   const err = (name, m) => dash.draw(name, (el) => { const e = dash.data('error_bt'); const r = e.status === 'ok' ? (e.data || []).find((x) => x.momento === m) : null; el.textContent = r && r.error !== null ? `${f2(r.error)} pp` : '—'; });
-  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-fin', 'fin'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
+  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-d22', 'dia22'); err('mae-fin', 'fin'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
   dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
 
   // ---------------------------------------------------------------- datos del mes

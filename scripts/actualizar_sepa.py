@@ -60,17 +60,17 @@ def main():
             for f, estado in ex.map(_bajar, pendientes):
                 print(f, estado, flush=True)
 
-    # índices mensuales: corte día 15 y mes completo, para cada mes con datos del mes anterior
+    # índices mensuales: cortes día 15 y día 22, y mes completo, para cada mes con datos del mes anterior
     sepa.SALIDA.mkdir(parents=True, exist_ok=True)
     ruta = sepa.SALIDA / "indices_mensuales.csv"
     previo = pd.read_csv(ruta, dtype={"clase": str}) if ruta.exists() else pd.DataFrame()
     nuevos = []
     for m in meses:
-        for corte in (15, None):
+        for corte in (15, 22, None):
             for fn in (sepa.indices_del_mes, sepa.indices_carne_fresca):
                 v = fn(m, corte=corte)
                 if not v.empty:
-                    v.insert(1, "corte", "15" if corte else "completo")
+                    v.insert(1, "corte", str(corte) if corte else "completo")
                     nuevos.append(v)
     if nuevos:
         nuevos = pd.concat(nuevos)

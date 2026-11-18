@@ -63,7 +63,7 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
-CORTES = ["15", "completo"]
+CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
 MIN_MESES_AJUSTE = 4       # meses mínimos de historia para estimar coeficientes (comunes a 6 regiones)
 EVAL_DESDE = pd.Timestamp("2024-01-01")  # la decisión se toma con el error de 2024 en adelante (régimen actual)
@@ -73,7 +73,7 @@ RUTA_BT = DATA / "precios" / "adelantados_backtest.csv"
 
 
 def _mayorista(corte: str) -> pd.DataFrame:
-    c = 15 if corte == "15" else None
+    c = None if corte == "completo" else int(corte)
     mc = mayoristas.serie_mercado_central(c)
     hac = mayoristas.serie_hacienda(c)
     hac_full = mayoristas.serie_hacienda(None)
@@ -89,7 +89,7 @@ def _mayorista(corte: str) -> pd.DataFrame:
 
 
 def _otros(corte: str) -> pd.DataFrame:
-    c = 15 if corte == "15" else None
+    c = None if corte == "completo" else int(corte)
     nafta = indicadores.serie_nafta()
     fx, fx_full = indicadores.serie_dolar(c), indicadores.serie_dolar(None)
     o = pd.DataFrame({"nafta": nafta, "fx": fx})
@@ -171,7 +171,7 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         # a mitad de mes no se sabe todavía el precio de fin de mes: solo el cambio del mes anterior (arrastre)
         # forma "reemplazo": el precio de surtidor reemplaza a la proyección, repartido entre este mes y el anterior
         p = t.proy.astype(float)
-        if not (t.corte == "15").all():
+        if (t.corte == "completo").any():
             cols.append(t["nafta"].astype(float) - p)
         cols.append(t["nafta_l1"].astype(float) - p)
     if "fx" in fuentes:
@@ -213,7 +213,7 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
     if "may" in fuentes:
         ok &= t["may"].notna() & t["may_l1"].notna()
     if "nafta" in fuentes:
-        ok &= t["nafta_l1"].notna() & (t["nafta"].notna() | (t.corte == "15"))
+        ok &= t["nafta_l1"].notna() & (t["nafta"].notna() | (t.corte != "completo"))
     if "fx" in fuentes:
         ok &= t["fx"].notna() & t["fx_l1"].notna()
     if "ipc" in fuentes:
@@ -261,7 +261,7 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
         t = tabla(nc, corte)
         calib[corte] = {}
         for clase in CLASES:
-            if corte == "15" and clase in SOLO_COMPLETO:
+            if corte != "completo" and clase in SOLO_COMPLETO:
                 continue
             opciones = evaluar_clase(t, clase)
             for o in opciones:
@@ -309,7 +309,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
     idx = sepa.leer_indices()
     actual = sepa.SALIDA / "indices_diarios.csv"
     # momento: si el mes ya terminó, mes completo; si no, mitad de mes (o completo desde el día 21)
-    corte = "completo" if (hoy >= mes + pd.offsets.MonthEnd(0) or hoy.day >= 21) else "15"
+    corte = "completo" if hoy >= mes + pd.offsets.MonthEnd(0) else "22" if hoy.day >= 22 else "15"
     temprano = hoy < mes + pd.Timedelta(days=4)  # muy pocos días: solo las mejoras estadísticas
     t = tabla(nc, corte)
     if t.empty:
@@ -350,7 +350,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
             if "may" in fuentes:
                 det.append(f"{MAYORISTA[clase]} {pc(f['may'])} este mes y {pc(f['may_l1'])} el anterior")
             if "nafta" in fuentes:
-                det.append(f"surtidor YPF {pc(f['nafta_l1'])} el mes anterior" + ("" if corte == "15" or pd.isna(f["nafta"]) else f" y {pc(f['nafta'])} este mes"))
+                det.append(f"surtidor YPF {pc(f['nafta_l1'])} el mes anterior" + ("" if corte != "completo" or pd.isna(f["nafta"]) else f" y {pc(f['nafta'])} este mes"))
             if "fx" in fuentes:
                 det.append(f"dólar mayorista {pc(f['fx'])} este mes y {pc(f['fx_l1'])} el anterior")
             if "ipc" in fuentes:

@@ -29,6 +29,7 @@ def main():
     for desde, etiqueta in [("2024-07-01", "jul-24 en adelante"), ("2025-01-01", "2025-2026"), ("2025-07-01", "últimos 16 meses")]:
         x = bt[bt.index >= desde].dropna(subset=["caba"])
         for col, nombre in [("inicio_de_mes", "Inicio de mes (solo estadística)"), ("mitad_de_mes", "Mitad de mes (+ precios hasta el día 15)"),
+                            ("dia_22", "Día 22 (+ precios hasta el día 22)"),
                             ("fin_de_mes", "Fin de mes (+ precios del mes completo)"), ("caba", "IPC CABA solo"),
                             ("vispera_con_caba", "Víspera (modelo + IPC CABA)")]:
             e = (x[col] - x.real).abs()
@@ -38,10 +39,10 @@ def main():
     lineas = ["| Período | Momento | Error promedio (pp) | 80% de los meses dentro de (pp) | Error máximo (pp) | Meses |", "|---|---|---|---|---|---|"]
     for _, f in t.iterrows():
         lineas.append(f"| {f['Período']} | {f['Momento']} | {_n(f['Error promedio (pp)'])} | ±{_n(f['Error p80 (pp)'])} | {_n(f['Error máximo (pp)'])} | {f['Meses']} |")
-    det = ["| Mes | INDEC | Inicio de mes | Mitad de mes | Fin de mes | IPC CABA | Víspera | Clases con datos propios |",
-           "|---|---|---|---|---|---|---|---|"]
+    det = ["| Mes | INDEC | Inicio de mes | Mitad de mes | Día 22 | Fin de mes | IPC CABA | Víspera | Clases con datos propios |",
+           "|---|---|---|---|---|---|---|---|---|"]
     for m, f in bt.iloc[::-1].iterrows():
-        det.append(f"| {m:%m/%Y} | {_n(f.real, 1)} | {_n(f.inicio_de_mes)} | {_n(f.mitad_de_mes)} | {_n(f.fin_de_mes)} | "
+        det.append(f"| {m:%m/%Y} | {_n(f.real, 1)} | {_n(f.inicio_de_mes)} | {_n(f.mitad_de_mes)} | {_n(f.dia_22)} | {_n(f.fin_de_mes)} | "
                    f"{_n(f.caba) if pd.notna(f.caba) else '—'} | {_n(f.vispera_con_caba)} | {int(f.clases_con_datos)} |")
     md = f"""# Backtest del modelo
 
@@ -53,6 +54,7 @@ Se simula el pronóstico de cada mes usando solo la información disponible en e
   verduras y frutas mayoristas (Mercado Central, desde 2026), hacienda (desde 2017) y combustibles (precio de YPF;
   a mitad de mes solo el cambio del mes anterior). Cada clase usa solo las fuentes que la mejoraron fuera de muestra
   (ver reports/adelantados.md). En todos los momentos, las prepagas siguen su regla de ajuste (IPC de dos meses antes).
+- **Día 22:** lo mismo con los precios hasta el día 22 (calibración propia; se usa desde el día 22 hasta fin de mes).
 - **Fin de mes:** lo mismo con el mes completo.
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
   (el peso de la Ciudad se estima cada mes con los meses anteriores: el que hubiera minimizado el error; hoy

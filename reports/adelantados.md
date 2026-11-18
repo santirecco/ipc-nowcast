@@ -43,6 +43,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Compra de vehículos | fx | 34 | 2,91 | 3,09 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,79 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,79 | sí, si falta la anterior |
+| Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
 
 ### Mes completo
 
@@ -78,4 +80,6 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Compra de vehículos | fx | 34 | 2,91 | 3,03 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,47 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,47 | sí, si falta la anterior |
+| Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
 
