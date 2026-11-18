@@ -47,7 +47,8 @@ Se simula el pronóstico de cada mes usando solo la información disponible en e
 - **Inicio de mes:** solo la proyección estadística por región y división (sin calendario de regulados ni supermercados,
   que no tienen historia).
 - **Víspera:** además, el IPC de la Ciudad de Buenos Aires del mismo mes, que se publica unos días antes que INDEC
-  (peso {int(modelo.PESO_CABA * 100)}% IPC CABA / {int((1 - modelo.PESO_CABA) * 100)}% modelo).
+  (peso {int(modelo.PESO_CABA * 100)}% IPC CABA / {int((1 - modelo.PESO_CABA) * 100)}% modelo). En los meses en que la Ciudad
+  se desvió de INDEC con el mismo signo todos los años (enero y julio) se corrige el IPC CABA por ese desvío típico.
 
 Los componentes nuevos (calendario de regulados y supermercados online) no se pueden simular hacia atrás:
 su aporte se va a medir en la prueba en paralelo de los próximos meses.

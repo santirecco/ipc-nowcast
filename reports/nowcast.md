@@ -10,6 +10,7 @@
 | Solo modelo estadístico | 1,81 |
 | Modelo + información del mes (de abajo hacia arriba) | 1,79 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
+| Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
 
 El rango cubre el 80% de los errores del backtest de los últimos 16 meses para este momento del mes

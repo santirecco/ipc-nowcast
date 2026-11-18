@@ -17,8 +17,10 @@ COMPONENTES = {"04.5": "Electricidad, gas y otros combustibles", "06.4.1": "Prep
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     h = pd.read_csv(NC / "historial.csv")
+    if "ajuste_caba" not in h.columns:
+        h["ajuste_caba"] = 0.0
     h.rename(columns={"solo_modelo_estadistico": "solo_modelo"})[
-        ["fecha_calculo", "mes", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "ipc_caba", "rem", "dias_supermercados"]
+        ["fecha_calculo", "mes", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "ipc_caba", "ajuste_caba", "rem", "dias_supermercados"]
     ].round(3).to_csv(OUT / "pronostico.csv", index=False)
 
     d = pd.read_csv(NC / "ultimo_divisiones.csv", dtype={"division": str})

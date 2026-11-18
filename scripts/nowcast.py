@@ -81,7 +81,7 @@ def main():
     fila = {"fecha_calculo": str(hoy), "mes": f"{mes:%Y-%m}", "estimacion": round(r["estimacion"], 4),
             "rango_bajo": round(r["estimacion"] - b, 4), "rango_alto": round(r["estimacion"] + b, 4),
             "solo_modelo_estadistico": round(sin_info, 4), "abajo_arriba": round(r["abajo_arriba"], 4),
-            "ipc_caba": None if r["caba"] is None else round(r["caba"], 4), "rem": rem,
+            "ipc_caba": None if r["caba"] is None else round(r["caba"], 4), "ajuste_caba": round(r["ajuste_caba"], 4), "rem": rem,
             "datos_incorporados": len(info), "dias_supermercados": int(panel.fecha.nunique()) if not panel.empty else 0}
     ruta_h = OUT / "historial.csv"
     h = pd.read_csv(ruta_h, dtype=str) if ruta_h.exists() else pd.DataFrame(columns=list(fila))
@@ -115,6 +115,7 @@ def main():
 | Solo modelo estadístico | {n(sin_info)} |
 | Modelo + información del mes (de abajo hacia arriba) | {n(r['abajo_arriba'])} |
 | IPC Ciudad de Buenos Aires del mes | {n(r['caba'])} {'(todavía no publicado)' if not con_caba else ''} |
+| Ajuste estacional al IPC Ciudad (pp) | {n(r['ajuste_caba'])} |
 | REM del BCRA (referencia) | {n(rem, 1)} |
 
 El rango cubre el 80% de los errores del backtest de los últimos 16 meses para este momento del mes

@@ -1,2 +1,2 @@
-fecha_calculo,mes,estimacion,rango_bajo,rango_alto,solo_modelo_estadistico,abajo_arriba,ipc_caba,rem,datos_incorporados,dias_supermercados
-2026-11-18,2026-11,1.7946,1.3629,2.2263,1.808,1.7946,,1.7,13,1
+fecha_calculo,mes,estimacion,rango_bajo,rango_alto,solo_modelo_estadistico,abajo_arriba,ipc_caba,rem,datos_incorporados,dias_supermercados,ajuste_caba
+2026-11-18,2026-11,1.7946,1.3629,2.2263,1.808,1.7946,,1.7,13,1,0.0

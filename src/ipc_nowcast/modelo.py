@@ -26,6 +26,10 @@ import yaml
 from . import CONFIG, REGIONES, canasta, replica
 
 PESO_CABA = 0.7  # surge del backtest 2025-2026 (ver reports/backtest.md)
+# Corrección estacional de la brecha IPC Ciudad vs. INDEC: solo para meses en que la brecha tuvo el mismo signo
+# todos los años anteriores (hoy: enero y julio, cuando turismo y servicios hacen subir más a la Ciudad).
+AJUSTE_CABA_UMBRAL = 0.2   # pp: correcciones menores se ignoran
+AJUSTE_CABA_FACTOR = 0.75  # se aplica el 75% del desvío típico (prudencia)
 PARTE_SUPER = 0.6  # parte de cada clase de alimentos que se toma de los supermercados online (a calibrar)
 
 
@@ -159,6 +163,24 @@ class Nowcast:
                               "peso_en_division": w_div, "efecto_en_division_pp": w_div * (nuevo - base_c)})
         return ajustada, aplicados
 
+    def ajuste_caba(self, mes) -> float:
+        """Desvío típico INDEC - IPC Ciudad para este mes del año, si fue sistemático (mismo signo todos los años)."""
+        if self.ipcba is None:
+            return 0.0
+        c = self.ipcba["00"].pct_change() * 100
+        c.index = c.index.to_period("M").to_timestamp()
+        real = self.V["Nacional"]["00"]
+        brecha = (real - c).dropna()
+        pasado = brecha[(brecha.index < mes) & (brecha.index.month == mes.month)]
+        if len(pasado) < 3:
+            return 0.0
+        nivel = lambda m: max(self.nucleo[self.nucleo.index < m].iloc[-3:].mean(), 0.3)
+        rel = np.array([pasado[m] / nivel(m) for m in pasado.index])
+        if not (np.all(rel > 0) or np.all(rel < 0)):
+            return 0.0
+        g = float(np.median(rel) * nivel(mes) * AJUSTE_CABA_FACTOR)
+        return g if abs(g) >= AJUSTE_CABA_UMBRAL else 0.0
+
     def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None):
         celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual)
         w = self._pesos_mes(mes)
@@ -170,10 +192,11 @@ class Nowcast:
             v.index = v.index.to_period("M").to_timestamp()
             if mes in v.index and not np.isnan(v.loc[mes]):
                 caba = float(v.loc[mes])
-        final = PESO_CABA * caba + (1 - PESO_CABA) * abajo_arriba if caba is not None else abajo_arriba
+        ajuste = self.ajuste_caba(mes) if caba is not None else 0.0
+        final = PESO_CABA * (caba + ajuste) + (1 - PESO_CABA) * abajo_arriba if caba is not None else abajo_arriba
         aporte = (celdas * w / 100).rename("incidencia_pp")
         return {
-            "mes": mes, "estimacion": final, "abajo_arriba": abajo_arriba, "caba": caba,
+            "mes": mes, "estimacion": final, "abajo_arriba": abajo_arriba, "caba": caba, "ajuste_caba": ajuste,
             "celdas": pd.DataFrame({"variacion": celdas, "peso_%": w, "incidencia_pp": aporte}),
             "informacion": pd.DataFrame(aplicados),
         }

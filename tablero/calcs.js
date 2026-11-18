@@ -18,7 +18,7 @@
       const r = filas[filas.length - 1];
       const n = (v) => (v === null || v === undefined || v === '' ? null : +v);
       return [{ mes: r.mes, fecha_calculo: r.fecha_calculo, estimacion: +r.estimacion, rango_bajo: +r.rango_bajo, rango_alto: +r.rango_alto,
-        solo_modelo: +r.solo_modelo, ipc_caba: n(r.ipc_caba), rem: n(r.rem), dias_supermercados: n(r.dias_supermercados) }];
+        solo_modelo: +r.solo_modelo, ipc_caba: n(r.ipc_caba), ajuste_caba: n(r.ajuste_caba), rem: n(r.rem), dias_supermercados: n(r.dias_supermercados) }];
     },
   });
   dash.calc('actual_mes', {

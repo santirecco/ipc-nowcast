@@ -11,7 +11,8 @@
   texto('dias-super', (r) => (r.dias_supermercados === null ? '—' : fInt(r.dias_supermercados)));
   texto('card-modelo', (r) => `${f2(r.solo_modelo)}%`);
   texto('card-caba', (r) => (r.ipc_caba === null ? 'Sin publicar' : `${f2(r.ipc_caba)}%`));
-  texto('card-caba-nota', (r) => (r.ipc_caba === null ? 'Sale unos días antes que INDEC; ese día se incorpora al pronóstico.' : 'Ya incorporado al pronóstico (70%).'));
+  texto('card-caba-nota', (r) => (r.ipc_caba === null ? 'Sale unos días antes que INDEC; ese día se incorpora al pronóstico.'
+    : r.ajuste_caba ? `Incorporado (70%), corregido ${sg(r.ajuste_caba)} pp: en este mes la Ciudad suele desviarse del país.` : 'Ya incorporado al pronóstico (70%).'));
   texto('card-rem', (r) => (r.rem === null ? 'Sin dato' : `${f1(r.rem)}%`));
   dash.draw('frase-indec', (el) => {
     const r = fila(), u = ui();
