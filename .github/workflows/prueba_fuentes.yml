@@ -1,0 +1,30 @@
+name: Prueba de fuentes
+
+# Verifica qué sitios de precios dejan entrar a los servidores de GitHub.
+# Corre sola cuando se modifica el script de prueba, o a mano desde la pestaña Actions.
+on:
+  push:
+    paths:
+      - scripts/probar_fuentes.py
+      - .github/workflows/prueba_fuentes.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/probar_fuentes.py
+      - name: Guardar resultado
+        run: |
+          git config user.name "ipc-nowcast-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add reports/prueba_fuentes.md
+          git commit -m "Prueba de fuentes desde GitHub Actions" || exit 0
+          git pull --rebase -q && git push
