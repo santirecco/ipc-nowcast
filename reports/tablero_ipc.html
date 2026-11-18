@@ -118,6 +118,13 @@ html, body { margin: 0; background: var(--color-bg); }
   .ipx-chains { display: flex; flex-direction: column; gap: 10px; min-height: 140px; }
   .ipx-chain { display: grid; grid-template-columns: minmax(110px, 190px) 1fr 64px; gap: 12px; align-items: center; font-size: 13px; }
   .ipx-chain .ipx-bar-track { height: 10px; }
+  .ipx-legend-toggles { gap: 8px; margin-bottom: 12px; }
+  .ipx-toggle { display: inline-flex; align-items: center; gap: 0; font: inherit; font-size: 12px; color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: 999px; padding: 4px 11px; cursor: pointer; transition: opacity .15s, background .15s; }
+  .ipx-toggle:hover { background: color-mix(in srgb, var(--color-fg) 6%, var(--color-bg)); }
+  .ipx-toggle:focus-visible { outline: 2px solid var(--color-focus, currentColor); outline-offset: 2px; }
+  .ipx-toggle.off { opacity: .45; background: transparent; border-style: dashed; }
+  .ipx-toggle.off .ipx-sw { background: transparent !important; border-top: 2px dotted currentColor; height: 0; }
+  .ipx-bt-canvas { position: relative; }
   .ipx-chain-group { margin: 12px 0 0; }
   .ipx-chain-group:first-child { margin-top: 0; }
 
@@ -218,19 +225,13 @@ html, body { margin: 0; background: var(--color-bg); }
     <div class="ipx-sec-head">
       <p class="ipx-eyebrow">Precisión</p>
       <h2 class="ipx-sec-title">Qué tan bien anduvo el modelo hacia atrás</h2>
-      <p class="ipx-muted">Simulación mes a mes con la información que había en cada momento, últimos 16 meses.</p>
+      <p class="ipx-muted">Simulación mes a mes con la información que había en cada momento, últimos 16 meses. Tocá cada serie de la leyenda para mostrarla u ocultarla.</p>
     </div>
     <div class="ipx-stats">
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio al inicio del mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">A mitad de mes, con precios</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio en la víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span> pp</span></div>
-    </div>
-    <div class="ipx-legend">
-      <span><span class="ipx-sw" data-draw="sw-indec"></span>INDEC</span>
-      <span><span class="ipx-sw" data-draw="sw-mit"></span>Modelo a mitad de mes</span>
-      <span><span class="ipx-sw" data-draw="sw-vis"></span>Modelo en la víspera</span>
-      <span><span class="ipx-sw ipx-sw-dash" data-draw="sw-ini"></span>Modelo al inicio del mes</span>
     </div>
     <div class="ipx-chart" data-draw="bt" data-source="backtest"></div>
   </section>
@@ -418,10 +419,6 @@ html, body { margin: 0; background: var(--color-bg); }
   err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
   dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
   dash.draw('rec-fecha', (el) => { const d = dash.data('rec_ultimo'); el.textContent = d.status === 'ok' && d.data.length ? fecha(d3.max(d.data, (r) => r.fecha)) : '—'; });
-  dash.draw('sw-indec', (el) => { el.style.background = 'var(--color-fg)'; });
-  dash.draw('sw-vis', (el) => { el.style.background = dash.colors[0]; });
-  dash.draw('sw-ini', (el) => { el.style.borderColor = dash.colors[2]; });
-  dash.draw('sw-mit', (el) => { el.style.background = dash.colors[1]; });
 
   // tabla de información del mes
   dash.draw('tab-info', (tb) => {
@@ -599,52 +596,105 @@ html, body { margin: 0; background: var(--color-bg); }
     }).on('pointerleave', () => { tip.hidden = true; });
   });
 
-  // backtest
+  // backtest: series que se pueden prender y apagar tocando la leyenda
+  const BT_SERIES = [
+    { k: 'indec', nombre: 'INDEC', det: 'Dato oficial', col: (r) => r.indec, color: 'var(--color-fg)', ancho: 2.2, puntos: true },
+    { k: 'vispera', nombre: 'Víspera', det: 'Modelo + IPC Ciudad, con todos los precios del mes', col: (r) => r.vispera, color: () => dash.colors[0], ancho: 2.2 },
+    { k: 'fin', nombre: 'Fin de mes', det: 'Modelo con los precios del mes completo, sin IPC Ciudad', col: (r) => r.fin_de_mes, color: () => dash.colors[3] || dash.colors[1], ancho: 1.6, guion: '1 0' },
+    { k: 'mitad', nombre: 'Mitad de mes', det: 'Modelo con los precios hasta el día 15', col: (r) => r.mitad_de_mes, color: () => dash.colors[1], ancho: 1.6 },
+    { k: 'inicio', nombre: 'Inicio de mes', det: 'Solo la proyección estadística', col: (r) => r.inicio_de_mes, color: () => dash.colors[2], ancho: 1.6, guion: '5 4' },
+    { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: 'var(--color-fg-muted)', ancho: 1.4, guion: '2 3' },
+  ];
+  const btVisibles = new Set(['indec', 'vispera', 'mitad', 'inicio']);
+  const colorDe = (s) => (typeof s.color === 'function' ? s.color() : s.color);
+  const num = (v) => (v === null || v === undefined || v === '' || Number.isNaN(+v) ? null : +v);
+
   dash.draw('bt', (el) => {
     const d = dash.data('backtest');
     el.replaceChildren();
     if (d.status !== 'ok' || !d.data.length) { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
-    const rows = d.data.map((r) => ({ mes: r.mes, t: d3.utcParse('%Y-%m')(r.mes), indec: +r.indec, vispera: +r.vispera, inicio: +r.inicio_de_mes, mitad: r.mitad_de_mes === undefined || r.mitad_de_mes === '' ? +r.inicio_de_mes : +r.mitad_de_mes }))
-      .sort((a, b) => a.t - b.t).slice(-16);
-    const W = el.clientWidth || 700, H = 270, m = { t: 12, r: 14, b: 74, l: 34 }, eh = 40;
-    const x = d3.scalePoint().domain(rows.map((r) => r.mes)).range([m.l + 8, W - m.r - 8]);
-    const y = d3.scaleLinear().domain([Math.max(0, d3.min(rows, (r) => Math.min(r.indec, r.vispera, r.inicio, r.mitad)) - 0.3), d3.max(rows, (r) => Math.max(r.indec, r.vispera, r.inicio, r.mitad)) + 0.2]).nice()
-      .range([H - m.b, m.t]);
-    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
-      .attr('aria-label', 'Inflación mensual de INDEC comparada con el pronóstico del modelo en la víspera y al inicio del mes, últimos 16 meses, y error de cada mes');
-    svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat((v) => g1(v)))
-      .call((g) => g.selectAll('.tick text').attr('x', -6));
-    const line = (k) => d3.line().x((r) => x(r.mes)).y((r) => y(r[k]));
-    svg.append('path').datum(rows).attr('d', line('inicio')).style('fill', 'none').style('stroke', dash.colors[2]).style('stroke-width', 1.6).style('stroke-dasharray', '5 4');
-    svg.append('path').datum(rows).attr('d', line('mitad')).style('fill', 'none').style('stroke', dash.colors[1]).style('stroke-width', 1.6);
-    svg.append('path').datum(rows).attr('d', line('vispera')).style('fill', 'none').style('stroke', dash.colors[0]).style('stroke-width', 2.2);
-    svg.append('path').datum(rows).attr('d', line('indec')).style('fill', 'none').style('stroke', 'var(--color-fg)').style('stroke-width', 2.2);
-    svg.selectAll('circle.in').data(rows).join('circle').attr('class', 'in').attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r.indec)).attr('r', 3.2).style('fill', 'var(--color-fg)');
-    // franja de error de la víspera
-    const ey = H - m.b + 22;
-    const emax = d3.max(rows, (r) => Math.abs(r.vispera - r.indec)) || 1;
-    const eb = d3.scaleLinear().domain([0, emax]).range([0, eh - 6]);
-    svg.append('text').attr('x', m.l).attr('y', ey - 6).text('Error de la víspera por mes (pp)').style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
-    const bwid = Math.max(4, Math.min(18, (W - m.l - m.r) / rows.length - 8));
-    svg.selectAll('rect.err').data(rows).join('rect').attr('class', 'err').attr('x', (r) => x(r.mes) - bwid / 2).attr('width', bwid)
-      .attr('y', (r) => ey + eh - eb(Math.abs(r.vispera - r.indec))).attr('height', (r) => Math.max(1, eb(Math.abs(r.vispera - r.indec)))).attr('rx', 2)
-      .style('fill', (r) => (Math.abs(r.vispera - r.indec) > 0.3 ? 'var(--color-warn)' : mix(55)));
-    const step = W < 560 ? 3 : 2;
-    svg.selectAll('text.mx').data(rows.filter((_, i) => i % step === (rows.length - 1) % step)).join('text').attr('class', 'mx')
-      .attr('x', (r) => x(r.mes)).attr('y', H - 2).attr('text-anchor', 'middle').text((r) => mc(r.mes)).style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
-    const guia = svg.append('line').attr('y1', m.t).attr('y2', H - 14).style('stroke', 'var(--cds-chart-reference)').style('display', 'none');
-    const tip = document.createElement('div'); tip.className = 'ipx-tip'; tip.hidden = true; el.appendChild(tip);
-    svg.on('pointermove', (ev) => {
-      const [px] = d3.pointer(ev); const r = rows[d3.minIndex(rows, (q) => Math.abs(x(q.mes) - px))];
-      guia.attr('x1', x(r.mes)).attr('x2', x(r.mes)).style('display', null);
-      tip.hidden = false; tip.replaceChildren();
-      const b = document.createElement('b'); b.textContent = nm(r.mes); tip.appendChild(b);
-      for (const s of [`INDEC ${g1(r.indec)}%`, `Víspera ${g2(r.vispera)}% (error ${g2(Math.abs(r.vispera - r.indec))})`, `Mitad de mes ${g2(r.mitad)}%`, `Inicio de mes ${g2(r.inicio)}%`]) {
-        tip.appendChild(document.createElement('br')); tip.appendChild(document.createTextNode(s));
+    const rows = d.data.map((r) => {
+      const o = { mes: r.mes, t: d3.utcParse('%Y-%m')(r.mes) };
+      for (const s of BT_SERIES) o[s.k] = num(s.col(r));
+      return o;
+    }).sort((a, b) => a.t - b.t).slice(-16);
+    const series = BT_SERIES.filter((s) => rows.some((r) => r[s.k] !== null));
+
+    const leyenda = document.createElement('div'); leyenda.className = 'ipx-legend ipx-legend-toggles';
+    leyenda.setAttribute('role', 'group'); leyenda.setAttribute('aria-label', 'Series del gráfico: tocá para mostrar u ocultar');
+    const lienzo = document.createElement('div'); lienzo.className = 'ipx-bt-canvas';
+    el.append(leyenda, lienzo);
+
+    const dibujar = () => {
+      lienzo.replaceChildren();
+      const vis = series.filter((s) => btVisibles.has(s.k));
+      const W = el.clientWidth || 700, H = 270, m = { t: 12, r: 14, b: 74, l: 34 }, eh = 40;
+      const x = d3.scalePoint().domain(rows.map((r) => r.mes)).range([m.l + 8, W - m.r - 8]);
+      const vals = rows.flatMap((r) => (vis.length ? vis : series).map((s) => r[s.k])).filter((v) => v !== null);
+      const y = d3.scaleLinear().domain([Math.max(0, d3.min(vals) - 0.3), d3.max(vals) + 0.2]).nice().range([H - m.b, m.t]);
+      const svg = d3.select(lienzo).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+        .attr('aria-label', `Inflación mensual de INDEC comparada con el pronóstico del modelo, últimos 16 meses. Series visibles: ${vis.map((s) => s.nombre).join(', ') || 'ninguna'}`);
+      svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat((v) => g1(v)))
+        .call((g) => g.selectAll('.tick text').attr('x', -6));
+      // primero las líneas finas, al final INDEC para que quede arriba
+      for (const s of vis.slice().reverse()) {
+        const ln = d3.line().defined((r) => r[s.k] !== null).x((r) => x(r.mes)).y((r) => y(r[s.k]));
+        svg.append('path').datum(rows).attr('d', ln).style('fill', 'none').style('stroke', colorDe(s))
+          .style('stroke-width', s.ancho).style('stroke-dasharray', s.guion || null);
+        if (s.puntos) svg.selectAll(`circle.p-${s.k}`).data(rows.filter((r) => r[s.k] !== null)).join('circle').attr('class', `p-${s.k}`)
+          .attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r[s.k])).attr('r', 3.2).style('fill', colorDe(s));
       }
-      const sx = el.clientWidth / W;
-      tip.style.left = `${Math.max(0, Math.min(x(r.mes) * sx + 12, el.clientWidth - 250))}px`; tip.style.top = '6px';
-    }).on('pointerleave', () => { tip.hidden = true; guia.style('display', 'none'); });
+      // franja de error: del modelo visible más informado
+      const ref = ['vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      const ey = H - m.b + 22;
+      if (ref) {
+        const err = (r) => (r[ref.k] === null || r.indec === null ? null : Math.abs(r[ref.k] - r.indec));
+        const emax = d3.max(rows, err) || 1;
+        const eb = d3.scaleLinear().domain([0, emax]).range([0, eh - 6]);
+        svg.append('text').attr('x', m.l).attr('y', ey - 6).text(`Error por mes: ${ref.nombre.toLowerCase()} (pp)`)
+          .style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
+        const bwid = Math.max(4, Math.min(18, (W - m.l - m.r) / rows.length - 8));
+        svg.selectAll('rect.err').data(rows.filter((r) => err(r) !== null)).join('rect').attr('class', 'err').attr('x', (r) => x(r.mes) - bwid / 2).attr('width', bwid)
+          .attr('y', (r) => ey + eh - eb(err(r))).attr('height', (r) => Math.max(1, eb(err(r)))).attr('rx', 2)
+          .style('fill', (r) => (err(r) > 0.3 ? 'var(--color-warn)' : mix(55)));
+      }
+      const step = W < 560 ? 3 : 2;
+      svg.selectAll('text.mx').data(rows.filter((_, i) => i % step === (rows.length - 1) % step)).join('text').attr('class', 'mx')
+        .attr('x', (r) => x(r.mes)).attr('y', H - 2).attr('text-anchor', 'middle').text((r) => mc(r.mes)).style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
+      if (!vis.length) {
+        svg.append('text').attr('x', W / 2).attr('y', (H - m.b) / 2).attr('text-anchor', 'middle').text('Elegí al menos una serie en la leyenda')
+          .style('fill', 'var(--cds-text-secondary)').style('font-size', '13px');
+      }
+      const guia = svg.append('line').attr('y1', m.t).attr('y2', H - 14).style('stroke', 'var(--cds-chart-reference)').style('display', 'none');
+      const tip = document.createElement('div'); tip.className = 'ipx-tip'; tip.hidden = true; lienzo.appendChild(tip);
+      svg.on('pointermove', (ev) => {
+        if (!vis.length) return;
+        const [px] = d3.pointer(ev); const r = rows[d3.minIndex(rows, (q) => Math.abs(x(q.mes) - px))];
+        guia.attr('x1', x(r.mes)).attr('x2', x(r.mes)).style('display', null);
+        tip.hidden = false; tip.replaceChildren();
+        const b = document.createElement('b'); b.textContent = nm(r.mes); tip.appendChild(b);
+        for (const s of vis) {
+          if (r[s.k] === null) continue;
+          const nombre = s.nombre;
+          const txt = s.k === 'indec' ? `${nombre} ${g1(r.indec)}%` : `${nombre} ${g2(r[s.k])}%` + (r.indec !== null ? ` (error ${g2(Math.abs(r[s.k] - r.indec))})` : '');
+          tip.appendChild(document.createElement('br')); tip.appendChild(document.createTextNode(txt));
+        }
+        const sx = lienzo.clientWidth / W;
+        tip.style.left = `${Math.max(0, Math.min(x(r.mes) * sx + 12, lienzo.clientWidth - 280))}px`; tip.style.top = '6px';
+      }).on('pointerleave', () => { tip.hidden = true; guia.style('display', 'none'); });
+    };
+
+    for (const s of series) {
+      const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'ipx-toggle';
+      const sw = document.createElement('span'); sw.className = 'ipx-sw';
+      if (s.guion && s.guion !== '1 0') { sw.classList.add('ipx-sw-dash'); sw.style.borderColor = colorDe(s); } else sw.style.background = colorDe(s);
+      btn.append(sw, document.createTextNode(s.nombre)); btn.title = s.det;
+      const pintar = () => { const on = btVisibles.has(s.k); btn.setAttribute('aria-pressed', String(on)); btn.classList.toggle('off', !on); };
+      pintar();
+      btn.addEventListener('click', () => { if (btVisibles.has(s.k)) btVisibles.delete(s.k); else btVisibles.add(s.k); pintar(); dibujar(); });
+      leyenda.appendChild(btn);
+    }
+    dibujar();
   });
 
   // cadenas

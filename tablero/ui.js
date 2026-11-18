@@ -35,10 +35,6 @@
   err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
   dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
   dash.draw('rec-fecha', (el) => { const d = dash.data('rec_ultimo'); el.textContent = d.status === 'ok' && d.data.length ? fecha(d3.max(d.data, (r) => r.fecha)) : '—'; });
-  dash.draw('sw-indec', (el) => { el.style.background = 'var(--color-fg)'; });
-  dash.draw('sw-vis', (el) => { el.style.background = dash.colors[0]; });
-  dash.draw('sw-ini', (el) => { el.style.borderColor = dash.colors[2]; });
-  dash.draw('sw-mit', (el) => { el.style.background = dash.colors[1]; });
 
   // tabla de información del mes
   dash.draw('tab-info', (tb) => {

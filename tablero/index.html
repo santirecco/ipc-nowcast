@@ -88,19 +88,13 @@
     <div class="ipx-sec-head">
       <p class="ipx-eyebrow">Precisión</p>
       <h2 class="ipx-sec-title">Qué tan bien anduvo el modelo hacia atrás</h2>
-      <p class="ipx-muted">Simulación mes a mes con la información que había en cada momento, últimos 16 meses.</p>
+      <p class="ipx-muted">Simulación mes a mes con la información que había en cada momento, últimos 16 meses. Tocá cada serie de la leyenda para mostrarla u ocultarla.</p>
     </div>
     <div class="ipx-stats">
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio al inicio del mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">A mitad de mes, con precios</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio en la víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span> pp</span></div>
-    </div>
-    <div class="ipx-legend">
-      <span><span class="ipx-sw" data-draw="sw-indec"></span>INDEC</span>
-      <span><span class="ipx-sw" data-draw="sw-mit"></span>Modelo a mitad de mes</span>
-      <span><span class="ipx-sw" data-draw="sw-vis"></span>Modelo en la víspera</span>
-      <span><span class="ipx-sw ipx-sw-dash" data-draw="sw-ini"></span>Modelo al inicio del mes</span>
     </div>
     <div class="ipx-chart" data-draw="bt" data-source="backtest"></div>
   </section>

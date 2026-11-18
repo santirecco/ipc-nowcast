@@ -84,6 +84,13 @@
   .ipx-chains { display: flex; flex-direction: column; gap: 10px; min-height: 140px; }
   .ipx-chain { display: grid; grid-template-columns: minmax(110px, 190px) 1fr 64px; gap: 12px; align-items: center; font-size: 13px; }
   .ipx-chain .ipx-bar-track { height: 10px; }
+  .ipx-legend-toggles { gap: 8px; margin-bottom: 12px; }
+  .ipx-toggle { display: inline-flex; align-items: center; gap: 0; font: inherit; font-size: 12px; color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: 999px; padding: 4px 11px; cursor: pointer; transition: opacity .15s, background .15s; }
+  .ipx-toggle:hover { background: color-mix(in srgb, var(--color-fg) 6%, var(--color-bg)); }
+  .ipx-toggle:focus-visible { outline: 2px solid var(--color-focus, currentColor); outline-offset: 2px; }
+  .ipx-toggle.off { opacity: .45; background: transparent; border-style: dashed; }
+  .ipx-toggle.off .ipx-sw { background: transparent !important; border-top: 2px dotted currentColor; height: 0; }
+  .ipx-bt-canvas { position: relative; }
   .ipx-chain-group { margin: 12px 0 0; }
   .ipx-chain-group:first-child { margin-top: 0; }
 
