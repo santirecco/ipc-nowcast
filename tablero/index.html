@@ -98,12 +98,14 @@
       <h2 class="ipx-sec-title">Qué tan bien hubiera acertado el modelo</h2>
       <p class="ipx-muted">Simulación de los últimos 16 meses usando solo la información que había en cada momento. Error promedio, en puntos porcentuales:</p>
     </header>
-    <div class="ipx-stats">
-      <div class="ipx-stat"><span class="ipx-label">Inicio de mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span></span><span class="ipx-stat-foot">solo historia</span></div>
-      <div class="ipx-stat"><span class="ipx-label">Mitad de mes</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span></span><span class="ipx-stat-foot">+ precios hasta el día 15</span></div>
-      <div class="ipx-stat ipx-stat-best"><span class="ipx-label">Víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span></span><span class="ipx-stat-foot">+ IPC de la Ciudad</span></div>
-      <div class="ipx-stat"><span class="ipx-label">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span></span><span class="ipx-stat-foot">para comparar</span></div>
+    <div class="ipx-stats" role="group" aria-label="Error promedio de cada momento: tocá uno para ver sus errores mes a mes">
+      <button type="button" class="ipx-stat" data-serie="inicio"><span class="ipx-label">Inicio de mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span></span><span class="ipx-stat-foot">solo historia</span></button>
+      <button type="button" class="ipx-stat" data-serie="mitad"><span class="ipx-label">Mitad de mes</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span></span><span class="ipx-stat-foot">+ precios hasta el día 15</span></button>
+      <button type="button" class="ipx-stat" data-serie="fin"><span class="ipx-label">Fin de mes</span><span class="ipx-stat-val"><span data-draw="mae-fin" data-source="error_bt" data-field="error" data-where="momento=fin">—</span></span><span class="ipx-stat-foot">+ precios del mes completo</span></button>
+      <button type="button" class="ipx-stat" data-serie="vispera"><span class="ipx-label">Víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span></span><span class="ipx-stat-foot">+ IPC de la Ciudad</span></button>
+      <button type="button" class="ipx-stat" data-serie="caba"><span class="ipx-label">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span></span><span class="ipx-stat-foot">para comparar</span></button>
     </div>
+    <p class="ipx-hint ipx-stats-hint">Tocá un recuadro para ver sus errores mes a mes en las barras de abajo del gráfico.</p>
     <div class="ipx-chart" data-draw="bt" data-source="backtest"></div>
   </section>
 

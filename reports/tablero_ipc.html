@@ -123,10 +123,13 @@ html, body { margin: 0; background: var(--color-bg); }
   .ipx-bt-canvas { position: relative; }
 
   /* precisión */
-  .ipx-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
-  @media (max-width: 760px) { .ipx-stats { grid-template-columns: repeat(2, 1fr); } }
-  .ipx-stat { display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border-radius: calc(var(--cds-radius) * 1.3); background: color-mix(in srgb, var(--color-fg) 3%, var(--color-panel)); border: 1px solid var(--color-border-line); }
-  .ipx-stat-best { background: color-mix(in srgb, var(--c0, #1d4e89) 9%, var(--color-panel)); border-color: color-mix(in srgb, var(--c0, #1d4e89) 35%, var(--color-border-line)); }
+  .ipx-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 8px; }
+  @media (max-width: 860px) { .ipx-stats { grid-template-columns: repeat(2, 1fr); } }
+  .ipx-stat { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 12px 14px; text-align: left; font: inherit; color: inherit; cursor: pointer; border-radius: calc(var(--cds-radius) * 1.3); background: color-mix(in srgb, var(--color-fg) 3%, var(--color-panel)); border: 1px solid var(--color-border-line); transition: background .15s, border-color .15s; }
+  .ipx-stat:hover { border-color: color-mix(in srgb, var(--c0, #1d4e89) 35%, var(--color-border-line)); }
+  .ipx-stat:focus-visible { outline: 2px solid var(--c0, currentColor); outline-offset: 2px; }
+  .ipx-stat.sel { background: color-mix(in srgb, var(--c0, #1d4e89) 12%, var(--color-panel)); border-color: color-mix(in srgb, var(--c0, #1d4e89) 55%, var(--color-border-line)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c0, #1d4e89) 35%, transparent); }
+  .ipx-stats-hint { margin-bottom: 16px; }
   .ipx-stat-val { font-family: var(--font-anthropic-serif); font-size: 1.55rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .ipx-stat-foot { font-size: 11.5px; color: var(--color-fg-muted); }
 
@@ -308,12 +311,14 @@ html, body { margin: 0; background: var(--color-bg); }
       <h2 class="ipx-sec-title">Qué tan bien hubiera acertado el modelo</h2>
       <p class="ipx-muted">Simulación de los últimos 16 meses usando solo la información que había en cada momento. Error promedio, en puntos porcentuales:</p>
     </header>
-    <div class="ipx-stats">
-      <div class="ipx-stat"><span class="ipx-label">Inicio de mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span></span><span class="ipx-stat-foot">solo historia</span></div>
-      <div class="ipx-stat"><span class="ipx-label">Mitad de mes</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span></span><span class="ipx-stat-foot">+ precios hasta el día 15</span></div>
-      <div class="ipx-stat ipx-stat-best"><span class="ipx-label">Víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span></span><span class="ipx-stat-foot">+ IPC de la Ciudad</span></div>
-      <div class="ipx-stat"><span class="ipx-label">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span></span><span class="ipx-stat-foot">para comparar</span></div>
+    <div class="ipx-stats" role="group" aria-label="Error promedio de cada momento: tocá uno para ver sus errores mes a mes">
+      <button type="button" class="ipx-stat" data-serie="inicio"><span class="ipx-label">Inicio de mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span></span><span class="ipx-stat-foot">solo historia</span></button>
+      <button type="button" class="ipx-stat" data-serie="mitad"><span class="ipx-label">Mitad de mes</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span></span><span class="ipx-stat-foot">+ precios hasta el día 15</span></button>
+      <button type="button" class="ipx-stat" data-serie="fin"><span class="ipx-label">Fin de mes</span><span class="ipx-stat-val"><span data-draw="mae-fin" data-source="error_bt" data-field="error" data-where="momento=fin">—</span></span><span class="ipx-stat-foot">+ precios del mes completo</span></button>
+      <button type="button" class="ipx-stat" data-serie="vispera"><span class="ipx-label">Víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span></span><span class="ipx-stat-foot">+ IPC de la Ciudad</span></button>
+      <button type="button" class="ipx-stat" data-serie="caba"><span class="ipx-label">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span></span><span class="ipx-stat-foot">para comparar</span></button>
     </div>
+    <p class="ipx-hint ipx-stats-hint">Tocá un recuadro para ver sus errores mes a mes en las barras de abajo del gráfico.</p>
     <div class="ipx-chart" data-draw="bt" data-source="backtest"></div>
   </section>
 
@@ -441,7 +446,7 @@ html, body { margin: 0; background: var(--color-bg); }
     fn: (backtest) => {
       const b = backtest.slice().sort((a, c) => d3.ascending(a.mes, c.mes)).slice(-16);
       const mae = (col) => d3.mean(b.filter((r) => r[col] !== null && r[col] !== ''), (r) => Math.abs(+r[col] - +r.indec));
-      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'mitad', error: b.length && 'mitad_de_mes' in b[0] ? mae('mitad_de_mes') : null }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
+      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'mitad', error: b.length && 'mitad_de_mes' in b[0] ? mae('mitad_de_mes') : null }, { momento: 'fin', error: b.length && 'fin_de_mes' in b[0] ? mae('fin_de_mes') : null }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
     },
   });
   dash.calc('rec_ultimo', {
@@ -526,7 +531,7 @@ html, body { margin: 0; background: var(--color-bg); }
   delta('delta-rem', 'vs_rem');
   delta('delta-indec', 'vs_indec');
   const err = (name, m) => dash.draw(name, (el) => { const e = dash.data('error_bt'); const r = e.status === 'ok' ? (e.data || []).find((x) => x.momento === m) : null; el.textContent = r && r.error !== null ? `${f2(r.error)} pp` : '—'; });
-  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
+  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-fin', 'fin'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
   dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
 
   // ---------------------------------------------------------------- datos del mes
@@ -762,6 +767,7 @@ html, body { margin: 0; background: var(--color-bg); }
     { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: () => dash.colors[1], ancho: 1.5, guion: '2 3' },
   ];
   const btVisibles = new Set(['indec', 'vispera', 'mitad', 'inicio']);
+  let btError = 'vispera'; // de qué modelo se muestran los errores mes a mes (se elige tocando los recuadros)
   const colorDe = (s) => (typeof s.color === 'function' ? s.color() : s.color);
   const num = (v) => (v === null || v === undefined || v === '' || Number.isNaN(+v) ? null : +v);
 
@@ -781,6 +787,8 @@ html, body { margin: 0; background: var(--color-bg); }
     const lienzo = document.createElement('div'); lienzo.className = 'ipx-bt-canvas';
     el.append(leyenda, lienzo);
 
+    const tiles = [...document.querySelectorAll('#backtest [data-serie]')];
+    const marcar = (k) => tiles.forEach((t) => { const on = t.dataset.serie === k; t.classList.toggle('sel', on); t.setAttribute('aria-pressed', String(on)); });
     const dibujar = () => {
       lienzo.replaceChildren();
       const vis = series.filter((s) => btVisibles.has(s.k));
@@ -801,7 +809,8 @@ html, body { margin: 0; background: var(--color-bg); }
           .attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r[s.k])).attr('r', 3.2).style('fill', colorDe(s));
       }
       // franja de error con signo (modelo − INDEC) del modelo visible más informado
-      const ref = ['vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      const ref = [btError, 'vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      marcar(ref ? ref.k : null);
       const ey = H - m.b + 44;
       if (ref) {
         const err = (r) => (r[ref.k] === null || r.indec === null ? null : r[ref.k] - r.indec);
@@ -846,6 +855,7 @@ html, body { margin: 0; background: var(--color-bg); }
       }).on('pointerleave', () => { tip.hidden = true; guia.style('display', 'none'); });
     };
 
+    const pintores = [];
     for (const s of series) {
       const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'ipx-toggle';
       const sw = document.createElement('span'); sw.className = 'ipx-sw';
@@ -855,7 +865,9 @@ html, body { margin: 0; background: var(--color-bg); }
       pintar();
       btn.addEventListener('click', () => { if (btVisibles.has(s.k)) btVisibles.delete(s.k); else btVisibles.add(s.k); pintar(); dibujar(); });
       leyenda.appendChild(btn);
+      pintores.push(pintar);
     }
+    tiles.forEach((t) => { t.onclick = () => { btError = t.dataset.serie; btVisibles.add(btError); pintores.forEach((p) => p()); dibujar(); }; });
     dibujar();
   });
 

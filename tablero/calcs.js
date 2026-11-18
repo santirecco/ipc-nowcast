@@ -54,7 +54,7 @@
     fn: (backtest) => {
       const b = backtest.slice().sort((a, c) => d3.ascending(a.mes, c.mes)).slice(-16);
       const mae = (col) => d3.mean(b.filter((r) => r[col] !== null && r[col] !== ''), (r) => Math.abs(+r[col] - +r.indec));
-      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'mitad', error: b.length && 'mitad_de_mes' in b[0] ? mae('mitad_de_mes') : null }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
+      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'mitad', error: b.length && 'mitad_de_mes' in b[0] ? mae('mitad_de_mes') : null }, { momento: 'fin', error: b.length && 'fin_de_mes' in b[0] ? mae('fin_de_mes') : null }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
     },
   });
   dash.calc('rec_ultimo', {

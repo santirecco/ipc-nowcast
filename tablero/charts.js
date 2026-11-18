@@ -164,6 +164,7 @@
     { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: () => dash.colors[1], ancho: 1.5, guion: '2 3' },
   ];
   const btVisibles = new Set(['indec', 'vispera', 'mitad', 'inicio']);
+  let btError = 'vispera'; // de qué modelo se muestran los errores mes a mes (se elige tocando los recuadros)
   const colorDe = (s) => (typeof s.color === 'function' ? s.color() : s.color);
   const num = (v) => (v === null || v === undefined || v === '' || Number.isNaN(+v) ? null : +v);
 
@@ -183,6 +184,8 @@
     const lienzo = document.createElement('div'); lienzo.className = 'ipx-bt-canvas';
     el.append(leyenda, lienzo);
 
+    const tiles = [...document.querySelectorAll('#backtest [data-serie]')];
+    const marcar = (k) => tiles.forEach((t) => { const on = t.dataset.serie === k; t.classList.toggle('sel', on); t.setAttribute('aria-pressed', String(on)); });
     const dibujar = () => {
       lienzo.replaceChildren();
       const vis = series.filter((s) => btVisibles.has(s.k));
@@ -203,7 +206,8 @@
           .attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r[s.k])).attr('r', 3.2).style('fill', colorDe(s));
       }
       // franja de error con signo (modelo − INDEC) del modelo visible más informado
-      const ref = ['vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      const ref = [btError, 'vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
+      marcar(ref ? ref.k : null);
       const ey = H - m.b + 44;
       if (ref) {
         const err = (r) => (r[ref.k] === null || r.indec === null ? null : r[ref.k] - r.indec);
@@ -248,6 +252,7 @@
       }).on('pointerleave', () => { tip.hidden = true; guia.style('display', 'none'); });
     };
 
+    const pintores = [];
     for (const s of series) {
       const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'ipx-toggle';
       const sw = document.createElement('span'); sw.className = 'ipx-sw';
@@ -257,7 +262,9 @@
       pintar();
       btn.addEventListener('click', () => { if (btVisibles.has(s.k)) btVisibles.delete(s.k); else btVisibles.add(s.k); pintar(); dibujar(); });
       leyenda.appendChild(btn);
+      pintores.push(pintar);
     }
+    tiles.forEach((t) => { t.onclick = () => { btError = t.dataset.serie; btVisibles.add(btError); pintores.forEach((p) => p()); dibujar(); }; });
     dibujar();
   });
 

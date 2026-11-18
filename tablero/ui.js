@@ -40,7 +40,7 @@
   delta('delta-rem', 'vs_rem');
   delta('delta-indec', 'vs_indec');
   const err = (name, m) => dash.draw(name, (el) => { const e = dash.data('error_bt'); const r = e.status === 'ok' ? (e.data || []).find((x) => x.momento === m) : null; el.textContent = r && r.error !== null ? `${f2(r.error)} pp` : '—'; });
-  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
+  err('mae-ini', 'inicio'); err('mae-mit', 'mitad'); err('mae-fin', 'fin'); err('mae-vis', 'vispera'); err('mae-caba', 'caba');
   dash.draw('rec-total', (el) => { const t = dash.data('rec_total'); el.textContent = t.status === 'ok' && t.data ? fInt(t.data) : '—'; });
 
   // ---------------------------------------------------------------- datos del mes
