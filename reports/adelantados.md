@@ -38,11 +38,25 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Café, té, yerba y cacao | sepa+fx | 18 | 0,87 | 0,85 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | SEPA | 18 | 0,75 | 0,70 | **sí** |
 | Aguas, gaseosas y jugos | sepa+fx | 18 | 0,75 | 0,70 | sí, si falta la anterior |
+| Bebidas alcohólicas | ipc | 34 | 2,13 | 1,84 | sí, si falta la anterior |
+| Bebidas alcohólicas | SEPA | 18 | 0,76 | 0,67 | **sí** |
+| Bebidas alcohólicas | sepa+ipc | 18 | 0,76 | 0,71 | sí, si falta la anterior |
+| Tabaco | ipc | 34 | 3,23 | 1,92 | **sí** |
 | Ropa | fx | 34 | 1,97 | 2,33 | no |
+| Ropa | ipc | 34 | 1,97 | 2,33 | no |
+| Calzado | ipc | 34 | 2,25 | 2,26 | no |
+| Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | **sí** |
 | Equipamiento del hogar | fx | 34 | 1,84 | 2,00 | no |
+| Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | **sí** |
+| Medicamentos | ipc | 34 | 1,85 | 1,59 | **sí** |
 | Compra de vehículos | fx | 34 | 2,91 | 3,09 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,79 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,79 | sí, si falta la anterior |
+| Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
+| Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
+| Educación | ipc | 34 | 4,48 | 4,31 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
+| Cuidado personal | ipc | 34 | 3,12 | 2,04 | **sí** |
 
 ### Mes completo
 
@@ -72,9 +86,23 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Café, té, yerba y cacao | sepa+fx | 18 | 0,87 | 0,77 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | SEPA | 18 | 0,75 | 0,65 | **sí** |
 | Aguas, gaseosas y jugos | sepa+fx | 18 | 0,75 | 0,65 | sí, si falta la anterior |
+| Bebidas alcohólicas | ipc | 34 | 2,13 | 1,84 | sí, si falta la anterior |
+| Bebidas alcohólicas | SEPA | 18 | 0,76 | 0,63 | **sí** |
+| Bebidas alcohólicas | sepa+ipc | 18 | 0,76 | 0,66 | sí, si falta la anterior |
+| Tabaco | ipc | 34 | 3,23 | 1,92 | **sí** |
 | Ropa | fx | 34 | 1,97 | 2,31 | no |
+| Ropa | ipc | 34 | 1,97 | 2,33 | no |
+| Calzado | ipc | 34 | 2,25 | 2,26 | no |
+| Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | **sí** |
 | Equipamiento del hogar | fx | 34 | 1,84 | 1,99 | no |
+| Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | **sí** |
+| Medicamentos | ipc | 34 | 1,85 | 1,59 | **sí** |
 | Compra de vehículos | fx | 34 | 2,91 | 3,03 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,47 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,47 | sí, si falta la anterior |
+| Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
+| Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
+| Educación | ipc | 34 | 4,48 | 4,31 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
+| Cuidado personal | ipc | 34 | 3,12 | 2,04 | **sí** |
 

@@ -2,12 +2,12 @@
 
 *Calculado el 18/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,8% mensual (rango probable 1,5% a 2,1%)
+## 1,8% mensual (rango probable 1,4% a 2,2%)
 
 | | % mensual |
 |---|---|
 | **Pronóstico** | **1,83** |
-| Solo modelo estadístico | 1,81 |
+| Solo modelo estadístico | 1,80 |
 | Modelo + información del mes (de abajo hacia arriba) | 1,83 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
@@ -21,28 +21,28 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
 | Alimentos y bebidas no alcohólicas | 28,7 | 1,92 | 0,55 |
-| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,71 | 0,30 |
+| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,65 | 0,29 |
 | Transporte | 11,6 | 1,77 | 0,20 |
-| Restaurantes y hoteles | 10,9 | 1,50 | 0,16 |
-| Salud | 9,0 | 1,76 | 0,16 |
-| Recreación y cultura | 6,6 | 2,04 | 0,13 |
+| Restaurantes y hoteles | 10,9 | 1,68 | 0,18 |
+| Salud | 9,0 | 1,69 | 0,15 |
+| Recreación y cultura | 6,6 | 1,76 | 0,12 |
 | Prendas de vestir y calzado | 6,6 | 1,27 | 0,08 |
-| Bienes y servicios varios | 3,4 | 1,94 | 0,07 |
-| Equipamiento y mantenimiento del hogar | 5,0 | 1,27 | 0,06 |
-| Comunicación | 2,6 | 1,85 | 0,05 |
-| Educación | 2,2 | 1,57 | 0,03 |
-| Bebidas alcohólicas y tabaco | 2,4 | 1,12 | 0,03 |
+| Equipamiento y mantenimiento del hogar | 5,0 | 1,38 | 0,07 |
+| Bienes y servicios varios | 3,4 | 1,88 | 0,06 |
+| Educación | 2,2 | 1,92 | 0,04 |
+| Comunicación | 2,6 | 1,52 | 0,04 |
+| Bebidas alcohólicas y tabaco | 2,4 | 1,25 | 0,03 |
 
 ## Por región
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,80 |
-| Pampeana | 33,8 | 1,93 |
-| Noreste | 4,5 | 1,57 |
-| Noroeste | 6,8 | 1,59 |
-| Cuyo | 5,2 | 1,94 |
-| Patagonia | 4,5 | 1,89 |
+| GBA | 45,1 | 1,79 |
+| Pampeana | 33,8 | 1,91 |
+| Noreste | 4,5 | 1,62 |
+| Noroeste | 6,8 | 1,61 |
+| Cuyo | 5,2 | 2,02 |
+| Patagonia | 4,5 | 1,93 |
 
 ## Información del mes incorporada
 
@@ -109,6 +109,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 07.2.2 | Precio de surtidor (YPF) | 1,32 | 1,31 | 0,00 |
 | Cuyo | 07.2.2 | Precio de surtidor (YPF) | 1,24 | 1,19 | 0,02 |
 | Patagonia | 07.2.2 | Precio de surtidor (YPF) | 1,11 | 1,02 | 0,04 |
+| GBA | 02.1 | Góndolas (SEPA) | 1,33 | 1,45 | -0,05 |
+| Pampeana | 02.1 | Góndolas (SEPA) | 0,99 | 1,13 | -0,07 |
+| Noreste | 02.1 | Góndolas (SEPA) | 0,75 | 0,75 | -0,00 |
+| Noroeste | 02.1 | Góndolas (SEPA) | 0,84 | 0,93 | -0,04 |
+| Cuyo | 02.1 | Góndolas (SEPA) | 0,93 | 0,72 | 0,08 |
+| Patagonia | 02.1 | Góndolas (SEPA) | 1,17 | 1,22 | -0,02 |
 
 ## Supermercados online (último mes con datos)
 

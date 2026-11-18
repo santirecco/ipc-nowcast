@@ -50,27 +50,44 @@
       .style('fill', 'var(--cds-text-secondary)').style('font-size', '10px');
   });
 
-  // barras de aporte por división
+  // barras de aporte por división: la parte oscura de cada barra es la que ya usa datos reales del mes
   dash.draw('div', (el) => {
     const d = dash.data('divisiones');
     el.replaceChildren();
     if (d.status !== 'ok') { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
-    const filas = d.data.map((r) => ({ ...r, incidencia: +r.incidencia, variacion: +r.variacion })).sort((a, b) => b.incidencia - a.incidencia);
+    const filas = d.data.map((r) => ({ ...r, incidencia: +r.incidencia, variacion: +r.variacion, cobertura: Math.max(0, Math.min(1, +r.cobertura || 0)) }))
+      .sort((a, b) => b.incidencia - a.incidencia);
     const max = d3.max(filas, (r) => Math.abs(r.incidencia)) || 1;
-    filas.forEach((r, i) => {
+    filas.forEach((r) => {
       const row = document.createElement('div'); row.className = 'ipx-bar-row';
       const name = document.createElement('div'); name.className = 'ipx-bar-name';
       name.textContent = r.nombre;
       const v = document.createElement('span'); v.className = 'ipx-bar-var'; v.textContent = `sube ${g1(r.variacion)}%`; name.appendChild(v);
+      const tag = document.createElement('span');
+      const pc = Math.round(r.cobertura * 100);
+      tag.className = `ipx-cov ${pc >= 5 ? 'si' : 'no'}`;
+      tag.textContent = pc >= 5 ? `${pc}% con datos del mes` : 'solo historia';
+      name.appendChild(tag);
       const val = document.createElement('div'); val.className = 'ipx-bar-val'; val.textContent = g2(r.incidencia);
       const track = document.createElement('div'); track.className = 'ipx-bar-track';
-      const bar = document.createElement('div'); bar.className = 'ipx-bar';
+      const bar = document.createElement('div'); bar.className = 'ipx-bar ipx-bar-split';
       bar.style.width = `${(Math.abs(r.incidencia) / max) * 100}%`;
-      bar.style.background = r.incidencia < 0 ? 'var(--color-ok)' : i < 3 ? dash.colors[0] : mix(55);
+      const datos = r.incidencia < 0 ? 'var(--color-ok)' : dash.colors[0];
+      const hist = r.incidencia < 0 ? 'color-mix(in srgb, var(--color-ok) 35%, var(--color-panel))' : mix(30);
+      bar.style.background = `linear-gradient(90deg, ${datos} 0 ${pc}%, ${hist} ${pc}% 100%)`;
+      bar.title = pc >= 5 ? `${pc}% del rubro usa datos reales del mes; el resto se estima con la historia` : 'Se estima solo con la historia del rubro';
       track.appendChild(bar);
       row.append(name, val, track); el.appendChild(row);
     });
   });
+  dash.draw('cov-total', (el) => {
+    const d = dash.data('divisiones');
+    if (d.status !== 'ok' || !d.data.length) { el.textContent = '—'; return; }
+    const p = d3.sum(d.data, (r) => +r.peso), c = d3.sum(d.data, (r) => +r.peso * (+r.cobertura || 0));
+    el.textContent = `${Math.round((c / p) * 100)}%`;
+  });
+  dash.draw('sw-datos', (el) => { el.style.background = dash.colors[0]; });
+  dash.draw('sw-hist', (el) => { el.style.background = mix(30); });
 
   // mapa de regiones (cuadrícula con la forma aproximada del país)
   const POS = { Noroeste: [1, 1], Noreste: [1, 3], Cuyo: [2, 1], Pampeana: [2, 2], GBA: [2, 3], Patagonia: [3, 1] };

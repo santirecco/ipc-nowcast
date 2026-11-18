@@ -1,15 +1,15 @@
 {
   "fecha_calculo": "2026-11-18",
   "mes": "2026-11",
-  "estimacion": 1.8312,
-  "rango_bajo": 1.5131,
-  "rango_alto": 2.1493,
-  "solo_modelo_estadistico": 1.808,
-  "abajo_arriba": 1.8312,
+  "estimacion": 1.8261,
+  "rango_bajo": 1.4139,
+  "rango_alto": 2.2383,
+  "solo_modelo_estadistico": 1.8041,
+  "abajo_arriba": 1.8261,
   "ipc_caba": null,
   "ajuste_caba": 0.0,
   "rem": 1.7,
-  "datos_incorporados": 61,
+  "datos_incorporados": 67,
   "dias_supermercados": 1,
   "momento": "mitad_de_mes"
 }

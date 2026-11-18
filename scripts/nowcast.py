@@ -65,10 +65,14 @@ def main():
 
     nc = modelo.Nowcast(d, a, fuentes.leer_ipcba())
     extra = adelantados.informacion(nc, mes, pd.Timestamp(hoy))
+    # las "mejoras estadísticas" (rubros sin relevamiento guiados por la inflación reciente) son parte de la
+    # estimación con la historia, no datos del mes: entran también en el cálculo "sin datos del mes"
+    est = [x for x in extra if x.get("estadistica")]
+    datos = [x for x in extra if not x.get("estadistica")]
     r = nc.calcular(mes, super_mensual=sm, extra=extra)
-    sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False, usar_reglas=False)["estimacion"]
+    sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False, usar_reglas=False, extra=est)["estimacion"]
     con_caba = r["caba"] is not None
-    momento = momento_del_mes(con_caba, extra, pd.Timestamp(hoy), mes)
+    momento = momento_del_mes(con_caba, datos, pd.Timestamp(hoy), mes)
     b = banda(momento)
     externos = yaml.safe_load((CONFIG / "externos.yaml").read_text(encoding="utf-8"))
     rem = (externos.get("rem") or {}).get(f"{mes:%Y-%m}", {}).get("valor")
@@ -81,12 +85,26 @@ def main():
         "variacion_%": (g["variacion"] * g["peso_%"]).sum() / g["peso_%"].sum(),
         "peso_%": g["peso_%"].sum(), "incidencia_pp": g["incidencia_pp"].sum()})).reset_index()
     div["nombre"] = div.division.map(nombres)
+    # qué parte de cada rubro usa datos reales del mes (el resto es proyección con la historia)
+    inf = r["informacion"]
+    if not inf.empty and "estadistica" in inf:
+        inf = inf[~inf.estadistica.fillna(False).astype(bool)]
+    cob = pd.Series(0.0, index=c.index)
+    if not inf.empty:
+        x = inf[~inf.get("aditivo", pd.Series(False, index=inf.index)).fillna(False).astype(bool)]
+        x = x.assign(cubre=x.peso_en_division * x.parte).groupby(["region", "division"]).cubre.sum().clip(upper=1.0)
+        cob = cob.add(x.reindex(cob.index).fillna(0.0), fill_value=0.0)
+    c["cobertura"] = cob
+    div = div.merge(c.groupby("division").apply(lambda g: (g.cobertura * g["peso_%"]).sum() / g["peso_%"].sum()).rename("cobertura").reset_index(),
+                    on="division", how="left")
     reg = c.groupby("region").apply(lambda g: pd.Series({
         "variacion_%": (g["variacion"] * g["peso_%"]).sum() / g["peso_%"].sum(),
         "peso_%": g["peso_%"].sum(), "incidencia_pp": g["incidencia_pp"].sum()})).reindex(REGIONES).reset_index()
     div.to_csv(OUT / "ultimo_divisiones.csv", index=False, float_format="%.4f")
     reg.to_csv(OUT / "ultimo_regiones.csv", index=False, float_format="%.4f")
     info = r["informacion"]
+    if not info.empty and "estadistica" in info:
+        info = info[~info.estadistica.fillna(False).astype(bool)].copy()
     if not info.empty:
         # efecto de cada dato sobre el IPC nacional: efecto en la división de esa región x peso de la celda
         w = r["celdas"]["peso_%"]

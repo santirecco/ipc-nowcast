@@ -1,10 +1,10 @@
-"""Actualiza combustibles (precios de YPF en surtidor) y dólar mayorista (BCRA)."""
+"""Actualiza combustibles (precios de YPF en surtidor), dólar mayorista (BCRA) y REM del BCRA."""
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from ipc_nowcast import indicadores  # noqa: E402
+from ipc_nowcast import fuentes, indicadores  # noqa: E402
 
 
 def main():
@@ -18,6 +18,10 @@ def main():
         print("Dólar mayorista:", len(d), "días; último", d.fecha.max())
     except Exception as e:  # noqa: BLE001
         print("Dólar: error", e)
+    try:
+        print("REM:", fuentes.actualizar_rem())
+    except Exception as e:  # noqa: BLE001
+        print("REM: error", e)
 
 
 if __name__ == "__main__":

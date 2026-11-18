@@ -12,7 +12,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[1]
 T = RAIZ / "tablero"
 DATOS = RAIZ / "data" / "tablero"
-ARCHIVOS = ["pronostico", "divisiones", "regiones", "informacion", "backtest", "recoleccion"]
+ARCHIVOS = ["pronostico", "divisiones", "regiones", "informacion", "backtest", "recoleccion", "fuentes"]
 
 
 def leer_csv(nombre):

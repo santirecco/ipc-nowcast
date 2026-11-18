@@ -107,3 +107,20 @@
       el.appendChild(det);
     }
   });
+
+  // estado de las fuentes
+  dash.draw('fuentes-tabla', (el) => {
+    const d = dash.data('fuentes');
+    el.replaceChildren();
+    if (d.status !== 'ok') { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
+    for (const r of d.data) {
+      const fila = el_('div', 'ipx-fuente');
+      const izq = el_('span', 'ipx-fuente-nom'); izq.append(el_('b', null, r.fuente), el_('small', null, r.que_aporta));
+      const ym = r.ultimo_dato ? r.ultimo_dato.slice(0, 7) : null;
+      const cuando = !r.ultimo_dato ? '' : r.fuente === 'Calendario de tarifas' ? `cargado hasta ${nombreMes(ym)}`
+        : String(r.frecuencia).startsWith('mensual') ? `dato de ${nombreMes(ym)}` : `último: ${fecha(r.ultimo_dato)}`;
+      const fe_ = el_('span', 'ipx-fuente-fecha', cuando ? `${cuando} · ${r.frecuencia}` : r.frecuencia);
+      const est = el_('span', `ipx-chip ${r.estado === 'al día' ? 'down' : 'up'}`, r.estado);
+      fila.append(izq, fe_, est); el.appendChild(fila);
+    }
+  });

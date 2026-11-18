@@ -167,3 +167,35 @@ NO_FRESCO = re.compile(
 def es_carne_fresca(descripcion: str) -> bool:
     t = normalizar(descripcion)
     return bool(VACUNO_FRESCO.search(t)) and not NO_FRESCO.search(t)
+
+
+# ---------------------------------------------------------------- rubros no alimentarios presentes en SEPA
+# Se clasifican aparte (la lista de exclusiones de alimentos los descarta a propósito).
+NO_ALIMENTOS = [
+    ("06.1", re.compile(r"\b(ibuprofeno|paracetamol|aspirina|diclofenac\w*|amoxicilina|omeprazol|loratadina|cetirizina|"
+                        r"dipirona|naproxeno|ketorolac|betametasona|antiacido|antigripal\w*|analgesic\w*|ibupirac|tafirol|"
+                        r"bayaspirina|actron|sertal|buscapina|uvasal|alikal|hepatalgina|refrianex|qura plus|comprimidos?|"
+                        r"capsulas|jarabe|gotas oftalm\w*|apositos?|curitas|gasas?|alcohol en gel|alcohol etilico|termometro|"
+                        r"vendas?|preservativos?|test de embarazo|suero fisiologico)\b")),
+    ("12.1", re.compile(r"\b(shampoo|champu|acondicionador|jabon de tocador|jabon liquido de manos|jabon tocador|desodorante|"
+                        r"antitranspirante|pasta dental|crema dental|cepillo dental|cepillo de dientes|enjuague bucal|hilo dental|"
+                        r"toallitas femeninas|toallas femeninas|protectores diarios|tampones|panales?|toallitas humedas|"
+                        r"papel higienico|afeitar|maquina de afeitar|espuma de afeitar|crema corporal|crema de manos|"
+                        r"crema facial|protector solar|tintura|coloracion|esmalte|algodon|hisopos|talco|colonia|perfume|"
+                        r"gel fijador|crema para peinar)\b")),
+    ("05.6", re.compile(r"\b(detergente|lavandina|limpiador|limpia vidrios|limpiavidrios|desengrasante|desinfectante|"
+                        r"suavizante|jabon en polvo|jabon liquido para ropa|jabon para ropa|quitamanchas|cera para pisos|"
+                        r"lustramuebles|insecticida|esponja|rejilla|trapo de piso|bolsas de residuos|bolsa de residuos|"
+                        r"papel de cocina|rollo de cocina|servilletas|film|papel aluminio|fosforos|lavavajillas|"
+                        r"aromatizante|pastillas para inodoro|destapacanerias|virulana|escoba|secador)\b")),
+]
+
+
+def clasificar_no_alimentos(descripcion: str) -> str | None:
+    t = normalizar(descripcion)
+    if not t:
+        return None
+    for clase, patron in NO_ALIMENTOS:
+        if patron.search(t):
+            return clase
+    return None

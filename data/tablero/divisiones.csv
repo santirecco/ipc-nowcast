@@ -1,13 +1,13 @@
-division,nombre,variacion,peso,incidencia
-01,Alimentos y bebidas no alcohólicas,1.917,28.725,0.551
-02,Bebidas alcohólicas y tabaco,1.119,2.37,0.026
-03,Prendas de vestir y calzado,1.274,6.558,0.084
-04,"Vivienda, agua, electricidad, gas y otros combustibles",2.706,10.907,0.295
-05,Equipamiento y mantenimiento del hogar,1.269,5.024,0.064
-06,Salud,1.76,9.018,0.159
-07,Transporte,1.766,11.558,0.204
-08,Comunicación,1.849,2.635,0.049
-09,Recreación y cultura,2.037,6.628,0.135
-10,Educación,1.566,2.215,0.035
-11,Restaurantes y hoteles,1.5,10.938,0.164
-12,Bienes y servicios varios,1.936,3.424,0.066
+division,nombre,variacion,peso,incidencia,cobertura
+01,Alimentos y bebidas no alcohólicas,1.917,28.725,0.551,0.723
+02,Bebidas alcohólicas y tabaco,1.253,2.37,0.03,0.466
+03,Prendas de vestir y calzado,1.274,6.558,0.084,0.0
+04,"Vivienda, agua, electricidad, gas y otros combustibles",2.651,10.907,0.289,0.37
+05,Equipamiento y mantenimiento del hogar,1.378,5.024,0.069,0.0
+06,Salud,1.694,9.018,0.153,0.392
+07,Transporte,1.766,11.558,0.204,0.555
+08,Comunicación,1.518,2.635,0.04,0.0
+09,Recreación y cultura,1.764,6.628,0.117,0.0
+10,Educación,1.915,2.215,0.042,0.0
+11,Restaurantes y hoteles,1.676,10.938,0.183,0.0
+12,Bienes y servicios varios,1.88,3.424,0.064,0.0

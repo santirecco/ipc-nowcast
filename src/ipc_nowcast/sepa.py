@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 
 from . import DATA
-from .clasificador_sepa import clasificar, es_carne_fresca
+from .clasificador_sepa import clasificar, clasificar_no_alimentos, es_carne_fresca
 
 INDICE_URL = "https://raw.githubusercontent.com/catdevnull/sepa-precios-metadata/main/index.json"
 CACHE = DATA / "cache" / "sepa"
@@ -177,16 +177,20 @@ def procesar_dia(archivo_tar: str, fecha: str) -> pd.DataFrame:
         return pd.DataFrame()
     r = pl.concat(partes).to_pandas()
     descs = r.drop_duplicates("id_producto")[["id_producto", "desc"]]
-    descs["clase"] = [clasificar(x) for x in descs.desc]
+    descs["clase"] = [clasificar(x) or clasificar_no_alimentos(x) for x in descs.desc]
+    r = r.merge(descs[["id_producto", "clase"]], on="id_producto", how="left")
     # catálogo de carne vacuna fresca (se acumula día a día; ver indices_carne_fresca)
     fres = r[r.clase.isna() | (r.clase == "01.1.2")].drop_duplicates(["id_comercio", "id_producto"])
     fres = fres[[es_carne_fresca(x) for x in fres.desc]]
     if len(fres):
+        import fcntl
         ruta_c = SALIDA / "carne_fresca_ids.csv"
-        prev = pd.read_csv(ruta_c, dtype=str) if ruta_c.exists() else pd.DataFrame(columns=["id_comercio", "id_producto", "desc"])
-        nuevo = fres[["id_comercio", "id_producto", "desc"]].astype(str)
-        pd.concat([prev, nuevo]).drop_duplicates(["id_comercio", "id_producto"]).to_csv(ruta_c, index=False)
-    r = r.merge(descs[["id_producto", "clase"]], on="id_producto")
+        SALIDA.mkdir(parents=True, exist_ok=True)
+        with open(str(ruta_c) + ".lock", "w") as lock:  # varios procesos en paralelo: uno por vez
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            prev = pd.read_csv(ruta_c, dtype=str) if ruta_c.exists() else pd.DataFrame(columns=["id_comercio", "id_producto", "desc"])
+            nuevo = fres[["id_comercio", "id_producto", "desc"]].astype(str)
+            pd.concat([prev, nuevo]).drop_duplicates(["id_comercio", "id_producto"]).to_csv(ruta_c, index=False)
     r = r[r.clase.notna()].drop(columns="desc")
     r["fecha"] = fecha
     r["id_comercio"] = r.id_comercio.astype(str)

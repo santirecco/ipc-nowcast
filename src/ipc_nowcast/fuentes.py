@@ -59,3 +59,46 @@ def actualizar_ipcba() -> pd.DataFrame:
 def leer_ipcba() -> pd.DataFrame:
     df = pd.read_csv(DATA / "raw" / "caba" / "ipcba.csv", index_col=0, parse_dates=True)
     return df
+
+
+# ------------------------------------------------------------------ REM del BCRA
+REM_PAGINA = "https://www.bcra.gob.ar/PublicacionesEstadisticas/Relevamiento_Expectativas_de_Mercado.asp"
+
+
+def actualizar_rem() -> dict:
+    """Baja la planilla del último REM y guarda la mediana de inflación mensual esperada en config/externos.yaml."""
+    import io
+    import re
+    import subprocess
+
+    import yaml
+
+    from . import CONFIG
+    ua = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+    get = lambda u: subprocess.run(["curl", "-sSL", "--retry", "3", "--max-time", "90", "-A", ua, u], capture_output=True, check=True).stdout
+    html = get(REM_PAGINA).decode("utf-8", "ignore")
+    links = sorted(set(re.findall(r'href="([^"]*relevamiento-expectativas-mercado-tablas-(\d{4})-(\d{2})\.xlsx)"', html)), key=lambda x: (x[1], x[2]))
+    if not links:
+        raise RuntimeError("no se encontró la planilla del REM")
+    url, anio, mes = links[-1]
+    url = url if url.startswith("http") else "https://www.bcra.gob.ar" + url
+    d = pd.read_excel(io.BytesIO(get(url)), sheet_name=0, header=None)
+    # primera tabla: IPC nivel general nacional, filas con "var. % mensual"
+    inicio = d.index[d.astype(str).apply(lambda r: r.str.contains("IPC nivel general", case=False)).any(axis=1)][0]
+    nuevos = {}
+    for i in range(inicio + 2, inicio + 12):
+        per, ref, med = d.iloc[i, 1], str(d.iloc[i, 2]), d.iloc[i, 3]
+        if "mensual" not in ref:
+            break
+        nuevos[pd.Timestamp(per).strftime("%Y-%m")] = round(float(med), 2)
+    ruta = CONFIG / "externos.yaml"
+    cfg = yaml.safe_load(ruta.read_text(encoding="utf-8")) or {}
+    rem = cfg.get("rem") or {}
+    meses_txt = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+    for m, v in nuevos.items():
+        rem[m] = {"valor": v, "relevamiento": f"{meses_txt[int(mes) - 1]} {anio}", "fuente": url}
+    cfg["rem"] = dict(sorted(rem.items()))
+    ruta.write_text("# Referencias externas (se muestran junto al pronóstico; no entran en el cálculo).\n"
+                    "# REM del BCRA: mediana de los analistas para la inflación mensual del IPC nacional (se actualiza solo).\n"
+                    + yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    return nuevos

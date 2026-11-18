@@ -31,8 +31,10 @@ def main():
     ].round(3).to_csv(OUT / "pronostico.csv", index=False)
 
     d = pd.read_csv(NC / "ultimo_divisiones.csv", dtype={"division": str})
+    if "cobertura" not in d:
+        d["cobertura"] = 0.0
     d.rename(columns={"variacion_%": "variacion", "peso_%": "peso", "incidencia_pp": "incidencia"})[
-        ["division", "nombre", "variacion", "peso", "incidencia"]].round(3).to_csv(OUT / "divisiones.csv", index=False)
+        ["division", "nombre", "variacion", "peso", "incidencia", "cobertura"]].round(3).to_csv(OUT / "divisiones.csv", index=False)
 
     r = pd.read_csv(NC / "ultimo_regiones.csv")
     r.rename(columns={"variacion_%": "variacion", "peso_%": "peso", "incidencia_pp": "incidencia"})[
@@ -75,7 +77,64 @@ def main():
         filas.append(m.assign(cadena="Mercado Central", fuente="Mayoristas"))
     pd.concat(filas)[["fecha", "fuente", "cadena", "productos"]].sort_values(["fecha", "fuente", "cadena"]).to_csv(
         OUT / "recoleccion.csv", index=False)
+    estado_fuentes().to_csv(OUT / "fuentes.csv", index=False)
     print("Tablero:", sorted(p.name for p in OUT.glob("*.csv")))
+
+
+def estado_fuentes() -> pd.DataFrame:
+    """Último dato de cada fuente y si está al día (para detectar a simple vista si algo dejó de actualizarse)."""
+    import yaml
+    from datetime import date
+    from ipc_nowcast import CONFIG
+    hoy = pd.Timestamp(date.today())
+    P = DATA / "precios"
+    filas = []
+
+    def agregar(nombre, que, ultimo, tolerancia_dias, frecuencia):
+        if ultimo is None or pd.isna(ultimo):
+            filas.append({"fuente": nombre, "que_aporta": que, "ultimo_dato": "", "frecuencia": frecuencia, "estado": "sin datos"})
+            return
+        u = pd.Timestamp(ultimo)
+        filas.append({"fuente": nombre, "que_aporta": que, "ultimo_dato": u.strftime("%Y-%m-%d"), "frecuencia": frecuencia,
+                      "estado": "al día" if (hoy - u).days <= tolerancia_dias else "atrasada"})
+
+    def leer(ruta, col, **kw):
+        try:
+            return pd.read_csv(ruta, **kw)[col].max()
+        except Exception:  # noqa: BLE001
+            return None
+    try:
+        ult = pd.read_parquet(DATA / "processed" / "indec_divisiones.parquet").periodo.max()
+        agregar("INDEC", "Dato oficial y pesos de la canasta", pd.Timestamp(ult) + pd.offsets.MonthEnd(0), 50, "mensual (día ~12)")
+    except Exception:  # noqa: BLE001
+        agregar("INDEC", "Dato oficial y pesos de la canasta", None, 50, "mensual")
+    try:
+        ip = pd.read_csv(DATA / "raw" / "caba" / "ipcba.csv")
+        ult = pd.to_datetime(ip.iloc[:, 0]).max() + pd.offsets.MonthEnd(0)
+    except Exception:  # noqa: BLE001
+        ult = None
+    agregar("IPC Ciudad de Buenos Aires", "Anticipo del dato nacional (víspera)", ult, 50, "mensual")
+    agregar("SEPA (Precios Claros)", "Precios de góndola de ~17 cadenas, todo el país", leer(P / "sepa" / "recoleccion.csv", "fecha"), 3, "diaria")
+    agregar("Supermercados online", "Precios del GBA con stock", leer(P / "supermercados" / "resumen.csv", "fecha"), 3, "diaria")
+    agregar("Mercado Central", "Verduras y frutas mayoristas", leer(P / "mayoristas" / "mercado_central.csv", "fecha"), 5, "diaria (días hábiles)")
+    agregar("Hacienda (Cañuelas)", "Precio del ganado: anticipa la carne", leer(P / "mayoristas" / "hacienda.csv", "hasta"), 5, "diaria")
+    agregar("Combustibles (YPF)", "Precio en surtidor", leer(P / "combustibles" / "ypf_caba_diario.csv", "fecha"), 3, "diaria")
+    agregar("Dólar mayorista (BCRA)", "Se prueba como señal; hoy no se usa", leer(P / "cambio" / "a3500.csv", "fecha"), 5, "diaria")
+    try:
+        rem = (yaml.safe_load((CONFIG / "externos.yaml").read_text(encoding="utf-8")) or {}).get("rem", {})
+        meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+        fechas = []
+        for v in rem.values():
+            p = str(v.get("relevamiento", "")).split()
+            if len(p) >= 2 and p[0] in meses and p[1].isdigit():
+                fechas.append(pd.Timestamp(int(p[1]), meses.index(p[0]) + 1, 1) + pd.offsets.MonthEnd(0))
+        agregar("REM del BCRA", "Expectativa de los analistas (relevamiento mensual)", max(fechas) if fechas else None, 45, "mensual")
+    except Exception:  # noqa: BLE001
+        agregar("REM del BCRA", "Expectativa de los analistas", None, 120, "mensual")
+    regs = sorted((CONFIG / "regulados").glob("????-??.yaml"))
+    agregar("Calendario de tarifas", "Aumentos anunciados (revisión automática los lunes)",
+            pd.Timestamp(regs[-1].stem + "-01") + pd.offsets.MonthEnd(0) if regs else None, 45, "semanal")
+    return pd.DataFrame(filas)
 
 
 if __name__ == "__main__":

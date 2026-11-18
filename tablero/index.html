@@ -52,8 +52,9 @@
       <header class="ipx-sec-head">
         <p class="ipx-eyebrow">Qué la explica</p>
         <h2 class="ipx-sec-title">Cuánto aporta cada rubro al total</h2>
-        <p class="ipx-muted">Cada barra son los puntos que suma el rubro a la inflación del mes: depende de cuánto sube y de cuánto pesa en el gasto de los hogares.</p>
+        <p class="ipx-muted">Cada barra son los puntos que suma el rubro a la inflación del mes: depende de cuánto sube y de cuánto pesa en el gasto de los hogares. Hoy el <b data-draw="cov-total" data-source="divisiones">—</b> del índice ya usa datos reales del mes.</p>
       </header>
+      <div class="ipx-legend"><span><span class="ipx-sw ipx-sw-wide" data-draw="sw-datos"></span>Con datos reales del mes (precios relevados, aumentos anunciados)</span><span><span class="ipx-sw ipx-sw-wide" data-draw="sw-hist"></span>Estimado con la historia del rubro</span></div>
       <div class="ipx-bars-head"><span>Rubro <i>(cuánto sube)</i></span><span>Aporte (pp)</span></div>
       <div class="ipx-bars" data-draw="div" data-source="divisiones"></div>
     </div>
@@ -116,6 +117,9 @@
       <p class="ipx-muted">Último día disponible de cada fuente. SEPA reúne los precios que las cadenas grandes informan por ley en todo el país.</p>
     </header>
     <div class="ipx-sources" data-draw="cadenas" data-source="rec_ultimo"></div>
+    <h3 class="ipx-sub-title">Estado de cada fuente</h3>
+    <p class="ipx-muted">Todo se actualiza solo. Si alguna fuente aparece como atrasada, es que dejó de publicar o cambió su sitio.</p>
+    <div class="ipx-fuentes" data-draw="fuentes-tabla" data-source="fuentes"></div>
   </section>
 
   <details class="ipx-card ipx-method" id="metodo">

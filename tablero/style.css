@@ -60,6 +60,10 @@
   .ipx-bar-val { grid-row: span 2; align-self: center; text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; font-weight: var(--cds-font-weight-medium); }
   .ipx-bar-track { height: 8px; border-radius: 99px; background: color-mix(in srgb, var(--color-fg) 6%, transparent); overflow: hidden; }
   .ipx-bar { height: 100%; border-radius: 99px; }
+  .ipx-cov { display: inline-block; margin-left: 8px; padding: 0 7px; border-radius: 99px; font-size: 11px; line-height: 18px; white-space: nowrap; vertical-align: 1px; }
+  .ipx-cov.si { color: var(--c0, var(--color-fg)); background: color-mix(in srgb, var(--c0, #1d4e89) 12%, transparent); }
+  .ipx-cov.no { color: var(--color-fg-muted); background: color-mix(in srgb, var(--color-fg) 6%, transparent); }
+  .ipx-sw-wide { width: 18px; height: 8px; border-radius: 4px; }
 
   /* mapa de regiones */
   .ipx-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; min-height: 300px; }
@@ -170,6 +174,14 @@
   .ipx-chains-more > summary { cursor: pointer; font-size: 12.5px; color: var(--c0, var(--color-fg)); margin-bottom: 9px; }
   .ipx-chains-more[open] { display: grid; gap: 9px; }
 
+  .ipx-sub-title { font-size: 15px; font-weight: var(--cds-font-weight-medium); margin: 24px 0 4px; }
+  .ipx-fuentes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; margin-top: 10px; }
+  @media (max-width: 760px) { .ipx-fuentes { grid-template-columns: 1fr; } }
+  .ipx-fuente { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; align-items: center; padding: 9px 2px; border-bottom: 1px solid color-mix(in srgb, var(--color-border-line) 70%, transparent); font-size: 13px; }
+  .ipx-fuente-nom { display: flex; flex-direction: column; gap: 1px; }
+  .ipx-fuente-nom b { font-weight: var(--cds-font-weight-medium); }
+  .ipx-fuente-nom small, .ipx-fuente-fecha { color: var(--color-fg-muted); font-size: 12px; }
+  .ipx-fuente-fecha { white-space: nowrap; }
   .ipx-method summary { cursor: pointer; font-weight: var(--cds-font-weight-medium); font-size: 15px; }
   .ipx-method ul { margin: 14px 0 0; padding-left: 18px; display: flex; flex-direction: column; gap: 9px; font-size: 14px; line-height: 1.55; }
   .ipx-foot { font-size: 12px; color: var(--color-fg-muted); text-align: center; padding: 4px 0 12px; }

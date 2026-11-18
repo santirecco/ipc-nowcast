@@ -21,7 +21,8 @@ from . import CONFIG, DATA, REGIONES, indicadores, mayoristas, sepa
 from .modelo import proyeccion_componente
 
 CLASES = ["01.1.1", "01.1.2", "01.1.4", "01.1.5", "01.1.6", "01.1.7", "01.1.8", "01.2.1", "01.2.2",
-          "07.2.2", "07.1", "03.1", "05"]
+          "07.2.2", "07.1", "03.1", "05",
+          "02.1", "05.6", "06.1", "12.1", "09.5", "11.1"]
 # Combinaciones de fuentes que se prueban en cada clase (se usa la mejor que mejore fuera de muestra)
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"]],
@@ -37,13 +38,29 @@ OPCIONES = {
     "07.1": [["fx"]],
     "03.1": [["fx"]],
     "05": [["fx"]],
+    # Rubros sin relevamiento propio guiados por la inflación general reciente. Se probaron alquileres, tabaco,
+    # telefonía, educación, medicamentos, limpieza, cuidado personal y calzado: mejoran el error del rubro pero no
+    # el del índice nacional, así que quedan afuera. Restaurantes y papelería sí mejoran el nacional.
+    "11.1": [["ipc"]],
+    "09.5": [["ipc"]],
+    # Rubros no alimentarios que SEPA también releva (limpieza, cuidado personal, medicamentos, bebidas alcohólicas)
+    "02.1": [["sepa"]],
+    "05.6": [["sepa"]],
+    "06.1": [["sepa"]],
+    "12.1": [["sepa"]],
 }
+ESTADISTICAS = {"ipc"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
            "01.1.8": "Azúcar, dulces y golosinas", "01.2.1": "Café, té, yerba y cacao",
            "01.2.2": "Aguas, gaseosas y jugos", "07.2.2": "Combustibles", "07.1": "Compra de vehículos",
-           "03.1": "Ropa", "09.1": "Equipos audiovisuales y de computación", "05": "Equipamiento del hogar"}
-ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista"}
+           "03.1": "Ropa", "09.1": "Equipos audiovisuales y de computación", "05": "Equipamiento del hogar",
+           "02.1": "Bebidas alcohólicas", "02.2": "Tabaco", "03.2": "Calzado", "04.1.1": "Alquiler de la vivienda",
+           "05.6": "Limpieza y mantenimiento del hogar", "06.1": "Medicamentos", "08.3": "Telefonía e internet",
+           "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
+           "10": "Educación"}
+ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
+            "ipc": "inflación reciente"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "completo"]
 CON_TENDENCIA = {"01.1.2"}
@@ -86,7 +103,11 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     idx = idx[idx.corte.astype(str) == corte] if not idx.empty else idx
     may = _mayorista(corte)
     otros = _otros(corte)
-    meses = sorted(set(idx.mes if not idx.empty else []) | set(may.index) | set(otros.dropna(how="all").index))
+    ipc = nc.V["Nacional"]["00"]
+    ipc_l1 = ipc.shift(1, freq="MS")
+    ipc_p3 = ipc.rolling(3).mean().shift(1, freq="MS")
+    meses = sorted(set(idx.mes if not idx.empty else []) | set(may.index) | set(otros.dropna(how="all").index)
+                   | {m for m in ipc_l1.index if m >= pd.Timestamp("2018-01-01")})
     filas = []
     for mes in meses:
         for r in REGIONES:
@@ -110,7 +131,8 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 o = otros.loc[mes] if mes in otros.index else None
                 ox = lambda k: float(o[k]) if o is not None and pd.notna(o[k]) else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
-                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1")})
+                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
+                              "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan))})
     t = pd.DataFrame(filas)
     if t.empty:
         return t
@@ -151,6 +173,10 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
     if "fx" in fuentes:
         cols.append(t["fx"].astype(float))
         cols.append(t["fx_l1"].astype(float))
+    if "ipc" in fuentes:
+        p = t.proy.astype(float)
+        cols.append(t["ipc_l1"].astype(float) - p)
+        cols.append(t["ipc_p3"].astype(float) - p)
     return np.column_stack(cols) if cols else np.zeros((len(t), 0))
 
 
@@ -182,6 +208,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["nafta_l1"].notna() & (t["nafta"].notna() | (t.corte == "15"))
     if "fx" in fuentes:
         ok &= t["fx"].notna() & t["fx_l1"].notna()
+    if "ipc" in fuentes:
+        ok &= t["ipc_l1"].notna() & t["ipc_p3"].notna()
     return ok
 
 
@@ -270,8 +298,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
     actual = sepa.SALIDA / "indices_diarios.csv"
     # momento: si el mes ya terminó, mes completo; si no, mitad de mes (o completo desde el día 21)
     corte = "completo" if (hoy >= mes + pd.offsets.MonthEnd(0) or hoy.day >= 21) else "15"
-    if hoy < mes + pd.Timedelta(days=4):
-        return []  # muy pocos días: la información todavía no alcanza
+    temprano = hoy < mes + pd.Timedelta(days=4)  # muy pocos días: solo las mejoras estadísticas
     t = tabla(nc, corte)
     if t.empty:
         return []
@@ -295,8 +322,9 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         if isinstance(opciones, dict):
             opciones = [opciones]
         for _, f in t[t.clase == clase].iterrows():
-            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1"]})
-            cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]), None)
+            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3"]})
+            cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
+                        and (not temprano or set(o["fuentes"]) <= ESTADISTICAS)), None)
             if cfg is None:
                 continue
             fuentes, b = cfg["fuentes"], np.array(cfg["coef"])
@@ -313,18 +341,24 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
                 det.append(f"surtidor YPF {pc(f['nafta_l1'])} el mes anterior" + ("" if corte == "15" or pd.isna(f["nafta"]) else f" y {pc(f['nafta'])} este mes"))
             if "fx" in fuentes:
                 det.append(f"dólar mayorista {pc(f['fx'])} este mes y {pc(f['fx_l1'])} el anterior")
+            if "ipc" in fuentes:
+                det.append(f"inflación general {pc(f['ipc_l1'])} el mes pasado y {pc(f['ipc_p3'])} promedio de 3 meses")
             nombre_f = " + ".join(ETIQUETA[x] if x != "may" else f"mayorista: {MAYORISTA[clase]}" for x in fuentes)
             info.append({"region": f.region, "componente": clase,
                          "fuente": nombre_f[:1].upper() + nombre_f[1:],
+                         "estadistica": set(fuentes) <= ESTADISTICAS,
                          "valor": pred, "parte": 1.0, "detalle": ("; ".join(det))[:1].upper() + ("; ".join(det))[1:]})
     return info
 
 
-def informacion_historica(mes: pd.Timestamp, corte: str) -> list[dict]:
+def informacion_historica(mes: pd.Timestamp, corte: str, solo_estadistica: bool = False) -> list[dict]:
     """Ítems con las predicciones fuera de muestra guardadas (para el backtest del modelo completo)."""
     if not RUTA_BT.exists():
         return []
     bt = pd.read_csv(RUTA_BT, dtype={"clase": str, "corte": str}, parse_dates=["mes"])
     bt = bt[(bt.mes == mes) & (bt.corte == corte)]
+    est = bt.fuentes.apply(lambda x: set(str(x).split("+")) <= ESTADISTICAS)
+    if solo_estadistica:
+        bt = bt[est]
     return [{"region": f.region, "componente": f.clase, "fuente": f.fuentes, "valor": float(f.pred), "parte": 1.0,
-             "detalle": "backtest"} for _, f in bt.iterrows()]
+             "estadistica": bool(e), "detalle": "backtest"} for (_, f), e in zip(bt.iterrows(), est.loc[bt.index])]

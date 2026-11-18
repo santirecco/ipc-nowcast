@@ -231,7 +231,8 @@ def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
     for mes in real.index[real.index >= pd.Timestamp(desde)]:
         e15 = adelantados.informacion_historica(mes, "15")
         ec = adelantados.informacion_historica(mes, "completo")
-        r0 = nc.calcular(mes, usar_regulados=False, usar_caba=False)
+        e0 = adelantados.informacion_historica(mes, "15", solo_estadistica=True)
+        r0 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e0)
         r15 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e15)
         rc = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=ec)
         r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec)
