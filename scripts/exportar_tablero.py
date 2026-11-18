@@ -11,7 +11,10 @@ from ipc_nowcast import DATA  # noqa: E402
 NC = DATA / "nowcast"
 OUT = DATA / "tablero"
 COMPONENTES = {"04.5": "Electricidad, gas y otros combustibles", "06.4.1": "Prepagas", "07.3": "Transporte público",
-               "07.2.2": "Combustibles", "02.2": "Tabaco", "08.3": "Telefonía e internet"}
+               "07.2.2": "Combustibles", "02.2": "Tabaco", "08.3": "Telefonía e internet", "10": "Educación",
+               "01.1.1": "Pan y cereales", "01.1.2": "Carnes", "01.1.4": "Lácteos y huevos", "01.1.5": "Aceites y grasas",
+               "01.1.6": "Frutas", "01.1.7": "Verduras", "01.1.8": "Azúcar, dulces y golosinas",
+               "01.2.1": "Café, té y yerba", "01.2.2": "Aguas, gaseosas y jugos", "01.1.resto": "Otros alimentos"}
 
 
 def main():
@@ -44,8 +47,19 @@ def main():
     b["mes"] = b.mes.dt.strftime("%Y-%m")
     b.rename(columns={"real": "indec", "caba": "ipc_caba", "vispera_con_caba": "vispera"}).round(3).to_csv(OUT / "backtest.csv", index=False)
 
-    s = pd.read_csv(DATA / "precios" / "supermercados" / "resumen.csv")
-    s[["fecha", "cadena", "productos"]].to_csv(OUT / "recoleccion.csv", index=False)
+    s = pd.read_csv(DATA / "precios" / "supermercados" / "resumen.csv")[["fecha", "cadena", "productos"]]
+    s["fuente"] = "Supermercados online"
+    filas = [s]
+    sd = DATA / "precios" / "sepa" / "recoleccion.csv"
+    if sd.exists():
+        filas.append(pd.read_csv(sd).assign(fuente="SEPA (todo el país)"))
+    mc = DATA / "precios" / "mayoristas" / "mercado_central.csv"
+    if mc.exists():
+        m = pd.read_csv(mc)
+        m = m[m.fecha >= s.fecha.min()].groupby("fecha").size().rename("productos").reset_index()
+        filas.append(m.assign(cadena="Mercado Central", fuente="Mayoristas"))
+    pd.concat(filas)[["fecha", "fuente", "cadena", "productos"]].sort_values(["fecha", "fuente", "cadena"]).to_csv(
+        OUT / "recoleccion.csv", index=False)
     print("Tablero:", sorted(p.name for p in OUT.glob("*.csv")))
 
 

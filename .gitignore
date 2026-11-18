@@ -7,3 +7,4 @@ __pycache__/
 # descargas grandes y temporales (p. ej. zips diarios de SEPA)
 data/tmp/
 *.zip
+data/cache/

@@ -1,6 +1,953 @@
-fecha,cadena,productos
-2026-11-18,carrefour,17725
-2026-11-18,jumbo,16832
-2026-11-18,disco,11060
-2026-11-18,vea,8994
-2026-11-18,dia,4856
+fecha,fuente,cadena,productos
+2026-09-12,SEPA (todo el país),Axion,239
+2026-09-12,SEPA (todo el país),California,1540
+2026-09-12,SEPA (todo el país),Carrefour,50474
+2026-09-12,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32752
+2026-09-12,SEPA (todo el país),ChangoMás,37446
+2026-09-12,SEPA (todo el país),Comodín,330
+2026-09-12,SEPA (todo el país),Cooperativa Obrera,11508
+2026-09-12,SEPA (todo el país),Coto,30533
+2026-09-12,SEPA (todo el país),Deheza,370
+2026-09-12,SEPA (todo el país),Día,13125
+2026-09-12,SEPA (todo el país),Estación Lima,185
+2026-09-12,SEPA (todo el país),La Agrícola Regional,2066
+2026-09-12,SEPA (todo el país),La Anónima,23912
+2026-09-12,SEPA (todo el país),Toledo,3256
+2026-09-12,SEPA (todo el país),Unicoop,3338
+2026-09-13,SEPA (todo el país),Axion,239
+2026-09-13,SEPA (todo el país),California,1540
+2026-09-13,SEPA (todo el país),Carrefour,50519
+2026-09-13,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32746
+2026-09-13,SEPA (todo el país),ChangoMás,37602
+2026-09-13,SEPA (todo el país),Comodín,330
+2026-09-13,SEPA (todo el país),Cooperativa Obrera,11366
+2026-09-13,SEPA (todo el país),Coto,30482
+2026-09-13,SEPA (todo el país),Deheza,370
+2026-09-13,SEPA (todo el país),Día,13123
+2026-09-13,SEPA (todo el país),Estación Lima,185
+2026-09-13,SEPA (todo el país),La Anónima,23925
+2026-09-13,SEPA (todo el país),Toledo,3256
+2026-09-13,SEPA (todo el país),Unicoop,3338
+2026-09-14,SEPA (todo el país),Axion,239
+2026-09-14,SEPA (todo el país),California,1540
+2026-09-14,SEPA (todo el país),Carrefour,50478
+2026-09-14,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32751
+2026-09-14,SEPA (todo el país),ChangoMás,37602
+2026-09-14,SEPA (todo el país),Comodín,330
+2026-09-14,SEPA (todo el país),Cooperativa Obrera,11498
+2026-09-14,SEPA (todo el país),Coto,30436
+2026-09-14,SEPA (todo el país),Deheza,370
+2026-09-14,SEPA (todo el país),Día,13135
+2026-09-14,SEPA (todo el país),Estación Lima,185
+2026-09-14,SEPA (todo el país),La Anónima,23923
+2026-09-14,SEPA (todo el país),Toledo,3250
+2026-09-14,SEPA (todo el país),Unicoop,3338
+2026-09-15,SEPA (todo el país),Axion,239
+2026-09-15,SEPA (todo el país),California,1540
+2026-09-15,SEPA (todo el país),Carrefour,50447
+2026-09-15,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32747
+2026-09-15,SEPA (todo el país),ChangoMás,36912
+2026-09-15,SEPA (todo el país),Comodín,330
+2026-09-15,SEPA (todo el país),Cooperativa Obrera,11505
+2026-09-15,SEPA (todo el país),Coto,30363
+2026-09-15,SEPA (todo el país),Deheza,370
+2026-09-15,SEPA (todo el país),Día,11871
+2026-09-15,SEPA (todo el país),Estación Lima,185
+2026-09-15,SEPA (todo el país),Farmacity,1522
+2026-09-15,SEPA (todo el país),La Agrícola Regional,2072
+2026-09-15,SEPA (todo el país),La Anónima,23949
+2026-09-15,SEPA (todo el país),Toledo,3244
+2026-09-15,SEPA (todo el país),Unicoop,3338
+2026-09-16,SEPA (todo el país),Axion,239
+2026-09-16,SEPA (todo el país),California,1540
+2026-09-16,SEPA (todo el país),Carrefour,50504
+2026-09-16,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32709
+2026-09-16,SEPA (todo el país),ChangoMás,36912
+2026-09-16,SEPA (todo el país),Comodín,330
+2026-09-16,SEPA (todo el país),Cooperativa Obrera,11491
+2026-09-16,SEPA (todo el país),Coto,30370
+2026-09-16,SEPA (todo el país),Deheza,370
+2026-09-16,SEPA (todo el país),Día,13160
+2026-09-16,SEPA (todo el país),Estación Lima,185
+2026-09-16,SEPA (todo el país),Farmacity,1520
+2026-09-16,SEPA (todo el país),La Agrícola Regional,2072
+2026-09-16,SEPA (todo el país),La Anónima,23992
+2026-09-16,SEPA (todo el país),Toledo,3236
+2026-09-16,SEPA (todo el país),Unicoop,3338
+2026-09-17,SEPA (todo el país),Axion,239
+2026-09-17,SEPA (todo el país),California,1536
+2026-09-17,SEPA (todo el país),Carrefour,50630
+2026-09-17,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32699
+2026-09-17,SEPA (todo el país),ChangoMás,35100
+2026-09-17,SEPA (todo el país),Comodín,330
+2026-09-17,SEPA (todo el país),Cooperativa Obrera,11461
+2026-09-17,SEPA (todo el país),Coto,30682
+2026-09-17,SEPA (todo el país),Deheza,370
+2026-09-17,SEPA (todo el país),Día,13180
+2026-09-17,SEPA (todo el país),Estación Lima,185
+2026-09-17,SEPA (todo el país),La Agrícola Regional,2068
+2026-09-17,SEPA (todo el país),La Anónima,24004
+2026-09-17,SEPA (todo el país),Toledo,3233
+2026-09-17,SEPA (todo el país),Unicoop,3338
+2026-09-18,SEPA (todo el país),Axion,239
+2026-09-18,SEPA (todo el país),California,1536
+2026-09-18,SEPA (todo el país),Carrefour,50713
+2026-09-18,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32681
+2026-09-18,SEPA (todo el país),ChangoMás,35094
+2026-09-18,SEPA (todo el país),Comodín,330
+2026-09-18,SEPA (todo el país),Cooperativa Obrera,11464
+2026-09-18,SEPA (todo el país),Coto,30722
+2026-09-18,SEPA (todo el país),Deheza,370
+2026-09-18,SEPA (todo el país),Día,13185
+2026-09-18,SEPA (todo el país),Estación Lima,185
+2026-09-18,SEPA (todo el país),Farmacity,1522
+2026-09-18,SEPA (todo el país),La Agrícola Regional,2071
+2026-09-18,SEPA (todo el país),La Anónima,24011
+2026-09-18,SEPA (todo el país),Mariano Max,1195
+2026-09-18,SEPA (todo el país),Toledo,3233
+2026-09-18,SEPA (todo el país),Unicoop,3338
+2026-09-19,SEPA (todo el país),Axion,239
+2026-09-19,SEPA (todo el país),California,1536
+2026-09-19,SEPA (todo el país),Carrefour,50488
+2026-09-19,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32699
+2026-09-19,SEPA (todo el país),ChangoMás,35106
+2026-09-19,SEPA (todo el país),Comodín,330
+2026-09-19,SEPA (todo el país),Cooperativa Obrera,11455
+2026-09-19,SEPA (todo el país),Coto,30633
+2026-09-19,SEPA (todo el país),Deheza,370
+2026-09-19,SEPA (todo el país),Día,13200
+2026-09-19,SEPA (todo el país),Estación Lima,185
+2026-09-19,SEPA (todo el país),La Agrícola Regional,2069
+2026-09-19,SEPA (todo el país),La Anónima,24023
+2026-09-19,SEPA (todo el país),Mariano Max,1199
+2026-09-19,SEPA (todo el país),Toledo,3230
+2026-09-19,SEPA (todo el país),Unicoop,3338
+2026-09-20,SEPA (todo el país),Axion,239
+2026-09-20,SEPA (todo el país),California,1536
+2026-09-20,SEPA (todo el país),Carrefour,50492
+2026-09-20,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32702
+2026-09-20,SEPA (todo el país),ChangoMás,35094
+2026-09-20,SEPA (todo el país),Comodín,330
+2026-09-20,SEPA (todo el país),Cooperativa Obrera,11322
+2026-09-20,SEPA (todo el país),Coto,30613
+2026-09-20,SEPA (todo el país),Deheza,370
+2026-09-20,SEPA (todo el país),Día,13220
+2026-09-20,SEPA (todo el país),Estación Lima,185
+2026-09-20,SEPA (todo el país),La Anónima,24049
+2026-09-20,SEPA (todo el país),Mariano Max,1200
+2026-09-20,SEPA (todo el país),Toledo,3230
+2026-09-20,SEPA (todo el país),Unicoop,3338
+2026-09-21,SEPA (todo el país),Axion,239
+2026-09-21,SEPA (todo el país),California,1536
+2026-09-21,SEPA (todo el país),Carrefour,50462
+2026-09-21,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32710
+2026-09-21,SEPA (todo el país),ChangoMás,35106
+2026-09-21,SEPA (todo el país),Comodín,330
+2026-09-21,SEPA (todo el país),Cooperativa Obrera,11430
+2026-09-21,SEPA (todo el país),Coto,30628
+2026-09-21,SEPA (todo el país),Deheza,370
+2026-09-21,SEPA (todo el país),Día,13200
+2026-09-21,SEPA (todo el país),Estación Lima,185
+2026-09-21,SEPA (todo el país),La Anónima,24053
+2026-09-21,SEPA (todo el país),Mariano Max,1200
+2026-09-21,SEPA (todo el país),Toledo,3218
+2026-09-21,SEPA (todo el país),Unicoop,3338
+2026-09-22,SEPA (todo el país),Axion,239
+2026-09-22,SEPA (todo el país),California,1526
+2026-09-22,SEPA (todo el país),Carrefour,50447
+2026-09-22,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32693
+2026-09-22,SEPA (todo el país),ChangoMás,35088
+2026-09-22,SEPA (todo el país),Comodín,330
+2026-09-22,SEPA (todo el país),Cooperativa Obrera,11458
+2026-09-22,SEPA (todo el país),Coto,30570
+2026-09-22,SEPA (todo el país),Deheza,370
+2026-09-22,SEPA (todo el país),Día,11812
+2026-09-22,SEPA (todo el país),Estación Lima,185
+2026-09-22,SEPA (todo el país),Farmacity,1521
+2026-09-22,SEPA (todo el país),La Agrícola Regional,2063
+2026-09-22,SEPA (todo el país),La Anónima,24012
+2026-09-22,SEPA (todo el país),Mariano Max,1200
+2026-09-22,SEPA (todo el país),Toledo,3208
+2026-09-22,SEPA (todo el país),Unicoop,3338
+2026-10-01,SEPA (todo el país),Axion,243
+2026-10-01,SEPA (todo el país),California,1526
+2026-10-01,SEPA (todo el país),Carrefour,50217
+2026-10-01,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32570
+2026-10-01,SEPA (todo el país),ChangoMás,35064
+2026-10-01,SEPA (todo el país),Comodín,330
+2026-10-01,SEPA (todo el país),Cooperativa Obrera,11470
+2026-10-01,SEPA (todo el país),Coto,30992
+2026-10-01,SEPA (todo el país),Deheza,364
+2026-10-01,SEPA (todo el país),Día,12792
+2026-10-01,SEPA (todo el país),Estación Lima,182
+2026-10-01,SEPA (todo el país),La Agrícola Regional,2061
+2026-10-01,SEPA (todo el país),La Anónima,24258
+2026-10-01,SEPA (todo el país),Mariano Max,1195
+2026-10-01,SEPA (todo el país),Toledo,3181
+2026-10-01,SEPA (todo el país),Unicoop,3338
+2026-10-02,SEPA (todo el país),Axion,243
+2026-10-02,SEPA (todo el país),California,1526
+2026-10-02,SEPA (todo el país),Carrefour,50324
+2026-10-02,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32495
+2026-10-02,SEPA (todo el país),ChangoMás,35088
+2026-10-02,SEPA (todo el país),Comodín,330
+2026-10-02,SEPA (todo el país),Cooperativa Obrera,11477
+2026-10-02,SEPA (todo el país),Coto,30895
+2026-10-02,SEPA (todo el país),Día,13380
+2026-10-02,SEPA (todo el país),La Agrícola Regional,2054
+2026-10-02,SEPA (todo el país),La Anónima,24300
+2026-10-02,SEPA (todo el país),Mariano Max,1193
+2026-10-02,SEPA (todo el país),Toledo,3170
+2026-10-02,SEPA (todo el país),Unicoop,3338
+2026-10-03,SEPA (todo el país),Axion,243
+2026-10-03,SEPA (todo el país),California,1526
+2026-10-03,SEPA (todo el país),Carrefour,50456
+2026-10-03,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32511
+2026-10-03,SEPA (todo el país),ChangoMás,35088
+2026-10-03,SEPA (todo el país),Comodín,330
+2026-10-03,SEPA (todo el país),Cooperativa Obrera,11468
+2026-10-03,SEPA (todo el país),Coto,30932
+2026-10-03,SEPA (todo el país),Deheza,364
+2026-10-03,SEPA (todo el país),Día,13420
+2026-10-03,SEPA (todo el país),Estación Lima,182
+2026-10-03,SEPA (todo el país),La Agrícola Regional,2061
+2026-10-03,SEPA (todo el país),La Anónima,24333
+2026-10-03,SEPA (todo el país),Mariano Max,1194
+2026-10-03,SEPA (todo el país),Toledo,3154
+2026-10-03,SEPA (todo el país),Unicoop,3338
+2026-10-04,SEPA (todo el país),Axion,243
+2026-10-04,SEPA (todo el país),California,1526
+2026-10-04,SEPA (todo el país),Carrefour,50468
+2026-10-04,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32486
+2026-10-04,SEPA (todo el país),ChangoMás,35178
+2026-10-04,SEPA (todo el país),Comodín,330
+2026-10-04,SEPA (todo el país),Cooperativa Obrera,11336
+2026-10-04,SEPA (todo el país),Coto,30962
+2026-10-04,SEPA (todo el país),Deheza,364
+2026-10-04,SEPA (todo el país),Día,13450
+2026-10-04,SEPA (todo el país),Estación Lima,182
+2026-10-04,SEPA (todo el país),La Anónima,24359
+2026-10-04,SEPA (todo el país),Mariano Max,1192
+2026-10-04,SEPA (todo el país),Toledo,3154
+2026-10-04,SEPA (todo el país),Unicoop,3338
+2026-10-05,SEPA (todo el país),Axion,243
+2026-10-05,SEPA (todo el país),California,1526
+2026-10-05,SEPA (todo el país),Carrefour,50419
+2026-10-05,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32491
+2026-10-05,SEPA (todo el país),ChangoMás,35208
+2026-10-05,SEPA (todo el país),Comodín,330
+2026-10-05,SEPA (todo el país),Cooperativa Obrera,11462
+2026-10-05,SEPA (todo el país),Coto,30915
+2026-10-05,SEPA (todo el país),Deheza,364
+2026-10-05,SEPA (todo el país),Día,13410
+2026-10-05,SEPA (todo el país),Estación Lima,182
+2026-10-05,SEPA (todo el país),La Anónima,24347
+2026-10-05,SEPA (todo el país),Mariano Max,1192
+2026-10-05,SEPA (todo el país),Toledo,3146
+2026-10-05,SEPA (todo el país),Unicoop,3338
+2026-10-06,SEPA (todo el país),Axion,243
+2026-10-06,SEPA (todo el país),California,1525
+2026-10-06,SEPA (todo el país),Carrefour,50441
+2026-10-06,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32468
+2026-10-06,SEPA (todo el país),ChangoMás,35196
+2026-10-06,SEPA (todo el país),Comodín,330
+2026-10-06,SEPA (todo el país),Cooperativa Obrera,11459
+2026-10-06,SEPA (todo el país),Coto,30892
+2026-10-06,SEPA (todo el país),Deheza,364
+2026-10-06,SEPA (todo el país),Día,12102
+2026-10-06,SEPA (todo el país),Estación Lima,182
+2026-10-06,SEPA (todo el país),Farmacity,1531
+2026-10-06,SEPA (todo el país),La Agrícola Regional,2072
+2026-10-06,SEPA (todo el país),La Anónima,24358
+2026-10-06,SEPA (todo el país),Mariano Max,1193
+2026-10-06,SEPA (todo el país),Toledo,3146
+2026-10-06,SEPA (todo el país),Unicoop,3338
+2026-10-07,SEPA (todo el país),Axion,243
+2026-10-07,SEPA (todo el país),California,1525
+2026-10-07,SEPA (todo el país),Carrefour,50494
+2026-10-07,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32442
+2026-10-07,SEPA (todo el país),ChangoMás,35196
+2026-10-07,SEPA (todo el país),Comodín,330
+2026-10-07,SEPA (todo el país),Cooperativa Obrera,11498
+2026-10-07,SEPA (todo el país),Coto,30910
+2026-10-07,SEPA (todo el país),Deheza,364
+2026-10-07,SEPA (todo el país),Día,13435
+2026-10-07,SEPA (todo el país),Estación Lima,182
+2026-10-07,SEPA (todo el país),La Agrícola Regional,2079
+2026-10-07,SEPA (todo el país),La Anónima,24302
+2026-10-07,SEPA (todo el país),Mariano Max,1192
+2026-10-07,SEPA (todo el país),Toledo,3134
+2026-10-07,SEPA (todo el país),Unicoop,3338
+2026-10-08,SEPA (todo el país),Axion,244
+2026-10-08,SEPA (todo el país),California,1525
+2026-10-08,SEPA (todo el país),Carrefour,50383
+2026-10-08,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32434
+2026-10-08,SEPA (todo el país),ChangoMás,35190
+2026-10-08,SEPA (todo el país),Comodín,330
+2026-10-08,SEPA (todo el país),Cooperativa Obrera,11488
+2026-10-08,SEPA (todo el país),Coto,31011
+2026-10-08,SEPA (todo el país),Deheza,364
+2026-10-08,SEPA (todo el país),Día,13450
+2026-10-08,SEPA (todo el país),Estación Lima,182
+2026-10-08,SEPA (todo el país),La Anónima,24318
+2026-10-08,SEPA (todo el país),Mariano Max,1193
+2026-10-08,SEPA (todo el país),Toledo,3133
+2026-10-08,SEPA (todo el país),Unicoop,3338
+2026-10-09,SEPA (todo el país),Axion,244
+2026-10-09,SEPA (todo el país),California,1525
+2026-10-09,SEPA (todo el país),Carrefour,50497
+2026-10-09,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32461
+2026-10-09,SEPA (todo el país),ChangoMás,35202
+2026-10-09,SEPA (todo el país),Comodín,330
+2026-10-09,SEPA (todo el país),Cooperativa Obrera,11495
+2026-10-09,SEPA (todo el país),Coto,30990
+2026-10-09,SEPA (todo el país),Deheza,364
+2026-10-09,SEPA (todo el país),Día,13455
+2026-10-09,SEPA (todo el país),Estación Lima,182
+2026-10-09,SEPA (todo el país),La Agrícola Regional,2081
+2026-10-09,SEPA (todo el país),La Anónima,24327
+2026-10-09,SEPA (todo el país),Mariano Max,1192
+2026-10-09,SEPA (todo el país),Toledo,3125
+2026-10-09,SEPA (todo el país),Unicoop,3338
+2026-10-10,SEPA (todo el país),Axion,244
+2026-10-10,SEPA (todo el país),California,1525
+2026-10-10,SEPA (todo el país),Carrefour,50682
+2026-10-10,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32476
+2026-10-10,SEPA (todo el país),ChangoMás,35202
+2026-10-10,SEPA (todo el país),Comodín,330
+2026-10-10,SEPA (todo el país),Cooperativa Obrera,11499
+2026-10-10,SEPA (todo el país),Coto,30875
+2026-10-10,SEPA (todo el país),Deheza,364
+2026-10-10,SEPA (todo el país),Día,13480
+2026-10-10,SEPA (todo el país),Estación Lima,182
+2026-10-10,SEPA (todo el país),La Agrícola Regional,2082
+2026-10-10,SEPA (todo el país),La Anónima,24362
+2026-10-10,SEPA (todo el país),Mariano Max,1192
+2026-10-10,SEPA (todo el país),Toledo,3123
+2026-10-10,SEPA (todo el país),Unicoop,3338
+2026-10-11,SEPA (todo el país),Axion,244
+2026-10-11,SEPA (todo el país),California,1525
+2026-10-11,SEPA (todo el país),Carrefour,50794
+2026-10-11,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32469
+2026-10-11,SEPA (todo el país),ChangoMás,35298
+2026-10-11,SEPA (todo el país),Comodín,330
+2026-10-11,SEPA (todo el país),Cooperativa Obrera,11356
+2026-10-11,SEPA (todo el país),Coto,30900
+2026-10-11,SEPA (todo el país),Deheza,364
+2026-10-11,SEPA (todo el país),Día,13500
+2026-10-11,SEPA (todo el país),Estación Lima,182
+2026-10-11,SEPA (todo el país),La Anónima,24360
+2026-10-11,SEPA (todo el país),Mariano Max,1192
+2026-10-11,SEPA (todo el país),Toledo,3123
+2026-10-11,SEPA (todo el país),Unicoop,3338
+2026-10-12,SEPA (todo el país),Axion,244
+2026-10-12,SEPA (todo el país),California,1525
+2026-10-12,SEPA (todo el país),Carrefour,50754
+2026-10-12,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32462
+2026-10-12,SEPA (todo el país),ChangoMás,35400
+2026-10-12,SEPA (todo el país),Comodín,330
+2026-10-12,SEPA (todo el país),Cooperativa Obrera,11478
+2026-10-12,SEPA (todo el país),Coto,30795
+2026-10-12,SEPA (todo el país),Deheza,364
+2026-10-12,SEPA (todo el país),Día,13500
+2026-10-12,SEPA (todo el país),Estación Lima,182
+2026-10-12,SEPA (todo el país),La Anónima,24280
+2026-10-12,SEPA (todo el país),Mariano Max,1192
+2026-10-12,SEPA (todo el país),Toledo,3107
+2026-10-12,SEPA (todo el país),Unicoop,3338
+2026-10-13,SEPA (todo el país),Axion,244
+2026-10-13,SEPA (todo el país),California,1525
+2026-10-13,SEPA (todo el país),Carrefour,50731
+2026-10-13,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32453
+2026-10-13,SEPA (todo el país),ChangoMás,35466
+2026-10-13,SEPA (todo el país),Comodín,330
+2026-10-13,SEPA (todo el país),Cooperativa Obrera,11467
+2026-10-13,SEPA (todo el país),Coto,30718
+2026-10-13,SEPA (todo el país),Deheza,364
+2026-10-13,SEPA (todo el país),Día,12142
+2026-10-13,SEPA (todo el país),Estación Lima,182
+2026-10-13,SEPA (todo el país),La Anónima,24182
+2026-10-13,SEPA (todo el país),Mariano Max,1192
+2026-10-13,SEPA (todo el país),Toledo,3103
+2026-10-13,SEPA (todo el país),Unicoop,3338
+2026-10-14,SEPA (todo el país),Axion,244
+2026-10-14,SEPA (todo el país),California,1525
+2026-10-14,SEPA (todo el país),Carrefour,50675
+2026-10-14,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32454
+2026-10-14,SEPA (todo el país),ChangoMás,35304
+2026-10-14,SEPA (todo el país),Comodín,330
+2026-10-14,SEPA (todo el país),Cooperativa Obrera,11499
+2026-10-14,SEPA (todo el país),Coto,30821
+2026-10-14,SEPA (todo el país),Deheza,364
+2026-10-14,SEPA (todo el país),Día,13445
+2026-10-14,SEPA (todo el país),Estación Lima,182
+2026-10-14,SEPA (todo el país),Farmacity,1527
+2026-10-14,SEPA (todo el país),La Agrícola Regional,2087
+2026-10-14,SEPA (todo el país),La Anónima,24172
+2026-10-14,SEPA (todo el país),Mariano Max,1192
+2026-10-14,SEPA (todo el país),Toledo,3090
+2026-10-14,SEPA (todo el país),Unicoop,3338
+2026-10-15,SEPA (todo el país),Axion,244
+2026-10-15,SEPA (todo el país),California,1525
+2026-10-15,SEPA (todo el país),Carrefour,50517
+2026-10-15,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32431
+2026-10-15,SEPA (todo el país),ChangoMás,35280
+2026-10-15,SEPA (todo el país),Comodín,330
+2026-10-15,SEPA (todo el país),Cooperativa Obrera,11504
+2026-10-15,SEPA (todo el país),Coto,30988
+2026-10-15,SEPA (todo el país),Deheza,364
+2026-10-15,SEPA (todo el país),Día,13300
+2026-10-15,SEPA (todo el país),Estación Lima,182
+2026-10-15,SEPA (todo el país),La Agrícola Regional,2095
+2026-10-15,SEPA (todo el país),La Anónima,24287
+2026-10-15,SEPA (todo el país),Toledo,3088
+2026-10-15,SEPA (todo el país),Unicoop,3338
+2026-10-16,SEPA (todo el país),Axion,244
+2026-10-16,SEPA (todo el país),California,1525
+2026-10-16,SEPA (todo el país),Carrefour,50560
+2026-10-16,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32405
+2026-10-16,SEPA (todo el país),ChangoMás,35298
+2026-10-16,SEPA (todo el país),Comodín,330
+2026-10-16,SEPA (todo el país),Cooperativa Obrera,11502
+2026-10-16,SEPA (todo el país),Coto,30953
+2026-10-16,SEPA (todo el país),Deheza,364
+2026-10-16,SEPA (todo el país),Día,13305
+2026-10-16,SEPA (todo el país),Estación Lima,182
+2026-10-16,SEPA (todo el país),Farmacity,1523
+2026-10-16,SEPA (todo el país),La Agrícola Regional,2089
+2026-10-16,SEPA (todo el país),La Anónima,24254
+2026-10-16,SEPA (todo el país),Mariano Max,1192
+2026-10-16,SEPA (todo el país),Toledo,3062
+2026-10-16,SEPA (todo el país),Unicoop,3338
+2026-10-17,SEPA (todo el país),Axion,244
+2026-10-17,SEPA (todo el país),California,1525
+2026-10-17,SEPA (todo el país),Carrefour,50941
+2026-10-17,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32392
+2026-10-17,SEPA (todo el país),ChangoMás,35298
+2026-10-17,SEPA (todo el país),Comodín,330
+2026-10-17,SEPA (todo el país),Cooperativa Obrera,11512
+2026-10-17,SEPA (todo el país),Coto,30897
+2026-10-17,SEPA (todo el país),Deheza,364
+2026-10-17,SEPA (todo el país),Día,13330
+2026-10-17,SEPA (todo el país),Estación Lima,182
+2026-10-17,SEPA (todo el país),La Agrícola Regional,2086
+2026-10-17,SEPA (todo el país),La Anónima,24365
+2026-10-17,SEPA (todo el país),Mariano Max,1193
+2026-10-17,SEPA (todo el país),Toledo,3045
+2026-10-17,SEPA (todo el país),Unicoop,3338
+2026-10-18,SEPA (todo el país),Axion,244
+2026-10-18,SEPA (todo el país),California,1525
+2026-10-18,SEPA (todo el país),Carrefour,50997
+2026-10-18,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32394
+2026-10-18,SEPA (todo el país),ChangoMás,35310
+2026-10-18,SEPA (todo el país),Comodín,330
+2026-10-18,SEPA (todo el país),Cooperativa Obrera,11382
+2026-10-18,SEPA (todo el país),Coto,30908
+2026-10-18,SEPA (todo el país),Deheza,364
+2026-10-18,SEPA (todo el país),Día,13345
+2026-10-18,SEPA (todo el país),Estación Lima,182
+2026-10-18,SEPA (todo el país),Farmacity,1523
+2026-10-18,SEPA (todo el país),La Anónima,24368
+2026-10-18,SEPA (todo el país),Mariano Max,1193
+2026-10-18,SEPA (todo el país),Toledo,3045
+2026-10-18,SEPA (todo el país),Unicoop,3338
+2026-10-19,SEPA (todo el país),Axion,244
+2026-10-19,SEPA (todo el país),California,1525
+2026-10-19,SEPA (todo el país),Carrefour,50961
+2026-10-19,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32400
+2026-10-19,SEPA (todo el país),ChangoMás,35340
+2026-10-19,SEPA (todo el país),Comodín,330
+2026-10-19,SEPA (todo el país),Cooperativa Obrera,11504
+2026-10-19,SEPA (todo el país),Coto,30878
+2026-10-19,SEPA (todo el país),Deheza,364
+2026-10-19,SEPA (todo el país),Día,13345
+2026-10-19,SEPA (todo el país),Estación Lima,182
+2026-10-19,SEPA (todo el país),Farmacity,1521
+2026-10-19,SEPA (todo el país),La Anónima,24332
+2026-10-19,SEPA (todo el país),Mariano Max,1193
+2026-10-19,SEPA (todo el país),Toledo,3038
+2026-10-19,SEPA (todo el país),Unicoop,3338
+2026-10-20,SEPA (todo el país),Axion,244
+2026-10-20,SEPA (todo el país),California,1525
+2026-10-20,SEPA (todo el país),Carrefour,50872
+2026-10-20,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32387
+2026-10-20,SEPA (todo el país),ChangoMás,35382
+2026-10-20,SEPA (todo el país),Comodín,330
+2026-10-20,SEPA (todo el país),Cooperativa Obrera,11510
+2026-10-20,SEPA (todo el país),Coto,30800
+2026-10-20,SEPA (todo el país),Deheza,364
+2026-10-20,SEPA (todo el país),Día,11953
+2026-10-20,SEPA (todo el país),Estación Lima,182
+2026-10-20,SEPA (todo el país),La Agrícola Regional,2081
+2026-10-20,SEPA (todo el país),La Anónima,24368
+2026-10-20,SEPA (todo el país),Mariano Max,1193
+2026-10-20,SEPA (todo el país),Toledo,3033
+2026-10-20,SEPA (todo el país),Unicoop,3338
+2026-10-21,SEPA (todo el país),Axion,244
+2026-10-21,SEPA (todo el país),California,1525
+2026-10-21,SEPA (todo el país),Carrefour,50921
+2026-10-21,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32348
+2026-10-21,SEPA (todo el país),ChangoMás,35358
+2026-10-21,SEPA (todo el país),Comodín,330
+2026-10-21,SEPA (todo el país),Cooperativa Obrera,11573
+2026-10-21,SEPA (todo el país),Coto,30758
+2026-10-21,SEPA (todo el país),Deheza,364
+2026-10-21,SEPA (todo el país),Día,13345
+2026-10-21,SEPA (todo el país),Estación Lima,182
+2026-10-21,SEPA (todo el país),La Agrícola Regional,2085
+2026-10-21,SEPA (todo el país),La Anónima,24384
+2026-10-21,SEPA (todo el país),Mariano Max,1193
+2026-10-21,SEPA (todo el país),Toledo,3018
+2026-10-21,SEPA (todo el país),Unicoop,3338
+2026-10-22,SEPA (todo el país),Axion,244
+2026-10-22,SEPA (todo el país),California,1525
+2026-10-22,SEPA (todo el país),Carrefour,50893
+2026-10-22,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32341
+2026-10-22,SEPA (todo el país),ChangoMás,35406
+2026-10-22,SEPA (todo el país),Comodín,330
+2026-10-22,SEPA (todo el país),Cooperativa Obrera,11541
+2026-10-22,SEPA (todo el país),Coto,31044
+2026-10-22,SEPA (todo el país),Deheza,364
+2026-10-22,SEPA (todo el país),Día,13370
+2026-10-22,SEPA (todo el país),Estación Lima,182
+2026-10-22,SEPA (todo el país),Farmacity,1532
+2026-10-22,SEPA (todo el país),La Agrícola Regional,2079
+2026-10-22,SEPA (todo el país),La Anónima,24381
+2026-10-22,SEPA (todo el país),Mariano Max,1191
+2026-10-22,SEPA (todo el país),Toledo,3019
+2026-10-22,SEPA (todo el país),Unicoop,3338
+2026-10-23,SEPA (todo el país),Axion,244
+2026-10-23,SEPA (todo el país),California,1521
+2026-10-23,SEPA (todo el país),Carrefour,51014
+2026-10-23,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32293
+2026-10-23,SEPA (todo el país),ChangoMás,35430
+2026-10-23,SEPA (todo el país),Comodín,330
+2026-10-23,SEPA (todo el país),Cooperativa Obrera,11547
+2026-10-23,SEPA (todo el país),Coto,30843
+2026-10-23,SEPA (todo el país),Deheza,364
+2026-10-23,SEPA (todo el país),Día,13355
+2026-10-23,SEPA (todo el país),Estación Lima,182
+2026-10-23,SEPA (todo el país),La Agrícola Regional,2080
+2026-10-23,SEPA (todo el país),La Anónima,24372
+2026-10-23,SEPA (todo el país),Mariano Max,1191
+2026-10-23,SEPA (todo el país),Toledo,3006
+2026-10-23,SEPA (todo el país),Unicoop,3338
+2026-10-24,SEPA (todo el país),Axion,244
+2026-10-24,SEPA (todo el país),California,1522
+2026-10-24,SEPA (todo el país),Carrefour,51118
+2026-10-24,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32293
+2026-10-24,SEPA (todo el país),ChangoMás,35430
+2026-10-24,SEPA (todo el país),Comodín,330
+2026-10-24,SEPA (todo el país),Cooperativa Obrera,11574
+2026-10-24,SEPA (todo el país),Coto,30781
+2026-10-24,SEPA (todo el país),Deheza,364
+2026-10-24,SEPA (todo el país),Día,13365
+2026-10-24,SEPA (todo el país),Estación Lima,182
+2026-10-24,SEPA (todo el país),Farmacity,1535
+2026-10-24,SEPA (todo el país),La Agrícola Regional,2079
+2026-10-24,SEPA (todo el país),La Anónima,24394
+2026-10-24,SEPA (todo el país),Mariano Max,1192
+2026-10-24,SEPA (todo el país),Toledo,2982
+2026-10-24,SEPA (todo el país),Unicoop,3338
+2026-10-25,SEPA (todo el país),Axion,244
+2026-10-25,SEPA (todo el país),California,1522
+2026-10-25,SEPA (todo el país),Carrefour,51132
+2026-10-25,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32290
+2026-10-25,SEPA (todo el país),ChangoMás,35556
+2026-10-25,SEPA (todo el país),Comodín,330
+2026-10-25,SEPA (todo el país),Cooperativa Obrera,11446
+2026-10-25,SEPA (todo el país),Coto,30728
+2026-10-25,SEPA (todo el país),Deheza,364
+2026-10-25,SEPA (todo el país),Día,13355
+2026-10-25,SEPA (todo el país),Estación Lima,182
+2026-10-25,SEPA (todo el país),Farmacity,1541
+2026-10-25,SEPA (todo el país),La Anónima,24452
+2026-10-25,SEPA (todo el país),Mariano Max,1192
+2026-10-25,SEPA (todo el país),Toledo,2982
+2026-10-25,SEPA (todo el país),Unicoop,3338
+2026-10-26,SEPA (todo el país),Axion,244
+2026-10-26,SEPA (todo el país),California,1522
+2026-10-26,SEPA (todo el país),Carrefour,51113
+2026-10-26,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32282
+2026-10-26,SEPA (todo el país),ChangoMás,35550
+2026-10-26,SEPA (todo el país),Comodín,330
+2026-10-26,SEPA (todo el país),Cooperativa Obrera,11558
+2026-10-26,SEPA (todo el país),Coto,30713
+2026-10-26,SEPA (todo el país),Deheza,364
+2026-10-26,SEPA (todo el país),Día,13340
+2026-10-26,SEPA (todo el país),Estación Lima,182
+2026-10-26,SEPA (todo el país),Farmacity,1548
+2026-10-26,SEPA (todo el país),La Anónima,24387
+2026-10-26,SEPA (todo el país),Mariano Max,1192
+2026-10-26,SEPA (todo el país),Toledo,2976
+2026-10-26,SEPA (todo el país),Unicoop,3338
+2026-10-27,SEPA (todo el país),Axion,244
+2026-10-27,SEPA (todo el país),California,1520
+2026-10-27,SEPA (todo el país),Carrefour,51038
+2026-10-27,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32298
+2026-10-27,SEPA (todo el país),ChangoMás,35568
+2026-10-27,SEPA (todo el país),Comodín,330
+2026-10-27,SEPA (todo el país),Cooperativa Obrera,11564
+2026-10-27,SEPA (todo el país),Coto,30648
+2026-10-27,SEPA (todo el país),Deheza,364
+2026-10-27,SEPA (todo el país),Día,12097
+2026-10-27,SEPA (todo el país),Estación Lima,182
+2026-10-27,SEPA (todo el país),La Agrícola Regional,2080
+2026-10-27,SEPA (todo el país),La Anónima,24425
+2026-10-27,SEPA (todo el país),Mariano Max,1192
+2026-10-27,SEPA (todo el país),Toledo,2968
+2026-10-27,SEPA (todo el país),Unicoop,3338
+2026-10-28,SEPA (todo el país),Axion,244
+2026-10-28,SEPA (todo el país),California,1520
+2026-10-28,SEPA (todo el país),Carrefour,51079
+2026-10-28,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32248
+2026-10-28,SEPA (todo el país),ChangoMás,35556
+2026-10-28,SEPA (todo el país),Comodín,330
+2026-10-28,SEPA (todo el país),Cooperativa Obrera,11560
+2026-10-28,SEPA (todo el país),Coto,30668
+2026-10-28,SEPA (todo el país),Deheza,364
+2026-10-28,SEPA (todo el país),Día,13405
+2026-10-28,SEPA (todo el país),Estación Lima,182
+2026-10-28,SEPA (todo el país),La Anónima,24464
+2026-10-28,SEPA (todo el país),Mariano Max,1192
+2026-10-28,SEPA (todo el país),Toledo,2947
+2026-10-28,SEPA (todo el país),Unicoop,3338
+2026-10-29,SEPA (todo el país),Axion,245
+2026-10-29,SEPA (todo el país),California,1519
+2026-10-29,SEPA (todo el país),Carrefour,51291
+2026-10-29,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32218
+2026-10-29,SEPA (todo el país),ChangoMás,35592
+2026-10-29,SEPA (todo el país),Comodín,330
+2026-10-29,SEPA (todo el país),Cooperativa Obrera,11557
+2026-10-29,SEPA (todo el país),Coto,30899
+2026-10-29,SEPA (todo el país),Deheza,364
+2026-10-29,SEPA (todo el país),Día,13420
+2026-10-29,SEPA (todo el país),Estación Lima,182
+2026-10-29,SEPA (todo el país),La Agrícola Regional,2090
+2026-10-29,SEPA (todo el país),La Anónima,24457
+2026-10-29,SEPA (todo el país),Mariano Max,1189
+2026-10-29,SEPA (todo el país),Toledo,2893
+2026-10-29,SEPA (todo el país),Unicoop,3338
+2026-10-30,SEPA (todo el país),Axion,245
+2026-10-30,SEPA (todo el país),California,1520
+2026-10-30,SEPA (todo el país),Carrefour,51416
+2026-10-30,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32185
+2026-10-30,SEPA (todo el país),ChangoMás,35610
+2026-10-30,SEPA (todo el país),Comodín,330
+2026-10-30,SEPA (todo el país),Cooperativa Obrera,11596
+2026-10-30,SEPA (todo el país),Coto,30913
+2026-10-30,SEPA (todo el país),Día,13430
+2026-10-30,SEPA (todo el país),La Agrícola Regional,2089
+2026-10-30,SEPA (todo el país),La Anónima,24426
+2026-10-30,SEPA (todo el país),Toledo,2885
+2026-10-30,SEPA (todo el país),Unicoop,3338
+2026-10-31,SEPA (todo el país),Axion,245
+2026-10-31,SEPA (todo el país),California,1520
+2026-10-31,SEPA (todo el país),Carrefour,49965
+2026-10-31,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32174
+2026-10-31,SEPA (todo el país),ChangoMás,35688
+2026-10-31,SEPA (todo el país),Comodín,330
+2026-10-31,SEPA (todo el país),Cooperativa Obrera,11603
+2026-10-31,SEPA (todo el país),Coto,30889
+2026-10-31,SEPA (todo el país),Deheza,364
+2026-10-31,SEPA (todo el país),Día,13420
+2026-10-31,SEPA (todo el país),Estación Lima,182
+2026-10-31,SEPA (todo el país),La Agrícola Regional,2090
+2026-10-31,SEPA (todo el país),La Anónima,24475
+2026-10-31,SEPA (todo el país),Mariano Max,1196
+2026-10-31,SEPA (todo el país),Toledo,2867
+2026-10-31,SEPA (todo el país),Unicoop,3338
+2026-11-01,SEPA (todo el país),Axion,245
+2026-11-01,SEPA (todo el país),California,1520
+2026-11-01,SEPA (todo el país),Carrefour,49895
+2026-11-01,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32187
+2026-11-01,SEPA (todo el país),ChangoMás,35772
+2026-11-01,SEPA (todo el país),Comodín,330
+2026-11-01,SEPA (todo el país),Cooperativa Obrera,11453
+2026-11-01,SEPA (todo el país),Coto,30845
+2026-11-01,SEPA (todo el país),Deheza,364
+2026-11-01,SEPA (todo el país),Día,13078
+2026-11-01,SEPA (todo el país),Estación Lima,182
+2026-11-01,SEPA (todo el país),Farmacity,1547
+2026-11-01,SEPA (todo el país),La Anónima,24486
+2026-11-01,SEPA (todo el país),Mariano Max,1196
+2026-11-01,SEPA (todo el país),Toledo,2867
+2026-11-01,SEPA (todo el país),Unicoop,3338
+2026-11-02,SEPA (todo el país),Axion,245
+2026-11-02,SEPA (todo el país),California,1520
+2026-11-02,SEPA (todo el país),Carrefour,50007
+2026-11-02,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32155
+2026-11-02,SEPA (todo el país),ChangoMás,35544
+2026-11-02,SEPA (todo el país),Comodín,330
+2026-11-02,SEPA (todo el país),Cooperativa Obrera,11592
+2026-11-02,SEPA (todo el país),Coto,30833
+2026-11-02,SEPA (todo el país),Deheza,364
+2026-11-02,SEPA (todo el país),Día,13363
+2026-11-02,SEPA (todo el país),Estación Lima,182
+2026-11-02,SEPA (todo el país),La Anónima,24406
+2026-11-02,SEPA (todo el país),Mariano Max,1196
+2026-11-02,SEPA (todo el país),Toledo,2867
+2026-11-02,SEPA (todo el país),Unicoop,3338
+2026-11-03,SEPA (todo el país),Axion,245
+2026-11-03,SEPA (todo el país),California,1520
+2026-11-03,SEPA (todo el país),Carrefour,49746
+2026-11-03,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32151
+2026-11-03,SEPA (todo el país),ChangoMás,35742
+2026-11-03,SEPA (todo el país),Comodín,330
+2026-11-03,SEPA (todo el país),Cooperativa Obrera,11573
+2026-11-03,SEPA (todo el país),Coto,30800
+2026-11-03,SEPA (todo el país),Deheza,364
+2026-11-03,SEPA (todo el país),Día,12393
+2026-11-03,SEPA (todo el país),Estación Lima,182
+2026-11-03,SEPA (todo el país),Farmacity,1544
+2026-11-03,SEPA (todo el país),La Agrícola Regional,2081
+2026-11-03,SEPA (todo el país),La Anónima,24391
+2026-11-03,SEPA (todo el país),Mariano Max,1196
+2026-11-03,SEPA (todo el país),Toledo,2854
+2026-11-03,SEPA (todo el país),Unicoop,3338
+2026-11-04,SEPA (todo el país),Axion,245
+2026-11-04,SEPA (todo el país),California,1520
+2026-11-04,SEPA (todo el país),Carrefour,49759
+2026-11-04,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32133
+2026-11-04,SEPA (todo el país),ChangoMás,35646
+2026-11-04,SEPA (todo el país),Comodín,330
+2026-11-04,SEPA (todo el país),Cooperativa Obrera,11588
+2026-11-04,SEPA (todo el país),Coto,30665
+2026-11-04,SEPA (todo el país),Deheza,364
+2026-11-04,SEPA (todo el país),Día,13420
+2026-11-04,SEPA (todo el país),Estación Lima,182
+2026-11-04,SEPA (todo el país),La Agrícola Regional,2084
+2026-11-04,SEPA (todo el país),La Anónima,24411
+2026-11-04,SEPA (todo el país),Mariano Max,1196
+2026-11-04,SEPA (todo el país),Toledo,2831
+2026-11-04,SEPA (todo el país),Unicoop,3338
+2026-11-05,SEPA (todo el país),Axion,245
+2026-11-05,SEPA (todo el país),California,1520
+2026-11-05,SEPA (todo el país),Carrefour,49654
+2026-11-05,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32137
+2026-11-05,SEPA (todo el país),ChangoMás,35670
+2026-11-05,SEPA (todo el país),Comodín,330
+2026-11-05,SEPA (todo el país),Cooperativa Obrera,11585
+2026-11-05,SEPA (todo el país),Coto,30827
+2026-11-05,SEPA (todo el país),Deheza,364
+2026-11-05,SEPA (todo el país),Día,13415
+2026-11-05,SEPA (todo el país),Estación Lima,182
+2026-11-05,SEPA (todo el país),La Agrícola Regional,2089
+2026-11-05,SEPA (todo el país),La Anónima,24423
+2026-11-05,SEPA (todo el país),Mariano Max,1194
+2026-11-05,SEPA (todo el país),Toledo,2828
+2026-11-05,SEPA (todo el país),Unicoop,3338
+2026-11-06,SEPA (todo el país),Axion,245
+2026-11-06,SEPA (todo el país),California,1520
+2026-11-06,SEPA (todo el país),Carrefour,49785
+2026-11-06,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32106
+2026-11-06,SEPA (todo el país),ChangoMás,35826
+2026-11-06,SEPA (todo el país),Comodín,330
+2026-11-06,SEPA (todo el país),Cooperativa Obrera,11578
+2026-11-06,SEPA (todo el país),Coto,30843
+2026-11-06,SEPA (todo el país),Deheza,364
+2026-11-06,SEPA (todo el país),Día,13430
+2026-11-06,SEPA (todo el país),Estación Lima,182
+2026-11-06,SEPA (todo el país),Farmacity,1538
+2026-11-06,SEPA (todo el país),La Anónima,24395
+2026-11-06,SEPA (todo el país),Mariano Max,1194
+2026-11-06,SEPA (todo el país),Toledo,2814
+2026-11-06,SEPA (todo el país),Unicoop,3338
+2026-11-07,SEPA (todo el país),Axion,245
+2026-11-07,SEPA (todo el país),California,1520
+2026-11-07,SEPA (todo el país),Carrefour,49858
+2026-11-07,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32128
+2026-11-07,SEPA (todo el país),ChangoMás,35910
+2026-11-07,SEPA (todo el país),Comodín,330
+2026-11-07,SEPA (todo el país),Cooperativa Obrera,11567
+2026-11-07,SEPA (todo el país),Coto,30730
+2026-11-07,SEPA (todo el país),Deheza,364
+2026-11-07,SEPA (todo el país),Día,13470
+2026-11-07,SEPA (todo el país),Estación Lima,182
+2026-11-07,SEPA (todo el país),Farmacity,1527
+2026-11-07,SEPA (todo el país),La Agrícola Regional,2085
+2026-11-07,SEPA (todo el país),La Anónima,24424
+2026-11-07,SEPA (todo el país),Mariano Max,1194
+2026-11-07,SEPA (todo el país),Toledo,2795
+2026-11-07,SEPA (todo el país),Unicoop,3338
+2026-11-08,SEPA (todo el país),Axion,245
+2026-11-08,SEPA (todo el país),California,1520
+2026-11-08,SEPA (todo el país),Carrefour,49887
+2026-11-08,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32158
+2026-11-08,SEPA (todo el país),ChangoMás,36054
+2026-11-08,SEPA (todo el país),Comodín,330
+2026-11-08,SEPA (todo el país),Cooperativa Obrera,11412
+2026-11-08,SEPA (todo el país),Coto,30772
+2026-11-08,SEPA (todo el país),Deheza,364
+2026-11-08,SEPA (todo el país),Estación Lima,182
+2026-11-08,SEPA (todo el país),Farmacity,1524
+2026-11-08,SEPA (todo el país),La Anónima,24493
+2026-11-08,SEPA (todo el país),Mariano Max,1194
+2026-11-08,SEPA (todo el país),Toledo,2795
+2026-11-08,SEPA (todo el país),Unicoop,3338
+2026-11-09,SEPA (todo el país),Axion,245
+2026-11-09,SEPA (todo el país),California,1520
+2026-11-09,SEPA (todo el país),Carrefour,49839
+2026-11-09,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32196
+2026-11-09,SEPA (todo el país),ChangoMás,36138
+2026-11-09,SEPA (todo el país),Comodín,330
+2026-11-09,SEPA (todo el país),Cooperativa Obrera,11517
+2026-11-09,SEPA (todo el país),Coto,30768
+2026-11-09,SEPA (todo el país),Deheza,364
+2026-11-09,SEPA (todo el país),Día,13470
+2026-11-09,SEPA (todo el país),Estación Lima,182
+2026-11-09,SEPA (todo el país),Farmacity,1532
+2026-11-09,SEPA (todo el país),La Anónima,24389
+2026-11-09,SEPA (todo el país),Mariano Max,1194
+2026-11-09,SEPA (todo el país),Toledo,2783
+2026-11-10,SEPA (todo el país),Axion,245
+2026-11-10,SEPA (todo el país),California,1520
+2026-11-10,SEPA (todo el país),Carrefour,49865
+2026-11-10,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32179
+2026-11-10,SEPA (todo el país),ChangoMás,36138
+2026-11-10,SEPA (todo el país),Comodín,330
+2026-11-10,SEPA (todo el país),Cooperativa Obrera,11539
+2026-11-10,SEPA (todo el país),Coto,30691
+2026-11-10,SEPA (todo el país),Deheza,364
+2026-11-10,SEPA (todo el país),Día,11548
+2026-11-10,SEPA (todo el país),Estación Lima,182
+2026-11-10,SEPA (todo el país),Farmacity,1532
+2026-11-10,SEPA (todo el país),La Anónima,24362
+2026-11-10,SEPA (todo el país),Mariano Max,1194
+2026-11-10,SEPA (todo el país),Toledo,2776
+2026-11-10,SEPA (todo el país),Unicoop,3338
+2026-11-11,SEPA (todo el país),California,1520
+2026-11-11,SEPA (todo el país),Carrefour,49691
+2026-11-11,SEPA (todo el país),ChangoMás,36156
+2026-11-11,SEPA (todo el país),Comodín,330
+2026-11-11,SEPA (todo el país),Cooperativa Obrera,11542
+2026-11-11,SEPA (todo el país),Coto,30719
+2026-11-11,SEPA (todo el país),Deheza,364
+2026-11-11,SEPA (todo el país),Día,13470
+2026-11-11,SEPA (todo el país),Estación Lima,182
+2026-11-11,SEPA (todo el país),La Agrícola Regional,2082
+2026-11-11,SEPA (todo el país),La Anónima,24360
+2026-11-11,SEPA (todo el país),Mariano Max,1194
+2026-11-11,SEPA (todo el país),Toledo,2767
+2026-11-11,SEPA (todo el país),Unicoop,3338
+2026-11-12,SEPA (todo el país),Axion,245
+2026-11-12,SEPA (todo el país),California,1519
+2026-11-12,SEPA (todo el país),Carrefour,49727
+2026-11-12,SEPA (todo el país),ChangoMás,36174
+2026-11-12,SEPA (todo el país),Comodín,330
+2026-11-12,SEPA (todo el país),Cooperativa Obrera,11541
+2026-11-12,SEPA (todo el país),Coto,30774
+2026-11-12,SEPA (todo el país),Deheza,364
+2026-11-12,SEPA (todo el país),Día,13495
+2026-11-12,SEPA (todo el país),Estación Lima,182
+2026-11-12,SEPA (todo el país),Farmacity,1533
+2026-11-12,SEPA (todo el país),La Agrícola Regional,2084
+2026-11-12,SEPA (todo el país),La Anónima,24387
+2026-11-12,SEPA (todo el país),Mariano Max,1194
+2026-11-12,SEPA (todo el país),Toledo,2755
+2026-11-12,SEPA (todo el país),Unicoop,3338
+2026-11-13,SEPA (todo el país),Axion,245
+2026-11-13,SEPA (todo el país),California,1514
+2026-11-13,SEPA (todo el país),Carrefour,49776
+2026-11-13,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32113
+2026-11-13,SEPA (todo el país),ChangoMás,36312
+2026-11-13,SEPA (todo el país),Comodín,330
+2026-11-13,SEPA (todo el país),Cooperativa Obrera,11518
+2026-11-13,SEPA (todo el país),Coto,30842
+2026-11-13,SEPA (todo el país),Deheza,364
+2026-11-13,SEPA (todo el país),Día,13490
+2026-11-13,SEPA (todo el país),Estación Lima,182
+2026-11-13,SEPA (todo el país),Farmacity,1538
+2026-11-13,SEPA (todo el país),La Agrícola Regional,2085
+2026-11-13,SEPA (todo el país),La Anónima,24374
+2026-11-13,SEPA (todo el país),Mariano Max,1195
+2026-11-13,SEPA (todo el país),Toledo,2746
+2026-11-13,SEPA (todo el país),Unicoop,3338
+2026-11-14,SEPA (todo el país),Axion,245
+2026-11-14,SEPA (todo el país),California,1509
+2026-11-14,SEPA (todo el país),Carrefour,49794
+2026-11-14,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32106
+2026-11-14,SEPA (todo el país),ChangoMás,36372
+2026-11-14,SEPA (todo el país),Comodín,330
+2026-11-14,SEPA (todo el país),Cooperativa Obrera,11489
+2026-11-14,SEPA (todo el país),Coto,30711
+2026-11-14,SEPA (todo el país),Deheza,364
+2026-11-14,SEPA (todo el país),Día,13515
+2026-11-14,SEPA (todo el país),Estación Lima,182
+2026-11-14,SEPA (todo el país),Farmacity,1530
+2026-11-14,SEPA (todo el país),La Agrícola Regional,2084
+2026-11-14,SEPA (todo el país),La Anónima,24329
+2026-11-14,SEPA (todo el país),Mariano Max,1195
+2026-11-14,SEPA (todo el país),Toledo,2719
+2026-11-14,SEPA (todo el país),Unicoop,3338
+2026-11-15,SEPA (todo el país),Axion,245
+2026-11-15,SEPA (todo el país),California,1509
+2026-11-15,SEPA (todo el país),Carrefour,49820
+2026-11-15,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32111
+2026-11-15,SEPA (todo el país),ChangoMás,36402
+2026-11-15,SEPA (todo el país),Comodín,330
+2026-11-15,SEPA (todo el país),Cooperativa Obrera,11350
+2026-11-15,SEPA (todo el país),Coto,30732
+2026-11-15,SEPA (todo el país),Deheza,364
+2026-11-15,SEPA (todo el país),Día,13515
+2026-11-15,SEPA (todo el país),Estación Lima,182
+2026-11-15,SEPA (todo el país),Farmacity,1534
+2026-11-15,SEPA (todo el país),La Anónima,24346
+2026-11-15,SEPA (todo el país),Mariano Max,1195
+2026-11-15,SEPA (todo el país),Toledo,2719
+2026-11-15,SEPA (todo el país),Unicoop,3338
+2026-11-16,SEPA (todo el país),Axion,245
+2026-11-16,SEPA (todo el país),California,1509
+2026-11-16,SEPA (todo el país),Carrefour,49739
+2026-11-16,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32126
+2026-11-16,SEPA (todo el país),ChangoMás,36474
+2026-11-16,SEPA (todo el país),Comodín,330
+2026-11-16,SEPA (todo el país),Cooperativa Obrera,11493
+2026-11-16,SEPA (todo el país),Coto,30709
+2026-11-16,SEPA (todo el país),Deheza,364
+2026-11-16,SEPA (todo el país),Día,13515
+2026-11-16,SEPA (todo el país),Estación Lima,182
+2026-11-16,SEPA (todo el país),Farmacity,1526
+2026-11-16,SEPA (todo el país),La Anónima,24289
+2026-11-16,SEPA (todo el país),Mariano Max,1195
+2026-11-16,SEPA (todo el país),Toledo,2727
+2026-11-16,SEPA (todo el país),Unicoop,3338
+2026-11-17,SEPA (todo el país),Axion,245
+2026-11-17,SEPA (todo el país),California,1509
+2026-11-17,SEPA (todo el país),Carrefour,50046
+2026-11-17,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32130
+2026-11-17,SEPA (todo el país),ChangoMás,36492
+2026-11-17,SEPA (todo el país),Comodín,330
+2026-11-17,SEPA (todo el país),Cooperativa Obrera,11476
+2026-11-17,SEPA (todo el país),Coto,30683
+2026-11-17,SEPA (todo el país),Deheza,364
+2026-11-17,SEPA (todo el país),Día,11965
+2026-11-17,SEPA (todo el país),Estación Lima,182
+2026-11-17,SEPA (todo el país),Farmacity,1530
+2026-11-17,SEPA (todo el país),La Agrícola Regional,2082
+2026-11-17,SEPA (todo el país),La Anónima,24309
+2026-11-17,SEPA (todo el país),Mariano Max,1195
+2026-11-17,SEPA (todo el país),Toledo,2725
+2026-11-17,SEPA (todo el país),Unicoop,3338
+2026-11-18,Mayoristas,Mercado Central,85
+2026-11-18,SEPA (todo el país),Axion,188
+2026-11-18,SEPA (todo el país),California,1551
+2026-11-18,SEPA (todo el país),Carrefour,50846
+2026-11-18,SEPA (todo el país),"Cencosud (Jumbo, Disco, Vea)",32698
+2026-11-18,SEPA (todo el país),ChangoMás,35730
+2026-11-18,SEPA (todo el país),Comodín,343
+2026-11-18,SEPA (todo el país),Cooperativa Obrera,11565
+2026-11-18,SEPA (todo el país),Coto,31363
+2026-11-18,SEPA (todo el país),Deheza,346
+2026-11-18,SEPA (todo el país),Día,13425
+2026-11-18,SEPA (todo el país),Estación Lima,173
+2026-11-18,SEPA (todo el país),La Agrícola Regional,2092
+2026-11-18,SEPA (todo el país),La Anónima,24371
+2026-11-18,SEPA (todo el país),Mariano Max,1239
+2026-11-18,SEPA (todo el país),Toledo,2764
+2026-11-18,SEPA (todo el país),Unicoop,3361
+2026-11-18,Supermercados online,carrefour,17725
+2026-11-18,Supermercados online,dia,4856
+2026-11-18,Supermercados online,disco,11060
+2026-11-18,Supermercados online,jumbo,16832
+2026-11-18,Supermercados online,vea,8994

@@ -44,6 +44,7 @@ jobs:
         if: steps.bajar.outputs.nuevo == 'true'
         run: |
           python scripts/actualizar_ipcba.py || true
+          python scripts/calibrar_adelantados.py
           python scripts/backtest.py
           python scripts/nowcast.py
           python scripts/exportar_tablero.py

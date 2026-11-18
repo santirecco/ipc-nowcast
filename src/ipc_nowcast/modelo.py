@@ -10,7 +10,9 @@ Estructura (de abajo hacia arriba):
      - núcleo reciente + estacionalidad del mismo mes del año pasado
 2. Información conocida del mes reemplaza la parte del componente que cubre:
      - calendario de regulados (config/regulados/AAAA-MM.yaml), con arrastre por fecha de vigencia
-     - índices propios de supermercados (cuando hay dos meses de datos)
+     - índices propios de supermercados online (GBA; se usan solo si no hay SEPA para esa clase)
+     - indicadores adelantados por clase de alimentos (adelantados.py): precios de góndola de todo el país
+       (SEPA), verduras y frutas mayoristas (Mercado Central) y hacienda (carne), calibrados con la historia
 3. Agregación exacta como INDEC (pesos efectivos calibrados) -> nacional "de abajo hacia arriba".
 4. Si ya salió el IPC de la Ciudad (IPCBA) del mismo mes, se combina con él (peso estimado en el backtest).
 """
@@ -103,7 +105,7 @@ class Nowcast:
                 filas[(r, d)] = reg * w.loc[d, r] * self.piv[r][d].loc[ant] / self.piv[r]["00"].loc[ant]
         return pd.Series(filas)
 
-    def informacion_del_mes(self, mes, usar_regulados=True, usar_super=True, super_mensual=None) -> list[dict]:
+    def informacion_del_mes(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None) -> list[dict]:
         """Lista de datos conocidos del mes que reemplazan parte de un componente:
         {region, componente, fuente, valor (var %), parte (0-1 del componente que cubre)}."""
         info = []
@@ -124,21 +126,24 @@ class Nowcast:
                 info.append({"region": r, "componente": c, "fuente": "calendario de regulados",
                              "valor": imp / parte if parte else 0.0, "parte": parte,
                              "detalle": "; ".join(it["nombre"] for it in its)})
+        extra = list(extra or [])
+        cubiertos = {(it["region"], it["componente"]) for it in extra}
+        info += extra
         if usar_super and super_mensual is not None and not super_mensual.empty:
             sm = super_mensual[(super_mensual.mes == mes) & super_mensual["var_mensual_%"].notna()]
             for _, f in sm.iterrows():
-                if f.clase in ("05.6", "06.1", "12.1", "02.1"):
-                    continue  # por ahora solo alimentos y bebidas no alcohólicas
+                if f.clase in ("05.6", "06.1", "12.1", "02.1") or ("GBA", f.clase) in cubiertos:
+                    continue  # solo alimentos y bebidas no alcohólicas, y solo si SEPA no cubre la clase
                 info.append({"region": "GBA", "componente": f.clase, "fuente": "supermercados online",
                              "valor": float(f["var_mensual_%"]), "parte": PARTE_SUPER, "detalle": f"{int(f.dias)} días"})
         return info
 
-    def celdas(self, mes, usar_regulados=True, usar_super=True, super_mensual=None):
+    def celdas(self, mes, usar_regulados=True, usar_super=True, super_mensual=None, extra=None):
         """Variación proyectada de cada celda región x división, con la información del mes incorporada."""
         cols = [(r, d) for r in REGIONES for d in replica.DIVISIONES]
         Y = pd.DataFrame({c: self.V[c[0]][c[1]] for c in cols})
         base = proyeccion_estadistica(Y, self.nucleo, mes)
-        info = self.informacion_del_mes(mes, usar_regulados, usar_super, super_mensual)
+        info = self.informacion_del_mes(mes, usar_regulados, usar_super, super_mensual, extra)
         if not info:
             return base, []
         comp_ef = canasta.peso_efectivo_en_division(self.ap, self.base_comp, mes)
@@ -148,15 +153,18 @@ class Nowcast:
             r, c = it["region"], it["componente"]
             if (r, c) not in self.Vap.columns:
                 continue
-            base_c = float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
-            fila = comp_ef[(comp_ef.region == r) & (comp_ef.codigo == c)]
-            if fila.empty:
-                continue
+            if c in replica.DIVISIONES:  # el ítem cubre una división entera (ej. "10" Educación)
+                base_c, w_div = float(base[(r, c)]), 1.0
+            else:
+                base_c = float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
+                fila = comp_ef[(comp_ef.region == r) & (comp_ef.codigo == c)]
+                if fila.empty:
+                    continue
+                w_div = float(fila.peso_en_division_ef.iloc[0])
             if it.get("aditivo"):
                 nuevo = base_c + it["parte"] * it["valor"]
             else:
                 nuevo = it["parte"] * it["valor"] + (1 - it["parte"]) * base_c
-            w_div = float(fila.peso_en_division_ef.iloc[0])
             d = c[:2]
             ajustada[(r, d)] += w_div * (nuevo - base_c)
             aplicados.append({**it, "division": d, "proyeccion_estadistica": base_c, "con_informacion": nuevo,
@@ -181,8 +189,8 @@ class Nowcast:
         g = float(np.median(rel) * nivel(mes) * AJUSTE_CABA_FACTOR)
         return g if abs(g) >= AJUSTE_CABA_UMBRAL else 0.0
 
-    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None):
-        celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual)
+    def calcular(self, mes, usar_regulados=True, usar_caba=True, usar_super=True, super_mensual=None, extra=None):
+        celdas, aplicados = self.celdas(mes, usar_regulados, usar_super, super_mensual, extra)
         w = self._pesos_mes(mes)
         w = w / w.sum() * 100
         abajo_arriba = float((celdas * w).sum() / 100)
@@ -203,12 +211,20 @@ class Nowcast:
 
 
 def backtest(nc: Nowcast, desde="2024-07-01") -> pd.DataFrame:
-    """Simula el modelo mes a mes con la información que había en cada momento (sin calendario de regulados)."""
+    """Simula el modelo mes a mes con la información que había en cada momento (sin calendario de regulados,
+    que no tiene historia). Los indicadores adelantados entran con sus predicciones fuera de muestra."""
+    from . import adelantados
     real = nc.V["Nacional"]["00"]
     filas = []
     for mes in real.index[real.index >= pd.Timestamp(desde)]:
+        e15 = adelantados.informacion_historica(mes, "15")
+        ec = adelantados.informacion_historica(mes, "completo")
         r0 = nc.calcular(mes, usar_regulados=False, usar_caba=False)
-        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True)
+        r15 = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=e15)
+        rc = nc.calcular(mes, usar_regulados=False, usar_caba=False, extra=ec)
+        r1 = nc.calcular(mes, usar_regulados=False, usar_caba=True, extra=ec)
         filas.append({"mes": mes, "real": real.loc[mes], "inicio_de_mes": r0["estimacion"],
-                      "caba": r1["caba"], "vispera_con_caba": r1["estimacion"]})
+                      "mitad_de_mes": r15["estimacion"], "fin_de_mes": rc["estimacion"],
+                      "caba": r1["caba"], "vispera_con_caba": r1["estimacion"],
+                      "clases_con_datos": len(ec)})
     return pd.DataFrame(filas).set_index("mes")

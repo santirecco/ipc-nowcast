@@ -15,9 +15,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import pandas as pd  # noqa: E402
 import yaml  # noqa: E402
 
-from ipc_nowcast import CONFIG, DATA, REGIONES, REPORTS, fuentes, indec, modelo, replica, supermercados  # noqa: E402
+from ipc_nowcast import CONFIG, DATA, REGIONES, REPORTS, adelantados, fuentes, indec, modelo, replica, supermercados  # noqa: E402
 
 OUT = DATA / "nowcast"
+MOMENTOS = {"inicio_de_mes": "solo modelo estadístico", "mitad_de_mes": "con precios de la primera quincena",
+            "fin_de_mes": "con precios del mes completo", "vispera_con_caba": "con IPC de la Ciudad"}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 
@@ -25,13 +27,22 @@ def n(v, d=2):
     return "—" if v is None or pd.isna(v) else f"{v:.{d}f}".replace(".", ",")
 
 
-def banda(con_caba: bool) -> float:
+def banda(momento: str) -> float:
     ruta = OUT / "backtest.csv"
     if not ruta.exists():
         return 0.5
     bt = pd.read_csv(ruta, index_col=0, parse_dates=True).iloc[-16:]
-    col = "vispera_con_caba" if con_caba else "inicio_de_mes"
+    col = momento if momento in bt else "inicio_de_mes"
     return float((bt[col] - bt.real).abs().quantile(0.8))
+
+
+def momento_del_mes(con_caba: bool, extra: list, hoy: pd.Timestamp, mes: pd.Timestamp) -> str:
+    """Qué columna del backtest describe mejor la información disponible hoy."""
+    if con_caba:
+        return "vispera_con_caba"
+    if not extra:
+        return "inicio_de_mes"
+    return "fin_de_mes" if (hoy >= mes + pd.offsets.MonthEnd(0) or hoy.day >= 21) else "mitad_de_mes"
 
 
 def main():
@@ -53,10 +64,12 @@ def main():
         sm.assign(nombre=sm.clase.map(supermercados.NOMBRES)).to_csv(OUT / "supermercados_mensual.csv", index=False, float_format="%.3f")
 
     nc = modelo.Nowcast(d, a, fuentes.leer_ipcba())
-    r = nc.calcular(mes, super_mensual=sm)
+    extra = adelantados.informacion(nc, mes, pd.Timestamp(hoy))
+    r = nc.calcular(mes, super_mensual=sm, extra=extra)
     sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False)["estimacion"]
     con_caba = r["caba"] is not None
-    b = banda(con_caba)
+    momento = momento_del_mes(con_caba, extra, pd.Timestamp(hoy), mes)
+    b = banda(momento)
     externos = yaml.safe_load((CONFIG / "externos.yaml").read_text(encoding="utf-8"))
     rem = (externos.get("rem") or {}).get(f"{mes:%Y-%m}", {}).get("valor")
 
@@ -82,7 +95,8 @@ def main():
             "rango_bajo": round(r["estimacion"] - b, 4), "rango_alto": round(r["estimacion"] + b, 4),
             "solo_modelo_estadistico": round(sin_info, 4), "abajo_arriba": round(r["abajo_arriba"], 4),
             "ipc_caba": None if r["caba"] is None else round(r["caba"], 4), "ajuste_caba": round(r["ajuste_caba"], 4), "rem": rem,
-            "datos_incorporados": len(info), "dias_supermercados": int(panel.fecha.nunique()) if not panel.empty else 0}
+            "datos_incorporados": len(info), "dias_supermercados": int(panel.fecha.nunique()) if not panel.empty else 0,
+            "momento": momento}
     ruta_h = OUT / "historial.csv"
     h = pd.read_csv(ruta_h, dtype=str) if ruta_h.exists() else pd.DataFrame(columns=list(fila))
     h = h[~((h.fecha_calculo == fila["fecha_calculo"]) & (h.mes == fila["mes"]))]
@@ -119,7 +133,7 @@ def main():
 | REM del BCRA (referencia) | {n(rem, 1)} |
 
 El rango cubre el 80% de los errores del backtest de los últimos 16 meses para este momento del mes
-({'con' if con_caba else 'sin'} IPC CABA).
+({MOMENTOS.get(momento, momento)}).
 
 ## Por división (nacional)
 

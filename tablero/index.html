@@ -73,12 +73,12 @@
   <section class="ipx-card" id="informacion">
     <div class="ipx-sec-head">
       <p class="ipx-eyebrow">Datos del mes</p>
-      <h2 class="ipx-sec-title">Aumentos ya incorporados al pronóstico</h2>
-      <p class="ipx-muted">Cada aumento conocido reemplaza la proyección estadística de su componente. El efecto es sobre la variación del rubro en esa región: en rojo suma inflación, en verde resta.</p>
+      <h2 class="ipx-sec-title">Datos del mes ya incorporados al pronóstico</h2>
+      <p class="ipx-muted">Aumentos de tarifas anunciados y precios reales de alimentos (góndolas de todo el país, Mercado Central, hacienda): cada dato reemplaza la proyección estadística de su componente. El efecto es sobre la variación del rubro en esa región: en rojo suma inflación, en verde resta.</p>
     </div>
     <div class="ipx-table-wrap">
       <table class="ipx-table" data-source="informacion" data-row-key="clave">
-        <thead><tr><th data-field="region">Región</th><th data-field="nombre_componente">Componente</th><th class="det" data-field="detalle">Detalle</th><th class="num" data-field="dato">Aumento %</th><th class="num" data-field="proyeccion">Sin el dato %</th><th class="num" data-field="efecto_pp">Efecto (pp)</th></tr></thead>
+        <thead><tr><th data-field="region">Región</th><th data-field="nombre_componente">Componente</th><th class="det" data-field="detalle">Detalle</th><th class="num" data-field="dato">Con el dato %</th><th class="num" data-field="proyeccion">Sin el dato %</th><th class="num" data-field="efecto_pp">Efecto (pp)</th></tr></thead>
         <tbody data-draw="tab-info"></tbody>
       </table>
     </div>
@@ -92,11 +92,13 @@
     </div>
     <div class="ipx-stats">
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio al inicio del mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span> pp</span></div>
+      <div class="ipx-stat"><span class="ipx-eyebrow">A mitad de mes, con precios</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio en la víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span> pp</span></div>
       <div class="ipx-stat"><span class="ipx-eyebrow">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span> pp</span></div>
     </div>
     <div class="ipx-legend">
       <span><span class="ipx-sw" data-draw="sw-indec"></span>INDEC</span>
+      <span><span class="ipx-sw" data-draw="sw-mit"></span>Modelo a mitad de mes</span>
       <span><span class="ipx-sw" data-draw="sw-vis"></span>Modelo en la víspera</span>
       <span><span class="ipx-sw ipx-sw-dash" data-draw="sw-ini"></span>Modelo al inicio del mes</span>
     </div>
@@ -107,7 +109,7 @@
     <div class="ipx-sec-head">
       <p class="ipx-eyebrow">Recolección</p>
       <h2 class="ipx-sec-title"><span data-draw="rec-total" data-source="rec_total">—</span> precios relevados en el último día</h2>
-      <p class="ipx-muted">Productos con stock en supermercados online, el <span data-draw="rec-fecha" data-source="rec_ultimo" data-field="fecha" data-row="0">—</span>. Alimentan el índice propio de alimentos desde diciembre.</p>
+      <p class="ipx-muted">Último día de cada fuente (el más reciente, <span data-draw="rec-fecha" data-source="rec_ultimo" data-field="fecha" data-row="0">—</span>): supermercados online del GBA, SEPA con las cadenas grandes de todo el país (sale con un día de demora) y especies del Mercado Central.</p>
     </div>
     <div class="ipx-chains" data-draw="cadenas" data-source="rec_ultimo"></div>
   </section>
@@ -117,12 +119,13 @@
     <ul>
       <li><b>Réplica exacta de INDEC.</b> Los pesos de cada región y rubro se calibraron contra la serie oficial desde dic-2016: la réplica reproduce los 118 meses publicados sin diferencia en la décima.</li>
       <li><b>Proyección estadística</b> de las 72 combinaciones región × rubro: persistencia, mediana de los últimos 3 meses y estacionalidad típica del mes respecto de la inflación núcleo.</li>
-      <li><b>Información del mes.</b> El calendario de aumentos regulados (luz, gas, transporte, prepagas) reemplaza la proyección de su componente, contando qué parte del aumento cae en el mes según la fecha de vigencia. Desde diciembre se suman índices propios de alimentos armados con unos 60 mil precios diarios.</li>
+      <li><b>Información del mes.</b> El calendario de aumentos regulados (luz, gas, transporte, prepagas, combustibles, telefonía, colegios) reemplaza la proyección de su componente, contando qué parte del aumento cae en el mes según la fecha de vigencia. Se revisa todas las semanas.</li>
+      <li><b>Alimentos con precios reales.</b> Cada clase de alimentos se corrige con los precios del mes que la anticipan: góndolas de todo el país (SEPA, unas 17 cadenas y 3.000 sucursales), verduras y frutas del Mercado Central y hacienda de Cañuelas para la carne. Cuánto pesa cada fuente se estimó con la historia, y solo se usa donde mejoró el error fuera de muestra.</li>
       <li><b>IPC de la Ciudad de Buenos Aires.</b> Cuando se publica, unos días antes que INDEC, se combina con el modelo: 70% y 30%.</li>
       <li><b>Rango probable.</b> Cubre el 80% de los errores del backtest de los últimos 16 meses para ese momento del mes.</li>
     </ul>
   </details>
-  <p class="ipx-foot">Modelo ipc-nowcast · Fuentes: INDEC, IPCBA (Instituto de Estadística de la Ciudad), BCRA (REM), supermercados online, resoluciones y anuncios de tarifas.</p>
+  <p class="ipx-foot">Modelo ipc-nowcast · Fuentes: INDEC, IPCBA (Instituto de Estadística de la Ciudad), BCRA (REM), SEPA – Precios Claros (vía archivo de preciazo), Mercado Central de Buenos Aires, Mercado Agroganadero, supermercados online, resoluciones y anuncios de tarifas.</p>
 </div>
 
 <script src="calcs.js"></script>

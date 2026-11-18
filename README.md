@@ -10,8 +10,8 @@ juntan todos los días (supermercados, tarifas, combustibles, etc.), anticipa el
 | 0 | Infraestructura (este repo + tareas automáticas) | ✅ |
 | 1 | Réplica exacta de INDEC y pesos efectivos mes a mes | ✅ ver [`reports/replica_indec.md`](reports/replica_indec.md) |
 | 2 | Mapa de la canasta: pesos de grupos y clases por región; clasificación de productos de supermercado | ✅ |
-| 3 | Alimentos: SEPA/Precios Claros, supermercados, Mercado Central, carne | 🟡 supermercados online recolectando a diario desde 18/11/2026 |
-| 4 | Regulados: calendario mensual en `config/regulados/` (luz, gas, transporte, prepagas) | 🟡 noviembre cargado; falta combustibles |
+| 3 | Alimentos: SEPA/Precios Claros (todo el país, historia desde sep-2024), Mercado Central, hacienda, supermercados online | ✅ calibrado contra INDEC: ver [`reports/adelantados.md`](reports/adelantados.md) |
+| 4 | Regulados: calendario mensual en `config/regulados/` (luz, gas, transporte, prepagas, combustibles, telefonía, colegios) | ✅ revisión automática semanal (lunes) |
 | 5 | Núcleo no alimentario: electro, indumentaria, alquileres, servicios | ⏳ |
 | 6 | Motor: proyección estadística, arrastre, información del mes, IPC CABA | ✅ ver [`reports/nowcast.md`](reports/nowcast.md) |
 | 7 | Backtest y prueba en paralelo | ✅ backtest en [`reports/backtest.md`](reports/backtest.md); prueba en paralelo desde noviembre 2026 |
@@ -37,9 +37,12 @@ pip install -r requirements.txt
 python scripts/actualizar_indec.py   # 1. baja las series oficiales de INDEC
 python scripts/replicar_indec.py     # 2. replica el índice y calcula pesos efectivos
 python scripts/scrapear_supermercados.py  # 3. precios del día de 5 supermercados online
-python scripts/actualizar_ipcba.py        # 4. IPC de la Ciudad de Buenos Aires
-python scripts/backtest.py                # 5. error histórico del modelo
-python scripts/nowcast.py                 # 6. pronóstico del mes en curso
+python scripts/actualizar_sepa.py         # 4. SEPA: precios de góndola de las cadenas grandes de todo el país
+python scripts/actualizar_mayoristas.py   # 5. Mercado Central (verduras y frutas) y hacienda (carne)
+python scripts/actualizar_ipcba.py        # 6. IPC de la Ciudad de Buenos Aires
+python scripts/calibrar_adelantados.py    # 7. cuánto anticipa cada fuente a cada clase de alimentos
+python scripts/backtest.py                # 8. error histórico del modelo
+python scripts/nowcast.py                 # 9. pronóstico del mes en curso
 pytest                               # controles
 ```
 
@@ -50,11 +53,24 @@ Las tareas de `.github/workflows/` hacen esto solas y guardan los resultados en 
 `reports/tablero_ipc.html` es el tablero completo en un solo archivo (datos y gráficos adentro).
 Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("Download raw file").
 
-## Tareas manuales (≈15 min por semana)
+## Fuentes de precios
 
-- **Calendario de regulados**: revisar/cargar `config/regulados/AAAA-MM.yaml` con los aumentos del mes
-  (luz, gas, agua, transporte, prepagas, combustibles, cigarrillos, colegios). Cada ítem lleva su fuente.
-- **REM**: cargar la mediana del REM del BCRA en `config/externos.yaml` cuando se publica (referencia).
+| Fuente | Qué cubre | Cómo se obtiene | Historia |
+|---|---|---|---|
+| SEPA – Precios Claros | ~17 cadenas grandes (Día, Carrefour, Coto, ChangoMás, Cencosud, La Anónima, Cooperativa Obrera, Toledo, Farmacity…), ~3.000 sucursales en las 24 provincias | Archivo diario del proyecto abierto [preciazo](https://github.com/catdevnull/preciazo) (el sitio oficial bloquea servidores) | desde ago-2024 (faltan abr–jun 2026) |
+| Mercado Central de Buenos Aires | Precio mayorista diario de ~100 especies de verduras y frutas | Planillas diarias publicadas en mercadocentral.gob.ar | desde ene-2026 |
+| Mercado Agroganadero (Cañuelas) | Precio de la hacienda por categoría | Consulta pública por rango de fechas | desde 2017 |
+| Supermercados online | ~60.000 productos con stock en Carrefour, Jumbo, Disco, Vea y Día (GBA) | API pública de las tiendas (VTEX) | desde 18-nov-2026 |
+| IPC Ciudad de Buenos Aires | Anticipo del dato nacional | API de series de datos.gob.ar | desde 2012 |
+
+Los precios de SEPA procesados por día se guardan en el caché de GitHub Actions (`data/cache/sepa/`, no se suben
+al repo); al repo van solo los índices por mes, región y clase (`data/precios/sepa/`).
+
+## Tareas manuales
+
+Ninguna obligatoria. El calendario de regulados lo revisa una tarea programada todos los lunes (busca aumentos
+anunciados y actualiza `config/regulados/`); conviene mirar sus cambios de vez en cuando. Opcional: cargar la
+mediana del REM del BCRA en `config/externos.yaml` cuando se publica (solo referencia).
 
 ## Conceptos clave
 
@@ -63,3 +79,5 @@ Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("D
   resto, pesa más el mes siguiente.
 - **Arrastre**: INDEC compara promedios mensuales de precios. Un aumento a mitad de mes impacta una parte ese mes y el
   resto el siguiente.
+- **Prueba fuera de muestra**: para decidir si una fuente sirve, cada mes del pasado se predice usando solo lo que
+  se sabía antes de ese mes. Así el error medido es el que se hubiera tenido de verdad.

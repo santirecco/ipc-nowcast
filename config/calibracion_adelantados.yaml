@@ -1,0 +1,154 @@
+# Generado por scripts/calibrar_adelantados.py: no editar a mano.
+# Por clase, las combinaciones de fuentes que mejoran, de mejor a peor: se usa la primera con datos.
+'15':
+  01.1.2:
+  - fuentes:
+    - may
+    coef:
+    - 0.429
+    - 0.301
+    error_proyeccion: 3.363
+    error_con_fuente: 1.981
+    meses: 112
+  - fuentes:
+    - sepa
+    - may
+    coef:
+    - 0.087
+    - 0.282
+    - 0.352
+    error_proyeccion: 2.517
+    error_con_fuente: 1.747
+    meses: 18
+  01.1.4:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.669
+    error_proyeccion: 0.999
+    error_con_fuente: 0.816
+    meses: 18
+  01.1.5:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.258
+    error_proyeccion: 0.97
+    error_con_fuente: 0.911
+    meses: 18
+  01.1.6:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.957
+    error_proyeccion: 4.045
+    error_con_fuente: 3.361
+    meses: 18
+  01.1.8:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.372
+    error_proyeccion: 0.786
+    error_con_fuente: 0.725
+    meses: 18
+  01.2.1:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.511
+    error_proyeccion: 0.869
+    error_con_fuente: 0.79
+    meses: 18
+  01.2.2:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.332
+    error_proyeccion: 0.747
+    error_con_fuente: 0.698
+    meses: 18
+completo:
+  01.1.2:
+  - fuentes:
+    - may
+    coef:
+    - 0.338
+    - 0.304
+    error_proyeccion: 3.363
+    error_con_fuente: 2.089
+    meses: 112
+  - fuentes:
+    - sepa
+    - may
+    coef:
+    - 0.248
+    - 0.194
+    - 0.353
+    error_proyeccion: 2.517
+    error_con_fuente: 1.831
+    meses: 18
+  - fuentes:
+    - sepa
+    coef:
+    - 0.73
+    error_proyeccion: 2.517
+    error_con_fuente: 2.466
+    meses: 18
+  01.1.4:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.717
+    error_proyeccion: 0.999
+    error_con_fuente: 0.888
+    meses: 18
+  01.1.5:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.381
+    error_proyeccion: 0.97
+    error_con_fuente: 0.884
+    meses: 18
+  01.1.6:
+  - fuentes:
+    - sepa
+    coef:
+    - 1.0
+    error_proyeccion: 4.045
+    error_con_fuente: 3.098
+    meses: 18
+  01.1.7:
+  - fuentes:
+    - may
+    coef:
+    - 0.239
+    - 0.109
+    error_proyeccion: 3.861
+    error_con_fuente: 3.607
+    meses: 4
+  01.1.8:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.55
+    error_proyeccion: 0.786
+    error_con_fuente: 0.655
+    meses: 18
+  01.2.1:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.735
+    error_proyeccion: 0.869
+    error_con_fuente: 0.73
+    meses: 18
+  01.2.2:
+  - fuentes:
+    - sepa
+    coef:
+    - 0.579
+    error_proyeccion: 0.747
+    error_con_fuente: 0.651
+    meses: 18

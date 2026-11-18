@@ -54,16 +54,19 @@
     fn: (backtest) => {
       const b = backtest.slice().sort((a, c) => d3.ascending(a.mes, c.mes)).slice(-16);
       const mae = (col) => d3.mean(b.filter((r) => r[col] !== null && r[col] !== ''), (r) => Math.abs(+r[col] - +r.indec));
-      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
+      return [{ momento: 'inicio', error: mae('inicio_de_mes') }, { momento: 'mitad', error: b.length && 'mitad_de_mes' in b[0] ? mae('mitad_de_mes') : null }, { momento: 'vispera', error: mae('vispera') }, { momento: 'caba', error: mae('ipc_caba') }];
     },
   });
   dash.calc('rec_ultimo', {
-    inputs: ['recoleccion'], title: 'Último relevamiento por cadena',
+    inputs: ['recoleccion'], title: 'Último relevamiento por fuente y cadena',
+    description: 'Para cada fuente, su último día con datos.',
     fn: (recoleccion) => {
       if (!recoleccion.length) return [];
-      const ult = d3.max(recoleccion, (r) => r.fecha);
-      return recoleccion.filter((r) => r.fecha === ult).map((r) => ({ cadena: r.cadena, fecha: r.fecha, productos: +r.productos }))
-        .sort((a, b) => b.productos - a.productos);
+      const fuente = (r) => r.fuente || 'Supermercados online';
+      const ult = d3.rollup(recoleccion, (v) => d3.max(v, (r) => r.fecha), fuente);
+      return recoleccion.filter((r) => r.fecha === ult.get(fuente(r)))
+        .map((r) => ({ fuente: fuente(r), cadena: r.cadena, fecha: r.fecha, productos: +r.productos }))
+        .sort((a, b) => d3.ascending(a.fuente, b.fuente) || b.productos - a.productos);
     },
   });
   dash.calc('rec_total', {

@@ -158,11 +158,11 @@
     const d = dash.data('backtest');
     el.replaceChildren();
     if (d.status !== 'ok' || !d.data.length) { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
-    const rows = d.data.map((r) => ({ mes: r.mes, t: d3.utcParse('%Y-%m')(r.mes), indec: +r.indec, vispera: +r.vispera, inicio: +r.inicio_de_mes }))
+    const rows = d.data.map((r) => ({ mes: r.mes, t: d3.utcParse('%Y-%m')(r.mes), indec: +r.indec, vispera: +r.vispera, inicio: +r.inicio_de_mes, mitad: r.mitad_de_mes === undefined || r.mitad_de_mes === '' ? +r.inicio_de_mes : +r.mitad_de_mes }))
       .sort((a, b) => a.t - b.t).slice(-16);
     const W = el.clientWidth || 700, H = 270, m = { t: 12, r: 14, b: 74, l: 34 }, eh = 40;
     const x = d3.scalePoint().domain(rows.map((r) => r.mes)).range([m.l + 8, W - m.r - 8]);
-    const y = d3.scaleLinear().domain([Math.max(0, d3.min(rows, (r) => Math.min(r.indec, r.vispera, r.inicio)) - 0.3), d3.max(rows, (r) => Math.max(r.indec, r.vispera, r.inicio)) + 0.2]).nice()
+    const y = d3.scaleLinear().domain([Math.max(0, d3.min(rows, (r) => Math.min(r.indec, r.vispera, r.inicio, r.mitad)) - 0.3), d3.max(rows, (r) => Math.max(r.indec, r.vispera, r.inicio, r.mitad)) + 0.2]).nice()
       .range([H - m.b, m.t]);
     const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
       .attr('aria-label', 'Inflación mensual de INDEC comparada con el pronóstico del modelo en la víspera y al inicio del mes, últimos 16 meses, y error de cada mes');
@@ -170,6 +170,7 @@
       .call((g) => g.selectAll('.tick text').attr('x', -6));
     const line = (k) => d3.line().x((r) => x(r.mes)).y((r) => y(r[k]));
     svg.append('path').datum(rows).attr('d', line('inicio')).style('fill', 'none').style('stroke', dash.colors[2]).style('stroke-width', 1.6).style('stroke-dasharray', '5 4');
+    svg.append('path').datum(rows).attr('d', line('mitad')).style('fill', 'none').style('stroke', dash.colors[1]).style('stroke-width', 1.6);
     svg.append('path').datum(rows).attr('d', line('vispera')).style('fill', 'none').style('stroke', dash.colors[0]).style('stroke-width', 2.2);
     svg.append('path').datum(rows).attr('d', line('indec')).style('fill', 'none').style('stroke', 'var(--color-fg)').style('stroke-width', 2.2);
     svg.selectAll('circle.in').data(rows).join('circle').attr('class', 'in').attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r.indec)).attr('r', 3.2).style('fill', 'var(--color-fg)');
@@ -192,7 +193,7 @@
       guia.attr('x1', x(r.mes)).attr('x2', x(r.mes)).style('display', null);
       tip.hidden = false; tip.replaceChildren();
       const b = document.createElement('b'); b.textContent = nm(r.mes); tip.appendChild(b);
-      for (const s of [`INDEC ${g1(r.indec)}%`, `Víspera ${g2(r.vispera)}% (error ${g2(Math.abs(r.vispera - r.indec))})`, `Inicio de mes ${g2(r.inicio)}%`]) {
+      for (const s of [`INDEC ${g1(r.indec)}%`, `Víspera ${g2(r.vispera)}% (error ${g2(Math.abs(r.vispera - r.indec))})`, `Mitad de mes ${g2(r.mitad)}%`, `Inicio de mes ${g2(r.inicio)}%`]) {
         tip.appendChild(document.createElement('br')); tip.appendChild(document.createTextNode(s));
       }
       const sx = el.clientWidth / W;
@@ -206,7 +207,14 @@
     el.replaceChildren();
     if (d.status !== 'ok') { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
     const max = d3.max(d.data, (r) => r.productos) || 1;
+    let grupo = null;
     for (const r of d.data) {
+      if (r.fuente !== grupo) {
+        grupo = r.fuente;
+        const h = document.createElement('p'); h.className = 'ipx-eyebrow ipx-chain-group';
+        h.textContent = `${grupo} · ${fe(r.fecha)}`;
+        el.appendChild(h);
+      }
       const row = document.createElement('div'); row.className = 'ipx-chain';
       const n = document.createElement('span'); n.textContent = r.cadena.charAt(0).toUpperCase() + r.cadena.slice(1);
       const tr = document.createElement('div'); tr.className = 'ipx-bar-track';

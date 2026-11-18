@@ -12,3 +12,45 @@ Noroeste · Prepagas,Noroeste,Prepagas,calendario de regulados,Prepagas (promedi
 Pampeana · Prepagas,Pampeana,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.33,-0.011
 "Patagonia · Electricidad, gas y otros combustibles",Patagonia,"Electricidad, gas y otros combustibles",calendario de regulados,Gas natural por redes (promedio nacional),2.17,2.38,-0.056
 Patagonia · Prepagas,Patagonia,Prepagas,calendario de regulados,Prepagas (promedio de las principales),2.3,2.041,0.114
+GBA · Carnes,GBA,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,0.395,0.148,0.079
+Pampeana · Carnes,Pampeana,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,0.562,0.315,0.092
+Noreste · Carnes,Noreste,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,0.613,0.366,0.108
+Noroeste · Carnes,Noroeste,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,0.488,0.241,0.1
+Cuyo · Carnes,Cuyo,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,0.079,-0.168,0.094
+Patagonia · Carnes,Patagonia,Carnes,mayorista: hacienda (Cañuelas),hacienda (Cañuelas) 0.4% (mes ant. -2.1%) · calibración 15,1.027,0.78,0.089
+GBA · Lácteos y huevos,GBA,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.43% · calibración 15,1.313,1.076,0.039
+Pampeana · Lácteos y huevos,Pampeana,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.25% · calibración 15,1.413,1.745,-0.041
+Noreste · Lácteos y huevos,Noreste,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.41% · calibración 15,1.441,1.504,-0.007
+Noroeste · Lácteos y huevos,Noroeste,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.56% · calibración 15,1.62,1.739,-0.012
+Cuyo · Lácteos y huevos,Cuyo,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.67% · calibración 15,1.666,1.657,0.001
+Patagonia · Lácteos y huevos,Patagonia,Lácteos y huevos,precios de góndola (SEPA),SEPA 1.54% · calibración 15,1.432,1.22,0.029
+GBA · Aceites y grasas,GBA,Aceites y grasas,precios de góndola (SEPA),SEPA 1.02% · calibración 15,1.752,2.008,-0.01
+Pampeana · Aceites y grasas,Pampeana,Aceites y grasas,precios de góndola (SEPA),SEPA 0.60% · calibración 15,1.444,1.737,-0.012
+Noreste · Aceites y grasas,Noreste,Aceites y grasas,precios de góndola (SEPA),SEPA 1.24% · calibración 15,1.629,1.762,-0.004
+Noroeste · Aceites y grasas,Noroeste,Aceites y grasas,precios de góndola (SEPA),SEPA 1.32% · calibración 15,1.722,1.862,-0.004
+Cuyo · Aceites y grasas,Cuyo,Aceites y grasas,precios de góndola (SEPA),SEPA 1.42% · calibración 15,1.141,1.042,0.003
+Patagonia · Aceites y grasas,Patagonia,Aceites y grasas,precios de góndola (SEPA),SEPA 1.12% · calibración 15,1.682,1.877,-0.008
+GBA · Frutas,GBA,Frutas,precios de góndola (SEPA),SEPA 2.12% · calibración 15,1.947,-1.854,0.182
+Pampeana · Frutas,Pampeana,Frutas,precios de góndola (SEPA),SEPA 1.31% · calibración 15,1.319,1.472,-0.007
+Noreste · Frutas,Noreste,Frutas,precios de góndola (SEPA),SEPA 0.86% · calibración 15,0.867,1.087,-0.008
+Noroeste · Frutas,Noroeste,Frutas,precios de góndola (SEPA),SEPA 0.96% · calibración 15,0.981,1.494,-0.018
+Cuyo · Frutas,Cuyo,Frutas,precios de góndola (SEPA),SEPA 1.47% · calibración 15,1.354,-1.213,0.084
+Patagonia · Frutas,Patagonia,Frutas,precios de góndola (SEPA),SEPA 2.21% · calibración 15,2.113,-0.145,0.103
+"GBA · Azúcar, dulces y golosinas",GBA,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.30% · calibración 15,1.634,1.831,-0.012
+"Pampeana · Azúcar, dulces y golosinas",Pampeana,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.16% · calibración 15,1.775,2.138,-0.016
+"Noreste · Azúcar, dulces y golosinas",Noreste,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.37% · calibración 15,1.704,1.903,-0.005
+"Noroeste · Azúcar, dulces y golosinas",Noroeste,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.59% · calibración 15,2.067,2.348,-0.009
+"Cuyo · Azúcar, dulces y golosinas",Cuyo,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.46% · calibración 15,1.701,1.844,-0.004
+"Patagonia · Azúcar, dulces y golosinas",Patagonia,"Azúcar, dulces y golosinas",precios de góndola (SEPA),SEPA 1.31% · calibración 15,1.607,1.784,-0.007
+"GBA · Café, té y yerba",GBA,"Café, té y yerba",precios de góndola (SEPA),SEPA 1.16% · calibración 15,1.299,1.447,-0.004
+"Pampeana · Café, té y yerba",Pampeana,"Café, té y yerba",precios de góndola (SEPA),SEPA 0.91% · calibración 15,1.027,1.145,-0.003
+"Noreste · Café, té y yerba",Noreste,"Café, té y yerba",precios de góndola (SEPA),SEPA 1.63% · calibración 15,1.523,1.411,0.002
+"Noroeste · Café, té y yerba",Noroeste,"Café, té y yerba",precios de góndola (SEPA),SEPA 1.39% · calibración 15,1.544,1.701,-0.002
+"Cuyo · Café, té y yerba",Cuyo,"Café, té y yerba",precios de góndola (SEPA),SEPA 1.80% · calibración 15,1.12,0.411,0.014
+"Patagonia · Café, té y yerba",Patagonia,"Café, té y yerba",precios de góndola (SEPA),SEPA 1.25% · calibración 15,1.244,1.233,0.0
+"GBA · Aguas, gaseosas y jugos",GBA,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 0.97% · calibración 15,1.674,2.023,-0.03
+"Pampeana · Aguas, gaseosas y jugos",Pampeana,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 0.91% · calibración 15,1.674,2.056,-0.025
+"Noreste · Aguas, gaseosas y jugos",Noreste,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 0.72% · calibración 15,1.015,1.162,-0.009
+"Noroeste · Aguas, gaseosas y jugos",Noroeste,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 0.63% · calibración 15,1.241,1.544,-0.026
+"Cuyo · Aguas, gaseosas y jugos",Cuyo,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 1.06% · calibración 15,1.736,2.074,-0.024
+"Patagonia · Aguas, gaseosas y jugos",Patagonia,"Aguas, gaseosas y jugos",precios de góndola (SEPA),SEPA 1.12% · calibración 15,2.007,2.446,-0.033

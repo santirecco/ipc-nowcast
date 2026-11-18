@@ -2,8 +2,10 @@ name: Precios diarios y pronóstico
 
 # Todos los días a las 07:17 (hora Argentina):
 #   1. baja los precios de los supermercados online
-#   2. actualiza el IPC de la Ciudad de Buenos Aires (sale unos días antes que INDEC)
-#   3. recalcula el pronóstico del mes y guarda todo en el repo
+#   2. baja los precios de SEPA del día anterior (todas las cadenas grandes del país)
+#   3. baja precios mayoristas: Mercado Central (verduras y frutas) y hacienda (carne)
+#   4. actualiza el IPC de la Ciudad de Buenos Aires (sale unos días antes que INDEC)
+#   5. recalcula el pronóstico del mes y guarda todo en el repo
 # También se puede correr a mano desde la pestaña Actions ("Run workflow").
 on:
   schedule:
@@ -20,7 +22,7 @@ concurrency:
 jobs:
   diario:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,6 +32,24 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Supermercados (Carrefour, Jumbo, Disco, Vea, Día)
         run: python scripts/scrapear_supermercados.py
+      - name: Recuperar precios SEPA ya procesados (caché)
+        uses: actions/cache/restore@v4
+        with:
+          path: data/cache/sepa
+          key: sepa-${{ github.run_id }}
+          restore-keys: sepa-
+      - name: SEPA (Precios Claros, todo el país)
+        continue-on-error: true
+        run: python scripts/actualizar_sepa.py
+      - name: Guardar precios SEPA procesados (caché)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: data/cache/sepa
+          key: sepa-${{ github.run_id }}
+      - name: Mayoristas (Mercado Central y hacienda)
+        continue-on-error: true
+        run: python scripts/actualizar_mayoristas.py
       - name: IPC Ciudad de Buenos Aires
         continue-on-error: true
         run: python scripts/actualizar_ipcba.py
