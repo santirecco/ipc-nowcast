@@ -1,0 +1,14 @@
+region,componente,fuente,valor,parte,detalle,division,proyeccion_estadistica,con_informacion,peso_en_division,efecto_en_division_pp
+Cuyo,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,2.1845,2.1787,0.6923,-0.0040
+Cuyo,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.2057,2.3000,0.2978,0.0281
+GBA,04.5,calendario de regulados,2.9805,0.9500,"Electricidad AMBA (Edenor/Edesur, promedio); Gas natural por redes (promedio nacional)",04,2.2792,2.9455,0.5158,0.3436
+GBA,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.4541,2.3000,0.4363,-0.0672
+GBA,07.3,calendario de regulados,2.3400,0.7500,"Colectivos CABA y Provincia de Bs. As. (líneas nacionales sin cambios); Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios)",07,3.2180,2.5595,0.3209,-0.2113
+Noreste,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,4.7669,3.7282,0.7058,-0.7332
+Noreste,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.7320,2.3000,0.3336,-0.1441
+Noroeste,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.0462,2.6957,0.7767,-0.2722
+Noroeste,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.4023,2.3000,0.2755,-0.0282
+Pampeana,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.2444,2.8147,0.6438,-0.2767
+Pampeana,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.3305,2.3000,0.3671,-0.0112
+Patagonia,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,2.3805,2.2963,0.6643,-0.0559
+Patagonia,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.0409,2.3000,0.4387,0.1137

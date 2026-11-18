@@ -1,0 +1,14 @@
+# Cuadro 26 del informe IPC: % de la ponderación de cada división cubierto por los grupos que INDEC publica.
+# (base dic-2016). Divisiones totalmente cubiertas = 100. Educación no se abre en grupos.
+"01": {GBA: 100.0, Pampeana: 100.0, Noreste: 100.0, Noroeste: 100.0, Cuyo: 100.0, Patagonia: 100.0}
+"02": {GBA: 100.0, Pampeana: 100.0, Noreste: 100.0, Noroeste: 100.0, Cuyo: 100.0, Patagonia: 100.0}
+"03": {GBA: 100.0, Pampeana: 100.0, Noreste: 100.0, Noroeste: 100.0, Cuyo: 100.0, Patagonia: 100.0}
+"04": {GBA: 91.4, Pampeana: 93.1, Noreste: 88.9, Noroeste: 90.0, Cuyo: 93.3, Patagonia: 90.1}
+"05": {GBA: 58.7, Pampeana: 60.3, Noreste: 46.2, Noroeste: 60.7, Cuyo: 58.7, Patagonia: 46.2}
+"06": {GBA: 80.7, Pampeana: 79.3, Noreste: 77.4, Noroeste: 76.2, Cuyo: 81.1, Patagonia: 70.0}
+"07": {GBA: 100.0, Pampeana: 100.0, Noreste: 100.0, Noroeste: 100.0, Cuyo: 100.0, Patagonia: 100.0}
+"08": {GBA: 96.4, Pampeana: 96.6, Noreste: 96.4, Noroeste: 96.2, Cuyo: 96.0, Patagonia: 96.9}
+"09": {GBA: 78.7, Pampeana: 77.0, Noreste: 88.7, Noroeste: 83.1, Cuyo: 79.1, Patagonia: 84.6}
+"10": {GBA: 0.0, Pampeana: 0.0, Noreste: 0.0, Noroeste: 0.0, Cuyo: 0.0, Patagonia: 0.0}
+"11": {GBA: 95.4, Pampeana: 96.3, Noreste: 96.0, Noroeste: 97.5, Cuyo: 95.6, Patagonia: 96.1}
+"12": {GBA: 77.8, Pampeana: 86.1, Noreste: 93.9, Noroeste: 94.1, Cuyo: 86.1, Patagonia: 87.1}

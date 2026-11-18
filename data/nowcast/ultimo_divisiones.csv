@@ -1,0 +1,13 @@
+division,variacion_%,peso_%,incidencia_pp,nombre
+01,1.8005,28.7250,0.5172,Alimentos y bebidas no alcohólicas
+02,1.1191,2.3695,0.0265,Bebidas alcohólicas y tabaco
+03,1.2743,6.5581,0.0836,Prendas de vestir y calzado
+04,2.7061,10.9068,0.2952,"Vivienda, agua, electricidad, gas y otros combustibles"
+05,1.2693,5.0236,0.0638,Equipamiento y mantenimiento del hogar
+06,1.7597,9.0182,0.1587,Salud
+07,1.7390,11.5582,0.2010,Transporte
+08,1.8492,2.6349,0.0487,Comunicación
+09,2.0365,6.6284,0.1350,Recreación y cultura
+10,1.5661,2.2147,0.0347,Educación
+11,1.5001,10.9382,0.1641,Restaurantes y hoteles
+12,1.9357,3.4244,0.0663,Bienes y servicios varios

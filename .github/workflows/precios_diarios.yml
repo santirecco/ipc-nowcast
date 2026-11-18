@@ -1,6 +1,9 @@
-name: Precios diarios
+name: Precios diarios y pronóstico
 
-# Todos los días a las 07:17 (hora Argentina) baja los precios de los supermercados online.
+# Todos los días a las 07:17 (hora Argentina):
+#   1. baja los precios de los supermercados online
+#   2. actualiza el IPC de la Ciudad de Buenos Aires (sale unos días antes que INDEC)
+#   3. recalcula el pronóstico del mes y guarda todo en el repo
 # También se puede correr a mano desde la pestaña Actions ("Run workflow").
 on:
   schedule:
@@ -15,7 +18,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  supermercados:
+  diario:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
@@ -27,11 +30,16 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Supermercados (Carrefour, Jumbo, Disco, Vea, Día)
         run: python scripts/scrapear_supermercados.py
+      - name: IPC Ciudad de Buenos Aires
+        continue-on-error: true
+        run: python scripts/actualizar_ipcba.py
+      - name: Pronóstico del mes
+        run: python scripts/nowcast.py
       - name: Guardar datos en el repo
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/precios
-          git commit -q -m "Precios supermercados $(date +%Y-%m-%d)" || exit 0
+          git add data reports
+          git commit -q -m "Precios y pronóstico $(date +%Y-%m-%d)" || exit 0
           for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 10; done
           exit 1

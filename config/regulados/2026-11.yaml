@@ -1,0 +1,55 @@
+# Calendario de aumentos regulados - noviembre 2026
+# Cada ítem reemplaza la proyección estadística de su parte del componente INDEC indicado.
+#   componente:  código INDEC (grupo o clase) al que pertenece
+#   parte:       qué fracción del componente representa el ítem (0-1). Ej.: electricidad ≈ 55% de 04.5
+#   regiones:    regiones INDEC alcanzadas
+#   variacion:   % de aumento
+#   vigencia:    fecha desde la que rige (para el cálculo de arrastre)
+#   confianza:   alta (resolución oficial) / media (prensa con cifras) / baja (estimación)
+# Validar una vez por semana: corregir cifras o agregar ítems nuevos.
+mes: "2026-11"
+items:
+  - nombre: Electricidad AMBA (Edenor/Edesur, promedio)
+    componente: "04.5"
+    parte: 0.55
+    regiones: [GBA]
+    variacion: 3.57
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.iprofesional.com/energia/467891-como-vienen-los-aumentos-en-tarifas-de-luz-y-gas-desde-noviembre
+
+  - nombre: Gas natural por redes (promedio nacional)
+    componente: "04.5"
+    parte: 0.40
+    regiones: [GBA, Pampeana, Noreste, Noroeste, Cuyo, Patagonia]
+    variacion: 2.17
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.diariojornada.com.ar/426187/economia/en_noviembre_vuelven_a_aumentan_las_tarifas_de_luz_y_gas
+
+  - nombre: Colectivos CABA y Provincia de Bs. As. (líneas nacionales sin cambios)
+    componente: "07.3"
+    parte: 0.45
+    regiones: [GBA]
+    variacion: 3.9
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.iprofesional.com/finanzas/467732-aumenta-el-transporte-en-noviembre-cuanto-costara-viajar-en-colectivo-y-subte.amp
+
+  - nombre: Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios)
+    componente: "07.3"
+    parte: 0.30
+    regiones: [GBA]
+    variacion: 0.0
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.canal26.com/economia/2026/10/30/colectivos-el-gobierno-aumentara-los-subsidios-y-definio-que-pasara-con-el-boleto-en-el-amba/
+
+  - nombre: Prepagas (promedio de las principales)
+    componente: "06.4.1"
+    parte: 1.0
+    regiones: [GBA, Pampeana, Noreste, Noroeste, Cuyo, Patagonia]
+    variacion: 2.3
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.canal26.com/economia/2026/10/28/noviembre-llega-con-aumentos-en-transporte-alquileres-prepagas-y-mas-cuanto-suben-los-servicios/

@@ -40,6 +40,12 @@ jobs:
       - name: Controles
         if: steps.bajar.outputs.nuevo == 'true'
         run: pytest -q
+      - name: Backtest y pronóstico del mes siguiente
+        if: steps.bajar.outputs.nuevo == 'true'
+        run: |
+          python scripts/actualizar_ipcba.py || true
+          python scripts/backtest.py
+          python scripts/nowcast.py
       - name: Guardar resultados en el repo
         if: steps.bajar.outputs.nuevo == 'true'
         run: |

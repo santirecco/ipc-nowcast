@@ -1,0 +1,5 @@
+# Referencias externas (se muestran junto al pronóstico; no entran en el cálculo).
+# REM del BCRA: mediana de los analistas para la inflación mensual del IPC nacional.
+rem:
+  "2026-11": {valor: 1.7, relevamiento: "octubre 2026 (publicado 05/11/2026)", fuente: "https://www.perfil.com/noticias/amp/economia/rem-del-bcra-el-precio-que-le-ponen-a-la-inflacion-y-al-dolar-45-actores-del-mercado-a9fcc7k2dRuP.phtml"}
+  "2026-12": {valor: 1.8, relevamiento: "octubre 2026 (publicado 05/11/2026)", fuente: "https://www.perfil.com/economia/las-consultoras-que-releva-el-banco-central-estiman-una-inflacion-de-18-en-octubre-y-recortaron-a-1-el-crecimiento-esperado-a52ja5E8wL3q"}
