@@ -29,6 +29,23 @@ CADENAS = {
     "dia": "https://diaonline.supermercadosdia.com.ar",
 }
 
+# Tiendas de ropa, calzado y electrónica (mismo sistema VTEX). Se relevan desde nov-2026 para tener historia y
+# poder probar, cuando alcance, si anticipan ropa (03) y equipamiento/electrónica (05, 09.1).
+TIENDAS = {
+    "equus": "https://www.equus.com.ar",
+    "portsaid": "https://www.portsaid.com.ar",
+    "tascani": "https://www.tascani.com.ar",
+    "levis": "https://www.levi.com.ar",
+    "legacy": "https://www.legacy.com.ar",
+    "mimo": "https://www.mimo.com.ar",
+    "topper": "https://www.topper.com.ar",
+    "naldo": "https://www.naldo.com.ar",
+    "cetrogar": "https://www.cetrogar.com.ar",
+    "coppel": "https://www.coppel.com.ar",
+}
+RUBRO_TIENDA = {"equus": "ropa", "portsaid": "ropa", "tascani": "ropa", "levis": "ropa", "legacy": "ropa", "mimo": "ropa",
+                "topper": "calzado", "naldo": "electro", "cetrogar": "electro", "coppel": "electro"}
+
 # Departamentos que no aportan al IPC (o duplican otros) y se saltean
 EXCLUIR = {"test category", "gift cards", "garantía extendida", "sin categoría", "combos", "felices fiestas",
            "luces c/toma", "huevos de pascua"}
@@ -126,7 +143,7 @@ def _filas(productos: list, cadena: str) -> list[dict]:
 
 
 def scrapear(cadena: str, hilos: int = 6, log=print) -> pd.DataFrame:
-    base = CADENAS[cadena]
+    base = CADENAS.get(cadena) or TIENDAS[cadena]
     t0 = time.time()
     rutas = _consultas(base)
     tareas = [(ruta, pag) for ruta, total in rutas for pag in range(1, min(total, TOPE_VTEX) // PAGINA + 2)

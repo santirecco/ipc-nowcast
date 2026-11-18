@@ -110,3 +110,38 @@ def serie_dolar(corte: int | None = None) -> pd.Series:
     completo = d.groupby("mes").valor.mean()
     actual = d[d.fecha.dt.day <= corte].groupby("mes").valor.mean() if corte else completo
     return ((actual / completo.shift(1).reindex(actual.index) - 1) * 100).dropna().rename("fx")
+
+
+# ------------------------------------------------------------------ alquileres: ICL del BCRA
+URL_ICL = "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/40?desde={a}&hasta={b}&limit=3000"
+
+
+def actualizar_icl() -> pd.DataFrame:
+    """Índice para Contratos de Locación (BCRA, diario, se conoce por adelantado)."""
+    ruta = DATA / "precios" / "alquileres" / "icl.csv"
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    filas = []
+    hoy = pd.Timestamp.today().normalize()
+    a = pd.Timestamp("2020-07-01")
+    while a <= hoy + pd.Timedelta(days=40):
+        b = min(a + pd.Timedelta(days=2500), hoy + pd.Timedelta(days=40))
+        raw = subprocess.run(["curl", "-sS", "--retry", "3", "--max-time", "90", URL_ICL.format(a=a.date(), b=b.date())],
+                             capture_output=True, check=True).stdout
+        for r in json.loads(raw)["results"]:
+            for x in r.get("detalle", []):
+                filas.append({"fecha": x["fecha"], "icl": x["valor"]})
+        a = b + pd.Timedelta(days=1)
+    t = pd.DataFrame(filas).drop_duplicates("fecha").sort_values("fecha")
+    t.to_csv(ruta, index=False)
+    return t
+
+
+def serie_icl() -> pd.DataFrame:
+    """Por mes: aumento anual del ICL repartido en 12 (contratos que ajustan ese mes) y variación mensual, en %."""
+    ruta = DATA / "precios" / "alquileres" / "icl.csv"
+    if not ruta.exists():
+        return pd.DataFrame(columns=["icl_a", "icl_m"])
+    t = pd.read_csv(ruta, parse_dates=["fecha"]).set_index("fecha").icl
+    ini = t.resample("MS").first()  # valor del primer día del mes (lo que usan los contratos que ajustan ese mes)
+    prom = t.resample("MS").mean()
+    return pd.DataFrame({"icl_a": (ini / ini.shift(12) - 1) * 100 / 12, "icl_m": (prom / prom.shift(1) - 1) * 100})

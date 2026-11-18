@@ -33,6 +33,9 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Supermercados (Carrefour, Jumbo, Disco, Vea, Día)
         run: python scripts/scrapear_supermercados.py
+      - name: Tiendas de ropa, calzado y electrónica (se juntan para evaluarlas cuando haya historia)
+        continue-on-error: true
+        run: python scripts/scrapear_supermercados.py --tiendas
       - name: Recuperar precios SEPA ya procesados (caché)
         uses: actions/cache/restore@v4
         with:

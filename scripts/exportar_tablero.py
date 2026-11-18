@@ -116,6 +116,8 @@ def estado_fuentes() -> pd.DataFrame:
     agregar("IPC Ciudad de Buenos Aires", "Anticipo del dato nacional (víspera)", ult, 50, "mensual")
     agregar("SEPA (Precios Claros)", "Precios de góndola de ~17 cadenas, todo el país", leer(P / "sepa" / "recoleccion.csv", "fecha"), 3, "diaria")
     agregar("Supermercados online", "Precios del GBA con stock", leer(P / "supermercados" / "resumen.csv", "fecha"), 3, "diaria")
+    agregar("Tiendas de ropa y electrónica", "Se juntan desde nov-2026; se prueban cuando haya historia",
+            leer(P / "tiendas" / "resumen.csv", "fecha"), 3, "diaria")
     agregar("Mercado Central", "Verduras y frutas mayoristas", leer(P / "mayoristas" / "mercado_central.csv", "fecha"), 5, "diaria (días hábiles)")
     agregar("Hacienda (Cañuelas)", "Precio del ganado: anticipa la carne", leer(P / "mayoristas" / "hacienda.csv", "hasta"), 5, "diaria")
     agregar("Combustibles (YPF)", "Precio en surtidor", leer(P / "combustibles" / "ypf_caba_diario.csv", "fecha"), 3, "diaria")

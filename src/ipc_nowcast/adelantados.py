@@ -43,12 +43,14 @@ OPCIONES = {
     # el del índice nacional, así que quedan afuera. Restaurantes y papelería sí mejoran el nacional.
     "11.1": [["ipc"]],
     "09.5": [["ipc"]],
+    # Alquileres: también se probó el ICL del BCRA (nov-2026); mejora el rubro pero empeora el error nacional al
+    # inicio de mes y en el último año, así que no entra (scripts/pruebas/evaluar_candidatas.py 04.1.1:icl).
     # Rubros no alimentarios que SEPA también releva. Se probaron bebidas alcohólicas, limpieza, cuidado personal
     # y medicamentos: solo medicamentos con el mes completo mejora el error nacional (a mitad de mes lo empeora).
     "06.1": [["sepa"]],
 }
 SOLO_COMPLETO = {"06.1"}  # clases que solo se corrigen con el mes completo de precios
-ESTADISTICAS = {"ipc"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"ipc", "icl"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
            "01.1.8": "Azúcar, dulces y golosinas", "01.2.1": "Café, té, yerba y cacao",
@@ -59,7 +61,7 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
            "10": "Educación"}
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
-            "ipc": "inflación reciente"}
+            "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "completo"]
 CON_TENDENCIA = {"01.1.2"}
@@ -93,6 +95,8 @@ def _otros(corte: str) -> pd.DataFrame:
     o = pd.DataFrame({"nafta": nafta, "fx": fx})
     o["nafta_l1"] = nafta.shift(1, freq="MS").reindex(o.index)
     o["fx_l1"] = fx_full.shift(1, freq="MS").reindex(o.index)
+    icl = indicadores.serie_icl()
+    o = o.join(icl, how="outer") if not icl.empty else o.assign(icl_a=np.nan, icl_m=np.nan)
     return o
 
 
@@ -131,6 +135,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 ox = lambda k: float(o[k]) if o is not None and pd.notna(o[k]) else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
+                              "icl_a": ox("icl_a"), "icl_m": ox("icl_m"),
                               "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan))})
     t = pd.DataFrame(filas)
     if t.empty:
@@ -172,6 +177,10 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
     if "fx" in fuentes:
         cols.append(t["fx"].astype(float))
         cols.append(t["fx_l1"].astype(float))
+    if "icl" in fuentes:
+        p = t.proy.astype(float)
+        cols.append(t["icl_a"].astype(float) - p)
+        cols.append(t["icl_m"].astype(float) - p)
     if "ipc" in fuentes:
         p = t.proy.astype(float)
         cols.append(t["ipc_l1"].astype(float) - p)
@@ -209,6 +218,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["fx"].notna() & t["fx_l1"].notna()
     if "ipc" in fuentes:
         ok &= t["ipc_l1"].notna() & t["ipc_p3"].notna()
+    if "icl" in fuentes:
+        ok &= t["icl_a"].notna() & t["icl_m"].notna()
     return ok
 
 
@@ -323,7 +334,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         if isinstance(opciones, dict):
             opciones = [opciones]
         for _, f in t[t.clase == clase].iterrows():
-            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3"]})
+            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
                         and (not temprano or set(o["fuentes"]) <= ESTADISTICAS)), None)
             if cfg is None:
@@ -344,6 +355,8 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
                 det.append(f"dólar mayorista {pc(f['fx'])} este mes y {pc(f['fx_l1'])} el anterior")
             if "ipc" in fuentes:
                 det.append(f"inflación general {pc(f['ipc_l1'])} el mes pasado y {pc(f['ipc_p3'])} promedio de 3 meses")
+            if "icl" in fuentes:
+                det.append(f"ICL: ajuste anual de contratos {pc(f['icl_a'] * 12)} y {pc(f['icl_m'])} en el mes")
             nombre_f = " + ".join(ETIQUETA[x] if x != "may" else f"mayorista: {MAYORISTA[clase]}" for x in fuentes)
             info.append({"region": f.region, "componente": clase,
                          "fuente": nombre_f[:1].upper() + nombre_f[1:],

@@ -6,6 +6,7 @@ Guarda:
   data/precios/supermercados/resumen.csv                                  control: cuántos productos se bajaron por día
 
 Uso:  python scripts/scrapear_supermercados.py              (todas las cadenas)
+      python scripts/scrapear_supermercados.py --tiendas    (ropa, calzado y electrónica -> data/precios/tiendas/)
       python scripts/scrapear_supermercados.py dia jumbo    (algunas)
 """
 import sys
@@ -44,7 +45,13 @@ def actualizar_catalogo(cadena: str, df: pd.DataFrame, hoy: date) -> int:
 
 
 def main():
-    cadenas = sys.argv[1:] or list(vtex.CADENAS)
+    global DIR
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if "--tiendas" in sys.argv:
+        DIR = DATA / "precios" / "tiendas"
+        cadenas = args or list(vtex.TIENDAS)
+    else:
+        cadenas = args or list(vtex.CADENAS)
     hoy = date.today()
     DIR.mkdir(parents=True, exist_ok=True)
     resumen = []
