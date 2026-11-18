@@ -10,7 +10,7 @@ juntan todos los días (supermercados, tarifas, combustibles, etc.), anticipa el
 | 0 | Infraestructura (este repo + tareas automáticas) | ✅ |
 | 1 | Réplica exacta de INDEC y pesos efectivos mes a mes | ✅ ver [`reports/replica_indec.md`](reports/replica_indec.md) |
 | 2 | Mapa de la canasta: qué fuente y qué método para cada región × grupo | ⏳ |
-| 3 | Alimentos: SEPA/Precios Claros, supermercados, Mercado Central, carne | ⏳ |
+| 3 | Alimentos: SEPA/Precios Claros, supermercados, Mercado Central, carne | 🟡 supermercados online recolectando a diario desde 18/11/2026 |
 | 4 | Regulados: calendario de tarifas, combustibles, transporte, prepagas | ⏳ |
 | 5 | Núcleo no alimentario: electro, indumentaria, alquileres, servicios | ⏳ |
 | 6 | Motor: promedio mensual, arrastre, estacionalidad, combinación | ⏳ |
@@ -35,6 +35,7 @@ tests/         Controles automáticos (por ejemplo: que la réplica de INDEC sig
 pip install -r requirements.txt
 python scripts/actualizar_indec.py   # 1. baja las series oficiales de INDEC
 python scripts/replicar_indec.py     # 2. replica el índice y calcula pesos efectivos
+python scripts/scrapear_supermercados.py  # 3. precios del día de 5 supermercados online
 pytest                               # controles
 ```
 

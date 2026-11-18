@@ -1,0 +1,37 @@
+name: Precios diarios
+
+# Todos los días a las 07:17 (hora Argentina) baja los precios de los supermercados online.
+# También se puede correr a mano desde la pestaña Actions ("Run workflow").
+on:
+  schedule:
+    - cron: "17 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: escritura-repo
+  cancel-in-progress: false
+
+jobs:
+  supermercados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Supermercados (Carrefour, Jumbo, Disco, Vea, Día)
+        run: python scripts/scrapear_supermercados.py
+      - name: Guardar datos en el repo
+        run: |
+          git config user.name "ipc-nowcast-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/precios
+          git commit -q -m "Precios supermercados $(date +%Y-%m-%d)" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 10; done
+          exit 1
