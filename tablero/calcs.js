@@ -18,7 +18,7 @@
       const r = filas[filas.length - 1];
       const n = (v) => (v === null || v === undefined || v === '' ? null : +v);
       return [{ mes: r.mes, fecha_calculo: r.fecha_calculo, estimacion: +r.estimacion, rango_bajo: +r.rango_bajo, rango_alto: +r.rango_alto,
-        solo_modelo: +r.solo_modelo, ipc_caba: n(r.ipc_caba), ajuste_caba: n(r.ajuste_caba), rem: n(r.rem), dias_supermercados: n(r.dias_supermercados) }];
+        solo_modelo: +r.solo_modelo, ipc_caba: n(r.ipc_caba), ajuste_caba: n(r.ajuste_caba), rem: n(r.rem), dias_supermercados: n(r.dias_supermercados), momento: r.momento || null }];
     },
   });
   dash.calc('actual_mes', {
@@ -68,6 +68,27 @@
         .map((r) => ({ fuente: fuente(r), cadena: r.cadena, fecha: r.fecha, productos: +r.productos }))
         .sort((a, b) => d3.ascending(a.fuente, b.fuente) || b.productos - a.productos);
     },
+  });
+  dash.calc('info_rubros', {
+    inputs: ['informacion'], title: 'Datos del mes por rubro',
+    description: 'Promedio nacional (ponderado por peso) de lo esperado sin datos y con el dato real, y efecto sobre el pronóstico total.',
+    fn: (informacion) => {
+      if (!informacion.length) return [];
+      const rows = informacion.map((r) => ({ ...r, dato: +r.dato, proyeccion: +r.proyeccion, con: nn(r.con) === null ? +r.dato : +r.con,
+        efecto_nacional: nn(r.efecto_nacional) || 0, peso: nn(r.peso) || 0 }));
+      return d3.groups(rows, (r) => r.componente).map(([componente, g]) => {
+        const pw = d3.sum(g, (r) => r.peso) || g.length;
+        const prom = (k) => d3.sum(g, (r) => r[k] * (r.peso || 1)) / (d3.sum(g, (r) => r.peso) || g.length);
+        return { componente, nombre: g[0].nombre_componente, grupo: g[0].grupo || '', fuentes: [...new Set(g.map((r) => r.fuente))].join(' · '),
+          regiones: new Set(g.map((r) => r.region)).size, sin: prom('proyeccion'), con: prom('con'), efecto: d3.sum(g, (r) => r.efecto_nacional),
+          peso: pw, detalle: g.map((r) => ({ region: r.region, detalle: r.detalle, fuente: r.fuente, sin: r.proyeccion, con: r.con, efecto: r.efecto_nacional }))
+            .sort((a, b) => Math.abs(b.efecto) - Math.abs(a.efecto)) };
+      }).sort((a, b) => d3.ascending(a.grupo, b.grupo) || Math.abs(b.efecto) - Math.abs(a.efecto));
+    },
+  });
+  dash.calc('info_total', {
+    inputs: ['info_rubros'], title: 'Efecto total de los datos del mes',
+    fn: (info_rubros) => [{ efecto: d3.sum(info_rubros || [], (r) => r.efecto), rubros: (info_rubros || []).length }],
   });
   dash.calc('rec_total', {
     inputs: ['rec_ultimo'], title: 'Productos relevados en el último día',

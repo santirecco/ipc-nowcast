@@ -243,15 +243,16 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
                 continue
             fuentes, b = cfg["fuentes"], np.array(cfg["coef"])
             pred = float(f.proy + (_features(fila, fuentes) @ b)[0])
+            pc = lambda v: f"{v:+.1f}%".replace(".", ",").replace("-", "−")
             det = []
             if "sepa" in fuentes:
-                det.append(f"SEPA {f.sepa:.2f}%")
+                det.append(f"góndolas de todo el país (SEPA) {pc(f.sepa)} en lo que va del mes")
             if "may" in fuentes:
-                det.append(f"{MAYORISTA[clase]} {f['may']:.1f}% (mes ant. {f['may_l1']:.1f}%)")
+                det.append(f"{MAYORISTA[clase]} {pc(f['may'])} este mes y {pc(f['may_l1'])} el anterior")
             info.append({"region": f.region, "componente": clase,
                          "fuente": "precios de góndola y mayoristas" if len(fuentes) > 1 else
                                    ("precios de góndola (SEPA)" if fuentes == ["sepa"] else f"mayorista: {MAYORISTA[clase]}"),
-                         "valor": pred, "parte": 1.0, "detalle": "; ".join(det) + f" · calibración {corte}"})
+                         "valor": pred, "parte": 1.0, "detalle": ("; ".join(det))[:1].upper() + ("; ".join(det))[1:]})
     return info
 
 

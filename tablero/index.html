@@ -1,111 +1,119 @@
 <meta name="dash-one-writer">
 <link rel="stylesheet" href="style.css">
 <div class="ipx">
-  <section class="ipx-card ipx-hero" id="encabezado">
+  <section class="ipx-hero" id="encabezado">
     <div class="ipx-hero-left">
-      <p class="ipx-eyebrow">Pronóstico IPC · <span data-draw="mes-nombre">—</span></p>
-      <h1 class="ipx-hero-title">Inflación mensual estimada, total país</h1>
+      <p class="ipx-kicker"><span class="ipx-live"></span>Pronóstico del IPC · <span data-draw="mes-nombre">—</span></p>
+      <h1 class="ipx-hero-title">¿Cuánto va a dar la inflación del mes?</h1>
       <div class="ipx-hero-num"><span data-draw="est" data-source="actual" data-field="estimacion" data-row="0">—</span><span class="ipx-hero-unit">%</span></div>
-      <p class="ipx-hero-sub" id="resumen">Rango probable entre <b data-draw="bajo" data-source="actual" data-field="rango_bajo" data-row="0">—</b> y <b data-draw="alto" data-source="actual" data-field="rango_alto" data-row="0">—</b>. <span data-draw="frase-indec">—</span></p>
+      <p class="ipx-hero-sub" id="resumen">Lo más probable es que INDEC publique entre <b data-draw="bajo" data-source="actual" data-field="rango_bajo" data-row="0">—</b> y <b data-draw="alto" data-source="actual" data-field="rango_alto" data-row="0">—</b>. <span data-draw="frase-indec">—</span></p>
       <div class="ipx-pills">
-        <span class="ipx-pill"><span class="ipx-pill-dot"></span>Actualizado <span data-draw="fecha-calc" data-source="actual" data-field="fecha_calculo" data-row="0">—</span></span>
-        <span class="ipx-pill">Días con precios relevados: <span data-draw="dias-super" data-source="actual" data-field="dias_supermercados" data-row="0">—</span></span>
+        <span class="ipx-pill">Actualizado el <span data-draw="fecha-calc" data-source="actual" data-field="fecha_calculo" data-row="0">—</span></span>
+        <span class="ipx-pill ipx-pill-accent" data-draw="momento" data-source="actual" data-field="momento" data-row="0">—</span>
       </div>
     </div>
     <div class="ipx-hero-right">
-      <p class="ipx-eyebrow">El pronóstico frente a sus referencias</p>
+      <p class="ipx-label">El pronóstico al lado de otras referencias</p>
       <div class="ipx-strip" id="tira-referencias" data-draw="strip" data-source="actual ultimo_indec"></div>
+      <p class="ipx-hint">La franja es el rango probable. Las marcas de abajo: el modelo sin datos del mes, lo que esperan los analistas (REM) y el último dato oficial.</p>
     </div>
   </section>
 
+  <nav class="ipx-nav" aria-label="Secciones del tablero">
+    <a href="#composicion">Qué la explica</a><a href="#regiones">Regiones</a><a href="#evolucion">Día a día</a>
+    <a href="#informacion">Datos del mes</a><a href="#backtest">Precisión</a><a href="#recoleccion">Fuentes</a><a href="#metodo">Cómo se calcula</a>
+  </nav>
+
   <section class="ipx-kpis" id="tarjetas">
     <div class="ipx-card ipx-kpi" id="tarjeta-modelo">
-      <p class="ipx-eyebrow">Solo modelo estadístico</p>
+      <p class="ipx-label">Sin datos del mes</p>
       <span class="ipx-kpi-val" data-draw="card-modelo" data-source="actual" data-field="solo_modelo" data-row="0">—</span>
-      <span class="ipx-kpi-foot">Sin la información del mes: muestra cuánto aportan los datos nuevos.</span>
+      <span class="ipx-kpi-foot">Lo que daría el modelo solo con la historia. La diferencia con el pronóstico es lo que aportan los datos reales del mes.</span>
     </div>
     <div class="ipx-card ipx-kpi" id="tarjeta-caba">
-      <p class="ipx-eyebrow">IPC Ciudad de Bs. As.</p>
+      <p class="ipx-label">IPC Ciudad de Buenos Aires</p>
       <span class="ipx-kpi-val" data-draw="card-caba" data-source="actual" data-field="ipc_caba" data-row="0">—</span>
       <span class="ipx-kpi-foot" data-draw="card-caba-nota"></span>
     </div>
     <div class="ipx-card ipx-kpi" id="tarjeta-rem">
-      <p class="ipx-eyebrow">REM del BCRA</p>
+      <p class="ipx-label">Analistas (REM del BCRA)</p>
       <span class="ipx-kpi-val" data-draw="card-rem" data-source="actual" data-field="rem" data-row="0">—</span>
-      <span class="ipx-kpi-foot">Nuestro pronóstico: <span class="ipx-delta" data-draw="delta-rem" data-source="comparacion" data-field="vs_rem" data-row="0">—</span> pp</span>
+      <span class="ipx-kpi-foot">Nuestro pronóstico está <span class="ipx-delta" data-draw="delta-rem" data-source="comparacion" data-field="vs_rem" data-row="0">—</span> de lo que esperan.</span>
     </div>
     <div class="ipx-card ipx-kpi" id="tarjeta-indec">
-      <p class="ipx-eyebrow">Último dato INDEC · <span data-draw="indec-mes" data-source="ultimo_indec" data-field="mes" data-row="0">—</span></p>
+      <p class="ipx-label">Último dato INDEC · <span data-draw="indec-mes" data-source="ultimo_indec" data-field="mes" data-row="0">—</span></p>
       <span class="ipx-kpi-val" data-draw="indec-val" data-source="ultimo_indec" data-field="indec" data-row="0">—</span>
-      <span class="ipx-kpi-foot">Pronóstico vs. ese dato: <span class="ipx-delta" data-draw="delta-indec" data-source="comparacion" data-field="vs_indec" data-row="0">—</span> pp</span>
+      <span class="ipx-kpi-foot">El pronóstico de este mes está <span class="ipx-delta" data-draw="delta-indec" data-source="comparacion" data-field="vs_indec" data-row="0">—</span> de ese dato.</span>
     </div>
   </section>
 
   <section class="ipx-two">
-    <div class="ipx-card" id="divisiones">
-      <div class="ipx-sec-head">
-        <p class="ipx-eyebrow">Composición</p>
-        <h2 class="ipx-sec-title">Qué empuja la inflación del mes</h2>
-        <p class="ipx-muted">Aporte de cada rubro al total, en puntos porcentuales. Al lado del nombre, cuánto sube el rubro.</p>
-      </div>
+    <div class="ipx-card" id="composicion">
+      <header class="ipx-sec-head">
+        <p class="ipx-eyebrow">Qué la explica</p>
+        <h2 class="ipx-sec-title">Cuánto aporta cada rubro al total</h2>
+        <p class="ipx-muted">Cada barra son los puntos que suma el rubro a la inflación del mes: depende de cuánto sube y de cuánto pesa en el gasto de los hogares.</p>
+      </header>
+      <div class="ipx-bars-head"><span>Rubro <i>(cuánto sube)</i></span><span>Aporte (pp)</span></div>
       <div class="ipx-bars" data-draw="div" data-source="divisiones"></div>
     </div>
     <div class="ipx-card" id="regiones">
-      <div class="ipx-sec-head">
+      <header class="ipx-sec-head">
         <p class="ipx-eyebrow">Regiones</p>
-        <h2 class="ipx-sec-title">Variación estimada por región</h2>
-        <p class="ipx-muted">Más intenso, más inflación. Debajo de cada valor, cuánto pesa la región en el índice nacional.</p>
-      </div>
+        <h2 class="ipx-sec-title">Inflación estimada en cada región</h2>
+        <p class="ipx-muted">Más oscuro, más inflación. Abajo de cada valor, cuánto pesa la región en el índice nacional.</p>
+      </header>
       <div class="ipx-map" data-draw="mapa" data-source="regiones"></div>
       <div class="ipx-legend-scale"><span data-draw="esc-min" data-source="regiones">—</span><span class="ipx-legend-grad" data-draw="esc-grad"></span><span data-draw="esc-max" data-source="regiones">—</span></div>
     </div>
   </section>
 
   <section class="ipx-card" id="evolucion">
-    <div class="ipx-sec-head">
-      <p class="ipx-eyebrow">Seguimiento diario</p>
-      <h2 class="ipx-sec-title">Cómo va cambiando el pronóstico del mes</h2>
-      <p class="ipx-muted">Un punto por día de cálculo. La franja es el rango probable; las líneas punteadas, el REM y el último dato de INDEC.</p>
-    </div>
+    <header class="ipx-sec-head">
+      <p class="ipx-eyebrow">Día a día</p>
+      <h2 class="ipx-sec-title">Cómo se va moviendo el pronóstico durante el mes</h2>
+      <p class="ipx-muted">Un punto por día. La franja es el rango probable, que se angosta a medida que entran precios del mes. Las líneas punteadas son el REM y el último dato de INDEC.</p>
+    </header>
     <div class="ipx-chart" data-draw="evol" data-source="actual_mes actual ultimo_indec"></div>
   </section>
 
   <section class="ipx-card" id="informacion">
-    <div class="ipx-sec-head">
+    <header class="ipx-sec-head">
       <p class="ipx-eyebrow">Datos del mes</p>
-      <h2 class="ipx-sec-title">Datos del mes ya incorporados al pronóstico</h2>
-      <p class="ipx-muted">Aumentos de tarifas anunciados y precios reales de alimentos (góndolas de todo el país, Mercado Central, hacienda): cada dato reemplaza la proyección estadística de su componente. El efecto es sobre la variación del rubro en esa región: en rojo suma inflación, en verde resta.</p>
-    </div>
-    <div class="ipx-table-wrap">
-      <table class="ipx-table" data-source="informacion" data-row-key="clave">
-        <thead><tr><th data-field="region">Región</th><th data-field="nombre_componente">Componente</th><th class="det" data-field="detalle">Detalle</th><th class="num" data-field="dato">Con el dato %</th><th class="num" data-field="proyeccion">Sin el dato %</th><th class="num" data-field="efecto_pp">Efecto (pp)</th></tr></thead>
-        <tbody data-draw="tab-info"></tbody>
-      </table>
-    </div>
+      <h2 class="ipx-sec-title">Qué información real del mes ya usa el pronóstico</h2>
+    </header>
+    <ol class="ipx-steps">
+      <li><b>Sin datos:</b> el modelo estima cada rubro solo con su historia.</li>
+      <li><b>Con el dato real:</b> cuando hay un aumento anunciado o precios relevados del mes, reemplazan esa estimación.</li>
+      <li><b>Efecto en el total:</b> cuántos puntos sube <span class="ipx-up-txt">(rojo)</span> o baja <span class="ipx-down-txt">(verde)</span> el pronóstico por ese cambio.</li>
+    </ol>
+    <div class="ipx-info-sum" data-draw="info-resumen" data-source="info_total actual"></div>
+    <div class="ipx-info" data-draw="info-rubros" data-source="info_rubros"></div>
+    <p class="ipx-hint">Tocá un rubro para ver el detalle por región y de dónde sale cada dato.</p>
   </section>
 
   <section class="ipx-card" id="backtest">
-    <div class="ipx-sec-head">
+    <header class="ipx-sec-head">
       <p class="ipx-eyebrow">Precisión</p>
-      <h2 class="ipx-sec-title">Qué tan bien anduvo el modelo hacia atrás</h2>
-      <p class="ipx-muted">Simulación mes a mes con la información que había en cada momento, últimos 16 meses. Tocá cada serie de la leyenda para mostrarla u ocultarla.</p>
-    </div>
+      <h2 class="ipx-sec-title">Qué tan bien hubiera acertado el modelo</h2>
+      <p class="ipx-muted">Simulación de los últimos 16 meses usando solo la información que había en cada momento. Error promedio, en puntos porcentuales:</p>
+    </header>
     <div class="ipx-stats">
-      <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio al inicio del mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span> pp</span></div>
-      <div class="ipx-stat"><span class="ipx-eyebrow">A mitad de mes, con precios</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span> pp</span></div>
-      <div class="ipx-stat"><span class="ipx-eyebrow">Error promedio en la víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span> pp</span></div>
-      <div class="ipx-stat"><span class="ipx-eyebrow">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span> pp</span></div>
+      <div class="ipx-stat"><span class="ipx-label">Inicio de mes</span><span class="ipx-stat-val"><span data-draw="mae-ini" data-source="error_bt" data-field="error" data-where="momento=inicio">—</span></span><span class="ipx-stat-foot">solo historia</span></div>
+      <div class="ipx-stat"><span class="ipx-label">Mitad de mes</span><span class="ipx-stat-val"><span data-draw="mae-mit" data-source="error_bt" data-field="error" data-where="momento=mitad">—</span></span><span class="ipx-stat-foot">+ precios hasta el día 15</span></div>
+      <div class="ipx-stat ipx-stat-best"><span class="ipx-label">Víspera</span><span class="ipx-stat-val"><span data-draw="mae-vis" data-source="error_bt" data-field="error" data-where="momento=vispera">—</span></span><span class="ipx-stat-foot">+ IPC de la Ciudad</span></div>
+      <div class="ipx-stat"><span class="ipx-label">IPC Ciudad solo</span><span class="ipx-stat-val"><span data-draw="mae-caba" data-source="error_bt" data-field="error" data-where="momento=caba">—</span></span><span class="ipx-stat-foot">para comparar</span></div>
     </div>
     <div class="ipx-chart" data-draw="bt" data-source="backtest"></div>
   </section>
 
   <section class="ipx-card" id="recoleccion">
-    <div class="ipx-sec-head">
-      <p class="ipx-eyebrow">Recolección</p>
+    <header class="ipx-sec-head">
+      <p class="ipx-eyebrow">Fuentes</p>
       <h2 class="ipx-sec-title"><span data-draw="rec-total" data-source="rec_total">—</span> precios relevados en el último día</h2>
-      <p class="ipx-muted">Último día de cada fuente (el más reciente, <span data-draw="rec-fecha" data-source="rec_ultimo" data-field="fecha" data-row="0">—</span>): supermercados online del GBA, SEPA con las cadenas grandes de todo el país (sale con un día de demora) y especies del Mercado Central.</p>
-    </div>
-    <div class="ipx-chains" data-draw="cadenas" data-source="rec_ultimo"></div>
+      <p class="ipx-muted">Último día disponible de cada fuente. SEPA reúne los precios que las cadenas grandes informan por ley en todo el país.</p>
+    </header>
+    <div class="ipx-sources" data-draw="cadenas" data-source="rec_ultimo"></div>
   </section>
 
   <details class="ipx-card ipx-method" id="metodo">
@@ -113,10 +121,10 @@
     <ul>
       <li><b>Réplica exacta de INDEC.</b> Los pesos de cada región y rubro se calibraron contra la serie oficial desde dic-2016: la réplica reproduce los 118 meses publicados sin diferencia en la décima.</li>
       <li><b>Proyección estadística</b> de las 72 combinaciones región × rubro: persistencia, mediana de los últimos 3 meses y estacionalidad típica del mes respecto de la inflación núcleo.</li>
-      <li><b>Información del mes.</b> El calendario de aumentos regulados (luz, gas, transporte, prepagas, combustibles, telefonía, colegios) reemplaza la proyección de su componente, contando qué parte del aumento cae en el mes según la fecha de vigencia. Se revisa todas las semanas.</li>
-      <li><b>Alimentos con precios reales.</b> Cada clase de alimentos se corrige con los precios del mes que la anticipan: góndolas de todo el país (SEPA, unas 17 cadenas y 3.000 sucursales), verduras y frutas del Mercado Central y hacienda de Cañuelas para la carne. Cuánto pesa cada fuente se estimó con la historia, y solo se usa donde mejoró el error fuera de muestra.</li>
+      <li><b>Aumentos anunciados.</b> El calendario de tarifas y precios regulados (luz, gas, transporte, prepagas, combustibles, telefonía, colegios) reemplaza la proyección de su componente, contando qué parte del aumento cae en el mes según la fecha de vigencia. Se revisa todos los lunes.</li>
+      <li><b>Alimentos con precios reales.</b> Cada clase de alimentos se corrige con los precios del mes que la anticipan: góndolas de todo el país (SEPA, unas 17 cadenas y 3.000 sucursales), verduras y frutas del Mercado Central y hacienda de Cañuelas para la carne. Cuánto pesa cada fuente se estimó con la historia, y solo se usa donde mejoró el error.</li>
       <li><b>IPC de la Ciudad de Buenos Aires.</b> Cuando se publica, unos días antes que INDEC, se combina con el modelo: 70% y 30%.</li>
-      <li><b>Rango probable.</b> Cubre el 80% de los errores del backtest de los últimos 16 meses para ese momento del mes.</li>
+      <li><b>Rango probable.</b> Cubre el 80% de los errores de los últimos 16 meses para ese momento del mes.</li>
     </ul>
   </details>
   <p class="ipx-foot">Modelo ipc-nowcast · Fuentes: INDEC, IPCBA (Instituto de Estadística de la Ciudad), BCRA (REM), SEPA – Precios Claros (vía archivo de preciazo), Mercado Central de Buenos Aires, Mercado Agroganadero, supermercados online, resoluciones y anuncios de tarifas.</p>

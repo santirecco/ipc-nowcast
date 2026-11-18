@@ -1,4 +1,5 @@
   const { f1: g1, f2: g2, fInt: gInt, nombreMes: nm, mesCorto: mc, fecha: fe } = window.ipx;
+  const sgn = (v) => window.ipx.sg(v, g2);
   const mix = (pct) => `color-mix(in srgb, ${dash.colors[0]} ${pct}%, var(--color-panel))`;
 
   // tira de referencias: rango, pronóstico, REM, último INDEC, solo modelo
@@ -60,7 +61,7 @@
       const row = document.createElement('div'); row.className = 'ipx-bar-row';
       const name = document.createElement('div'); name.className = 'ipx-bar-name';
       name.textContent = r.nombre;
-      const v = document.createElement('span'); v.className = 'ipx-bar-var'; v.textContent = `${g1(r.variacion)}%`; name.appendChild(v);
+      const v = document.createElement('span'); v.className = 'ipx-bar-var'; v.textContent = `sube ${g1(r.variacion)}%`; name.appendChild(v);
       const val = document.createElement('div'); val.className = 'ipx-bar-val'; val.textContent = g2(r.incidencia);
       const track = document.createElement('div'); track.className = 'ipx-bar-track';
       const bar = document.createElement('div'); bar.className = 'ipx-bar';
@@ -158,9 +159,9 @@
     { k: 'indec', nombre: 'INDEC', det: 'Dato oficial', col: (r) => r.indec, color: 'var(--color-fg)', ancho: 2.2, puntos: true },
     { k: 'vispera', nombre: 'Víspera', det: 'Modelo + IPC Ciudad, con todos los precios del mes', col: (r) => r.vispera, color: () => dash.colors[0], ancho: 2.2 },
     { k: 'fin', nombre: 'Fin de mes', det: 'Modelo con los precios del mes completo, sin IPC Ciudad', col: (r) => r.fin_de_mes, color: () => dash.colors[3] || dash.colors[1], ancho: 1.6, guion: '1 0' },
-    { k: 'mitad', nombre: 'Mitad de mes', det: 'Modelo con los precios hasta el día 15', col: (r) => r.mitad_de_mes, color: () => dash.colors[1], ancho: 1.6 },
-    { k: 'inicio', nombre: 'Inicio de mes', det: 'Solo la proyección estadística', col: (r) => r.inicio_de_mes, color: () => dash.colors[2], ancho: 1.6, guion: '5 4' },
-    { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: 'var(--color-fg-muted)', ancho: 1.4, guion: '2 3' },
+    { k: 'mitad', nombre: 'Mitad de mes', det: 'Modelo con los precios hasta el día 15', col: (r) => r.mitad_de_mes, color: () => dash.colors[2], ancho: 1.8 },
+    { k: 'inicio', nombre: 'Inicio de mes', det: 'Solo la proyección estadística', col: (r) => r.inicio_de_mes, color: 'var(--color-fg-muted)', ancho: 1.5, guion: '5 4' },
+    { k: 'caba', nombre: 'IPC Ciudad', det: 'IPC de la Ciudad de Buenos Aires, sin modelo', col: (r) => r.ipc_caba, color: () => dash.colors[1], ancho: 1.5, guion: '2 3' },
   ];
   const btVisibles = new Set(['indec', 'vispera', 'mitad', 'inicio']);
   const colorDe = (s) => (typeof s.color === 'function' ? s.color() : s.color);
@@ -185,7 +186,7 @@
     const dibujar = () => {
       lienzo.replaceChildren();
       const vis = series.filter((s) => btVisibles.has(s.k));
-      const W = el.clientWidth || 700, H = 270, m = { t: 12, r: 14, b: 74, l: 34 }, eh = 40;
+      const W = el.clientWidth || 700, H = 312, m = { t: 12, r: 14, b: 112, l: 34 }, eh = 56;
       const x = d3.scalePoint().domain(rows.map((r) => r.mes)).range([m.l + 8, W - m.r - 8]);
       const vals = rows.flatMap((r) => (vis.length ? vis : series).map((s) => r[s.k])).filter((v) => v !== null);
       const y = d3.scaleLinear().domain([Math.max(0, d3.min(vals) - 0.3), d3.max(vals) + 0.2]).nice().range([H - m.b, m.t]);
@@ -201,23 +202,29 @@
         if (s.puntos) svg.selectAll(`circle.p-${s.k}`).data(rows.filter((r) => r[s.k] !== null)).join('circle').attr('class', `p-${s.k}`)
           .attr('cx', (r) => x(r.mes)).attr('cy', (r) => y(r[s.k])).attr('r', 3.2).style('fill', colorDe(s));
       }
-      // franja de error: del modelo visible más informado
+      // franja de error con signo (modelo − INDEC) del modelo visible más informado
       const ref = ['vispera', 'fin', 'mitad', 'inicio', 'caba'].map((k) => series.find((s) => s.k === k)).find((s) => s && btVisibles.has(s.k));
-      const ey = H - m.b + 22;
+      const ey = H - m.b + 44;
       if (ref) {
-        const err = (r) => (r[ref.k] === null || r.indec === null ? null : Math.abs(r[ref.k] - r.indec));
-        const emax = d3.max(rows, err) || 1;
-        const eb = d3.scaleLinear().domain([0, emax]).range([0, eh - 6]);
-        svg.append('text').attr('x', m.l).attr('y', ey - 6).text(`Error por mes: ${ref.nombre.toLowerCase()} (pp)`)
+        const err = (r) => (r[ref.k] === null || r.indec === null ? null : r[ref.k] - r.indec);
+        const emax = d3.max(rows, (r) => Math.abs(err(r) || 0)) || 0.5;
+        const mid = ey + eh / 2;
+        const eb = d3.scaleLinear().domain([0, emax]).range([0, eh / 2 - 2]);
+        svg.append('text').attr('x', m.l).attr('y', ey - 6).text(`Error de ${ref.nombre.toLowerCase()}, mes a mes (pp): ▲ se pasó · ▼ se quedó corto`)
           .style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
+        svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', mid).attr('y2', mid).style('stroke', 'var(--cds-chart-axis)');
         const bwid = Math.max(4, Math.min(18, (W - m.l - m.r) / rows.length - 8));
-        svg.selectAll('rect.err').data(rows.filter((r) => err(r) !== null)).join('rect').attr('class', 'err').attr('x', (r) => x(r.mes) - bwid / 2).attr('width', bwid)
-          .attr('y', (r) => ey + eh - eb(err(r))).attr('height', (r) => Math.max(1, eb(err(r)))).attr('rx', 2)
-          .style('fill', (r) => (err(r) > 0.3 ? 'var(--color-warn)' : mix(55)));
+        svg.selectAll('rect.err').data(rows.filter((r) => err(r) !== null)).join('rect').attr('class', 'err')
+          .attr('x', (r) => x(r.mes) - bwid / 2).attr('width', bwid)
+          .attr('y', (r) => (err(r) >= 0 ? mid - Math.max(1, eb(err(r))) : mid)).attr('height', (r) => Math.max(1, eb(Math.abs(err(r))))).attr('rx', 2)
+          .style('fill', (r) => (err(r) >= 0 ? 'var(--color-bad)' : 'var(--color-ok)')).style('opacity', (r) => (Math.abs(err(r)) > 0.3 ? 0.95 : 0.55));
+        svg.selectAll('text.ev').data(rows.filter((r) => err(r) !== null && Math.abs(err(r)) > 0.3)).join('text').attr('class', 'ev')
+          .attr('x', (r) => x(r.mes)).attr('y', (r) => (err(r) >= 0 ? mid - eb(err(r)) - 3 : mid + eb(-err(r)) + 10)).attr('text-anchor', 'middle')
+          .text((r) => sgn(err(r))).style('fill', 'var(--cds-text-secondary)').style('font-size', '10px');
       }
       const step = W < 560 ? 3 : 2;
       svg.selectAll('text.mx').data(rows.filter((_, i) => i % step === (rows.length - 1) % step)).join('text').attr('class', 'mx')
-        .attr('x', (r) => x(r.mes)).attr('y', H - 2).attr('text-anchor', 'middle').text((r) => mc(r.mes)).style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
+        .attr('x', (r) => x(r.mes)).attr('y', H - m.b + 18).attr('text-anchor', 'middle').text((r) => mc(r.mes)).style('fill', 'var(--cds-text-secondary)').style('font-size', '11px');
       if (!vis.length) {
         svg.append('text').attr('x', W / 2).attr('y', (H - m.b) / 2).attr('text-anchor', 'middle').text('Elegí al menos una serie en la leyenda')
           .style('fill', 'var(--cds-text-secondary)').style('font-size', '13px');
@@ -233,7 +240,7 @@
         for (const s of vis) {
           if (r[s.k] === null) continue;
           const nombre = s.nombre;
-          const txt = s.k === 'indec' ? `${nombre} ${g1(r.indec)}%` : `${nombre} ${g2(r[s.k])}%` + (r.indec !== null ? ` (error ${g2(Math.abs(r[s.k] - r.indec))})` : '');
+          const txt = s.k === 'indec' ? `${nombre} ${g1(r.indec)}%` : `${nombre} ${g2(r[s.k])}%` + (r.indec !== null ? ` (error ${sgn(r[s.k] - r.indec)})` : '');
           tip.appendChild(document.createElement('br')); tip.appendChild(document.createTextNode(txt));
         }
         const sx = lienzo.clientWidth / W;
@@ -254,26 +261,42 @@
     dibujar();
   });
 
-  // cadenas
+  // fuentes de precios: una tarjeta por fuente con sus cadenas
   dash.draw('cadenas', (el) => {
     const d = dash.data('rec_ultimo');
     el.replaceChildren();
     if (d.status !== 'ok') { if (d.status === 'error') el.textContent = 'No se pudo cargar'; return; }
-    const max = d3.max(d.data, (r) => r.productos) || 1;
-    let grupo = null;
-    for (const r of d.data) {
-      if (r.fuente !== grupo) {
-        grupo = r.fuente;
-        const h = document.createElement('p'); h.className = 'ipx-eyebrow ipx-chain-group';
-        h.textContent = `${grupo} · ${fe(r.fecha)}`;
-        el.appendChild(h);
+    const DESC = { 'SEPA (todo el país)': 'Cadenas grandes de las 24 provincias', 'Supermercados online': 'Tiendas online del GBA, con stock', Mayoristas: 'Especies de verduras y frutas' };
+    const ORDEN = ['SEPA (todo el país)', 'Supermercados online', 'Mayoristas'];
+    const grupos = d3.groups(d.data, (r) => r.fuente).sort((a, b) => ORDEN.indexOf(a[0]) - ORDEN.indexOf(b[0]));
+    for (const [fuente, g] of grupos) {
+      const card = document.createElement('div'); card.className = 'ipx-source';
+      const head = document.createElement('div'); head.className = 'ipx-source-head';
+      const t = document.createElement('p'); t.className = 'ipx-label'; t.textContent = `${fuente} · ${fe(g[0].fecha)}`;
+      const n = document.createElement('span'); n.className = 'ipx-source-num'; n.textContent = gInt(d3.sum(g, (r) => r.productos));
+      const s = document.createElement('span'); s.className = 'ipx-hint';
+      s.textContent = fuente === 'Mayoristas' ? `${DESC[fuente]} del Mercado Central` : `${DESC[fuente] || ''} · ${g.length} ${g.length === 1 ? 'cadena' : 'cadenas'}`;
+      head.append(t, n, s); card.appendChild(head);
+      if (fuente !== 'Mayoristas') {
+        const max = d3.max(g, (r) => r.productos) || 1;
+        const lista = document.createElement('div'); lista.className = 'ipx-chains';
+        const extra = document.createElement('details'); extra.className = 'ipx-chains-more';
+        g.forEach((r, i) => {
+          const row = document.createElement('div'); row.className = 'ipx-chain';
+          const nm_ = document.createElement('span'); nm_.textContent = r.cadena.charAt(0).toUpperCase() + r.cadena.slice(1);
+          const tr = document.createElement('div'); tr.className = 'ipx-bar-track';
+          const b = document.createElement('div'); b.className = 'ipx-bar'; b.style.width = `${(r.productos / max) * 100}%`; b.style.background = mix(i < 3 ? 80 : 55);
+          tr.appendChild(b);
+          const v = document.createElement('span'); v.className = 'ipx-num'; v.textContent = gInt(r.productos);
+          row.append(nm_, tr, v);
+          (i < 6 ? lista : extra).appendChild(row);
+        });
+        card.appendChild(lista);
+        if (g.length > 6) {
+          const sm = document.createElement('summary'); sm.textContent = `Ver las otras ${g.length - 6}`;
+          extra.prepend(sm); card.appendChild(extra);
+        }
       }
-      const row = document.createElement('div'); row.className = 'ipx-chain';
-      const n = document.createElement('span'); n.textContent = r.cadena.charAt(0).toUpperCase() + r.cadena.slice(1);
-      const tr = document.createElement('div'); tr.className = 'ipx-bar-track';
-      const b = document.createElement('div'); b.className = 'ipx-bar'; b.style.width = `${(r.productos / max) * 100}%`; b.style.background = mix(60);
-      tr.appendChild(b);
-      const v = document.createElement('span'); v.className = 'ipx-num'; v.style.textAlign = 'right'; v.textContent = gInt(r.productos);
-      row.append(n, tr, v); el.appendChild(row);
+      el.appendChild(card);
     }
   });

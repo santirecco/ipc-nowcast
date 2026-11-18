@@ -22,8 +22,11 @@ def main():
     h = pd.read_csv(NC / "historial.csv")
     if "ajuste_caba" not in h.columns:
         h["ajuste_caba"] = 0.0
+    if "momento" not in h.columns:
+        h["momento"] = None
     h.rename(columns={"solo_modelo_estadistico": "solo_modelo"})[
-        ["fecha_calculo", "mes", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "ipc_caba", "ajuste_caba", "rem", "dias_supermercados"]
+        ["fecha_calculo", "mes", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "ipc_caba", "ajuste_caba", "rem", "dias_supermercados",
+         "momento"]
     ].round(3).to_csv(OUT / "pronostico.csv", index=False)
 
     d = pd.read_csv(NC / "ultimo_divisiones.csv", dtype={"division": str})
@@ -38,10 +41,15 @@ def main():
     if ruta.exists():
         i = pd.read_csv(ruta, dtype={"componente": str})
         i["nombre_componente"] = i.componente.map(COMPONENTES).fillna(i.componente)
-        i["clave"] = i.region + " · " + i.nombre_componente
-        i.rename(columns={"valor": "dato", "proyeccion_estadistica": "proyeccion", "efecto_en_division_pp": "efecto_pp"})[
-            ["clave", "region", "nombre_componente", "fuente", "detalle", "dato", "proyeccion", "efecto_pp"]
-        ].round(3).to_csv(OUT / "informacion.csv", index=False)
+        i["grupo"] = ["Alimentos: precios reales del mes" if c.startswith("01") else "Tarifas y aumentos anunciados" for c in i.componente]
+        i["clave"] = i.region + " · " + i.nombre_componente + " · " + i.fuente
+        if "efecto_nacional_pp" not in i:
+            i["efecto_nacional_pp"], i["peso_celda_%"] = 0.0, 0.0
+        i.rename(columns={"valor": "dato", "proyeccion_estadistica": "proyeccion", "efecto_en_division_pp": "efecto_pp",
+                          "efecto_nacional_pp": "efecto_nacional", "peso_celda_%": "peso", "con_informacion": "con"})[
+            ["clave", "grupo", "region", "componente", "nombre_componente", "fuente", "detalle", "dato", "proyeccion", "con",
+             "efecto_pp", "efecto_nacional", "peso"]
+        ].round(4).to_csv(OUT / "informacion.csv", index=False)
 
     b = pd.read_csv(NC / "backtest.csv", parse_dates=["mes"])
     b["mes"] = b.mes.dt.strftime("%Y-%m")

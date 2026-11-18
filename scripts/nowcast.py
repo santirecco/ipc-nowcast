@@ -88,6 +88,10 @@ def main():
     reg.to_csv(OUT / "ultimo_regiones.csv", index=False, float_format="%.4f")
     info = r["informacion"]
     if not info.empty:
+        # efecto de cada dato sobre el IPC nacional: efecto en la división de esa región x peso de la celda
+        w = r["celdas"]["peso_%"]
+        info["peso_celda_%"] = [float(w.get((rr, dd), 0.0)) for rr, dd in zip(info.region, info.division)]
+        info["efecto_nacional_pp"] = info.efecto_en_division_pp * info["peso_celda_%"] / 100
         info.to_csv(OUT / "ultimo_informacion.csv", index=False, float_format="%.4f")
 
     # historial de pronósticos (uno por día y mes pronosticado)
