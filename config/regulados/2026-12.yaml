@@ -1,0 +1,21 @@
+# Calendario de aumentos regulados - diciembre 2026
+# Validar una vez por semana: corregir cifras o agregar ítems nuevos (luz, gas, agua, combustibles, cigarrillos...).
+mes: "2026-12"
+items:
+  - nombre: Colectivos CABA (+4,2%) y Provincia de Bs. As. (+4,0%)
+    componente: "07.3"
+    parte: 0.45
+    regiones: [GBA]
+    variacion: 4.1
+    vigencia: "2026-12-01"
+    confianza: media
+    fuente: https://www.econoblog.com.ar/?p=161204
+
+  - nombre: Prepagas (estimación - suelen ajustar por el último IPC publicado)
+    componente: "06.4.1"
+    parte: 1.0
+    regiones: [GBA, Pampeana, Noreste, Noroeste, Cuyo, Patagonia]
+    variacion: 2.2
+    vigencia: "2026-12-01"
+    confianza: baja
+    fuente: "estimación: IPC octubre 2026 = 2,2% (reemplazar cuando las prepagas publiquen sus aumentos)"

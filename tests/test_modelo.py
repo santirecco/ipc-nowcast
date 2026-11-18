@@ -38,3 +38,13 @@ def test_nowcast_razonable():
     r = nc.calcular(mes)
     assert -2 < r["estimacion"] < 15
     assert abs(r["celdas"]["peso_%"].sum() - 100) < 1e-6
+
+
+def test_mes_anterior_solo_aporta_arrastre():
+    """Un aumento vigente desde el día 1 del mes anterior no debe afectar al mes siguiente."""
+    d = pd.read_parquet(DATA / "processed" / "indec_divisiones.parquet")
+    a = pd.read_parquet(DATA / "processed" / "indec_aperturas.parquet")
+    nc = modelo.Nowcast(d, a, None)
+    info = nc.informacion_del_mes(pd.Timestamp("2026-12-01"), usar_super=False)
+    assert not [i for i in info if i["fuente"] == "arrastre del mes anterior"]
+    assert all(i["valor"] > 0 for i in info)

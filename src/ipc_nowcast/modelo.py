@@ -64,13 +64,13 @@ def proyeccion_componente(var: pd.DataFrame, mes: pd.Timestamp) -> pd.Series:
     return var[var.index < mes].iloc[-6:].median()
 
 
-def leer_regulados(mes: pd.Timestamp) -> list[dict]:
-    items = []
-    for m in [mes - pd.offsets.MonthBegin(1), mes]:
-        ruta = CONFIG / "regulados" / f"{m:%Y-%m}.yaml"
-        if ruta.exists():
-            items += yaml.safe_load(ruta.read_text(encoding="utf-8")).get("items", [])
-    return items
+def leer_regulados(mes: pd.Timestamp, previo: bool = False) -> list[dict]:
+    """Ítems del calendario del mes (o del mes anterior, si previo=True)."""
+    m = mes - pd.offsets.MonthBegin(1) if previo else mes
+    ruta = CONFIG / "regulados" / f"{m:%Y-%m}.yaml"
+    if not ruta.exists():
+        return []
+    return yaml.safe_load(ruta.read_text(encoding="utf-8")).get("items", []) or []
 
 
 # ---------------------------------------------------------------- nowcast
@@ -104,6 +104,13 @@ class Nowcast:
         {region, componente, fuente, valor (var %), parte (0-1 del componente que cubre)}."""
         info = []
         if usar_regulados:
+            # arrastre: aumentos que entraron después del día 1 del mes anterior suman la parte que faltaba
+            for it in leer_regulados(mes, previo=True):
+                arr = impacto_en_mes(it["variacion"], pd.Timestamp(it["vigencia"]).date(), mes)
+                if arr > 0:
+                    for r in it["regiones"]:
+                        info.append({"region": r, "componente": it["componente"], "fuente": "arrastre del mes anterior",
+                                     "valor": arr, "parte": it["parte"], "aditivo": True, "detalle": it["nombre"]})
             items = leer_regulados(mes)
             claves = {(r, it["componente"]) for it in items for r in it["regiones"]}
             for r, c in sorted(claves):
@@ -141,7 +148,10 @@ class Nowcast:
             fila = comp_ef[(comp_ef.region == r) & (comp_ef.codigo == c)]
             if fila.empty:
                 continue
-            nuevo = it["parte"] * it["valor"] + (1 - it["parte"]) * base_c
+            if it.get("aditivo"):
+                nuevo = base_c + it["parte"] * it["valor"]
+            else:
+                nuevo = it["parte"] * it["valor"] + (1 - it["parte"]) * base_c
             w_div = float(fila.peso_en_division_ef.iloc[0])
             d = c[:2]
             ajustada[(r, d)] += w_div * (nuevo - base_c)
