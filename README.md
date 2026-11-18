@@ -12,8 +12,8 @@ juntan todos los días (supermercados, tarifas, combustibles, etc.), anticipa el
 | 2 | Mapa de la canasta: pesos de grupos y clases por región; clasificación de productos de supermercado | ✅ |
 | 3 | Alimentos: SEPA/Precios Claros (todo el país, historia desde sep-2024), Mercado Central, hacienda, supermercados online | ✅ calibrado contra INDEC: ver [`reports/adelantados.md`](reports/adelantados.md) |
 | 4 | Regulados: calendario mensual en `config/regulados/` (luz, gas, transporte, prepagas, combustibles, telefonía, colegios) | ✅ revisión automática semanal (lunes) |
-| 5 | Núcleo no alimentario: electro, indumentaria, alquileres, servicios | ⏳ |
-| 6 | Motor: proyección estadística, arrastre, información del mes, IPC CABA | ✅ ver [`reports/nowcast.md`](reports/nowcast.md) |
+| 5 | Núcleo no alimentario: electro, indumentaria, alquileres, servicios | 🟡 medicamentos (SEPA) y reglas para restaurantes y papelería; ropa y electrónica se relevan desde nov-2026 y se evalúan cuando haya historia; alquileres (ICL) probado y descartado |
+| 6 | Motor: proyección estadística, arrastre, información del mes (cortes día 15, día 22 y mes completo), IPC CABA por rubro | ✅ ver [`reports/nowcast.md`](reports/nowcast.md) |
 | 7 | Backtest y prueba en paralelo | ✅ backtest en [`reports/backtest.md`](reports/backtest.md); prueba en paralelo desde noviembre 2026 |
 
 ## Cómo está organizado
@@ -75,6 +75,15 @@ al repo); al repo van solo los índices por mes, región y clase (`data/precios/
 Ninguna. El calendario de regulados lo revisa una tarea programada todos los lunes (busca aumentos
 anunciados y actualiza `config/regulados/`); conviene mirar sus cambios de vez en cuando. El tablero muestra el
 estado de cada fuente (`data/tablero/fuentes.csv`): si alguna figura como "atrasada", dejó de publicar o cambió su sitio.
+
+## Regla para sumar fuentes
+
+Una fuente o un cambio de método entra solo si baja el error del índice nacional fuera de muestra (cada mes del
+pasado se predice con lo que se sabía antes), mirando todo el período y no solo los meses recientes.
+`scripts/pruebas/evaluar_candidatas.py` prueba cualquier fuente candidata con ese criterio. Probadas y descartadas
+(nov-2026): ICL para alquileres, historia 2020-2022 del Mercado Central, combinar con el REM, corregir el sesgo
+reciente, SEPA para bebidas alcohólicas, limpieza y cuidado personal, y el IPC de la Ciudad por rubro para regiones
+fuera del GBA.
 
 ## Conceptos clave
 
