@@ -1,0 +1,217 @@
+_nota: Generado por scripts/replicar_indec.py. Pesos base dic-2016 en %, calibrados
+  contra la serie oficial.
+_actualizado: '2026-11-18'
+region_en_nacional:
+  GBA: 45.196
+  Pampeana: 33.8298
+  Noreste: 4.5207
+  Noroeste: 6.8034
+  Cuyo: 5.1378
+  Patagonia: 4.5123
+division_en_region:
+  '01':
+    GBA: 23.44
+    Pampeana: 28.6471
+    Noreste: 35.3005
+    Noroeste: 34.6712
+    Cuyo: 28.4222
+    Patagonia: 27.4281
+  '02':
+    GBA: 3.275
+    Pampeana: 3.7999
+    Noreste: 3.6382
+    Noroeste: 3.128
+    Cuyo: 3.5729
+    Patagonia: 3.5033
+  '03':
+    GBA: 8.4856
+    Pampeana: 10.4261
+    Noreste: 11.6016
+    Noroeste: 12.3704
+    Cuyo: 11.3811
+    Patagonia: 12.8231
+  '04':
+    GBA: 10.4604
+    Pampeana: 8.6683
+    Noreste: 8.1116
+    Noroeste: 7.0014
+    Cuyo: 8.8832
+    Patagonia: 10.056
+  '05':
+    GBA: 6.2663
+    Pampeana: 6.3413
+    Noreste: 7.7837
+    Noroeste: 6.1232
+    Cuyo: 6.2789
+    Patagonia: 6.5498
+  '06':
+    GBA: 8.8044
+    Pampeana: 8.1647
+    Noreste: 5.2649
+    Noroeste: 6.3251
+    Cuyo: 7.4024
+    Patagonia: 4.9501
+  '07':
+    GBA: 11.5866
+    Pampeana: 10.4075
+    Noreste: 9.626
+    Noroeste: 8.4066
+    Cuyo: 12.1021
+    Patagonia: 13.4231
+  08:
+    GBA: 2.8125
+    Pampeana: 2.8607
+    Noreste: 2.82
+    Noroeste: 2.5927
+    Cuyo: 2.5293
+    Patagonia: 3.1882
+  09:
+    GBA: 7.4595
+    Pampeana: 7.3923
+    Noreste: 6.2345
+    Noroeste: 5.9473
+    Cuyo: 6.7176
+    Patagonia: 7.7673
+  '10':
+    GBA: 3.0155
+    Pampeana: 1.6127
+    Noreste: 1.3571
+    Noroeste: 2.0407
+    Cuyo: 2.2359
+    Patagonia: 2.0886
+  '11':
+    GBA: 10.8409
+    Pampeana: 8.1042
+    Noreste: 4.9575
+    Noroeste: 7.9888
+    Cuyo: 6.8461
+    Patagonia: 5.0786
+  '12':
+    GBA: 3.5533
+    Pampeana: 3.5751
+    Noreste: 3.3044
+    Noroeste: 3.4045
+    Cuyo: 3.6283
+    Patagonia: 3.144
+categoria_en_region:
+  Estacional:
+    GBA: 10.2556
+    Pampeana: 11.9799
+    Noreste: 12.4654
+    Noroeste: 12.7961
+    Cuyo: 11.7236
+    Patagonia: 12.3627
+  Núcleo:
+    GBA: 66.9727
+    Pampeana: 68.7068
+    Noreste: 69.8791
+    Noroeste: 69.276
+    Cuyo: 67.5026
+    Patagonia: 67.6185
+  Regulados:
+    GBA: 22.7717
+    Pampeana: 19.3133
+    Noreste: 17.6555
+    Noroeste: 17.928
+    Cuyo: 20.7738
+    Patagonia: 20.0188
+bys_en_region:
+  B:
+    GBA: 59.3263
+    Pampeana: 70.1223
+    Noreste: 77.4058
+    Noroeste: 75.17
+    Cuyo: 71.2322
+    Patagonia: 71.2755
+  S:
+    GBA: 40.6737
+    Pampeana: 29.8777
+    Noreste: 22.5942
+    Noroeste: 24.83
+    Cuyo: 28.7678
+    Patagonia: 28.7245
+region_en_division_nacional:
+  '01':
+    GBA: 44.5761
+    Pampeana: 34.2366
+    Noreste: 4.6116
+    Noroeste: 6.8294
+    Cuyo: 5.0971
+    Patagonia: 4.6492
+  '02':
+    GBA: 44.6304
+    Pampeana: 34.2309
+    Noreste: 4.3817
+    Noroeste: 6.8965
+    Cuyo: 5.3587
+    Patagonia: 4.5017
+  '03':
+    GBA: 44.9516
+    Pampeana: 33.7543
+    Noreste: 4.6332
+    Noroeste: 6.9299
+    Cuyo: 5.2352
+    Patagonia: 4.4958
+  '04':
+    GBA: 47.3178
+    Pampeana: 32.5572
+    Noreste: 4.284
+    Noroeste: 6.5532
+    Cuyo: 4.8664
+    Patagonia: 4.4215
+  '05':
+    GBA: 44.3682
+    Pampeana: 34.15
+    Noreste: 4.6591
+    Noroeste: 6.9359
+    Cuyo: 5.2227
+    Patagonia: 4.6641
+  '06':
+    GBA: 45.4556
+    Pampeana: 33.7396
+    Noreste: 4.5689
+    Noroeste: 6.7871
+    Cuyo: 5.0165
+    Patagonia: 4.4323
+  '07':
+    GBA: 46.283
+    Pampeana: 33.219
+    Noreste: 4.3442
+    Noroeste: 6.6933
+    Cuyo: 5.1885
+    Patagonia: 4.272
+  08:
+    GBA: 45.1966
+    Pampeana: 33.7394
+    Noreste: 4.4329
+    Noroeste: 6.9553
+    Cuyo: 5.067
+    Patagonia: 4.6088
+  09:
+    GBA: 44.3407
+    Pampeana: 34.0889
+    Noreste: 4.6646
+    Noroeste: 6.9826
+    Cuyo: 5.3927
+    Patagonia: 4.5305
+  '10':
+    GBA: 45.0591
+    Pampeana: 33.4202
+    Noreste: 4.1633
+    Noroeste: 7.1859
+    Cuyo: 5.2104
+    Patagonia: 4.961
+  '11':
+    GBA: 43.9802
+    Pampeana: 34.6077
+    Noreste: 4.6228
+    Noroeste: 7.0841
+    Cuyo: 5.2033
+    Patagonia: 4.502
+  '12':
+    GBA: 44.352
+    Pampeana: 34.2246
+    Noreste: 4.7726
+    Noroeste: 7.0304
+    Cuyo: 5.1987
+    Patagonia: 4.4217

@@ -1,0 +1,25 @@
+# Ponderaciones base del IPC INDEC (base diciembre 2016 = 100).
+# Fuente: Informe técnico IPC (cuadros 24 y 25). Estructura de gasto de la ENGHo 2004/05,
+# actualizada por precios hasta dic-2016. En % dentro de cada región.
+
+regiones:            # Cuadro 25: participación de cada región en el gasto de consumo total
+  GBA: 44.7
+  Pampeana: 34.2
+  Noreste: 4.5
+  Noroeste: 6.9
+  Cuyo: 5.2
+  Patagonia: 4.6
+
+divisiones:
+  "01": {nombre: "Alimentos y bebidas no alcohólicas",                  GBA: 23.4, Pampeana: 28.6, Noreste: 35.3, Noroeste: 34.7, Cuyo: 28.4, Patagonia: 27.4}
+  "02": {nombre: "Bebidas alcohólicas y tabaco",                        GBA: 3.3,  Pampeana: 3.8,  Noreste: 3.6,  Noroeste: 3.1,  Cuyo: 3.6,  Patagonia: 3.5}
+  "03": {nombre: "Prendas de vestir y calzado",                         GBA: 8.5,  Pampeana: 10.4, Noreste: 11.6, Noroeste: 12.4, Cuyo: 11.4, Patagonia: 12.8}
+  "04": {nombre: "Vivienda, agua, electricidad, gas y otros combustibles", GBA: 10.5, Pampeana: 8.7, Noreste: 8.1, Noroeste: 7.0, Cuyo: 8.9, Patagonia: 10.1}
+  "05": {nombre: "Equipamiento y mantenimiento del hogar",              GBA: 6.3,  Pampeana: 6.3,  Noreste: 7.8,  Noroeste: 6.1,  Cuyo: 6.3,  Patagonia: 6.5}
+  "06": {nombre: "Salud",                                               GBA: 8.8,  Pampeana: 8.2,  Noreste: 5.3,  Noroeste: 6.3,  Cuyo: 7.4,  Patagonia: 5.0}
+  "07": {nombre: "Transporte",                                          GBA: 11.6, Pampeana: 10.4, Noreste: 9.6,  Noroeste: 8.4,  Cuyo: 12.1, Patagonia: 13.4}
+  "08": {nombre: "Comunicación",                                        GBA: 2.8,  Pampeana: 2.9,  Noreste: 2.8,  Noroeste: 2.6,  Cuyo: 2.5,  Patagonia: 3.2}
+  "09": {nombre: "Recreación y cultura",                                GBA: 7.5,  Pampeana: 7.4,  Noreste: 6.2,  Noroeste: 5.9,  Cuyo: 6.7,  Patagonia: 7.8}
+  "10": {nombre: "Educación",                                           GBA: 3.0,  Pampeana: 1.6,  Noreste: 1.4,  Noroeste: 2.0,  Cuyo: 2.2,  Patagonia: 2.1}
+  "11": {nombre: "Restaurantes y hoteles",                              GBA: 10.8, Pampeana: 8.1,  Noreste: 5.0,  Noroeste: 8.0,  Cuyo: 6.8,  Patagonia: 5.1}
+  "12": {nombre: "Bienes y servicios varios",                           GBA: 3.6,  Pampeana: 3.6,  Noreste: 3.3,  Noroeste: 3.4,  Cuyo: 3.6,  Patagonia: 3.1}

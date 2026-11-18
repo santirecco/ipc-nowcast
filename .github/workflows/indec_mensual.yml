@@ -1,0 +1,50 @@
+name: Actualizar INDEC
+
+# INDEC publica el IPC alrededor del día 12-15 de cada mes, a las 16:00.
+# Corre todos los días del 10 al 20 a las 19:30 (hora Argentina); si no hay datos nuevos no cambia nada.
+# También se puede correr a mano desde la pestaña "Actions" del repo (botón "Run workflow").
+on:
+  schedule:
+    - cron: "30 22 10-20 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Bajar series de INDEC
+        id: bajar
+        run: |
+          python scripts/actualizar_indec.py
+          if git diff --quiet data/raw; then
+            echo "nuevo=false" >> "$GITHUB_OUTPUT"; echo "Sin datos nuevos de INDEC."
+          else
+            echo "nuevo=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Replicar índice y pesos efectivos
+        if: steps.bajar.outputs.nuevo == 'true'
+        run: python scripts/replicar_indec.py
+      - name: Controles
+        if: steps.bajar.outputs.nuevo == 'true'
+        run: pytest -q
+      - name: Guardar resultados en el repo
+        if: steps.bajar.outputs.nuevo == 'true'
+        run: |
+          git config user.name "ipc-nowcast-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data config reports
+          if git diff --cached --quiet; then
+            echo "Sin datos nuevos de INDEC."
+          else
+            git commit -m "INDEC: actualización automática $(date +%Y-%m-%d)"
+            git push
+          fi
