@@ -180,6 +180,23 @@ class Nowcast:
                              "valor": imp / parte if parte else 0.0, "parte": parte,
                              "detalle": "; ".join(it["nombre"] for it in its)})
         extra = list(extra or [])
+        # Un mismo componente no se cuenta dos veces: si el calendario anuncia una parte p del componente, la otra
+        # señal (precios relevados o regla) cubre solo el resto (1 - p). Si la otra señal mide el precio efectivo
+        # (no es estadística), ya incluye el arrastre del mes anterior: ese arrastre no se suma aparte.
+        parte_cal = {}
+        for it in info:
+            if not it.get("aditivo"):
+                k = (it["region"], it["componente"])
+                parte_cal[k] = min(1.0, parte_cal.get(k, 0.0) + it["parte"])
+        medidos = {(it["region"], it["componente"]) for it in extra if not it.get("estadistica")}
+        info = [it for it in info if not (it.get("aditivo") and (it["region"], it["componente"]) in medidos)]
+        ajustados = []
+        for it in extra:
+            p = parte_cal.get((it["region"], it["componente"]), 0.0)
+            if p >= 1.0:
+                continue
+            ajustados.append({**it, "parte": it["parte"] * (1 - p)} if p > 0 else it)
+        extra = ajustados
         cubiertos = {(it["region"], it["componente"]) for it in extra}
         info += extra
         # Reglas conocidas de antemano: las prepagas ajustan por el IPC de dos meses antes (backtest 2025-26: error

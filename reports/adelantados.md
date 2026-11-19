@@ -56,6 +56,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | sí, si falta la anterior |
 | Alquiler de la vivienda | sal | 34 | 2,43 | 2,07 | **sí** |
+| Electricidad, gas y otros combustibles | ipc | 34 | 6,56 | 4,85 | **sí** |
+| Electricidad, gas y otros combustibles | ipc2 | 34 | 6,56 | 5,28 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 1,84 | 2,00 | no |
 | Equipamiento del hogar | sal | 34 | 1,84 | 1,85 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | **sí** |
@@ -66,6 +68,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Compra de vehículos | fx | 34 | 2,91 | 3,09 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,79 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,79 | sí, si falta la anterior |
+| Transporte público | ipc | 34 | 5,92 | 4,87 | **sí** |
+| Transporte público | ipc2 | 34 | 5,92 | 5,25 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
 | Servicios recreativos y culturales | ipc | 34 | 3,05 | 2,37 | **sí** |
 | Servicios recreativos y culturales | sal | 34 | 3,05 | 3,13 | no |
@@ -131,6 +135,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | sí, si falta la anterior |
 | Alquiler de la vivienda | sal | 34 | 2,43 | 2,07 | **sí** |
+| Electricidad, gas y otros combustibles | ipc | 34 | 6,56 | 4,85 | **sí** |
+| Electricidad, gas y otros combustibles | ipc2 | 34 | 6,56 | 5,28 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 1,84 | 1,99 | no |
 | Equipamiento del hogar | sal | 34 | 1,84 | 1,85 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | sí, si falta la anterior |
@@ -141,6 +147,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Compra de vehículos | fx | 34 | 2,91 | 3,03 | no |
 | Combustibles | nafta | 29 | 2,07 | 1,47 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,47 | sí, si falta la anterior |
+| Transporte público | ipc | 34 | 5,92 | 4,87 | **sí** |
+| Transporte público | ipc2 | 34 | 5,92 | 5,25 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
 | Servicios recreativos y culturales | ipc | 34 | 3,05 | 2,37 | **sí** |
 | Servicios recreativos y culturales | sal | 34 | 3,05 | 3,13 | no |

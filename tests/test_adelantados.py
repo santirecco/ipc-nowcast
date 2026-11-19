@@ -129,3 +129,18 @@ def test_k_caba_por_rubro():
     k = modelo.estimar_k_caba(pd.DataFrame(filas))
     assert k["01"] == 1.0 and k["09"] == 0.0
     assert modelo.estimar_k_caba(pd.DataFrame(filas[:10])) is None  # menos de 12 meses
+
+
+def test_calendario_y_senal_no_se_cuentan_dos_veces(monkeypatch):
+    """Si el calendario anuncia el 70% de combustibles, el precio de surtidor cubre solo el 30% restante."""
+    nc = object.__new__(modelo.Nowcast)
+    nc.V = {"Nacional": {"00": pd.Series({pd.Timestamp("2026-09-01"): 2.0})}}
+    mes = pd.Timestamp("2026-11-01")
+    cal = [{"nombre": "nafta", "componente": "07.2.2", "parte": 0.7, "regiones": ["GBA"], "variacion": 3.0,
+            "vigencia": "2026-11-01"}]
+    monkeypatch.setattr(modelo, "leer_regulados", lambda m, previo=False: [] if previo else cal)
+    extra = [{"region": "GBA", "componente": "07.2.2", "fuente": "surtidor", "valor": 2.0, "parte": 1.0}]
+    info = nc.informacion_del_mes(mes, usar_super=False, extra=extra, usar_reglas=False)
+    partes = {it["fuente"]: it["parte"] for it in info if it["componente"] == "07.2.2"}
+    assert abs(partes["calendario de regulados"] - 0.7) < 1e-9
+    assert abs(partes["surtidor"] - 0.3) < 1e-9

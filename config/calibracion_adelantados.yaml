@@ -240,6 +240,22 @@
     error_proyeccion: 1.851
     error_con_fuente: 1.586
     meses: 34
+  '04.5':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.057
+    error_proyeccion: 6.557
+    error_con_fuente: 4.848
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.828
+    error_proyeccion: 6.557
+    error_con_fuente: 5.284
+    meses: 34
   '07.1':
   - fuentes:
     - autos
@@ -249,6 +265,22 @@
     error_proyeccion: 1.615
     error_con_fuente: 0.85
     meses: 17
+  '07.3':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.359
+    error_proyeccion: 5.916
+    error_con_fuente: 4.87
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.892
+    error_proyeccion: 5.916
+    error_con_fuente: 5.252
+    meses: 34
   07.2.2:
   - fuentes:
     - nafta
@@ -588,6 +620,22 @@
     error_proyeccion: 1.851
     error_con_fuente: 1.586
     meses: 34
+  '04.5':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.057
+    error_proyeccion: 6.557
+    error_con_fuente: 4.848
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.828
+    error_proyeccion: 6.557
+    error_con_fuente: 5.284
+    meses: 34
   '07.1':
   - fuentes:
     - autos
@@ -597,6 +645,22 @@
     error_proyeccion: 1.615
     error_con_fuente: 0.85
     meses: 17
+  '07.3':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.359
+    error_proyeccion: 5.916
+    error_con_fuente: 4.87
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.892
+    error_proyeccion: 5.916
+    error_con_fuente: 5.252
+    meses: 34
   07.2.2:
   - fuentes:
     - nafta
@@ -981,6 +1045,22 @@ completo:
     error_proyeccion: 1.851
     error_con_fuente: 1.586
     meses: 34
+  '04.5':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.057
+    error_proyeccion: 6.557
+    error_con_fuente: 4.848
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.828
+    error_proyeccion: 6.557
+    error_con_fuente: 5.284
+    meses: 34
   '07.1':
   - fuentes:
     - autos
@@ -990,6 +1070,22 @@ completo:
     error_proyeccion: 1.615
     error_con_fuente: 0.85
     meses: 17
+  '07.3':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.0
+    - 1.359
+    error_proyeccion: 5.916
+    error_con_fuente: 4.87
+    meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.892
+    error_proyeccion: 5.916
+    error_con_fuente: 5.252
+    meses: 34
   07.2.2:
   - fuentes:
     - nafta

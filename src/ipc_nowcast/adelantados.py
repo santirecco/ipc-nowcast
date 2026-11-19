@@ -43,7 +43,9 @@ OPCIONES = {
     "05": [["fx"], ["sal"]],
     "05.6": [["sepa"], ["ipc"]],
     "06.1": [["sepa"], ["ipc"]],
+    "04.5": [["ipc"], ["ipc2"]],
     "07.1": [["autos"], ["fx"]],
+    "07.3": [["ipc"], ["ipc2"]],
     "07.2.2": [["nafta"], ["nafta", "fx"]],
     "08.3": [["ipc"]],
     "09.4": [["ipc"], ["sal"]],
@@ -55,7 +57,7 @@ OPCIONES = {
 CLASES = list(OPCIONES)
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
-ESTADISTICAS = {"ipc", "icl", "arr", "sal"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"ipc", "icl", "arr", "sal", "ipc2"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
 RUTA_AUTOS = DATA / "precios" / "autos" / "listas_0km.csv"
@@ -67,12 +69,14 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "02.1": "Bebidas alcohólicas", "02.2": "Tabaco", "03.2": "Calzado", "04.1.1": "Alquiler de la vivienda",
            "05.6": "Limpieza y mantenimiento del hogar", "06.1": "Medicamentos", "08.3": "Telefonía e internet",
            "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
-           "10": "Educación", "09.4": "Servicios recreativos y culturales"}
+           "10": "Educación", "09.4": "Servicios recreativos y culturales",
+           "04.5": "Electricidad, gas y otros combustibles", "07.3": "Transporte público"}
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
             "sepai": "precios de SEPA de los productos que mide INDEC",
-            "autos": "listas de precios de autos 0 km", "sal": "salarios registrados (INDEC)"}
+            "autos": "listas de precios de autos 0 km", "sal": "salarios registrados (INDEC)",
+            "ipc2": "regla de ajuste: inflación de dos meses antes + 2%"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
@@ -125,6 +129,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     ipc = nc.V["Nacional"]["00"]
     ipc_l1 = ipc.shift(1, freq="MS")
     ipc_p3 = ipc.rolling(3).mean().shift(1, freq="MS")
+    ipc_l2 = ipc.shift(2, freq="MS")
     meses = sorted(set(idx.mes if not idx.empty else []) | set(may.index) | set(otros.dropna(how="all").index)
                    | {m for m in ipc_l1.index if m >= pd.Timestamp("2018-01-01")})
     filas = []
@@ -152,7 +157,8 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
-                              "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan))})
+                              "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan)),
+                              "ipc_l2": float(ipc_l2.get(mes, np.nan))})
     t = pd.DataFrame(filas)
     if t.empty:
         return t
@@ -226,6 +232,8 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["sepai"].astype(float) - t.proy.astype(float))
     if "sal" in fuentes:
         cols.append(t["sal"].astype(float) - t.proy.astype(float))
+    if "ipc2" in fuentes:  # regla de colectivos AMBA (y tarifas indexadas): inflación de dos meses antes + 2%
+        cols.append(t["ipc_l2"].astype(float) + 2.0 - t.proy.astype(float))
     if "autos" in fuentes:
         cols.append(t["autos"].astype(float) - t.proy.astype(float))
         cols.append(t["autos_l1"].astype(float) - t.proy.astype(float))
@@ -281,6 +289,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["sepai"].notna()
     if "sal" in fuentes:
         ok &= t["sal"].notna()
+    if "ipc2" in fuentes:
+        ok &= t["ipc_l2"].notna()
     if "autos" in fuentes:
         ok &= t["autos"].notna() & t["autos_l1"].notna()
     return ok
@@ -427,7 +437,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         if isinstance(opciones, dict):
             opciones = [opciones]
         for _, f in t[t.clase == clase].iterrows():
-            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal"]})
+            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal", "ipc_l2"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
                         and (not temprano or set(o["fuentes"]) <= AL_INICIO)), None)
             if cfg is None:
