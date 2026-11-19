@@ -85,7 +85,12 @@ pasado se predice con lo que se sabía antes), mirando todo el período y no sol
 reciente, SEPA para bebidas alcohólicas, limpieza y cuidado personal, el IPC de la Ciudad por rubro para regiones
 fuera del GBA, y señales de SEPA armadas solo con los productos que mide INDEC (precios promedio publicados).
 Incorporadas en nov-2026: IPC de la Ciudad por rubro (víspera), corte del día 22, arrastre de frutas y listas de
-autos 0 km (inicio de mes, `data/precios/autos/listas_0km.csv`, la actualiza la tarea de los lunes).
+autos 0 km (inicio de mes, `data/precios/autos/listas_0km.csv`, la actualiza la tarea de los lunes), frutas y
+verduras frescas de SEPA sin envasados, y proyección de temporada por componente: en cada región y componente se
+elige, solo con meses anteriores, entre la mediana de 6 meses y "núcleo + desvío típico de ese mes del año"
+(verduras, frutas y transporte dejan de proyectar lo último). Las señales calibradas parten de esa proyección; el
+calendario de tarifas y la regla de prepagas se miden contra la mediana de 6 meses, que es la que asume la
+proyección de la división (medirlas contra la de temporada inflaba salud y otros rubros; el backtest lo confirma).
 
 ## Conceptos clave
 

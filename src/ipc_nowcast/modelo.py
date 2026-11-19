@@ -122,6 +122,47 @@ def proyeccion_componente(var: pd.DataFrame, mes: pd.Timestamp) -> pd.Series:
     return var[var.index < mes].iloc[-6:].median()
 
 
+# Proyección por componente, elegida con la historia (regla única, anidada): para cada región y componente se
+# comparan dos métodos, (a) mediana de los últimos 6 meses y (b) núcleo reciente + desvío típico del componente en
+# ese mes del año respecto de la núcleo (temporada). En cada mes se usa (b) solo si en los meses anteriores
+# (desde PROY_DESDE, mínimo PROY_MIN_MESES) tuvo menor error por al menos MEJORA_PROY. Así, rubros de temporada
+# (frutas, verduras, transporte) dejan de proyectar "lo último" y los estables siguen con la mediana.
+PROY_DESDE = pd.Timestamp("2019-01-01")
+PROY_MIN_MESES = 24
+MEJORA_PROY = 0.02
+
+
+def proyecciones_serie(s: pd.Series, nucleo: pd.Series) -> pd.DataFrame:
+    """Para cada mes: proyección mediana-6, proyección de temporada y la elegida, usando solo meses anteriores."""
+    s = s.dropna()
+    idx = s.index.union(s.index[-1:] + pd.offsets.MonthBegin(1)) if len(s) else s.index
+    filas = []
+    for m in idx:
+        h = s[s.index < m]
+        if len(h) < 6:
+            continue
+        p1 = float(h.iloc[-6:].median())
+        c = nucleo[nucleo.index < m]
+        dev = (h - c.reindex(h.index)).dropna()
+        sm = dev[dev.index.month == m.month]
+        p2 = float(c.iloc[-3:].mean() + sm.median()) if len(sm) >= 3 and len(c) >= 3 else np.nan
+        filas.append({"mes": m, "p1": p1, "p2": p2, "real": s.get(m, np.nan)})
+    t = pd.DataFrame(filas).set_index("mes") if filas else pd.DataFrame(columns=["p1", "p2", "real", "p"])
+    if t.empty:
+        return t
+    e1 = (t.p1 - t.real).abs()
+    e2 = (t.p2 - t.real).abs()
+    ok = t.index >= PROY_DESDE
+    elegidas = []
+    for i, m in enumerate(t.index):
+        prev = ok[:i] & e1.iloc[:i].notna().values & e2.iloc[:i].notna().values
+        usar2 = (prev.sum() >= PROY_MIN_MESES and pd.notna(t.p2.iloc[i])
+                 and e2.iloc[:i][prev].mean() < e1.iloc[:i][prev].mean() - MEJORA_PROY)
+        elegidas.append(t.p2.iloc[i] if usar2 else t.p1.iloc[i])
+    t["p"] = elegidas
+    return t
+
+
 def leer_regulados(mes: pd.Timestamp, previo: bool = False) -> list[dict]:
     """Ítems del calendario del mes (o del mes anterior, si previo=True)."""
     m = mes - pd.offsets.MonthBegin(1) if previo else mes
@@ -144,6 +185,16 @@ class Nowcast:
         self.Vap = pa.pct_change() * 100
         self.nucleo = self.V["Nacional"]["Núcleo"]
         self.ipcba = ipcba
+        self._proy = {}
+
+    def proy_comp(self, r: str, c: str, mes: pd.Timestamp) -> float:
+        """Proyección estadística del componente c en la región r para `mes` (método elegido con la historia)."""
+        if (r, c) not in self._proy:
+            self._proy[(r, c)] = proyecciones_serie(self.Vap[r][c], self.nucleo)
+        t = self._proy[(r, c)]
+        if mes in t.index:
+            return float(t.p.loc[mes])
+        return float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
 
     # pesos efectivos para un mes (pueden ser futuros: se usan los niveles del último mes publicado)
     def _pesos_mes(self, mes):
@@ -196,7 +247,7 @@ class Nowcast:
             if p >= 1.0:
                 continue
             ajustados.append({**it, "parte": it["parte"] * (1 - p)} if p > 0 else it)
-        extra = ajustados
+        extra = [{**it, "senal": True} for it in ajustados]
         cubiertos = {(it["region"], it["componente"]) for it in extra}
         info += extra
         # Reglas conocidas de antemano: las prepagas ajustan por el IPC de dos meses antes (backtest 2025-26: error
@@ -237,7 +288,11 @@ class Nowcast:
             if c in replica.DIVISIONES:  # el ítem cubre una división entera (ej. "10" Educación)
                 base_c, w_div = float(base[(r, c)]), 1.0
             else:
-                base_c = float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
+                # base de la diferencia: la proyección elegida del componente. Se probó medirla contra la mediana
+                # de 6 meses (más coherente con la proyección de la división en teoría): empeora mucho el backtest
+                # honesto (fin de mes últimos 16: 0,204 -> 0,301), así que queda la elegida.
+                base_c = (self.proy_comp(r, c, mes) if it.get("senal")
+                          else float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0]))
                 fila = comp_ef[(comp_ef.region == r) & (comp_ef.codigo == c)]
                 if fila.empty:
                     continue

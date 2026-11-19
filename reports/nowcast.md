@@ -2,13 +2,13 @@
 
 *Calculado el 19/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,4% mensual (rango probable 1,0% a 1,7%)
+## 1,9% mensual (rango probable 1,6% a 2,3%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,36** |
-| Solo modelo estadístico | 1,71 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,36 |
+| **Pronóstico** | **1,95** |
+| Solo modelo estadístico | 1,88 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,95 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -20,29 +20,29 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
-| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,33 | 0,25 |
-| Transporte | 11,6 | 1,64 | 0,19 |
-| Restaurantes y hoteles | 10,9 | 1,68 | 0,18 |
-| Salud | 9,0 | 1,64 | 0,15 |
-| Alimentos y bebidas no alcohólicas | 28,7 | 0,49 | 0,14 |
-| Recreación y cultura | 6,6 | 1,76 | 0,12 |
-| Prendas de vestir y calzado | 6,6 | 1,27 | 0,08 |
-| Equipamiento y mantenimiento del hogar | 5,0 | 1,38 | 0,07 |
-| Bienes y servicios varios | 3,4 | 1,88 | 0,06 |
-| Educación | 2,2 | 1,92 | 0,04 |
-| Comunicación | 2,6 | 1,52 | 0,04 |
-| Bebidas alcohólicas y tabaco | 2,4 | 1,25 | 0,03 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 1,77 | 0,51 |
+| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,49 | 0,27 |
+| Transporte | 11,6 | 2,08 | 0,24 |
+| Restaurantes y hoteles | 10,9 | 1,69 | 0,19 |
+| Recreación y cultura | 6,6 | 2,46 | 0,16 |
+| Salud | 9,0 | 1,61 | 0,15 |
+| Equipamiento y mantenimiento del hogar | 5,0 | 2,30 | 0,12 |
+| Prendas de vestir y calzado | 6,6 | 1,47 | 0,10 |
+| Bienes y servicios varios | 3,4 | 2,74 | 0,09 |
+| Comunicación | 2,6 | 2,09 | 0,06 |
+| Bebidas alcohólicas y tabaco | 2,4 | 1,55 | 0,04 |
+| Educación | 2,2 | 1,57 | 0,03 |
 
 ## Por región
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,40 |
-| Pampeana | 33,8 | 1,40 |
-| Noreste | 4,5 | 0,97 |
-| Noroeste | 6,8 | 1,00 |
-| Cuyo | 5,2 | 1,33 |
-| Patagonia | 4,5 | 1,70 |
+| GBA | 45,1 | 1,94 |
+| Pampeana | 33,8 | 2,01 |
+| Noreste | 4,5 | 1,48 |
+| Noroeste | 6,8 | 1,78 |
+| Cuyo | 5,2 | 2,24 |
+| Patagonia | 4,5 | 1,98 |
 
 ## Información del mes incorporada
 
@@ -61,72 +61,66 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Pampeana | 06.4.1 | calendario de regulados | 2,30 | 2,33 | -0,01 |
 | Patagonia | 04.5 | calendario de regulados | 2,17 | 2,38 | -0,06 |
 | Patagonia | 06.4.1 | calendario de regulados | 2,30 | 2,04 | 0,11 |
-| GBA | 01.1.2 | Mayorista: hacienda (Cañuelas) | 0,39 | 0,15 | 0,08 |
-| Pampeana | 01.1.2 | Mayorista: hacienda (Cañuelas) | 0,56 | 0,32 | 0,09 |
-| Noreste | 01.1.2 | Mayorista: hacienda (Cañuelas) | 0,61 | 0,37 | 0,11 |
-| Noroeste | 01.1.2 | Mayorista: hacienda (Cañuelas) | 0,49 | 0,24 | 0,10 |
-| Cuyo | 01.1.2 | Mayorista: hacienda (Cañuelas) | 0,08 | -0,17 | 0,09 |
-| Patagonia | 01.1.2 | Mayorista: hacienda (Cañuelas) | 1,03 | 0,78 | 0,09 |
-| GBA | 01.1.4 | Góndolas (SEPA) | 1,39 | 1,08 | 0,05 |
-| Pampeana | 01.1.4 | Góndolas (SEPA) | 1,47 | 1,74 | -0,03 |
-| Noreste | 01.1.4 | Góndolas (SEPA) | 1,58 | 1,50 | 0,01 |
-| Noroeste | 01.1.4 | Góndolas (SEPA) | 1,76 | 1,74 | 0,00 |
-| Cuyo | 01.1.4 | Góndolas (SEPA) | 1,79 | 1,66 | 0,01 |
-| Patagonia | 01.1.4 | Góndolas (SEPA) | 1,43 | 1,22 | 0,03 |
-| GBA | 01.1.5 | Góndolas (SEPA) | 1,77 | 2,01 | -0,01 |
-| Pampeana | 01.1.5 | Góndolas (SEPA) | 1,45 | 1,74 | -0,01 |
-| Noreste | 01.1.5 | Góndolas (SEPA) | 1,64 | 1,76 | -0,00 |
-| Noroeste | 01.1.5 | Góndolas (SEPA) | 1,74 | 1,86 | -0,00 |
-| Cuyo | 01.1.5 | Góndolas (SEPA) | 1,16 | 1,04 | 0,00 |
-| Patagonia | 01.1.5 | Góndolas (SEPA) | 1,68 | 1,88 | -0,01 |
-| GBA | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 6,08 | -1,85 | 0,38 |
-| Pampeana | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 4,06 | 1,47 | 0,11 |
-| Noreste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 0,09 | 1,09 | -0,04 |
-| Noroeste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 2,21 | 1,49 | 0,03 |
-| Cuyo | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 2,73 | -1,21 | 0,13 |
-| Patagonia | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,68 | -0,15 | 0,36 |
-| GBA | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -4,33 | 9,33 | -1,65 |
-| Pampeana | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -4,50 | 7,58 | -1,46 |
-| Noreste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -4,27 | 7,44 | -1,46 |
-| Noroeste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -3,97 | 8,90 | -1,66 |
-| Cuyo | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -4,50 | 11,66 | -2,27 |
-| Patagonia | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | 0,23 | 8,16 | -0,88 |
+| GBA | 01.1.1 | Góndolas (SEPA) | 1,42 | 1,59 | -0,02 |
+| Pampeana | 01.1.1 | Góndolas (SEPA) | 1,10 | 1,16 | -0,01 |
+| Noreste | 01.1.1 | Góndolas (SEPA) | 0,90 | 0,51 | 0,06 |
+| Noroeste | 01.1.1 | Góndolas (SEPA) | 1,08 | 1,10 | -0,00 |
+| Cuyo | 01.1.1 | Góndolas (SEPA) | 1,17 | 0,86 | 0,06 |
+| Patagonia | 01.1.1 | Góndolas (SEPA) | 1,48 | 1,75 | -0,04 |
+| GBA | 01.1.4 | Góndolas (SEPA) | 0,75 | -0,43 | 0,19 |
+| Pampeana | 01.1.4 | Góndolas (SEPA) | 0,77 | -0,06 | 0,10 |
+| Noreste | 01.1.4 | Góndolas (SEPA) | 1,00 | 0,08 | 0,10 |
+| Noroeste | 01.1.4 | Góndolas (SEPA) | 1,08 | 0,05 | 0,10 |
+| Cuyo | 01.1.4 | Góndolas (SEPA) | 1,21 | 0,25 | 0,11 |
+| Patagonia | 01.1.4 | Góndolas (SEPA) | 1,25 | 0,82 | 0,06 |
+| GBA | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,46 | 7,42 | 0,00 |
+| Pampeana | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 5,50 | 6,59 | -0,05 |
+| Noreste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 1,91 | 4,13 | -0,08 |
+| Noroeste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 5,29 | 8,56 | -0,12 |
+| Cuyo | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,07 | 11,11 | -0,13 |
+| Patagonia | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,72 | 6,21 | 0,07 |
+| GBA | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,62 | -7,26 | 0,68 |
+| Pampeana | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,97 | -1,43 | -0,07 |
+| Noreste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,80 | -0,39 | -0,18 |
+| Noroeste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,37 | -5,09 | 0,48 |
+| Cuyo | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,21 | -4,30 | 0,43 |
+| Patagonia | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | 1,85 | 0,69 | 0,13 |
 | GBA | 01.1.8 | Góndolas (SEPA) | 1,62 | 1,83 | -0,01 |
 | Pampeana | 01.1.8 | Góndolas (SEPA) | 1,79 | 2,14 | -0,02 |
 | Noreste | 01.1.8 | Góndolas (SEPA) | 1,77 | 1,90 | -0,00 |
 | Noroeste | 01.1.8 | Góndolas (SEPA) | 2,08 | 2,35 | -0,01 |
 | Cuyo | 01.1.8 | Góndolas (SEPA) | 1,72 | 1,84 | -0,00 |
 | Patagonia | 01.1.8 | Góndolas (SEPA) | 1,63 | 1,78 | -0,01 |
-| GBA | 01.2.1 | Góndolas (SEPA) | 1,33 | 1,45 | -0,00 |
-| Pampeana | 01.2.1 | Góndolas (SEPA) | 1,01 | 1,14 | -0,00 |
-| Noreste | 01.2.1 | Góndolas (SEPA) | 1,59 | 1,41 | 0,00 |
-| Noroeste | 01.2.1 | Góndolas (SEPA) | 1,60 | 1,70 | -0,00 |
-| Cuyo | 01.2.1 | Góndolas (SEPA) | 1,20 | 0,41 | 0,02 |
-| Patagonia | 01.2.1 | Góndolas (SEPA) | 1,23 | 1,23 | 0,00 |
-| GBA | 01.2.2 | Góndolas (SEPA) | 1,70 | 2,02 | -0,03 |
-| Pampeana | 01.2.2 | Góndolas (SEPA) | 1,67 | 2,06 | -0,03 |
-| Noreste | 01.2.2 | Góndolas (SEPA) | 1,01 | 1,16 | -0,01 |
-| Noroeste | 01.2.2 | Góndolas (SEPA) | 1,19 | 1,54 | -0,03 |
-| Cuyo | 01.2.2 | Góndolas (SEPA) | 1,74 | 2,07 | -0,02 |
-| Patagonia | 01.2.2 | Góndolas (SEPA) | 2,02 | 2,45 | -0,03 |
-| GBA | 02.1 | Góndolas (SEPA) | 1,31 | 1,45 | -0,06 |
-| Pampeana | 02.1 | Góndolas (SEPA) | 0,99 | 1,13 | -0,07 |
-| Noreste | 02.1 | Góndolas (SEPA) | 0,81 | 0,75 | 0,03 |
-| Noroeste | 02.1 | Góndolas (SEPA) | 0,79 | 0,93 | -0,06 |
-| Cuyo | 02.1 | Góndolas (SEPA) | 0,93 | 0,72 | 0,08 |
-| Patagonia | 02.1 | Góndolas (SEPA) | 1,16 | 1,22 | -0,02 |
-| GBA | 06.1 | Góndolas (SEPA) | 1,96 | 2,36 | -0,15 |
-| Pampeana | 06.1 | Góndolas (SEPA) | 2,04 | 2,38 | -0,14 |
-| Noreste | 06.1 | Góndolas (SEPA) | 2,15 | 2,43 | -0,12 |
-| Noroeste | 06.1 | Góndolas (SEPA) | 2,54 | 2,44 | 0,05 |
-| Cuyo | 06.1 | Góndolas (SEPA) | 2,38 | 2,33 | 0,02 |
-| Patagonia | 06.1 | Góndolas (SEPA) | 1,98 | 1,99 | -0,00 |
-| GBA | 07.2.2 | Precio de surtidor (YPF) | 1,23 | 1,19 | 0,02 |
-| Pampeana | 07.2.2 | Precio de surtidor (YPF) | 1,16 | 1,08 | 0,04 |
-| Noreste | 07.2.2 | Precio de surtidor (YPF) | 1,06 | 0,95 | 0,05 |
-| Noroeste | 07.2.2 | Precio de surtidor (YPF) | 1,32 | 1,31 | 0,00 |
-| Cuyo | 07.2.2 | Precio de surtidor (YPF) | 1,24 | 1,19 | 0,02 |
-| Patagonia | 07.2.2 | Precio de surtidor (YPF) | 1,11 | 1,02 | 0,04 |
+| GBA | 01.2.1 | Góndolas (SEPA) | 1,27 | 1,38 | -0,00 |
+| Pampeana | 01.2.1 | Góndolas (SEPA) | 1,17 | 1,94 | -0,02 |
+| Noreste | 01.2.1 | Góndolas (SEPA) | 1,58 | 1,13 | 0,01 |
+| Noroeste | 01.2.1 | Góndolas (SEPA) | 1,56 | 1,70 | -0,00 |
+| Cuyo | 01.2.1 | Góndolas (SEPA) | 1,58 | 0,65 | 0,02 |
+| Patagonia | 01.2.1 | Góndolas (SEPA) | 1,22 | 1,18 | 0,00 |
+| GBA | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 2,13 | 3,35 | -0,10 |
+| Pampeana | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 1,29 | 1,55 | -0,02 |
+| Noreste | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 1,43 | 2,19 | -0,05 |
+| Noroeste | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 1,05 | 1,54 | -0,04 |
+| Cuyo | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 1,60 | 2,06 | -0,03 |
+| Patagonia | 01.2.2 | Góndolas (SEPA) + dólar mayorista | 1,82 | 2,44 | -0,05 |
+| GBA | 02.1 | Góndolas (SEPA) | 1,53 | 1,96 | -0,20 |
+| Pampeana | 02.1 | Góndolas (SEPA) | 0,96 | 1,13 | -0,08 |
+| Noreste | 02.1 | Góndolas (SEPA) | 0,82 | 0,75 | 0,04 |
+| Noroeste | 02.1 | Góndolas (SEPA) | 0,77 | 0,93 | -0,07 |
+| Cuyo | 02.1 | Góndolas (SEPA) | 0,96 | 0,72 | 0,09 |
+| Patagonia | 02.1 | Góndolas (SEPA) | 1,93 | 2,90 | -0,40 |
+| GBA | 06.1 | Góndolas (SEPA) | 1,79 | 2,28 | -0,18 |
+| Pampeana | 06.1 | Góndolas (SEPA) | 1,89 | 2,29 | -0,17 |
+| Noreste | 06.1 | Góndolas (SEPA) | 2,14 | 2,67 | -0,22 |
+| Noroeste | 06.1 | Góndolas (SEPA) | 2,52 | 2,27 | 0,12 |
+| Cuyo | 06.1 | Góndolas (SEPA) | 2,49 | 2,58 | -0,05 |
+| Patagonia | 06.1 | Góndolas (SEPA) | 1,95 | 1,94 | 0,00 |
+| GBA | 07.2.2 | Precio de surtidor (YPF) | 1,25 | 1,19 | 0,03 |
+| Pampeana | 07.2.2 | Precio de surtidor (YPF) | 1,19 | 1,08 | 0,05 |
+| Noreste | 07.2.2 | Precio de surtidor (YPF) | 1,11 | 0,95 | 0,07 |
+| Noroeste | 07.2.2 | Precio de surtidor (YPF) | 1,32 | 1,31 | 0,01 |
+| Cuyo | 07.2.2 | Precio de surtidor (YPF) | 1,25 | 1,19 | 0,03 |
+| Patagonia | 07.2.2 | Precio de surtidor (YPF) | 1,15 | 1,02 | 0,06 |
 
 ## Supermercados online (último mes con datos)
 
