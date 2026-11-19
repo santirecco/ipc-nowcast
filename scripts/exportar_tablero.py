@@ -146,6 +146,7 @@ def exportar_json():
         if abs(resto) >= 0.005:
             puente.append({"paso": "Interacciones y ajustes", "valor": round(resto, 3), "tipo": "delta"})
         puente.append({"paso": "Pronóstico", "valor": round(float(ult["estimacion"]), 3), "tipo": "total"})
+    relevamiento = relevamiento_fuentes()
     celdas = []
     rc = NC / "ultimo_celdas.csv"
     if rc.exists():
@@ -159,11 +160,81 @@ def exportar_json():
         "divisiones": limpio(div), "regiones": limpio(reg), "informacion_grupos": grupos, "informacion_top": top,
         "indec": limpio(serie.round(3)), "backtest": limpio(bt[["mes", "indec", "inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]]),
         "errores": errores, "fuentes": limpio(pd.read_csv(OUT / "fuentes.csv")),
-        "precision": precision, "puente": puente, "celdas": celdas,
+        "precision": precision, "puente": puente, "celdas": celdas, "relevamiento": relevamiento["fuentes"], "relevamiento_total": {k: v for k, v in relevamiento.items() if k != "fuentes"},
     }
     dest = DATA.parent / "publico"
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "ipc_predictor.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def relevamiento_fuentes() -> list:
+    """De dónde salen los precios que releva el predictor: qué mide cada fuente, para qué rubros, cada cuánto y
+    cuánto junta (con el último día de recolección)."""
+    P = DATA / "precios"
+    est = pd.read_csv(OUT / "fuentes.csv").set_index("fuente") if (OUT / "fuentes.csv").exists() else pd.DataFrame()
+
+    def estado(nombre):
+        if nombre in est.index:
+            return str(est.loc[nombre, "estado"]), str(est.loc[nombre, "ultimo_dato"])
+        return "", ""
+    r = pd.read_csv(OUT / "recoleccion.csv") if (OUT / "recoleccion.csv").exists() else pd.DataFrame(columns=["fecha", "fuente", "cadena", "productos"])
+    def ult(fuente):
+        x = r[r.fuente == fuente]
+        if x.empty:
+            return 0, 0, []
+        x = x[x.fecha == x.fecha.max()]
+        return int(x.cadena.nunique()), int(x.productos.sum()), sorted(x.cadena.astype(str).unique())
+    sc, sp, _ = ult("SEPA (todo el país)")
+    oc, op, onl = ult("Supermercados online")
+    _, mp, _ = ult("Mayoristas")
+    try:
+        t = pd.read_csv(P / "tiendas" / "resumen.csv")
+        t = t[t.fecha >= sorted(t.fecha.unique())[-min(3, t.fecha.nunique())]].groupby("cadena").productos.max()
+        tc, tp = int(len(t)), int(t.sum())
+    except Exception:  # noqa: BLE001
+        tc, tp = 0, 0
+    f = lambda n: f"{n:,}".replace(",", ".")  # noqa: E731
+    filas = [
+        {"fuente": "SEPA · Precios Claros", "origen": "Secretaría de Comercio (datos abiertos)", "tipo": "precios",
+         "que": "Precios de góndola que las cadenas de supermercados informan por ley, sucursal por sucursal, en todo el país.",
+         "rubros": "Alimentos, bebidas, limpieza, medicamentos y cuidado personal",
+         "alcance": f"{sc} cadenas · {f(sp)} precios por día · 6 regiones", "frecuencia": "diaria", "clave": "SEPA (Precios Claros)"},
+        {"fuente": "Supermercados online", "origen": "Tiendas web de " + ", ".join(c.capitalize() for c in onl) if onl else "Tiendas web de supermercados",
+         "tipo": "precios", "que": "Precios publicados con stock en las tiendas online del GBA.",
+         "rubros": "Alimentos y bebidas (GBA)", "alcance": f"{oc} cadenas · {f(op)} productos por día", "frecuencia": "diaria", "clave": "Supermercados online"},
+        {"fuente": "Mercado Central de Buenos Aires", "origen": "Precios mayoristas publicados por el Mercado Central", "tipo": "mayorista",
+         "que": "Precio mayorista de frutas y verduras: se anticipa a lo que pasa en la verdulería.",
+         "rubros": "Frutas y verduras", "alcance": f"{f(mp)} productos por día", "frecuencia": "diaria (días hábiles)", "clave": "Mercado Central"},
+        {"fuente": "Hacienda · Mercado Agroganadero de Cañuelas", "origen": "Mercado Agroganadero (ex Liniers)", "tipo": "mayorista",
+         "que": "Precio del ganado por categoría. Las subas pasan a la carnicería; las bajas casi no.",
+         "rubros": "Carnes", "alcance": "precio promedio y cabezas vendidas", "frecuencia": "diaria", "clave": "Hacienda (Cañuelas)"},
+        {"fuente": "Surtidores YPF", "origen": "surtidores.com.ar (precios de YPF en la Ciudad)", "tipo": "precios",
+         "que": "Precio de nafta súper, premium y gasoil. Desde nov-2026 se guarda una foto diaria para armar el promedio del mes.",
+         "rubros": "Combustibles", "alcance": "3 productos · foto diaria", "frecuencia": "diaria", "clave": "Combustibles (YPF)"},
+        {"fuente": "Tarifas y aumentos anunciados", "origen": "ENRE, ENARGAS, Boletín Oficial, gobiernos y prensa", "tipo": "regulados",
+         "que": "Aumentos de luz, gas, transporte y prepagas ya publicados, con su fecha de vigencia. Se revisa todos los lunes.",
+         "rubros": "Vivienda, transporte y salud", "alcance": "calendario mensual por región", "frecuencia": "semanal", "clave": "Calendario de tarifas"},
+        {"fuente": "Listas de autos 0 km", "origen": "Listas de precios de las automotrices", "tipo": "precios",
+         "que": "Aumento promedio de las listas del mes, que se conoce a principio de mes.",
+         "rubros": "Compra de vehículos", "alcance": "aumento promedio del mes", "frecuencia": "mensual", "clave": ""},
+        {"fuente": "Tiendas de ropa, calzado, electro y hogar", "origen": "Equus, Port Said, Tascani, Levi's, Legacy, Mimo, Topper, Naldo, Cetrogar, Coppel, Pardo, Easy y Blaisten",
+         "tipo": "evaluacion", "que": "Se relevan desde nov-2026; entran al modelo cuando junten historia y pasen la regla (bajar el error de su rubro).",
+         "rubros": "Ropa, calzado, electro y hogar", "alcance": f"{tc} tiendas · {f(tp)} productos", "frecuencia": "diaria", "clave": "Tiendas de ropa y electrónica"},
+        {"fuente": "IPC de la Ciudad de Buenos Aires", "origen": "Instituto de Estadística de la Ciudad (IDECBA)", "tipo": "estadistica",
+         "que": "Sale días antes que INDEC: en la víspera ajusta el pronóstico del GBA rubro por rubro.",
+         "rubros": "Todos (GBA)", "alcance": "12 divisiones", "frecuencia": "mensual", "clave": "IPC Ciudad de Buenos Aires"},
+        {"fuente": "INDEC", "origen": "Instituto Nacional de Estadística y Censos", "tipo": "estadistica",
+         "que": "El IPC oficial y sus pesos, los precios promedio de 59 productos y el índice de salarios.",
+         "rubros": "Todos", "alcance": "12 divisiones × 6 regiones", "frecuencia": "mensual", "clave": "INDEC"},
+        {"fuente": "BCRA", "origen": "Banco Central de la República Argentina", "tipo": "estadistica",
+         "que": "Dólar mayorista (A3500), índice de contratos de alquiler y el REM, la expectativa de los analistas.",
+         "rubros": "Referencias y pruebas", "alcance": "series diarias y mensuales", "frecuencia": "diaria", "clave": "Dólar mayorista (BCRA)"},
+    ]
+    for x in filas:
+        x["estado"], x["ultimo_dato"] = estado(x.pop("clave"))
+        if x["fuente"].startswith("Tarifas"):
+            x["ultimo_dato"] = ""  # el calendario llega hasta el mes próximo: la fecha confunde
+    return {"fuentes": filas, "precios_por_dia": sp + op + tp + mp, "cadenas": sc + oc + tc}
 
 
 def estado_fuentes() -> pd.DataFrame:
