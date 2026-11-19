@@ -74,6 +74,8 @@ def main():
     datos = [x for x in extra if not x.get("estadistica")]
     r = nc.calcular(mes, super_mensual=sm, extra=extra)
     sin_info = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False, usar_reglas=False, extra=est)["estimacion"]
+    # proyección puramente estadística (sin ninguna corrección ni dato): punto de partida del "puente" del tablero
+    pura = nc.calcular(mes, usar_regulados=False, usar_super=False, usar_caba=False, usar_reglas=False, extra=[])["estimacion"]
     con_caba = r["caba"] is not None
     momento = momento_del_mes(con_caba, datos, pd.Timestamp(hoy), mes)
     b = banda(momento)
@@ -104,6 +106,7 @@ def main():
         "variacion_%": (g["variacion"] * g["peso_%"]).sum() / g["peso_%"].sum(),
         "peso_%": g["peso_%"].sum(), "incidencia_pp": g["incidencia_pp"].sum()})).reindex(REGIONES).reset_index()
     div.to_csv(OUT / "ultimo_divisiones.csv", index=False, float_format="%.4f")
+    c.reset_index()[["region", "division", "variacion", "peso_%", "cobertura"]].to_csv(OUT / "ultimo_celdas.csv", index=False, float_format="%.4f")
     reg.to_csv(OUT / "ultimo_regiones.csv", index=False, float_format="%.4f")
     info = r["informacion"]
     # registro para validar hacia adelante el calendario de tarifas contra las reglas: por cada componente con
@@ -134,7 +137,7 @@ def main():
     # historial de pronósticos (uno por día y mes pronosticado)
     fila = {"fecha_calculo": str(hoy), "mes": f"{mes:%Y-%m}", "estimacion": round(r["estimacion"], 4),
             "rango_bajo": round(r["estimacion"] - b, 4), "rango_alto": round(r["estimacion"] + b, 4),
-            "solo_modelo_estadistico": round(sin_info, 4), "abajo_arriba": round(r["abajo_arriba"], 4),
+            "solo_modelo_estadistico": round(sin_info, 4), "proyeccion_pura": round(pura, 4), "abajo_arriba": round(r["abajo_arriba"], 4),
             "ipc_caba": None if r["caba"] is None else round(r["caba"], 4), "ajuste_caba": round(r["ajuste_caba"], 4), "rem": rem,
             "datos_incorporados": len(info), "dias_supermercados": int(panel.fecha.nunique()) if not panel.empty else 0,
             "momento": momento}

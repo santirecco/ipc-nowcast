@@ -95,6 +95,8 @@ def exportar_json():
         return df.to_dict("records")
     pr = pd.read_csv(OUT / "pronostico.csv")
     ult = pr.iloc[-1].to_dict()
+    hraw = pd.read_csv(NC / "historial.csv")
+    pura = hraw.iloc[-1].get("proyeccion_pura") if "proyeccion_pura" in hraw else None
     hist_mes = pr[pr.mes == ult["mes"]][["fecha_calculo", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "momento"]]
     div = pd.read_csv(OUT / "divisiones.csv", dtype={"division": str})
     reg = pd.read_csv(OUT / "regiones.csv")
@@ -124,6 +126,32 @@ def exportar_json():
     serie = pd.DataFrame({"mes": v.index.strftime("%Y-%m"), "mensual": v["00"].values, "nucleo": v["Núcleo"].values,
                           "interanual": ia["00"].values}).dropna().tail(25)
     cob = float((div.peso * div.cobertura).sum() / div.peso.sum()) if len(div) else None
+    # precisión por momento (últimos 16 meses): error medio, error cuadrático y % de meses dentro de ±0,25 pp
+    precision = []
+    x16 = bt.tail(16)
+    for col in ["inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]:
+        e = (x16[col] - x16.indec).dropna()
+        precision.append({"momento": col, "mae": round(float(e.abs().mean()), 3), "rmse": round(float(np.sqrt((e ** 2).mean())), 3),
+                          "dentro_025": round(float((e.abs() <= 0.25).mean()), 3), "sesgo": round(float(e.mean()), 3)})
+    # puente: de la proyección con la historia al pronóstico
+    puente = []
+    if pura is not None and pd.notna(pura):
+        puente.append({"paso": "Proyección con la historia", "valor": round(float(pura), 3), "tipo": "base"})
+        puente.append({"paso": "Correcciones conocidas el día 1", "valor": round(float(ult["solo_modelo"] - pura), 3), "tipo": "delta"})
+        acum = float(ult["solo_modelo"])
+        for g in grupos:
+            puente.append({"paso": g["grupo"], "valor": round(float(g["efecto"]), 3), "tipo": "delta"})
+            acum += float(g["efecto"])
+        resto = float(ult["estimacion"]) - acum
+        if abs(resto) >= 0.005:
+            puente.append({"paso": "Interacciones y ajustes", "valor": round(resto, 3), "tipo": "delta"})
+        puente.append({"paso": "Pronóstico", "valor": round(float(ult["estimacion"]), 3), "tipo": "total"})
+    celdas = []
+    rc = NC / "ultimo_celdas.csv"
+    if rc.exists():
+        cc = pd.read_csv(rc, dtype={"division": str})
+        cc["division"] = cc.division.str.zfill(2)
+        celdas = limpio(cc.rename(columns={"peso_%": "peso"}).round(3))
     out = {
         "version": 1, "generado": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "pronostico": {k: (None if pd.isna(v) else v) for k, v in ult.items()}, "cobertura": round(cob, 3) if cob is not None else None,
@@ -131,6 +159,7 @@ def exportar_json():
         "divisiones": limpio(div), "regiones": limpio(reg), "informacion_grupos": grupos, "informacion_top": top,
         "indec": limpio(serie.round(3)), "backtest": limpio(bt[["mes", "indec", "inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]]),
         "errores": errores, "fuentes": limpio(pd.read_csv(OUT / "fuentes.csv")),
+        "precision": precision, "puente": puente, "celdas": celdas,
     }
     dest = DATA.parent / "publico"
     dest.mkdir(parents=True, exist_ok=True)

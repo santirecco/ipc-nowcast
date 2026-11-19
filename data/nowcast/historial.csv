@@ -1,3 +1,3 @@
-fecha_calculo,mes,estimacion,rango_bajo,rango_alto,solo_modelo_estadistico,abajo_arriba,ipc_caba,rem,datos_incorporados,dias_supermercados,ajuste_caba,momento
-2026-11-18,2026-11,1.8387,1.4856,2.1918,1.8091,1.8387,,1.7,61,1,0.0,mitad_de_mes
-2026-11-19,2026-11,2.0535,1.7534,2.3536,1.9687,2.0535,,1.7,85,1,0.0,mitad_de_mes
+fecha_calculo,mes,estimacion,rango_bajo,rango_alto,solo_modelo_estadistico,abajo_arriba,ipc_caba,rem,datos_incorporados,dias_supermercados,ajuste_caba,momento,proyeccion_pura
+2026-11-18,2026-11,1.8387,1.4856,2.1918,1.8091,1.8387,,1.7,61,1,0.0,mitad_de_mes,
+2026-11-19,2026-11,2.0535,1.7534,2.3536,1.9687,2.0535,,1.7,85,1,0.0,mitad_de_mes,1.808
