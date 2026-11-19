@@ -12,6 +12,7 @@ estimados únicamente con los meses anteriores).
 """
 from __future__ import annotations
 
+import os
 import numpy as np
 import pandas as pd
 import yaml
@@ -27,7 +28,7 @@ from .modelo import proyeccion_componente
 # premian compensaciones de suerte). El backtest reaplica esta misma regla mes a mes con los meses anteriores.
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"]],
+    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"]],
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
@@ -37,9 +38,9 @@ OPCIONES = {
     "01.2.2": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "02.1": [["sepa"]],
     "02.2": [["ipc"]],
-    "03.1": [["fx"], ["ipc"]],
-    "03.2": [["ipc"]],
-    "04.1.1": [["icl"], ["ipc"], ["icl", "ipc"], ["sal"]],
+    "03.1": [["fx"], ["ipc"], ["sal"], ["ipcl"]],
+    "03.2": [["ipc"], ["fx"], ["sal"], ["ipcl"]],
+    "04.1.1": [["icl"], ["ipc"], ["icl", "ipc"], ["sal"], ["ipcl"], ["ipcl", "sal"]],
     "05": [["fx"], ["sal"]],
     "05.6": [["sepa"], ["ipc"]],
     "06.1": [["sepa"], ["ipc"]],
@@ -47,17 +48,17 @@ OPCIONES = {
     "07.1": [["autos"], ["fx"]],
     "07.3": [["ipc"], ["ipc2"]],
     "07.2.2": [["nafta"], ["nafta", "fx"]],
-    "08.3": [["ipc"]],
-    "09.4": [["ipc"], ["sal"]],
-    "09.5": [["ipc"]],
-    "10": [["ipc"], ["sal"]],
-    "11.1": [["ipc"], ["sal"], ["ipc", "sal"]],
-    "12.1": [["sepa"], ["ipc"], ["sal"]],
+    "08.3": [["ipc"], ["ipcl"], ["ipc2"], ["fx"]],
+    "09.4": [["ipc"], ["sal"], ["ipcl"], ["fx"]],
+    "09.5": [["ipc"], ["fx"], ["ipcl"]],
+    "10": [["ipc"], ["sal"], ["ipcl"]],
+    "11.1": [["ipc"], ["sal"], ["ipc", "sal"], ["alim1"], ["alim"], ["alim1", "sal"], ["ipcl"]],
+    "12.1": [["sepa"], ["ipc"], ["sal"], ["ipcl"]],
 }
 CLASES = list(OPCIONES)
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
-ESTADISTICAS = {"ipc", "icl", "arr", "sal", "ipc2"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
 RUTA_AUTOS = DATA / "precios" / "autos" / "listas_0km.csv"
@@ -76,12 +77,16 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "arr": "arrastre del mes anterior (SEPA)",
             "sepai": "precios de SEPA de los productos que mide INDEC",
             "autos": "listas de precios de autos 0 km", "sepaf": "frutas y verduras frescas en góndola (SEPA)", "sal": "salarios registrados (INDEC)",
-            "ipc2": "regla de ajuste: inflación de dos meses antes + 2%"}
+            "ipc2": "regla de ajuste: inflación de dos meses antes + 2%",
+            "ipcl": "indexación con demora (inflación de 2 a 4 meses antes)",
+            "alim1": "alimentos del mes anterior (INDEC)",
+            "alim": "alimentos: mes anterior (INDEC) y góndolas del mes (SEPA)",
+            "may2": "hacienda de dos meses antes"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
 MIN_MESES_AJUSTE = 4       # meses mínimos de historia para estimar coeficientes (comunes a 6 regiones)
-EVAL_DESDE = pd.Timestamp("2024-01-01")  # la decisión se toma con el error de 2024 en adelante (régimen actual)
+EVAL_DESDE = pd.Timestamp(os.environ.get("IPC_EVAL_DESDE", "2024-01-01"))  # la decisión se toma con el error de 2024 en adelante (régimen actual)
 MEJORA_MINIMA = 0.02       # pp de mejora del error medio fuera de muestra para usar la fuente
 RUTA_CALIB = CONFIG / "calibracion_adelantados.yaml"
 RUTA_BT = DATA / "precios" / "adelantados_backtest.csv"
@@ -130,6 +135,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     ipc_l1 = ipc.shift(1, freq="MS")
     ipc_p3 = ipc.rolling(3).mean().shift(1, freq="MS")
     ipc_l2 = ipc.shift(2, freq="MS")
+    ipc_lag = ipc.rolling(3).mean().shift(2, freq="MS")  # promedio de t-2, t-3 y t-4
     meses = sorted(set(idx.mes if not idx.empty else []) | set(may.index) | set(otros.dropna(how="all").index)
                    | {m for m in ipc_l1.index if m >= pd.Timestamp("2018-01-01")})
     filas = []
@@ -158,7 +164,8 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan)),
-                              "ipc_l2": float(ipc_l2.get(mes, np.nan))})
+                              "ipc_l2": float(ipc_l2.get(mes, np.nan)), "ipc_lag": float(ipc_lag.get(mes, np.nan)),
+                              "alim_l1": float(nc.V[r]["01"].get(mes - pd.offsets.MonthBegin(1), np.nan))})
     t = pd.DataFrame(filas)
     if t.empty:
         return t
@@ -213,6 +220,16 @@ def tabla(nc, corte: str) -> pd.DataFrame:
         tend.index = tend.index + pd.offsets.MonthBegin(1)  # la tendencia conocida al empezar el mes siguiente
         sel = t.clase == c
         t.loc[sel, "tend"] = t.loc[sel, "mes"].map(tend)
+    # hacienda de dos meses antes (carnes)
+    hac = mayoristas.serie_hacienda(None)
+    t["may_l2"] = np.where(t.clase == "01.1.2", t.mes.map(hac.shift(2, freq="MS")), np.nan) if not hac.empty else np.nan
+    # góndolas de alimentos del mes (SEPA, promedio simple de las clases de alimentos) para restaurantes
+    if not idx.empty:
+        al = idx[idx.clase.astype(str).str.match(r"^01\.\d\.\d$") & (idx.cadenas >= 2)]
+        al = al.groupby(["mes", "region"])["var_%"].mean().rename("alim_sepa").reset_index()
+        t = t.merge(al, on=["mes", "region"], how="left")
+    else:
+        t["alim_sepa"] = np.nan
     return t
 
 
@@ -260,6 +277,15 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         p = t.proy.astype(float)
         cols.append(t["ipc_l1"].astype(float) - p)
         cols.append(t["ipc_p3"].astype(float) - p)
+    if "ipcl" in fuentes:
+        cols.append(t["ipc_lag"].astype(float) - t.proy.astype(float))
+    if "alim1" in fuentes or "alim" in fuentes:
+        cols.append(t["alim_l1"].astype(float) - t.proy.astype(float))
+    if "alim" in fuentes:
+        cols.append(t["alim_sepa"].astype(float) - t.proy.astype(float))
+    if "may2" in fuentes:
+        tend = np.where(t.clase.isin(CON_TENDENCIA), t.tend.fillna(0).astype(float), 0.0)
+        cols.append(t["may_l2"].astype(float) - tend)
     return np.column_stack(cols) if cols else np.zeros((len(t), 0))
 
 
@@ -307,6 +333,14 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["autos"].notna() & t["autos_l1"].notna()
     if "sepaf" in fuentes:
         ok &= t["sepaf"].notna()
+    if "ipcl" in fuentes:
+        ok &= t["ipc_lag"].notna()
+    if "alim1" in fuentes or "alim" in fuentes:
+        ok &= t["alim_l1"].notna()
+    if "alim" in fuentes:
+        ok &= t["alim_sepa"].notna()
+    if "may2" in fuentes:
+        ok &= t["may_l2"].notna()
     return ok
 
 

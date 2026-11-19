@@ -2,13 +2,13 @@
 
 *Calculado el 19/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 2,0% mensual (rango probable 1,7% a 2,3%)
+## 2,0% mensual (rango probable 1,6% a 2,3%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,98** |
-| Solo modelo estadístico | 1,88 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,98 |
+| **Pronóstico** | **1,96** |
+| Solo modelo estadístico | 1,86 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,96 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -23,7 +23,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Alimentos y bebidas no alcohólicas | 28,7 | 1,77 | 0,51 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
 | Transporte | 11,6 | 2,10 | 0,24 |
-| Restaurantes y hoteles | 10,9 | 1,69 | 0,19 |
+| Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
 | Salud | 9,0 | 1,86 | 0,17 |
 | Recreación y cultura | 6,6 | 2,46 | 0,16 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 2,30 | 0,12 |
@@ -37,12 +37,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,99 |
-| Pampeana | 33,8 | 2,01 |
+| GBA | 45,1 | 1,97 |
+| Pampeana | 33,8 | 2,00 |
 | Noreste | 4,5 | 1,59 |
-| Noroeste | 6,8 | 1,82 |
+| Noroeste | 6,8 | 1,80 |
 | Cuyo | 5,2 | 2,22 |
-| Patagonia | 4,5 | 1,95 |
+| Patagonia | 4,5 | 1,93 |
 
 ## Información del mes incorporada
 

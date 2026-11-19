@@ -36,6 +36,16 @@
     error_proyeccion: 2.938
     error_con_fuente: 2.463
     meses: 34
+  - fuentes:
+    - may
+    - may2
+    coef:
+    - 0.393
+    - 0.233
+    - 0.0
+    error_proyeccion: 2.938
+    error_con_fuente: 2.469
+    meses: 34
   01.1.4:
   - fuentes:
     - sepa
@@ -164,6 +174,15 @@
     error_con_fuente: 2.21
     meses: 34
   - fuentes:
+    - ipcl
+    - sal
+    coef:
+    - 0.492
+    - 0.034
+    error_proyeccion: 2.625
+    error_con_fuente: 2.222
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -189,6 +208,13 @@
     - 0.379
     error_proyeccion: 2.625
     error_con_fuente: 2.373
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.294
+    error_proyeccion: 2.625
+    error_con_fuente: 2.383
     meses: 34
   '05.6':
   - fuentes:
@@ -283,6 +309,28 @@
     error_proyeccion: 2.615
     error_con_fuente: 1.362
     meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.498
+    error_proyeccion: 2.615
+    error_con_fuente: 1.832
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.017
+    - 0.157
+    error_proyeccion: 2.615
+    error_con_fuente: 2.097
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.79
+    error_proyeccion: 2.615
+    error_con_fuente: 2.147
+    meses: 34
   '09.4':
   - fuentes:
     - ipc
@@ -291,6 +339,13 @@
     - 0.394
     error_proyeccion: 2.868
     error_con_fuente: 2.363
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.602
+    error_proyeccion: 2.868
+    error_con_fuente: 2.701
     meses: 34
   - fuentes:
     - sal
@@ -310,6 +365,22 @@
     meses: 34
   '11.1':
   - fuentes:
+    - alim1
+    coef:
+    - 0.433
+    error_proyeccion: 1.922
+    error_con_fuente: 1.484
+    meses: 34
+  - fuentes:
+    - alim1
+    - sal
+    coef:
+    - 0.308
+    - 0.471
+    error_proyeccion: 1.922
+    error_con_fuente: 1.442
+    meses: 34
+  - fuentes:
     - ipc
     coef:
     - 0.591
@@ -327,6 +398,14 @@
     error_proyeccion: 1.922
     error_con_fuente: 1.504
     meses: 34
+  - fuentes:
+    - alim
+    coef:
+    - 0.279
+    - 0.086
+    error_proyeccion: 1.013
+    error_con_fuente: 0.909
+    meses: 18
   '12.1':
   - fuentes:
     - ipc
@@ -371,6 +450,16 @@
     - 0.231
     error_proyeccion: 2.938
     error_con_fuente: 2.463
+    meses: 34
+  - fuentes:
+    - may
+    - may2
+    coef:
+    - 0.393
+    - 0.233
+    - 0.0
+    error_proyeccion: 2.938
+    error_con_fuente: 2.469
     meses: 34
   01.1.4:
   - fuentes:
@@ -510,6 +599,15 @@
     error_con_fuente: 2.21
     meses: 34
   - fuentes:
+    - ipcl
+    - sal
+    coef:
+    - 0.492
+    - 0.034
+    error_proyeccion: 2.625
+    error_con_fuente: 2.222
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -535,6 +633,13 @@
     - 0.379
     error_proyeccion: 2.625
     error_con_fuente: 2.373
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.294
+    error_proyeccion: 2.625
+    error_con_fuente: 2.383
     meses: 34
   '05.6':
   - fuentes:
@@ -629,6 +734,28 @@
     error_proyeccion: 2.615
     error_con_fuente: 1.362
     meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.498
+    error_proyeccion: 2.615
+    error_con_fuente: 1.832
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.016
+    - 0.157
+    error_proyeccion: 2.615
+    error_con_fuente: 2.095
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.79
+    error_proyeccion: 2.615
+    error_con_fuente: 2.147
+    meses: 34
   '09.4':
   - fuentes:
     - ipc
@@ -637,6 +764,13 @@
     - 0.394
     error_proyeccion: 2.868
     error_con_fuente: 2.363
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.602
+    error_proyeccion: 2.868
+    error_con_fuente: 2.701
     meses: 34
   - fuentes:
     - sal
@@ -656,6 +790,22 @@
     meses: 34
   '11.1':
   - fuentes:
+    - alim1
+    coef:
+    - 0.433
+    error_proyeccion: 1.922
+    error_con_fuente: 1.484
+    meses: 34
+  - fuentes:
+    - alim1
+    - sal
+    coef:
+    - 0.308
+    - 0.471
+    error_proyeccion: 1.922
+    error_con_fuente: 1.442
+    meses: 34
+  - fuentes:
     - ipc
     coef:
     - 0.591
@@ -673,6 +823,14 @@
     error_proyeccion: 1.922
     error_con_fuente: 1.504
     meses: 34
+  - fuentes:
+    - alim
+    coef:
+    - 0.274
+    - 0.098
+    error_proyeccion: 1.013
+    error_con_fuente: 0.908
+    meses: 18
   '12.1':
   - fuentes:
     - ipc
@@ -744,6 +902,16 @@ completo:
     - 0.235
     error_proyeccion: 2.938
     error_con_fuente: 2.502
+    meses: 34
+  - fuentes:
+    - may
+    - may2
+    coef:
+    - 0.298
+    - 0.236
+    - 0.0
+    error_proyeccion: 2.938
+    error_con_fuente: 2.506
     meses: 34
   01.1.4:
   - fuentes:
@@ -919,6 +1087,15 @@ completo:
     error_con_fuente: 2.21
     meses: 34
   - fuentes:
+    - ipcl
+    - sal
+    coef:
+    - 0.492
+    - 0.034
+    error_proyeccion: 2.625
+    error_con_fuente: 2.222
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -944,6 +1121,13 @@ completo:
     - 0.379
     error_proyeccion: 2.625
     error_con_fuente: 2.373
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.294
+    error_proyeccion: 2.625
+    error_con_fuente: 2.383
     meses: 34
   '05.6':
   - fuentes:
@@ -1047,6 +1231,28 @@ completo:
     error_proyeccion: 2.615
     error_con_fuente: 1.362
     meses: 34
+  - fuentes:
+    - ipc2
+    coef:
+    - 0.498
+    error_proyeccion: 2.615
+    error_con_fuente: 1.832
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.017
+    - 0.156
+    error_proyeccion: 2.615
+    error_con_fuente: 2.095
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.79
+    error_proyeccion: 2.615
+    error_con_fuente: 2.147
+    meses: 34
   '09.4':
   - fuentes:
     - ipc
@@ -1055,6 +1261,13 @@ completo:
     - 0.394
     error_proyeccion: 2.868
     error_con_fuente: 2.363
+    meses: 34
+  - fuentes:
+    - ipcl
+    coef:
+    - 0.602
+    error_proyeccion: 2.868
+    error_con_fuente: 2.701
     meses: 34
   - fuentes:
     - sal
@@ -1074,6 +1287,22 @@ completo:
     meses: 34
   '11.1':
   - fuentes:
+    - alim1
+    coef:
+    - 0.433
+    error_proyeccion: 1.922
+    error_con_fuente: 1.484
+    meses: 34
+  - fuentes:
+    - alim1
+    - sal
+    coef:
+    - 0.308
+    - 0.471
+    error_proyeccion: 1.922
+    error_con_fuente: 1.442
+    meses: 34
+  - fuentes:
     - ipc
     coef:
     - 0.591
@@ -1091,6 +1320,14 @@ completo:
     error_proyeccion: 1.922
     error_con_fuente: 1.504
     meses: 34
+  - fuentes:
+    - alim
+    coef:
+    - 0.264
+    - 0.119
+    error_proyeccion: 1.013
+    error_con_fuente: 0.907
+    meses: 18
   '12.1':
   - fuentes:
     - ipc

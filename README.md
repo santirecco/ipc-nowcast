@@ -111,6 +111,15 @@ jul-24 en adelante 0,36 -> 0,34; últimos 16 meses 0,20 -> 0,22. Mejora el rubro
 efecto es mixto: en los últimos meses el error de tarifas compensaba un sesgo hacia arriba de alimentos. Un calendario
 real (menos exacto) daría menos que esto, así que no vale reconstruirlo a mano; sigue validándose hacia adelante.
 
+Rubros sin relevamiento (nov-2026, tercera tanda). Candidatas nuevas con historia, juzgadas por el error de su clase:
+"alimentos del mes anterior" (INDEC) para restaurantes (entra: error de la clase 1,92 -> 1,48), "indexación con
+demora" (inflación de t-2 a t-4) para alquileres, educación, telefonía, recreación y cuidado personal, dólar para
+telefonía, recreación y papelería, salarios para ropa y calzado, y hacienda de dos meses antes para carnes. Con lo
+que eligió la regla, el backtest desde jul-24 baja: inicio 0,408 -> 0,384; mitad 0,392 -> 0,371; fin 0,361 -> 0,341.
+Ropa: ninguna fuente con historia le gana a la estadística; se relevan tiendas desde nov-2026 y se prueba reconstruir
+su historia con el archivo web (`scripts/pruebas/wayback.py`). Descartado: decidir las fuentes con historia desde
+2019 en vez de 2024 (mejora 2023, de 3,47 a 2,93 a fin de mes, pero empeora el régimen actual: 0,341 -> 0,379).
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).

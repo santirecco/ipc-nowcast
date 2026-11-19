@@ -17,7 +17,7 @@ from ipc_nowcast import DATA, REPORTS, adelantados, fuentes, modelo  # noqa: E40
 PERIODOS = [("2018-01-01", "2019-12-01", "2018-2019"), ("2020-01-01", "2022-12-01", "2020-2022"),
             ("2023-01-01", "2024-06-01", "2023 a jun-2024"), ("2024-07-01", "2099-01-01", "jul-2024 en adelante"),
             ("2025-07-01", "2099-01-01", "últimos 16 meses")]
-CON_PRECIOS = pd.Timestamp("2024-07-01")
+CON_PRECIOS = pd.Timestamp(__import__("os").environ.get("IPC_CON_PRECIOS", "2024-07-01"))
 
 
 def correr(nc, usar_regulados=True, desde="2018-01-01"):
