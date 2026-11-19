@@ -53,9 +53,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 1,97 | 2,33 | no |
 | Calzado | ipc | 34 | 2,25 | 2,26 | no |
 | Alquiler de la vivienda | icl | 34 | 2,43 | 2,21 | sí, si falta la anterior |
-| Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | **sí** |
+| Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | sí, si falta la anterior |
+| Alquiler de la vivienda | sal | 34 | 2,43 | 2,07 | **sí** |
 | Equipamiento del hogar | fx | 34 | 1,84 | 2,00 | no |
+| Equipamiento del hogar | sal | 34 | 1,84 | 1,85 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 18 | 0,69 | 0,71 | no |
 | Medicamentos | ipc | 34 | 1,85 | 1,59 | sí, si falta la anterior |
@@ -65,10 +67,16 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Combustibles | nafta | 29 | 2,07 | 1,79 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,79 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
+| Servicios recreativos y culturales | ipc | 34 | 3,05 | 2,37 | **sí** |
+| Servicios recreativos y culturales | sal | 34 | 3,05 | 3,13 | no |
 | Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
 | Educación | ipc | 34 | 4,48 | 4,31 | **sí** |
+| Educación | sal | 34 | 4,48 | 5,04 | no |
 | Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc+sal | 34 | 1,89 | 1,45 | sí, si falta la anterior |
+| Restaurantes y comidas fuera del hogar | sal | 34 | 1,89 | 1,90 | no |
 | Cuidado personal | ipc | 34 | 3,12 | 2,04 | **sí** |
+| Cuidado personal | sal | 34 | 3,12 | 3,41 | no |
 | Cuidado personal | SEPA | 18 | 0,59 | 0,62 | no |
 
 ### Mes completo
@@ -120,9 +128,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 1,97 | 2,33 | no |
 | Calzado | ipc | 34 | 2,25 | 2,26 | no |
 | Alquiler de la vivienda | icl | 34 | 2,43 | 2,21 | sí, si falta la anterior |
-| Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | **sí** |
+| Alquiler de la vivienda | icl+ipc | 34 | 2,43 | 2,09 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,43 | 2,15 | sí, si falta la anterior |
+| Alquiler de la vivienda | sal | 34 | 2,43 | 2,07 | **sí** |
 | Equipamiento del hogar | fx | 34 | 1,84 | 1,99 | no |
+| Equipamiento del hogar | sal | 34 | 1,84 | 1,85 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,55 | 1,60 | sí, si falta la anterior |
 | Limpieza y mantenimiento del hogar | SEPA | 18 | 0,69 | 0,66 | **sí** |
 | Medicamentos | ipc | 34 | 1,85 | 1,59 | sí, si falta la anterior |
@@ -132,9 +142,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Combustibles | nafta | 29 | 2,07 | 1,47 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,47 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,77 | 1,37 | **sí** |
+| Servicios recreativos y culturales | ipc | 34 | 3,05 | 2,37 | **sí** |
+| Servicios recreativos y culturales | sal | 34 | 3,05 | 3,13 | no |
 | Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
 | Educación | ipc | 34 | 4,48 | 4,31 | **sí** |
+| Educación | sal | 34 | 4,48 | 5,04 | no |
 | Restaurantes y comidas fuera del hogar | ipc | 34 | 1,89 | 1,44 | **sí** |
+| Restaurantes y comidas fuera del hogar | ipc+sal | 34 | 1,89 | 1,45 | sí, si falta la anterior |
+| Restaurantes y comidas fuera del hogar | sal | 34 | 1,89 | 1,90 | no |
 | Cuidado personal | ipc | 34 | 3,12 | 2,04 | **sí** |
+| Cuidado personal | sal | 34 | 3,12 | 3,41 | no |
 | Cuidado personal | SEPA | 18 | 0,59 | 0,60 | no |
 

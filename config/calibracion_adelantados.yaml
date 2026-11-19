@@ -182,6 +182,13 @@
     meses: 34
   04.1.1:
   - fuentes:
+    - sal
+    coef:
+    - 0.434
+    error_proyeccion: 2.433
+    error_con_fuente: 2.071
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -269,6 +276,15 @@
     error_proyeccion: 2.767
     error_con_fuente: 1.37
     meses: 34
+  '09.4':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.638
+    - 0.191
+    error_proyeccion: 3.047
+    error_con_fuente: 2.373
+    meses: 34
   '09.5':
   - fuentes:
     - ipc
@@ -295,6 +311,16 @@
     - 0.0
     error_proyeccion: 1.89
     error_con_fuente: 1.441
+    meses: 34
+  - fuentes:
+    - ipc
+    - sal
+    coef:
+    - 0.164
+    - 0.591
+    - 0.0
+    error_proyeccion: 1.89
+    error_con_fuente: 1.453
     meses: 34
   '12.1':
   - fuentes:
@@ -504,6 +530,13 @@
     meses: 34
   04.1.1:
   - fuentes:
+    - sal
+    coef:
+    - 0.434
+    error_proyeccion: 2.433
+    error_con_fuente: 2.071
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -591,6 +624,15 @@
     error_proyeccion: 2.767
     error_con_fuente: 1.37
     meses: 34
+  '09.4':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.638
+    - 0.191
+    error_proyeccion: 3.047
+    error_con_fuente: 2.373
+    meses: 34
   '09.5':
   - fuentes:
     - ipc
@@ -617,6 +659,16 @@
     - 0.0
     error_proyeccion: 1.89
     error_con_fuente: 1.441
+    meses: 34
+  - fuentes:
+    - ipc
+    - sal
+    coef:
+    - 0.164
+    - 0.591
+    - 0.0
+    error_proyeccion: 1.89
+    error_con_fuente: 1.453
     meses: 34
   '12.1':
   - fuentes:
@@ -864,6 +916,13 @@ completo:
     meses: 34
   04.1.1:
   - fuentes:
+    - sal
+    coef:
+    - 0.434
+    error_proyeccion: 2.433
+    error_con_fuente: 2.071
+    meses: 34
+  - fuentes:
     - icl
     - ipc
     coef:
@@ -960,6 +1019,15 @@ completo:
     error_proyeccion: 2.767
     error_con_fuente: 1.37
     meses: 34
+  '09.4':
+  - fuentes:
+    - ipc
+    coef:
+    - 0.638
+    - 0.191
+    error_proyeccion: 3.047
+    error_con_fuente: 2.373
+    meses: 34
   '09.5':
   - fuentes:
     - ipc
@@ -986,6 +1054,16 @@ completo:
     - 0.0
     error_proyeccion: 1.89
     error_con_fuente: 1.441
+    meses: 34
+  - fuentes:
+    - ipc
+    - sal
+    coef:
+    - 0.164
+    - 0.591
+    - 0.0
+    error_proyeccion: 1.89
+    error_con_fuente: 1.453
     meses: 34
   '12.1':
   - fuentes:

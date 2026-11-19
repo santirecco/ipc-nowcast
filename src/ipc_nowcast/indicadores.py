@@ -145,3 +145,28 @@ def serie_icl() -> pd.DataFrame:
     ini = t.resample("MS").first()  # valor del primer día del mes (lo que usan los contratos que ajustan ese mes)
     prom = t.resample("MS").mean()
     return pd.DataFrame({"icl_a": (ini / ini.shift(12) - 1) * 100 / 12, "icl_m": (prom / prom.shift(1) - 1) * 100})
+
+
+# ------------------------------------------------------------------ salarios (INDEC, empleo registrado)
+SERIE_SALARIOS = {"salarios": "149.1_TL_REGIADO_OCTU_0_16", "ripte": "158.1_REPTE_0_0_5"}
+REZAGO_SALARIOS = 4  # se publican con ~4 meses de atraso: en el mes m solo se usa hasta m-4
+
+
+def actualizar_salarios() -> pd.DataFrame:
+    from .fuentes import series
+    t = series(SERIE_SALARIOS)
+    ruta = DATA / "precios" / "salarios" / "salarios.csv"
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    t.to_csv(ruta)
+    return t
+
+
+def serie_salarios() -> pd.DataFrame:
+    """Por mes m: suba mensual promedio de los salarios registrados en m-6..m-4 (lo publicado al empezar m), en %."""
+    ruta = DATA / "precios" / "salarios" / "salarios.csv"
+    if not ruta.exists():
+        return pd.DataFrame(columns=["sal"])
+    t = pd.read_csv(ruta, index_col=0, parse_dates=True)
+    v = t["salarios"].pct_change() * 100
+    sal = v.rolling(3).mean().shift(REZAGO_SALARIOS, freq="MS")
+    return pd.DataFrame({"sal": sal})
