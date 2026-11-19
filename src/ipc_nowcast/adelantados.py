@@ -142,34 +142,38 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     ipc_lag = ipc.rolling(3).mean().shift(2, freq="MS")  # promedio de t-2, t-3 y t-4
     meses = sorted(set(idx.mes if not idx.empty else []) | set(may.index) | set(otros.dropna(how="all").index)
                    | {m for m in ipc_l1.index if m >= pd.Timestamp("2018-01-01")})
+    # búsquedas por diccionario (antes se filtraban tablas enteras fila por fila: era lo más lento)
+    sepa_d = {}
+    if not idx.empty:
+        for f in idx[idx.cadenas >= 2][["mes", "region", "clase", "var_%"]].itertuples(index=False):
+            sepa_d.setdefault((f[0], f[1], f[2]), float(f[3]))
+    may_d = {k: may[k].to_dict() for k in may.columns}
+    otros_d = otros.to_dict("index")
+    vap_d = {}
+    alim_d = {r: nc.V[r]["01"].to_dict() for r in REGIONES}
+    ipcs = {"l1": ipc_l1.to_dict(), "p3": ipc_p3.to_dict(), "l2": ipc_l2.to_dict(), "lag": ipc_lag.to_dict()}
     filas = []
     for mes in meses:
+        o = otros_d.get(mes)
+        ox = lambda k: float(o[k]) if o is not None and k in o and pd.notna(o[k]) else np.nan  # noqa: E731
         for r in REGIONES:
             for c in CLASES:
                 if (r, c) not in nc.Vap.columns:
                     continue
-                serie = nc.Vap[r][c]
-                real = serie.get(mes, np.nan)
+                if (r, c) not in vap_d:
+                    vap_d[(r, c)] = nc.Vap[r][c].to_dict()
+                real = vap_d[(r, c)].get(mes, np.nan)
                 p = nc.base_comp_mes(r, c, mes)
-                s, sc = np.nan, np.nan
-                if not idx.empty:
-                    f = idx[(idx.mes == mes) & (idx.region == r) & (idx.clase == c)]
-                    if not f.empty and f.cadenas.iloc[0] >= 2:
-                        s = float(f["var_%"].iloc[0])
-                    if c == "01.1.2":
-                        f = idx[(idx.mes == mes) & (idx.region == r) & (idx.clase == "01.1.2v")]
-                        if not f.empty and f.cadenas.iloc[0] >= 2:
-                            sc = float(f["var_%"].iloc[0])
-                m0 = may[c].get(mes, np.nan) if c in may else np.nan
-                m1 = may[c + "_l1"].get(mes, np.nan) if c + "_l1" in may else np.nan
-                o = otros.loc[mes] if mes in otros.index else None
-                ox = lambda k: float(o[k]) if o is not None and pd.notna(o[k]) else np.nan
+                s = sepa_d.get((mes, r, c), np.nan)
+                sc = sepa_d.get((mes, r, "01.1.2v"), np.nan) if c == "01.1.2" else np.nan
+                m0 = may_d[c].get(mes, np.nan) if c in may_d else np.nan
+                m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
-                              "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan)),
-                              "ipc_l2": float(ipc_l2.get(mes, np.nan)), "ipc_lag": float(ipc_lag.get(mes, np.nan)),
-                              "alim_l1": float(nc.V[r]["01"].get(mes - pd.offsets.MonthBegin(1), np.nan))})
+                              "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
+                              "ipc_l2": ipcs["l2"].get(mes, np.nan), "ipc_lag": ipcs["lag"].get(mes, np.nan),
+                              "alim_l1": float(alim_d[r].get(mes - pd.offsets.MonthBegin(1), np.nan))})
     t = pd.DataFrame(filas)
     if t.empty:
         return t
@@ -579,12 +583,20 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
     return info
 
 
+_BT_CACHE: dict = {}
+
+
 def informacion_historica(mes: pd.Timestamp, corte: str, solo_estadistica: bool = False) -> list[dict]:
     """Ítems con las predicciones fuera de muestra guardadas (para el backtest del modelo completo)."""
     if not RUTA_BT.exists():
         return []
-    bt = pd.read_csv(RUTA_BT, dtype={"clase": str, "corte": str}, parse_dates=["mes"])
-    bt = bt[(bt.mes == mes) & (bt.corte == corte)]
+    clave = (str(RUTA_BT), RUTA_BT.stat().st_mtime)
+    if _BT_CACHE.get("clave") != clave:
+        todo = pd.read_csv(RUTA_BT, dtype={"clase": str, "corte": str}, parse_dates=["mes"])
+        _BT_CACHE.update(clave=clave, grupos={k: g for k, g in todo.groupby(["mes", "corte"])})
+    bt = _BT_CACHE["grupos"].get((mes, corte))
+    if bt is None:
+        return []
     if "solo_inicio" not in bt:
         bt = bt.assign(solo_inicio=False)
     est = bt.fuentes.apply(lambda x: set(str(x).split("+")) <= AL_INICIO)

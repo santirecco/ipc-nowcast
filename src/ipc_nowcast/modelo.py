@@ -145,29 +145,41 @@ def proyecciones_serie(s: pd.Series, nucleo: pd.Series) -> pd.DataFrame:
     """Para cada mes: proyección mediana-6, proyección de temporada y la elegida, usando solo meses anteriores."""
     s = s.dropna()
     idx = s.index.union(s.index[-1:] + pd.offsets.MonthBegin(1)) if len(s) else s.index
+    if not len(s):
+        return pd.DataFrame(columns=["p1", "p2", "real", "p"])
+    sv = s.values
+    si = s.index
+    nuc = nucleo.dropna()
+    nv, ni = nuc.values, nuc.index
+    nuc_en_s = nuc.reindex(si).values
+    dev_all = sv - nuc_en_s  # desvío de cada mes respecto de la núcleo (NaN si falta)
+    meses_s = si.month.values
     filas = []
     for m in idx:
-        h = s[s.index < m]
-        if len(h) < 6:
+        k = si.searchsorted(m)  # meses anteriores: [0, k)
+        if k < 6:
             continue
-        p1 = float(h.iloc[-6:].median())
-        c = nucleo[nucleo.index < m]
-        dev = (h - c.reindex(h.index)).dropna()
-        sm = dev[dev.index.month == m.month]
-        p2 = float(c.iloc[-3:].mean() + sm.median()) if len(sm) >= 3 and len(c) >= 3 else np.nan
-        filas.append({"mes": m, "p1": p1, "p2": p2, "real": s.get(m, np.nan)})
-    t = pd.DataFrame(filas).set_index("mes") if filas else pd.DataFrame(columns=["p1", "p2", "real", "p"])
+        p1 = float(np.median(sv[k - 6:k]))
+        kn = ni.searchsorted(m)
+        dv = dev_all[:k]
+        sel = (meses_s[:k] == m.month) & ~np.isnan(dv)
+        p2 = float(nv[kn - 3:kn].mean() + np.median(dv[sel])) if sel.sum() >= 3 and kn >= 3 else np.nan
+        filas.append((m, p1, p2, s.get(m, np.nan)))
+    t = pd.DataFrame(filas, columns=["mes", "p1", "p2", "real"]).set_index("mes")
     if t.empty:
         return t
-    e1 = (t.p1 - t.real).abs()
-    e2 = (t.p2 - t.real).abs()
-    ok = t.index >= PROY_DESDE
-    elegidas = []
-    for i, m in enumerate(t.index):
-        prev = ok[:i] & e1.iloc[:i].notna().values & e2.iloc[:i].notna().values
-        usar2 = (prev.sum() >= PROY_MIN_MESES and pd.notna(t.p2.iloc[i])
-                 and e2.iloc[:i][prev].mean() < e1.iloc[:i][prev].mean() - MEJORA_PROY)
-        elegidas.append(t.p2.iloc[i] if usar2 else t.p1.iloc[i])
+    e1 = (t.p1 - t.real).abs().values
+    e2 = (t.p2 - t.real).abs().values
+    ok = (t.index >= PROY_DESDE) & ~np.isnan(e1) & ~np.isnan(e2)
+    c1 = np.concatenate([[0.0], np.cumsum(np.where(ok, e1, 0.0))])
+    c2 = np.concatenate([[0.0], np.cumsum(np.where(ok, e2, 0.0))])
+    cn = np.concatenate([[0], np.cumsum(ok)])
+    p2v, p1v = t.p2.values, t.p1.values
+    elegidas = np.empty(len(t))
+    for i in range(len(t)):
+        n = cn[i]
+        usar2 = n >= PROY_MIN_MESES and not np.isnan(p2v[i]) and c2[i] / n < c1[i] / n - MEJORA_PROY
+        elegidas[i] = p2v[i] if usar2 else p1v[i]
     t["p"] = elegidas
     return t
 

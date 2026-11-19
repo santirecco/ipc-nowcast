@@ -50,8 +50,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Café, té, yerba y cacao | SEPA | 18 | 1,10 | 0,78 | **sí** |
 | Café, té, yerba y cacao | sepa+fx | 18 | 1,10 | 0,86 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | arr | 14 | 0,76 | 0,77 | no |
-| Aguas, gaseosas y jugos | SEPA | 18 | 0,78 | 0,72 | **sí** |
-| Aguas, gaseosas y jugos | sepa+fx | 18 | 0,78 | 0,72 | sí, si falta la anterior |
+| Aguas, gaseosas y jugos | SEPA | 18 | 0,78 | 0,72 | sí, si falta la anterior |
+| Aguas, gaseosas y jugos | sepa+fx | 18 | 0,78 | 0,72 | **sí** |
 | Bebidas alcohólicas | SEPA | 18 | 0,90 | 0,67 | **sí** |
 | Tabaco | ipc | 34 | 2,18 | 1,82 | **sí** |
 | Ropa | fx | 34 | 2,22 | 2,49 | no |
@@ -59,15 +59,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
 | Calzado | fx | 34 | 2,39 | 2,70 | no |
-| Calzado | ipc | 34 | 2,39 | 2,31 | no |
+| Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
-| Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | **sí** |
+| Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipcl | 34 | 2,63 | 2,38 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipcl+sal | 34 | 2,63 | 2,22 | sí, si falta la anterior |
-| Alquiler de la vivienda | sal | 34 | 2,63 | 2,21 | sí, si falta la anterior |
+| Alquiler de la vivienda | sal | 34 | 2,63 | 2,21 | **sí** |
 | Electricidad, gas y otros combustibles | ipc | 34 | 6,58 | 4,81 | **sí** |
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,37 | no |
@@ -81,13 +81,13 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Combustibles | nafta | 29 | 2,10 | 1,59 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,10 | 1,59 | sí, si falta la anterior |
 | Combustibles | naftal | 29 | 2,10 | 1,59 | sí, si falta la anterior |
-| Transporte público | ipc | 34 | 4,80 | 4,67 | sí, si falta la anterior |
-| Transporte público | ipc2 | 34 | 4,80 | 4,70 | **sí** |
+| Transporte público | ipc | 34 | 4,80 | 4,67 | **sí** |
+| Transporte público | ipc2 | 34 | 4,80 | 4,70 | sí, si falta la anterior |
 | Telefonía e internet | fx | 34 | 2,61 | 2,10 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,61 | 1,36 | **sí** |
 | Telefonía e internet | ipc2 | 34 | 2,61 | 1,83 | sí, si falta la anterior |
 | Telefonía e internet | ipcl | 34 | 2,61 | 2,15 | sí, si falta la anterior |
-| Servicios recreativos y culturales | fx | 34 | 2,87 | 2,85 | sí, si falta la anterior |
+| Servicios recreativos y culturales | fx | 34 | 2,87 | 2,85 | no |
 | Servicios recreativos y culturales | ipc | 34 | 2,87 | 2,36 | **sí** |
 | Servicios recreativos y culturales | ipcl | 34 | 2,87 | 2,70 | sí, si falta la anterior |
 | Servicios recreativos y culturales | sal | 34 | 2,87 | 2,71 | sí, si falta la anterior |
@@ -138,7 +138,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | sepai | 18 | 0,99 | 0,76 | **sí** |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
 | Frutas | mayorista | 4 | 4,07 | 4,10 | no |
-| Frutas | SEPA | 18 | 2,82 | 2,82 | sí, si falta la anterior |
+| Frutas | SEPA | 18 | 2,82 | 2,82 | no |
 | Frutas | sepaf | 18 | 2,82 | 2,40 | **sí** |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,13 | no |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 4,76 | 2,74 | no |
@@ -164,15 +164,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
 | Calzado | fx | 34 | 2,39 | 2,68 | no |
-| Calzado | ipc | 34 | 2,39 | 2,31 | no |
+| Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
-| Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | **sí** |
+| Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipcl | 34 | 2,63 | 2,38 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipcl+sal | 34 | 2,63 | 2,22 | sí, si falta la anterior |
-| Alquiler de la vivienda | sal | 34 | 2,63 | 2,21 | sí, si falta la anterior |
+| Alquiler de la vivienda | sal | 34 | 2,63 | 2,21 | **sí** |
 | Electricidad, gas y otros combustibles | ipc | 34 | 6,58 | 4,81 | **sí** |
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,32 | no |
@@ -183,16 +183,16 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Medicamentos | SEPA | 18 | 0,92 | 0,52 | **sí** |
 | Compra de vehículos | autos | 17 | 1,63 | 0,82 | **sí** |
 | Compra de vehículos | fx | 34 | 2,84 | 3,13 | no |
-| Combustibles | nafta | 29 | 2,10 | 1,48 | sí, si falta la anterior |
+| Combustibles | nafta | 29 | 2,10 | 1,48 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,10 | 1,48 | sí, si falta la anterior |
-| Combustibles | naftal | 29 | 2,10 | 1,59 | **sí** |
-| Transporte público | ipc | 34 | 4,80 | 4,67 | sí, si falta la anterior |
-| Transporte público | ipc2 | 34 | 4,80 | 4,70 | **sí** |
+| Combustibles | naftal | 29 | 2,10 | 1,59 | sí, si falta la anterior |
+| Transporte público | ipc | 34 | 4,80 | 4,67 | **sí** |
+| Transporte público | ipc2 | 34 | 4,80 | 4,70 | sí, si falta la anterior |
 | Telefonía e internet | fx | 34 | 2,61 | 2,10 | sí, si falta la anterior |
 | Telefonía e internet | ipc | 34 | 2,61 | 1,36 | **sí** |
 | Telefonía e internet | ipc2 | 34 | 2,61 | 1,83 | sí, si falta la anterior |
 | Telefonía e internet | ipcl | 34 | 2,61 | 2,15 | sí, si falta la anterior |
-| Servicios recreativos y culturales | fx | 34 | 2,87 | 2,86 | sí, si falta la anterior |
+| Servicios recreativos y culturales | fx | 34 | 2,87 | 2,86 | no |
 | Servicios recreativos y culturales | ipc | 34 | 2,87 | 2,36 | **sí** |
 | Servicios recreativos y culturales | ipcl | 34 | 2,87 | 2,70 | sí, si falta la anterior |
 | Servicios recreativos y culturales | sal | 34 | 2,87 | 2,71 | sí, si falta la anterior |

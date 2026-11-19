@@ -8,6 +8,7 @@ como la división.
 """
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 import yaml
 from scipy.optimize import nnls
@@ -70,22 +71,17 @@ def peso_efectivo_en_division(aperturas: pd.DataFrame, base: pd.DataFrame, perio
     if piv is None:
         piv = aperturas.pivot_table(index="periodo", columns=["region", "codigo"], values="indice").sort_index()
     ant = piv.index[piv.index < periodo].max()
-    filas = []
-    for _, f in base.iterrows():
-        r, padre, cod = f.region, f.padre, f.codigo
-        division = padre[:2]
-        if cod.endswith(".resto"):
-            rel = 1.0
-        else:
-            rel = piv[r][cod].loc[ant] / piv[r][padre].loc[ant]
-        filas.append({**f.to_dict(), "division": division, "peso_en_padre_ef": f.peso * rel})
-    df = pd.DataFrame(filas)
+    nivel = piv.loc[ant]
+    df = base.copy()
+    df["division"] = df.padre.str[:2]
+    resto = df.codigo.str.endswith(".resto")
+    num = pd.Series([nivel.get((r, c), np.nan) for r, c in zip(df.region, df.codigo)], index=df.index)
+    den = pd.Series([nivel.get((r, p), np.nan) for r, p in zip(df.region, df.padre)], index=df.index)
+    rel = (num / den).where(~resto, 1.0)
+    df["peso_en_padre_ef"] = df.peso * rel
     # normalizar dentro de cada padre y encadenar hasta la división
     df["peso_en_padre_ef"] = df["peso_en_padre_ef"] / df.groupby(["region", "padre"])["peso_en_padre_ef"].transform("sum")
     padres = df.set_index(["region", "codigo"])["peso_en_padre_ef"]
-    def en_div(f):
-        if len(f.padre) == 2:
-            return f.peso_en_padre_ef
-        return f.peso_en_padre_ef * padres.get((f.region, f.padre), float("nan"))
-    df["peso_en_division_ef"] = df.apply(en_div, axis=1)
+    del_padre = pd.Series([padres.get((r, p), np.nan) for r, p in zip(df.region, df.padre)], index=df.index)
+    df["peso_en_division_ef"] = np.where(df.padre.str.len() == 2, df.peso_en_padre_ef, df.peso_en_padre_ef * del_padre)
     return df
