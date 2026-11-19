@@ -5,7 +5,6 @@ name: Archivo web (reconstrucción de historia)
 on:
   push:
     paths:
-      - scripts/wayback_surtidores.py
       - scripts/wayback_tiendas.py
       - .github/workflows/wayback.yml
   workflow_dispatch:
@@ -29,8 +28,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Combustibles por día
-        run: python scripts/wayback_surtidores.py || true
+      # combustibles por día: probado en nov-2026, el archivo tiene solo ~30 copias de la página desde 2023 (no alcanza)
       - name: Tiendas de ropa y electro
         run: python scripts/wayback_tiendas.py || true
       - name: Guardar

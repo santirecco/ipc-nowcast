@@ -2,13 +2,13 @@
 
 *Calculado el 19/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 2,0% mensual (rango probable 1,8% a 2,3%)
+## 2,1% mensual (rango probable 1,8% a 2,4%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **2,04** |
-| Solo modelo estadístico | 1,96 |
-| Modelo + información del mes (de abajo hacia arriba) | 2,04 |
+| **Pronóstico** | **2,05** |
+| Solo modelo estadístico | 1,97 |
+| Modelo + información del mes (de abajo hacia arriba) | 2,05 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -23,12 +23,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Alimentos y bebidas no alcohólicas | 28,7 | 2,05 | 0,59 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
 | Transporte | 11,6 | 2,10 | 0,24 |
+| Recreación y cultura | 6,6 | 2,56 | 0,17 |
 | Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
 | Salud | 9,0 | 1,86 | 0,17 |
-| Recreación y cultura | 6,6 | 2,46 | 0,16 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 2,30 | 0,12 |
+| Bienes y servicios varios | 3,4 | 2,93 | 0,10 |
 | Prendas de vestir y calzado | 6,6 | 1,47 | 0,10 |
-| Bienes y servicios varios | 3,4 | 2,74 | 0,09 |
 | Comunicación | 2,6 | 2,09 | 0,06 |
 | Bebidas alcohólicas y tabaco | 2,4 | 1,55 | 0,04 |
 | Educación | 2,2 | 1,57 | 0,03 |
@@ -37,10 +37,10 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 2,02 |
-| Pampeana | 33,8 | 2,10 |
+| GBA | 45,1 | 2,04 |
+| Pampeana | 33,8 | 2,11 |
 | Noreste | 4,5 | 1,71 |
-| Noroeste | 6,8 | 1,93 |
+| Noroeste | 6,8 | 1,94 |
 | Cuyo | 5,2 | 2,28 |
 | Patagonia | 4,5 | 2,02 |
 
@@ -127,6 +127,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 07.2.2 | Precio de surtidor (YPF) | 1,32 | 1,31 | 0,01 |
 | Cuyo | 07.2.2 | Precio de surtidor (YPF) | 1,25 | 1,19 | 0,03 |
 | Patagonia | 07.2.2 | Precio de surtidor (YPF) | 1,15 | 1,02 | 0,06 |
+| GBA | 09.resto | Dólar mayorista | 0,53 | -0,07 | 0,11 |
+| Pampeana | 09.resto | Dólar mayorista | 2,37 | 1,78 | 0,12 |
+| Noreste | 09.resto | Dólar mayorista | 2,42 | 1,83 | 0,05 |
+| Noroeste | 09.resto | Dólar mayorista | -0,26 | -0,85 | 0,09 |
+| Cuyo | 09.resto | Dólar mayorista | 6,92 | 6,33 | 0,10 |
+| Patagonia | 09.resto | Dólar mayorista | -1,94 | -2,53 | 0,07 |
 
 ## Supermercados online (último mes con datos)
 

@@ -129,6 +129,22 @@ guarda la foto diaria desde nov-2026 y una candidata con el promedio del mes ent
 Descartados: amortiguar el movimiento que traen los precios del mes, sumar parte del error del mes anterior,
 medir el error de cada clase ponderado por región, y dar más peso a los meses recientes al elegir (vida media 12).
 
+Cuarta tanda (nov-2026):
+- **Eficiencia**: calibración de 4 min a 78 s y backtest de 10 min a 19 s (mismos resultados, verificados).
+- **Señales para los "resto"** (lo que INDEC no publica aparte, serie implícita padre menos hijos): solo donde el
+  resto pesa al menos 10% de su grupo en GBA y Pampeana (equipamiento, salud, recreación, bienes varios); en los
+  demás la serie implícita es casi puro ruido (p. ej. el resto de alimentos pesa 0,2-0,4% en la estructura). Desde
+  jul-24: mitad 0,349 -> 0,345; día 22 0,339 -> 0,334; fin 0,334 -> 0,327; últimos 16 meses sin cambios.
+- **Carnes por tipo** (pollo, cerdo, fiambres en SEPA): no mejoran a cortes vacunos + hacienda asimétrica. Los
+  índices se siguen calculando.
+- **Verduras y frutas con la canasta de INDEC** (tomate, papa, cebolla, lechuga, zapallo, batata; banana, manzana,
+  naranja, limón, con los pesos que revela la historia de INDEC): con los precios de INDEC explicaría la clase con
+  ~2,3 pp de error, pero los de góndola de esas mismas variedades se mueven distinto; mejora frutas y empeora el fin
+  de mes del índice, no entra. Se sigue calculando.
+- **Combustibles por día con el archivo web**: hay solo ~30 copias de la página de precios desde 2023, no alcanza.
+  Queda la foto diaria propia (desde nov-2026) y la candidata con el promedio del mes, que entra sola con historia.
+- **Tiendas de ropa y electro** reconstruidas con el archivo web (`.github/workflows/wayback.yml`, corre sola).
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).
