@@ -1,0 +1,15 @@
+mes,clase,dias,promedio,en_el_mes_%,arrastre_%,ultimo,var_mensual_%,nombre
+2026-11-01,01.1.1,2,99.993,-0.013,-0.007,99.987,,Pan y cereales
+2026-11-01,01.1.2,2,100.007,0.015,0.007,100.015,,Carnes y derivados
+2026-11-01,01.1.4,2,99.987,-0.026,-0.013,99.974,,"Leche, lácteos y huevos"
+2026-11-01,01.1.5,2,100.012,0.024,0.012,100.024,,"Aceites, grasas y manteca"
+2026-11-01,01.1.6,2,99.977,-0.046,-0.023,99.954,,Frutas
+2026-11-01,01.1.7,2,100.008,0.015,0.008,100.015,,"Verduras, tubérculos y legumbres"
+2026-11-01,01.1.8,2,99.978,-0.044,-0.022,99.956,,"Azúcar, dulces, chocolate, golosinas"
+2026-11-01,01.1.resto,2,99.991,-0.018,-0.009,99.982,,"Otros alimentos (pescados, condimentos, etc.)"
+2026-11-01,01.2.1,2,99.999,-0.002,-0.001,99.998,,"Café, té, yerba y cacao"
+2026-11-01,01.2.2,2,100.007,0.015,0.007,100.015,,"Aguas, gaseosas y jugos"
+2026-11-01,02.1,2,100.076,0.152,0.076,100.152,,Bebidas alcohólicas
+2026-11-01,05.6,2,99.985,-0.030,-0.015,99.970,,Limpieza y conservación del hogar
+2026-11-01,06.1,2,100.000,0.000,0.000,100.000,,Productos medicinales
+2026-11-01,12.1,2,100.011,0.022,0.011,100.022,,Cuidado personal

@@ -1,0 +1,29 @@
+fecha,clase,indice,nombre
+2026-11-18,01.1.1,100.000,Pan y cereales
+2026-11-19,01.1.1,99.987,Pan y cereales
+2026-11-18,01.1.2,100.000,Carnes y derivados
+2026-11-19,01.1.2,100.015,Carnes y derivados
+2026-11-18,01.1.4,100.000,"Leche, lácteos y huevos"
+2026-11-19,01.1.4,99.974,"Leche, lácteos y huevos"
+2026-11-18,01.1.5,100.000,"Aceites, grasas y manteca"
+2026-11-19,01.1.5,100.024,"Aceites, grasas y manteca"
+2026-11-18,01.1.6,100.000,Frutas
+2026-11-19,01.1.6,99.954,Frutas
+2026-11-18,01.1.7,100.000,"Verduras, tubérculos y legumbres"
+2026-11-19,01.1.7,100.015,"Verduras, tubérculos y legumbres"
+2026-11-18,01.1.8,100.000,"Azúcar, dulces, chocolate, golosinas"
+2026-11-19,01.1.8,99.956,"Azúcar, dulces, chocolate, golosinas"
+2026-11-18,01.1.resto,100.000,"Otros alimentos (pescados, condimentos, etc.)"
+2026-11-19,01.1.resto,99.982,"Otros alimentos (pescados, condimentos, etc.)"
+2026-11-18,01.2.1,100.000,"Café, té, yerba y cacao"
+2026-11-19,01.2.1,99.998,"Café, té, yerba y cacao"
+2026-11-18,01.2.2,100.000,"Aguas, gaseosas y jugos"
+2026-11-19,01.2.2,100.015,"Aguas, gaseosas y jugos"
+2026-11-18,02.1,100.000,Bebidas alcohólicas
+2026-11-19,02.1,100.152,Bebidas alcohólicas
+2026-11-18,05.6,100.000,Limpieza y conservación del hogar
+2026-11-19,05.6,99.970,Limpieza y conservación del hogar
+2026-11-18,06.1,100.000,Productos medicinales
+2026-11-19,06.1,100.000,Productos medicinales
+2026-11-18,12.1,100.000,Cuidado personal
+2026-11-19,12.1,100.022,Cuidado personal

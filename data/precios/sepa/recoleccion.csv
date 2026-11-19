@@ -1,575 +1,4 @@
 fecha,cadena,productos
-2026-07-15,Carrefour,63610
-2026-07-15,"Cencosud (Jumbo, Disco, Vea)",39629
-2026-07-15,Coto,37614
-2026-07-15,La Anónima,30576
-2026-07-15,Día,15614
-2026-07-15,Cooperativa Obrera,14685
-2026-07-15,Toledo,4285
-2026-07-15,Unicoop,4038
-2026-07-15,La Agrícola Regional,2526
-2026-07-15,Cadena 16,2357
-2026-07-15,California,1990
-2026-07-15,Mariano Max,1611
-2026-07-15,Cadena 19,943
-2026-07-15,Comodín,504
-2026-07-15,Deheza,344
-2026-07-15,Axion,251
-2026-07-15,Estación Lima,172
-2026-07-17,Carrefour,61548
-2026-07-17,ChangoMás,40836
-2026-07-17,"Cencosud (Jumbo, Disco, Vea)",37970
-2026-07-17,Coto,36993
-2026-07-17,La Anónima,28345
-2026-07-17,Cooperativa Obrera,13736
-2026-07-17,Día,13385
-2026-07-17,Unicoop,4028
-2026-07-17,Toledo,3982
-2026-07-17,La Agrícola Regional,2553
-2026-07-17,Cadena 16,2185
-2026-07-17,California,1971
-2026-07-17,Mariano Max,1635
-2026-07-17,Cadena 19,985
-2026-07-17,Comodín,505
-2026-07-17,Deheza,348
-2026-07-17,Axion,249
-2026-07-17,Estación Lima,174
-2026-07-19,Carrefour,63502
-2026-07-19,ChangoMás,44646
-2026-07-19,"Cencosud (Jumbo, Disco, Vea)",40065
-2026-07-19,Coto,37731
-2026-07-19,La Anónima,30531
-2026-07-19,Día,15454
-2026-07-19,Cooperativa Obrera,14420
-2026-07-19,Toledo,4301
-2026-07-19,Unicoop,4255
-2026-07-19,California,1965
-2026-07-19,Mariano Max,1620
-2026-07-19,Cadena 19,709
-2026-07-19,Comodín,524
-2026-07-19,Deheza,310
-2026-07-19,Estación Lima,155
-2026-07-19,Axion,116
-2026-07-21,Carrefour,51810
-2026-07-21,"Cencosud (Jumbo, Disco, Vea)",32384
-2026-07-21,ChangoMás,31638
-2026-07-21,Coto,30021
-2026-07-21,La Anónima,24415
-2026-07-21,Día,10923
-2026-07-21,Cooperativa Obrera,10565
-2026-07-21,Unicoop,3341
-2026-07-21,Toledo,3306
-2026-07-21,Farmacity,2453
-2026-07-21,California,1871
-2026-07-21,Cadena 16,1734
-2026-07-21,Mariano Max,1371
-2026-07-21,Comodín,374
-2026-07-21,Deheza,280
-2026-07-21,Axion,148
-2026-07-21,Estación Lima,140
-2026-07-23,Carrefour,61689
-2026-07-23,ChangoMás,42132
-2026-07-23,"Cencosud (Jumbo, Disco, Vea)",38203
-2026-07-23,Coto,36023
-2026-07-23,La Anónima,28202
-2026-07-23,Día,13344
-2026-07-23,Cooperativa Obrera,13343
-2026-07-23,Unicoop,4013
-2026-07-23,Toledo,3918
-2026-07-23,La Agrícola Regional,2554
-2026-07-23,Cadena 16,2161
-2026-07-23,California,1960
-2026-07-23,Mariano Max,1581
-2026-07-23,Comodín,492
-2026-07-23,Deheza,360
-2026-07-23,Axion,234
-2026-07-23,Estación Lima,180
-2026-07-25,Carrefour,55398
-2026-07-25,"Cencosud (Jumbo, Disco, Vea)",33554
-2026-07-25,Coto,32751
-2026-07-25,ChangoMás,29370
-2026-07-25,La Anónima,23734
-2026-07-25,Día,12429
-2026-07-25,Cooperativa Obrera,10534
-2026-07-25,Toledo,3452
-2026-07-25,Unicoop,3247
-2026-07-25,La Agrícola Regional,2411
-2026-07-25,Cadena 16,1824
-2026-07-25,California,1822
-2026-07-25,Mariano Max,1346
-2026-07-25,Comodín,391
-2026-07-25,Deheza,288
-2026-07-25,Axion,164
-2026-07-25,Estación Lima,144
-2026-07-27,Carrefour,53443
-2026-07-27,ChangoMás,33540
-2026-07-27,"Cencosud (Jumbo, Disco, Vea)",33010
-2026-07-27,Coto,31015
-2026-07-27,La Anónima,24902
-2026-07-27,Día,12524
-2026-07-27,Cooperativa Obrera,10893
-2026-07-27,Toledo,3410
-2026-07-27,Unicoop,3386
-2026-07-27,California,1833
-2026-07-27,Cadena 16,1748
-2026-07-27,Mariano Max,1384
-2026-07-27,Comodín,488
-2026-07-27,Deheza,310
-2026-07-27,Estación Lima,155
-2026-07-27,Axion,120
-2026-07-29,Carrefour,49415
-2026-07-29,"Cencosud (Jumbo, Disco, Vea)",30813
-2026-07-29,Coto,28198
-2026-07-29,ChangoMás,25758
-2026-07-29,La Anónima,20535
-2026-07-29,Día,13395
-2026-07-29,Cooperativa Obrera,10121
-2026-07-29,Unicoop,3349
-2026-07-29,Toledo,3104
-2026-07-29,La Agrícola Regional,2513
-2026-07-29,California,1888
-2026-07-29,Cadena 16,1651
-2026-07-29,Mariano Max,1378
-2026-07-29,Comodín,376
-2026-07-29,Deheza,314
-2026-07-29,Estación Lima,157
-2026-07-31,Carrefour,63474
-2026-07-31,ChangoMás,43710
-2026-07-31,"Cencosud (Jumbo, Disco, Vea)",40576
-2026-07-31,Coto,39536
-2026-07-31,La Anónima,32070
-2026-07-31,Día,15730
-2026-07-31,Cooperativa Obrera,14870
-2026-07-31,Unicoop,4269
-2026-07-31,Toledo,4253
-2026-07-31,La Agrícola Regional,2699
-2026-07-31,Cadena 16,2399
-2026-07-31,California,2004
-2026-07-31,Mariano Max,1695
-2026-07-31,Comodín,518
-2026-07-31,Deheza,376
-2026-07-31,Axion,262
-2026-07-31,Estación Lima,188
-2026-08-02,Carrefour,61866
-2026-08-02,ChangoMás,40242
-2026-08-02,"Cencosud (Jumbo, Disco, Vea)",37188
-2026-08-02,Coto,36946
-2026-08-02,La Anónima,27940
-2026-08-02,Cooperativa Obrera,13328
-2026-08-02,Día,13245
-2026-08-02,Unicoop,3924
-2026-08-02,Toledo,3906
-2026-08-02,Farmacity,3904
-2026-08-02,Cadena 16,2033
-2026-08-02,California,1943
-2026-08-02,Mariano Max,1547
-2026-08-02,Comodín,475
-2026-08-02,Deheza,316
-2026-08-02,Estación Lima,158
-2026-08-02,Axion,106
-2026-08-04,Carrefour,62226
-2026-08-04,ChangoMás,42096
-2026-08-04,"Cencosud (Jumbo, Disco, Vea)",40448
-2026-08-04,Coto,38905
-2026-08-04,La Anónima,30264
-2026-08-04,Cooperativa Obrera,14556
-2026-08-04,Día,14476
-2026-08-04,Unicoop,4217
-2026-08-04,Toledo,4216
-2026-08-04,La Agrícola Regional,2626
-2026-08-04,Cadena 16,2100
-2026-08-04,California,1939
-2026-08-04,Mariano Max,1621
-2026-08-04,Comodín,497
-2026-08-04,Deheza,380
-2026-08-04,Farmacity,295
-2026-08-04,Axion,234
-2026-08-04,Estación Lima,190
-2026-08-06,Carrefour,62374
-2026-08-06,ChangoMás,43962
-2026-08-06,"Cencosud (Jumbo, Disco, Vea)",39334
-2026-08-06,Coto,37580
-2026-08-06,La Anónima,29648
-2026-08-06,Día,15361
-2026-08-06,Cooperativa Obrera,14018
-2026-08-06,Unicoop,4230
-2026-08-06,Toledo,4156
-2026-08-06,La Agrícola Regional,2569
-2026-08-06,Cadena 16,2022
-2026-08-06,California,1982
-2026-08-06,Mariano Max,1600
-2026-08-06,Comodín,483
-2026-08-06,Deheza,374
-2026-08-06,Axion,218
-2026-08-06,Estación Lima,187
-2026-08-08,Carrefour,64551
-2026-08-08,ChangoMás,39582
-2026-08-08,"Cencosud (Jumbo, Disco, Vea)",37779
-2026-08-08,Coto,35780
-2026-08-08,La Anónima,29502
-2026-08-08,Día,15364
-2026-08-08,Cooperativa Obrera,13983
-2026-08-08,Unicoop,4074
-2026-08-08,Toledo,4034
-2026-08-08,La Agrícola Regional,2644
-2026-08-08,California,1963
-2026-08-08,Cadena 16,1932
-2026-08-08,Mariano Max,1574
-2026-08-08,Comodín,520
-2026-08-08,Deheza,338
-2026-08-08,Axion,216
-2026-08-08,Estación Lima,169
-2026-08-10,Carrefour,56593
-2026-08-10,ChangoMás,39606
-2026-08-10,"Cencosud (Jumbo, Disco, Vea)",34903
-2026-08-10,Coto,33474
-2026-08-10,La Anónima,24735
-2026-08-10,Día,12988
-2026-08-10,Cooperativa Obrera,10626
-2026-08-10,Toledo,3620
-2026-08-10,Unicoop,3503
-2026-08-10,California,1881
-2026-08-10,Cadena 16,1522
-2026-08-10,Mariano Max,1411
-2026-08-10,Comodín,392
-2026-08-10,Deheza,284
-2026-08-10,Axion,188
-2026-08-10,Estación Lima,142
-2026-08-12,Carrefour,58896
-2026-08-12,"Cencosud (Jumbo, Disco, Vea)",35436
-2026-08-12,Coto,34607
-2026-08-12,La Anónima,27805
-2026-08-12,Día,13716
-2026-08-12,Cooperativa Obrera,12694
-2026-08-12,Toledo,3678
-2026-08-12,Unicoop,3247
-2026-08-12,La Agrícola Regional,2441
-2026-08-12,California,1886
-2026-08-12,Cadena 16,1489
-2026-08-12,Mariano Max,1453
-2026-08-12,Comodín,411
-2026-08-12,Deheza,330
-2026-08-12,Axion,192
-2026-08-12,Estación Lima,165
-2026-08-14,Carrefour,51613
-2026-08-14,"Cencosud (Jumbo, Disco, Vea)",32044
-2026-08-14,Coto,29319
-2026-08-14,ChangoMás,28062
-2026-08-14,La Anónima,22648
-2026-08-14,Día,12251
-2026-08-14,Cooperativa Obrera,10945
-2026-08-14,Unicoop,3247
-2026-08-14,Farmacity,3244
-2026-08-14,Toledo,3242
-2026-08-14,La Agrícola Regional,2381
-2026-08-14,California,1824
-2026-08-14,Mariano Max,1408
-2026-08-14,Cadena 16,1103
-2026-08-14,Comodín,380
-2026-08-14,Deheza,292
-2026-08-14,Axion,162
-2026-08-14,Estación Lima,146
-2026-08-16,Carrefour,62610
-2026-08-16,ChangoMás,42966
-2026-08-16,"Cencosud (Jumbo, Disco, Vea)",37876
-2026-08-16,Coto,36984
-2026-08-16,La Anónima,29283
-2026-08-16,Día,14986
-2026-08-16,Cooperativa Obrera,13834
-2026-08-16,Toledo,4072
-2026-08-16,Unicoop,3978
-2026-08-16,California,1932
-2026-08-16,Mariano Max,1630
-2026-08-16,Cadena 16,1100
-2026-08-16,Comodín,482
-2026-08-16,Deheza,314
-2026-08-16,Axion,216
-2026-08-16,Estación Lima,157
-2026-08-18,Carrefour,51064
-2026-08-18,"Cencosud (Jumbo, Disco, Vea)",31450
-2026-08-18,Coto,28653
-2026-08-18,ChangoMás,27084
-2026-08-18,La Anónima,22013
-2026-08-18,Día,11415
-2026-08-18,Cooperativa Obrera,10758
-2026-08-18,Toledo,3193
-2026-08-18,Unicoop,3124
-2026-08-18,California,1859
-2026-08-18,Mariano Max,1436
-2026-08-18,Cadena 16,1078
-2026-08-18,Comodín,383
-2026-08-18,Deheza,296
-2026-08-18,Axion,150
-2026-08-18,Estación Lima,148
-2026-08-20,Carrefour,55898
-2026-08-20,ChangoMás,38742
-2026-08-20,"Cencosud (Jumbo, Disco, Vea)",34150
-2026-08-20,Coto,32426
-2026-08-20,La Anónima,24085
-2026-08-20,Día,12760
-2026-08-20,Cooperativa Obrera,10614
-2026-08-20,Unicoop,3530
-2026-08-20,Toledo,3459
-2026-08-20,La Agrícola Regional,2414
-2026-08-20,California,1878
-2026-08-20,Mariano Max,1445
-2026-08-20,Cadena 16,1011
-2026-08-20,Comodín,387
-2026-08-20,Deheza,292
-2026-08-20,Axion,184
-2026-08-20,Estación Lima,146
-2026-08-22,Carrefour,64085
-2026-08-22,ChangoMás,43014
-2026-08-22,"Cencosud (Jumbo, Disco, Vea)",39304
-2026-08-22,Coto,35951
-2026-08-22,La Anónima,29958
-2026-08-22,Día,15575
-2026-08-22,Cooperativa Obrera,14418
-2026-08-22,Farmacity,4791
-2026-08-22,Toledo,4198
-2026-08-22,Unicoop,4145
-2026-08-22,La Agrícola Regional,2621
-2026-08-22,California,2005
-2026-08-22,Mariano Max,1610
-2026-08-22,Cadena 16,1070
-2026-08-22,Comodín,478
-2026-08-22,Deheza,366
-2026-08-22,Axion,194
-2026-08-22,Estación Lima,183
-2026-08-24,Carrefour,65103
-2026-08-24,ChangoMás,45918
-2026-08-24,"Cencosud (Jumbo, Disco, Vea)",40299
-2026-08-24,Coto,38630
-2026-08-24,La Anónima,32293
-2026-08-24,Día,15964
-2026-08-24,Cooperativa Obrera,14677
-2026-08-24,Farmacity,4645
-2026-08-24,Unicoop,4226
-2026-08-24,Toledo,4185
-2026-08-24,California,1968
-2026-08-24,Mariano Max,1677
-2026-08-24,Cadena 16,1154
-2026-08-24,Comodín,512
-2026-08-24,Deheza,310
-2026-08-24,Axion,250
-2026-08-24,Estación Lima,155
-2026-08-26,Carrefour,53203
-2026-08-26,"Cencosud (Jumbo, Disco, Vea)",33353
-2026-08-26,Coto,30058
-2026-08-26,ChangoMás,27264
-2026-08-26,La Anónima,24124
-2026-08-26,Día,13629
-2026-08-26,Cooperativa Obrera,11662
-2026-08-26,Unicoop,3623
-2026-08-26,Toledo,3398
-2026-08-26,La Agrícola Regional,2467
-2026-08-26,California,1928
-2026-08-26,Cadena 16,847
-2026-08-26,Comodín,420
-2026-08-26,Deheza,332
-2026-08-26,Axion,208
-2026-08-26,Estación Lima,166
-2026-08-28,Carrefour,52631
-2026-08-28,"Cencosud (Jumbo, Disco, Vea)",33047
-2026-08-28,Coto,29475
-2026-08-28,ChangoMás,27324
-2026-08-28,La Anónima,23388
-2026-08-28,Día,12960
-2026-08-28,Cooperativa Obrera,11427
-2026-08-28,Unicoop,3574
-2026-08-28,Toledo,3321
-2026-08-28,La Agrícola Regional,2558
-2026-08-28,California,1926
-2026-08-28,Cadena 16,854
-2026-08-28,Comodín,415
-2026-08-28,Deheza,334
-2026-08-28,Axion,222
-2026-08-28,Estación Lima,167
-2026-08-30,Carrefour,63013
-2026-08-30,ChangoMás,44892
-2026-08-30,"Cencosud (Jumbo, Disco, Vea)",38742
-2026-08-30,Coto,36822
-2026-08-30,La Anónima,30585
-2026-08-30,Día,15079
-2026-08-30,Cooperativa Obrera,14208
-2026-08-30,Farmacity,4380
-2026-08-30,Unicoop,4096
-2026-08-30,Toledo,3868
-2026-08-30,California,1959
-2026-08-30,Cadena 16,1003
-2026-08-30,Comodín,439
-2026-08-30,Deheza,336
-2026-08-30,Estación Lima,168
-2026-08-30,Axion,154
-2026-09-01,Carrefour,62189
-2026-09-01,ChangoMás,40656
-2026-09-01,"Cencosud (Jumbo, Disco, Vea)",39207
-2026-09-01,Coto,38402
-2026-09-01,La Anónima,30357
-2026-09-01,Cooperativa Obrera,14308
-2026-09-01,Día,13933
-2026-09-01,Farmacity,4698
-2026-09-01,Unicoop,4171
-2026-09-01,Toledo,4017
-2026-09-01,La Agrícola Regional,2598
-2026-09-01,California,2006
-2026-09-01,Cadena 16,1075
-2026-09-01,Comodín,495
-2026-09-01,Deheza,378
-2026-09-01,Axion,226
-2026-09-01,Estación Lima,188
-2026-09-03,Carrefour,56963
-2026-09-03,ChangoMás,37194
-2026-09-03,"Cencosud (Jumbo, Disco, Vea)",33466
-2026-09-03,Coto,31365
-2026-09-03,La Anónima,24002
-2026-09-03,Día,12675
-2026-09-03,Cooperativa Obrera,10658
-2026-09-03,Unicoop,3504
-2026-09-03,Toledo,3470
-2026-09-03,La Agrícola Regional,2501
-2026-09-03,California,1897
-2026-09-03,Comodín,412
-2026-09-03,Deheza,310
-2026-09-03,Axion,190
-2026-09-03,Estación Lima,155
-2026-09-05,Carrefour,63556
-2026-09-05,ChangoMás,44064
-2026-09-05,"Cencosud (Jumbo, Disco, Vea)",38964
-2026-09-05,Coto,37342
-2026-09-05,La Anónima,33822
-2026-09-05,Día,15794
-2026-09-05,Cooperativa Obrera,14512
-2026-09-05,Toledo,4169
-2026-09-05,Unicoop,4096
-2026-09-05,La Agrícola Regional,2554
-2026-09-05,California,1965
-2026-09-05,Comodín,471
-2026-09-05,Deheza,360
-2026-09-05,Axion,240
-2026-09-05,Estación Lima,180
-2026-09-07,Carrefour,53667
-2026-09-07,"Cencosud (Jumbo, Disco, Vea)",33542
-2026-09-07,Coto,29686
-2026-09-07,ChangoMás,28542
-2026-09-07,La Anónima,24348
-2026-09-07,Día,13804
-2026-09-07,Cooperativa Obrera,11822
-2026-09-07,Unicoop,3598
-2026-09-07,Toledo,3398
-2026-09-07,California,1902
-2026-09-07,Comodín,424
-2026-09-07,Deheza,306
-2026-09-07,Axion,206
-2026-09-07,Estación Lima,153
-2026-09-09,Carrefour,65200
-2026-09-09,ChangoMás,46740
-2026-09-09,"Cencosud (Jumbo, Disco, Vea)",39725
-2026-09-09,Coto,37117
-2026-09-09,La Anónima,31883
-2026-09-09,Día,15874
-2026-09-09,Cooperativa Obrera,15113
-2026-09-09,Farmacity,5061
-2026-09-09,Unicoop,4258
-2026-09-09,Toledo,4138
-2026-09-09,La Agrícola Regional,2607
-2026-09-09,California,1956
-2026-09-09,Comodín,526
-2026-09-09,Deheza,352
-2026-09-09,Axion,246
-2026-09-09,Estación Lima,176
-2026-09-11,Carrefour,65367
-2026-09-11,ChangoMás,45684
-2026-09-11,"Cencosud (Jumbo, Disco, Vea)",38815
-2026-09-11,Coto,37335
-2026-09-11,La Anónima,30892
-2026-09-11,Día,15588
-2026-09-11,Cooperativa Obrera,14272
-2026-09-11,Farmacity,4940
-2026-09-11,Unicoop,4130
-2026-09-11,Toledo,3974
-2026-09-11,La Agrícola Regional,2563
-2026-09-11,California,1937
-2026-09-11,Comodín,519
-2026-09-11,Deheza,342
-2026-09-11,Axion,238
-2026-09-11,Estación Lima,171
-2026-09-13,Carrefour,53097
-2026-09-13,"Cencosud (Jumbo, Disco, Vea)",33413
-2026-09-13,Coto,29400
-2026-09-13,ChangoMás,28926
-2026-09-13,La Anónima,23680
-2026-09-13,Día,13465
-2026-09-13,Cooperativa Obrera,11140
-2026-09-13,Unicoop,3628
-2026-09-13,Toledo,3289
-2026-09-13,California,1933
-2026-09-13,Comodín,414
-2026-09-13,Deheza,340
-2026-09-13,Axion,192
-2026-09-13,Estación Lima,170
-2026-09-15,Carrefour,61653
-2026-09-15,ChangoMás,43410
-2026-09-15,"Cencosud (Jumbo, Disco, Vea)",38905
-2026-09-15,Coto,35337
-2026-09-15,La Anónima,29186
-2026-09-15,Día,13454
-2026-09-15,Cooperativa Obrera,13246
-2026-09-15,Unicoop,4154
-2026-09-15,Farmacity,4036
-2026-09-15,Toledo,3904
-2026-09-15,La Agrícola Regional,2559
-2026-09-15,California,1958
-2026-09-15,Comodín,471
-2026-09-15,Deheza,368
-2026-09-15,Axion,186
-2026-09-15,Estación Lima,184
-2026-09-17,Carrefour,63449
-2026-09-17,ChangoMás,41952
-2026-09-17,"Cencosud (Jumbo, Disco, Vea)",38604
-2026-09-17,Coto,36755
-2026-09-17,La Anónima,30082
-2026-09-17,Día,15554
-2026-09-17,Cooperativa Obrera,14233
-2026-09-17,Unicoop,4189
-2026-09-17,Toledo,3884
-2026-09-17,La Agrícola Regional,2594
-2026-09-17,California,1970
-2026-09-17,Comodín,465
-2026-09-17,Deheza,356
-2026-09-17,Estación Lima,178
-2026-09-17,Axion,106
-2026-09-19,Carrefour,57977
-2026-09-19,"Cencosud (Jumbo, Disco, Vea)",39244
-2026-09-19,ChangoMás,33960
-2026-09-19,Coto,32774
-2026-09-19,La Anónima,27442
-2026-09-19,Día,14580
-2026-09-19,Cooperativa Obrera,13016
-2026-09-19,Unicoop,4007
-2026-09-19,Toledo,3677
-2026-09-19,La Agrícola Regional,2705
-2026-09-19,California,1966
-2026-09-19,Mariano Max,1575
-2026-09-19,Comodín,484
-2026-09-19,Deheza,364
-2026-09-19,Axion,234
-2026-09-19,Estación Lima,182
-2026-09-21,Carrefour,55992
-2026-09-21,"Cencosud (Jumbo, Disco, Vea)",34156
-2026-09-21,ChangoMás,33954
-2026-09-21,Coto,31599
-2026-09-21,La Anónima,26668
-2026-09-21,Día,13610
-2026-09-21,Cooperativa Obrera,11322
-2026-09-21,Unicoop,3703
-2026-09-21,Toledo,3476
-2026-09-21,California,1880
-2026-09-21,Mariano Max,1501
-2026-09-21,Comodín,484
-2026-09-21,Deheza,294
-2026-09-21,Estación Lima,147
-2026-09-21,Axion,110
 2026-10-01,Carrefour,64972
 2026-10-01,ChangoMás,44550
 2026-10-01,"Cencosud (Jumbo, Disco, Vea)",39776
@@ -586,6 +15,20 @@ fecha,cadena,productos
 2026-10-01,Deheza,358
 2026-10-01,Axion,248
 2026-10-01,Estación Lima,179
+2026-10-02,Carrefour,62217
+2026-10-02,ChangoMás,41466
+2026-10-02,"Cencosud (Jumbo, Disco, Vea)",37414
+2026-10-02,Coto,36563
+2026-10-02,La Anónima,31468
+2026-10-02,Día,13915
+2026-10-02,Cooperativa Obrera,13465
+2026-10-02,Unicoop,3929
+2026-10-02,Toledo,3679
+2026-10-02,La Agrícola Regional,2515
+2026-10-02,California,1885
+2026-10-02,Mariano Max,1686
+2026-10-02,Comodín,483
+2026-10-02,Axion,226
 2026-10-03,Carrefour,65555
 2026-10-03,ChangoMás,41214
 2026-10-03,"Cencosud (Jumbo, Disco, Vea)",39866
@@ -602,6 +45,21 @@ fecha,cadena,productos
 2026-10-03,Deheza,306
 2026-10-03,Axion,242
 2026-10-03,Estación Lima,153
+2026-10-04,Carrefour,62347
+2026-10-04,ChangoMás,41802
+2026-10-04,"Cencosud (Jumbo, Disco, Vea)",38598
+2026-10-04,Coto,37753
+2026-10-04,La Anónima,31151
+2026-10-04,Día,15734
+2026-10-04,Cooperativa Obrera,14137
+2026-10-04,Unicoop,4147
+2026-10-04,Toledo,3637
+2026-10-04,California,1930
+2026-10-04,Mariano Max,1645
+2026-10-04,Comodín,457
+2026-10-04,Deheza,362
+2026-10-04,Axion,248
+2026-10-04,Estación Lima,181
 2026-10-05,Carrefour,57600
 2026-10-05,ChangoMás,38730
 2026-10-05,"Cencosud (Jumbo, Disco, Vea)",34455
@@ -617,6 +75,23 @@ fecha,cadena,productos
 2026-10-05,Deheza,300
 2026-10-05,Estación Lima,150
 2026-10-05,Axion,106
+2026-10-06,Carrefour,62701
+2026-10-06,ChangoMás,40392
+2026-10-06,Coto,38986
+2026-10-06,"Cencosud (Jumbo, Disco, Vea)",38606
+2026-10-06,La Anónima,30641
+2026-10-06,Día,14633
+2026-10-06,Cooperativa Obrera,14207
+2026-10-06,Farmacity,4683
+2026-10-06,Unicoop,4141
+2026-10-06,Toledo,3913
+2026-10-06,La Agrícola Regional,2692
+2026-10-06,California,1993
+2026-10-06,Mariano Max,1672
+2026-10-06,Comodín,498
+2026-10-06,Deheza,366
+2026-10-06,Axion,218
+2026-10-06,Estación Lima,183
 2026-10-07,Carrefour,65447
 2026-10-07,ChangoMás,44826
 2026-10-07,"Cencosud (Jumbo, Disco, Vea)",39050
@@ -633,6 +108,21 @@ fecha,cadena,productos
 2026-10-07,Deheza,306
 2026-10-07,Axion,238
 2026-10-07,Estación Lima,153
+2026-10-08,Carrefour,62504
+2026-10-08,ChangoMás,40002
+2026-10-08,Coto,39136
+2026-10-08,"Cencosud (Jumbo, Disco, Vea)",38215
+2026-10-08,La Anónima,30420
+2026-10-08,Día,16089
+2026-10-08,Cooperativa Obrera,14160
+2026-10-08,Unicoop,4128
+2026-10-08,Toledo,3713
+2026-10-08,California,1946
+2026-10-08,Mariano Max,1666
+2026-10-08,Comodín,483
+2026-10-08,Deheza,364
+2026-10-08,Axion,240
+2026-10-08,Estación Lima,182
 2026-10-09,Carrefour,65308
 2026-10-09,ChangoMás,42456
 2026-10-09,"Cencosud (Jumbo, Disco, Vea)",38373
@@ -649,6 +139,22 @@ fecha,cadena,productos
 2026-10-09,Deheza,336
 2026-10-09,Axion,249
 2026-10-09,Estación Lima,168
+2026-10-10,Carrefour,64842
+2026-10-10,ChangoMás,43758
+2026-10-10,"Cencosud (Jumbo, Disco, Vea)",39292
+2026-10-10,Coto,38594
+2026-10-10,La Anónima,32198
+2026-10-10,Día,15999
+2026-10-10,Cooperativa Obrera,14504
+2026-10-10,Unicoop,4246
+2026-10-10,Toledo,3823
+2026-10-10,La Agrícola Regional,2587
+2026-10-10,California,1914
+2026-10-10,Mariano Max,1654
+2026-10-10,Comodín,489
+2026-10-10,Deheza,306
+2026-10-10,Axion,239
+2026-10-10,Estación Lima,153
 2026-10-11,Carrefour,62204
 2026-10-11,ChangoMás,40320
 2026-10-11,"Cencosud (Jumbo, Disco, Vea)",35401
@@ -664,6 +170,21 @@ fecha,cadena,productos
 2026-10-11,Deheza,306
 2026-10-11,Axion,207
 2026-10-11,Estación Lima,153
+2026-10-12,Carrefour,56849
+2026-10-12,ChangoMás,38232
+2026-10-12,"Cencosud (Jumbo, Disco, Vea)",33644
+2026-10-12,Coto,32645
+2026-10-12,La Anónima,25083
+2026-10-12,Día,13250
+2026-10-12,Cooperativa Obrera,10579
+2026-10-12,Unicoop,3500
+2026-10-12,Toledo,3280
+2026-10-12,California,1852
+2026-10-12,Mariano Max,1463
+2026-10-12,Comodín,386
+2026-10-12,Deheza,288
+2026-10-12,Axion,183
+2026-10-12,Estación Lima,144
 2026-10-13,Carrefour,61820
 2026-10-13,ChangoMás,40674
 2026-10-13,"Cencosud (Jumbo, Disco, Vea)",38411
@@ -679,6 +200,23 @@ fecha,cadena,productos
 2026-10-13,Deheza,362
 2026-10-13,Axion,189
 2026-10-13,Estación Lima,181
+2026-10-14,Carrefour,54035
+2026-10-14,"Cencosud (Jumbo, Disco, Vea)",32604
+2026-10-14,ChangoMás,30540
+2026-10-14,Coto,30406
+2026-10-14,La Anónima,23982
+2026-10-14,Día,13905
+2026-10-14,Cooperativa Obrera,11360
+2026-10-14,Toledo,3568
+2026-10-14,Unicoop,3445
+2026-10-14,Farmacity,3174
+2026-10-14,La Agrícola Regional,2522
+2026-10-14,California,1869
+2026-10-14,Mariano Max,1437
+2026-10-14,Comodín,387
+2026-10-14,Deheza,312
+2026-10-14,Estación Lima,156
+2026-10-14,Axion,106
 2026-10-15,Carrefour,60979
 2026-10-15,ChangoMás,41214
 2026-10-15,Coto,35931
@@ -694,6 +232,23 @@ fecha,cadena,productos
 2026-10-15,Deheza,334
 2026-10-15,Axion,230
 2026-10-15,Estación Lima,167
+2026-10-16,Carrefour,51478
+2026-10-16,"Cencosud (Jumbo, Disco, Vea)",31037
+2026-10-16,Coto,28756
+2026-10-16,ChangoMás,26592
+2026-10-16,La Anónima,22368
+2026-10-16,Día,13140
+2026-10-16,Cooperativa Obrera,10216
+2026-10-16,Unicoop,3464
+2026-10-16,Toledo,2900
+2026-10-16,Farmacity,2649
+2026-10-16,La Agrícola Regional,2483
+2026-10-16,California,1858
+2026-10-16,Mariano Max,1435
+2026-10-16,Comodín,389
+2026-10-16,Deheza,294
+2026-10-16,Axion,203
+2026-10-16,Estación Lima,147
 2026-10-17,Carrefour,52731
 2026-10-17,"Cencosud (Jumbo, Disco, Vea)",31566
 2026-10-17,Coto,29485
@@ -710,6 +265,22 @@ fecha,cadena,productos
 2026-10-17,Deheza,320
 2026-10-17,Axion,185
 2026-10-17,Estación Lima,160
+2026-10-18,Carrefour,64134
+2026-10-18,ChangoMás,39084
+2026-10-18,"Cencosud (Jumbo, Disco, Vea)",36733
+2026-10-18,Coto,35214
+2026-10-18,La Anónima,29606
+2026-10-18,Día,15344
+2026-10-18,Cooperativa Obrera,13697
+2026-10-18,Farmacity,4328
+2026-10-18,Unicoop,3870
+2026-10-18,Toledo,3533
+2026-10-18,California,1927
+2026-10-18,Mariano Max,1589
+2026-10-18,Comodín,456
+2026-10-18,Deheza,344
+2026-10-18,Axion,228
+2026-10-18,Estación Lima,172
 2026-10-19,Carrefour,63381
 2026-10-19,ChangoMás,42252
 2026-10-19,"Cencosud (Jumbo, Disco, Vea)",38313
@@ -726,6 +297,22 @@ fecha,cadena,productos
 2026-10-19,Deheza,360
 2026-10-19,Axion,222
 2026-10-19,Estación Lima,180
+2026-10-20,Carrefour,61688
+2026-10-20,ChangoMás,41694
+2026-10-20,"Cencosud (Jumbo, Disco, Vea)",38291
+2026-10-20,Coto,35825
+2026-10-20,La Anónima,29296
+2026-10-20,Día,13507
+2026-10-20,Cooperativa Obrera,13115
+2026-10-20,Unicoop,4134
+2026-10-20,Toledo,3602
+2026-10-20,La Agrícola Regional,2571
+2026-10-20,California,1965
+2026-10-20,Mariano Max,1618
+2026-10-20,Comodín,467
+2026-10-20,Deheza,362
+2026-10-20,Axion,234
+2026-10-20,Estación Lima,181
 2026-10-21,Carrefour,57341
 2026-10-21,"Cencosud (Jumbo, Disco, Vea)",38241
 2026-10-21,ChangoMás,33504
@@ -742,6 +329,23 @@ fecha,cadena,productos
 2026-10-21,Deheza,352
 2026-10-21,Axion,220
 2026-10-21,Estación Lima,176
+2026-10-22,Carrefour,54608
+2026-10-22,"Cencosud (Jumbo, Disco, Vea)",33269
+2026-10-22,Coto,31088
+2026-10-22,ChangoMás,26730
+2026-10-22,La Anónima,25147
+2026-10-22,Día,13984
+2026-10-22,Cooperativa Obrera,11959
+2026-10-22,Unicoop,3644
+2026-10-22,Farmacity,3468
+2026-10-22,Toledo,3125
+2026-10-22,La Agrícola Regional,2475
+2026-10-22,California,1879
+2026-10-22,Mariano Max,1522
+2026-10-22,Comodín,419
+2026-10-22,Deheza,344
+2026-10-22,Estación Lima,172
+2026-10-22,Axion,164
 2026-10-23,Carrefour,51354
 2026-10-23,"Cencosud (Jumbo, Disco, Vea)",30254
 2026-10-23,Coto,28316
@@ -758,6 +362,23 @@ fecha,cadena,productos
 2026-10-23,Deheza,274
 2026-10-23,Axion,166
 2026-10-23,Estación Lima,137
+2026-10-24,Carrefour,53829
+2026-10-24,"Cencosud (Jumbo, Disco, Vea)",32066
+2026-10-24,Coto,29722
+2026-10-24,ChangoMás,29100
+2026-10-24,La Anónima,23811
+2026-10-24,Día,13820
+2026-10-24,Cooperativa Obrera,11515
+2026-10-24,Unicoop,3510
+2026-10-24,Toledo,2978
+2026-10-24,La Agrícola Regional,2668
+2026-10-24,Farmacity,2656
+2026-10-24,California,1896
+2026-10-24,Mariano Max,1456
+2026-10-24,Comodín,399
+2026-10-24,Deheza,298
+2026-10-24,Estación Lima,149
+2026-10-24,Axion,135
 2026-10-25,Carrefour,63415
 2026-10-25,ChangoMás,43164
 2026-10-25,"Cencosud (Jumbo, Disco, Vea)",38001
@@ -774,6 +395,22 @@ fecha,cadena,productos
 2026-10-25,Deheza,348
 2026-10-25,Axion,233
 2026-10-25,Estación Lima,174
+2026-10-26,Carrefour,56387
+2026-10-26,"Cencosud (Jumbo, Disco, Vea)",34286
+2026-10-26,Coto,31521
+2026-10-26,ChangoMás,30954
+2026-10-26,La Anónima,25397
+2026-10-26,Día,13880
+2026-10-26,Cooperativa Obrera,12331
+2026-10-26,Unicoop,3807
+2026-10-26,Toledo,3364
+2026-10-26,Farmacity,3259
+2026-10-26,California,1879
+2026-10-26,Mariano Max,1637
+2026-10-26,Comodín,435
+2026-10-26,Deheza,306
+2026-10-26,Axion,227
+2026-10-26,Estación Lima,153
 2026-10-27,Carrefour,62594
 2026-10-27,ChangoMás,41976
 2026-10-27,Coto,36055
@@ -790,6 +427,21 @@ fecha,cadena,productos
 2026-10-27,Deheza,308
 2026-10-27,Axion,170
 2026-10-27,Estación Lima,154
+2026-10-28,Carrefour,66194
+2026-10-28,ChangoMás,45060
+2026-10-28,"Cencosud (Jumbo, Disco, Vea)",39262
+2026-10-28,Coto,38571
+2026-10-28,La Anónima,32675
+2026-10-28,Día,16364
+2026-10-28,Cooperativa Obrera,14959
+2026-10-28,Unicoop,4249
+2026-10-28,Toledo,3718
+2026-10-28,California,1975
+2026-10-28,Mariano Max,1680
+2026-10-28,Comodín,510
+2026-10-28,Deheza,306
+2026-10-28,Axion,236
+2026-10-28,Estación Lima,153
 2026-10-29,Carrefour,67242
 2026-10-29,ChangoMás,45264
 2026-10-29,Coto,38931
@@ -806,6 +458,19 @@ fecha,cadena,productos
 2026-10-29,Deheza,356
 2026-10-29,Axion,223
 2026-10-29,Estación Lima,178
+2026-10-30,Carrefour,66230
+2026-10-30,ChangoMás,43044
+2026-10-30,"Cencosud (Jumbo, Disco, Vea)",39169
+2026-10-30,Coto,38942
+2026-10-30,La Anónima,31663
+2026-10-30,Día,16194
+2026-10-30,Cooperativa Obrera,14827
+2026-10-30,Unicoop,4276
+2026-10-30,Toledo,3599
+2026-10-30,La Agrícola Regional,2612
+2026-10-30,California,1982
+2026-10-30,Comodín,506
+2026-10-30,Axion,268
 2026-10-31,Carrefour,63714
 2026-10-31,ChangoMás,43776
 2026-10-31,"Cencosud (Jumbo, Disco, Vea)",40090
@@ -822,6 +487,22 @@ fecha,cadena,productos
 2026-10-31,Deheza,370
 2026-10-31,Axion,268
 2026-10-31,Estación Lima,185
+2026-11-01,Carrefour,62260
+2026-11-01,ChangoMás,43476
+2026-11-01,"Cencosud (Jumbo, Disco, Vea)",37470
+2026-11-01,Coto,36870
+2026-11-01,La Anónima,32777
+2026-11-01,Día,15360
+2026-11-01,Cooperativa Obrera,13928
+2026-11-01,Farmacity,4109
+2026-11-01,Unicoop,3912
+2026-11-01,Toledo,3346
+2026-11-01,California,1896
+2026-11-01,Mariano Max,1598
+2026-11-01,Comodín,442
+2026-11-01,Deheza,350
+2026-11-01,Axion,220
+2026-11-01,Estación Lima,175
 2026-11-02,Carrefour,64067
 2026-11-02,ChangoMás,44238
 2026-11-02,"Cencosud (Jumbo, Disco, Vea)",38281
@@ -837,6 +518,23 @@ fecha,cadena,productos
 2026-11-02,Deheza,348
 2026-11-02,Axion,242
 2026-11-02,Estación Lima,174
+2026-11-03,Carrefour,64769
+2026-11-03,ChangoMás,45396
+2026-11-03,"Cencosud (Jumbo, Disco, Vea)",38835
+2026-11-03,Coto,38721
+2026-11-03,La Anónima,32791
+2026-11-03,Cooperativa Obrera,15301
+2026-11-03,Día,15002
+2026-11-03,Farmacity,5447
+2026-11-03,Unicoop,4320
+2026-11-03,Toledo,3691
+2026-11-03,La Agrícola Regional,2716
+2026-11-03,California,1986
+2026-11-03,Mariano Max,1702
+2026-11-03,Comodín,520
+2026-11-03,Deheza,370
+2026-11-03,Axion,249
+2026-11-03,Estación Lima,185
 2026-11-04,Carrefour,60453
 2026-11-04,ChangoMás,40812
 2026-11-04,"Cencosud (Jumbo, Disco, Vea)",35061
@@ -853,6 +551,22 @@ fecha,cadena,productos
 2026-11-04,Deheza,286
 2026-11-04,Axion,203
 2026-11-04,Estación Lima,143
+2026-11-05,Carrefour,60221
+2026-11-05,ChangoMás,37458
+2026-11-05,"Cencosud (Jumbo, Disco, Vea)",33839
+2026-11-05,Coto,33615
+2026-11-05,La Anónima,28010
+2026-11-05,Día,14349
+2026-11-05,Cooperativa Obrera,12836
+2026-11-05,Unicoop,3320
+2026-11-05,Toledo,3214
+2026-11-05,La Agrícola Regional,2471
+2026-11-05,California,1842
+2026-11-05,Mariano Max,1453
+2026-11-05,Comodín,484
+2026-11-05,Deheza,302
+2026-11-05,Estación Lima,151
+2026-11-05,Axion,110
 2026-11-06,Carrefour,54459
 2026-11-06,ChangoMás,35658
 2026-11-06,Coto,33033
@@ -869,6 +583,23 @@ fecha,cadena,productos
 2026-11-06,Deheza,280
 2026-11-06,Axion,192
 2026-11-06,Estación Lima,140
+2026-11-07,Carrefour,56693
+2026-11-07,ChangoMás,37614
+2026-11-07,Coto,34533
+2026-11-07,"Cencosud (Jumbo, Disco, Vea)",33472
+2026-11-07,La Anónima,26184
+2026-11-07,Día,13030
+2026-11-07,Cooperativa Obrera,12121
+2026-11-07,Farmacity,3670
+2026-11-07,Unicoop,3247
+2026-11-07,Toledo,2993
+2026-11-07,La Agrícola Regional,2425
+2026-11-07,California,1831
+2026-11-07,Mariano Max,1504
+2026-11-07,Comodín,411
+2026-11-07,Deheza,336
+2026-11-07,Axion,204
+2026-11-07,Estación Lima,168
 2026-11-08,Carrefour,64955
 2026-11-08,ChangoMás,44628
 2026-11-08,Coto,37945
@@ -884,6 +615,21 @@ fecha,cadena,productos
 2026-11-08,Deheza,336
 2026-11-08,Axion,235
 2026-11-08,Estación Lima,168
+2026-11-09,Carrefour,55818
+2026-11-09,ChangoMás,37458
+2026-11-09,Coto,33425
+2026-11-09,"Cencosud (Jumbo, Disco, Vea)",33192
+2026-11-09,La Anónima,26155
+2026-11-09,Día,13305
+2026-11-09,Cooperativa Obrera,10681
+2026-11-09,Toledo,2915
+2026-11-09,Farmacity,2519
+2026-11-09,California,1812
+2026-11-09,Mariano Max,1483
+2026-11-09,Comodín,389
+2026-11-09,Deheza,306
+2026-11-09,Axion,191
+2026-11-09,Estación Lima,153
 2026-11-10,Carrefour,61979
 2026-11-10,ChangoMás,40932
 2026-11-10,Coto,38731
@@ -900,6 +646,20 @@ fecha,cadena,productos
 2026-11-10,Deheza,358
 2026-11-10,Axion,239
 2026-11-10,Estación Lima,179
+2026-11-11,Carrefour,61227
+2026-11-11,ChangoMás,38274
+2026-11-11,Coto,35694
+2026-11-11,La Anónima,34208
+2026-11-11,Día,16489
+2026-11-11,Cooperativa Obrera,14280
+2026-11-11,Unicoop,4092
+2026-11-11,Toledo,3281
+2026-11-11,La Agrícola Regional,2574
+2026-11-11,California,1920
+2026-11-11,Mariano Max,1717
+2026-11-11,Comodín,494
+2026-11-11,Deheza,332
+2026-11-11,Estación Lima,166
 2026-11-12,Carrefour,64006
 2026-11-12,ChangoMás,44508
 2026-11-12,Coto,38816
@@ -916,6 +676,23 @@ fecha,cadena,productos
 2026-11-12,Deheza,368
 2026-11-12,Axion,244
 2026-11-12,Estación Lima,184
+2026-11-13,Carrefour,56365
+2026-11-13,ChangoMás,38898
+2026-11-13,"Cencosud (Jumbo, Disco, Vea)",33288
+2026-11-13,Coto,32769
+2026-11-13,La Anónima,24653
+2026-11-13,Día,13120
+2026-11-13,Cooperativa Obrera,10657
+2026-11-13,Unicoop,3504
+2026-11-13,Farmacity,3221
+2026-11-13,Toledo,2895
+2026-11-13,La Agrícola Regional,2453
+2026-11-13,California,1857
+2026-11-13,Mariano Max,1434
+2026-11-13,Comodín,398
+2026-11-13,Deheza,290
+2026-11-13,Axion,202
+2026-11-13,Estación Lima,145
 2026-11-14,Carrefour,64821
 2026-11-14,ChangoMás,44124
 2026-11-14,Coto,38739
@@ -933,6 +710,22 @@ fecha,cadena,productos
 2026-11-14,Deheza,366
 2026-11-14,Axion,253
 2026-11-14,Estación Lima,183
+2026-11-15,Carrefour,60888
+2026-11-15,ChangoMás,38532
+2026-11-15,"Cencosud (Jumbo, Disco, Vea)",37061
+2026-11-15,Coto,35216
+2026-11-15,La Anónima,34232
+2026-11-15,Día,16050
+2026-11-15,Cooperativa Obrera,14264
+2026-11-15,Farmacity,4304
+2026-11-15,Unicoop,4108
+2026-11-15,Toledo,3245
+2026-11-15,California,1935
+2026-11-15,Mariano Max,1624
+2026-11-15,Comodín,498
+2026-11-15,Deheza,342
+2026-11-15,Axion,220
+2026-11-15,Estación Lima,171
 2026-11-16,Carrefour,63409
 2026-11-16,ChangoMás,44928
 2026-11-16,Coto,38433
@@ -949,6 +742,23 @@ fecha,cadena,productos
 2026-11-16,Deheza,360
 2026-11-16,Axion,216
 2026-11-16,Estación Lima,180
+2026-11-17,Carrefour,65306
+2026-11-17,ChangoMás,46038
+2026-11-17,"Cencosud (Jumbo, Disco, Vea)",39797
+2026-11-17,Coto,38715
+2026-11-17,La Anónima,31928
+2026-11-17,Cooperativa Obrera,14924
+2026-11-17,Día,14706
+2026-11-17,Farmacity,4821
+2026-11-17,Unicoop,4299
+2026-11-17,Toledo,3505
+2026-11-17,La Agrícola Regional,2575
+2026-11-17,California,1945
+2026-11-17,Mariano Max,1672
+2026-11-17,Comodín,506
+2026-11-17,Deheza,378
+2026-11-17,Axion,265
+2026-11-17,Estación Lima,189
 2026-11-18,Carrefour,63318
 2026-11-18,ChangoMás,43764
 2026-11-18,"Cencosud (Jumbo, Disco, Vea)",38105
@@ -965,3 +775,20 @@ fecha,cadena,productos
 2026-11-18,Deheza,358
 2026-11-18,Axion,190
 2026-11-18,Estación Lima,179
+2026-11-19,Carrefour,65555
+2026-11-19,ChangoMás,45804
+2026-11-19,"Cencosud (Jumbo, Disco, Vea)",38808
+2026-11-19,Coto,38392
+2026-11-19,La Anónima,34195
+2026-11-19,Día,16540
+2026-11-19,Cooperativa Obrera,15019
+2026-11-19,Farmacity,4339
+2026-11-19,Unicoop,4302
+2026-11-19,Toledo,3396
+2026-11-19,La Agrícola Regional,2707
+2026-11-19,California,1935
+2026-11-19,Mariano Max,1661
+2026-11-19,Comodín,494
+2026-11-19,Deheza,336
+2026-11-19,Axion,231
+2026-11-19,Estación Lima,168
