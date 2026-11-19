@@ -80,6 +80,13 @@
     meses: 14
   01.1.6:
   - fuentes:
+    - sepaf
+    coef:
+    - 0.848
+    error_proyeccion: 4.045
+    error_con_fuente: 2.795
+    meses: 18
+  - fuentes:
     - sepa
     coef:
     - 0.956
@@ -95,6 +102,13 @@
     error_con_fuente: 4.296
     meses: 14
   01.1.7:
+  - fuentes:
+    - sepaf
+    coef:
+    - 1.263
+    error_proyeccion: 6.519
+    error_con_fuente: 5.588
+    meses: 18
   - fuentes:
     - arr
     coef:
@@ -443,6 +457,13 @@
     meses: 14
   01.1.6:
   - fuentes:
+    - sepaf
+    coef:
+    - 0.834
+    error_proyeccion: 4.045
+    error_con_fuente: 2.711
+    meses: 18
+  - fuentes:
     - sepa
     coef:
     - 1.0
@@ -458,6 +479,13 @@
     error_con_fuente: 4.296
     meses: 14
   01.1.7:
+  - fuentes:
+    - sepaf
+    coef:
+    - 1.297
+    error_proyeccion: 6.519
+    error_con_fuente: 5.151
+    meses: 18
   - fuentes:
     - arr
     coef:
@@ -840,6 +868,13 @@ completo:
     meses: 18
   01.1.6:
   - fuentes:
+    - sepaf
+    coef:
+    - 0.788
+    error_proyeccion: 4.045
+    error_con_fuente: 2.581
+    meses: 18
+  - fuentes:
     - sepa
     coef:
     - 1.0
@@ -855,6 +890,13 @@ completo:
     error_con_fuente: 4.296
     meses: 14
   01.1.7:
+  - fuentes:
+    - sepaf
+    coef:
+    - 1.269
+    error_proyeccion: 6.519
+    error_con_fuente: 4.969
+    meses: 18
   - fuentes:
     - arr
     coef:

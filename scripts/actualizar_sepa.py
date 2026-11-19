@@ -95,6 +95,22 @@ def main():
     except Exception as e:  # noqa: BLE001
         print("variedades INDEC: error", e)
 
+    # frutas y verduras frescas (sin envasados), cortes día 15, día 22 y mes completo
+    try:
+        from ipc_nowcast import frescos_sepa
+        rf = sepa.SALIDA / "indices_frescos.csv"
+        nf = [frescos_sepa.indices_frescos(m, corte=c).assign(corte=str(c) if c else "completo")
+              for m in meses for c in (15, 22, None)]
+        nf = [x for x in nf if "mes" in x]
+        if nf:
+            nf = pd.concat(nf)
+            pf = pd.read_csv(rf) if rf.exists() else pd.DataFrame()
+            if not pf.empty:
+                pf = pf[~pf.mes.isin(nf.mes.unique())]
+            pd.concat([pf, nf]).sort_values(["mes", "corte", "region", "clase"]).to_csv(rf, index=False, float_format="%.4f")
+    except Exception as e:  # noqa: BLE001
+        print("frescos: error", e)
+
     # arrastre que deja cada mes al siguiente (se conoce el día 1 del mes)
     ra = sepa.SALIDA / "arrastre.csv"
     previo_a = pd.read_csv(ra, dtype={"clase": str}) if ra.exists() else pd.DataFrame()

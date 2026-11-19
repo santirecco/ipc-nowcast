@@ -33,10 +33,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | sepa+fx | 18 | 0,97 | 1,05 | no |
 | Frutas | arr | 14 | 4,58 | 4,30 | sí, si falta la anterior |
 | Frutas | mayorista | 4 | 4,16 | 4,36 | no |
-| Frutas | SEPA | 18 | 4,04 | 3,37 | **sí** |
-| Verduras, tubérculos y legumbres | arr | 14 | 5,50 | 5,38 | **sí** |
+| Frutas | SEPA | 18 | 4,04 | 3,37 | sí, si falta la anterior |
+| Frutas | sepaf | 18 | 4,04 | 2,79 | **sí** |
+| Verduras, tubérculos y legumbres | arr | 14 | 5,50 | 5,38 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 3,86 | 3,85 | no |
 | Verduras, tubérculos y legumbres | SEPA | 18 | 6,52 | 6,58 | no |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,52 | 5,59 | **sí** |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
 | Azúcar, dulces y golosinas | SEPA | 18 | 0,79 | 0,72 | **sí** |
 | Azúcar, dulces y golosinas | sepa+fx | 18 | 0,79 | 0,77 | no |
@@ -109,10 +111,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | sepai | 18 | 0,97 | 0,77 | **sí** |
 | Frutas | arr | 14 | 4,58 | 4,30 | sí, si falta la anterior |
 | Frutas | mayorista | 4 | 4,16 | 4,32 | no |
-| Frutas | SEPA | 18 | 4,04 | 3,11 | **sí** |
-| Verduras, tubérculos y legumbres | arr | 14 | 5,50 | 5,38 | **sí** |
+| Frutas | SEPA | 18 | 4,04 | 3,11 | sí, si falta la anterior |
+| Frutas | sepaf | 18 | 4,04 | 2,58 | **sí** |
+| Verduras, tubérculos y legumbres | arr | 14 | 5,50 | 5,38 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 3,86 | 3,61 | no |
 | Verduras, tubérculos y legumbres | SEPA | 18 | 6,52 | 6,47 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,52 | 4,97 | **sí** |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
 | Azúcar, dulces y golosinas | SEPA | 18 | 0,79 | 0,65 | **sí** |
 | Azúcar, dulces y golosinas | sepa+fx | 18 | 0,79 | 0,70 | sí, si falta la anterior |

@@ -30,8 +30,8 @@ OPCIONES = {
     "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"]],
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.6": [["sepa"], ["may"], ["arr"]],
-    "01.1.7": [["sepa"], ["may"], ["arr"]],
+    "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
+    "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
     "01.1.8": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.2.2": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
@@ -75,7 +75,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
             "sepai": "precios de SEPA de los productos que mide INDEC",
-            "autos": "listas de precios de autos 0 km", "sal": "salarios registrados (INDEC)",
+            "autos": "listas de precios de autos 0 km", "sepaf": "frutas y verduras frescas en góndola (SEPA)", "sal": "salarios registrados (INDEC)",
             "ipc2": "regla de ajuste: inflación de dos meses antes + 2%"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
@@ -172,6 +172,16 @@ def tabla(nc, corte: str) -> pd.DataFrame:
         t = t.merge(iv, on=["mes", "region", "clase"], how="left")
     else:
         t["sepai"] = np.nan
+    # frutas y verduras frescas de SEPA (sin envasados)
+    rf = sepa.SALIDA / "indices_frescos.csv"
+    if rf.exists():
+        fr = pd.read_csv(rf)
+        fr = fr[fr.corte.astype(str) == corte].assign(clase=lambda x: x.clase.str.rstrip("f"))
+        fr = fr[["mes", "region", "clase", "var_%"]].rename(columns={"var_%": "sepaf"})
+        fr["mes"] = pd.to_datetime(fr.mes + "-01")
+        t = t.merge(fr, on=["mes", "region", "clase"], how="left")
+    else:
+        t["sepaf"] = np.nan
     # listas de precios de autos 0 km (aumento promedio del mes, igual para todas las regiones)
     if RUTA_AUTOS.exists():
         au = pd.read_csv(RUTA_AUTOS)
@@ -234,6 +244,8 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["sal"].astype(float) - t.proy.astype(float))
     if "ipc2" in fuentes:  # regla de colectivos AMBA (y tarifas indexadas): inflación de dos meses antes + 2%
         cols.append(t["ipc_l2"].astype(float) + 2.0 - t.proy.astype(float))
+    if "sepaf" in fuentes:
+        cols.append(t["sepaf"].astype(float) - t.proy.astype(float))
     if "autos" in fuentes:
         cols.append(t["autos"].astype(float) - t.proy.astype(float))
         cols.append(t["autos_l1"].astype(float) - t.proy.astype(float))
@@ -293,6 +305,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["ipc_l2"].notna()
     if "autos" in fuentes:
         ok &= t["autos"].notna() & t["autos_l1"].notna()
+    if "sepaf" in fuentes:
+        ok &= t["sepaf"].notna()
     return ok
 
 
@@ -437,7 +451,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         if isinstance(opciones, dict):
             opciones = [opciones]
         for _, f in t[t.clase == clase].iterrows():
-            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal", "ipc_l2"]})
+            fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal", "ipc_l2", "sepaf"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
                         and (not temprano or set(o["fuentes"]) <= AL_INICIO)), None)
             if cfg is None:
