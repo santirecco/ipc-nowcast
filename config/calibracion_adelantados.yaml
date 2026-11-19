@@ -148,6 +148,15 @@
     error_proyeccion: 2.067
     error_con_fuente: 1.787
     meses: 29
+  '07.1':
+  - fuentes:
+    - autos
+    coef:
+    - 0.665
+    - 0.319
+    error_proyeccion: 1.615
+    error_con_fuente: 0.85
+    meses: 17
   '09.5':
   - fuentes:
     - ipc
@@ -340,6 +349,15 @@
     error_proyeccion: 2.067
     error_con_fuente: 1.787
     meses: 29
+  '07.1':
+  - fuentes:
+    - autos
+    coef:
+    - 0.665
+    - 0.319
+    error_proyeccion: 1.615
+    error_con_fuente: 0.85
+    meses: 17
   '09.5':
   - fuentes:
     - ipc
@@ -544,6 +562,15 @@ completo:
     error_proyeccion: 2.067
     error_con_fuente: 1.465
     meses: 29
+  '07.1':
+  - fuentes:
+    - autos
+    coef:
+    - 0.665
+    - 0.319
+    error_proyeccion: 1.615
+    error_con_fuente: 0.85
+    meses: 17
   '06.1':
   - fuentes:
     - sepa

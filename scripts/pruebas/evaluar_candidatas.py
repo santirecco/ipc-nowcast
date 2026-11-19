@@ -37,7 +37,8 @@ for corte, momento in [("15", "inicio"), ("15", "mitad"), ("completo", "fin")]:
     print(f"\n== {momento} ==  base: {resumen(b - real[meses])}")
     for (c, f), o in preds.items():
         est = set(f.split("+")) <= A.ESTADISTICAS
-        if momento == "inicio" and not est:
+        inicio_ok = set(f.split("+")) <= A.AL_INICIO
+        if momento == "inicio" and not inicio_ok:
             continue
         oos = o["oos"]
         v = {}

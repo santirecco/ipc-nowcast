@@ -1,6 +1,6 @@
 # Pronóstico IPC noviembre 2026
 
-*Calculado el 18/11/2026. Último dato oficial de INDEC: octubre 2026.*
+*Calculado el 19/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
 ## 1,8% mensual (rango probable 1,5% a 2,2%)
 

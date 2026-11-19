@@ -41,7 +41,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aguas, gaseosas y jugos | sepa+fx | 18 | 0,75 | 0,70 | sí, si falta la anterior |
 | Ropa | fx | 34 | 1,97 | 2,33 | no |
 | Equipamiento del hogar | fx | 34 | 1,84 | 2,00 | no |
-| Compra de vehículos | fx | 34 | 2,91 | 3,09 | no |
+| Compra de vehículos | autos | 17 | 1,62 | 0,85 | **sí** |
 | Combustibles | nafta | 29 | 2,07 | 1,79 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,79 | sí, si falta la anterior |
 | Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
@@ -79,7 +79,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | fx | 34 | 1,97 | 2,31 | no |
 | Equipamiento del hogar | fx | 34 | 1,84 | 1,99 | no |
 | Medicamentos | SEPA | 18 | 0,52 | 0,43 | **sí** |
-| Compra de vehículos | fx | 34 | 2,91 | 3,03 | no |
+| Compra de vehículos | autos | 17 | 1,62 | 0,85 | **sí** |
 | Combustibles | nafta | 29 | 2,07 | 1,47 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,07 | 1,47 | sí, si falta la anterior |
 | Diarios, libros y papelería | ipc | 34 | 2,03 | 1,63 | **sí** |
