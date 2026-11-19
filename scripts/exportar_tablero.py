@@ -43,7 +43,8 @@ def main():
     ruta = NC / "ultimo_informacion.csv"
     if ruta.exists():
         i = pd.read_csv(ruta, dtype={"componente": str})
-        i["nombre_componente"] = i.componente.map(COMPONENTES).fillna(i.componente)
+        from ipc_nowcast.adelantados import NOMBRES
+        i["nombre_componente"] = i.componente.map(COMPONENTES).fillna(i.componente.map(NOMBRES)).fillna(i.componente)
         def grupo(c, f):
             if c.startswith("01"):
                 return "Alimentos: precios reales del mes"
