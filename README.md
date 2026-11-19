@@ -104,9 +104,12 @@ anterior, un dato exacto de luz y gas llegaba a empeorar vivienda.
 Probadas y descartadas (nov-2026, segunda tanda): dólar en la proyección estadística (mejora 2023 pero empeora mucho
 desde 2024: el traspaso cambió de régimen), elegir por rubro la combinación de reglas estadísticas (el promedio fijo
 gana en todos los períodos), base coherente para las señales de precios (empeora; también recalibradas), base
-coherente para la regla de prepagas (no alcanza el umbral) y reconstruir a mano el calendario histórico de tarifas:
-la prueba con los valores exactos de INDEC muestra que, desde 2024, ni siquiera el dato perfecto de tarifas baja el
-error nacional (sí el de vivienda), así que no vale el esfuerzo.
+coherente para la regla de prepagas (no alcanza el umbral) y reconstruir a mano el calendario histórico de tarifas.
+Con los valores exactos de INDEC para luz, gas y transporte en todas las regiones (el mejor calendario posible), el
+error nacional de fin de mes queda: 2018-19 1,10 -> 0,95; 2020-22 0,71 -> 0,68; 2023-jun24 3,47 -> 3,58;
+jul-24 en adelante 0,36 -> 0,34; últimos 16 meses 0,20 -> 0,22. Mejora el rubro siempre, pero en el nacional el
+efecto es mixto: en los últimos meses el error de tarifas compensaba un sesgo hacia arriba de alimentos. Un calendario
+real (menos exacto) daría menos que esto, así que no vale reconstruirlo a mano; sigue validándose hacia adelante.
 
 ## Conceptos clave
 
