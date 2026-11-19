@@ -388,7 +388,7 @@ class Nowcast:
         aplicados = []
         for it in info:
             r, c = it["region"], it["componente"]
-            if (r, c) not in self.Vap.columns:
+            if (r, c) not in self.Vap.columns and not (c.endswith(".resto") and (r, c) in self.series_resto()):
                 continue
             if c in replica.DIVISIONES:  # el ítem cubre una división entera (ej. "10" Educación)
                 base_c, w_div = float(base[(r, c)]), 1.0

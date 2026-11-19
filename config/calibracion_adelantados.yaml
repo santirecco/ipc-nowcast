@@ -444,6 +444,39 @@
     error_proyeccion: 2.55
     error_con_fuente: 1.886
     meses: 34
+  09.resto:
+  - fuentes:
+    - fx
+    coef:
+    - 0.415
+    - 0.0
+    error_proyeccion: 8.801
+    error_con_fuente: 8.664
+    meses: 34
+  12.resto:
+  - fuentes:
+    - ipc
+    coef:
+    - 0.862
+    - 0.0
+    error_proyeccion: 2.776
+    error_con_fuente: 2.034
+    meses: 34
+  - fuentes:
+    - sal
+    coef:
+    - 0.387
+    error_proyeccion: 2.776
+    error_con_fuente: 2.694
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.102
+    - 0.113
+    error_proyeccion: 2.776
+    error_con_fuente: 2.697
+    meses: 34
 '22':
   01.1.1:
   - fuentes:
@@ -897,6 +930,39 @@
     - 0.0
     error_proyeccion: 2.55
     error_con_fuente: 1.886
+    meses: 34
+  09.resto:
+  - fuentes:
+    - fx
+    coef:
+    - 0.356
+    - 0.0
+    error_proyeccion: 8.801
+    error_con_fuente: 8.684
+    meses: 34
+  12.resto:
+  - fuentes:
+    - ipc
+    coef:
+    - 0.862
+    - 0.0
+    error_proyeccion: 2.776
+    error_con_fuente: 2.034
+    meses: 34
+  - fuentes:
+    - sal
+    coef:
+    - 0.387
+    error_proyeccion: 2.776
+    error_con_fuente: 2.694
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.082
+    - 0.119
+    error_proyeccion: 2.776
+    error_con_fuente: 2.694
     meses: 34
 completo:
   01.1.1:
@@ -1423,4 +1489,37 @@ completo:
     - 0.0
     error_proyeccion: 2.55
     error_con_fuente: 1.886
+    meses: 34
+  09.resto:
+  - fuentes:
+    - fx
+    coef:
+    - 0.309
+    - 0.0
+    error_proyeccion: 8.801
+    error_con_fuente: 8.705
+    meses: 34
+  12.resto:
+  - fuentes:
+    - ipc
+    coef:
+    - 0.862
+    - 0.0
+    error_proyeccion: 2.776
+    error_con_fuente: 2.034
+    meses: 34
+  - fuentes:
+    - sal
+    coef:
+    - 0.387
+    error_proyeccion: 2.776
+    error_con_fuente: 2.694
+    meses: 34
+  - fuentes:
+    - fx
+    coef:
+    - 0.073
+    - 0.12
+    error_proyeccion: 2.776
+    error_con_fuente: 2.7
     meses: 34

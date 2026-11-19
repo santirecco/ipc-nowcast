@@ -306,6 +306,60 @@ def indices_carne_fresca(mes: str, corte: int | None = None, origen: Path = CACH
     return v
 
 
+# Tipos de carne dentro de 01.1.2 (INDEC mide vacuna, pollo, cerdo y fiambres con pesos propios): índices aparte con
+# los productos con código de barras del catálogo, para que la calibración aprenda cuánto pesa cada tipo.
+TIPOS_CARNE = {
+    "01.1.2p": r"\b(pollo|suprema|pechuga|muslo|alita)",
+    "01.1.2c": r"\b(cerdo|bondiola|carre|pechito)",
+    "01.1.2f": r"\b(jamon|salame|salamin|mortadela|paleta cocida|fiambre|queso de cerdo|leberwurst|pastron|salchicha|chorizo|morcilla)",
+}
+EXCLUIR_TIPO = r"\b(hamburgues|medallon|nugget|rebozad|milanesa|empanad|tarta|pizza|sopa|caldo|pate)"
+
+
+def ids_tipos_carne() -> dict:
+    from .clasificador_sepa import normalizar
+    ruta = SALIDA / "descripciones.csv"
+    if not ruta.exists():
+        return {}
+    d = pd.read_csv(ruta, dtype=str)
+    d = d[d.clase == "01.1.2"].drop_duplicates("id_producto")
+    t = d.desc.map(normalizar)
+    fuera = t.str.contains(EXCLUIR_TIPO.replace("(", "(?:"), regex=True)
+    out, usados = {}, set()
+    for clase, pat in TIPOS_CARNE.items():  # cada producto, en el primer tipo que coincide
+        sel = t.str.contains(pat.replace("(", "(?:"), regex=True) & ~fuera & ~d.id_producto.isin(usados)
+        out[clase] = set(d.id_producto[sel])
+        usados |= out[clase]
+    return out
+
+
+def indices_tipos_carne(mes: str, corte: int | None = None, origen: Path = CACHE, ids: dict | None = None) -> pd.DataFrame:
+    """Variación del mes por tipo de carne (pollo, cerdo, fiambres), mismas reglas que las demás clases."""
+    import polars as pl
+    ids = ids if ids is not None else ids_tipos_carne()
+    if not ids:
+        return pd.DataFrame()
+    mapa = pl.DataFrame([(i, c) for c, s in ids.items() for i in s], schema=["id_producto", "tipo"], orient="row")
+    previo = (pd.Timestamp(mes + "-01") - pd.offsets.MonthBegin(1)).strftime("%Y-%m")
+
+    def prom(m, c):
+        fs = [str(p) for p in sorted(origen.glob(f"{m}-??.parquet")) if c is None or int(p.stem[-2:]) <= c]
+        if not fs:
+            return pd.DataFrame()
+        lf = (pl.scan_parquet(fs).filter(pl.col("clase") == "01.1.2").select("fecha", "id_comercio", "region", "id_producto", "precio")
+                .join(mapa.lazy(), on="id_producto"))
+        return (lf.group_by("id_comercio", "region", "id_producto", "tipo").agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique())
+                  .collect().to_pandas().rename(columns={"tipo": "clase"}))
+    a, b = prom(previo, None), prom(mes, corte)
+    if a.empty or b.empty:
+        return pd.DataFrame()
+    v = variacion(a, b, min_productos=5)
+    if v.empty:
+        return v
+    v.insert(0, "mes", mes)
+    return v
+
+
 def leer_indices() -> pd.DataFrame:
     ruta = SALIDA / "indices_mensuales.csv"
     if not ruta.exists():

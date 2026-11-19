@@ -74,8 +74,14 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 18 | 0,76 | 0,78 | no |
+| Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,73 | no |
+| Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
+| Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 18 | 0,92 | 0,47 | **sí** |
+| Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
+| Otros gastos de salud | ipcl | 34 | 2,59 | 2,66 | no |
+| Otros gastos de salud | sal | 34 | 2,59 | 2,70 | no |
 | Compra de vehículos | autos | 17 | 1,63 | 0,82 | **sí** |
 | Compra de vehículos | fx | 34 | 2,84 | 3,18 | no |
 | Combustibles | nafta | 29 | 2,10 | 1,59 | **sí** |
@@ -94,6 +100,10 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Diarios, libros y papelería | fx | 34 | 1,98 | 2,28 | no |
 | Diarios, libros y papelería | ipc | 34 | 1,98 | 1,64 | **sí** |
 | Diarios, libros y papelería | ipcl | 34 | 1,98 | 2,04 | no |
+| Equipos, juguetes y turismo | fx | 34 | 8,80 | 8,66 | **sí** |
+| Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
+| Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
+| Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
@@ -108,6 +118,9 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Cuidado personal | ipcl | 34 | 2,55 | 2,68 | no |
 | Cuidado personal | sal | 34 | 2,55 | 2,55 | no |
 | Cuidado personal | SEPA | 18 | 0,70 | 0,71 | no |
+| Otros bienes y servicios | fx | 34 | 2,78 | 2,70 | sí, si falta la anterior |
+| Otros bienes y servicios | ipc | 34 | 2,78 | 2,03 | **sí** |
+| Otros bienes y servicios | sal | 34 | 2,78 | 2,69 | sí, si falta la anterior |
 
 ### Mes completo
 
@@ -179,8 +192,14 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | sí, si falta la anterior |
 | Limpieza y mantenimiento del hogar | SEPA | 18 | 0,76 | 0,72 | **sí** |
+| Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,65 | no |
+| Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
+| Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 18 | 0,92 | 0,52 | **sí** |
+| Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
+| Otros gastos de salud | ipcl | 34 | 2,59 | 2,66 | no |
+| Otros gastos de salud | sal | 34 | 2,59 | 2,70 | no |
 | Compra de vehículos | autos | 17 | 1,63 | 0,82 | **sí** |
 | Compra de vehículos | fx | 34 | 2,84 | 3,13 | no |
 | Combustibles | nafta | 29 | 2,10 | 1,48 | **sí** |
@@ -199,6 +218,10 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Diarios, libros y papelería | fx | 34 | 1,98 | 2,26 | no |
 | Diarios, libros y papelería | ipc | 34 | 1,98 | 1,64 | **sí** |
 | Diarios, libros y papelería | ipcl | 34 | 1,98 | 2,04 | no |
+| Equipos, juguetes y turismo | fx | 34 | 8,80 | 8,70 | **sí** |
+| Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
+| Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
+| Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
@@ -213,4 +236,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Cuidado personal | ipcl | 34 | 2,55 | 2,68 | no |
 | Cuidado personal | sal | 34 | 2,55 | 2,55 | no |
 | Cuidado personal | SEPA | 18 | 0,70 | 0,69 | no |
+| Otros bienes y servicios | fx | 34 | 2,78 | 2,70 | sí, si falta la anterior |
+| Otros bienes y servicios | ipc | 34 | 2,78 | 2,03 | **sí** |
+| Otros bienes y servicios | sal | 34 | 2,78 | 2,69 | sí, si falta la anterior |
 

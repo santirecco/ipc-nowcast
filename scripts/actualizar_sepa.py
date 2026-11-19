@@ -67,7 +67,7 @@ def main():
     nuevos = []
     for m in meses:
         for corte in (15, 22, None):
-            for fn in (sepa.indices_del_mes, sepa.indices_carne_fresca):
+            for fn in (sepa.indices_del_mes, sepa.indices_carne_fresca, sepa.indices_tipos_carne):
                 v = fn(m, corte=corte)
                 if not v.empty:
                     v.insert(1, "corte", str(corte) if corte else "completo")

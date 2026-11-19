@@ -29,6 +29,7 @@ from .modelo import proyeccion_componente
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"], ["maya"], ["sepa_carne", "maya"]],
+    # probadas en nov-2026 y descartadas: sumar pollo, cerdo y fiambres de SEPA (no mejoran a cortes vacunos + hacienda)
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
@@ -54,6 +55,11 @@ OPCIONES = {
     "10": [["ipc"], ["sal"], ["ipcl"]],
     "11.1": [["ipc"], ["sal"], ["ipc", "sal"], ["alim1"], ["alim"], ["alim1", "sal"], ["ipcl"]],
     "12.1": [["sepa"], ["ipc"], ["sal"], ["ipcl"]],
+    # "resto": lo que INDEC no publica aparte dentro de cada grupo o división (serie implícita: padre menos hijos)
+    "05.resto": [["fx"], ["ipc"], ["sal"]],
+    "06.resto": [["ipc"], ["sal"], ["ipcl"]],
+    "09.resto": [["ipc"], ["fx"], ["sal"], ["ipcl"]],
+    "12.resto": [["ipc"], ["sal"], ["fx"]],
 }
 CLASES = list(OPCIONES)
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
@@ -71,7 +77,11 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "05.6": "Limpieza y mantenimiento del hogar", "06.1": "Medicamentos", "08.3": "Telefonía e internet",
            "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
            "10": "Educación", "09.4": "Servicios recreativos y culturales",
-           "04.5": "Electricidad, gas y otros combustibles", "07.3": "Transporte público"}
+           "04.5": "Electricidad, gas y otros combustibles", "07.3": "Transporte público",
+           "01.1.resto": "Otros alimentos (pescados, condimentos, comidas listas)", "04.1.resto": "Agua, expensas y otros gastos de la vivienda",
+           "04.resto": "Mantenimiento de la vivienda y otros", "05.resto": "Muebles, textiles y artefactos del hogar",
+           "06.resto": "Otros gastos de salud", "08.resto": "Equipos y servicios postales", "09.resto": "Equipos, juguetes y turismo",
+           "11.resto": "Alojamiento y otros servicios", "12.resto": "Otros bienes y servicios"}
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
@@ -84,6 +94,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "may2": "hacienda de dos meses antes",
             "naftap": "precio de surtidor: promedio del mes con la foto diaria (lo que compara INDEC)",
             "naftal": "precio de surtidor: solo el cambio del mes anterior (lo que arrastra al promedio del mes)",
+            "pollo": "pollo en góndola (SEPA)", "cerdo": "cerdo en góndola (SEPA)", "fiambre": "fiambres y embutidos (SEPA)",
             "maya": "hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
@@ -158,17 +169,24 @@ def tabla(nc, corte: str) -> pd.DataFrame:
         ox = lambda k: float(o[k]) if o is not None and k in o and pd.notna(o[k]) else np.nan  # noqa: E731
         for r in REGIONES:
             for c in CLASES:
-                if (r, c) not in nc.Vap.columns:
-                    continue
                 if (r, c) not in vap_d:
-                    vap_d[(r, c)] = nc.Vap[r][c].to_dict()
+                    if (r, c) in nc.Vap.columns:
+                        vap_d[(r, c)] = nc.Vap[r][c].to_dict()
+                    elif c.endswith(".resto") and (r, c) in nc.series_resto():
+                        vap_d[(r, c)] = nc.series_resto()[(r, c)].to_dict()
+                    else:
+                        vap_d[(r, c)] = None
+                if vap_d[(r, c)] is None:
+                    continue
                 real = vap_d[(r, c)].get(mes, np.nan)
                 p = nc.base_comp_mes(r, c, mes)
                 s = sepa_d.get((mes, r, c), np.nan)
                 sc = sepa_d.get((mes, r, "01.1.2v"), np.nan) if c == "01.1.2" else np.nan
+                tipos = {k: sepa_d.get((mes, r, "01.1.2" + k[0]), np.nan) if c == "01.1.2" else np.nan
+                         for k in ("pollo", "cerdo", "fiambre")}
                 m0 = may_d[c].get(mes, np.nan) if c in may_d else np.nan
                 m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
-                filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
+                filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
@@ -295,6 +313,9 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["alim_l1"].astype(float) - t.proy.astype(float))
     if "alim" in fuentes:
         cols.append(t["alim_sepa"].astype(float) - t.proy.astype(float))
+    for k in ("pollo", "cerdo", "fiambre"):
+        if k in fuentes:
+            cols.append(t["sepa_" + k].astype(float) - t.proy.astype(float))
     if "maya" in fuentes:
         # asimétrico: subas y bajas de la hacienda (respecto de su tendencia) con coeficientes distintos
         tend = np.where(t.clase.isin(CON_TENDENCIA), t.tend.fillna(0).astype(float), 0.0)
@@ -362,6 +383,9 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["may_l2"].notna()
     if "maya" in fuentes:
         ok &= t["may"].notna() & t["may_l1"].notna()
+    for k in ("pollo", "cerdo", "fiambre"):
+        if k in fuentes:
+            ok &= t["sepa_" + k].notna()
     if "naftal" in fuentes:
         ok &= t["nafta_l1"].notna()
     if "naftap" in fuentes:
