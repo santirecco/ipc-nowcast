@@ -92,6 +92,22 @@ elige, solo con meses anteriores, entre la mediana de 6 meses y "núcleo + desv�
 calendario de tarifas y la regla de prepagas se miden contra la mediana de 6 meses, que es la que asume la
 proyección de la división (medirlas contra la de temporada inflaba salud y otros rubros; el backtest lo confirma).
 
+**Backtest largo** (`scripts/backtest_largo.py`, `reports/backtest_largo.md`): el error por período desde 2018
+(2018-19, 2020-22, 2023 a jun-2024, desde jul-2024 y últimos 16 meses), para que ninguna mejora gane solo en un tramo.
+
+**Calendario de tarifas: base coherente.** Un aumento anunciado se compara contra el valor que la proyección de su
+división supone para ese componente (proyección de la división menos la suma de las de sus componentes, todos con
+mediana de 6 meses, incluido el "resto" que INDEC no publica aparte). Prueba con el valor exacto que midió INDEC,
+error de la división 2018-2026: luz y gas 2,29 -> 1,32; transporte 1,76 -> 1,70; prepagas 1,62 -> 1,52. Con la base
+anterior, un dato exacto de luz y gas llegaba a empeorar vivienda.
+
+Probadas y descartadas (nov-2026, segunda tanda): dólar en la proyección estadística (mejora 2023 pero empeora mucho
+desde 2024: el traspaso cambió de régimen), elegir por rubro la combinación de reglas estadísticas (el promedio fijo
+gana en todos los períodos), base coherente para las señales de precios (empeora; también recalibradas), base
+coherente para la regla de prepagas (no alcanza el umbral) y reconstruir a mano el calendario histórico de tarifas:
+la prueba con los valores exactos de INDEC muestra que, desde 2024, ni siquiera el dato perfecto de tarifas baja el
+error nacional (sí el de vivienda), así que no vale el esfuerzo.
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).

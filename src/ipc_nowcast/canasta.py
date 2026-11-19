@@ -64,9 +64,11 @@ def calibrar(aperturas: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(filas)
 
 
-def peso_efectivo_en_division(aperturas: pd.DataFrame, base: pd.DataFrame, periodo: pd.Timestamp) -> pd.DataFrame:
+def peso_efectivo_en_division(aperturas: pd.DataFrame, base: pd.DataFrame, periodo: pd.Timestamp,
+                               piv: pd.DataFrame | None = None) -> pd.DataFrame:
     """Peso efectivo de cada grupo/clase dentro de su DIVISIÓN para el mes `periodo` (fracción)."""
-    piv = aperturas.pivot_table(index="periodo", columns=["region", "codigo"], values="indice").sort_index()
+    if piv is None:
+        piv = aperturas.pivot_table(index="periodo", columns=["region", "codigo"], values="indice").sort_index()
     ant = piv.index[piv.index < periodo].max()
     filas = []
     for _, f in base.iterrows():

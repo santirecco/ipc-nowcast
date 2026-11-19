@@ -127,6 +127,15 @@ def proyeccion_componente(var: pd.DataFrame, mes: pd.Timestamp) -> pd.Series:
 # ese mes del año respecto de la núcleo (temporada). En cada mes se usa (b) solo si en los meses anteriores
 # (desde PROY_DESDE, mínimo PROY_MIN_MESES) tuvo menor error por al menos MEJORA_PROY. Así, rubros de temporada
 # (frutas, verduras, transporte) dejan de proyectar "lo último" y los estables siguen con la mediana.
+# Base contra la que se mide un dato de un componente (dato - base = cuánto cambia la división):
+# - COHERENTE (todo): el valor que la proyección de la división supone para el componente (proyección del
+#   componente + desvío de la división respecto de la suma de sus componentes). Probado para las señales de precios:
+#   empeora (fin de mes últimos 16 meses 0,198 -> 0,233), queda apagado.
+COHERENTE = False
+# Datos casi exactos (calendario de tarifas): se miden contra el valor que la proyección de la división supone para
+# el componente, armada con medianas de 6 meses. Con el dato que midió INDEC, el error de la división en toda la
+# historia (2018-2026) queda: luz y gas 2,29 -> 1,32; transporte 1,76 -> 1,70; prepagas 1,62 -> 1,52.
+FUENTES_COHERENTES = {"calendario de regulados"}  # probada también para la regla de prepagas: no alcanza el umbral
 PROY_DESDE = pd.Timestamp("2019-01-01")
 PROY_MIN_MESES = 24
 MEJORA_PROY = 0.02
@@ -186,14 +195,97 @@ class Nowcast:
         self.nucleo = self.V["Nacional"]["Núcleo"]
         self.ipcba = ipcba
         self._proy = {}
+        self._piv_ap = pa
+        self._W = {}
+        self._resto = None
+
+    def pesos_comp(self, mes) -> pd.DataFrame:
+        """Peso efectivo de cada grupo/clase (y de su "resto") dentro de su división, para `mes` (con caché)."""
+        if mes not in self._W:
+            self._W[mes] = canasta.peso_efectivo_en_division(self.ap, self.base_comp, mes, piv=self._piv_ap)
+        return self._W[mes]
+
+    def _var(self, r, code, m):
+        if len(code) == 2:
+            return self.V[r][code].get(m, np.nan)
+        return self.Vap[r][code].get(m, np.nan) if (r, code) in self.Vap.columns else np.nan
+
+    def series_resto(self) -> dict:
+        """Variación implícita de cada "resto" (lo que INDEC no publica aparte dentro de un grupo o división):
+        variación del padre menos la de los hijos publicados, con los pesos efectivos de cada mes."""
+        if self._resto is None:
+            filas = {}
+            for m in self.Vap.index[1:]:
+                ce = self.pesos_comp(m)
+                for (r, p), g in ce.groupby(["region", "padre"]):
+                    resto = g[g.codigo.str.endswith(".resto")]
+                    if resto.empty or resto.peso_en_padre_ef.iloc[0] < 1e-6:
+                        continue
+                    hijos = g[~g.codigo.str.endswith(".resto")]
+                    s = sum(f.peso_en_padre_ef * self._var(r, f.codigo, m) for _, f in hijos.iterrows())
+                    filas.setdefault((r, resto.codigo.iloc[0]), {})[m] = (self._var(r, p, m) - s) / resto.peso_en_padre_ef.iloc[0]
+            self._resto = {k: pd.Series(v).sort_index().dropna() for k, v in filas.items()}
+        return self._resto
+
+    def desvio_division(self, r, d, mes, proy_div, f=None) -> float:
+        """Cuánto difiere la proyección de la división de la suma de las proyecciones de sus componentes
+        (todos, incluido el resto). Es el valor que la proyección de la división "supone" de más (o de menos) para
+        cada componente: un dato de un componente se compara contra su proyección + este desvío, así reemplaza
+        exactamente su parte de la división (con todos los componentes cubiertos, la división es la suma de los datos)."""
+        ce = self.pesos_comp(mes)
+        g = ce[(ce.region == r) & (ce.division == d)]
+        if g.empty:
+            return 0.0
+        hojas = g[~g.codigo.isin(set(g.padre))]
+        f = f or self.proy_comp
+        bu = 0.0
+        for _, h in hojas.iterrows():
+            v = f(r, h.codigo, mes)
+            if not np.isfinite(v):
+                return 0.0
+            bu += h.peso_en_division_ef * v
+        return float(proy_div - bu / hojas.peso_en_division_ef.sum())
+
+    def proy_div(self, mes) -> pd.Series:
+        """Proyección estadística de cada celda región x división para `mes` (con caché)."""
+        if not hasattr(self, "_pdiv"):
+            self._pdiv = {}
+        if mes not in self._pdiv:
+            cols = [(r, d) for r in REGIONES for d in replica.DIVISIONES]
+            Y = pd.DataFrame({c: self.V[c[0]][c[1]] for c in cols})
+            self._pdiv[mes] = proyeccion_estadistica(Y, self.nucleo, mes)
+        return self._pdiv[mes]
+
+    def base_comp_mes(self, r: str, c: str, mes: pd.Timestamp) -> float:
+        """Punto de partida de un componente: su proyección, corregida (si COHERENTE) por el desvío de la
+        división, para que el valor coincida con lo que supone la proyección de la división."""
+        return self.base_coherente(r, c, mes) if COHERENTE else self.proy_comp(r, c, mes)
+
+    def proy_p1(self, r: str, c: str, mes: pd.Timestamp) -> float:
+        """Mediana de los últimos 6 meses del componente (también para los "resto")."""
+        self.proy_comp(r, c, mes)
+        t = self._proy[(r, c)]
+        if mes in t.index:
+            return float(t.p1.loc[mes])
+        return np.nan if c.endswith(".resto") else float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
+
+    def base_coherente(self, r: str, c: str, mes: pd.Timestamp, metodo: str = "elegida") -> float:
+        f = self.proy_p1 if metodo == "p1" else self.proy_comp
+        p = f(r, c, mes)
+        if c in replica.DIVISIONES or (self.V.index < mes).sum() < 13:
+            return p
+        return p + self.desvio_division(r, c[:2], mes, float(self.proy_div(mes)[(r, c[:2])]), f)
 
     def proy_comp(self, r: str, c: str, mes: pd.Timestamp) -> float:
         """Proyección estadística del componente c en la región r para `mes` (método elegido con la historia)."""
         if (r, c) not in self._proy:
-            self._proy[(r, c)] = proyecciones_serie(self.Vap[r][c], self.nucleo)
+            serie = self.series_resto().get((r, c), pd.Series(dtype=float)) if c.endswith(".resto") else self.Vap[r][c]
+            self._proy[(r, c)] = proyecciones_serie(serie, self.nucleo)
         t = self._proy[(r, c)]
         if mes in t.index:
             return float(t.p.loc[mes])
+        if c.endswith(".resto"):
+            return np.nan
         return float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
 
     # pesos efectivos para un mes (pueden ser futuros: se usan los niveles del último mes publicado)
@@ -247,7 +339,7 @@ class Nowcast:
             if p >= 1.0:
                 continue
             ajustados.append({**it, "parte": it["parte"] * (1 - p)} if p > 0 else it)
-        extra = [{**it, "senal": True} for it in ajustados]
+        extra = [{**it, "senal": it.get("senal", True)} for it in ajustados]
         cubiertos = {(it["region"], it["componente"]) for it in extra}
         info += extra
         # Reglas conocidas de antemano: las prepagas ajustan por el IPC de dos meses antes (backtest 2025-26: error
@@ -278,8 +370,9 @@ class Nowcast:
         info = self.informacion_del_mes(mes, usar_regulados, usar_super, super_mensual, extra, usar_reglas)
         if not info:
             return base, []
-        comp_ef = canasta.peso_efectivo_en_division(self.ap, self.base_comp, mes)
+        comp_ef = self.pesos_comp(mes)
         ajustada = base.copy()
+        desvio = {}
         aplicados = []
         for it in info:
             r, c = it["region"], it["componente"]
@@ -291,8 +384,14 @@ class Nowcast:
                 # base de la diferencia: la proyección elegida del componente. Se probó medirla contra la mediana
                 # de 6 meses (más coherente con la proyección de la división en teoría): empeora mucho el backtest
                 # honesto (fin de mes últimos 16: 0,204 -> 0,301), así que queda la elegida.
-                base_c = (self.proy_comp(r, c, mes) if it.get("senal")
-                          else float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0]))
+                if COHERENTE:
+                    base_c = self.base_coherente(r, c, mes)
+                elif it.get("fuente") in FUENTES_COHERENTES:
+                    base_c = self.base_coherente(r, c, mes, metodo="p1")
+                elif it.get("senal"):
+                    base_c = self.proy_comp(r, c, mes)
+                else:
+                    base_c = float(proyeccion_componente(self.Vap[r][[c]], mes).iloc[0])
                 fila = comp_ef[(comp_ef.region == r) & (comp_ef.codigo == c)]
                 if fila.empty:
                     continue

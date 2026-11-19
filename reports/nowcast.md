@@ -2,13 +2,13 @@
 
 *Calculado el 19/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,9% mensual (rango probable 1,6% a 2,3%)
+## 2,0% mensual (rango probable 1,7% a 2,3%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,95** |
+| **Pronóstico** | **1,98** |
 | Solo modelo estadístico | 1,88 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,95 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,98 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -21,11 +21,11 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
 | Alimentos y bebidas no alcohólicas | 28,7 | 1,77 | 0,51 |
-| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,49 | 0,27 |
-| Transporte | 11,6 | 2,08 | 0,24 |
+| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
+| Transporte | 11,6 | 2,10 | 0,24 |
 | Restaurantes y hoteles | 10,9 | 1,69 | 0,19 |
+| Salud | 9,0 | 1,86 | 0,17 |
 | Recreación y cultura | 6,6 | 2,46 | 0,16 |
-| Salud | 9,0 | 1,61 | 0,15 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 2,30 | 0,12 |
 | Prendas de vestir y calzado | 6,6 | 1,47 | 0,10 |
 | Bienes y servicios varios | 3,4 | 2,74 | 0,09 |
@@ -37,30 +37,30 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,94 |
+| GBA | 45,1 | 1,99 |
 | Pampeana | 33,8 | 2,01 |
-| Noreste | 4,5 | 1,48 |
-| Noroeste | 6,8 | 1,78 |
-| Cuyo | 5,2 | 2,24 |
-| Patagonia | 4,5 | 1,98 |
+| Noreste | 4,5 | 1,59 |
+| Noroeste | 6,8 | 1,82 |
+| Cuyo | 5,2 | 2,22 |
+| Patagonia | 4,5 | 1,95 |
 
 ## Información del mes incorporada
 
 | Región | Componente | Fuente | Dato % | Proyección estadística % | Efecto en la división (pp) |
 |---|---|---|---|---|---|
-| Cuyo | 04.5 | calendario de regulados | 2,17 | 2,18 | -0,00 |
-| Cuyo | 06.4.1 | calendario de regulados | 2,30 | 2,21 | 0,03 |
-| GBA | 04.5 | calendario de regulados | 2,98 | 2,28 | 0,34 |
-| GBA | 06.4.1 | calendario de regulados | 2,30 | 2,45 | -0,07 |
-| GBA | 07.3 | calendario de regulados | 2,34 | 3,22 | -0,21 |
-| Noreste | 04.5 | calendario de regulados | 2,17 | 4,77 | -0,73 |
-| Noreste | 06.4.1 | calendario de regulados | 2,30 | 2,73 | -0,14 |
-| Noroeste | 04.5 | calendario de regulados | 2,17 | 3,05 | -0,27 |
-| Noroeste | 06.4.1 | calendario de regulados | 2,30 | 2,40 | -0,03 |
-| Pampeana | 04.5 | calendario de regulados | 2,17 | 3,24 | -0,28 |
-| Pampeana | 06.4.1 | calendario de regulados | 2,30 | 2,33 | -0,01 |
-| Patagonia | 04.5 | calendario de regulados | 2,17 | 2,38 | -0,06 |
-| Patagonia | 06.4.1 | calendario de regulados | 2,30 | 2,04 | 0,11 |
+| Cuyo | 04.5 | calendario de regulados | 2,17 | 3,26 | -0,30 |
+| Cuyo | 06.4.1 | calendario de regulados | 2,30 | 1,77 | 0,16 |
+| GBA | 04.5 | calendario de regulados | 2,98 | 2,01 | 0,47 |
+| GBA | 06.4.1 | calendario de regulados | 2,30 | 1,68 | 0,27 |
+| GBA | 07.3 | calendario de regulados | 2,34 | 3,09 | -0,18 |
+| Noreste | 04.5 | calendario de regulados | 2,17 | 2,04 | 0,04 |
+| Noreste | 06.4.1 | calendario de regulados | 2,30 | 2,24 | 0,02 |
+| Noroeste | 04.5 | calendario de regulados | 2,17 | 2,37 | -0,06 |
+| Noroeste | 06.4.1 | calendario de regulados | 2,30 | 1,84 | 0,13 |
+| Pampeana | 04.5 | calendario de regulados | 2,17 | 3,62 | -0,37 |
+| Pampeana | 06.4.1 | calendario de regulados | 2,30 | 1,84 | 0,17 |
+| Patagonia | 04.5 | calendario de regulados | 2,17 | 3,46 | -0,34 |
+| Patagonia | 06.4.1 | calendario de regulados | 2,30 | 1,62 | 0,30 |
 | GBA | 01.1.1 | Góndolas (SEPA) | 1,42 | 1,59 | -0,02 |
 | Pampeana | 01.1.1 | Góndolas (SEPA) | 1,10 | 1,16 | -0,01 |
 | Noreste | 01.1.1 | Góndolas (SEPA) | 0,90 | 0,51 | 0,06 |

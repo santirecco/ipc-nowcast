@@ -140,7 +140,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                     continue
                 serie = nc.Vap[r][c]
                 real = serie.get(mes, np.nan)
-                p = nc.proy_comp(r, c, mes)
+                p = nc.base_comp_mes(r, c, mes)
                 s, sc = np.nan, np.nan
                 if not idx.empty:
                     f = idx[(idx.mes == mes) & (idx.region == r) & (idx.clase == c)]
