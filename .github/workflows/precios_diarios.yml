@@ -12,6 +12,9 @@ on:
   schedule:
     - cron: "17 10 * * *"
   workflow_dispatch:
+  push:
+    paths:
+      - .github/disparar/precios_diarios  # cambiar este archivo lanza la corrida a mano
 
 permissions:
   contents: write
