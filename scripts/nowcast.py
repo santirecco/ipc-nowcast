@@ -106,6 +106,22 @@ def main():
     div.to_csv(OUT / "ultimo_divisiones.csv", index=False, float_format="%.4f")
     reg.to_csv(OUT / "ultimo_regiones.csv", index=False, float_format="%.4f")
     info = r["informacion"]
+    # registro para validar hacia adelante el calendario de tarifas contra las reglas: por cada componente con
+    # aumento anunciado se guarda qué decía el calendario, qué decía la otra señal y la proyección estadística.
+    # Cuando INDEC publica, scripts/validar_calendario.py compara cuál anduvo mejor.
+    if not info.empty:
+        reg_cols = ["region", "componente", "fuente", "valor", "parte", "proyeccion_estadistica"]
+        rc = info[[c for c in reg_cols if c in info.columns]].copy()
+        cal = rc[rc.fuente.astype(str).str.contains("calendario|arrastre")]
+        if not cal.empty:
+            rc = rc[rc.set_index(["region", "componente"]).index.isin(cal.set_index(["region", "componente"]).index)]
+            rc.insert(0, "mes", f"{mes:%Y-%m}")
+            rc.insert(0, "fecha", hoy.strftime("%Y-%m-%d"))
+            ruta_v = OUT / "registro_calendario.csv"
+            prev_v = pd.read_csv(ruta_v, dtype=str) if ruta_v.exists() else pd.DataFrame()
+            if not prev_v.empty:
+                prev_v = prev_v[prev_v.fecha != hoy.strftime("%Y-%m-%d")]
+            pd.concat([prev_v, rc.astype(str)]).to_csv(ruta_v, index=False)
     if not info.empty and "estadistica" in info:
         info = info[~info.estadistica.fillna(False).astype(bool)].copy()
     if not info.empty:

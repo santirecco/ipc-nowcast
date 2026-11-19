@@ -46,6 +46,7 @@ jobs:
           python scripts/actualizar_ipcba.py || true
           python scripts/calibrar_adelantados.py
           python scripts/backtest.py
+          python scripts/validar_calendario.py
           python scripts/nowcast.py
           python scripts/exportar_tablero.py
           python scripts/generar_html.py
