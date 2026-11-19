@@ -82,8 +82,10 @@ Una fuente o un cambio de método entra solo si baja el error del índice nacion
 pasado se predice con lo que se sabía antes), mirando todo el período y no solo los meses recientes.
 `scripts/pruebas/evaluar_candidatas.py` prueba cualquier fuente candidata con ese criterio. Probadas y descartadas
 (nov-2026): ICL para alquileres, historia 2020-2022 del Mercado Central, combinar con el REM, corregir el sesgo
-reciente, SEPA para bebidas alcohólicas, limpieza y cuidado personal, y el IPC de la Ciudad por rubro para regiones
-fuera del GBA.
+reciente, SEPA para bebidas alcohólicas, limpieza y cuidado personal, el IPC de la Ciudad por rubro para regiones
+fuera del GBA, y señales de SEPA armadas solo con los productos que mide INDEC (precios promedio publicados).
+Incorporadas en nov-2026: IPC de la Ciudad por rubro (víspera), corte del día 22, arrastre de frutas y listas de
+autos 0 km (inicio de mes, `data/precios/autos/listas_0km.csv`, la actualiza la tarea de los lunes).
 
 ## Conceptos clave
 
