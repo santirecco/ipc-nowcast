@@ -1,7 +1,7 @@
 """Reconstruye historia de precios de tiendas de ropa y electro con el archivo web (Wayback Machine).
 
-Por tienda: lista las páginas de producto archivadas desde 2024, elige una copia por producto y por mes (solo
-productos con copias en 2 meses o más, para poder comparar el mismo producto) y extrae el precio publicado.
+Por tienda: lista las páginas de producto archivadas desde 2023 y arma un panel: por mes, hasta POR_MES productos con
+copias en 2 meses o más, priorizando los que más meses duran (para comparar el mismo producto) y extrae el precio publicado.
 Precios publicados en su momento: usarlos para el pasado es honesto. Se puede cortar y retomar.
 Salida: data/precios/wayback/<tienda>.csv (url, mes, timestamp, precio).
 """
@@ -19,8 +19,7 @@ TIENDAS = {"tascani": ("www.tascani.com.ar", "ropa"), "levis": ("www.levi.com.ar
            "portsaid": ("www.portsaid.com.ar", "ropa"), "equus": ("www.equus.com.ar", "ropa"),
            "coppel": ("www.coppel.com.ar", "electro"), "naldo": ("www.naldo.com.ar", "electro"),
            "pardo": ("www.pardo.com.ar", "electro"), "cetrogar": ("www.cetrogar.com.ar", "electro")}
-TOPE = 2500          # copias por tienda y corrida
-LIMITE_SEG = 5 * 3600 - 600  # cortar antes del límite del job
+LIMITE_SEG = 4 * 3600 + 1800  # cortar antes del límite del job (300 min)
 
 
 def get(url, timeout=60, intentos=3):
@@ -57,47 +56,86 @@ def precio(html: str):
     return float(m.group(1)) if m else None
 
 
+POR_MES = 40         # productos por tienda y mes (panel: los que más meses duran, para comparar el mismo producto)
+HILOS = 2
+
+
+def tareas_tienda(nombre, dominio, ruta):
+    """Copias pendientes de una tienda: por mes, hasta POR_MES productos, priorizando los de vida más larga."""
+    hechas, por_mes_hecho = set(), defaultdict(int)
+    if ruta.exists():
+        for ln in ruta.read_text().splitlines()[1:]:
+            if ln:
+                c = ln.split(",")
+                hechas.add(c[2])
+                por_mes_hecho[c[1]] += 1
+    else:
+        ruta.write_text("url,mes,timestamp,precio\n")
+    q = (f"https://web.archive.org/cdx/search/cdx?url={dominio}/*&from=2023&filter=statuscode:200"
+         f"&filter=original:.*/p$&fl=timestamp,original&output=json&limit=300000")
+    filas = json.loads(get(q, 300) or "[]")[1:]
+    por = defaultdict(dict)  # url -> mes -> timestamp (la copia más cercana al día 15)
+    for ts, url in filas:
+        url = url.split("?")[0].replace("http://", "https://")
+        m = ts[:6]
+        if m not in por[url] or abs(int(ts[6:8]) - 15) < abs(int(por[url][m][6:8]) - 15):
+            por[url][m] = ts
+    vida = {u: len(ms) for u, ms in por.items() if len(ms) >= 2}
+    meses = sorted({m for u in vida for m in por[u]})
+    out = []
+    for m in meses:
+        cand = sorted((u for u in vida if m in por[u]), key=lambda u: (-vida[u], u))
+        libres = max(0, POR_MES - por_mes_hecho[m])
+        pend = [u for u in cand if por[u][m] not in hechas]
+        # los de vida más larga primero: así el mismo producto aparece en meses seguidos
+        out += [(u, m, por[u][m]) for u in pend[:libres]]
+    print(nombre, f"{len(vida)} productos con 2+ meses, {len(meses)} meses, {len(out)} copias pendientes", flush=True)
+    return out
+
+
 def main():
+    from concurrent.futures import ThreadPoolExecutor
     DIR.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
+    colas, archivos = {}, {}
     for nombre, (dominio, rubro) in TIENDAS.items():
         ruta = DIR / f"{nombre}.csv"
-        hechas = set()
-        if ruta.exists():
-            hechas = {ln.split(",")[2] for ln in ruta.read_text().splitlines()[1:] if ln}
-        else:
-            ruta.write_text("url,mes,timestamp,precio\n")
         try:
-            q = (f"https://web.archive.org/cdx/search/cdx?url={dominio}/*&from=2024&filter=statuscode:200"
-                 f"&filter=original:.*/p$&fl=timestamp,original&output=json&limit=200000")
-            filas = json.loads(get(q, 300) or "[]")[1:]
+            colas[nombre] = tareas_tienda(nombre, dominio, ruta)
         except Exception as e:  # noqa: BLE001
             print(nombre, "cdx error", e, flush=True)
             continue
-        por = defaultdict(dict)  # url -> mes -> timestamp (la copia del medio del mes)
-        for ts, url in filas:
-            url = url.split("?")[0].replace("http://", "https://")
-            m = ts[:6]
-            if m not in por[url] or abs(int(ts[6:8]) - 15) < abs(int(por[url][m][6:8]) - 15):
-                por[url][m] = ts
-        tareas = [(u, m, ts) for u, ms in por.items() if len(ms) >= 2 for m, ts in ms.items() if ts not in hechas]
-        print(nombre, rubro, f"{len(por)} productos, {len(tareas)} copias pendientes", flush=True)
-        n = 0
-        with open(ruta, "a") as f:
-            for u, m, ts in sorted(tareas, key=lambda x: (x[1], x[0]))[:TOPE]:
-                if time.time() - t0 > LIMITE_SEG:
-                    print("tiempo agotado: sigue en la próxima corrida", flush=True)
-                    return
-                try:
-                    p = precio(get(f"https://web.archive.org/web/{ts}id_/{u}"))
-                except Exception:  # noqa: BLE001
-                    p = None
-                f.write(f"{u},{m},{ts},{'' if p is None else p}\n")
-                f.flush()
-                n += 1
-                if n % 200 == 0:
-                    print(nombre, n, flush=True)
-                time.sleep(0.8)
+        archivos[nombre] = open(ruta, "a")
+    # todas las tiendas a la vez (una copia de cada una por turno), en orden de mes
+    orden = []
+    k = 0
+    while any(k < len(c) for c in colas.values()):
+        orden += [(n, *c[k]) for n, c in colas.items() if k < len(c)]
+        k += 1
+
+    def bajar(t):
+        n, u, m, ts = t
+        try:
+            return t, precio(get(f"https://web.archive.org/web/{ts}id_/{u}"))
+        except Exception:  # noqa: BLE001
+            return t, None
+
+    hechas = 0
+    with ThreadPoolExecutor(HILOS) as ex:
+        for i in range(0, len(orden), 20):
+            if time.time() - t0 > LIMITE_SEG:
+                print("tiempo agotado: sigue en la próxima corrida", flush=True)
+                break
+            for (n, u, m, ts), p in ex.map(bajar, orden[i:i + 20]):
+                if p is None:
+                    continue  # sin precio: se reintenta en otra corrida
+                archivos[n].write(f"{u},{m},{ts},{p}\n")
+                archivos[n].flush()
+                hechas += 1
+            print(f"{min(i + 20, len(orden))}/{len(orden)} copias ({hechas} con precio)", flush=True)
+            time.sleep(1)
+    for f in archivos.values():
+        f.close()
 
 
 if __name__ == "__main__":
