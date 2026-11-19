@@ -80,6 +80,21 @@ def main():
         todo.to_csv(ruta, index=False, float_format="%.4f")
         print(f"índices: {len(todo)} filas, meses {todo.mes.min()} a {todo.mes.max()}")
 
+    # variedades que mide INDEC (solo meses terminados, mes completo): señal "sepai"
+    try:
+        from ipc_nowcast import sepa_indec
+        hoy_m = pd.Timestamp.today().strftime("%Y-%m")
+        term = [m for m in meses if m < hoy_m]
+        if term:
+            rv = sepa.SALIDA / "indices_variedades.csv"
+            nv = sepa_indec.variaciones_variedades(term).assign(corte="completo")
+            pv = pd.read_csv(rv) if rv.exists() else pd.DataFrame()
+            if not pv.empty:
+                pv = pv[~pv.mes.isin(nv.mes.unique())]
+            pd.concat([pv, nv]).sort_values(["mes", "region", "variedad"]).to_csv(rv, index=False, float_format="%.4f")
+    except Exception as e:  # noqa: BLE001
+        print("variedades INDEC: error", e)
+
     # arrastre que deja cada mes al siguiente (se conoce el día 1 del mes)
     ra = sepa.SALIDA / "arrastre.csv"
     previo_a = pd.read_csv(ra, dtype={"clase": str}) if ra.exists() else pd.DataFrame()

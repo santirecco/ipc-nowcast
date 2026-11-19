@@ -6,9 +6,9 @@
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,84** |
-| Solo modelo estadístico | 1,81 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,84 |
+| **Pronóstico** | **1,82** |
+| Solo modelo estadístico | 1,80 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,82 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -20,29 +20,29 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
-| Alimentos y bebidas no alcohólicas | 28,7 | 1,94 | 0,56 |
-| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,71 | 0,30 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 1,93 | 0,55 |
+| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,62 | 0,29 |
 | Transporte | 11,6 | 1,77 | 0,20 |
 | Restaurantes y hoteles | 10,9 | 1,68 | 0,18 |
-| Salud | 9,0 | 1,76 | 0,16 |
+| Salud | 9,0 | 1,64 | 0,15 |
 | Recreación y cultura | 6,6 | 1,76 | 0,12 |
 | Prendas de vestir y calzado | 6,6 | 1,27 | 0,08 |
-| Bienes y servicios varios | 3,4 | 1,94 | 0,07 |
-| Equipamiento y mantenimiento del hogar | 5,0 | 1,27 | 0,06 |
-| Comunicación | 2,6 | 1,85 | 0,05 |
-| Educación | 2,2 | 1,57 | 0,03 |
-| Bebidas alcohólicas y tabaco | 2,4 | 1,12 | 0,03 |
+| Equipamiento y mantenimiento del hogar | 5,0 | 1,38 | 0,07 |
+| Bienes y servicios varios | 3,4 | 1,88 | 0,06 |
+| Educación | 2,2 | 1,92 | 0,04 |
+| Comunicación | 2,6 | 1,52 | 0,04 |
+| Bebidas alcohólicas y tabaco | 2,4 | 1,25 | 0,03 |
 
 ## Por región
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,81 |
+| GBA | 45,1 | 1,77 |
 | Pampeana | 33,8 | 1,92 |
-| Noreste | 4,5 | 1,63 |
+| Noreste | 4,5 | 1,56 |
 | Noroeste | 6,8 | 1,61 |
 | Cuyo | 5,2 | 2,01 |
-| Patagonia | 4,5 | 1,90 |
+| Patagonia | 4,5 | 1,94 |
 
 ## Información del mes incorporada
 
@@ -103,6 +103,18 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.2.2 | Góndolas (SEPA) | 1,19 | 1,54 | -0,03 |
 | Cuyo | 01.2.2 | Góndolas (SEPA) | 1,74 | 2,07 | -0,02 |
 | Patagonia | 01.2.2 | Góndolas (SEPA) | 2,02 | 2,45 | -0,03 |
+| GBA | 02.1 | Góndolas (SEPA) | 1,31 | 1,45 | -0,06 |
+| Pampeana | 02.1 | Góndolas (SEPA) | 0,99 | 1,13 | -0,07 |
+| Noreste | 02.1 | Góndolas (SEPA) | 0,81 | 0,75 | 0,03 |
+| Noroeste | 02.1 | Góndolas (SEPA) | 0,79 | 0,93 | -0,06 |
+| Cuyo | 02.1 | Góndolas (SEPA) | 0,93 | 0,72 | 0,08 |
+| Patagonia | 02.1 | Góndolas (SEPA) | 1,16 | 1,22 | -0,02 |
+| GBA | 06.1 | Góndolas (SEPA) | 1,96 | 2,36 | -0,15 |
+| Pampeana | 06.1 | Góndolas (SEPA) | 2,04 | 2,38 | -0,14 |
+| Noreste | 06.1 | Góndolas (SEPA) | 2,15 | 2,43 | -0,12 |
+| Noroeste | 06.1 | Góndolas (SEPA) | 2,54 | 2,44 | 0,05 |
+| Cuyo | 06.1 | Góndolas (SEPA) | 2,38 | 2,33 | 0,02 |
+| Patagonia | 06.1 | Góndolas (SEPA) | 1,98 | 1,99 | -0,00 |
 | GBA | 07.2.2 | Precio de surtidor (YPF) | 1,23 | 1,19 | 0,02 |
 | Pampeana | 07.2.2 | Precio de surtidor (YPF) | 1,16 | 1,08 | 0,04 |
 | Noreste | 07.2.2 | Precio de surtidor (YPF) | 1,06 | 0,95 | 0,05 |

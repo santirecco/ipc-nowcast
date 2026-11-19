@@ -20,37 +20,40 @@ from scipy.optimize import nnls
 from . import CONFIG, DATA, REGIONES, indicadores, mayoristas, sepa
 from .modelo import proyeccion_componente
 
-CLASES = ["01.1.1", "01.1.2", "01.1.4", "01.1.5", "01.1.6", "01.1.7", "01.1.8", "01.2.1", "01.2.2",
-          "07.2.2", "07.1", "03.1", "05",
-          "06.1", "09.5", "11.1"]
-# Combinaciones de fuentes que se prueban en cada clase (se usa la mejor que mejore fuera de muestra)
+# REGLA ÚNICA (fijada en nov-2026, antes de mirar resultados): para cada clase se prueban TODAS las fuentes candidatas
+# de abajo; una fuente se usa si baja el error de SU PROPIA clase, fuera de muestra, al menos MEJORA_MINIMA, con al
+# menos MIN_MESES_ELEGIR meses evaluados desde EVAL_DESDE. Entre las que cumplen, se ordenan por error en los meses
+# comunes y se usa la primera con datos. No se decide mirando el error del índice nacional (28 meses son pocos y
+# premian compensaciones de suerte). El backtest reaplica esta misma regla mes a mes con los meses anteriores.
 OPCIONES = {
-    "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"]],
-    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"]],
-    "01.1.4": [["sepa"], ["sepa", "fx"]],
-    "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"]],
-    "01.1.6": [["sepa"], ["may"], ["arr"]],  # arrastre: mejora el error nacional a inicio de mes (nov-2026)
-    "01.1.7": [["sepa"], ["may"]],
-    "01.1.8": [["sepa"], ["sepa", "fx"]],
-    "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"]],
-    "01.2.2": [["sepa"], ["sepa", "fx"]],  # se probó "sepai" (solo productos que mide INDEC): no le gana a SEPA completo
-    "07.2.2": [["nafta"], ["nafta", "fx"]],
-    "03.1": [["fx"]],
+    "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"]],
+    "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "01.1.6": [["sepa"], ["may"], ["arr"]],
+    "01.1.7": [["sepa"], ["may"], ["arr"]],
+    "01.1.8": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "01.2.2": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
+    "02.1": [["sepa"]],
+    "02.2": [["ipc"]],
+    "03.1": [["fx"], ["ipc"]],
+    "03.2": [["ipc"]],
+    "04.1.1": [["icl"], ["ipc"], ["icl", "ipc"]],
     "05": [["fx"]],
-    # Rubros sin relevamiento propio guiados por la inflación general reciente. Se probaron alquileres, tabaco,
-    # telefonía, educación, medicamentos, limpieza, cuidado personal y calzado: mejoran el error del rubro pero no
-    # el del índice nacional, así que quedan afuera. Restaurantes y papelería sí mejoran el nacional.
-    "11.1": [["ipc"]],
-    "07.1": [["autos"]],  # listas de autos 0 km: solo al inicio de mes (después empeoran el error nacional)
+    "05.6": [["sepa"], ["ipc"]],
+    "06.1": [["sepa"], ["ipc"]],
+    "07.1": [["autos"], ["fx"]],
+    "07.2.2": [["nafta"], ["nafta", "fx"]],
+    "08.3": [["ipc"]],
     "09.5": [["ipc"]],
-    # Alquileres: también se probó el ICL del BCRA (nov-2026); mejora el rubro pero empeora el error nacional al
-    # inicio de mes y en el último año, así que no entra (scripts/pruebas/evaluar_candidatas.py 04.1.1:icl).
-    # Rubros no alimentarios que SEPA también releva. Se probaron bebidas alcohólicas, limpieza, cuidado personal
-    # y medicamentos: solo medicamentos con el mes completo mejora el error nacional (a mitad de mes lo empeora).
-    "06.1": [["sepa"]],
+    "10": [["ipc"]],
+    "11.1": [["ipc"]],
+    "12.1": [["sepa"], ["ipc"]],
 }
-SOLO_COMPLETO = {"06.1"}
-SOLO_INICIO = {"07.1"}  # clases que solo se corrigen al inicio de mes (validado contra el error nacional, nov-2026)
+CLASES = list(OPCIONES)
+MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
+T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
 ESTADISTICAS = {"ipc", "icl", "arr"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
@@ -297,55 +300,75 @@ def evaluar_clase(t: pd.DataFrame, clase: str) -> list[dict]:
         if p.empty:
             continue
         res.append({"clase": clase, "fuentes": "+".join(fuentes), "meses": p.mes.nunique(), "obs": len(p),
+                    "oos_todo": pd.concat(preds),
                     "error_proyeccion": float((p.real - p.proy).abs().mean()),
                     "error_con_fuente": float((p.real - p.pred).abs().mean()),
                     "coef": [round(float(x), 3) for x in _ajustar(d, fuentes)], "oos": p})
     return res
 
 
+def _elegir(opciones: list[dict], hasta=None) -> list[dict]:
+    """La regla única: opciones que bajan el error de su clase (meses EVAL_DESDE..hasta, sin incluir `hasta`),
+    ordenadas por error en los meses comunes."""
+    utiles = []
+    for o in opciones:
+        p = o["oos_todo"]
+        p = p[(p.mes >= EVAL_DESDE) & ((p.mes < hasta) if hasta is not None else True)]
+        if p.mes.nunique() < MIN_MESES_ELEGIR:
+            continue
+        ep, ef = float((p.real - p.proy).abs().mean()), float((p.real - p.pred).abs().mean())
+        # diferencia de errores por mes (promedio de las regiones): ¿la mejora es clara o puede ser ruido?
+        dm = ((p.real - p.proy).abs() - (p.real - p.pred).abs()).groupby(p.mes).mean()
+        t = dm.mean() / (dm.std(ddof=1) / np.sqrt(len(dm))) if len(dm) > 1 and dm.std(ddof=1) > 0 else 0.0
+        if ep - ef >= MEJORA_MINIMA and t >= T_MINIMO:
+            utiles.append((o, p, ep, ef))
+    if not utiles:
+        return []
+    comunes = set.intersection(*[set(p.mes) for _, p, _, _ in utiles])
+
+    def err_comun(x):
+        p = x[1][x[1].mes.isin(comunes)]
+        return float((p.real - p.pred).abs().mean()) if len(p) else x[3]
+    utiles.sort(key=err_comun)
+    return [dict(o, error_proyeccion=ep, error_con_fuente=ef) for o, _, ep, ef in utiles]
+
+
 def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
-    """Para cada clase y momento, ordena las combinaciones de fuentes que mejoran (de mejor a peor, comparadas en
-    los mismos meses) y guarda sus coeficientes. En cada mes se usa la primera que tenga datos."""
+    """Calibración vigente (regla única con todos los meses) y backtest anidado: en cada mes la regla se aplica
+    solo con los meses anteriores, así el error del backtest incluye el costo de elegir fuentes."""
     calib, resumen, backtests = {}, [], []
     for corte in CORTES:
         t = tabla(nc, corte)
         calib[corte] = {}
         for clase in CLASES:
-            if corte != "completo" and clase in SOLO_COMPLETO:
-                continue
             opciones = evaluar_clase(t, clase)
             for o in opciones:
-                resumen.append({k: v for k, v in o.items() if k != "oos"} | {"corte": corte})
-            utiles = [o for o in opciones if o["error_proyeccion"] - o["error_con_fuente"] >= MEJORA_MINIMA]
-            if not utiles:
-                continue
-            # comparación justa: error en los meses que tienen todas las opciones útiles
-            comunes = set.intersection(*[set(o["oos"].mes) for o in utiles])
-
-            def err_comun(o):
-                p = o["oos"][o["oos"].mes.isin(comunes)]
-                return float((p.real - p.pred).abs().mean()) if len(p) else o["error_con_fuente"]
-            utiles.sort(key=err_comun)
-            calib[corte][clase] = [{"fuentes": o["fuentes"].split("+"), "coef": o["coef"],
-                                    "error_proyeccion": round(o["error_proyeccion"], 3),
-                                    "error_con_fuente": round(o["error_con_fuente"], 3), "meses": o["meses"]}
-                                   for o in utiles]
-            # backtest: en cada mes y región, la predicción de la mejor opción disponible
-            preds = pd.concat([o["oos"].assign(orden=k, fuentes=o["fuentes"]) for k, o in enumerate(utiles)])
-            mejor = preds.sort_values("orden").drop_duplicates(["mes", "region"]).assign(solo_inicio=False)
-            if clase in SOLO_INICIO:
-                mejor = mejor.iloc[0:0]
-            # para el inicio de mes (solo fuentes estadísticas) se guarda aparte la mejor opción estadística,
-            # cuando la elegida con datos del mes no lo es
-            es_est = np.array([set(str(x).split("+")) <= AL_INICIO for x in preds.fuentes], dtype=bool)
-            est = preds[es_est].sort_values("orden").drop_duplicates(["mes", "region"])
-            m_ini = mejor[np.array([set(str(x).split("+")) <= AL_INICIO for x in mejor.fuentes], dtype=bool)]
-            ya = set(zip(m_ini.mes, m_ini.region))
-            est = est[[(m, r) not in ya for m, r in zip(est.mes, est.region)]].assign(solo_inicio=True)
-            preds = pd.concat([mejor, est])
-            backtests.append(preds.assign(corte=corte)[["mes", "corte", "region", "clase", "fuentes", "real", "proy", "pred", "solo_inicio"]])
+                resumen.append({k: v for k, v in o.items() if k not in ("oos", "oos_todo")} | {"corte": corte})
+            utiles = _elegir(opciones)
+            if utiles:
+                calib[corte][clase] = [{"fuentes": o["fuentes"].split("+"), "coef": o["coef"],
+                                        "error_proyeccion": round(o["error_proyeccion"], 3),
+                                        "error_con_fuente": round(o["error_con_fuente"], 3), "meses": o["meses"]}
+                                       for o in utiles]
+            # backtest anidado
+            meses = sorted({m for o in opciones for m in o["oos_todo"].mes if m >= EVAL_DESDE})
+            for m in meses:
+                el = _elegir(opciones, hasta=m)
+                if not el:
+                    continue
+                pr = pd.concat([o["oos_todo"][o["oos_todo"].mes == m].assign(orden=k, fuentes=o["fuentes"])
+                                for k, o in enumerate(el)])
+                if pr.empty:
+                    continue
+                mejor = pr.sort_values("orden").drop_duplicates(["region"]).assign(solo_inicio=False)
+                ini = np.array([set(str(x).split("+")) <= AL_INICIO for x in pr.fuentes], dtype=bool)
+                est = pr[ini].sort_values("orden").drop_duplicates(["region"])
+                ya = set(mejor[np.array([set(str(x).split("+")) <= AL_INICIO for x in mejor.fuentes], dtype=bool)].region)
+                est = est[~est.region.isin(ya)].assign(solo_inicio=True)
+                backtests.append(pd.concat([mejor, est]).assign(corte=corte)[
+                    ["mes", "corte", "region", "clase", "fuentes", "real", "proy", "pred", "solo_inicio"]])
     RUTA_CALIB.write_text("# Generado por scripts/calibrar_adelantados.py: no editar a mano.\n"
-                          "# Por clase, las combinaciones de fuentes que mejoran, de mejor a peor: se usa la primera con datos.\n"
+                          "# Regla única: por clase, las fuentes que bajan el error de la clase fuera de muestra, de mejor a peor.\n"
                           + yaml.safe_dump(calib, allow_unicode=True, sort_keys=False), encoding="utf-8")
     bt = pd.concat(backtests) if backtests else pd.DataFrame()
     if not bt.empty:
@@ -393,8 +416,6 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
     for clase, opciones in (calib.get(corte) or {}).items():
         if isinstance(opciones, dict):
             opciones = [opciones]
-        if clase in SOLO_INICIO and not temprano:
-            continue
         for _, f in t[t.clase == clase].iterrows():
             fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
