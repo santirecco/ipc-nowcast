@@ -72,7 +72,7 @@ jobs:
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data reports config
+          git add data reports config publico
           git commit -q -m "Precios y pronóstico $(date +%Y-%m-%d)" || exit 0
           # si alguien subió cambios mientras corría, en los archivos generados gana la versión de esta corrida
           for i in 1 2 3; do

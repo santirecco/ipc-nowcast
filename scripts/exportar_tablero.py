@@ -78,7 +78,62 @@ def main():
     pd.concat(filas)[["fecha", "fuente", "cadena", "productos"]].sort_values(["fecha", "fuente", "cadena"]).to_csv(
         OUT / "recoleccion.csv", index=False)
     estado_fuentes().to_csv(OUT / "fuentes.csv", index=False)
+    exportar_json()
     print("Tablero:", sorted(p.name for p in OUT.glob("*.csv")))
+
+
+def exportar_json():
+    """data/publico/ipc_predictor.json: un único archivo chico con todo lo que muestra el tablero, para que otros
+    tableros (p. ej. Argenfunds, solapa Macro) lo lean directo de GitHub sin tocar el modelo."""
+    import json
+    from datetime import datetime, timezone
+    import numpy as np
+
+    def limpio(df):
+        df = df.replace({np.nan: None})
+        return df.to_dict("records")
+    pr = pd.read_csv(OUT / "pronostico.csv")
+    ult = pr.iloc[-1].to_dict()
+    hist_mes = pr[pr.mes == ult["mes"]][["fecha_calculo", "estimacion", "rango_bajo", "rango_alto", "solo_modelo", "momento"]]
+    div = pd.read_csv(OUT / "divisiones.csv", dtype={"division": str})
+    reg = pd.read_csv(OUT / "regiones.csv")
+    bt = pd.read_csv(OUT / "backtest.csv")
+    errores = []
+    for desde, nombre in [("2024-07", "Desde jul-2024"), ("2025-01", "2025-2026"), ("2025-07", "Últimos 16 meses")]:
+        x = bt[bt.mes >= desde]
+        fila = {"periodo": nombre, "meses": int(len(x))}
+        for col in ["inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]:
+            e = (x[col] - x.indec).abs()
+            fila[col] = round(float(e.mean()), 3)
+        errores.append(fila)
+    info = pd.read_csv(OUT / "informacion.csv", dtype={"componente": str}) if (OUT / "informacion.csv").exists() else pd.DataFrame()
+    grupos, top = [], []
+    if not info.empty:
+        g = info.groupby("grupo").agg(efecto=("efecto_nacional", "sum"), datos=("clave", "size")).reset_index()
+        grupos = limpio(g.round(4))
+        t = info.groupby(["nombre_componente", "fuente"]).agg(efecto=("efecto_nacional", "sum"), dato=("dato", "median"),
+                                                               regiones=("region", "nunique")).reset_index()
+        t = t.reindex(t.efecto.abs().sort_values(ascending=False).index).head(10)
+        top = limpio(t.round(4))
+    indec = pd.read_parquet(DATA / "processed" / "indec_divisiones.parquet")
+    nac = indec[(indec.region == "Nacional") & (indec.codigo.isin(["00", "Núcleo"]))]
+    nac = nac.pivot_table(index="periodo", columns="codigo", values="indice").sort_index()
+    v = (nac / nac.shift(1) - 1) * 100
+    ia = (nac / nac.shift(12) - 1) * 100
+    serie = pd.DataFrame({"mes": v.index.strftime("%Y-%m"), "mensual": v["00"].values, "nucleo": v["Núcleo"].values,
+                          "interanual": ia["00"].values}).dropna().tail(25)
+    cob = float((div.peso * div.cobertura).sum() / div.peso.sum()) if len(div) else None
+    out = {
+        "version": 1, "generado": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "pronostico": {k: (None if pd.isna(v) else v) for k, v in ult.items()}, "cobertura": round(cob, 3) if cob is not None else None,
+        "historial_mes": limpio(hist_mes), "historial": limpio(pr[["fecha_calculo", "mes", "estimacion", "rango_bajo", "rango_alto"]]),
+        "divisiones": limpio(div), "regiones": limpio(reg), "informacion_grupos": grupos, "informacion_top": top,
+        "indec": limpio(serie.round(3)), "backtest": limpio(bt[["mes", "indec", "inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]]),
+        "errores": errores, "fuentes": limpio(pd.read_csv(OUT / "fuentes.csv")),
+    }
+    dest = DATA.parent / "publico"
+    dest.mkdir(parents=True, exist_ok=True)
+    (dest / "ipc_predictor.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
 def estado_fuentes() -> pd.DataFrame:
