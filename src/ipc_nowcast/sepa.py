@@ -236,11 +236,14 @@ def promedios_mensuales(meses: list[str], corte: int | None = None, origen: Path
                 if corte is None or int(p.stem[-2:]) <= corte]
     if not archivos:
         return pd.DataFrame()
-    lf = pl.scan_parquet(archivos).select("fecha", "id_comercio", "region", "id_producto", "clase", "precio")
+    lf = pl.scan_parquet(archivos).select("fecha", "id_comercio", "region", "id_producto", "clase", "precio", "sucursales")
     lf = lf.with_columns(mes=pl.col("fecha").str.slice(0, 7))
     return (lf.group_by("mes", "id_comercio", "region", "id_producto", "clase")
-              .agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique())
+              .agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique(), s=pl.col("sucursales").mean())
               .collect(engine="streaming").to_pandas())
+
+
+PESO_SEPA = os.environ.get("IPC_PESO_SEPA", "igual")
 
 
 def variacion(prev: pd.DataFrame, act: pd.DataFrame, min_dias_prev: int = 8, min_dias_act: int = 3,
@@ -253,9 +256,25 @@ def variacion(prev: pd.DataFrame, act: pd.DataFrame, min_dias_prev: int = 8, min
         return pd.DataFrame()
     j["r"] = np.log(j.p_b / j.p_a)
     j = j[(j.r > np.log(RECORTE[0])) & (j.r < np.log(RECORTE[1]))]
-    pc = j.groupby(["region", "clase", "id_comercio"]).agg(r=("r", "mean"), n=("r", "size")).reset_index()
+    # ponderación de cada producto (PESO_SEPA): "igual"; "suc" = sucursales donde se vende (lo que más se vende pesa
+    # más); "raiz" = raíz de las sucursales; "suc_cadena" = como "suc" y además cada cadena pesa por su tamaño
+    if PESO_SEPA != "igual" and "s_a" in j and "s_b" in j:
+        j["w"] = ((j.s_a.fillna(1) + j.s_b.fillna(1)) / 2).clip(lower=1)
+        if PESO_SEPA == "raiz":
+            j["w"] = np.sqrt(j.w)
+    else:
+        j["w"] = 1.0
+    j["rw"] = j.r * j.w
+    pc = j.groupby(["region", "clase", "id_comercio"]).agg(rw=("rw", "sum"), w=("w", "sum"), n=("r", "size")).reset_index()
+    pc["r"] = pc.rw / pc.w
     pc = pc[pc.n >= min_productos]
-    pr = pc.groupby(["region", "clase"]).agg(r=("r", "mean"), cadenas=("id_comercio", "nunique"), productos=("n", "sum")).reset_index()
+    if PESO_SEPA == "suc_cadena":
+        pc["rw2"] = pc.r * pc.w
+        pr = pc.groupby(["region", "clase"]).agg(rw2=("rw2", "sum"), w=("w", "sum"), cadenas=("id_comercio", "nunique"), productos=("n", "sum")).reset_index()
+        pr["r"] = pr.rw2 / pr.w
+        pr = pr.drop(columns=["rw2", "w"])
+    else:
+        pr = pc.groupby(["region", "clase"]).agg(r=("r", "mean"), cadenas=("id_comercio", "nunique"), productos=("n", "sum")).reset_index()
     pr["var_%"] = (np.exp(pr.r) - 1) * 100
     return pr.drop(columns="r")
 

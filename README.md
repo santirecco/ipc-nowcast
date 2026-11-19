@@ -145,6 +145,16 @@ Cuarta tanda (nov-2026):
   Queda la foto diaria propia (desde nov-2026) y la candidata con el promedio del mes, que entra sola con historia.
 - **Tiendas de ropa y electro** reconstruidas con el archivo web (`.github/workflows/wayback.yml`, corre sola).
 
+Quinta tanda (nov-2026):
+- **SEPA ponderado por sucursales** (lo que más se vende pesa más; también raíz y por tamaño de cadena): mejora algo
+  la mitad de mes y empeora el fin de mes; no entra. Queda como opción apagada (`IPC_PESO_SEPA`).
+- **Precio con promoción vs. de lista** (historia de SEPA reprocesada con los dos precios, mismos días): diferencia
+  mínima (fin de mes 0,189 vs. 0,188); solo ~3% de los productos tiene promoción. No entra.
+- **Cache de SEPA completo**: desde dic-2025 había meses con la mitad de los días (se había reprocesado un día de cada
+  dos). Se completaron todos los días que tiene el archivo (abr-jun 2026 no existen). No es una decisión de método
+  sino de datos: en tiempo real esos días sí estaban. Últimos 16 meses: inicio 0,240 -> 0,231; mitad 0,214 -> 0,207;
+  día 22 0,200 -> 0,196; fin 0,191 -> 0,198; víspera 0,128 -> 0,134.
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).

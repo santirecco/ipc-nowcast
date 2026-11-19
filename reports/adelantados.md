@@ -16,43 +16,43 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 |---|---|---|---|---|---|
 | Pan y cereales | arr | 14 | 0,68 | 0,70 | no |
 | Pan y cereales | fx | 34 | 2,17 | 2,35 | no |
-| Pan y cereales | SEPA | 18 | 0,73 | 0,53 | **sí** |
-| Pan y cereales | sepa+fx | 18 | 0,73 | 0,53 | sí, si falta la anterior |
-| Carnes y derivados | arr | 14 | 1,82 | 1,71 | sí, si falta la anterior |
+| Pan y cereales | SEPA | 17 | 0,70 | 0,53 | **sí** |
+| Pan y cereales | sepa+fx | 17 | 0,70 | 0,53 | sí, si falta la anterior |
+| Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,46 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,47 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,55 | sí, si falta la anterior |
-| Carnes y derivados | SEPA | 18 | 1,90 | 1,90 | no |
-| Carnes y derivados | SEPA + mayorista | 18 | 1,90 | 1,93 | no |
+| Carnes y derivados | SEPA | 17 | 1,92 | 1,92 | no |
+| Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,87 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,95 | no |
 | Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,92 | no |
 | Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,60 | **sí** |
 | Leche, lácteos y huevos | arr | 14 | 1,15 | 1,17 | no |
-| Leche, lácteos y huevos | SEPA | 18 | 1,18 | 0,65 | **sí** |
-| Leche, lácteos y huevos | sepa+fx | 18 | 1,18 | 0,65 | sí, si falta la anterior |
+| Leche, lácteos y huevos | SEPA | 17 | 1,16 | 0,68 | **sí** |
+| Leche, lácteos y huevos | sepa+fx | 17 | 1,16 | 0,68 | sí, si falta la anterior |
 | Aceites, grasas y manteca | arr | 14 | 0,98 | 1,00 | no |
 | Aceites, grasas y manteca | fx | 34 | 2,60 | 2,61 | no |
-| Aceites, grasas y manteca | SEPA | 18 | 0,99 | 1,03 | no |
-| Aceites, grasas y manteca | sepa+fx | 18 | 0,99 | 1,14 | no |
+| Aceites, grasas y manteca | SEPA | 17 | 1,02 | 1,03 | no |
+| Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,18 | no |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
 | Frutas | mayorista | 4 | 4,07 | 4,17 | no |
-| Frutas | SEPA | 18 | 2,82 | 2,85 | no |
-| Frutas | sepaf | 18 | 2,82 | 2,50 | **sí** |
-| Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,13 | no |
+| Frutas | SEPA | 17 | 2,81 | 2,89 | no |
+| Frutas | sepaf | 18 | 2,82 | 2,54 | **sí** |
+| Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 4,76 | 3,28 | no |
-| Verduras, tubérculos y legumbres | SEPA | 18 | 6,83 | 6,56 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,42 | **sí** |
+| Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,56 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,48 | **sí** |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
-| Azúcar, dulces y golosinas | SEPA | 18 | 0,79 | 0,72 | **sí** |
-| Azúcar, dulces y golosinas | sepa+fx | 18 | 0,79 | 0,77 | no |
-| Café, té, yerba y cacao | arr | 14 | 1,04 | 1,03 | no |
+| Azúcar, dulces y golosinas | SEPA | 17 | 0,78 | 0,73 | **sí** |
+| Azúcar, dulces y golosinas | sepa+fx | 17 | 0,78 | 0,78 | no |
+| Café, té, yerba y cacao | arr | 14 | 1,04 | 1,04 | no |
 | Café, té, yerba y cacao | fx | 34 | 2,84 | 3,05 | no |
-| Café, té, yerba y cacao | SEPA | 18 | 1,10 | 0,78 | **sí** |
-| Café, té, yerba y cacao | sepa+fx | 18 | 1,10 | 0,86 | sí, si falta la anterior |
+| Café, té, yerba y cacao | SEPA | 17 | 1,03 | 0,81 | **sí** |
+| Café, té, yerba y cacao | sepa+fx | 17 | 1,03 | 0,87 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | arr | 14 | 0,76 | 0,77 | no |
-| Aguas, gaseosas y jugos | SEPA | 18 | 0,78 | 0,72 | sí, si falta la anterior |
-| Aguas, gaseosas y jugos | sepa+fx | 18 | 0,78 | 0,72 | **sí** |
-| Bebidas alcohólicas | SEPA | 18 | 0,90 | 0,67 | **sí** |
+| Aguas, gaseosas y jugos | SEPA | 17 | 0,77 | 0,76 | no |
+| Aguas, gaseosas y jugos | sepa+fx | 17 | 0,77 | 0,76 | no |
+| Bebidas alcohólicas | SEPA | 17 | 0,89 | 0,64 | **sí** |
 | Tabaco | ipc | 34 | 2,18 | 1,82 | **sí** |
 | Ropa | fx | 34 | 2,22 | 2,49 | no |
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
@@ -73,12 +73,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,37 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
-| Limpieza y mantenimiento del hogar | SEPA | 18 | 0,76 | 0,78 | no |
+| Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,80 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,73 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
-| Medicamentos | SEPA | 18 | 0,92 | 0,47 | **sí** |
+| Medicamentos | SEPA | 17 | 0,89 | 0,53 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
 | Otros gastos de salud | ipcl | 34 | 2,59 | 2,66 | no |
 | Otros gastos de salud | sal | 34 | 2,59 | 2,70 | no |
@@ -107,7 +107,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
-| Restaurantes y comidas fuera del hogar | alim | 18 | 1,01 | 0,91 | sí, si falta la anterior |
+| Restaurantes y comidas fuera del hogar | alim | 17 | 1,04 | 0,88 | sí, si falta la anterior |
 | Restaurantes y comidas fuera del hogar | alim1 | 34 | 1,92 | 1,48 | **sí** |
 | Restaurantes y comidas fuera del hogar | alim1+sal | 34 | 1,92 | 1,44 | sí, si falta la anterior |
 | Restaurantes y comidas fuera del hogar | ipc | 34 | 1,92 | 1,49 | sí, si falta la anterior |
@@ -117,7 +117,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Cuidado personal | ipc | 34 | 2,55 | 1,89 | **sí** |
 | Cuidado personal | ipcl | 34 | 2,55 | 2,68 | no |
 | Cuidado personal | sal | 34 | 2,55 | 2,55 | no |
-| Cuidado personal | SEPA | 18 | 0,70 | 0,71 | no |
+| Cuidado personal | SEPA | 17 | 0,65 | 0,74 | no |
 | Otros bienes y servicios | fx | 34 | 2,78 | 2,70 | sí, si falta la anterior |
 | Otros bienes y servicios | ipc | 34 | 2,78 | 2,03 | **sí** |
 | Otros bienes y servicios | sal | 34 | 2,78 | 2,69 | sí, si falta la anterior |
@@ -128,49 +128,49 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 |---|---|---|---|---|---|
 | Pan y cereales | arr | 14 | 0,68 | 0,70 | no |
 | Pan y cereales | fx | 34 | 2,17 | 2,30 | no |
-| Pan y cereales | SEPA | 18 | 0,73 | 0,49 | **sí** |
-| Pan y cereales | sepa+fx | 18 | 0,73 | 0,49 | sí, si falta la anterior |
+| Pan y cereales | SEPA | 17 | 0,70 | 0,49 | **sí** |
+| Pan y cereales | sepa+fx | 17 | 0,70 | 0,49 | sí, si falta la anterior |
 | Pan y cereales | sepai | 18 | 0,73 | 0,56 | sí, si falta la anterior |
-| Carnes y derivados | arr | 14 | 1,82 | 1,71 | sí, si falta la anterior |
+| Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,50 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,51 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,56 | sí, si falta la anterior |
-| Carnes y derivados | SEPA | 18 | 1,90 | 1,91 | no |
-| Carnes y derivados | SEPA + mayorista | 18 | 1,90 | 1,84 | sí, si falta la anterior |
+| Carnes y derivados | SEPA | 17 | 1,92 | 1,94 | no |
+| Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,75 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,96 | no |
-| Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,79 | sí, si falta la anterior |
-| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,56 | **sí** |
+| Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,80 | sí, si falta la anterior |
+| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,58 | **sí** |
 | Leche, lácteos y huevos | arr | 14 | 1,15 | 1,17 | no |
-| Leche, lácteos y huevos | SEPA | 18 | 1,18 | 0,75 | **sí** |
-| Leche, lácteos y huevos | sepa+fx | 18 | 1,18 | 0,75 | sí, si falta la anterior |
-| Leche, lácteos y huevos | sepai | 18 | 1,18 | 0,87 | sí, si falta la anterior |
+| Leche, lácteos y huevos | SEPA | 17 | 1,16 | 0,73 | **sí** |
+| Leche, lácteos y huevos | sepa+fx | 17 | 1,16 | 0,73 | sí, si falta la anterior |
+| Leche, lácteos y huevos | sepai | 18 | 1,18 | 0,84 | sí, si falta la anterior |
 | Aceites, grasas y manteca | arr | 14 | 0,98 | 1,00 | no |
 | Aceites, grasas y manteca | fx | 34 | 2,60 | 2,68 | no |
-| Aceites, grasas y manteca | SEPA | 18 | 0,99 | 1,02 | no |
-| Aceites, grasas y manteca | sepa+fx | 18 | 0,99 | 0,99 | no |
-| Aceites, grasas y manteca | sepai | 18 | 0,99 | 0,76 | **sí** |
+| Aceites, grasas y manteca | SEPA | 17 | 1,02 | 1,02 | no |
+| Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,01 | no |
+| Aceites, grasas y manteca | sepai | 18 | 0,99 | 0,77 | **sí** |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
 | Frutas | mayorista | 4 | 4,07 | 4,10 | no |
-| Frutas | SEPA | 18 | 2,82 | 2,82 | no |
-| Frutas | sepaf | 18 | 2,82 | 2,40 | **sí** |
-| Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,13 | no |
+| Frutas | SEPA | 17 | 2,81 | 2,86 | no |
+| Frutas | sepaf | 18 | 2,82 | 2,45 | **sí** |
+| Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
 | Verduras, tubérculos y legumbres | mayorista | 4 | 4,76 | 2,74 | no |
-| Verduras, tubérculos y legumbres | SEPA | 18 | 6,83 | 6,51 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,90 | **sí** |
+| Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,48 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,99 | **sí** |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
-| Azúcar, dulces y golosinas | SEPA | 18 | 0,79 | 0,65 | **sí** |
-| Azúcar, dulces y golosinas | sepa+fx | 18 | 0,79 | 0,70 | sí, si falta la anterior |
+| Azúcar, dulces y golosinas | SEPA | 17 | 0,78 | 0,65 | **sí** |
+| Azúcar, dulces y golosinas | sepa+fx | 17 | 0,78 | 0,71 | sí, si falta la anterior |
 | Azúcar, dulces y golosinas | sepai | 18 | 0,79 | 0,77 | sí, si falta la anterior |
-| Café, té, yerba y cacao | arr | 14 | 1,04 | 1,03 | no |
+| Café, té, yerba y cacao | arr | 14 | 1,04 | 1,04 | no |
 | Café, té, yerba y cacao | fx | 34 | 2,84 | 3,07 | no |
-| Café, té, yerba y cacao | SEPA | 18 | 1,10 | 0,70 | **sí** |
-| Café, té, yerba y cacao | sepa+fx | 18 | 1,10 | 0,74 | sí, si falta la anterior |
-| Café, té, yerba y cacao | sepai | 18 | 1,10 | 0,85 | sí, si falta la anterior |
+| Café, té, yerba y cacao | SEPA | 17 | 1,03 | 0,77 | **sí** |
+| Café, té, yerba y cacao | sepa+fx | 17 | 1,03 | 0,80 | sí, si falta la anterior |
+| Café, té, yerba y cacao | sepai | 18 | 1,10 | 0,84 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | arr | 14 | 0,76 | 0,77 | no |
-| Aguas, gaseosas y jugos | SEPA | 18 | 0,78 | 0,67 | sí, si falta la anterior |
-| Aguas, gaseosas y jugos | sepa+fx | 18 | 0,78 | 0,68 | sí, si falta la anterior |
+| Aguas, gaseosas y jugos | SEPA | 17 | 0,77 | 0,72 | sí, si falta la anterior |
+| Aguas, gaseosas y jugos | sepa+fx | 17 | 0,77 | 0,72 | sí, si falta la anterior |
 | Aguas, gaseosas y jugos | sepai | 18 | 0,78 | 0,67 | **sí** |
-| Bebidas alcohólicas | SEPA | 18 | 0,90 | 0,66 | **sí** |
+| Bebidas alcohólicas | SEPA | 17 | 0,89 | 0,65 | **sí** |
 | Tabaco | ipc | 34 | 2,18 | 1,82 | **sí** |
 | Ropa | fx | 34 | 2,22 | 2,48 | no |
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
@@ -190,13 +190,13 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,32 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
-| Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | sí, si falta la anterior |
-| Limpieza y mantenimiento del hogar | SEPA | 18 | 0,76 | 0,72 | **sí** |
+| Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
+| Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,77 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,65 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
-| Medicamentos | SEPA | 18 | 0,92 | 0,52 | **sí** |
+| Medicamentos | SEPA | 17 | 0,89 | 0,58 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
 | Otros gastos de salud | ipcl | 34 | 2,59 | 2,66 | no |
 | Otros gastos de salud | sal | 34 | 2,59 | 2,70 | no |
@@ -225,7 +225,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
-| Restaurantes y comidas fuera del hogar | alim | 18 | 1,01 | 0,91 | sí, si falta la anterior |
+| Restaurantes y comidas fuera del hogar | alim | 17 | 1,04 | 0,88 | sí, si falta la anterior |
 | Restaurantes y comidas fuera del hogar | alim1 | 34 | 1,92 | 1,48 | **sí** |
 | Restaurantes y comidas fuera del hogar | alim1+sal | 34 | 1,92 | 1,44 | sí, si falta la anterior |
 | Restaurantes y comidas fuera del hogar | ipc | 34 | 1,92 | 1,49 | sí, si falta la anterior |
@@ -235,7 +235,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Cuidado personal | ipc | 34 | 2,55 | 1,89 | **sí** |
 | Cuidado personal | ipcl | 34 | 2,55 | 2,68 | no |
 | Cuidado personal | sal | 34 | 2,55 | 2,55 | no |
-| Cuidado personal | SEPA | 18 | 0,70 | 0,69 | no |
+| Cuidado personal | SEPA | 17 | 0,65 | 0,70 | no |
 | Otros bienes y servicios | fx | 34 | 2,78 | 2,70 | sí, si falta la anterior |
 | Otros bienes y servicios | ipc | 34 | 2,78 | 2,03 | **sí** |
 | Otros bienes y servicios | sal | 34 | 2,78 | 2,69 | sí, si falta la anterior |
