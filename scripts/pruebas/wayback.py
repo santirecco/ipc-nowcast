@@ -5,14 +5,22 @@ Precios publicados en su momento: usarlos para el pasado es honesto. Salida: rep
 """
 import json
 import re
-import sys
 import urllib.parse
 import urllib.request
 from collections import Counter
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from ipc_nowcast.scrapers.vtex import RUBRO_TIENDA, TIENDAS  # noqa: E402
+# mismas tiendas que src/ipc_nowcast/scrapers/vtex.py (copiadas: este script corre sin dependencias)
+TIENDAS = {"equus": "https://www.equus.com.ar", "portsaid": "https://www.portsaid.com.ar",
+           "tascani": "https://www.tascani.com.ar", "levis": "https://www.levi.com.ar",
+           "legacy": "https://www.legacy.com.ar", "mimo": "https://www.mimo.com.ar",
+           "topper": "https://www.topper.com.ar", "naldo": "https://www.naldo.com.ar",
+           "cetrogar": "https://www.cetrogar.com.ar", "coppel": "https://www.coppel.com.ar",
+           "pardo": "https://www.pardo.com.ar", "easy": "https://www.easy.com.ar", "blaisten": "https://www.blaisten.com.ar",
+           "dafiti": "https://www.dafiti.com.ar", "fravega": "https://www.fravega.com", "garbarino": "https://www.garbarino.com"}
+RUBRO_TIENDA = {"equus": "ropa", "portsaid": "ropa", "tascani": "ropa", "levis": "ropa", "legacy": "ropa", "mimo": "ropa",
+                "dafiti": "ropa", "topper": "calzado", "naldo": "electro", "cetrogar": "electro", "coppel": "electro",
+                "pardo": "electro", "fravega": "electro", "garbarino": "electro", "easy": "hogar", "blaisten": "hogar"}
 
 UA = "Mozilla/5.0 (ipc-nowcast; investigación)"
 
