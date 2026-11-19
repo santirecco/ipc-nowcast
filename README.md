@@ -154,6 +154,9 @@ Quinta tanda (nov-2026):
   dos). Se completaron todos los días que tiene el archivo (abr-jun 2026 no existen). No es una decisión de método
   sino de datos: en tiempo real esos días sí estaban. Últimos 16 meses: inicio 0,240 -> 0,231; mitad 0,214 -> 0,207;
   día 22 0,200 -> 0,196; fin 0,191 -> 0,198; víspera 0,128 -> 0,134.
+- **Informe automático cuando publica INDEC** (`scripts/informe_mes.py`, corre en el workflow mensual):
+  pronóstico en cada momento contra el dato, error por rubro y región, y qué señales acercaron o alejaron el
+  pronóstico. Sale en `reports/informe_AAAA-MM.md` y en el JSON público (`informe`).
 
 ## Conceptos clave
 

@@ -1,0 +1,369 @@
+{
+ "mes": "2026-10",
+ "dato": 2.172,
+ "resumen": "INDEC publicó 2,17% para octubre 2026. A fin de mes el predictor daba 2,15% (error −0,02 pp). Los rubros que más explicaron el error: Vivienda, agua, electricidad, gas y otros combustibles (−0,14 pp), Alimentos y bebidas no alcohólicas (+0,14 pp), Recreación y cultura (−0,11 pp).",
+ "simulacion": [
+  {
+   "momento": "Inicio de mes",
+   "pronostico": 1.948,
+   "error": -0.224
+  },
+  {
+   "momento": "Mitad de mes",
+   "pronostico": 2.069,
+   "error": -0.103
+  },
+  {
+   "momento": "Día 22",
+   "pronostico": 2.126,
+   "error": -0.046
+  },
+  {
+   "momento": "Fin de mes",
+   "pronostico": 2.154,
+   "error": -0.018
+  },
+  {
+   "momento": "Víspera",
+   "pronostico": 2.04,
+   "error": -0.132
+  }
+ ],
+ "en_vivo": [],
+ "por_division": [
+  {
+   "division": "01",
+   "pronostico": 2.467,
+   "real": 1.979,
+   "aporte_error": 0.14,
+   "nombre": "Alimentos y bebidas no alcohólicas"
+  },
+  {
+   "division": "02",
+   "pronostico": 1.873,
+   "real": 0.815,
+   "aporte_error": 0.025,
+   "nombre": "Bebidas alcohólicas y tabaco"
+  },
+  {
+   "division": "03",
+   "pronostico": 1.224,
+   "real": 2.026,
+   "aporte_error": -0.053,
+   "nombre": "Prendas de vestir y calzado"
+  },
+  {
+   "division": "04",
+   "pronostico": 2.891,
+   "real": 4.231,
+   "aporte_error": -0.143,
+   "nombre": "Vivienda, agua, electricidad, gas y otros combustibles"
+  },
+  {
+   "division": "05",
+   "pronostico": 1.826,
+   "real": 1.437,
+   "aporte_error": 0.02,
+   "nombre": "Equipamiento y mantenimiento del hogar"
+  },
+  {
+   "division": "06",
+   "pronostico": 1.846,
+   "real": 1.693,
+   "aporte_error": 0.014,
+   "nombre": "Salud"
+  },
+  {
+   "division": "07",
+   "pronostico": 2.493,
+   "real": 2.088,
+   "aporte_error": 0.047,
+   "nombre": "Transporte"
+  },
+  {
+   "division": "08",
+   "pronostico": 2.126,
+   "real": 1.969,
+   "aporte_error": 0.004,
+   "nombre": "Comunicación"
+  },
+  {
+   "division": "09",
+   "pronostico": 1.657,
+   "real": 3.295,
+   "aporte_error": -0.107,
+   "nombre": "Recreación y cultura"
+  },
+  {
+   "division": "10",
+   "pronostico": 1.932,
+   "real": 1.268,
+   "aporte_error": 0.015,
+   "nombre": "Educación"
+  },
+  {
+   "division": "11",
+   "pronostico": 1.657,
+   "real": 1.407,
+   "aporte_error": 0.027,
+   "nombre": "Restaurantes y hoteles"
+  },
+  {
+   "division": "12",
+   "pronostico": 2.06,
+   "real": 2.285,
+   "aporte_error": -0.008,
+   "nombre": "Bienes y servicios varios"
+  }
+ ],
+ "por_region": [
+  {
+   "region": "Cuyo",
+   "pronostico": 2.073,
+   "real": 2.305,
+   "aporte_error": -0.012
+  },
+  {
+   "region": "GBA",
+   "pronostico": 2.15,
+   "real": 1.98,
+   "aporte_error": 0.077
+  },
+  {
+   "region": "Noreste",
+   "pronostico": 1.791,
+   "real": 1.462,
+   "aporte_error": 0.015
+  },
+  {
+   "region": "Noroeste",
+   "pronostico": 1.955,
+   "real": 1.66,
+   "aporte_error": 0.02
+  },
+  {
+   "region": "Pampeana",
+   "pronostico": 2.306,
+   "real": 2.567,
+   "aporte_error": -0.088
+  },
+  {
+   "region": "Patagonia",
+   "pronostico": 1.81,
+   "real": 2.494,
+   "aporte_error": -0.031
+  }
+ ],
+ "senales": [
+  {
+   "rubro": "Tabaco",
+   "fuente": "inflación reciente",
+   "real": 0.0,
+   "con_senal": 1.67,
+   "sin_senal": 0.99,
+   "mejora": -0.68
+  },
+  {
+   "rubro": "Medicamentos",
+   "fuente": "góndolas (SEPA)",
+   "real": 1.67,
+   "con_senal": 2.27,
+   "sin_senal": 1.99,
+   "mejora": -0.25
+  },
+  {
+   "rubro": "Restaurantes y comidas fuera del hogar",
+   "fuente": "alimentos del mes anterior (INDEC)",
+   "real": 1.41,
+   "con_senal": 1.72,
+   "sin_senal": 1.73,
+   "mejora": -0.03
+  },
+  {
+   "rubro": "Calzado",
+   "fuente": "inflación reciente",
+   "real": 0.92,
+   "con_senal": 1.97,
+   "sin_senal": 2.09,
+   "mejora": -0.0
+  },
+  {
+   "rubro": "Cuidado personal",
+   "fuente": "inflación reciente",
+   "real": 2.0,
+   "con_senal": 1.99,
+   "sin_senal": 1.84,
+   "mejora": 0.02
+  },
+  {
+   "rubro": "Carnes y derivados",
+   "fuente": "cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",
+   "real": 0.18,
+   "con_senal": 0.51,
+   "sin_senal": 0.51,
+   "mejora": 0.05
+  },
+  {
+   "rubro": "Azúcar, dulces y golosinas",
+   "fuente": "góndolas (SEPA)",
+   "real": 1.73,
+   "con_senal": 1.81,
+   "sin_senal": 2.22,
+   "mejora": 0.05
+  },
+  {
+   "rubro": "Leche, lácteos y huevos",
+   "fuente": "góndolas (SEPA)",
+   "real": 1.13,
+   "con_senal": 1.47,
+   "sin_senal": 0.86,
+   "mejora": 0.07
+  },
+  {
+   "rubro": "Diarios, libros y papelería",
+   "fuente": "inflación reciente",
+   "real": 2.22,
+   "con_senal": 1.95,
+   "sin_senal": 2.0,
+   "mejora": 0.09
+  },
+  {
+   "rubro": "Transporte público",
+   "fuente": "inflación reciente",
+   "real": 1.5,
+   "con_senal": 2.4,
+   "sin_senal": 0.49,
+   "mejora": 0.1
+  },
+  {
+   "rubro": "Limpieza y mantenimiento del hogar",
+   "fuente": "inflación reciente",
+   "real": 1.82,
+   "con_senal": 2.02,
+   "sin_senal": 1.65,
+   "mejora": 0.12
+  },
+  {
+   "rubro": "Alquiler de la vivienda",
+   "fuente": "salarios registrados (INDEC)",
+   "real": 3.07,
+   "con_senal": 2.86,
+   "sin_senal": 3.19,
+   "mejora": 0.14
+  },
+  {
+   "rubro": "Equipos, juguetes y turismo",
+   "fuente": "dólar mayorista",
+   "real": 4.73,
+   "con_senal": -2.28,
+   "sin_senal": -2.51,
+   "mejora": 0.15
+  },
+  {
+   "rubro": "Pan y cereales",
+   "fuente": "góndolas (SEPA)",
+   "real": 1.68,
+   "con_senal": 1.67,
+   "sin_senal": 1.25,
+   "mejora": 0.23
+  },
+  {
+   "rubro": "Bebidas alcohólicas",
+   "fuente": "góndolas (SEPA)",
+   "real": 1.34,
+   "con_senal": 1.4,
+   "sin_senal": 1.39,
+   "mejora": 0.23
+  },
+  {
+   "rubro": "Café, té, yerba y cacao",
+   "fuente": "góndolas (SEPA)",
+   "real": 2.97,
+   "con_senal": 2.13,
+   "sin_senal": 1.46,
+   "mejora": 0.38
+  },
+  {
+   "rubro": "Servicios recreativos y culturales",
+   "fuente": "inflación reciente",
+   "real": 2.14,
+   "con_senal": 1.91,
+   "sin_senal": 1.22,
+   "mejora": 0.4
+  },
+  {
+   "rubro": "Aguas, gaseosas y jugos",
+   "fuente": "precios de SEPA de los productos que mide INDEC",
+   "real": 1.31,
+   "con_senal": 1.7,
+   "sin_senal": 2.18,
+   "mejora": 0.48
+  },
+  {
+   "rubro": "Combustibles",
+   "fuente": "precio de surtidor (YPF)",
+   "real": 2.69,
+   "con_senal": 1.61,
+   "sin_senal": 1.12,
+   "mejora": 0.49
+  },
+  {
+   "rubro": "Telefonía e internet",
+   "fuente": "inflación reciente",
+   "real": 1.93,
+   "con_senal": 1.92,
+   "sin_senal": 1.35,
+   "mejora": 0.52
+  },
+  {
+   "rubro": "Otros bienes y servicios",
+   "fuente": "inflación reciente",
+   "real": 2.19,
+   "con_senal": 1.88,
+   "sin_senal": 1.53,
+   "mejora": 0.52
+  },
+  {
+   "rubro": "Compra de vehículos",
+   "fuente": "listas de precios de autos 0 km",
+   "real": 1.27,
+   "con_senal": 1.04,
+   "sin_senal": 1.82,
+   "mejora": 0.54
+  },
+  {
+   "rubro": "Aceites, grasas y manteca",
+   "fuente": "precios de SEPA de los productos que mide INDEC",
+   "real": 0.59,
+   "con_senal": 0.85,
+   "sin_senal": 1.78,
+   "mejora": 0.66
+  },
+  {
+   "rubro": "Electricidad, gas y otros combustibles",
+   "fuente": "inflación reciente",
+   "real": 6.14,
+   "con_senal": 1.87,
+   "sin_senal": 2.33,
+   "mejora": 0.83
+  },
+  {
+   "rubro": "Frutas",
+   "fuente": "frutas y verduras frescas en góndola (SEPA)",
+   "real": 0.73,
+   "con_senal": 4.04,
+   "sin_senal": 5.09,
+   "mejora": 1.06
+  },
+  {
+   "rubro": "Verduras, tubérculos y legumbres",
+   "fuente": "frutas y verduras frescas en góndola (SEPA)",
+   "real": 10.99,
+   "con_senal": 9.11,
+   "sin_senal": 3.94,
+   "mejora": 4.62
+  }
+ ],
+ "ayudaron": 19,
+ "fallaron": 2
+}

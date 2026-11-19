@@ -47,6 +47,7 @@ jobs:
           python scripts/calibrar_adelantados.py
           python scripts/backtest.py
           python scripts/backtest_largo.py
+          python scripts/informe_mes.py || true
           python scripts/validar_calendario.py
           python scripts/nowcast.py
           python scripts/exportar_tablero.py

@@ -162,6 +162,9 @@ def exportar_json():
         "errores": errores, "fuentes": limpio(pd.read_csv(OUT / "fuentes.csv")),
         "precision": precision, "puente": puente, "celdas": celdas, "relevamiento": relevamiento["fuentes"], "relevamiento_total": {k: v for k, v in relevamiento.items() if k != "fuentes"},
     }
+    inf = NC / "informe_ultimo.json"
+    if inf.exists():
+        out["informe"] = json.loads(inf.read_text(encoding="utf-8"))
     dest = DATA.parent / "publico"
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "ipc_predictor.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
