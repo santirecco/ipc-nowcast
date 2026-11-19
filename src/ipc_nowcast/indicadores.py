@@ -81,22 +81,34 @@ def serie_nafta() -> pd.Series:
 
 
 def serie_nafta_promedio(corte: int | None = None) -> pd.Series:
-    """Variación % del precio PROMEDIO del mes (lo que compara INDEC), con la foto diaria del surtidor:
-    promedio de los días hasta `corte` del mes contra el promedio del mes anterior completo."""
-    ruta = DIR_COMB / "ypf_caba_diario.csv"
-    if not ruta.exists():
+    """Variación % del precio PROMEDIO del mes (lo que compara INDEC): precio de cada día = el de la última foto
+    disponible (copias del archivo web hacia atrás, foto diaria propia desde nov-2026); promedio de los días hasta
+    `corte` del mes contra el promedio del mes anterior completo."""
+    partes = []
+    for nombre in ("ypf_caba_wayback.csv", "ypf_caba_diario.csv"):
+        ruta = DIR_COMB / nombre
+        if ruta.exists():
+            partes.append(pd.read_csv(ruta, parse_dates=["fecha"])[["fecha", "producto", "precio"]])
+    if not partes:
         return pd.Series(dtype=float)
-    t = pd.read_csv(ruta, parse_dates=["fecha"])
+    t = pd.concat(partes)
     t = t[t.producto.isin(["Super", "Premium", "Gasoil"]) & (t.precio > 0)]
     if t.empty:
         return pd.Series(dtype=float)
-    dia = t.groupby("fecha").precio.apply(lambda x: float(np.exp(np.log(x).mean())))
-    dia.index = pd.to_datetime(dia.index)
+    foto = t.groupby("fecha").precio.apply(lambda x: float(np.exp(np.log(x).mean()))).sort_index()
+    dias = pd.date_range(foto.index.min(), foto.index.max(), freq="D")
+    gap = pd.Series(foto.index, index=foto.index).reindex(dias).ffill()
+    dia = foto.reindex(dias).ffill()
+    dia = dia[(dia.index - gap).dt.days <= 10]  # sin foto en más de 10 días: no se inventa
     mes = dia.index.to_period("M").to_timestamp()
-    completo = dia.groupby(mes).mean()
     n = dia.groupby(mes).size()
-    completo = completo[n >= 20]  # mes con fotos casi todos los días
-    actual = dia[dia.index.day <= corte].groupby(mes[dia.index.day <= corte]).mean() if corte else completo
+    completo = dia.groupby(mes).mean()[n >= 25]
+    sel = dia.index.day <= corte if corte else np.ones(len(dia), bool)
+    actual = dia[sel].groupby(mes[sel]).mean()
+    if corte:
+        actual = actual[dia[sel].groupby(mes[sel]).size() >= corte - 3]
+    else:
+        actual = completo
     return ((actual / completo.shift(1, freq="MS").reindex(actual.index) - 1) * 100).dropna().rename("naftap")
 
 
