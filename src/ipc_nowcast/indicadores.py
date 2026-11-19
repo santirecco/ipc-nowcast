@@ -80,6 +80,26 @@ def serie_nafta() -> pd.Series:
     return v[(v > -50) & (v < 100)]
 
 
+def serie_nafta_promedio(corte: int | None = None) -> pd.Series:
+    """Variación % del precio PROMEDIO del mes (lo que compara INDEC), con la foto diaria del surtidor:
+    promedio de los días hasta `corte` del mes contra el promedio del mes anterior completo."""
+    ruta = DIR_COMB / "ypf_caba_diario.csv"
+    if not ruta.exists():
+        return pd.Series(dtype=float)
+    t = pd.read_csv(ruta, parse_dates=["fecha"])
+    t = t[t.producto.isin(["Super", "Premium", "Gasoil"]) & (t.precio > 0)]
+    if t.empty:
+        return pd.Series(dtype=float)
+    dia = t.groupby("fecha").precio.apply(lambda x: float(np.exp(np.log(x).mean())))
+    dia.index = pd.to_datetime(dia.index)
+    mes = dia.index.to_period("M").to_timestamp()
+    completo = dia.groupby(mes).mean()
+    n = dia.groupby(mes).size()
+    completo = completo[n >= 20]  # mes con fotos casi todos los días
+    actual = dia[dia.index.day <= corte].groupby(mes[dia.index.day <= corte]).mean() if corte else completo
+    return ((actual / completo.shift(1, freq="MS").reindex(actual.index) - 1) * 100).dropna().rename("naftap")
+
+
 # ------------------------------------------------------------------ tipo de cambio
 def actualizar_dolar(desde: str = "2016-12-01") -> pd.DataFrame:
     ruta = DIR_FX / "a3500.csv"

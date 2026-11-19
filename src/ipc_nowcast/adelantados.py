@@ -28,7 +28,7 @@ from .modelo import proyeccion_componente
 # premian compensaciones de suerte). El backtest reaplica esta misma regla mes a mes con los meses anteriores.
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"]],
+    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"], ["maya"], ["sepa_carne", "maya"]],
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
@@ -47,7 +47,7 @@ OPCIONES = {
     "04.5": [["ipc"], ["ipc2"]],
     "07.1": [["autos"], ["fx"]],
     "07.3": [["ipc"], ["ipc2"]],
-    "07.2.2": [["nafta"], ["nafta", "fx"]],
+    "07.2.2": [["nafta"], ["nafta", "fx"], ["naftal"], ["naftap"]],
     "08.3": [["ipc"], ["ipcl"], ["ipc2"], ["fx"]],
     "09.4": [["ipc"], ["sal"], ["ipcl"], ["fx"]],
     "09.5": [["ipc"], ["fx"], ["ipcl"]],
@@ -81,7 +81,10 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "ipcl": "indexación con demora (inflación de 2 a 4 meses antes)",
             "alim1": "alimentos del mes anterior (INDEC)",
             "alim": "alimentos: mes anterior (INDEC) y góndolas del mes (SEPA)",
-            "may2": "hacienda de dos meses antes"}
+            "may2": "hacienda de dos meses antes",
+            "naftap": "precio de surtidor: promedio del mes con la foto diaria (lo que compara INDEC)",
+            "naftal": "precio de surtidor: solo el cambio del mes anterior (lo que arrastra al promedio del mes)",
+            "maya": "hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
@@ -113,6 +116,7 @@ def _otros(corte: str) -> pd.DataFrame:
     nafta = indicadores.serie_nafta()
     fx, fx_full = indicadores.serie_dolar(c), indicadores.serie_dolar(None)
     o = pd.DataFrame({"nafta": nafta, "fx": fx})
+    o = o.join(indicadores.serie_nafta_promedio(c), how="outer")
     o["nafta_l1"] = nafta.shift(1, freq="MS").reindex(o.index)
     o["fx_l1"] = fx_full.shift(1, freq="MS").reindex(o.index)
     sal = indicadores.serie_salarios()
@@ -161,7 +165,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 o = otros.loc[mes] if mes in otros.index else None
                 ox = lambda k: float(o[k]) if o is not None and pd.notna(o[k]) else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "may": m0, "may_l1": m1,
-                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
+                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": float(ipc_l1.get(mes, np.nan)), "ipc_p3": float(ipc_p3.get(mes, np.nan)),
                               "ipc_l2": float(ipc_l2.get(mes, np.nan)), "ipc_lag": float(ipc_lag.get(mes, np.nan)),
@@ -252,6 +256,10 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         if (t.corte == "completo").any():
             cols.append(t["nafta"].astype(float) - p)
         cols.append(t["nafta_l1"].astype(float) - p)
+    if "naftap" in fuentes:
+        cols.append(t["naftap"].astype(float) - t.proy.astype(float))
+    if "naftal" in fuentes:
+        cols.append(t["nafta_l1"].astype(float) - t.proy.astype(float))
     if "fx" in fuentes:
         cols.append(t["fx"].astype(float))
         cols.append(t["fx_l1"].astype(float))
@@ -283,6 +291,13 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["alim_l1"].astype(float) - t.proy.astype(float))
     if "alim" in fuentes:
         cols.append(t["alim_sepa"].astype(float) - t.proy.astype(float))
+    if "maya" in fuentes:
+        # asimétrico: subas y bajas de la hacienda (respecto de su tendencia) con coeficientes distintos
+        tend = np.where(t.clase.isin(CON_TENDENCIA), t.tend.fillna(0).astype(float), 0.0)
+        for k in ("may", "may_l1"):
+            d = t[k].astype(float) - tend
+            cols.append(np.maximum(d, 0.0))
+            cols.append(np.minimum(d, 0.0))
     if "may2" in fuentes:
         tend = np.where(t.clase.isin(CON_TENDENCIA), t.tend.fillna(0).astype(float), 0.0)
         cols.append(t["may_l2"].astype(float) - tend)
@@ -341,6 +356,12 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["alim_sepa"].notna()
     if "may2" in fuentes:
         ok &= t["may_l2"].notna()
+    if "maya" in fuentes:
+        ok &= t["may"].notna() & t["may_l1"].notna()
+    if "naftal" in fuentes:
+        ok &= t["nafta_l1"].notna()
+    if "naftap" in fuentes:
+        ok &= t["naftap"].notna()
     return ok
 
 
@@ -375,6 +396,35 @@ def evaluar_clase(t: pd.DataFrame, clase: str) -> list[dict]:
     return res
 
 
+# Cómo se mide el error de una clase para elegir fuentes:
+#  "regiones": promedio del error de cada región (como si fueran independientes)
+#  "ponderada": error del promedio de la clase ponderado por el peso de cada región en el índice nacional, mes a mes
+#               (lo que de verdad llega al IPC: los errores comunes a todas las regiones no se diluyen)
+METRICA = os.environ.get("IPC_METRICA", "regiones")
+# Vida media (meses) del peso de cada mes al comparar fuentes: 0 = todos los meses pesan igual
+VIDA_MEDIA = float(os.environ.get("IPC_VIDA", "0"))
+
+
+def _wmean(serie_mes: pd.Series) -> float:
+    """Promedio de un error por mes, con más peso a los meses recientes si VIDA_MEDIA > 0."""
+    if VIDA_MEDIA <= 0 or serie_mes.empty:
+        return float(serie_mes.mean())
+    m = pd.to_datetime(serie_mes.index)
+    edad = (m.max().year - m.year) * 12 + (m.max().month - m.month)
+    w = 0.5 ** (np.asarray(edad, dtype=float) / VIDA_MEDIA)
+    return float((serie_mes.values * w).sum() / w.sum())
+PESO_REGION: dict = {}
+
+
+def _err(p: pd.DataFrame, col: str) -> pd.Series:
+    """Error absoluto por mes de la clase (según METRICA)."""
+    e = p.real - p[col]
+    if METRICA == "ponderada" and PESO_REGION:
+        w = p.region.map(PESO_REGION).fillna(0.0)
+        return ((e * w).groupby(p.mes).sum() / w.groupby(p.mes).sum()).abs()
+    return e.abs().groupby(p.mes).mean()
+
+
 def _elegir(opciones: list[dict], hasta=None) -> list[dict]:
     """La regla única: opciones que bajan el error de su clase (meses EVAL_DESDE..hasta, sin incluir `hasta`),
     ordenadas por error en los meses comunes."""
@@ -384,9 +434,12 @@ def _elegir(opciones: list[dict], hasta=None) -> list[dict]:
         p = p[(p.mes >= EVAL_DESDE) & ((p.mes < hasta) if hasta is not None else True)]
         if p.mes.nunique() < MIN_MESES_ELEGIR:
             continue
-        ep, ef = float((p.real - p.proy).abs().mean()), float((p.real - p.pred).abs().mean())
-        # diferencia de errores por mes (promedio de las regiones): ¿la mejora es clara o puede ser ruido?
-        dm = ((p.real - p.proy).abs() - (p.real - p.pred).abs()).groupby(p.mes).mean()
+        if METRICA == "ponderada" or VIDA_MEDIA > 0:
+            ep, ef = _wmean(_err(p, "proy")), _wmean(_err(p, "pred"))
+        else:
+            ep, ef = float((p.real - p.proy).abs().mean()), float((p.real - p.pred).abs().mean())
+        # diferencia de errores por mes: ¿la mejora es clara o puede ser ruido?
+        dm = _err(p, "proy") - _err(p, "pred")
         t = dm.mean() / (dm.std(ddof=1) / np.sqrt(len(dm))) if len(dm) > 1 and dm.std(ddof=1) > 0 else 0.0
         if ep - ef >= MEJORA_MINIMA and t >= T_MINIMO:
             utiles.append((o, p, ep, ef))
@@ -396,7 +449,11 @@ def _elegir(opciones: list[dict], hasta=None) -> list[dict]:
 
     def err_comun(x):
         p = x[1][x[1].mes.isin(comunes)]
-        return float((p.real - p.pred).abs().mean()) if len(p) else x[3]
+        if not len(p):
+            return x[3]
+        if METRICA == "ponderada" or VIDA_MEDIA > 0:
+            return _wmean(_err(p, "pred"))
+        return float((p.real - p.pred).abs().mean())
     utiles.sort(key=err_comun)
     return [dict(o, error_proyeccion=ep, error_con_fuente=ef) for o, _, ep, ef in utiles]
 
@@ -405,6 +462,8 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
     """Calibración vigente (regla única con todos los meses) y backtest anidado: en cada mes la regla se aplica
     solo con los meses anteriores, así el error del backtest incluye el costo de elegir fuentes."""
     calib, resumen, backtests = {}, [], []
+    PESO_REGION.clear()
+    PESO_REGION.update({r: float(v) for r, v in nc.pesos["region_en_nacional"].items()})
     for corte in CORTES:
         t = tabla(nc, corte)
         calib[corte] = {}

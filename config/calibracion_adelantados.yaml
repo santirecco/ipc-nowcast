@@ -21,6 +21,18 @@
     meses: 18
   01.1.2:
   - fuentes:
+    - sepa_carne
+    - maya
+    coef:
+    - 0.335
+    - 0.315
+    - 0.0
+    - 0.236
+    - 0.077
+    error_proyeccion: 1.9
+    error_con_fuente: 1.602
+    meses: 18
+  - fuentes:
     - arr
     coef:
     - 2.351
@@ -28,6 +40,16 @@
     error_proyeccion: 1.815
     error_con_fuente: 1.713
     meses: 14
+  - fuentes:
+    - maya
+    coef:
+    - 0.472
+    - 0.129
+    - 0.171
+    - 0.449
+    error_proyeccion: 2.938
+    error_con_fuente: 2.553
+    meses: 34
   - fuentes:
     - may
     coef:
@@ -300,6 +322,13 @@
     error_proyeccion: 2.098
     error_con_fuente: 1.585
     meses: 29
+  - fuentes:
+    - naftal
+    coef:
+    - 0.416
+    error_proyeccion: 2.098
+    error_con_fuente: 1.585
+    meses: 29
   '08.3':
   - fuentes:
     - ipc
@@ -436,6 +465,18 @@
     meses: 18
   01.1.2:
   - fuentes:
+    - sepa_carne
+    - maya
+    coef:
+    - 0.382
+    - 0.295
+    - 0.0
+    - 0.234
+    - 0.075
+    error_proyeccion: 1.9
+    error_con_fuente: 1.573
+    meses: 18
+  - fuentes:
     - arr
     coef:
     - 2.351
@@ -443,6 +484,16 @@
     error_proyeccion: 1.815
     error_con_fuente: 1.713
     meses: 14
+  - fuentes:
+    - maya
+    coef:
+    - 0.472
+    - 0.129
+    - 0.171
+    - 0.449
+    error_proyeccion: 2.938
+    error_con_fuente: 2.553
+    meses: 34
   - fuentes:
     - may
     coef:
@@ -725,6 +776,13 @@
     error_proyeccion: 2.098
     error_con_fuente: 1.585
     meses: 29
+  - fuentes:
+    - naftal
+    coef:
+    - 0.416
+    error_proyeccion: 2.098
+    error_con_fuente: 1.585
+    meses: 29
   '08.3':
   - fuentes:
     - ipc
@@ -869,6 +927,18 @@ completo:
   01.1.2:
   - fuentes:
     - sepa_carne
+    - maya
+    coef:
+    - 0.41
+    - 0.197
+    - 0.0
+    - 0.232
+    - 0.11
+    error_proyeccion: 1.9
+    error_con_fuente: 1.564
+    meses: 18
+  - fuentes:
+    - sepa_carne
     - may
     coef:
     - 0.311
@@ -895,6 +965,16 @@ completo:
     error_proyeccion: 1.815
     error_con_fuente: 1.713
     meses: 14
+  - fuentes:
+    - maya
+    coef:
+    - 0.34
+    - 0.048
+    - 0.163
+    - 0.536
+    error_proyeccion: 2.938
+    error_con_fuente: 2.555
+    meses: 34
   - fuentes:
     - may
     coef:
@@ -1221,6 +1301,13 @@ completo:
     - 0.0
     error_proyeccion: 2.098
     error_con_fuente: 1.475
+    meses: 29
+  - fuentes:
+    - naftal
+    coef:
+    - 0.416
+    error_proyeccion: 2.098
+    error_con_fuente: 1.585
     meses: 29
   '08.3':
   - fuentes:

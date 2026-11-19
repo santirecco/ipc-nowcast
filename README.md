@@ -120,6 +120,15 @@ Ropa: ninguna fuente con historia le gana a la estadística; se relevan tiendas 
 su historia con el archivo web (`scripts/pruebas/wayback.py`). Descartado: decidir las fuentes con historia desde
 2019 en vez de 2024 (mejora 2023, de 3,47 a 2,93 a fin de mes, pero empeora el régimen actual: 0,341 -> 0,379).
 
+Dispersión de mitad y fin de mes (nov-2026). Descomponiendo el error de los últimos 16 meses, carnes explicaba la
+mitad de la variabilidad a mitad de mes: la señal de hacienda exageraba, sobre todo las bajas. Entra la hacienda
+asimétrica (subas y bajas con coeficientes distintos; estimado: las bajas casi no pasan a la carnicería) junto con
+los cortes de SEPA. Últimos 16 meses: mitad de mes 0,255 -> 0,217 (peor mes 0,61 -> 0,47), día 22 0,244 -> 0,202,
+fin 0,202 -> 0,190. Combustibles: el dato mensual de surtidor es el precio vigente y no el promedio del mes; se
+guarda la foto diaria desde nov-2026 y una candidata con el promedio del mes entra sola cuando tenga historia.
+Descartados: amortiguar el movimiento que traen los precios del mes, sumar parte del error del mes anterior,
+medir el error de cada clase ponderado por región, y dar más peso a los meses recientes al elegir (vida media 12).
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).
