@@ -191,6 +191,15 @@ def procesar_dia(archivo_tar: str, fecha: str) -> pd.DataFrame:
             prev = pd.read_csv(ruta_c, dtype=str) if ruta_c.exists() else pd.DataFrame(columns=["id_comercio", "id_producto", "desc"])
             nuevo = fres[["id_comercio", "id_producto", "desc"]].astype(str)
             pd.concat([prev, nuevo]).drop_duplicates(["id_comercio", "id_producto"]).to_csv(ruta_c, index=False)
+    # catálogo de descripciones (EAN -> descripción) de los productos clasificados, para emparejar con INDEC
+    dd = descs[descs.clase.notna() & descs.id_producto.astype(str).str.fullmatch(r"\d{8,14}")][["id_producto", "desc", "clase"]].astype(str)
+    if len(dd):
+        import fcntl
+        ruta_d = SALIDA / "descripciones.csv"
+        with open(str(ruta_d) + ".lock", "w") as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            prev = pd.read_csv(ruta_d, dtype=str) if ruta_d.exists() else pd.DataFrame(columns=["id_producto", "desc", "clase"])
+            pd.concat([prev, dd]).drop_duplicates("id_producto").to_csv(ruta_d, index=False)
     r = r[r.clase.notna()].drop(columns="desc")
     r["fecha"] = fecha
     r["id_comercio"] = r.id_comercio.astype(str)

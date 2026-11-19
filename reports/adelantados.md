@@ -1,6 +1,6 @@
 # Indicadores adelantados de alimentos
 
-*Generado el 18/11/2026.*
+*Generado el 19/11/2026.*
 
 Para cada clase de alimentos se mide si los precios de góndola de todo el país (SEPA), los precios mayoristas
 de verduras y frutas (Mercado Central) y el precio de la hacienda (carne) anticipan el dato de INDEC mejor que la

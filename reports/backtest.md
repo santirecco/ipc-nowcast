@@ -1,6 +1,6 @@
 # Backtest del modelo
 
-*Generado el 18/11/2026.*
+*Generado el 19/11/2026.*
 
 Se simula el pronóstico de cada mes usando solo la información disponible en ese momento:
 - **Inicio de mes:** solo la proyección estadística por región y división.

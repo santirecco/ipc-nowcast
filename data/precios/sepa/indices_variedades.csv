@@ -1,0 +1,3036 @@
+mes,region,variedad,clase,var_%,productos,corte
+2024-09,Cuyo,Aceite de girasol,01.1.5,3.8266,49,completo
+2024-09,Cuyo,Agua sin gas,01.2.2,3.1346,194,completo
+2024-09,Cuyo,Arroz blanco simple,01.1.1,0.0881,42,completo
+2024-09,Cuyo,Arvejas secas remojadas,01.1.7,2.7489,42,completo
+2024-09,Cuyo,Azúcar,01.1.8,0.1591,30,completo
+2024-09,Cuyo,Café molido,01.2.1,3.1104,79,completo
+2024-09,Cuyo,Dulce de leche,01.1.8,0.4668,91,completo
+2024-09,Cuyo,Fideos secos tipo guisero,01.1.1,0.7188,167,completo
+2024-09,Cuyo,Galletitas de agua envasadas,01.1.1,1.5557,67,completo
+2024-09,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.8502,115,completo
+2024-09,Cuyo,Gaseosa base cola,01.2.2,1.6717,136,completo
+2024-09,Cuyo,Hamburguesas congeladas,01.1.2,3.2482,81,completo
+2024-09,Cuyo,Harina de trigo común 000,01.1.1,0.8223,30,completo
+2024-09,Cuyo,Leche en polvo entera,01.1.4,3.8250,9,completo
+2024-09,Cuyo,Leche fresca entera en sachet,01.1.4,2.1990,28,completo
+2024-09,Cuyo,Manteca,01.1.5,0.0861,74,completo
+2024-09,Cuyo,Pan de mesa,01.1.1,2.1372,39,completo
+2024-09,Cuyo,Polvo para flan,01.1.8,2.1659,62,completo
+2024-09,Cuyo,Sal fina,01.1.9,2.4688,67,completo
+2024-09,Cuyo,Salchicha tipo viena,01.1.2,3.6745,88,completo
+2024-09,Cuyo,Tomate entero en conserva,01.1.7,5.0830,26,completo
+2024-09,Cuyo,Yerba mate,01.2.1,0.2585,378,completo
+2024-09,Cuyo,Yogur firme,01.1.4,3.2582,6,completo
+2024-09,GBA,Aceite de girasol,01.1.5,1.7309,62,completo
+2024-09,GBA,Agua sin gas,01.2.2,2.5440,209,completo
+2024-09,GBA,Arroz blanco simple,01.1.1,0.6715,53,completo
+2024-09,GBA,Arvejas secas remojadas,01.1.7,2.9152,41,completo
+2024-09,GBA,Azúcar,01.1.8,-2.5524,33,completo
+2024-09,GBA,Café molido,01.2.1,2.2142,94,completo
+2024-09,GBA,Dulce de leche,01.1.8,0.5136,93,completo
+2024-09,GBA,Fideos secos tipo guisero,01.1.1,0.7232,177,completo
+2024-09,GBA,Galletitas de agua envasadas,01.1.1,1.7954,80,completo
+2024-09,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.5686,131,completo
+2024-09,GBA,Gaseosa base cola,01.2.2,3.1049,137,completo
+2024-09,GBA,Hamburguesas congeladas,01.1.2,3.5126,77,completo
+2024-09,GBA,Harina de trigo común 000,01.1.1,0.7649,34,completo
+2024-09,GBA,Leche en polvo entera,01.1.4,3.3710,5,completo
+2024-09,GBA,Leche fresca entera en sachet,01.1.4,0.2341,36,completo
+2024-09,GBA,Manteca,01.1.5,0.5876,70,completo
+2024-09,GBA,Pan de mesa,01.1.1,-0.1121,41,completo
+2024-09,GBA,Polvo para flan,01.1.8,1.7309,67,completo
+2024-09,GBA,Sal fina,01.1.9,1.9292,67,completo
+2024-09,GBA,Salchicha tipo viena,01.1.2,3.8451,99,completo
+2024-09,GBA,Tomate entero en conserva,01.1.7,5.6614,26,completo
+2024-09,GBA,Yerba mate,01.2.1,0.7174,448,completo
+2024-09,GBA,Yogur firme,01.1.4,3.7754,18,completo
+2024-09,Noreste,Aceite de girasol,01.1.5,4.0802,60,completo
+2024-09,Noreste,Agua sin gas,01.2.2,3.2092,171,completo
+2024-09,Noreste,Arroz blanco simple,01.1.1,-0.3574,42,completo
+2024-09,Noreste,Arvejas secas remojadas,01.1.7,2.6511,30,completo
+2024-09,Noreste,Azúcar,01.1.8,1.7825,30,completo
+2024-09,Noreste,Café molido,01.2.1,1.5324,77,completo
+2024-09,Noreste,Dulce de leche,01.1.8,1.2456,89,completo
+2024-09,Noreste,Fideos secos tipo guisero,01.1.1,0.3582,172,completo
+2024-09,Noreste,Galletitas de agua envasadas,01.1.1,1.1486,76,completo
+2024-09,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.2919,109,completo
+2024-09,Noreste,Gaseosa base cola,01.2.2,0.9574,132,completo
+2024-09,Noreste,Hamburguesas congeladas,01.1.2,3.7097,81,completo
+2024-09,Noreste,Harina de trigo común 000,01.1.1,1.1812,30,completo
+2024-09,Noreste,Leche en polvo entera,01.1.4,1.5042,11,completo
+2024-09,Noreste,Leche fresca entera en sachet,01.1.4,1.8525,24,completo
+2024-09,Noreste,Manteca,01.1.5,0.4021,80,completo
+2024-09,Noreste,Pan de mesa,01.1.1,1.8070,39,completo
+2024-09,Noreste,Polvo para flan,01.1.8,2.8964,73,completo
+2024-09,Noreste,Sal fina,01.1.9,4.0182,75,completo
+2024-09,Noreste,Salchicha tipo viena,01.1.2,4.2498,112,completo
+2024-09,Noreste,Tomate entero en conserva,01.1.7,7.8633,26,completo
+2024-09,Noreste,Yerba mate,01.2.1,0.0143,419,completo
+2024-09,Noreste,Yogur firme,01.1.4,1.5102,5,completo
+2024-09,Noroeste,Aceite de girasol,01.1.5,4.2835,43,completo
+2024-09,Noroeste,Agua sin gas,01.2.2,2.6143,161,completo
+2024-09,Noroeste,Arroz blanco simple,01.1.1,-0.0628,31,completo
+2024-09,Noroeste,Arvejas secas remojadas,01.1.7,2.0996,32,completo
+2024-09,Noroeste,Azúcar,01.1.8,2.0010,28,completo
+2024-09,Noroeste,Café molido,01.2.1,2.0211,56,completo
+2024-09,Noroeste,Dulce de leche,01.1.8,0.9195,68,completo
+2024-09,Noroeste,Fideos secos tipo guisero,01.1.1,1.1116,150,completo
+2024-09,Noroeste,Galletitas de agua envasadas,01.1.1,2.0038,54,completo
+2024-09,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,2.0697,94,completo
+2024-09,Noroeste,Gaseosa base cola,01.2.2,1.5994,128,completo
+2024-09,Noroeste,Hamburguesas congeladas,01.1.2,3.4980,60,completo
+2024-09,Noroeste,Harina de trigo común 000,01.1.1,-0.0996,24,completo
+2024-09,Noroeste,Leche en polvo entera,01.1.4,3.1911,8,completo
+2024-09,Noroeste,Leche fresca entera en sachet,01.1.4,2.2078,24,completo
+2024-09,Noroeste,Manteca,01.1.5,0.3796,61,completo
+2024-09,Noroeste,Pan de mesa,01.1.1,0.8516,32,completo
+2024-09,Noroeste,Polvo para flan,01.1.8,2.2890,51,completo
+2024-09,Noroeste,Sal fina,01.1.9,2.4284,52,completo
+2024-09,Noroeste,Salchicha tipo viena,01.1.2,3.7547,73,completo
+2024-09,Noroeste,Tomate entero en conserva,01.1.7,8.1120,20,completo
+2024-09,Noroeste,Yerba mate,01.2.1,0.3494,294,completo
+2024-09,Noroeste,Yogur firme,01.1.4,1.8657,4,completo
+2024-09,Pampeana,Aceite de girasol,01.1.5,4.7035,108,completo
+2024-09,Pampeana,Agua sin gas,01.2.2,2.4860,416,completo
+2024-09,Pampeana,Arroz blanco simple,01.1.1,-0.1236,83,completo
+2024-09,Pampeana,Arvejas secas remojadas,01.1.7,1.0169,90,completo
+2024-09,Pampeana,Azúcar,01.1.8,0.7301,61,completo
+2024-09,Pampeana,Café molido,01.2.1,2.2695,145,completo
+2024-09,Pampeana,Dulce de leche,01.1.8,0.5160,205,completo
+2024-09,Pampeana,Fideos secos tipo guisero,01.1.1,0.8069,297,completo
+2024-09,Pampeana,Galletitas de agua envasadas,01.1.1,1.5243,146,completo
+2024-09,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.7066,218,completo
+2024-09,Pampeana,Gaseosa base cola,01.2.2,2.2745,265,completo
+2024-09,Pampeana,Hamburguesas congeladas,01.1.2,3.6751,165,completo
+2024-09,Pampeana,Harina de trigo común 000,01.1.1,0.7949,53,completo
+2024-09,Pampeana,Leche en polvo entera,01.1.4,1.4276,17,completo
+2024-09,Pampeana,Leche fresca entera en sachet,01.1.4,1.2457,59,completo
+2024-09,Pampeana,Manteca,01.1.5,0.5348,164,completo
+2024-09,Pampeana,Pan de mesa,01.1.1,2.0348,86,completo
+2024-09,Pampeana,Polvo para flan,01.1.8,1.8307,133,completo
+2024-09,Pampeana,Sal fina,01.1.9,2.4237,124,completo
+2024-09,Pampeana,Salchicha tipo viena,01.1.2,4.1161,209,completo
+2024-09,Pampeana,Tomate entero en conserva,01.1.7,4.7858,53,completo
+2024-09,Pampeana,Yerba mate,01.2.1,0.6700,800,completo
+2024-09,Pampeana,Yogur firme,01.1.4,2.3846,26,completo
+2024-09,Patagonia,Aceite de girasol,01.1.5,2.7197,58,completo
+2024-09,Patagonia,Agua sin gas,01.2.2,2.6576,222,completo
+2024-09,Patagonia,Arroz blanco simple,01.1.1,0.0549,53,completo
+2024-09,Patagonia,Arvejas secas remojadas,01.1.7,2.3486,39,completo
+2024-09,Patagonia,Azúcar,01.1.8,0.3145,26,completo
+2024-09,Patagonia,Café molido,01.2.1,2.2839,99,completo
+2024-09,Patagonia,Dulce de leche,01.1.8,0.7799,111,completo
+2024-09,Patagonia,Fideos secos tipo guisero,01.1.1,0.8016,177,completo
+2024-09,Patagonia,Galletitas de agua envasadas,01.1.1,1.1123,82,completo
+2024-09,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.8095,133,completo
+2024-09,Patagonia,Gaseosa base cola,01.2.2,2.0333,132,completo
+2024-09,Patagonia,Hamburguesas congeladas,01.1.2,3.4860,83,completo
+2024-09,Patagonia,Harina de trigo común 000,01.1.1,1.4387,32,completo
+2024-09,Patagonia,Leche en polvo entera,01.1.4,3.4052,4,completo
+2024-09,Patagonia,Leche fresca entera en sachet,01.1.4,0.9486,36,completo
+2024-09,Patagonia,Manteca,01.1.5,0.5132,84,completo
+2024-09,Patagonia,Pan de mesa,01.1.1,1.1407,42,completo
+2024-09,Patagonia,Polvo para flan,01.1.8,1.8564,67,completo
+2024-09,Patagonia,Sal fina,01.1.9,1.8423,72,completo
+2024-09,Patagonia,Salchicha tipo viena,01.1.2,3.6811,92,completo
+2024-09,Patagonia,Tomate entero en conserva,01.1.7,6.1686,27,completo
+2024-09,Patagonia,Yerba mate,01.2.1,0.7051,417,completo
+2024-09,Patagonia,Yogur firme,01.1.4,1.6189,17,completo
+2024-10,Cuyo,Aceite de girasol,01.1.5,3.7810,53,completo
+2024-10,Cuyo,Agua sin gas,01.2.2,3.7299,201,completo
+2024-10,Cuyo,Arroz blanco simple,01.1.1,-1.2085,47,completo
+2024-10,Cuyo,Arvejas secas remojadas,01.1.7,1.8782,43,completo
+2024-10,Cuyo,Azúcar,01.1.8,-0.2033,33,completo
+2024-10,Cuyo,Café molido,01.2.1,1.9298,90,completo
+2024-10,Cuyo,Dulce de leche,01.1.8,1.8151,93,completo
+2024-10,Cuyo,Fideos secos tipo guisero,01.1.1,1.3984,180,completo
+2024-10,Cuyo,Galletitas de agua envasadas,01.1.1,2.0683,72,completo
+2024-10,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.2972,167,completo
+2024-10,Cuyo,Gaseosa base cola,01.2.2,2.0428,156,completo
+2024-10,Cuyo,Hamburguesas congeladas,01.1.2,4.5318,96,completo
+2024-10,Cuyo,Harina de trigo común 000,01.1.1,1.0218,33,completo
+2024-10,Cuyo,Leche en polvo entera,01.1.4,0.9521,9,completo
+2024-10,Cuyo,Leche fresca entera en sachet,01.1.4,1.2602,29,completo
+2024-10,Cuyo,Manteca,01.1.5,0.9951,73,completo
+2024-10,Cuyo,Pan de mesa,01.1.1,1.2994,43,completo
+2024-10,Cuyo,Polvo para flan,01.1.8,1.5725,62,completo
+2024-10,Cuyo,Sal fina,01.1.9,2.7865,72,completo
+2024-10,Cuyo,Salchicha tipo viena,01.1.2,3.2427,105,completo
+2024-10,Cuyo,Tomate entero en conserva,01.1.7,1.9531,23,completo
+2024-10,Cuyo,Yerba mate,01.2.1,0.1816,415,completo
+2024-10,Cuyo,Yogur firme,01.1.4,5.3635,7,completo
+2024-10,GBA,Aceite de girasol,01.1.5,4.9248,55,completo
+2024-10,GBA,Agua sin gas,01.2.2,3.1559,211,completo
+2024-10,GBA,Arroz blanco simple,01.1.1,-1.0334,47,completo
+2024-10,GBA,Arvejas secas remojadas,01.1.7,2.6479,35,completo
+2024-10,GBA,Azúcar,01.1.8,-3.3291,30,completo
+2024-10,GBA,Café molido,01.2.1,1.3918,95,completo
+2024-10,GBA,Dulce de leche,01.1.8,2.2037,90,completo
+2024-10,GBA,Fideos secos tipo guisero,01.1.1,1.3994,178,completo
+2024-10,GBA,Galletitas de agua envasadas,01.1.1,1.0379,82,completo
+2024-10,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.1783,164,completo
+2024-10,GBA,Gaseosa base cola,01.2.2,5.6094,169,completo
+2024-10,GBA,Hamburguesas congeladas,01.1.2,4.3801,80,completo
+2024-10,GBA,Harina de trigo común 000,01.1.1,0.4452,32,completo
+2024-10,GBA,Leche en polvo entera,01.1.4,1.3840,5,completo
+2024-10,GBA,Leche fresca entera en sachet,01.1.4,0.6439,35,completo
+2024-10,GBA,Manteca,01.1.5,0.8038,71,completo
+2024-10,GBA,Pan de mesa,01.1.1,2.3607,48,completo
+2024-10,GBA,Polvo para flan,01.1.8,2.4841,63,completo
+2024-10,GBA,Sal fina,01.1.9,2.7612,62,completo
+2024-10,GBA,Salchicha tipo viena,01.1.2,2.8585,112,completo
+2024-10,GBA,Tomate entero en conserva,01.1.7,1.8848,24,completo
+2024-10,GBA,Yerba mate,01.2.1,0.6446,422,completo
+2024-10,GBA,Yogur firme,01.1.4,4.7173,23,completo
+2024-10,Noreste,Aceite de girasol,01.1.5,3.6582,63,completo
+2024-10,Noreste,Agua sin gas,01.2.2,4.2393,177,completo
+2024-10,Noreste,Arroz blanco simple,01.1.1,-1.6471,41,completo
+2024-10,Noreste,Arvejas secas remojadas,01.1.7,1.7681,36,completo
+2024-10,Noreste,Azúcar,01.1.8,-3.0891,31,completo
+2024-10,Noreste,Café molido,01.2.1,2.3380,80,completo
+2024-10,Noreste,Dulce de leche,01.1.8,1.7822,87,completo
+2024-10,Noreste,Fideos secos tipo guisero,01.1.1,1.4821,174,completo
+2024-10,Noreste,Galletitas de agua envasadas,01.1.1,0.4390,77,completo
+2024-10,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.3834,143,completo
+2024-10,Noreste,Gaseosa base cola,01.2.2,2.9136,149,completo
+2024-10,Noreste,Hamburguesas congeladas,01.1.2,4.5935,88,completo
+2024-10,Noreste,Harina de trigo común 000,01.1.1,-1.7291,29,completo
+2024-10,Noreste,Leche en polvo entera,01.1.4,0.8972,11,completo
+2024-10,Noreste,Leche fresca entera en sachet,01.1.4,1.1143,25,completo
+2024-10,Noreste,Manteca,01.1.5,1.3504,79,completo
+2024-10,Noreste,Pan de mesa,01.1.1,1.8384,41,completo
+2024-10,Noreste,Polvo para flan,01.1.8,1.0253,79,completo
+2024-10,Noreste,Sal fina,01.1.9,4.2607,72,completo
+2024-10,Noreste,Salchicha tipo viena,01.1.2,2.5181,121,completo
+2024-10,Noreste,Tomate entero en conserva,01.1.7,1.2287,24,completo
+2024-10,Noreste,Yerba mate,01.2.1,0.2418,437,completo
+2024-10,Noreste,Yogur firme,01.1.4,6.6483,8,completo
+2024-10,Noroeste,Aceite de girasol,01.1.5,4.1449,45,completo
+2024-10,Noroeste,Agua sin gas,01.2.2,3.1102,169,completo
+2024-10,Noroeste,Arroz blanco simple,01.1.1,-1.4347,33,completo
+2024-10,Noroeste,Arvejas secas remojadas,01.1.7,1.9288,34,completo
+2024-10,Noroeste,Azúcar,01.1.8,-2.3549,30,completo
+2024-10,Noroeste,Café molido,01.2.1,2.5677,68,completo
+2024-10,Noroeste,Dulce de leche,01.1.8,1.8505,69,completo
+2024-10,Noroeste,Fideos secos tipo guisero,01.1.1,1.2006,156,completo
+2024-10,Noroeste,Galletitas de agua envasadas,01.1.1,3.5311,58,completo
+2024-10,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,2.3991,140,completo
+2024-10,Noroeste,Gaseosa base cola,01.2.2,2.4237,144,completo
+2024-10,Noroeste,Hamburguesas congeladas,01.1.2,5.5020,71,completo
+2024-10,Noroeste,Harina de trigo común 000,01.1.1,-0.1958,27,completo
+2024-10,Noroeste,Leche en polvo entera,01.1.4,0.8571,8,completo
+2024-10,Noroeste,Leche fresca entera en sachet,01.1.4,1.7453,27,completo
+2024-10,Noroeste,Manteca,01.1.5,1.5909,62,completo
+2024-10,Noroeste,Pan de mesa,01.1.1,2.3479,35,completo
+2024-10,Noroeste,Polvo para flan,01.1.8,0.9075,54,completo
+2024-10,Noroeste,Sal fina,01.1.9,5.4501,58,completo
+2024-10,Noroeste,Salchicha tipo viena,01.1.2,3.3889,86,completo
+2024-10,Noroeste,Tomate entero en conserva,01.1.7,1.9113,19,completo
+2024-10,Noroeste,Yerba mate,01.2.1,-0.0331,324,completo
+2024-10,Noroeste,Yogur firme,01.1.4,7.4284,5,completo
+2024-10,Pampeana,Aceite de girasol,01.1.5,4.4132,116,completo
+2024-10,Pampeana,Agua sin gas,01.2.2,3.6070,427,completo
+2024-10,Pampeana,Arroz blanco simple,01.1.1,-1.3024,88,completo
+2024-10,Pampeana,Arvejas secas remojadas,01.1.7,1.6207,97,completo
+2024-10,Pampeana,Azúcar,01.1.8,-0.9491,65,completo
+2024-10,Pampeana,Café molido,01.2.1,2.7180,151,completo
+2024-10,Pampeana,Dulce de leche,01.1.8,1.4780,221,completo
+2024-10,Pampeana,Fideos secos tipo guisero,01.1.1,1.0472,310,completo
+2024-10,Pampeana,Galletitas de agua envasadas,01.1.1,2.6727,159,completo
+2024-10,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.2731,295,completo
+2024-10,Pampeana,Gaseosa base cola,01.2.2,2.8401,302,completo
+2024-10,Pampeana,Hamburguesas congeladas,01.1.2,4.9817,179,completo
+2024-10,Pampeana,Harina de trigo común 000,01.1.1,0.1531,53,completo
+2024-10,Pampeana,Leche en polvo entera,01.1.4,1.1306,16,completo
+2024-10,Pampeana,Leche fresca entera en sachet,01.1.4,1.2885,61,completo
+2024-10,Pampeana,Manteca,01.1.5,1.1564,167,completo
+2024-10,Pampeana,Pan de mesa,01.1.1,1.9846,92,completo
+2024-10,Pampeana,Polvo para flan,01.1.8,2.0555,138,completo
+2024-10,Pampeana,Sal fina,01.1.9,1.8626,126,completo
+2024-10,Pampeana,Salchicha tipo viena,01.1.2,3.0578,228,completo
+2024-10,Pampeana,Tomate entero en conserva,01.1.7,2.1375,50,completo
+2024-10,Pampeana,Yerba mate,01.2.1,0.1362,824,completo
+2024-10,Pampeana,Yogur firme,01.1.4,5.5478,30,completo
+2024-10,Patagonia,Aceite de girasol,01.1.5,4.9039,58,completo
+2024-10,Patagonia,Agua sin gas,01.2.2,3.7254,228,completo
+2024-10,Patagonia,Arroz blanco simple,01.1.1,-1.0408,54,completo
+2024-10,Patagonia,Arvejas secas remojadas,01.1.7,2.2956,39,completo
+2024-10,Patagonia,Azúcar,01.1.8,-0.9843,30,completo
+2024-10,Patagonia,Café molido,01.2.1,2.4505,101,completo
+2024-10,Patagonia,Dulce de leche,01.1.8,1.8960,111,completo
+2024-10,Patagonia,Fideos secos tipo guisero,01.1.1,1.8398,184,completo
+2024-10,Patagonia,Galletitas de agua envasadas,01.1.1,2.2440,90,completo
+2024-10,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,3.0289,167,completo
+2024-10,Patagonia,Gaseosa base cola,01.2.2,2.9581,151,completo
+2024-10,Patagonia,Hamburguesas congeladas,01.1.2,4.5250,86,completo
+2024-10,Patagonia,Harina de trigo común 000,01.1.1,-0.0526,34,completo
+2024-10,Patagonia,Leche en polvo entera,01.1.4,1.7363,4,completo
+2024-10,Patagonia,Leche fresca entera en sachet,01.1.4,1.5921,37,completo
+2024-10,Patagonia,Manteca,01.1.5,0.6557,85,completo
+2024-10,Patagonia,Pan de mesa,01.1.1,0.1802,44,completo
+2024-10,Patagonia,Polvo para flan,01.1.8,2.1773,66,completo
+2024-10,Patagonia,Sal fina,01.1.9,2.3906,72,completo
+2024-10,Patagonia,Salchicha tipo viena,01.1.2,2.9705,106,completo
+2024-10,Patagonia,Tomate entero en conserva,01.1.7,1.5794,26,completo
+2024-10,Patagonia,Yerba mate,01.2.1,0.6921,431,completo
+2024-10,Patagonia,Yogur firme,01.1.4,5.4250,20,completo
+2024-11,Cuyo,Aceite de girasol,01.1.5,7.3864,56,completo
+2024-11,Cuyo,Agua sin gas,01.2.2,3.3797,211,completo
+2024-11,Cuyo,Arroz blanco simple,01.1.1,-1.7840,44,completo
+2024-11,Cuyo,Arvejas secas remojadas,01.1.7,1.8058,43,completo
+2024-11,Cuyo,Azúcar,01.1.8,0.8876,32,completo
+2024-11,Cuyo,Café molido,01.2.1,2.5551,97,completo
+2024-11,Cuyo,Dulce de leche,01.1.8,2.8102,94,completo
+2024-11,Cuyo,Fideos secos tipo guisero,01.1.1,1.9418,176,completo
+2024-11,Cuyo,Galletitas de agua envasadas,01.1.1,2.3692,75,completo
+2024-11,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,3.6573,170,completo
+2024-11,Cuyo,Gaseosa base cola,01.2.2,3.4252,156,completo
+2024-11,Cuyo,Hamburguesas congeladas,01.1.2,2.9122,95,completo
+2024-11,Cuyo,Harina de trigo común 000,01.1.1,0.6394,32,completo
+2024-11,Cuyo,Leche en polvo entera,01.1.4,-0.1403,8,completo
+2024-11,Cuyo,Leche fresca entera en sachet,01.1.4,1.3181,31,completo
+2024-11,Cuyo,Manteca,01.1.5,3.7231,83,completo
+2024-11,Cuyo,Pan de mesa,01.1.1,1.4719,42,completo
+2024-11,Cuyo,Polvo para flan,01.1.8,2.7679,63,completo
+2024-11,Cuyo,Sal fina,01.1.9,1.9316,71,completo
+2024-11,Cuyo,Salchicha tipo viena,01.1.2,2.7822,110,completo
+2024-11,Cuyo,Tomate entero en conserva,01.1.7,-0.8961,25,completo
+2024-11,Cuyo,Yerba mate,01.2.1,0.9746,409,completo
+2024-11,Cuyo,Yogur firme,01.1.4,1.1635,5,completo
+2024-11,GBA,Aceite de girasol,01.1.5,7.8037,48,completo
+2024-11,GBA,Agua sin gas,01.2.2,3.2091,216,completo
+2024-11,GBA,Arroz blanco simple,01.1.1,-2.3987,39,completo
+2024-11,GBA,Arvejas secas remojadas,01.1.7,2.2089,32,completo
+2024-11,GBA,Azúcar,01.1.8,1.2529,23,completo
+2024-11,GBA,Café molido,01.2.1,2.4612,83,completo
+2024-11,GBA,Dulce de leche,01.1.8,2.6160,79,completo
+2024-11,GBA,Fideos secos tipo guisero,01.1.1,0.8901,148,completo
+2024-11,GBA,Galletitas de agua envasadas,01.1.1,1.5900,70,completo
+2024-11,GBA,Galletitas dulces envasadas sin relleno,01.1.1,4.0949,150,completo
+2024-11,GBA,Gaseosa base cola,01.2.2,4.1643,153,completo
+2024-11,GBA,Hamburguesas congeladas,01.1.2,2.2080,73,completo
+2024-11,GBA,Harina de trigo común 000,01.1.1,0.7454,26,completo
+2024-11,GBA,Leche en polvo entera,01.1.4,-0.2669,6,completo
+2024-11,GBA,Leche fresca entera en sachet,01.1.4,0.8589,33,completo
+2024-11,GBA,Manteca,01.1.5,2.4767,66,completo
+2024-11,GBA,Pan de mesa,01.1.1,1.3857,45,completo
+2024-11,GBA,Polvo para flan,01.1.8,3.5671,55,completo
+2024-11,GBA,Sal fina,01.1.9,2.6410,58,completo
+2024-11,GBA,Salchicha tipo viena,01.1.2,2.1433,109,completo
+2024-11,GBA,Tomate entero en conserva,01.1.7,-0.1522,21,completo
+2024-11,GBA,Yerba mate,01.2.1,1.3230,367,completo
+2024-11,GBA,Yogur firme,01.1.4,4.4066,14,completo
+2024-11,Noreste,Aceite de girasol,01.1.5,7.2193,51,completo
+2024-11,Noreste,Agua sin gas,01.2.2,4.4869,169,completo
+2024-11,Noreste,Arroz blanco simple,01.1.1,-1.3925,35,completo
+2024-11,Noreste,Arvejas secas remojadas,01.1.7,0.9087,34,completo
+2024-11,Noreste,Azúcar,01.1.8,0.8205,24,completo
+2024-11,Noreste,Café molido,01.2.1,1.5623,74,completo
+2024-11,Noreste,Dulce de leche,01.1.8,1.8112,77,completo
+2024-11,Noreste,Fideos secos tipo guisero,01.1.1,2.1059,141,completo
+2024-11,Noreste,Galletitas de agua envasadas,01.1.1,0.5797,63,completo
+2024-11,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,3.6903,135,completo
+2024-11,Noreste,Gaseosa base cola,01.2.2,3.7704,137,completo
+2024-11,Noreste,Hamburguesas congeladas,01.1.2,1.0285,74,completo
+2024-11,Noreste,Harina de trigo común 000,01.1.1,-0.4011,26,completo
+2024-11,Noreste,Leche en polvo entera,01.1.4,0.2845,11,completo
+2024-11,Noreste,Leche fresca entera en sachet,01.1.4,3.7239,21,completo
+2024-11,Noreste,Manteca,01.1.5,0.9372,70,completo
+2024-11,Noreste,Pan de mesa,01.1.1,2.5326,37,completo
+2024-11,Noreste,Polvo para flan,01.1.8,2.3702,64,completo
+2024-11,Noreste,Sal fina,01.1.9,1.4154,66,completo
+2024-11,Noreste,Salchicha tipo viena,01.1.2,2.1391,112,completo
+2024-11,Noreste,Tomate entero en conserva,01.1.7,-1.8486,22,completo
+2024-11,Noreste,Yerba mate,01.2.1,0.7302,388,completo
+2024-11,Noreste,Yogur firme,01.1.4,1.0555,5,completo
+2024-11,Noroeste,Aceite de girasol,01.1.5,7.2152,46,completo
+2024-11,Noroeste,Agua sin gas,01.2.2,4.5412,176,completo
+2024-11,Noroeste,Arroz blanco simple,01.1.1,-3.3559,34,completo
+2024-11,Noroeste,Arvejas secas remojadas,01.1.7,1.0181,34,completo
+2024-11,Noroeste,Azúcar,01.1.8,1.1401,29,completo
+2024-11,Noroeste,Café molido,01.2.1,2.3358,73,completo
+2024-11,Noroeste,Dulce de leche,01.1.8,2.7556,75,completo
+2024-11,Noroeste,Fideos secos tipo guisero,01.1.1,1.8269,151,completo
+2024-11,Noroeste,Galletitas de agua envasadas,01.1.1,1.0256,63,completo
+2024-11,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,3.2781,146,completo
+2024-11,Noroeste,Gaseosa base cola,01.2.2,3.9467,140,completo
+2024-11,Noroeste,Hamburguesas congeladas,01.1.2,1.6605,70,completo
+2024-11,Noroeste,Harina de trigo común 000,01.1.1,-0.3149,27,completo
+2024-11,Noroeste,Leche en polvo entera,01.1.4,0.0407,9,completo
+2024-11,Noroeste,Leche fresca entera en sachet,01.1.4,2.2876,27,completo
+2024-11,Noroeste,Manteca,01.1.5,3.0442,68,completo
+2024-11,Noroeste,Pan de mesa,01.1.1,1.9320,35,completo
+2024-11,Noroeste,Polvo para flan,01.1.8,2.8830,49,completo
+2024-11,Noroeste,Sal fina,01.1.9,1.6401,57,completo
+2024-11,Noroeste,Salchicha tipo viena,01.1.2,1.9260,92,completo
+2024-11,Noroeste,Tomate entero en conserva,01.1.7,-1.4118,19,completo
+2024-11,Noroeste,Yerba mate,01.2.1,0.7388,320,completo
+2024-11,Noroeste,Yogur firme,01.1.4,1.5861,5,completo
+2024-11,Pampeana,Aceite de girasol,01.1.5,6.3305,98,completo
+2024-11,Pampeana,Agua sin gas,01.2.2,3.5246,390,completo
+2024-11,Pampeana,Arroz blanco simple,01.1.1,-1.9587,78,completo
+2024-11,Pampeana,Arvejas secas remojadas,01.1.7,1.0422,87,completo
+2024-11,Pampeana,Azúcar,01.1.8,0.2686,56,completo
+2024-11,Pampeana,Café molido,01.2.1,2.1424,137,completo
+2024-11,Pampeana,Dulce de leche,01.1.8,2.2880,182,completo
+2024-11,Pampeana,Fideos secos tipo guisero,01.1.1,1.3552,269,completo
+2024-11,Pampeana,Galletitas de agua envasadas,01.1.1,1.7977,127,completo
+2024-11,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,3.3719,277,completo
+2024-11,Pampeana,Gaseosa base cola,01.2.2,2.5829,265,completo
+2024-11,Pampeana,Hamburguesas congeladas,01.1.2,2.2662,162,completo
+2024-11,Pampeana,Harina de trigo común 000,01.1.1,-0.0728,47,completo
+2024-11,Pampeana,Leche en polvo entera,01.1.4,1.0640,15,completo
+2024-11,Pampeana,Leche fresca entera en sachet,01.1.4,1.1809,56,completo
+2024-11,Pampeana,Manteca,01.1.5,1.9118,157,completo
+2024-11,Pampeana,Pan de mesa,01.1.1,0.6440,80,completo
+2024-11,Pampeana,Polvo para flan,01.1.8,2.3440,121,completo
+2024-11,Pampeana,Sal fina,01.1.9,1.5632,112,completo
+2024-11,Pampeana,Salchicha tipo viena,01.1.2,1.9238,210,completo
+2024-11,Pampeana,Tomate entero en conserva,01.1.7,0.7982,43,completo
+2024-11,Pampeana,Yerba mate,01.2.1,0.8098,713,completo
+2024-11,Pampeana,Yogur firme,01.1.4,3.8893,21,completo
+2024-11,Patagonia,Aceite de girasol,01.1.5,5.6984,50,completo
+2024-11,Patagonia,Agua sin gas,01.2.2,2.8371,210,completo
+2024-11,Patagonia,Arroz blanco simple,01.1.1,-2.5475,46,completo
+2024-11,Patagonia,Arvejas secas remojadas,01.1.7,1.9119,37,completo
+2024-11,Patagonia,Azúcar,01.1.8,0.5820,26,completo
+2024-11,Patagonia,Café molido,01.2.1,2.0784,90,completo
+2024-11,Patagonia,Dulce de leche,01.1.8,2.5696,97,completo
+2024-11,Patagonia,Fideos secos tipo guisero,01.1.1,0.0463,147,completo
+2024-11,Patagonia,Galletitas de agua envasadas,01.1.1,0.8855,67,completo
+2024-11,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.9872,158,completo
+2024-11,Patagonia,Gaseosa base cola,01.2.2,2.9343,130,completo
+2024-11,Patagonia,Hamburguesas congeladas,01.1.2,2.6590,75,completo
+2024-11,Patagonia,Harina de trigo común 000,01.1.1,-0.8357,28,completo
+2024-11,Patagonia,Leche en polvo entera,01.1.4,-0.3946,4,completo
+2024-11,Patagonia,Leche fresca entera en sachet,01.1.4,2.0297,35,completo
+2024-11,Patagonia,Manteca,01.1.5,2.7297,82,completo
+2024-11,Patagonia,Pan de mesa,01.1.1,-0.1690,36,completo
+2024-11,Patagonia,Polvo para flan,01.1.8,2.3243,56,completo
+2024-11,Patagonia,Sal fina,01.1.9,2.0159,66,completo
+2024-11,Patagonia,Salchicha tipo viena,01.1.2,2.8869,98,completo
+2024-11,Patagonia,Tomate entero en conserva,01.1.7,0.5232,22,completo
+2024-11,Patagonia,Yerba mate,01.2.1,0.8769,381,completo
+2024-11,Patagonia,Yogur firme,01.1.4,2.2699,13,completo
+2024-12,Cuyo,Aceite de girasol,01.1.5,6.8367,48,completo
+2024-12,Cuyo,Agua sin gas,01.2.2,3.8572,191,completo
+2024-12,Cuyo,Arroz blanco simple,01.1.1,-0.3475,44,completo
+2024-12,Cuyo,Arvejas secas remojadas,01.1.7,1.3542,38,completo
+2024-12,Cuyo,Azúcar,01.1.8,2.9283,27,completo
+2024-12,Cuyo,Café molido,01.2.1,2.3727,99,completo
+2024-12,Cuyo,Dulce de leche,01.1.8,1.5195,93,completo
+2024-12,Cuyo,Fideos secos tipo guisero,01.1.1,1.8824,165,completo
+2024-12,Cuyo,Galletitas de agua envasadas,01.1.1,2.6614,78,completo
+2024-12,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,3.1255,166,completo
+2024-12,Cuyo,Gaseosa base cola,01.2.2,3.0114,142,completo
+2024-12,Cuyo,Hamburguesas congeladas,01.1.2,3.2947,89,completo
+2024-12,Cuyo,Harina de trigo común 000,01.1.1,0.3913,28,completo
+2024-12,Cuyo,Leche en polvo entera,01.1.4,0.1214,8,completo
+2024-12,Cuyo,Leche fresca entera en sachet,01.1.4,0.2076,28,completo
+2024-12,Cuyo,Manteca,01.1.5,1.8430,81,completo
+2024-12,Cuyo,Pan de mesa,01.1.1,0.0624,39,completo
+2024-12,Cuyo,Polvo para flan,01.1.8,0.8090,60,completo
+2024-12,Cuyo,Sal fina,01.1.9,2.1360,58,completo
+2024-12,Cuyo,Salchicha tipo viena,01.1.2,2.4587,101,completo
+2024-12,Cuyo,Tomate entero en conserva,01.1.7,-9.8828,21,completo
+2024-12,Cuyo,Yerba mate,01.2.1,0.6670,362,completo
+2024-12,Cuyo,Yogur firme,01.1.4,0.7674,7,completo
+2024-12,GBA,Aceite de girasol,01.1.5,6.8459,39,completo
+2024-12,GBA,Agua sin gas,01.2.2,2.8619,192,completo
+2024-12,GBA,Arroz blanco simple,01.1.1,-1.4506,37,completo
+2024-12,GBA,Arvejas secas remojadas,01.1.7,1.7280,28,completo
+2024-12,GBA,Azúcar,01.1.8,3.6511,20,completo
+2024-12,GBA,Café molido,01.2.1,2.2246,87,completo
+2024-12,GBA,Dulce de leche,01.1.8,2.1786,74,completo
+2024-12,GBA,Fideos secos tipo guisero,01.1.1,1.5902,136,completo
+2024-12,GBA,Galletitas de agua envasadas,01.1.1,1.9610,73,completo
+2024-12,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.9095,149,completo
+2024-12,GBA,Gaseosa base cola,01.2.2,3.7859,138,completo
+2024-12,GBA,Hamburguesas congeladas,01.1.2,3.4124,70,completo
+2024-12,GBA,Harina de trigo común 000,01.1.1,0.6028,22,completo
+2024-12,GBA,Leche en polvo entera,01.1.4,0.0000,5,completo
+2024-12,GBA,Leche fresca entera en sachet,01.1.4,0.7909,30,completo
+2024-12,GBA,Manteca,01.1.5,2.0811,62,completo
+2024-12,GBA,Pan de mesa,01.1.1,0.2433,46,completo
+2024-12,GBA,Polvo para flan,01.1.8,1.5798,52,completo
+2024-12,GBA,Sal fina,01.1.9,1.4941,46,completo
+2024-12,GBA,Salchicha tipo viena,01.1.2,2.4527,100,completo
+2024-12,GBA,Tomate entero en conserva,01.1.7,-7.5914,18,completo
+2024-12,GBA,Yerba mate,01.2.1,0.1875,327,completo
+2024-12,GBA,Yogur firme,01.1.4,4.8180,12,completo
+2024-12,Noreste,Aceite de girasol,01.1.5,6.3750,40,completo
+2024-12,Noreste,Agua sin gas,01.2.2,4.4249,143,completo
+2024-12,Noreste,Arroz blanco simple,01.1.1,-0.6289,32,completo
+2024-12,Noreste,Arvejas secas remojadas,01.1.7,2.1769,28,completo
+2024-12,Noreste,Azúcar,01.1.8,1.3242,22,completo
+2024-12,Noreste,Café molido,01.2.1,2.0728,70,completo
+2024-12,Noreste,Dulce de leche,01.1.8,1.5763,74,completo
+2024-12,Noreste,Fideos secos tipo guisero,01.1.1,1.5227,128,completo
+2024-12,Noreste,Galletitas de agua envasadas,01.1.1,3.4904,67,completo
+2024-12,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,3.2962,125,completo
+2024-12,Noreste,Gaseosa base cola,01.2.2,2.9707,122,completo
+2024-12,Noreste,Hamburguesas congeladas,01.1.2,2.2059,67,completo
+2024-12,Noreste,Harina de trigo común 000,01.1.1,0.2517,21,completo
+2024-12,Noreste,Leche en polvo entera,01.1.4,-0.2145,10,completo
+2024-12,Noreste,Leche fresca entera en sachet,01.1.4,4.5811,17,completo
+2024-12,Noreste,Manteca,01.1.5,1.5989,67,completo
+2024-12,Noreste,Pan de mesa,01.1.1,-0.0815,33,completo
+2024-12,Noreste,Polvo para flan,01.1.8,-0.1474,59,completo
+2024-12,Noreste,Sal fina,01.1.9,1.8445,53,completo
+2024-12,Noreste,Salchicha tipo viena,01.1.2,2.0817,108,completo
+2024-12,Noreste,Tomate entero en conserva,01.1.7,-7.2244,17,completo
+2024-12,Noreste,Yerba mate,01.2.1,1.4442,349,completo
+2024-12,Noroeste,Aceite de girasol,01.1.5,5.6328,36,completo
+2024-12,Noroeste,Agua sin gas,01.2.2,4.6870,149,completo
+2024-12,Noroeste,Arroz blanco simple,01.1.1,-0.8577,33,completo
+2024-12,Noroeste,Arvejas secas remojadas,01.1.7,1.8057,28,completo
+2024-12,Noroeste,Azúcar,01.1.8,3.1675,24,completo
+2024-12,Noroeste,Café molido,01.2.1,2.5112,71,completo
+2024-12,Noroeste,Dulce de leche,01.1.8,0.5589,75,completo
+2024-12,Noroeste,Fideos secos tipo guisero,01.1.1,1.7716,141,completo
+2024-12,Noroeste,Galletitas de agua envasadas,01.1.1,1.2346,64,completo
+2024-12,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,3.0672,134,completo
+2024-12,Noroeste,Gaseosa base cola,01.2.2,3.3946,128,completo
+2024-12,Noroeste,Hamburguesas congeladas,01.1.2,2.7717,65,completo
+2024-12,Noroeste,Harina de trigo común 000,01.1.1,0.1867,23,completo
+2024-12,Noroeste,Leche en polvo entera,01.1.4,0.1079,9,completo
+2024-12,Noroeste,Leche fresca entera en sachet,01.1.4,0.1968,23,completo
+2024-12,Noroeste,Manteca,01.1.5,1.8878,62,completo
+2024-12,Noroeste,Pan de mesa,01.1.1,0.2773,32,completo
+2024-12,Noroeste,Polvo para flan,01.1.8,0.3497,45,completo
+2024-12,Noroeste,Sal fina,01.1.9,2.0689,45,completo
+2024-12,Noroeste,Salchicha tipo viena,01.1.2,2.4194,82,completo
+2024-12,Noroeste,Tomate entero en conserva,01.1.7,-7.6314,15,completo
+2024-12,Noroeste,Yerba mate,01.2.1,1.0206,276,completo
+2024-12,Noroeste,Yogur firme,01.1.4,1.0934,5,completo
+2024-12,Pampeana,Aceite de girasol,01.1.5,6.0046,90,completo
+2024-12,Pampeana,Agua sin gas,01.2.2,4.0710,381,completo
+2024-12,Pampeana,Arroz blanco simple,01.1.1,-0.1865,82,completo
+2024-12,Pampeana,Arvejas secas remojadas,01.1.7,1.9011,85,completo
+2024-12,Pampeana,Azúcar,01.1.8,1.6099,58,completo
+2024-12,Pampeana,Café molido,01.2.1,2.4418,147,completo
+2024-12,Pampeana,Dulce de leche,01.1.8,1.6202,183,completo
+2024-12,Pampeana,Fideos secos tipo guisero,01.1.1,1.5870,255,completo
+2024-12,Pampeana,Galletitas de agua envasadas,01.1.1,1.5031,143,completo
+2024-12,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.7458,279,completo
+2024-12,Pampeana,Gaseosa base cola,01.2.2,3.1561,253,completo
+2024-12,Pampeana,Hamburguesas congeladas,01.1.2,3.1877,160,completo
+2024-12,Pampeana,Harina de trigo común 000,01.1.1,0.3173,43,completo
+2024-12,Pampeana,Leche en polvo entera,01.1.4,0.1791,16,completo
+2024-12,Pampeana,Leche fresca entera en sachet,01.1.4,1.1020,54,completo
+2024-12,Pampeana,Manteca,01.1.5,1.5651,157,completo
+2024-12,Pampeana,Pan de mesa,01.1.1,0.6723,83,completo
+2024-12,Pampeana,Polvo para flan,01.1.8,1.3172,119,completo
+2024-12,Pampeana,Sal fina,01.1.9,1.6660,108,completo
+2024-12,Pampeana,Salchicha tipo viena,01.1.2,2.9851,210,completo
+2024-12,Pampeana,Tomate entero en conserva,01.1.7,-5.3690,40,completo
+2024-12,Pampeana,Yerba mate,01.2.1,0.5363,679,completo
+2024-12,Pampeana,Yogur firme,01.1.4,2.1068,22,completo
+2024-12,Patagonia,Aceite de girasol,01.1.5,6.8961,40,completo
+2024-12,Patagonia,Agua sin gas,01.2.2,3.9283,184,completo
+2024-12,Patagonia,Arroz blanco simple,01.1.1,-1.5141,45,completo
+2024-12,Patagonia,Arvejas secas remojadas,01.1.7,2.2627,34,completo
+2024-12,Patagonia,Azúcar,01.1.8,0.5324,20,completo
+2024-12,Patagonia,Café molido,01.2.1,2.0865,91,completo
+2024-12,Patagonia,Dulce de leche,01.1.8,1.8555,93,completo
+2024-12,Patagonia,Fideos secos tipo guisero,01.1.1,2.4233,143,completo
+2024-12,Patagonia,Galletitas de agua envasadas,01.1.1,2.4351,74,completo
+2024-12,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.4464,148,completo
+2024-12,Patagonia,Gaseosa base cola,01.2.2,2.9574,116,completo
+2024-12,Patagonia,Hamburguesas congeladas,01.1.2,3.1755,71,completo
+2024-12,Patagonia,Harina de trigo común 000,01.1.1,0.0402,24,completo
+2024-12,Patagonia,Leche en polvo entera,01.1.4,4.5019,4,completo
+2024-12,Patagonia,Leche fresca entera en sachet,01.1.4,0.0547,33,completo
+2024-12,Patagonia,Manteca,01.1.5,1.4492,77,completo
+2024-12,Patagonia,Pan de mesa,01.1.1,1.3617,37,completo
+2024-12,Patagonia,Polvo para flan,01.1.8,1.1672,54,completo
+2024-12,Patagonia,Sal fina,01.1.9,2.5027,54,completo
+2024-12,Patagonia,Salchicha tipo viena,01.1.2,2.5858,87,completo
+2024-12,Patagonia,Tomate entero en conserva,01.1.7,-6.4820,16,completo
+2024-12,Patagonia,Yerba mate,01.2.1,0.8799,345,completo
+2024-12,Patagonia,Yogur firme,01.1.4,0.1521,11,completo
+2025-01,Cuyo,Aceite de girasol,01.1.5,4.9866,48,completo
+2025-01,Cuyo,Agua sin gas,01.2.2,1.1801,187,completo
+2025-01,Cuyo,Arroz blanco simple,01.1.1,-2.3034,44,completo
+2025-01,Cuyo,Arvejas secas remojadas,01.1.7,0.7517,40,completo
+2025-01,Cuyo,Azúcar,01.1.8,1.8487,26,completo
+2025-01,Cuyo,Café molido,01.2.1,2.9364,104,completo
+2025-01,Cuyo,Dulce de leche,01.1.8,1.6878,95,completo
+2025-01,Cuyo,Fideos secos tipo guisero,01.1.1,0.8261,168,completo
+2025-01,Cuyo,Galletitas de agua envasadas,01.1.1,1.0570,76,completo
+2025-01,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.9369,148,completo
+2025-01,Cuyo,Gaseosa base cola,01.2.2,2.9938,141,completo
+2025-01,Cuyo,Hamburguesas congeladas,01.1.2,4.4117,87,completo
+2025-01,Cuyo,Harina de trigo común 000,01.1.1,-1.2209,29,completo
+2025-01,Cuyo,Leche en polvo entera,01.1.4,-1.0843,9,completo
+2025-01,Cuyo,Leche fresca entera en sachet,01.1.4,1.9798,28,completo
+2025-01,Cuyo,Manteca,01.1.5,1.9979,83,completo
+2025-01,Cuyo,Pan de mesa,01.1.1,1.3357,49,completo
+2025-01,Cuyo,Polvo para flan,01.1.8,1.0231,64,completo
+2025-01,Cuyo,Sal fina,01.1.9,1.8978,58,completo
+2025-01,Cuyo,Salchicha tipo viena,01.1.2,2.1709,104,completo
+2025-01,Cuyo,Tomate entero en conserva,01.1.7,-2.3047,21,completo
+2025-01,Cuyo,Yerba mate,01.2.1,0.2390,376,completo
+2025-01,Cuyo,Yogur firme,01.1.4,2.2582,14,completo
+2025-01,GBA,Aceite de girasol,01.1.5,5.4161,57,completo
+2025-01,GBA,Agua sin gas,01.2.2,0.9190,212,completo
+2025-01,GBA,Arroz blanco simple,01.1.1,-4.9743,51,completo
+2025-01,GBA,Arvejas secas remojadas,01.1.7,0.0528,45,completo
+2025-01,GBA,Azúcar,01.1.8,-0.2315,27,completo
+2025-01,GBA,Café molido,01.2.1,2.7163,110,completo
+2025-01,GBA,Dulce de leche,01.1.8,1.5743,100,completo
+2025-01,GBA,Fideos secos tipo guisero,01.1.1,0.4439,156,completo
+2025-01,GBA,Galletitas de agua envasadas,01.1.1,1.1408,80,completo
+2025-01,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.7876,147,completo
+2025-01,GBA,Gaseosa base cola,01.2.2,2.4264,147,completo
+2025-01,GBA,Hamburguesas congeladas,01.1.2,4.0595,81,completo
+2025-01,GBA,Harina de trigo común 000,01.1.1,-1.1159,28,completo
+2025-01,GBA,Leche en polvo entera,01.1.4,0.0000,5,completo
+2025-01,GBA,Leche fresca entera en sachet,01.1.4,1.4765,39,completo
+2025-01,GBA,Manteca,01.1.5,1.0065,91,completo
+2025-01,GBA,Pan de mesa,01.1.1,1.1471,57,completo
+2025-01,GBA,Polvo para flan,01.1.8,1.2749,68,completo
+2025-01,GBA,Sal fina,01.1.9,0.7487,60,completo
+2025-01,GBA,Salchicha tipo viena,01.1.2,2.1966,115,completo
+2025-01,GBA,Tomate entero en conserva,01.1.7,1.4626,21,completo
+2025-01,GBA,Yerba mate,01.2.1,0.5371,442,completo
+2025-01,GBA,Yogur firme,01.1.4,1.2509,20,completo
+2025-01,Noreste,Aceite de girasol,01.1.5,4.6394,38,completo
+2025-01,Noreste,Agua sin gas,01.2.2,1.4597,136,completo
+2025-01,Noreste,Arroz blanco simple,01.1.1,-0.5903,33,completo
+2025-01,Noreste,Arvejas secas remojadas,01.1.7,1.2990,29,completo
+2025-01,Noreste,Azúcar,01.1.8,0.0131,22,completo
+2025-01,Noreste,Café molido,01.2.1,3.4566,75,completo
+2025-01,Noreste,Dulce de leche,01.1.8,1.2820,75,completo
+2025-01,Noreste,Fideos secos tipo guisero,01.1.1,0.3894,128,completo
+2025-01,Noreste,Galletitas de agua envasadas,01.1.1,-0.0922,62,completo
+2025-01,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.4384,104,completo
+2025-01,Noreste,Gaseosa base cola,01.2.2,1.3982,118,completo
+2025-01,Noreste,Hamburguesas congeladas,01.1.2,5.1271,64,completo
+2025-01,Noreste,Harina de trigo común 000,01.1.1,-2.2637,21,completo
+2025-01,Noreste,Leche en polvo entera,01.1.4,-0.3131,11,completo
+2025-01,Noreste,Leche fresca entera en sachet,01.1.4,-0.1686,17,completo
+2025-01,Noreste,Manteca,01.1.5,2.2599,67,completo
+2025-01,Noreste,Pan de mesa,01.1.1,0.4128,39,completo
+2025-01,Noreste,Polvo para flan,01.1.8,0.4308,62,completo
+2025-01,Noreste,Sal fina,01.1.9,1.9889,53,completo
+2025-01,Noreste,Salchicha tipo viena,01.1.2,1.8703,106,completo
+2025-01,Noreste,Tomate entero en conserva,01.1.7,-0.8233,17,completo
+2025-01,Noreste,Yerba mate,01.2.1,0.0998,356,completo
+2025-01,Noreste,Yogur firme,01.1.4,1.1733,7,completo
+2025-01,Noroeste,Aceite de girasol,01.1.5,5.0769,35,completo
+2025-01,Noroeste,Agua sin gas,01.2.2,1.3428,141,completo
+2025-01,Noroeste,Arroz blanco simple,01.1.1,1.4730,33,completo
+2025-01,Noroeste,Arvejas secas remojadas,01.1.7,0.6155,28,completo
+2025-01,Noroeste,Azúcar,01.1.8,0.3149,24,completo
+2025-01,Noroeste,Café molido,01.2.1,3.4292,77,completo
+2025-01,Noroeste,Dulce de leche,01.1.8,0.9144,75,completo
+2025-01,Noroeste,Fideos secos tipo guisero,01.1.1,1.4493,138,completo
+2025-01,Noroeste,Galletitas de agua envasadas,01.1.1,0.5930,60,completo
+2025-01,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.9758,115,completo
+2025-01,Noroeste,Gaseosa base cola,01.2.2,1.5347,125,completo
+2025-01,Noroeste,Hamburguesas congeladas,01.1.2,5.1989,62,completo
+2025-01,Noroeste,Harina de trigo común 000,01.1.1,0.3266,23,completo
+2025-01,Noroeste,Leche en polvo entera,01.1.4,-1.0919,9,completo
+2025-01,Noroeste,Leche fresca entera en sachet,01.1.4,0.5748,24,completo
+2025-01,Noroeste,Manteca,01.1.5,1.7104,61,completo
+2025-01,Noroeste,Pan de mesa,01.1.1,-0.0636,39,completo
+2025-01,Noroeste,Polvo para flan,01.1.8,0.7850,48,completo
+2025-01,Noroeste,Sal fina,01.1.9,1.9715,45,completo
+2025-01,Noroeste,Salchicha tipo viena,01.1.2,1.8244,84,completo
+2025-01,Noroeste,Tomate entero en conserva,01.1.7,-0.6209,16,completo
+2025-01,Noroeste,Yerba mate,01.2.1,0.2578,282,completo
+2025-01,Noroeste,Yogur firme,01.1.4,1.3512,10,completo
+2025-01,Pampeana,Aceite de girasol,01.1.5,4.9287,90,completo
+2025-01,Pampeana,Agua sin gas,01.2.2,1.2868,358,completo
+2025-01,Pampeana,Arroz blanco simple,01.1.1,-2.1329,82,completo
+2025-01,Pampeana,Arvejas secas remojadas,01.1.7,0.9986,85,completo
+2025-01,Pampeana,Azúcar,01.1.8,0.2164,57,completo
+2025-01,Pampeana,Café molido,01.2.1,3.3567,154,completo
+2025-01,Pampeana,Dulce de leche,01.1.8,1.5618,186,completo
+2025-01,Pampeana,Fideos secos tipo guisero,01.1.1,0.7510,262,completo
+2025-01,Pampeana,Galletitas de agua envasadas,01.1.1,1.8400,136,completo
+2025-01,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.7874,246,completo
+2025-01,Pampeana,Gaseosa base cola,01.2.2,2.0508,256,completo
+2025-01,Pampeana,Hamburguesas congeladas,01.1.2,5.2485,163,completo
+2025-01,Pampeana,Harina de trigo común 000,01.1.1,-0.0494,44,completo
+2025-01,Pampeana,Leche en polvo entera,01.1.4,0.9396,16,completo
+2025-01,Pampeana,Leche fresca entera en sachet,01.1.4,0.0122,56,completo
+2025-01,Pampeana,Manteca,01.1.5,1.9968,161,completo
+2025-01,Pampeana,Pan de mesa,01.1.1,0.9501,100,completo
+2025-01,Pampeana,Polvo para flan,01.1.8,0.4692,122,completo
+2025-01,Pampeana,Sal fina,01.1.9,1.0725,106,completo
+2025-01,Pampeana,Salchicha tipo viena,01.1.2,3.0555,217,completo
+2025-01,Pampeana,Tomate entero en conserva,01.1.7,0.5117,40,completo
+2025-01,Pampeana,Yerba mate,01.2.1,0.1302,699,completo
+2025-01,Pampeana,Yogur firme,01.1.4,1.9863,32,completo
+2025-01,Patagonia,Aceite de girasol,01.1.5,7.7437,41,completo
+2025-01,Patagonia,Agua sin gas,01.2.2,0.8947,180,completo
+2025-01,Patagonia,Arroz blanco simple,01.1.1,-2.7541,46,completo
+2025-01,Patagonia,Arvejas secas remojadas,01.1.7,-0.1029,34,completo
+2025-01,Patagonia,Azúcar,01.1.8,-0.4151,19,completo
+2025-01,Patagonia,Café molido,01.2.1,2.8432,97,completo
+2025-01,Patagonia,Dulce de leche,01.1.8,2.2089,90,completo
+2025-01,Patagonia,Fideos secos tipo guisero,01.1.1,0.6677,147,completo
+2025-01,Patagonia,Galletitas de agua envasadas,01.1.1,2.1131,68,completo
+2025-01,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.9064,134,completo
+2025-01,Patagonia,Gaseosa base cola,01.2.2,1.6676,121,completo
+2025-01,Patagonia,Hamburguesas congeladas,01.1.2,4.4853,72,completo
+2025-01,Patagonia,Harina de trigo común 000,01.1.1,-1.6831,24,completo
+2025-01,Patagonia,Leche en polvo entera,01.1.4,2.0082,4,completo
+2025-01,Patagonia,Leche fresca entera en sachet,01.1.4,1.6171,35,completo
+2025-01,Patagonia,Manteca,01.1.5,1.1880,80,completo
+2025-01,Patagonia,Pan de mesa,01.1.1,0.8135,44,completo
+2025-01,Patagonia,Polvo para flan,01.1.8,0.5167,56,completo
+2025-01,Patagonia,Sal fina,01.1.9,1.4693,54,completo
+2025-01,Patagonia,Salchicha tipo viena,01.1.2,3.2671,90,completo
+2025-01,Patagonia,Tomate entero en conserva,01.1.7,0.9694,16,completo
+2025-01,Patagonia,Yerba mate,01.2.1,-0.3018,353,completo
+2025-01,Patagonia,Yogur firme,01.1.4,0.1431,12,completo
+2025-02,Cuyo,Aceite de girasol,01.1.5,2.7327,46,completo
+2025-02,Cuyo,Agua sin gas,01.2.2,1.5636,185,completo
+2025-02,Cuyo,Arroz blanco simple,01.1.1,-11.5517,42,completo
+2025-02,Cuyo,Arvejas secas remojadas,01.1.7,0.4461,39,completo
+2025-02,Cuyo,Azúcar,01.1.8,0.4480,26,completo
+2025-02,Cuyo,Café molido,01.2.1,5.1978,95,completo
+2025-02,Cuyo,Dulce de leche,01.1.8,2.0869,97,completo
+2025-02,Cuyo,Fideos secos tipo guisero,01.1.1,-0.1378,167,completo
+2025-02,Cuyo,Galletitas de agua envasadas,01.1.1,-0.2099,70,completo
+2025-02,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.2433,156,completo
+2025-02,Cuyo,Gaseosa base cola,01.2.2,2.7342,143,completo
+2025-02,Cuyo,Hamburguesas congeladas,01.1.2,4.2423,91,completo
+2025-02,Cuyo,Harina de trigo común 000,01.1.1,-0.7856,29,completo
+2025-02,Cuyo,Leche en polvo entera,01.1.4,0.1752,9,completo
+2025-02,Cuyo,Leche fresca entera en sachet,01.1.4,1.7919,30,completo
+2025-02,Cuyo,Manteca,01.1.5,2.6209,78,completo
+2025-02,Cuyo,Pan de mesa,01.1.1,1.5195,48,completo
+2025-02,Cuyo,Polvo para flan,01.1.8,1.7590,63,completo
+2025-02,Cuyo,Sal fina,01.1.9,3.3558,58,completo
+2025-02,Cuyo,Salchicha tipo viena,01.1.2,2.9420,107,completo
+2025-02,Cuyo,Tomate entero en conserva,01.1.7,-2.0031,18,completo
+2025-02,Cuyo,Yerba mate,01.2.1,-0.6441,382,completo
+2025-02,Cuyo,Yogur firme,01.1.4,1.8259,19,completo
+2025-02,GBA,Aceite de girasol,01.1.5,3.0941,74,completo
+2025-02,GBA,Agua sin gas,01.2.2,1.5835,235,completo
+2025-02,GBA,Arroz blanco simple,01.1.1,-9.1074,63,completo
+2025-02,GBA,Arvejas secas remojadas,01.1.7,-0.0183,47,completo
+2025-02,GBA,Azúcar,01.1.8,0.2384,30,completo
+2025-02,GBA,Café molido,01.2.1,4.9732,115,completo
+2025-02,GBA,Dulce de leche,01.1.8,2.2974,125,completo
+2025-02,GBA,Fideos secos tipo guisero,01.1.1,-0.0248,189,completo
+2025-02,GBA,Galletitas de agua envasadas,01.1.1,0.1163,86,completo
+2025-02,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.2854,197,completo
+2025-02,GBA,Gaseosa base cola,01.2.2,3.2273,155,completo
+2025-02,GBA,Hamburguesas congeladas,01.1.2,4.4817,112,completo
+2025-02,GBA,Harina de trigo común 000,01.1.1,-0.5356,37,completo
+2025-02,GBA,Leche en polvo entera,01.1.4,0.9449,5,completo
+2025-02,GBA,Leche fresca entera en sachet,01.1.4,1.7272,41,completo
+2025-02,GBA,Manteca,01.1.5,2.6564,97,completo
+2025-02,GBA,Pan de mesa,01.1.1,-0.2407,61,completo
+2025-02,GBA,Polvo para flan,01.1.8,0.8507,80,completo
+2025-02,GBA,Sal fina,01.1.9,1.5283,72,completo
+2025-02,GBA,Salchicha tipo viena,01.1.2,3.1693,138,completo
+2025-02,GBA,Tomate entero en conserva,01.1.7,-3.4090,22,completo
+2025-02,GBA,Yerba mate,01.2.1,-0.3009,479,completo
+2025-02,GBA,Yogur firme,01.1.4,2.3779,30,completo
+2025-02,Noreste,Aceite de girasol,01.1.5,1.9235,51,completo
+2025-02,Noreste,Agua sin gas,01.2.2,0.7077,155,completo
+2025-02,Noreste,Arroz blanco simple,01.1.1,-11.9051,43,completo
+2025-02,Noreste,Arvejas secas remojadas,01.1.7,0.3834,30,completo
+2025-02,Noreste,Azúcar,01.1.8,1.0308,21,completo
+2025-02,Noreste,Café molido,01.2.1,6.7538,88,completo
+2025-02,Noreste,Dulce de leche,01.1.8,1.3484,94,completo
+2025-02,Noreste,Fideos secos tipo guisero,01.1.1,-0.1751,159,completo
+2025-02,Noreste,Galletitas de agua envasadas,01.1.1,-1.0712,75,completo
+2025-02,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.1800,142,completo
+2025-02,Noreste,Gaseosa base cola,01.2.2,3.0138,134,completo
+2025-02,Noreste,Hamburguesas congeladas,01.1.2,2.4825,83,completo
+2025-02,Noreste,Harina de trigo común 000,01.1.1,-0.1106,29,completo
+2025-02,Noreste,Leche en polvo entera,01.1.4,2.7412,11,completo
+2025-02,Noreste,Leche fresca entera en sachet,01.1.4,2.0347,21,completo
+2025-02,Noreste,Manteca,01.1.5,2.1018,79,completo
+2025-02,Noreste,Pan de mesa,01.1.1,-0.0086,38,completo
+2025-02,Noreste,Polvo para flan,01.1.8,1.4292,73,completo
+2025-02,Noreste,Sal fina,01.1.9,4.4845,61,completo
+2025-02,Noreste,Salchicha tipo viena,01.1.2,1.5054,126,completo
+2025-02,Noreste,Tomate entero en conserva,01.1.7,-0.7160,17,completo
+2025-02,Noreste,Yerba mate,01.2.1,-0.0511,408,completo
+2025-02,Noreste,Yogur firme,01.1.4,1.5680,14,completo
+2025-02,Noroeste,Aceite de girasol,01.1.5,2.5915,33,completo
+2025-02,Noroeste,Agua sin gas,01.2.2,0.7743,134,completo
+2025-02,Noroeste,Arroz blanco simple,01.1.1,-14.1161,30,completo
+2025-02,Noroeste,Arvejas secas remojadas,01.1.7,0.8614,27,completo
+2025-02,Noroeste,Azúcar,01.1.8,0.2768,23,completo
+2025-02,Noroeste,Café molido,01.2.1,6.7286,73,completo
+2025-02,Noroeste,Dulce de leche,01.1.8,2.3150,78,completo
+2025-02,Noroeste,Fideos secos tipo guisero,01.1.1,0.1777,138,completo
+2025-02,Noroeste,Galletitas de agua envasadas,01.1.1,0.1703,57,completo
+2025-02,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.4006,133,completo
+2025-02,Noroeste,Gaseosa base cola,01.2.2,2.6774,124,completo
+2025-02,Noroeste,Hamburguesas congeladas,01.1.2,3.2271,66,completo
+2025-02,Noroeste,Harina de trigo común 000,01.1.1,-0.6118,23,completo
+2025-02,Noroeste,Leche en polvo entera,01.1.4,-0.3994,9,completo
+2025-02,Noroeste,Leche fresca entera en sachet,01.1.4,1.6397,23,completo
+2025-02,Noroeste,Manteca,01.1.5,1.6472,58,completo
+2025-02,Noroeste,Pan de mesa,01.1.1,-0.3379,37,completo
+2025-02,Noroeste,Polvo para flan,01.1.8,1.3079,48,completo
+2025-02,Noroeste,Sal fina,01.1.9,3.3365,44,completo
+2025-02,Noroeste,Salchicha tipo viena,01.1.2,2.4629,90,completo
+2025-02,Noroeste,Tomate entero en conserva,01.1.7,-2.7064,13,completo
+2025-02,Noroeste,Yerba mate,01.2.1,-0.5090,288,completo
+2025-02,Noroeste,Yogur firme,01.1.4,2.0127,11,completo
+2025-02,Pampeana,Aceite de girasol,01.1.5,1.9637,105,completo
+2025-02,Pampeana,Agua sin gas,01.2.2,1.0962,396,completo
+2025-02,Pampeana,Arroz blanco simple,01.1.1,-7.8003,89,completo
+2025-02,Pampeana,Arvejas secas remojadas,01.1.7,-0.0383,89,completo
+2025-02,Pampeana,Azúcar,01.1.8,1.3329,57,completo
+2025-02,Pampeana,Café molido,01.2.1,5.1965,162,completo
+2025-02,Pampeana,Dulce de leche,01.1.8,1.5399,225,completo
+2025-02,Pampeana,Fideos secos tipo guisero,01.1.1,-0.4241,297,completo
+2025-02,Pampeana,Galletitas de agua envasadas,01.1.1,-0.2735,143,completo
+2025-02,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.3636,297,completo
+2025-02,Pampeana,Gaseosa base cola,01.2.2,2.7867,271,completo
+2025-02,Pampeana,Hamburguesas congeladas,01.1.2,3.7072,191,completo
+2025-02,Pampeana,Harina de trigo común 000,01.1.1,-0.9135,54,completo
+2025-02,Pampeana,Leche en polvo entera,01.1.4,1.3167,17,completo
+2025-02,Pampeana,Leche fresca entera en sachet,01.1.4,1.4436,62,completo
+2025-02,Pampeana,Manteca,01.1.5,1.7062,170,completo
+2025-02,Pampeana,Pan de mesa,01.1.1,0.6611,102,completo
+2025-02,Pampeana,Polvo para flan,01.1.8,1.8053,136,completo
+2025-02,Pampeana,Sal fina,01.1.9,3.5860,114,completo
+2025-02,Pampeana,Salchicha tipo viena,01.1.2,2.7680,243,completo
+2025-02,Pampeana,Tomate entero en conserva,01.1.7,-3.1158,42,completo
+2025-02,Pampeana,Yerba mate,01.2.1,-0.2339,750,completo
+2025-02,Pampeana,Yogur firme,01.1.4,-0.6577,41,completo
+2025-02,Patagonia,Aceite de girasol,01.1.5,2.6217,57,completo
+2025-02,Patagonia,Agua sin gas,01.2.2,1.4154,222,completo
+2025-02,Patagonia,Arroz blanco simple,01.1.1,-8.6849,54,completo
+2025-02,Patagonia,Arvejas secas remojadas,01.1.7,-0.1855,38,completo
+2025-02,Patagonia,Azúcar,01.1.8,0.2555,21,completo
+2025-02,Patagonia,Café molido,01.2.1,4.9336,108,completo
+2025-02,Patagonia,Dulce de leche,01.1.8,1.5165,114,completo
+2025-02,Patagonia,Fideos secos tipo guisero,01.1.1,0.4406,175,completo
+2025-02,Patagonia,Galletitas de agua envasadas,01.1.1,-0.2736,82,completo
+2025-02,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.4288,171,completo
+2025-02,Patagonia,Gaseosa base cola,01.2.2,2.8342,140,completo
+2025-02,Patagonia,Hamburguesas congeladas,01.1.2,4.6302,99,completo
+2025-02,Patagonia,Harina de trigo común 000,01.1.1,0.5375,33,completo
+2025-02,Patagonia,Leche en polvo entera,01.1.4,0.0000,4,completo
+2025-02,Patagonia,Leche fresca entera en sachet,01.1.4,2.3906,39,completo
+2025-02,Patagonia,Manteca,01.1.5,2.6876,86,completo
+2025-02,Patagonia,Pan de mesa,01.1.1,0.3977,45,completo
+2025-02,Patagonia,Polvo para flan,01.1.8,1.4816,71,completo
+2025-02,Patagonia,Sal fina,01.1.9,1.1002,64,completo
+2025-02,Patagonia,Salchicha tipo viena,01.1.2,3.3291,115,completo
+2025-02,Patagonia,Tomate entero en conserva,01.1.7,-0.9897,18,completo
+2025-02,Patagonia,Yerba mate,01.2.1,-0.4291,400,completo
+2025-02,Patagonia,Yogur firme,01.1.4,1.5086,22,completo
+2025-03,Cuyo,Aceite de girasol,01.1.5,2.0515,57,completo
+2025-03,Cuyo,Agua sin gas,01.2.2,1.2588,216,completo
+2025-03,Cuyo,Arroz blanco simple,01.1.1,2.4635,44,completo
+2025-03,Cuyo,Arvejas secas remojadas,01.1.7,-0.2580,44,completo
+2025-03,Cuyo,Azúcar,01.1.8,0.6053,31,completo
+2025-03,Cuyo,Café molido,01.2.1,2.1257,108,completo
+2025-03,Cuyo,Dulce de leche,01.1.8,0.7806,108,completo
+2025-03,Cuyo,Fideos secos tipo guisero,01.1.1,1.3315,179,completo
+2025-03,Cuyo,Galletitas de agua envasadas,01.1.1,0.2297,77,completo
+2025-03,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,0.9873,166,completo
+2025-03,Cuyo,Gaseosa base cola,01.2.2,2.5077,160,completo
+2025-03,Cuyo,Hamburguesas congeladas,01.1.2,1.9325,99,completo
+2025-03,Cuyo,Harina de trigo común 000,01.1.1,1.3693,30,completo
+2025-03,Cuyo,Leche en polvo entera,01.1.4,-1.9512,9,completo
+2025-03,Cuyo,Leche fresca entera en sachet,01.1.4,0.2690,33,completo
+2025-03,Cuyo,Manteca,01.1.5,1.5448,86,completo
+2025-03,Cuyo,Pan de mesa,01.1.1,2.4219,50,completo
+2025-03,Cuyo,Polvo para flan,01.1.8,2.4627,69,completo
+2025-03,Cuyo,Sal fina,01.1.9,0.0004,72,completo
+2025-03,Cuyo,Salchicha tipo viena,01.1.2,1.3818,117,completo
+2025-03,Cuyo,Tomate entero en conserva,01.1.7,10.0618,22,completo
+2025-03,Cuyo,Yerba mate,01.2.1,-1.3377,429,completo
+2025-03,Cuyo,Yogur firme,01.1.4,1.4048,20,completo
+2025-03,GBA,Aceite de girasol,01.1.5,1.4271,84,completo
+2025-03,GBA,Agua sin gas,01.2.2,1.1012,273,completo
+2025-03,GBA,Arroz blanco simple,01.1.1,0.1518,66,completo
+2025-03,GBA,Arvejas secas remojadas,01.1.7,0.4638,52,completo
+2025-03,GBA,Azúcar,01.1.8,0.0600,34,completo
+2025-03,GBA,Café molido,01.2.1,2.1067,136,completo
+2025-03,GBA,Dulce de leche,01.1.8,0.7726,134,completo
+2025-03,GBA,Fideos secos tipo guisero,01.1.1,0.8699,201,completo
+2025-03,GBA,Galletitas de agua envasadas,01.1.1,0.3036,95,completo
+2025-03,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.7210,219,completo
+2025-03,GBA,Gaseosa base cola,01.2.2,1.5969,177,completo
+2025-03,GBA,Hamburguesas congeladas,01.1.2,1.4145,119,completo
+2025-03,GBA,Harina de trigo común 000,01.1.1,0.5926,39,completo
+2025-03,GBA,Leche en polvo entera,01.1.4,0.2196,6,completo
+2025-03,GBA,Leche fresca entera en sachet,01.1.4,0.3448,46,completo
+2025-03,GBA,Manteca,01.1.5,1.3861,104,completo
+2025-03,GBA,Pan de mesa,01.1.1,0.7431,61,completo
+2025-03,GBA,Polvo para flan,01.1.8,1.1134,88,completo
+2025-03,GBA,Sal fina,01.1.9,1.5133,85,completo
+2025-03,GBA,Salchicha tipo viena,01.1.2,1.6270,148,completo
+2025-03,GBA,Tomate entero en conserva,01.1.7,3.3733,28,completo
+2025-03,GBA,Yerba mate,01.2.1,-1.1473,530,completo
+2025-03,GBA,Yogur firme,01.1.4,1.0143,36,completo
+2025-03,Noreste,Aceite de girasol,01.1.5,2.5216,61,completo
+2025-03,Noreste,Agua sin gas,01.2.2,0.9867,191,completo
+2025-03,Noreste,Arroz blanco simple,01.1.1,3.6737,45,completo
+2025-03,Noreste,Arvejas secas remojadas,01.1.7,-0.4154,33,completo
+2025-03,Noreste,Azúcar,01.1.8,0.8373,25,completo
+2025-03,Noreste,Café molido,01.2.1,3.1833,100,completo
+2025-03,Noreste,Dulce de leche,01.1.8,0.9497,102,completo
+2025-03,Noreste,Fideos secos tipo guisero,01.1.1,2.3396,174,completo
+2025-03,Noreste,Galletitas de agua envasadas,01.1.1,0.0537,84,completo
+2025-03,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,0.5670,152,completo
+2025-03,Noreste,Gaseosa base cola,01.2.2,2.2438,158,completo
+2025-03,Noreste,Hamburguesas congeladas,01.1.2,2.2417,96,completo
+2025-03,Noreste,Harina de trigo común 000,01.1.1,0.4273,33,completo
+2025-03,Noreste,Leche en polvo entera,01.1.4,0.2141,11,completo
+2025-03,Noreste,Leche fresca entera en sachet,01.1.4,1.1042,24,completo
+2025-03,Noreste,Manteca,01.1.5,2.1017,86,completo
+2025-03,Noreste,Pan de mesa,01.1.1,-0.2265,38,completo
+2025-03,Noreste,Polvo para flan,01.1.8,1.8521,81,completo
+2025-03,Noreste,Sal fina,01.1.9,-1.0765,74,completo
+2025-03,Noreste,Salchicha tipo viena,01.1.2,0.7893,134,completo
+2025-03,Noreste,Tomate entero en conserva,01.1.7,6.3597,20,completo
+2025-03,Noreste,Yerba mate,01.2.1,-0.8211,457,completo
+2025-03,Noreste,Yogur firme,01.1.4,1.4410,12,completo
+2025-03,Noroeste,Aceite de girasol,01.1.5,2.1109,44,completo
+2025-03,Noroeste,Agua sin gas,01.2.2,1.9402,175,completo
+2025-03,Noroeste,Arroz blanco simple,01.1.1,5.9552,33,completo
+2025-03,Noroeste,Arvejas secas remojadas,01.1.7,0.1043,32,completo
+2025-03,Noroeste,Azúcar,01.1.8,0.7804,27,completo
+2025-03,Noroeste,Café molido,01.2.1,5.9225,87,completo
+2025-03,Noroeste,Dulce de leche,01.1.8,2.1625,90,completo
+2025-03,Noroeste,Fideos secos tipo guisero,01.1.1,1.7115,155,completo
+2025-03,Noroeste,Galletitas de agua envasadas,01.1.1,0.6201,60,completo
+2025-03,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.7308,144,completo
+2025-03,Noroeste,Gaseosa base cola,01.2.2,3.5562,146,completo
+2025-03,Noroeste,Hamburguesas congeladas,01.1.2,1.9939,75,completo
+2025-03,Noroeste,Harina de trigo común 000,01.1.1,2.2835,27,completo
+2025-03,Noroeste,Leche en polvo entera,01.1.4,-0.2910,9,completo
+2025-03,Noroeste,Leche fresca entera en sachet,01.1.4,0.4616,25,completo
+2025-03,Noroeste,Manteca,01.1.5,1.8423,66,completo
+2025-03,Noroeste,Pan de mesa,01.1.1,-0.3665,35,completo
+2025-03,Noroeste,Polvo para flan,01.1.8,2.7138,54,completo
+2025-03,Noroeste,Sal fina,01.1.9,5.1821,64,completo
+2025-03,Noroeste,Salchicha tipo viena,01.1.2,0.8474,104,completo
+2025-03,Noroeste,Tomate entero en conserva,01.1.7,9.5942,17,completo
+2025-03,Noroeste,Yerba mate,01.2.1,-0.9844,334,completo
+2025-03,Noroeste,Yogur firme,01.1.4,0.8799,13,completo
+2025-03,Pampeana,Aceite de girasol,01.1.5,1.8846,115,completo
+2025-03,Pampeana,Agua sin gas,01.2.2,1.2343,425,completo
+2025-03,Pampeana,Arroz blanco simple,01.1.1,0.9417,90,completo
+2025-03,Pampeana,Arvejas secas remojadas,01.1.7,0.2623,92,completo
+2025-03,Pampeana,Azúcar,01.1.8,0.7951,63,completo
+2025-03,Pampeana,Café molido,01.2.1,3.3930,182,completo
+2025-03,Pampeana,Dulce de leche,01.1.8,1.2213,231,completo
+2025-03,Pampeana,Fideos secos tipo guisero,01.1.1,1.4165,314,completo
+2025-03,Pampeana,Galletitas de agua envasadas,01.1.1,0.4665,153,completo
+2025-03,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,0.4294,305,completo
+2025-03,Pampeana,Gaseosa base cola,01.2.2,2.8501,292,completo
+2025-03,Pampeana,Hamburguesas congeladas,01.1.2,2.2428,199,completo
+2025-03,Pampeana,Harina de trigo común 000,01.1.1,-0.0319,57,completo
+2025-03,Pampeana,Leche en polvo entera,01.1.4,0.3563,17,completo
+2025-03,Pampeana,Leche fresca entera en sachet,01.1.4,0.4315,64,completo
+2025-03,Pampeana,Manteca,01.1.5,1.2446,175,completo
+2025-03,Pampeana,Pan de mesa,01.1.1,0.6537,103,completo
+2025-03,Pampeana,Polvo para flan,01.1.8,1.3293,143,completo
+2025-03,Pampeana,Sal fina,01.1.9,0.1503,128,completo
+2025-03,Pampeana,Salchicha tipo viena,01.1.2,1.4253,258,completo
+2025-03,Pampeana,Tomate entero en conserva,01.1.7,4.5857,47,completo
+2025-03,Pampeana,Yerba mate,01.2.1,-0.5577,806,completo
+2025-03,Pampeana,Yogur firme,01.1.4,1.8531,43,completo
+2025-03,Patagonia,Aceite de girasol,01.1.5,1.6043,68,completo
+2025-03,Patagonia,Agua sin gas,01.2.2,1.1231,247,completo
+2025-03,Patagonia,Arroz blanco simple,01.1.1,2.7295,55,completo
+2025-03,Patagonia,Arvejas secas remojadas,01.1.7,0.8177,43,completo
+2025-03,Patagonia,Azúcar,01.1.8,0.7572,28,completo
+2025-03,Patagonia,Café molido,01.2.1,2.5046,114,completo
+2025-03,Patagonia,Dulce de leche,01.1.8,0.7114,122,completo
+2025-03,Patagonia,Fideos secos tipo guisero,01.1.1,1.3931,187,completo
+2025-03,Patagonia,Galletitas de agua envasadas,01.1.1,-0.1330,90,completo
+2025-03,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.2910,179,completo
+2025-03,Patagonia,Gaseosa base cola,01.2.2,2.1523,157,completo
+2025-03,Patagonia,Hamburguesas congeladas,01.1.2,1.6101,101,completo
+2025-03,Patagonia,Harina de trigo común 000,01.1.1,0.4098,36,completo
+2025-03,Patagonia,Leche en polvo entera,01.1.4,0.0384,4,completo
+2025-03,Patagonia,Leche fresca entera en sachet,01.1.4,-0.1533,40,completo
+2025-03,Patagonia,Manteca,01.1.5,0.8244,93,completo
+2025-03,Patagonia,Pan de mesa,01.1.1,1.5462,46,completo
+2025-03,Patagonia,Polvo para flan,01.1.8,1.2399,76,completo
+2025-03,Patagonia,Sal fina,01.1.9,1.5446,77,completo
+2025-03,Patagonia,Salchicha tipo viena,01.1.2,1.6231,126,completo
+2025-03,Patagonia,Tomate entero en conserva,01.1.7,1.7473,24,completo
+2025-03,Patagonia,Yerba mate,01.2.1,-1.0116,452,completo
+2025-03,Patagonia,Yogur firme,01.1.4,1.3666,29,completo
+2025-04,Cuyo,Aceite de girasol,01.1.5,3.5101,58,completo
+2025-04,Cuyo,Agua sin gas,01.2.2,2.4288,216,completo
+2025-04,Cuyo,Arroz blanco simple,01.1.1,-7.9037,46,completo
+2025-04,Cuyo,Arvejas secas remojadas,01.1.7,1.1220,46,completo
+2025-04,Cuyo,Azúcar,01.1.8,-0.5665,26,completo
+2025-04,Cuyo,Café molido,01.2.1,4.5099,111,completo
+2025-04,Cuyo,Dulce de leche,01.1.8,1.9858,113,completo
+2025-04,Cuyo,Fideos secos tipo guisero,01.1.1,0.9479,185,completo
+2025-04,Cuyo,Galletitas de agua envasadas,01.1.1,1.2758,87,completo
+2025-04,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.3394,169,completo
+2025-04,Cuyo,Gaseosa base cola,01.2.2,1.1586,172,completo
+2025-04,Cuyo,Hamburguesas congeladas,01.1.2,3.8524,96,completo
+2025-04,Cuyo,Harina de trigo común 000,01.1.1,1.7613,31,completo
+2025-04,Cuyo,Leche en polvo entera,01.1.4,1.8352,10,completo
+2025-04,Cuyo,Leche fresca entera en sachet,01.1.4,1.2402,31,completo
+2025-04,Cuyo,Manteca,01.1.5,2.8855,89,completo
+2025-04,Cuyo,Pan de mesa,01.1.1,2.6175,48,completo
+2025-04,Cuyo,Polvo para flan,01.1.8,1.8997,66,completo
+2025-04,Cuyo,Sal fina,01.1.9,0.8765,72,completo
+2025-04,Cuyo,Salchicha tipo viena,01.1.2,2.6270,119,completo
+2025-04,Cuyo,Tomate entero en conserva,01.1.7,5.2115,27,completo
+2025-04,Cuyo,Yerba mate,01.2.1,-0.8266,444,completo
+2025-04,Cuyo,Yogur firme,01.1.4,-1.5872,20,completo
+2025-04,GBA,Aceite de girasol,01.1.5,2.0365,85,completo
+2025-04,GBA,Agua sin gas,01.2.2,2.8375,272,completo
+2025-04,GBA,Arroz blanco simple,01.1.1,-4.2718,66,completo
+2025-04,GBA,Arvejas secas remojadas,01.1.7,0.4187,55,completo
+2025-04,GBA,Azúcar,01.1.8,-0.4720,33,completo
+2025-04,GBA,Café molido,01.2.1,4.0465,141,completo
+2025-04,GBA,Dulce de leche,01.1.8,1.9180,142,completo
+2025-04,GBA,Fideos secos tipo guisero,01.1.1,1.0558,206,completo
+2025-04,GBA,Galletitas de agua envasadas,01.1.1,0.4133,110,completo
+2025-04,GBA,Galletitas dulces envasadas sin relleno,01.1.1,0.5634,213,completo
+2025-04,GBA,Gaseosa base cola,01.2.2,2.7080,192,completo
+2025-04,GBA,Hamburguesas congeladas,01.1.2,4.2220,117,completo
+2025-04,GBA,Harina de trigo común 000,01.1.1,1.6364,40,completo
+2025-04,GBA,Leche en polvo entera,01.1.4,0.7699,6,completo
+2025-04,GBA,Leche fresca entera en sachet,01.1.4,1.0214,45,completo
+2025-04,GBA,Manteca,01.1.5,1.9898,111,completo
+2025-04,GBA,Pan de mesa,01.1.1,2.6437,59,completo
+2025-04,GBA,Polvo para flan,01.1.8,2.3502,85,completo
+2025-04,GBA,Sal fina,01.1.9,0.6527,87,completo
+2025-04,GBA,Salchicha tipo viena,01.1.2,2.8766,148,completo
+2025-04,GBA,Tomate entero en conserva,01.1.7,3.1010,31,completo
+2025-04,GBA,Yerba mate,01.2.1,0.1940,531,completo
+2025-04,GBA,Yogur firme,01.1.4,-1.2466,28,completo
+2025-04,Noreste,Aceite de girasol,01.1.5,3.4803,62,completo
+2025-04,Noreste,Agua sin gas,01.2.2,5.0687,190,completo
+2025-04,Noreste,Arroz blanco simple,01.1.1,-9.0122,45,completo
+2025-04,Noreste,Arvejas secas remojadas,01.1.7,0.8090,38,completo
+2025-04,Noreste,Azúcar,01.1.8,-0.1271,24,completo
+2025-04,Noreste,Café molido,01.2.1,6.6911,102,completo
+2025-04,Noreste,Dulce de leche,01.1.8,1.4725,103,completo
+2025-04,Noreste,Fideos secos tipo guisero,01.1.1,0.1656,175,completo
+2025-04,Noreste,Galletitas de agua envasadas,01.1.1,0.9550,90,completo
+2025-04,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.7046,149,completo
+2025-04,Noreste,Gaseosa base cola,01.2.2,1.5103,166,completo
+2025-04,Noreste,Hamburguesas congeladas,01.1.2,3.7056,93,completo
+2025-04,Noreste,Harina de trigo común 000,01.1.1,1.2282,33,completo
+2025-04,Noreste,Leche en polvo entera,01.1.4,2.0435,12,completo
+2025-04,Noreste,Leche fresca entera en sachet,01.1.4,1.1570,25,completo
+2025-04,Noreste,Manteca,01.1.5,2.6311,88,completo
+2025-04,Noreste,Pan de mesa,01.1.1,3.3456,36,completo
+2025-04,Noreste,Polvo para flan,01.1.8,1.9700,77,completo
+2025-04,Noreste,Sal fina,01.1.9,0.4482,75,completo
+2025-04,Noreste,Salchicha tipo viena,01.1.2,2.1056,138,completo
+2025-04,Noreste,Tomate entero en conserva,01.1.7,3.7852,25,completo
+2025-04,Noreste,Yerba mate,01.2.1,-0.4890,467,completo
+2025-04,Noreste,Yogur firme,01.1.4,-2.2296,11,completo
+2025-04,Noroeste,Aceite de girasol,01.1.5,3.9002,45,completo
+2025-04,Noroeste,Agua sin gas,01.2.2,4.1568,176,completo
+2025-04,Noroeste,Arroz blanco simple,01.1.1,-9.6258,33,completo
+2025-04,Noroeste,Arvejas secas remojadas,01.1.7,0.2882,35,completo
+2025-04,Noroeste,Azúcar,01.1.8,-0.2158,27,completo
+2025-04,Noroeste,Café molido,01.2.1,5.5179,90,completo
+2025-04,Noroeste,Dulce de leche,01.1.8,1.5020,95,completo
+2025-04,Noroeste,Fideos secos tipo guisero,01.1.1,0.3875,157,completo
+2025-04,Noroeste,Galletitas de agua envasadas,01.1.1,1.4602,67,completo
+2025-04,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.9499,138,completo
+2025-04,Noroeste,Gaseosa base cola,01.2.2,0.8515,154,completo
+2025-04,Noroeste,Hamburguesas congeladas,01.1.2,3.3761,72,completo
+2025-04,Noroeste,Harina de trigo común 000,01.1.1,1.5070,27,completo
+2025-04,Noroeste,Leche en polvo entera,01.1.4,3.8789,10,completo
+2025-04,Noroeste,Leche fresca entera en sachet,01.1.4,1.3842,23,completo
+2025-04,Noroeste,Manteca,01.1.5,2.8629,73,completo
+2025-04,Noroeste,Pan de mesa,01.1.1,4.3908,36,completo
+2025-04,Noroeste,Polvo para flan,01.1.8,2.1745,51,completo
+2025-04,Noroeste,Sal fina,01.1.9,-0.5634,64,completo
+2025-04,Noroeste,Salchicha tipo viena,01.1.2,2.3871,104,completo
+2025-04,Noroeste,Tomate entero en conserva,01.1.7,5.8109,20,completo
+2025-04,Noroeste,Yerba mate,01.2.1,-0.7908,349,completo
+2025-04,Noroeste,Yogur firme,01.1.4,-4.0429,10,completo
+2025-04,Pampeana,Aceite de girasol,01.1.5,3.6054,113,completo
+2025-04,Pampeana,Agua sin gas,01.2.2,2.7028,429,completo
+2025-04,Pampeana,Arroz blanco simple,01.1.1,-4.8594,95,completo
+2025-04,Pampeana,Arvejas secas remojadas,01.1.7,0.7656,97,completo
+2025-04,Pampeana,Azúcar,01.1.8,1.0390,62,completo
+2025-04,Pampeana,Café molido,01.2.1,5.3851,190,completo
+2025-04,Pampeana,Dulce de leche,01.1.8,1.9183,235,completo
+2025-04,Pampeana,Fideos secos tipo guisero,01.1.1,0.6998,322,completo
+2025-04,Pampeana,Galletitas de agua envasadas,01.1.1,1.2698,173,completo
+2025-04,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.7888,305,completo
+2025-04,Pampeana,Gaseosa base cola,01.2.2,1.6302,308,completo
+2025-04,Pampeana,Hamburguesas congeladas,01.1.2,3.2607,191,completo
+2025-04,Pampeana,Harina de trigo común 000,01.1.1,2.3021,57,completo
+2025-04,Pampeana,Leche en polvo entera,01.1.4,1.2859,18,completo
+2025-04,Pampeana,Leche fresca entera en sachet,01.1.4,1.4599,65,completo
+2025-04,Pampeana,Manteca,01.1.5,2.5496,178,completo
+2025-04,Pampeana,Pan de mesa,01.1.1,2.0412,99,completo
+2025-04,Pampeana,Polvo para flan,01.1.8,1.7461,133,completo
+2025-04,Pampeana,Sal fina,01.1.9,1.4749,129,completo
+2025-04,Pampeana,Salchicha tipo viena,01.1.2,2.1744,253,completo
+2025-04,Pampeana,Tomate entero en conserva,01.1.7,4.7435,50,completo
+2025-04,Pampeana,Yerba mate,01.2.1,-0.3409,818,completo
+2025-04,Pampeana,Yogur firme,01.1.4,-1.1362,31,completo
+2025-04,Patagonia,Aceite de girasol,01.1.5,2.8953,67,completo
+2025-04,Patagonia,Agua sin gas,01.2.2,2.0096,244,completo
+2025-04,Patagonia,Arroz blanco simple,01.1.1,-4.8906,56,completo
+2025-04,Patagonia,Arvejas secas remojadas,01.1.7,1.0832,46,completo
+2025-04,Patagonia,Azúcar,01.1.8,0.6608,28,completo
+2025-04,Patagonia,Café molido,01.2.1,4.3327,118,completo
+2025-04,Patagonia,Dulce de leche,01.1.8,2.1135,124,completo
+2025-04,Patagonia,Fideos secos tipo guisero,01.1.1,0.9547,194,completo
+2025-04,Patagonia,Galletitas de agua envasadas,01.1.1,1.1413,108,completo
+2025-04,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.2707,184,completo
+2025-04,Patagonia,Gaseosa base cola,01.2.2,2.0979,158,completo
+2025-04,Patagonia,Hamburguesas congeladas,01.1.2,3.7770,100,completo
+2025-04,Patagonia,Harina de trigo común 000,01.1.1,1.0046,36,completo
+2025-04,Patagonia,Leche en polvo entera,01.1.4,0.3481,5,completo
+2025-04,Patagonia,Leche fresca entera en sachet,01.1.4,0.6693,40,completo
+2025-04,Patagonia,Manteca,01.1.5,2.5601,96,completo
+2025-04,Patagonia,Pan de mesa,01.1.1,2.5673,44,completo
+2025-04,Patagonia,Polvo para flan,01.1.8,1.0447,72,completo
+2025-04,Patagonia,Sal fina,01.1.9,1.0689,78,completo
+2025-04,Patagonia,Salchicha tipo viena,01.1.2,2.5248,120,completo
+2025-04,Patagonia,Tomate entero en conserva,01.1.7,2.5293,27,completo
+2025-04,Patagonia,Yerba mate,01.2.1,0.1175,448,completo
+2025-04,Patagonia,Yogur firme,01.1.4,-2.5594,22,completo
+2025-05,Cuyo,Aceite de girasol,01.1.5,2.3541,57,completo
+2025-05,Cuyo,Agua sin gas,01.2.2,4.4935,204,completo
+2025-05,Cuyo,Arroz blanco simple,01.1.1,-0.4712,47,completo
+2025-05,Cuyo,Arvejas secas remojadas,01.1.7,0.3221,47,completo
+2025-05,Cuyo,Azúcar,01.1.8,0.0860,26,completo
+2025-05,Cuyo,Café molido,01.2.1,5.3511,121,completo
+2025-05,Cuyo,Dulce de leche,01.1.8,2.4173,110,completo
+2025-05,Cuyo,Fideos secos tipo guisero,01.1.1,0.9361,192,completo
+2025-05,Cuyo,Galletitas de agua envasadas,01.1.1,1.3071,84,completo
+2025-05,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.2335,177,completo
+2025-05,Cuyo,Gaseosa base cola,01.2.2,2.4498,168,completo
+2025-05,Cuyo,Hamburguesas congeladas,01.1.2,4.3637,97,completo
+2025-05,Cuyo,Harina de trigo común 000,01.1.1,3.6694,31,completo
+2025-05,Cuyo,Leche en polvo entera,01.1.4,1.4649,8,completo
+2025-05,Cuyo,Leche fresca entera en sachet,01.1.4,1.6084,30,completo
+2025-05,Cuyo,Manteca,01.1.5,2.5924,87,completo
+2025-05,Cuyo,Pan de mesa,01.1.1,1.9555,49,completo
+2025-05,Cuyo,Polvo para flan,01.1.8,3.5374,58,completo
+2025-05,Cuyo,Sal fina,01.1.9,-0.0441,74,completo
+2025-05,Cuyo,Salchicha tipo viena,01.1.2,3.2272,126,completo
+2025-05,Cuyo,Tomate entero en conserva,01.1.7,-3.9646,26,completo
+2025-05,Cuyo,Yerba mate,01.2.1,2.3801,442,completo
+2025-05,Cuyo,Yogur firme,01.1.4,0.6433,18,completo
+2025-05,GBA,Aceite de girasol,01.1.5,2.7041,83,completo
+2025-05,GBA,Agua sin gas,01.2.2,3.1276,260,completo
+2025-05,GBA,Arroz blanco simple,01.1.1,-0.7392,66,completo
+2025-05,GBA,Arvejas secas remojadas,01.1.7,0.0715,57,completo
+2025-05,GBA,Azúcar,01.1.8,-0.1497,30,completo
+2025-05,GBA,Café molido,01.2.1,6.7301,141,completo
+2025-05,GBA,Dulce de leche,01.1.8,1.9581,138,completo
+2025-05,GBA,Fideos secos tipo guisero,01.1.1,0.8780,216,completo
+2025-05,GBA,Galletitas de agua envasadas,01.1.1,1.2316,103,completo
+2025-05,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.9095,209,completo
+2025-05,GBA,Gaseosa base cola,01.2.2,2.7118,187,completo
+2025-05,GBA,Hamburguesas congeladas,01.1.2,4.0484,120,completo
+2025-05,GBA,Harina de trigo común 000,01.1.1,2.3782,40,completo
+2025-05,GBA,Leche en polvo entera,01.1.4,0.9556,6,completo
+2025-05,GBA,Leche fresca entera en sachet,01.1.4,1.2895,46,completo
+2025-05,GBA,Manteca,01.1.5,1.7593,110,completo
+2025-05,GBA,Pan de mesa,01.1.1,1.4733,62,completo
+2025-05,GBA,Polvo para flan,01.1.8,3.7449,71,completo
+2025-05,GBA,Sal fina,01.1.9,0.0032,88,completo
+2025-05,GBA,Salchicha tipo viena,01.1.2,2.6078,148,completo
+2025-05,GBA,Tomate entero en conserva,01.1.7,0.7458,31,completo
+2025-05,GBA,Yerba mate,01.2.1,1.6530,540,completo
+2025-05,GBA,Yogur firme,01.1.4,0.5770,31,completo
+2025-05,Noreste,Aceite de girasol,01.1.5,3.8067,61,completo
+2025-05,Noreste,Agua sin gas,01.2.2,3.6554,182,completo
+2025-05,Noreste,Arroz blanco simple,01.1.1,-0.4561,48,completo
+2025-05,Noreste,Arvejas secas remojadas,01.1.7,0.0108,37,completo
+2025-05,Noreste,Azúcar,01.1.8,0.4750,21,completo
+2025-05,Noreste,Café molido,01.2.1,5.7447,98,completo
+2025-05,Noreste,Dulce de leche,01.1.8,2.4391,102,completo
+2025-05,Noreste,Fideos secos tipo guisero,01.1.1,0.3206,180,completo
+2025-05,Noreste,Galletitas de agua envasadas,01.1.1,1.6000,88,completo
+2025-05,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.4793,159,completo
+2025-05,Noreste,Gaseosa base cola,01.2.2,1.6600,164,completo
+2025-05,Noreste,Hamburguesas congeladas,01.1.2,4.7331,96,completo
+2025-05,Noreste,Harina de trigo común 000,01.1.1,4.0232,34,completo
+2025-05,Noreste,Leche en polvo entera,01.1.4,2.7139,12,completo
+2025-05,Noreste,Leche fresca entera en sachet,01.1.4,0.3635,24,completo
+2025-05,Noreste,Manteca,01.1.5,2.0728,90,completo
+2025-05,Noreste,Pan de mesa,01.1.1,3.1371,39,completo
+2025-05,Noreste,Polvo para flan,01.1.8,3.7005,67,completo
+2025-05,Noreste,Sal fina,01.1.9,-0.5325,76,completo
+2025-05,Noreste,Salchicha tipo viena,01.1.2,2.9578,138,completo
+2025-05,Noreste,Tomate entero en conserva,01.1.7,-1.3497,25,completo
+2025-05,Noreste,Yerba mate,01.2.1,1.9159,468,completo
+2025-05,Noreste,Yogur firme,01.1.4,1.2207,16,completo
+2025-05,Noroeste,Aceite de girasol,01.1.5,3.1988,44,completo
+2025-05,Noroeste,Agua sin gas,01.2.2,3.9336,168,completo
+2025-05,Noroeste,Arroz blanco simple,01.1.1,-2.8526,36,completo
+2025-05,Noroeste,Arvejas secas remojadas,01.1.7,0.1724,35,completo
+2025-05,Noroeste,Azúcar,01.1.8,0.0393,23,completo
+2025-05,Noroeste,Café molido,01.2.1,5.1747,98,completo
+2025-05,Noroeste,Dulce de leche,01.1.8,2.1892,91,completo
+2025-05,Noroeste,Fideos secos tipo guisero,01.1.1,0.7941,162,completo
+2025-05,Noroeste,Galletitas de agua envasadas,01.1.1,1.0883,66,completo
+2025-05,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,2.1873,146,completo
+2025-05,Noroeste,Gaseosa base cola,01.2.2,1.7754,149,completo
+2025-05,Noroeste,Hamburguesas congeladas,01.1.2,4.6413,73,completo
+2025-05,Noroeste,Harina de trigo común 000,01.1.1,4.0726,27,completo
+2025-05,Noroeste,Leche en polvo entera,01.1.4,2.1693,10,completo
+2025-05,Noroeste,Leche fresca entera en sachet,01.1.4,0.6783,23,completo
+2025-05,Noroeste,Manteca,01.1.5,2.3020,71,completo
+2025-05,Noroeste,Pan de mesa,01.1.1,2.9866,37,completo
+2025-05,Noroeste,Polvo para flan,01.1.8,3.2253,48,completo
+2025-05,Noroeste,Sal fina,01.1.9,0.5612,65,completo
+2025-05,Noroeste,Salchicha tipo viena,01.1.2,3.2496,104,completo
+2025-05,Noroeste,Tomate entero en conserva,01.1.7,-2.1886,19,completo
+2025-05,Noroeste,Yerba mate,01.2.1,2.3932,349,completo
+2025-05,Noroeste,Yogur firme,01.1.4,2.2221,9,completo
+2025-05,Pampeana,Aceite de girasol,01.1.5,2.9307,111,completo
+2025-05,Pampeana,Agua sin gas,01.2.2,3.5643,419,completo
+2025-05,Pampeana,Arroz blanco simple,01.1.1,-0.7244,95,completo
+2025-05,Pampeana,Arvejas secas remojadas,01.1.7,0.1800,98,completo
+2025-05,Pampeana,Azúcar,01.1.8,0.6889,59,completo
+2025-05,Pampeana,Café molido,01.2.1,4.7625,197,completo
+2025-05,Pampeana,Dulce de leche,01.1.8,1.8973,231,completo
+2025-05,Pampeana,Fideos secos tipo guisero,01.1.1,0.8148,321,completo
+2025-05,Pampeana,Galletitas de agua envasadas,01.1.1,1.5447,166,completo
+2025-05,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.2648,306,completo
+2025-05,Pampeana,Gaseosa base cola,01.2.2,2.6123,299,completo
+2025-05,Pampeana,Hamburguesas congeladas,01.1.2,3.6058,194,completo
+2025-05,Pampeana,Harina de trigo común 000,01.1.1,3.2844,56,completo
+2025-05,Pampeana,Leche en polvo entera,01.1.4,2.3772,17,completo
+2025-05,Pampeana,Leche fresca entera en sachet,01.1.4,1.8576,64,completo
+2025-05,Pampeana,Manteca,01.1.5,2.0443,175,completo
+2025-05,Pampeana,Pan de mesa,01.1.1,1.3595,100,completo
+2025-05,Pampeana,Polvo para flan,01.1.8,2.2757,119,completo
+2025-05,Pampeana,Sal fina,01.1.9,0.4877,127,completo
+2025-05,Pampeana,Salchicha tipo viena,01.1.2,2.3226,249,completo
+2025-05,Pampeana,Tomate entero en conserva,01.1.7,-0.8471,50,completo
+2025-05,Pampeana,Yerba mate,01.2.1,1.5743,824,completo
+2025-05,Pampeana,Yogur firme,01.1.4,0.7155,37,completo
+2025-05,Patagonia,Aceite de girasol,01.1.5,3.5238,66,completo
+2025-05,Patagonia,Agua sin gas,01.2.2,4.2644,235,completo
+2025-05,Patagonia,Arroz blanco simple,01.1.1,-1.2726,53,completo
+2025-05,Patagonia,Arvejas secas remojadas,01.1.7,0.7235,45,completo
+2025-05,Patagonia,Azúcar,01.1.8,1.1127,26,completo
+2025-05,Patagonia,Café molido,01.2.1,5.5133,122,completo
+2025-05,Patagonia,Dulce de leche,01.1.8,2.1948,122,completo
+2025-05,Patagonia,Fideos secos tipo guisero,01.1.1,0.7376,195,completo
+2025-05,Patagonia,Galletitas de agua envasadas,01.1.1,2.2055,100,completo
+2025-05,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.6223,186,completo
+2025-05,Patagonia,Gaseosa base cola,01.2.2,2.0801,157,completo
+2025-05,Patagonia,Hamburguesas congeladas,01.1.2,4.3592,100,completo
+2025-05,Patagonia,Harina de trigo común 000,01.1.1,1.2973,36,completo
+2025-05,Patagonia,Leche en polvo entera,01.1.4,1.4758,5,completo
+2025-05,Patagonia,Leche fresca entera en sachet,01.1.4,1.5595,41,completo
+2025-05,Patagonia,Manteca,01.1.5,2.4068,94,completo
+2025-05,Patagonia,Pan de mesa,01.1.1,1.9984,46,completo
+2025-05,Patagonia,Polvo para flan,01.1.8,2.7819,61,completo
+2025-05,Patagonia,Sal fina,01.1.9,1.3648,79,completo
+2025-05,Patagonia,Salchicha tipo viena,01.1.2,2.6243,126,completo
+2025-05,Patagonia,Tomate entero en conserva,01.1.7,2.0324,28,completo
+2025-05,Patagonia,Yerba mate,01.2.1,1.9679,448,completo
+2025-05,Patagonia,Yogur firme,01.1.4,3.0228,18,completo
+2025-06,Cuyo,Aceite de girasol,01.1.5,5.1452,51,completo
+2025-06,Cuyo,Agua sin gas,01.2.2,3.1193,204,completo
+2025-06,Cuyo,Arroz blanco simple,01.1.1,2.8242,48,completo
+2025-06,Cuyo,Arvejas secas remojadas,01.1.7,-0.1862,59,completo
+2025-06,Cuyo,Azúcar,01.1.8,0.7640,26,completo
+2025-06,Cuyo,Café molido,01.2.1,4.8219,122,completo
+2025-06,Cuyo,Dulce de leche,01.1.8,0.8983,134,completo
+2025-06,Cuyo,Fideos secos tipo guisero,01.1.1,1.2231,211,completo
+2025-06,Cuyo,Galletitas de agua envasadas,01.1.1,0.4143,102,completo
+2025-06,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.1935,170,completo
+2025-06,Cuyo,Gaseosa base cola,01.2.2,1.8914,152,completo
+2025-06,Cuyo,Hamburguesas congeladas,01.1.2,2.2716,104,completo
+2025-06,Cuyo,Harina de trigo común 000,01.1.1,3.3142,36,completo
+2025-06,Cuyo,Leche en polvo entera,01.1.4,1.0120,8,completo
+2025-06,Cuyo,Leche fresca entera en sachet,01.1.4,0.6145,33,completo
+2025-06,Cuyo,Manteca,01.1.5,3.0468,96,completo
+2025-06,Cuyo,Pan de mesa,01.1.1,3.7032,47,completo
+2025-06,Cuyo,Polvo para flan,01.1.8,1.7064,57,completo
+2025-06,Cuyo,Sal fina,01.1.9,1.4205,68,completo
+2025-06,Cuyo,Salchicha tipo viena,01.1.2,2.0366,135,completo
+2025-06,Cuyo,Tomate entero en conserva,01.1.7,-4.6567,25,completo
+2025-06,Cuyo,Yerba mate,01.2.1,1.9803,466,completo
+2025-06,Cuyo,Yogur firme,01.1.4,1.5742,20,completo
+2025-06,GBA,Aceite de girasol,01.1.5,5.1121,80,completo
+2025-06,GBA,Agua sin gas,01.2.2,3.4486,257,completo
+2025-06,GBA,Arroz blanco simple,01.1.1,0.0428,67,completo
+2025-06,GBA,Arvejas secas remojadas,01.1.7,0.6481,65,completo
+2025-06,GBA,Azúcar,01.1.8,0.6384,29,completo
+2025-06,GBA,Café molido,01.2.1,4.3700,144,completo
+2025-06,GBA,Dulce de leche,01.1.8,1.5093,158,completo
+2025-06,GBA,Fideos secos tipo guisero,01.1.1,1.3660,233,completo
+2025-06,GBA,Galletitas de agua envasadas,01.1.1,0.2492,122,completo
+2025-06,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.8451,210,completo
+2025-06,GBA,Gaseosa base cola,01.2.2,2.6500,174,completo
+2025-06,GBA,Hamburguesas congeladas,01.1.2,2.4818,126,completo
+2025-06,GBA,Harina de trigo común 000,01.1.1,2.6613,44,completo
+2025-06,GBA,Leche en polvo entera,01.1.4,0.6906,6,completo
+2025-06,GBA,Leche fresca entera en sachet,01.1.4,0.6743,49,completo
+2025-06,GBA,Manteca,01.1.5,2.4904,120,completo
+2025-06,GBA,Pan de mesa,01.1.1,1.8901,60,completo
+2025-06,GBA,Polvo para flan,01.1.8,1.7456,75,completo
+2025-06,GBA,Sal fina,01.1.9,0.9177,85,completo
+2025-06,GBA,Salchicha tipo viena,01.1.2,1.8103,157,completo
+2025-06,GBA,Tomate entero en conserva,01.1.7,-3.8471,28,completo
+2025-06,GBA,Yerba mate,01.2.1,2.1411,549,completo
+2025-06,GBA,Yogur firme,01.1.4,2.2214,33,completo
+2025-06,Noreste,Aceite de girasol,01.1.5,4.3117,58,completo
+2025-06,Noreste,Agua sin gas,01.2.2,2.5454,177,completo
+2025-06,Noreste,Arroz blanco simple,01.1.1,4.3546,48,completo
+2025-06,Noreste,Arvejas secas remojadas,01.1.7,-0.3704,43,completo
+2025-06,Noreste,Azúcar,01.1.8,1.1234,21,completo
+2025-06,Noreste,Café molido,01.2.1,3.3342,109,completo
+2025-06,Noreste,Dulce de leche,01.1.8,1.8175,124,completo
+2025-06,Noreste,Fideos secos tipo guisero,01.1.1,2.1312,201,completo
+2025-06,Noreste,Galletitas de agua envasadas,01.1.1,1.8025,107,completo
+2025-06,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.9899,159,completo
+2025-06,Noreste,Gaseosa base cola,01.2.2,1.7791,151,completo
+2025-06,Noreste,Hamburguesas congeladas,01.1.2,2.0465,101,completo
+2025-06,Noreste,Harina de trigo común 000,01.1.1,3.9868,37,completo
+2025-06,Noreste,Leche en polvo entera,01.1.4,1.1670,11,completo
+2025-06,Noreste,Leche fresca entera en sachet,01.1.4,2.7220,27,completo
+2025-06,Noreste,Manteca,01.1.5,3.6616,99,completo
+2025-06,Noreste,Pan de mesa,01.1.1,2.9121,38,completo
+2025-06,Noreste,Polvo para flan,01.1.8,1.9037,71,completo
+2025-06,Noreste,Sal fina,01.1.9,0.4526,72,completo
+2025-06,Noreste,Salchicha tipo viena,01.1.2,1.9980,148,completo
+2025-06,Noreste,Tomate entero en conserva,01.1.7,-3.9011,24,completo
+2025-06,Noreste,Yerba mate,01.2.1,1.3782,485,completo
+2025-06,Noreste,Yogur firme,01.1.4,1.6921,18,completo
+2025-06,Noroeste,Aceite de girasol,01.1.5,4.0824,43,completo
+2025-06,Noroeste,Agua sin gas,01.2.2,2.5590,160,completo
+2025-06,Noroeste,Arroz blanco simple,01.1.1,3.4808,35,completo
+2025-06,Noroeste,Arvejas secas remojadas,01.1.7,-0.3638,41,completo
+2025-06,Noroeste,Azúcar,01.1.8,0.9838,23,completo
+2025-06,Noroeste,Café molido,01.2.1,3.3432,103,completo
+2025-06,Noroeste,Dulce de leche,01.1.8,1.3983,112,completo
+2025-06,Noroeste,Fideos secos tipo guisero,01.1.1,1.6880,182,completo
+2025-06,Noroeste,Galletitas de agua envasadas,01.1.1,0.0470,86,completo
+2025-06,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,2.1774,149,completo
+2025-06,Noroeste,Gaseosa base cola,01.2.2,2.1612,139,completo
+2025-06,Noroeste,Hamburguesas congeladas,01.1.2,2.0772,78,completo
+2025-06,Noroeste,Harina de trigo común 000,01.1.1,3.0367,31,completo
+2025-06,Noroeste,Leche en polvo entera,01.1.4,1.0522,10,completo
+2025-06,Noroeste,Leche fresca entera en sachet,01.1.4,2.0884,26,completo
+2025-06,Noroeste,Manteca,01.1.5,3.7037,80,completo
+2025-06,Noroeste,Pan de mesa,01.1.1,2.6159,35,completo
+2025-06,Noroeste,Polvo para flan,01.1.8,1.7406,52,completo
+2025-06,Noroeste,Sal fina,01.1.9,1.5458,61,completo
+2025-06,Noroeste,Salchicha tipo viena,01.1.2,1.3565,114,completo
+2025-06,Noroeste,Tomate entero en conserva,01.1.7,-5.8651,19,completo
+2025-06,Noroeste,Yerba mate,01.2.1,1.7875,366,completo
+2025-06,Noroeste,Yogur firme,01.1.4,1.2790,12,completo
+2025-06,Pampeana,Aceite de girasol,01.1.5,3.0267,109,completo
+2025-06,Pampeana,Agua sin gas,01.2.2,2.1511,418,completo
+2025-06,Pampeana,Arroz blanco simple,01.1.1,1.3719,95,completo
+2025-06,Pampeana,Arvejas secas remojadas,01.1.7,0.3648,105,completo
+2025-06,Pampeana,Azúcar,01.1.8,0.7126,57,completo
+2025-06,Pampeana,Café molido,01.2.1,3.7038,202,completo
+2025-06,Pampeana,Dulce de leche,01.1.8,1.1411,252,completo
+2025-06,Pampeana,Fideos secos tipo guisero,01.1.1,0.7734,336,completo
+2025-06,Pampeana,Galletitas de agua envasadas,01.1.1,1.2862,193,completo
+2025-06,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.9055,307,completo
+2025-06,Pampeana,Gaseosa base cola,01.2.2,2.2331,282,completo
+2025-06,Pampeana,Hamburguesas congeladas,01.1.2,1.9816,203,completo
+2025-06,Pampeana,Harina de trigo común 000,01.1.1,1.9812,60,completo
+2025-06,Pampeana,Leche en polvo entera,01.1.4,0.7392,17,completo
+2025-06,Pampeana,Leche fresca entera en sachet,01.1.4,1.0634,70,completo
+2025-06,Pampeana,Manteca,01.1.5,2.3679,184,completo
+2025-06,Pampeana,Pan de mesa,01.1.1,2.2293,93,completo
+2025-06,Pampeana,Polvo para flan,01.1.8,1.4789,126,completo
+2025-06,Pampeana,Sal fina,01.1.9,0.1433,126,completo
+2025-06,Pampeana,Salchicha tipo viena,01.1.2,1.5902,260,completo
+2025-06,Pampeana,Tomate entero en conserva,01.1.7,-2.8939,50,completo
+2025-06,Pampeana,Yerba mate,01.2.1,1.5629,854,completo
+2025-06,Pampeana,Yogur firme,01.1.4,1.6482,39,completo
+2025-06,Patagonia,Aceite de girasol,01.1.5,5.6227,60,completo
+2025-06,Patagonia,Agua sin gas,01.2.2,3.3687,234,completo
+2025-06,Patagonia,Arroz blanco simple,01.1.1,0.3302,52,completo
+2025-06,Patagonia,Arvejas secas remojadas,01.1.7,0.7481,54,completo
+2025-06,Patagonia,Azúcar,01.1.8,1.1380,25,completo
+2025-06,Patagonia,Café molido,01.2.1,4.2248,130,completo
+2025-06,Patagonia,Dulce de leche,01.1.8,1.2295,146,completo
+2025-06,Patagonia,Fideos secos tipo guisero,01.1.1,1.8193,214,completo
+2025-06,Patagonia,Galletitas de agua envasadas,01.1.1,2.3649,113,completo
+2025-06,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.5371,188,completo
+2025-06,Patagonia,Gaseosa base cola,01.2.2,1.6703,144,completo
+2025-06,Patagonia,Hamburguesas congeladas,01.1.2,2.7069,113,completo
+2025-06,Patagonia,Harina de trigo común 000,01.1.1,4.3381,40,completo
+2025-06,Patagonia,Leche en polvo entera,01.1.4,0.3804,5,completo
+2025-06,Patagonia,Leche fresca entera en sachet,01.1.4,0.8210,46,completo
+2025-06,Patagonia,Manteca,01.1.5,2.5850,103,completo
+2025-06,Patagonia,Pan de mesa,01.1.1,2.3771,41,completo
+2025-06,Patagonia,Polvo para flan,01.1.8,2.0545,66,completo
+2025-06,Patagonia,Sal fina,01.1.9,0.7084,76,completo
+2025-06,Patagonia,Salchicha tipo viena,01.1.2,1.7815,139,completo
+2025-06,Patagonia,Tomate entero en conserva,01.1.7,-0.7712,27,completo
+2025-06,Patagonia,Yerba mate,01.2.1,2.2286,477,completo
+2025-06,Patagonia,Yogur firme,01.1.4,1.1750,20,completo
+2025-07,Cuyo,Aceite de girasol,01.1.5,1.1314,52,completo
+2025-07,Cuyo,Agua sin gas,01.2.2,2.6971,196,completo
+2025-07,Cuyo,Arroz blanco simple,01.1.1,-0.9771,48,completo
+2025-07,Cuyo,Arvejas secas remojadas,01.1.7,0.9089,59,completo
+2025-07,Cuyo,Azúcar,01.1.8,1.8281,28,completo
+2025-07,Cuyo,Café molido,01.2.1,3.0026,130,completo
+2025-07,Cuyo,Dulce de leche,01.1.8,1.5481,133,completo
+2025-07,Cuyo,Fideos secos tipo guisero,01.1.1,0.4701,221,completo
+2025-07,Cuyo,Galletitas de agua envasadas,01.1.1,2.1329,103,completo
+2025-07,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.1252,182,completo
+2025-07,Cuyo,Gaseosa base cola,01.2.2,2.0790,153,completo
+2025-07,Cuyo,Hamburguesas congeladas,01.1.2,1.8773,106,completo
+2025-07,Cuyo,Harina de trigo común 000,01.1.1,-0.0131,36,completo
+2025-07,Cuyo,Leche en polvo entera,01.1.4,0.3330,8,completo
+2025-07,Cuyo,Leche fresca entera en sachet,01.1.4,0.8508,34,completo
+2025-07,Cuyo,Manteca,01.1.5,0.9138,97,completo
+2025-07,Cuyo,Pan de mesa,01.1.1,3.8849,52,completo
+2025-07,Cuyo,Polvo para flan,01.1.8,0.5099,63,completo
+2025-07,Cuyo,Sal fina,01.1.9,1.6486,69,completo
+2025-07,Cuyo,Salchicha tipo viena,01.1.2,1.9408,136,completo
+2025-07,Cuyo,Tomate entero en conserva,01.1.7,5.6204,26,completo
+2025-07,Cuyo,Yerba mate,01.2.1,1.3566,460,completo
+2025-07,Cuyo,Yogur firme,01.1.4,2.9660,25,completo
+2025-07,GBA,Aceite de girasol,01.1.5,1.3657,78,completo
+2025-07,GBA,Agua sin gas,01.2.2,1.6606,247,completo
+2025-07,GBA,Arroz blanco simple,01.1.1,-0.5361,67,completo
+2025-07,GBA,Arvejas secas remojadas,01.1.7,0.0971,68,completo
+2025-07,GBA,Azúcar,01.1.8,0.9290,30,completo
+2025-07,GBA,Café molido,01.2.1,3.3198,153,completo
+2025-07,GBA,Dulce de leche,01.1.8,0.9020,151,completo
+2025-07,GBA,Fideos secos tipo guisero,01.1.1,0.1059,242,completo
+2025-07,GBA,Galletitas de agua envasadas,01.1.1,1.2563,124,completo
+2025-07,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.1061,215,completo
+2025-07,GBA,Gaseosa base cola,01.2.2,2.4116,174,completo
+2025-07,GBA,Hamburguesas congeladas,01.1.2,1.3270,128,completo
+2025-07,GBA,Harina de trigo común 000,01.1.1,0.0670,45,completo
+2025-07,GBA,Leche en polvo entera,01.1.4,0.1626,6,completo
+2025-07,GBA,Leche fresca entera en sachet,01.1.4,1.0693,49,completo
+2025-07,GBA,Manteca,01.1.5,1.3824,117,completo
+2025-07,GBA,Pan de mesa,01.1.1,2.4849,59,completo
+2025-07,GBA,Polvo para flan,01.1.8,1.4599,76,completo
+2025-07,GBA,Sal fina,01.1.9,1.6105,85,completo
+2025-07,GBA,Salchicha tipo viena,01.1.2,1.3345,148,completo
+2025-07,GBA,Tomate entero en conserva,01.1.7,1.2844,29,completo
+2025-07,GBA,Yerba mate,01.2.1,0.6671,548,completo
+2025-07,GBA,Yogur firme,01.1.4,3.5744,36,completo
+2025-07,Noreste,Aceite de girasol,01.1.5,0.5716,60,completo
+2025-07,Noreste,Agua sin gas,01.2.2,2.1117,168,completo
+2025-07,Noreste,Arroz blanco simple,01.1.1,-2.1884,49,completo
+2025-07,Noreste,Arvejas secas remojadas,01.1.7,0.7636,46,completo
+2025-07,Noreste,Azúcar,01.1.8,2.4871,22,completo
+2025-07,Noreste,Café molido,01.2.1,2.8620,117,completo
+2025-07,Noreste,Dulce de leche,01.1.8,1.3668,127,completo
+2025-07,Noreste,Fideos secos tipo guisero,01.1.1,0.1155,203,completo
+2025-07,Noreste,Galletitas de agua envasadas,01.1.1,2.4337,112,completo
+2025-07,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.2111,165,completo
+2025-07,Noreste,Gaseosa base cola,01.2.2,3.2581,149,completo
+2025-07,Noreste,Hamburguesas congeladas,01.1.2,1.8363,107,completo
+2025-07,Noreste,Harina de trigo común 000,01.1.1,-0.0299,38,completo
+2025-07,Noreste,Leche en polvo entera,01.1.4,-0.7968,11,completo
+2025-07,Noreste,Leche fresca entera en sachet,01.1.4,0.7043,28,completo
+2025-07,Noreste,Manteca,01.1.5,0.7737,99,completo
+2025-07,Noreste,Pan de mesa,01.1.1,3.2210,39,completo
+2025-07,Noreste,Polvo para flan,01.1.8,0.1461,73,completo
+2025-07,Noreste,Sal fina,01.1.9,0.8227,73,completo
+2025-07,Noreste,Salchicha tipo viena,01.1.2,2.3424,153,completo
+2025-07,Noreste,Tomate entero en conserva,01.1.7,3.3170,24,completo
+2025-07,Noreste,Yerba mate,01.2.1,1.3079,472,completo
+2025-07,Noreste,Yogur firme,01.1.4,3.0839,21,completo
+2025-07,Noroeste,Aceite de girasol,01.1.5,0.9875,39,completo
+2025-07,Noroeste,Agua sin gas,01.2.2,2.4979,156,completo
+2025-07,Noroeste,Arroz blanco simple,01.1.1,-2.1647,35,completo
+2025-07,Noroeste,Arvejas secas remojadas,01.1.7,0.7937,41,completo
+2025-07,Noroeste,Azúcar,01.1.8,1.8215,24,completo
+2025-07,Noroeste,Café molido,01.2.1,3.0256,110,completo
+2025-07,Noroeste,Dulce de leche,01.1.8,1.5278,112,completo
+2025-07,Noroeste,Fideos secos tipo guisero,01.1.1,0.2481,182,completo
+2025-07,Noroeste,Galletitas de agua envasadas,01.1.1,1.7636,90,completo
+2025-07,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.6645,155,completo
+2025-07,Noroeste,Gaseosa base cola,01.2.2,2.0657,133,completo
+2025-07,Noroeste,Hamburguesas congeladas,01.1.2,1.8442,78,completo
+2025-07,Noroeste,Harina de trigo común 000,01.1.1,-0.0330,31,completo
+2025-07,Noroeste,Leche en polvo entera,01.1.4,1.0318,9,completo
+2025-07,Noroeste,Leche fresca entera en sachet,01.1.4,0.8874,27,completo
+2025-07,Noroeste,Manteca,01.1.5,0.7306,81,completo
+2025-07,Noroeste,Pan de mesa,01.1.1,3.3920,37,completo
+2025-07,Noroeste,Polvo para flan,01.1.8,0.4333,50,completo
+2025-07,Noroeste,Sal fina,01.1.9,1.2221,61,completo
+2025-07,Noroeste,Salchicha tipo viena,01.1.2,1.9129,113,completo
+2025-07,Noroeste,Tomate entero en conserva,01.1.7,4.0895,19,completo
+2025-07,Noroeste,Yerba mate,01.2.1,2.0254,354,completo
+2025-07,Noroeste,Yogur firme,01.1.4,3.2253,15,completo
+2025-07,Pampeana,Aceite de girasol,01.1.5,1.8542,107,completo
+2025-07,Pampeana,Agua sin gas,01.2.2,1.8190,412,completo
+2025-07,Pampeana,Arroz blanco simple,01.1.1,-1.5146,95,completo
+2025-07,Pampeana,Arvejas secas remojadas,01.1.7,0.2866,108,completo
+2025-07,Pampeana,Azúcar,01.1.8,1.2044,57,completo
+2025-07,Pampeana,Café molido,01.2.1,3.4983,203,completo
+2025-07,Pampeana,Dulce de leche,01.1.8,1.1222,244,completo
+2025-07,Pampeana,Fideos secos tipo guisero,01.1.1,0.3309,353,completo
+2025-07,Pampeana,Galletitas de agua envasadas,01.1.1,1.5611,190,completo
+2025-07,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.1181,311,completo
+2025-07,Pampeana,Gaseosa base cola,01.2.2,2.2291,282,completo
+2025-07,Pampeana,Hamburguesas congeladas,01.1.2,1.7109,199,completo
+2025-07,Pampeana,Harina de trigo común 000,01.1.1,-0.1664,61,completo
+2025-07,Pampeana,Leche en polvo entera,01.1.4,0.7703,18,completo
+2025-07,Pampeana,Leche fresca entera en sachet,01.1.4,0.6546,71,completo
+2025-07,Pampeana,Manteca,01.1.5,1.0752,183,completo
+2025-07,Pampeana,Pan de mesa,01.1.1,2.4423,95,completo
+2025-07,Pampeana,Polvo para flan,01.1.8,0.7295,133,completo
+2025-07,Pampeana,Sal fina,01.1.9,0.8933,126,completo
+2025-07,Pampeana,Salchicha tipo viena,01.1.2,0.9717,259,completo
+2025-07,Pampeana,Tomate entero en conserva,01.1.7,-0.4454,51,completo
+2025-07,Pampeana,Yerba mate,01.2.1,0.8873,839,completo
+2025-07,Pampeana,Yogur firme,01.1.4,2.8055,40,completo
+2025-07,Patagonia,Aceite de girasol,01.1.5,1.1759,60,completo
+2025-07,Patagonia,Agua sin gas,01.2.2,2.5577,225,completo
+2025-07,Patagonia,Arroz blanco simple,01.1.1,-0.9778,53,completo
+2025-07,Patagonia,Arvejas secas remojadas,01.1.7,0.8726,57,completo
+2025-07,Patagonia,Azúcar,01.1.8,1.7550,26,completo
+2025-07,Patagonia,Café molido,01.2.1,3.0626,138,completo
+2025-07,Patagonia,Dulce de leche,01.1.8,1.5156,139,completo
+2025-07,Patagonia,Fideos secos tipo guisero,01.1.1,0.2817,223,completo
+2025-07,Patagonia,Galletitas de agua envasadas,01.1.1,1.4449,112,completo
+2025-07,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.0738,199,completo
+2025-07,Patagonia,Gaseosa base cola,01.2.2,1.9459,141,completo
+2025-07,Patagonia,Hamburguesas congeladas,01.1.2,1.4127,115,completo
+2025-07,Patagonia,Harina de trigo común 000,01.1.1,-0.3525,40,completo
+2025-07,Patagonia,Leche en polvo entera,01.1.4,0.1654,5,completo
+2025-07,Patagonia,Leche fresca entera en sachet,01.1.4,0.3870,47,completo
+2025-07,Patagonia,Manteca,01.1.5,1.4193,99,completo
+2025-07,Patagonia,Pan de mesa,01.1.1,3.4489,37,completo
+2025-07,Patagonia,Polvo para flan,01.1.8,0.8179,72,completo
+2025-07,Patagonia,Sal fina,01.1.9,1.1714,75,completo
+2025-07,Patagonia,Salchicha tipo viena,01.1.2,1.1842,138,completo
+2025-07,Patagonia,Tomate entero en conserva,01.1.7,-0.7956,26,completo
+2025-07,Patagonia,Yerba mate,01.2.1,1.1880,476,completo
+2025-07,Patagonia,Yogur firme,01.1.4,3.0178,23,completo
+2025-08,Cuyo,Aceite de girasol,01.1.5,1.7410,71,completo
+2025-08,Cuyo,Agua sin gas,01.2.2,1.4332,213,completo
+2025-08,Cuyo,Arroz blanco simple,01.1.1,0.6672,52,completo
+2025-08,Cuyo,Arvejas secas remojadas,01.1.7,0.3114,59,completo
+2025-08,Cuyo,Azúcar,01.1.8,0.3424,29,completo
+2025-08,Cuyo,Café molido,01.2.1,1.0870,126,completo
+2025-08,Cuyo,Dulce de leche,01.1.8,1.6715,136,completo
+2025-08,Cuyo,Fideos secos tipo guisero,01.1.1,2.8614,228,completo
+2025-08,Cuyo,Galletitas de agua envasadas,01.1.1,3.3794,109,completo
+2025-08,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.4268,189,completo
+2025-08,Cuyo,Gaseosa base cola,01.2.2,1.4551,152,completo
+2025-08,Cuyo,Hamburguesas congeladas,01.1.2,1.9833,138,completo
+2025-08,Cuyo,Harina de trigo común 000,01.1.1,2.6495,37,completo
+2025-08,Cuyo,Leche en polvo entera,01.1.4,0.7286,9,completo
+2025-08,Cuyo,Leche fresca entera en sachet,01.1.4,-0.8605,31,completo
+2025-08,Cuyo,Manteca,01.1.5,1.4906,97,completo
+2025-08,Cuyo,Pan de mesa,01.1.1,1.9654,54,completo
+2025-08,Cuyo,Polvo para flan,01.1.8,1.5030,62,completo
+2025-08,Cuyo,Sal fina,01.1.9,0.8082,69,completo
+2025-08,Cuyo,Salchicha tipo viena,01.1.2,1.8437,136,completo
+2025-08,Cuyo,Tomate entero en conserva,01.1.7,2.4349,25,completo
+2025-08,Cuyo,Yerba mate,01.2.1,0.6320,470,completo
+2025-08,Cuyo,Yogur firme,01.1.4,0.5271,26,completo
+2025-08,GBA,Aceite de girasol,01.1.5,2.9071,96,completo
+2025-08,GBA,Agua sin gas,01.2.2,1.1889,267,completo
+2025-08,GBA,Arroz blanco simple,01.1.1,-1.6904,68,completo
+2025-08,GBA,Arvejas secas remojadas,01.1.7,-0.0453,68,completo
+2025-08,GBA,Azúcar,01.1.8,1.2887,35,completo
+2025-08,GBA,Café molido,01.2.1,0.7645,151,completo
+2025-08,GBA,Dulce de leche,01.1.8,1.4944,152,completo
+2025-08,GBA,Fideos secos tipo guisero,01.1.1,3.1717,248,completo
+2025-08,GBA,Galletitas de agua envasadas,01.1.1,1.2060,137,completo
+2025-08,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.5410,228,completo
+2025-08,GBA,Gaseosa base cola,01.2.2,2.4512,179,completo
+2025-08,GBA,Hamburguesas congeladas,01.1.2,2.0053,156,completo
+2025-08,GBA,Harina de trigo común 000,01.1.1,3.1345,46,completo
+2025-08,GBA,Leche en polvo entera,01.1.4,1.0822,6,completo
+2025-08,GBA,Leche fresca entera en sachet,01.1.4,-0.0292,46,completo
+2025-08,GBA,Manteca,01.1.5,1.9208,118,completo
+2025-08,GBA,Pan de mesa,01.1.1,1.4995,59,completo
+2025-08,GBA,Polvo para flan,01.1.8,1.3109,76,completo
+2025-08,GBA,Sal fina,01.1.9,0.5596,86,completo
+2025-08,GBA,Salchicha tipo viena,01.1.2,1.4727,154,completo
+2025-08,GBA,Tomate entero en conserva,01.1.7,3.4190,28,completo
+2025-08,GBA,Yerba mate,01.2.1,0.4286,553,completo
+2025-08,GBA,Yogur firme,01.1.4,0.0365,34,completo
+2025-08,Noreste,Aceite de girasol,01.1.5,3.2153,77,completo
+2025-08,Noreste,Agua sin gas,01.2.2,1.3450,184,completo
+2025-08,Noreste,Arroz blanco simple,01.1.1,-0.6486,53,completo
+2025-08,Noreste,Arvejas secas remojadas,01.1.7,0.2709,45,completo
+2025-08,Noreste,Azúcar,01.1.8,0.3821,24,completo
+2025-08,Noreste,Café molido,01.2.1,0.8490,114,completo
+2025-08,Noreste,Dulce de leche,01.1.8,1.2915,129,completo
+2025-08,Noreste,Fideos secos tipo guisero,01.1.1,2.6139,213,completo
+2025-08,Noreste,Galletitas de agua envasadas,01.1.1,2.0509,117,completo
+2025-08,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.2483,178,completo
+2025-08,Noreste,Gaseosa base cola,01.2.2,2.2956,148,completo
+2025-08,Noreste,Hamburguesas congeladas,01.1.2,1.8474,138,completo
+2025-08,Noreste,Harina de trigo común 000,01.1.1,2.8714,39,completo
+2025-08,Noreste,Leche en polvo entera,01.1.4,0.5087,11,completo
+2025-08,Noreste,Leche fresca entera en sachet,01.1.4,-0.9299,28,completo
+2025-08,Noreste,Manteca,01.1.5,0.7388,96,completo
+2025-08,Noreste,Pan de mesa,01.1.1,1.5928,38,completo
+2025-08,Noreste,Polvo para flan,01.1.8,1.4139,68,completo
+2025-08,Noreste,Sal fina,01.1.9,1.3321,73,completo
+2025-08,Noreste,Salchicha tipo viena,01.1.2,1.5979,154,completo
+2025-08,Noreste,Tomate entero en conserva,01.1.7,1.8532,23,completo
+2025-08,Noreste,Yerba mate,01.2.1,0.2808,478,completo
+2025-08,Noreste,Yogur firme,01.1.4,0.5021,21,completo
+2025-08,Noroeste,Aceite de girasol,01.1.5,1.6551,58,completo
+2025-08,Noroeste,Agua sin gas,01.2.2,1.4553,164,completo
+2025-08,Noroeste,Arroz blanco simple,01.1.1,1.6781,39,completo
+2025-08,Noroeste,Arvejas secas remojadas,01.1.7,0.5879,42,completo
+2025-08,Noroeste,Azúcar,01.1.8,1.2640,24,completo
+2025-08,Noroeste,Café molido,01.2.1,1.2068,110,completo
+2025-08,Noroeste,Dulce de leche,01.1.8,1.3518,115,completo
+2025-08,Noroeste,Fideos secos tipo guisero,01.1.1,2.5630,187,completo
+2025-08,Noroeste,Galletitas de agua envasadas,01.1.1,1.8261,96,completo
+2025-08,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.2966,160,completo
+2025-08,Noroeste,Gaseosa base cola,01.2.2,2.0235,136,completo
+2025-08,Noroeste,Hamburguesas congeladas,01.1.2,1.7834,106,completo
+2025-08,Noroeste,Harina de trigo común 000,01.1.1,1.4285,31,completo
+2025-08,Noroeste,Leche en polvo entera,01.1.4,0.7748,9,completo
+2025-08,Noroeste,Leche fresca entera en sachet,01.1.4,-1.1732,25,completo
+2025-08,Noroeste,Manteca,01.1.5,2.2529,75,completo
+2025-08,Noroeste,Pan de mesa,01.1.1,2.0801,35,completo
+2025-08,Noroeste,Polvo para flan,01.1.8,1.7302,45,completo
+2025-08,Noroeste,Sal fina,01.1.9,0.8353,62,completo
+2025-08,Noroeste,Salchicha tipo viena,01.1.2,1.7880,111,completo
+2025-08,Noroeste,Tomate entero en conserva,01.1.7,0.7810,18,completo
+2025-08,Noroeste,Yerba mate,01.2.1,0.3868,354,completo
+2025-08,Noroeste,Yogur firme,01.1.4,0.8026,16,completo
+2025-08,Pampeana,Aceite de girasol,01.1.5,2.7218,123,completo
+2025-08,Pampeana,Agua sin gas,01.2.2,1.3626,434,completo
+2025-08,Pampeana,Arroz blanco simple,01.1.1,-2.0992,98,completo
+2025-08,Pampeana,Arvejas secas remojadas,01.1.7,-0.3432,108,completo
+2025-08,Pampeana,Azúcar,01.1.8,0.3769,57,completo
+2025-08,Pampeana,Café molido,01.2.1,0.7873,197,completo
+2025-08,Pampeana,Dulce de leche,01.1.8,1.2531,248,completo
+2025-08,Pampeana,Fideos secos tipo guisero,01.1.1,3.1420,360,completo
+2025-08,Pampeana,Galletitas de agua envasadas,01.1.1,1.5345,206,completo
+2025-08,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.1626,320,completo
+2025-08,Pampeana,Gaseosa base cola,01.2.2,1.3018,286,completo
+2025-08,Pampeana,Hamburguesas congeladas,01.1.2,1.7070,229,completo
+2025-08,Pampeana,Harina de trigo común 000,01.1.1,3.0392,58,completo
+2025-08,Pampeana,Leche en polvo entera,01.1.4,1.4255,17,completo
+2025-08,Pampeana,Leche fresca entera en sachet,01.1.4,-0.2309,68,completo
+2025-08,Pampeana,Manteca,01.1.5,1.5667,183,completo
+2025-08,Pampeana,Pan de mesa,01.1.1,1.6597,95,completo
+2025-08,Pampeana,Polvo para flan,01.1.8,0.9855,132,completo
+2025-08,Pampeana,Sal fina,01.1.9,0.7397,126,completo
+2025-08,Pampeana,Salchicha tipo viena,01.1.2,1.0634,259,completo
+2025-08,Pampeana,Tomate entero en conserva,01.1.7,2.0281,50,completo
+2025-08,Pampeana,Yerba mate,01.2.1,0.4145,843,completo
+2025-08,Pampeana,Yogur firme,01.1.4,0.4127,42,completo
+2025-08,Patagonia,Aceite de girasol,01.1.5,3.2733,77,completo
+2025-08,Patagonia,Agua sin gas,01.2.2,1.9029,239,completo
+2025-08,Patagonia,Arroz blanco simple,01.1.1,-0.4815,53,completo
+2025-08,Patagonia,Arvejas secas remojadas,01.1.7,0.5631,58,completo
+2025-08,Patagonia,Azúcar,01.1.8,-0.0052,29,completo
+2025-08,Patagonia,Café molido,01.2.1,0.7126,133,completo
+2025-08,Patagonia,Dulce de leche,01.1.8,1.6208,144,completo
+2025-08,Patagonia,Fideos secos tipo guisero,01.1.1,3.3421,226,completo
+2025-08,Patagonia,Galletitas de agua envasadas,01.1.1,1.1396,124,completo
+2025-08,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.2516,199,completo
+2025-08,Patagonia,Gaseosa base cola,01.2.2,3.1788,143,completo
+2025-08,Patagonia,Hamburguesas congeladas,01.1.2,1.3793,143,completo
+2025-08,Patagonia,Harina de trigo común 000,01.1.1,2.9729,39,completo
+2025-08,Patagonia,Leche en polvo entera,01.1.4,3.0030,5,completo
+2025-08,Patagonia,Leche fresca entera en sachet,01.1.4,-0.0627,44,completo
+2025-08,Patagonia,Manteca,01.1.5,1.2020,100,completo
+2025-08,Patagonia,Pan de mesa,01.1.1,2.4044,37,completo
+2025-08,Patagonia,Polvo para flan,01.1.8,1.2601,72,completo
+2025-08,Patagonia,Sal fina,01.1.9,1.0436,75,completo
+2025-08,Patagonia,Salchicha tipo viena,01.1.2,1.6411,139,completo
+2025-08,Patagonia,Tomate entero en conserva,01.1.7,1.5805,25,completo
+2025-08,Patagonia,Yerba mate,01.2.1,0.4955,481,completo
+2025-08,Patagonia,Yogur firme,01.1.4,0.3388,24,completo
+2025-09,Cuyo,Aceite de girasol,01.1.5,5.6068,70,completo
+2025-09,Cuyo,Agua sin gas,01.2.2,1.6532,209,completo
+2025-09,Cuyo,Arroz blanco simple,01.1.1,-2.1722,55,completo
+2025-09,Cuyo,Arvejas secas remojadas,01.1.7,-0.7116,58,completo
+2025-09,Cuyo,Azúcar,01.1.8,2.6331,26,completo
+2025-09,Cuyo,Café molido,01.2.1,1.4614,132,completo
+2025-09,Cuyo,Dulce de leche,01.1.8,0.6343,137,completo
+2025-09,Cuyo,Fideos secos tipo guisero,01.1.1,2.5132,229,completo
+2025-09,Cuyo,Galletitas de agua envasadas,01.1.1,3.2996,114,completo
+2025-09,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,2.6960,177,completo
+2025-09,Cuyo,Gaseosa base cola,01.2.2,2.2380,154,completo
+2025-09,Cuyo,Hamburguesas congeladas,01.1.2,4.2749,136,completo
+2025-09,Cuyo,Harina de trigo común 000,01.1.1,3.5124,35,completo
+2025-09,Cuyo,Leche en polvo entera,01.1.4,4.2796,9,completo
+2025-09,Cuyo,Leche fresca entera en sachet,01.1.4,1.2320,29,completo
+2025-09,Cuyo,Manteca,01.1.5,0.7608,106,completo
+2025-09,Cuyo,Pan de mesa,01.1.1,2.5712,50,completo
+2025-09,Cuyo,Polvo para flan,01.1.8,0.9402,62,completo
+2025-09,Cuyo,Sal fina,01.1.9,2.2125,68,completo
+2025-09,Cuyo,Salchicha tipo viena,01.1.2,2.7759,134,completo
+2025-09,Cuyo,Tomate entero en conserva,01.1.7,9.8688,20,completo
+2025-09,Cuyo,Yerba mate,01.2.1,1.2731,465,completo
+2025-09,Cuyo,Yogur firme,01.1.4,5.0882,23,completo
+2025-09,GBA,Aceite de girasol,01.1.5,4.4112,96,completo
+2025-09,GBA,Agua sin gas,01.2.2,2.2422,272,completo
+2025-09,GBA,Arroz blanco simple,01.1.1,-2.4301,69,completo
+2025-09,GBA,Arvejas secas remojadas,01.1.7,-1.8348,67,completo
+2025-09,GBA,Azúcar,01.1.8,0.3276,33,completo
+2025-09,GBA,Café molido,01.2.1,0.6521,162,completo
+2025-09,GBA,Dulce de leche,01.1.8,0.6431,153,completo
+2025-09,GBA,Fideos secos tipo guisero,01.1.1,1.1137,261,completo
+2025-09,GBA,Galletitas de agua envasadas,01.1.1,3.3450,141,completo
+2025-09,GBA,Galletitas dulces envasadas sin relleno,01.1.1,3.6074,208,completo
+2025-09,GBA,Gaseosa base cola,01.2.2,1.9203,186,completo
+2025-09,GBA,Hamburguesas congeladas,01.1.2,4.7029,155,completo
+2025-09,GBA,Harina de trigo común 000,01.1.1,4.1458,44,completo
+2025-09,GBA,Leche en polvo entera,01.1.4,6.1642,6,completo
+2025-09,GBA,Leche fresca entera en sachet,01.1.4,1.6542,44,completo
+2025-09,GBA,Manteca,01.1.5,0.9855,126,completo
+2025-09,GBA,Pan de mesa,01.1.1,3.8324,58,completo
+2025-09,GBA,Polvo para flan,01.1.8,0.2543,74,completo
+2025-09,GBA,Sal fina,01.1.9,1.4917,85,completo
+2025-09,GBA,Salchicha tipo viena,01.1.2,2.3722,155,completo
+2025-09,GBA,Tomate entero en conserva,01.1.7,3.9258,26,completo
+2025-09,GBA,Yerba mate,01.2.1,0.7455,555,completo
+2025-09,GBA,Yogur firme,01.1.4,2.9881,33,completo
+2025-09,Noreste,Aceite de girasol,01.1.5,4.8296,77,completo
+2025-09,Noreste,Agua sin gas,01.2.2,1.7969,176,completo
+2025-09,Noreste,Arroz blanco simple,01.1.1,-3.2269,55,completo
+2025-09,Noreste,Arvejas secas remojadas,01.1.7,-0.7774,44,completo
+2025-09,Noreste,Azúcar,01.1.8,1.6719,22,completo
+2025-09,Noreste,Café molido,01.2.1,1.0013,127,completo
+2025-09,Noreste,Dulce de leche,01.1.8,0.9133,133,completo
+2025-09,Noreste,Fideos secos tipo guisero,01.1.1,2.2434,227,completo
+2025-09,Noreste,Galletitas de agua envasadas,01.1.1,1.7538,119,completo
+2025-09,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,3.8254,166,completo
+2025-09,Noreste,Gaseosa base cola,01.2.2,1.6872,145,completo
+2025-09,Noreste,Hamburguesas congeladas,01.1.2,4.3013,138,completo
+2025-09,Noreste,Harina de trigo común 000,01.1.1,3.2462,36,completo
+2025-09,Noreste,Leche en polvo entera,01.1.4,3.9483,11,completo
+2025-09,Noreste,Leche fresca entera en sachet,01.1.4,0.6982,27,completo
+2025-09,Noreste,Manteca,01.1.5,0.9877,105,completo
+2025-09,Noreste,Pan de mesa,01.1.1,2.2720,38,completo
+2025-09,Noreste,Polvo para flan,01.1.8,1.1540,70,completo
+2025-09,Noreste,Sal fina,01.1.9,2.9872,73,completo
+2025-09,Noreste,Salchicha tipo viena,01.1.2,2.6210,146,completo
+2025-09,Noreste,Tomate entero en conserva,01.1.7,5.4501,21,completo
+2025-09,Noreste,Yerba mate,01.2.1,1.3672,472,completo
+2025-09,Noreste,Yogur firme,01.1.4,5.7269,20,completo
+2025-09,Noroeste,Aceite de girasol,01.1.5,5.3242,57,completo
+2025-09,Noroeste,Agua sin gas,01.2.2,1.1505,158,completo
+2025-09,Noroeste,Arroz blanco simple,01.1.1,-3.2394,41,completo
+2025-09,Noroeste,Arvejas secas remojadas,01.1.7,-0.9748,41,completo
+2025-09,Noroeste,Azúcar,01.1.8,2.4811,22,completo
+2025-09,Noroeste,Café molido,01.2.1,1.0114,115,completo
+2025-09,Noroeste,Dulce de leche,01.1.8,0.4637,114,completo
+2025-09,Noroeste,Fideos secos tipo guisero,01.1.1,2.4595,196,completo
+2025-09,Noroeste,Galletitas de agua envasadas,01.1.1,2.9989,93,completo
+2025-09,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,3.1073,148,completo
+2025-09,Noroeste,Gaseosa base cola,01.2.2,1.9889,139,completo
+2025-09,Noroeste,Hamburguesas congeladas,01.1.2,4.1990,103,completo
+2025-09,Noroeste,Harina de trigo común 000,01.1.1,3.3135,28,completo
+2025-09,Noroeste,Leche en polvo entera,01.1.4,4.4685,9,completo
+2025-09,Noroeste,Leche fresca entera en sachet,01.1.4,1.0044,24,completo
+2025-09,Noroeste,Manteca,01.1.5,0.1256,84,completo
+2025-09,Noroeste,Pan de mesa,01.1.1,2.6963,35,completo
+2025-09,Noroeste,Polvo para flan,01.1.8,1.0132,46,completo
+2025-09,Noroeste,Sal fina,01.1.9,2.6211,62,completo
+2025-09,Noroeste,Salchicha tipo viena,01.1.2,2.6427,106,completo
+2025-09,Noroeste,Tomate entero en conserva,01.1.7,9.5419,14,completo
+2025-09,Noroeste,Yerba mate,01.2.1,0.5395,346,completo
+2025-09,Noroeste,Yogur firme,01.1.4,6.2767,14,completo
+2025-09,Pampeana,Aceite de girasol,01.1.5,5.0593,123,completo
+2025-09,Pampeana,Agua sin gas,01.2.2,1.8074,429,completo
+2025-09,Pampeana,Arroz blanco simple,01.1.1,-1.6251,98,completo
+2025-09,Pampeana,Arvejas secas remojadas,01.1.7,-0.3242,105,completo
+2025-09,Pampeana,Azúcar,01.1.8,0.3889,53,completo
+2025-09,Pampeana,Café molido,01.2.1,1.1159,205,completo
+2025-09,Pampeana,Dulce de leche,01.1.8,0.6424,245,completo
+2025-09,Pampeana,Fideos secos tipo guisero,01.1.1,2.0065,377,completo
+2025-09,Pampeana,Galletitas de agua envasadas,01.1.1,2.6010,202,completo
+2025-09,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.4546,297,completo
+2025-09,Pampeana,Gaseosa base cola,01.2.2,1.6752,292,completo
+2025-09,Pampeana,Hamburguesas congeladas,01.1.2,3.7810,225,completo
+2025-09,Pampeana,Harina de trigo común 000,01.1.1,3.6581,55,completo
+2025-09,Pampeana,Leche en polvo entera,01.1.4,3.4699,17,completo
+2025-09,Pampeana,Leche fresca entera en sachet,01.1.4,0.8427,66,completo
+2025-09,Pampeana,Manteca,01.1.5,0.5998,192,completo
+2025-09,Pampeana,Pan de mesa,01.1.1,2.7289,90,completo
+2025-09,Pampeana,Polvo para flan,01.1.8,1.7316,128,completo
+2025-09,Pampeana,Sal fina,01.1.9,2.3962,122,completo
+2025-09,Pampeana,Salchicha tipo viena,01.1.2,2.7759,249,completo
+2025-09,Pampeana,Tomate entero en conserva,01.1.7,4.8866,45,completo
+2025-09,Pampeana,Yerba mate,01.2.1,0.9719,829,completo
+2025-09,Pampeana,Yogur firme,01.1.4,3.7764,41,completo
+2025-09,Patagonia,Aceite de girasol,01.1.5,6.6840,77,completo
+2025-09,Patagonia,Agua sin gas,01.2.2,1.8800,238,completo
+2025-09,Patagonia,Arroz blanco simple,01.1.1,-0.7305,54,completo
+2025-09,Patagonia,Arvejas secas remojadas,01.1.7,-0.2117,55,completo
+2025-09,Patagonia,Azúcar,01.1.8,0.7496,26,completo
+2025-09,Patagonia,Café molido,01.2.1,2.0690,139,completo
+2025-09,Patagonia,Dulce de leche,01.1.8,0.8778,143,completo
+2025-09,Patagonia,Fideos secos tipo guisero,01.1.1,2.3536,236,completo
+2025-09,Patagonia,Galletitas de agua envasadas,01.1.1,3.3484,127,completo
+2025-09,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,3.2122,189,completo
+2025-09,Patagonia,Gaseosa base cola,01.2.2,2.4555,144,completo
+2025-09,Patagonia,Hamburguesas congeladas,01.1.2,5.2342,142,completo
+2025-09,Patagonia,Harina de trigo común 000,01.1.1,4.4982,37,completo
+2025-09,Patagonia,Leche en polvo entera,01.1.4,7.9911,5,completo
+2025-09,Patagonia,Leche fresca entera en sachet,01.1.4,0.9049,43,completo
+2025-09,Patagonia,Manteca,01.1.5,1.0810,112,completo
+2025-09,Patagonia,Pan de mesa,01.1.1,3.1416,37,completo
+2025-09,Patagonia,Polvo para flan,01.1.8,0.7427,71,completo
+2025-09,Patagonia,Sal fina,01.1.9,2.4208,73,completo
+2025-09,Patagonia,Salchicha tipo viena,01.1.2,3.3047,134,completo
+2025-09,Patagonia,Tomate entero en conserva,01.1.7,2.8060,24,completo
+2025-09,Patagonia,Yerba mate,01.2.1,1.3307,487,completo
+2025-09,Patagonia,Yogur firme,01.1.4,4.8270,22,completo
+2025-10,Cuyo,Aceite de girasol,01.1.5,5.2307,70,completo
+2025-10,Cuyo,Agua sin gas,01.2.2,1.6007,210,completo
+2025-10,Cuyo,Arroz blanco simple,01.1.1,-0.3177,56,completo
+2025-10,Cuyo,Arvejas secas remojadas,01.1.7,0.4713,56,completo
+2025-10,Cuyo,Azúcar,01.1.8,2.8140,28,completo
+2025-10,Cuyo,Café molido,01.2.1,2.7867,135,completo
+2025-10,Cuyo,Dulce de leche,01.1.8,0.8629,117,completo
+2025-10,Cuyo,Fideos secos tipo guisero,01.1.1,1.5814,226,completo
+2025-10,Cuyo,Galletitas de agua envasadas,01.1.1,2.5567,108,completo
+2025-10,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.3495,190,completo
+2025-10,Cuyo,Gaseosa base cola,01.2.2,2.7837,154,completo
+2025-10,Cuyo,Hamburguesas congeladas,01.1.2,2.2987,134,completo
+2025-10,Cuyo,Harina de trigo común 000,01.1.1,-0.3764,35,completo
+2025-10,Cuyo,Leche en polvo entera,01.1.4,0.9681,9,completo
+2025-10,Cuyo,Leche fresca entera en sachet,01.1.4,1.2546,32,completo
+2025-10,Cuyo,Manteca,01.1.5,0.9566,111,completo
+2025-10,Cuyo,Pan de mesa,01.1.1,4.3776,48,completo
+2025-10,Cuyo,Polvo para flan,01.1.8,2.4989,58,completo
+2025-10,Cuyo,Sal fina,01.1.9,-0.3136,64,completo
+2025-10,Cuyo,Salchicha tipo viena,01.1.2,1.8023,134,completo
+2025-10,Cuyo,Tomate entero en conserva,01.1.7,2.2396,19,completo
+2025-10,Cuyo,Yerba mate,01.2.1,2.4554,444,completo
+2025-10,Cuyo,Yogur firme,01.1.4,3.7699,24,completo
+2025-10,GBA,Aceite de girasol,01.1.5,6.7550,94,completo
+2025-10,GBA,Agua sin gas,01.2.2,1.6162,270,completo
+2025-10,GBA,Arroz blanco simple,01.1.1,2.2475,69,completo
+2025-10,GBA,Arvejas secas remojadas,01.1.7,3.3532,64,completo
+2025-10,GBA,Azúcar,01.1.8,3.3801,34,completo
+2025-10,GBA,Café molido,01.2.1,2.7262,160,completo
+2025-10,GBA,Dulce de leche,01.1.8,1.2370,160,completo
+2025-10,GBA,Fideos secos tipo guisero,01.1.1,2.6494,253,completo
+2025-10,GBA,Galletitas de agua envasadas,01.1.1,0.8531,128,completo
+2025-10,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.5774,215,completo
+2025-10,GBA,Gaseosa base cola,01.2.2,3.2223,179,completo
+2025-10,GBA,Hamburguesas congeladas,01.1.2,2.4901,154,completo
+2025-10,GBA,Harina de trigo común 000,01.1.1,-0.5845,44,completo
+2025-10,GBA,Leche en polvo entera,01.1.4,1.2547,6,completo
+2025-10,GBA,Leche fresca entera en sachet,01.1.4,0.8957,46,completo
+2025-10,GBA,Manteca,01.1.5,1.2530,134,completo
+2025-10,GBA,Pan de mesa,01.1.1,4.3180,55,completo
+2025-10,GBA,Polvo para flan,01.1.8,2.8927,75,completo
+2025-10,GBA,Sal fina,01.1.9,1.4051,86,completo
+2025-10,GBA,Salchicha tipo viena,01.1.2,2.3776,157,completo
+2025-10,GBA,Tomate entero en conserva,01.1.7,-0.5773,27,completo
+2025-10,GBA,Yerba mate,01.2.1,2.9457,535,completo
+2025-10,GBA,Yogur firme,01.1.4,4.2147,34,completo
+2025-10,Noreste,Aceite de girasol,01.1.5,5.4659,76,completo
+2025-10,Noreste,Agua sin gas,01.2.2,0.9921,176,completo
+2025-10,Noreste,Arroz blanco simple,01.1.1,0.8984,56,completo
+2025-10,Noreste,Arvejas secas remojadas,01.1.7,0.5460,41,completo
+2025-10,Noreste,Azúcar,01.1.8,1.4178,23,completo
+2025-10,Noreste,Café molido,01.2.1,3.1838,125,completo
+2025-10,Noreste,Dulce de leche,01.1.8,1.0494,112,completo
+2025-10,Noreste,Fideos secos tipo guisero,01.1.1,1.9669,225,completo
+2025-10,Noreste,Galletitas de agua envasadas,01.1.1,3.5443,115,completo
+2025-10,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.3937,185,completo
+2025-10,Noreste,Gaseosa base cola,01.2.2,1.7659,149,completo
+2025-10,Noreste,Hamburguesas congeladas,01.1.2,2.4408,135,completo
+2025-10,Noreste,Harina de trigo común 000,01.1.1,-0.5951,36,completo
+2025-10,Noreste,Leche en polvo entera,01.1.4,1.0798,11,completo
+2025-10,Noreste,Leche fresca entera en sachet,01.1.4,1.1680,28,completo
+2025-10,Noreste,Manteca,01.1.5,0.8173,111,completo
+2025-10,Noreste,Pan de mesa,01.1.1,3.3534,37,completo
+2025-10,Noreste,Polvo para flan,01.1.8,1.6115,68,completo
+2025-10,Noreste,Sal fina,01.1.9,-0.3944,70,completo
+2025-10,Noreste,Salchicha tipo viena,01.1.2,1.9628,149,completo
+2025-10,Noreste,Tomate entero en conserva,01.1.7,-1.3259,21,completo
+2025-10,Noreste,Yerba mate,01.2.1,2.0156,474,completo
+2025-10,Noreste,Yogur firme,01.1.4,4.0610,20,completo
+2025-10,Noroeste,Aceite de girasol,01.1.5,5.4998,57,completo
+2025-10,Noroeste,Agua sin gas,01.2.2,1.0876,161,completo
+2025-10,Noroeste,Arroz blanco simple,01.1.1,-0.1022,41,completo
+2025-10,Noroeste,Arvejas secas remojadas,01.1.7,0.4377,41,completo
+2025-10,Noroeste,Azúcar,01.1.8,2.3090,23,completo
+2025-10,Noroeste,Café molido,01.2.1,3.0433,114,completo
+2025-10,Noroeste,Dulce de leche,01.1.8,0.7643,92,completo
+2025-10,Noroeste,Fideos secos tipo guisero,01.1.1,1.5135,194,completo
+2025-10,Noroeste,Galletitas de agua envasadas,01.1.1,2.9531,88,completo
+2025-10,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.6866,160,completo
+2025-10,Noroeste,Gaseosa base cola,01.2.2,2.6270,143,completo
+2025-10,Noroeste,Hamburguesas congeladas,01.1.2,2.1944,105,completo
+2025-10,Noroeste,Harina de trigo común 000,01.1.1,0.4774,28,completo
+2025-10,Noroeste,Leche en polvo entera,01.1.4,1.0387,9,completo
+2025-10,Noroeste,Leche fresca entera en sachet,01.1.4,1.0296,27,completo
+2025-10,Noroeste,Manteca,01.1.5,1.0264,89,completo
+2025-10,Noroeste,Pan de mesa,01.1.1,4.3355,38,completo
+2025-10,Noroeste,Polvo para flan,01.1.8,2.2136,45,completo
+2025-10,Noroeste,Sal fina,01.1.9,-0.9194,62,completo
+2025-10,Noroeste,Salchicha tipo viena,01.1.2,2.1000,108,completo
+2025-10,Noroeste,Tomate entero en conserva,01.1.7,3.5471,13,completo
+2025-10,Noroeste,Yerba mate,01.2.1,2.2266,339,completo
+2025-10,Noroeste,Yogur firme,01.1.4,3.9189,15,completo
+2025-10,Pampeana,Aceite de girasol,01.1.5,5.7663,122,completo
+2025-10,Pampeana,Agua sin gas,01.2.2,1.8010,422,completo
+2025-10,Pampeana,Arroz blanco simple,01.1.1,0.4412,98,completo
+2025-10,Pampeana,Arvejas secas remojadas,01.1.7,0.9704,100,completo
+2025-10,Pampeana,Azúcar,01.1.8,1.4203,53,completo
+2025-10,Pampeana,Café molido,01.2.1,2.6770,206,completo
+2025-10,Pampeana,Dulce de leche,01.1.8,0.8355,221,completo
+2025-10,Pampeana,Fideos secos tipo guisero,01.1.1,1.3009,372,completo
+2025-10,Pampeana,Galletitas de agua envasadas,01.1.1,2.3822,187,completo
+2025-10,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.7916,318,completo
+2025-10,Pampeana,Gaseosa base cola,01.2.2,2.3589,286,completo
+2025-10,Pampeana,Hamburguesas congeladas,01.1.2,2.2755,220,completo
+2025-10,Pampeana,Harina de trigo común 000,01.1.1,-0.2354,56,completo
+2025-10,Pampeana,Leche en polvo entera,01.1.4,0.8799,17,completo
+2025-10,Pampeana,Leche fresca entera en sachet,01.1.4,1.1564,69,completo
+2025-10,Pampeana,Manteca,01.1.5,0.8710,199,completo
+2025-10,Pampeana,Pan de mesa,01.1.1,3.2810,86,completo
+2025-10,Pampeana,Polvo para flan,01.1.8,1.6841,125,completo
+2025-10,Pampeana,Sal fina,01.1.9,-0.0026,124,completo
+2025-10,Pampeana,Salchicha tipo viena,01.1.2,1.9708,253,completo
+2025-10,Pampeana,Tomate entero en conserva,01.1.7,0.9698,45,completo
+2025-10,Pampeana,Yerba mate,01.2.1,1.8099,812,completo
+2025-10,Pampeana,Yogur firme,01.1.4,2.8554,40,completo
+2025-10,Patagonia,Aceite de girasol,01.1.5,5.4809,76,completo
+2025-10,Patagonia,Agua sin gas,01.2.2,2.3322,237,completo
+2025-10,Patagonia,Arroz blanco simple,01.1.1,0.0153,55,completo
+2025-10,Patagonia,Arvejas secas remojadas,01.1.7,1.2860,50,completo
+2025-10,Patagonia,Azúcar,01.1.8,2.0923,25,completo
+2025-10,Patagonia,Café molido,01.2.1,2.7145,140,completo
+2025-10,Patagonia,Dulce de leche,01.1.8,0.8997,147,completo
+2025-10,Patagonia,Fideos secos tipo guisero,01.1.1,1.6966,227,completo
+2025-10,Patagonia,Galletitas de agua envasadas,01.1.1,2.1869,114,completo
+2025-10,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.7983,195,completo
+2025-10,Patagonia,Gaseosa base cola,01.2.2,2.8804,140,completo
+2025-10,Patagonia,Hamburguesas congeladas,01.1.2,2.1895,142,completo
+2025-10,Patagonia,Harina de trigo común 000,01.1.1,-0.4982,37,completo
+2025-10,Patagonia,Leche en polvo entera,01.1.4,1.3395,5,completo
+2025-10,Patagonia,Leche fresca entera en sachet,01.1.4,1.3214,43,completo
+2025-10,Patagonia,Manteca,01.1.5,1.3161,123,completo
+2025-10,Patagonia,Pan de mesa,01.1.1,3.3468,33,completo
+2025-10,Patagonia,Polvo para flan,01.1.8,1.7779,69,completo
+2025-10,Patagonia,Sal fina,01.1.9,0.7906,71,completo
+2025-10,Patagonia,Salchicha tipo viena,01.1.2,1.8988,139,completo
+2025-10,Patagonia,Tomate entero en conserva,01.1.7,-1.4452,23,completo
+2025-10,Patagonia,Yerba mate,01.2.1,1.8224,467,completo
+2025-10,Patagonia,Yogur firme,01.1.4,2.6653,20,completo
+2025-11,Cuyo,Aceite de girasol,01.1.5,3.6576,69,completo
+2025-11,Cuyo,Agua sin gas,01.2.2,2.6510,218,completo
+2025-11,Cuyo,Arroz blanco simple,01.1.1,0.8337,54,completo
+2025-11,Cuyo,Arvejas secas remojadas,01.1.7,1.1096,53,completo
+2025-11,Cuyo,Azúcar,01.1.8,1.4433,26,completo
+2025-11,Cuyo,Café molido,01.2.1,2.0965,133,completo
+2025-11,Cuyo,Dulce de leche,01.1.8,1.3281,116,completo
+2025-11,Cuyo,Fideos secos tipo guisero,01.1.1,0.9610,221,completo
+2025-11,Cuyo,Galletitas de agua envasadas,01.1.1,2.0825,101,completo
+2025-11,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.8616,183,completo
+2025-11,Cuyo,Gaseosa base cola,01.2.2,3.4412,165,completo
+2025-11,Cuyo,Hamburguesas congeladas,01.1.2,4.6220,138,completo
+2025-11,Cuyo,Harina de trigo común 000,01.1.1,1.0438,33,completo
+2025-11,Cuyo,Leche en polvo entera,01.1.4,1.6957,9,completo
+2025-11,Cuyo,Leche fresca entera en sachet,01.1.4,1.6721,31,completo
+2025-11,Cuyo,Manteca,01.1.5,1.0531,108,completo
+2025-11,Cuyo,Pan de mesa,01.1.1,1.5268,49,completo
+2025-11,Cuyo,Polvo para flan,01.1.8,1.8164,59,completo
+2025-11,Cuyo,Sal fina,01.1.9,-0.3000,64,completo
+2025-11,Cuyo,Salchicha tipo viena,01.1.2,3.0407,134,completo
+2025-11,Cuyo,Tomate entero en conserva,01.1.7,-4.2756,21,completo
+2025-11,Cuyo,Yerba mate,01.2.1,1.2639,435,completo
+2025-11,Cuyo,Yogur firme,01.1.4,2.0468,17,completo
+2025-11,GBA,Aceite de girasol,01.1.5,3.1821,94,completo
+2025-11,GBA,Agua sin gas,01.2.2,1.2438,282,completo
+2025-11,GBA,Arroz blanco simple,01.1.1,-0.8096,68,completo
+2025-11,GBA,Arvejas secas remojadas,01.1.7,1.3933,63,completo
+2025-11,GBA,Azúcar,01.1.8,1.3770,35,completo
+2025-11,GBA,Café molido,01.2.1,1.8578,158,completo
+2025-11,GBA,Dulce de leche,01.1.8,1.4332,159,completo
+2025-11,GBA,Fideos secos tipo guisero,01.1.1,0.1193,244,completo
+2025-11,GBA,Galletitas de agua envasadas,01.1.1,3.5233,128,completo
+2025-11,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.1227,214,completo
+2025-11,GBA,Gaseosa base cola,01.2.2,3.5679,186,completo
+2025-11,GBA,Hamburguesas congeladas,01.1.2,4.0512,156,completo
+2025-11,GBA,Harina de trigo común 000,01.1.1,2.4924,43,completo
+2025-11,GBA,Leche en polvo entera,01.1.4,2.2321,6,completo
+2025-11,GBA,Leche fresca entera en sachet,01.1.4,1.6455,46,completo
+2025-11,GBA,Manteca,01.1.5,0.4304,131,completo
+2025-11,GBA,Pan de mesa,01.1.1,1.6324,53,completo
+2025-11,GBA,Polvo para flan,01.1.8,1.3373,74,completo
+2025-11,GBA,Sal fina,01.1.9,0.9214,81,completo
+2025-11,GBA,Salchicha tipo viena,01.1.2,3.2617,155,completo
+2025-11,GBA,Tomate entero en conserva,01.1.7,-2.1008,30,completo
+2025-11,GBA,Yerba mate,01.2.1,1.0208,529,completo
+2025-11,GBA,Yogur firme,01.1.4,0.6538,26,completo
+2025-11,Noreste,Aceite de girasol,01.1.5,3.3578,77,completo
+2025-11,Noreste,Agua sin gas,01.2.2,2.7288,189,completo
+2025-11,Noreste,Arroz blanco simple,01.1.1,0.2902,55,completo
+2025-11,Noreste,Arvejas secas remojadas,01.1.7,0.6219,41,completo
+2025-11,Noreste,Azúcar,01.1.8,2.1881,22,completo
+2025-11,Noreste,Café molido,01.2.1,2.8831,126,completo
+2025-11,Noreste,Dulce de leche,01.1.8,1.0491,114,completo
+2025-11,Noreste,Fideos secos tipo guisero,01.1.1,0.1497,218,completo
+2025-11,Noreste,Galletitas de agua envasadas,01.1.1,1.9931,111,completo
+2025-11,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.2862,174,completo
+2025-11,Noreste,Gaseosa base cola,01.2.2,2.4271,153,completo
+2025-11,Noreste,Hamburguesas congeladas,01.1.2,4.8716,140,completo
+2025-11,Noreste,Harina de trigo común 000,01.1.1,1.6251,36,completo
+2025-11,Noreste,Leche en polvo entera,01.1.4,1.4377,11,completo
+2025-11,Noreste,Leche fresca entera en sachet,01.1.4,0.1368,28,completo
+2025-11,Noreste,Manteca,01.1.5,0.3674,110,completo
+2025-11,Noreste,Pan de mesa,01.1.1,1.5304,37,completo
+2025-11,Noreste,Polvo para flan,01.1.8,1.3444,68,completo
+2025-11,Noreste,Sal fina,01.1.9,-0.6721,70,completo
+2025-11,Noreste,Salchicha tipo viena,01.1.2,2.8169,146,completo
+2025-11,Noreste,Tomate entero en conserva,01.1.7,-0.2592,23,completo
+2025-11,Noreste,Yerba mate,01.2.1,1.1457,475,completo
+2025-11,Noreste,Yogur firme,01.1.4,2.0697,17,completo
+2025-11,Noroeste,Aceite de girasol,01.1.5,3.5973,57,completo
+2025-11,Noroeste,Agua sin gas,01.2.2,2.4376,175,completo
+2025-11,Noroeste,Arroz blanco simple,01.1.1,1.0757,39,completo
+2025-11,Noroeste,Arvejas secas remojadas,01.1.7,1.0747,40,completo
+2025-11,Noroeste,Azúcar,01.1.8,1.2920,21,completo
+2025-11,Noroeste,Café molido,01.2.1,2.2048,113,completo
+2025-11,Noroeste,Dulce de leche,01.1.8,1.6782,93,completo
+2025-11,Noroeste,Fideos secos tipo guisero,01.1.1,0.8318,185,completo
+2025-11,Noroeste,Galletitas de agua envasadas,01.1.1,1.7209,83,completo
+2025-11,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.7473,152,completo
+2025-11,Noroeste,Gaseosa base cola,01.2.2,2.6039,151,completo
+2025-11,Noroeste,Hamburguesas congeladas,01.1.2,4.9088,108,completo
+2025-11,Noroeste,Harina de trigo común 000,01.1.1,-0.1930,29,completo
+2025-11,Noroeste,Leche en polvo entera,01.1.4,1.4490,9,completo
+2025-11,Noroeste,Leche fresca entera en sachet,01.1.4,1.6827,26,completo
+2025-11,Noroeste,Manteca,01.1.5,1.2040,84,completo
+2025-11,Noroeste,Pan de mesa,01.1.1,1.4221,38,completo
+2025-11,Noroeste,Polvo para flan,01.1.8,1.8147,45,completo
+2025-11,Noroeste,Sal fina,01.1.9,-1.1152,62,completo
+2025-11,Noroeste,Salchicha tipo viena,01.1.2,2.9397,108,completo
+2025-11,Noroeste,Tomate entero en conserva,01.1.7,-2.6852,15,completo
+2025-11,Noroeste,Yerba mate,01.2.1,1.2805,346,completo
+2025-11,Noroeste,Yogur firme,01.1.4,2.1241,14,completo
+2025-11,Pampeana,Aceite de girasol,01.1.5,3.0104,125,completo
+2025-11,Pampeana,Agua sin gas,01.2.2,2.0364,446,completo
+2025-11,Pampeana,Arroz blanco simple,01.1.1,0.0138,96,completo
+2025-11,Pampeana,Arvejas secas remojadas,01.1.7,1.2770,97,completo
+2025-11,Pampeana,Azúcar,01.1.8,1.3856,56,completo
+2025-11,Pampeana,Café molido,01.2.1,2.7608,212,completo
+2025-11,Pampeana,Dulce de leche,01.1.8,1.1989,221,completo
+2025-11,Pampeana,Fideos secos tipo guisero,01.1.1,0.4619,363,completo
+2025-11,Pampeana,Galletitas de agua envasadas,01.1.1,2.1160,189,completo
+2025-11,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.4436,308,completo
+2025-11,Pampeana,Gaseosa base cola,01.2.2,2.9416,306,completo
+2025-11,Pampeana,Hamburguesas congeladas,01.1.2,3.9366,230,completo
+2025-11,Pampeana,Harina de trigo común 000,01.1.1,1.3165,55,completo
+2025-11,Pampeana,Leche en polvo entera,01.1.4,0.8125,16,completo
+2025-11,Pampeana,Leche fresca entera en sachet,01.1.4,1.0871,68,completo
+2025-11,Pampeana,Manteca,01.1.5,0.3691,190,completo
+2025-11,Pampeana,Pan de mesa,01.1.1,1.1772,88,completo
+2025-11,Pampeana,Polvo para flan,01.1.8,1.2489,124,completo
+2025-11,Pampeana,Sal fina,01.1.9,-0.5213,121,completo
+2025-11,Pampeana,Salchicha tipo viena,01.1.2,3.0734,253,completo
+2025-11,Pampeana,Tomate entero en conserva,01.1.7,-1.6918,48,completo
+2025-11,Pampeana,Yerba mate,01.2.1,1.1982,815,completo
+2025-11,Pampeana,Yogur firme,01.1.4,1.2824,29,completo
+2025-11,Patagonia,Aceite de girasol,01.1.5,3.0347,76,completo
+2025-11,Patagonia,Agua sin gas,01.2.2,2.2721,242,completo
+2025-11,Patagonia,Arroz blanco simple,01.1.1,0.4460,54,completo
+2025-11,Patagonia,Arvejas secas remojadas,01.1.7,1.1697,49,completo
+2025-11,Patagonia,Azúcar,01.1.8,1.7883,24,completo
+2025-11,Patagonia,Café molido,01.2.1,3.3550,140,completo
+2025-11,Patagonia,Dulce de leche,01.1.8,1.4225,147,completo
+2025-11,Patagonia,Fideos secos tipo guisero,01.1.1,0.3279,229,completo
+2025-11,Patagonia,Galletitas de agua envasadas,01.1.1,2.6482,115,completo
+2025-11,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.3642,184,completo
+2025-11,Patagonia,Gaseosa base cola,01.2.2,2.2204,141,completo
+2025-11,Patagonia,Hamburguesas congeladas,01.1.2,3.7924,145,completo
+2025-11,Patagonia,Harina de trigo común 000,01.1.1,2.7698,37,completo
+2025-11,Patagonia,Leche en polvo entera,01.1.4,5.4708,5,completo
+2025-11,Patagonia,Leche fresca entera en sachet,01.1.4,1.8176,43,completo
+2025-11,Patagonia,Manteca,01.1.5,0.4295,118,completo
+2025-11,Patagonia,Pan de mesa,01.1.1,2.5811,32,completo
+2025-11,Patagonia,Polvo para flan,01.1.8,1.8026,68,completo
+2025-11,Patagonia,Sal fina,01.1.9,0.5148,68,completo
+2025-11,Patagonia,Salchicha tipo viena,01.1.2,3.1617,136,completo
+2025-11,Patagonia,Tomate entero en conserva,01.1.7,-1.2334,24,completo
+2025-11,Patagonia,Yerba mate,01.2.1,0.7874,455,completo
+2025-11,Patagonia,Yogur firme,01.1.4,0.0843,19,completo
+2025-12,Cuyo,Aceite de girasol,01.1.5,1.3741,67,completo
+2025-12,Cuyo,Agua sin gas,01.2.2,2.8963,226,completo
+2025-12,Cuyo,Arroz blanco simple,01.1.1,1.6796,53,completo
+2025-12,Cuyo,Arvejas secas remojadas,01.1.7,1.8855,51,completo
+2025-12,Cuyo,Azúcar,01.1.8,0.5397,31,completo
+2025-12,Cuyo,Café molido,01.2.1,3.3436,130,completo
+2025-12,Cuyo,Dulce de leche,01.1.8,2.7935,118,completo
+2025-12,Cuyo,Fideos secos tipo guisero,01.1.1,0.0766,219,completo
+2025-12,Cuyo,Galletitas de agua envasadas,01.1.1,2.5221,100,completo
+2025-12,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.9703,181,completo
+2025-12,Cuyo,Gaseosa base cola,01.2.2,3.4996,164,completo
+2025-12,Cuyo,Hamburguesas congeladas,01.1.2,5.4478,133,completo
+2025-12,Cuyo,Harina de trigo común 000,01.1.1,0.0311,33,completo
+2025-12,Cuyo,Leche en polvo entera,01.1.4,1.0602,9,completo
+2025-12,Cuyo,Leche fresca entera en sachet,01.1.4,0.2599,32,completo
+2025-12,Cuyo,Manteca,01.1.5,0.9602,119,completo
+2025-12,Cuyo,Pan de mesa,01.1.1,1.3794,50,completo
+2025-12,Cuyo,Polvo para flan,01.1.8,3.3448,57,completo
+2025-12,Cuyo,Sal fina,01.1.9,-0.5919,69,completo
+2025-12,Cuyo,Salchicha tipo viena,01.1.2,2.8681,131,completo
+2025-12,Cuyo,Tomate entero en conserva,01.1.7,-3.1010,21,completo
+2025-12,Cuyo,Yerba mate,01.2.1,0.3536,422,completo
+2025-12,Cuyo,Yogur firme,01.1.4,3.0936,15,completo
+2025-12,GBA,Aceite de girasol,01.1.5,1.3457,97,completo
+2025-12,GBA,Agua sin gas,01.2.2,1.8269,297,completo
+2025-12,GBA,Arroz blanco simple,01.1.1,0.6092,70,completo
+2025-12,GBA,Arvejas secas remojadas,01.1.7,1.1009,63,completo
+2025-12,GBA,Azúcar,01.1.8,1.9109,36,completo
+2025-12,GBA,Café molido,01.2.1,2.5604,148,completo
+2025-12,GBA,Dulce de leche,01.1.8,2.1412,157,completo
+2025-12,GBA,Fideos secos tipo guisero,01.1.1,1.4015,246,completo
+2025-12,GBA,Galletitas de agua envasadas,01.1.1,2.2961,136,completo
+2025-12,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.8251,205,completo
+2025-12,GBA,Gaseosa base cola,01.2.2,2.8981,189,completo
+2025-12,GBA,Hamburguesas congeladas,01.1.2,5.1661,153,completo
+2025-12,GBA,Harina de trigo común 000,01.1.1,0.7771,45,completo
+2025-12,GBA,Leche en polvo entera,01.1.4,1.8443,6,completo
+2025-12,GBA,Leche fresca entera en sachet,01.1.4,0.4401,46,completo
+2025-12,GBA,Manteca,01.1.5,0.9147,146,completo
+2025-12,GBA,Pan de mesa,01.1.1,0.9468,51,completo
+2025-12,GBA,Polvo para flan,01.1.8,2.8937,72,completo
+2025-12,GBA,Sal fina,01.1.9,0.6486,86,completo
+2025-12,GBA,Salchicha tipo viena,01.1.2,2.2338,152,completo
+2025-12,GBA,Tomate entero en conserva,01.1.7,-5.0715,30,completo
+2025-12,GBA,Yerba mate,01.2.1,0.7748,514,completo
+2025-12,GBA,Yogur firme,01.1.4,1.7022,23,completo
+2025-12,Noreste,Aceite de girasol,01.1.5,1.3312,77,completo
+2025-12,Noreste,Agua sin gas,01.2.2,2.5564,197,completo
+2025-12,Noreste,Arroz blanco simple,01.1.1,2.1129,53,completo
+2025-12,Noreste,Arvejas secas remojadas,01.1.7,2.0156,42,completo
+2025-12,Noreste,Azúcar,01.1.8,0.6768,22,completo
+2025-12,Noreste,Café molido,01.2.1,3.5196,122,completo
+2025-12,Noreste,Dulce de leche,01.1.8,1.7707,108,completo
+2025-12,Noreste,Fideos secos tipo guisero,01.1.1,0.7145,209,completo
+2025-12,Noreste,Galletitas de agua envasadas,01.1.1,2.5195,113,completo
+2025-12,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.0199,162,completo
+2025-12,Noreste,Gaseosa base cola,01.2.2,2.0037,152,completo
+2025-12,Noreste,Hamburguesas congeladas,01.1.2,5.4649,136,completo
+2025-12,Noreste,Harina de trigo común 000,01.1.1,0.2029,36,completo
+2025-12,Noreste,Leche en polvo entera,01.1.4,0.9233,11,completo
+2025-12,Noreste,Leche fresca entera en sachet,01.1.4,0.7151,29,completo
+2025-12,Noreste,Manteca,01.1.5,1.2608,122,completo
+2025-12,Noreste,Pan de mesa,01.1.1,0.8158,34,completo
+2025-12,Noreste,Polvo para flan,01.1.8,2.3298,67,completo
+2025-12,Noreste,Sal fina,01.1.9,-0.6204,72,completo
+2025-12,Noreste,Salchicha tipo viena,01.1.2,2.0811,141,completo
+2025-12,Noreste,Tomate entero en conserva,01.1.7,-2.3831,23,completo
+2025-12,Noreste,Yerba mate,01.2.1,0.1882,462,completo
+2025-12,Noreste,Yogur firme,01.1.4,1.5451,15,completo
+2025-12,Noroeste,Aceite de girasol,01.1.5,1.1422,57,completo
+2025-12,Noroeste,Agua sin gas,01.2.2,3.1917,183,completo
+2025-12,Noroeste,Arroz blanco simple,01.1.1,0.4178,39,completo
+2025-12,Noroeste,Arvejas secas remojadas,01.1.7,2.3486,39,completo
+2025-12,Noroeste,Azúcar,01.1.8,0.8498,24,completo
+2025-12,Noroeste,Café molido,01.2.1,3.5983,112,completo
+2025-12,Noroeste,Dulce de leche,01.1.8,1.8903,93,completo
+2025-12,Noroeste,Fideos secos tipo guisero,01.1.1,-0.6331,182,completo
+2025-12,Noroeste,Galletitas de agua envasadas,01.1.1,2.5634,85,completo
+2025-12,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.6882,142,completo
+2025-12,Noroeste,Gaseosa base cola,01.2.2,1.9320,148,completo
+2025-12,Noroeste,Hamburguesas congeladas,01.1.2,4.8715,103,completo
+2025-12,Noroeste,Harina de trigo común 000,01.1.1,-1.0007,29,completo
+2025-12,Noroeste,Leche en polvo entera,01.1.4,1.1303,9,completo
+2025-12,Noroeste,Leche fresca entera en sachet,01.1.4,0.9581,26,completo
+2025-12,Noroeste,Manteca,01.1.5,0.6817,95,completo
+2025-12,Noroeste,Pan de mesa,01.1.1,0.8430,36,completo
+2025-12,Noroeste,Polvo para flan,01.1.8,2.5565,43,completo
+2025-12,Noroeste,Sal fina,01.1.9,-0.4141,62,completo
+2025-12,Noroeste,Salchicha tipo viena,01.1.2,2.0695,105,completo
+2025-12,Noroeste,Tomate entero en conserva,01.1.7,-4.4298,15,completo
+2025-12,Noroeste,Yerba mate,01.2.1,-0.3038,328,completo
+2025-12,Noroeste,Yogur firme,01.1.4,2.7784,12,completo
+2025-12,Pampeana,Aceite de girasol,01.1.5,1.7218,126,completo
+2025-12,Pampeana,Agua sin gas,01.2.2,2.0142,450,completo
+2025-12,Pampeana,Arroz blanco simple,01.1.1,0.7781,97,completo
+2025-12,Pampeana,Arvejas secas remojadas,01.1.7,1.3639,96,completo
+2025-12,Pampeana,Azúcar,01.1.8,1.5941,58,completo
+2025-12,Pampeana,Café molido,01.2.1,2.5399,207,completo
+2025-12,Pampeana,Dulce de leche,01.1.8,1.5762,218,completo
+2025-12,Pampeana,Fideos secos tipo guisero,01.1.1,1.1702,360,completo
+2025-12,Pampeana,Galletitas de agua envasadas,01.1.1,1.9073,198,completo
+2025-12,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.6354,295,completo
+2025-12,Pampeana,Gaseosa base cola,01.2.2,2.6819,307,completo
+2025-12,Pampeana,Hamburguesas congeladas,01.1.2,5.0496,222,completo
+2025-12,Pampeana,Harina de trigo común 000,01.1.1,1.0002,55,completo
+2025-12,Pampeana,Leche en polvo entera,01.1.4,0.9912,16,completo
+2025-12,Pampeana,Leche fresca entera en sachet,01.1.4,0.3881,65,completo
+2025-12,Pampeana,Manteca,01.1.5,0.6859,207,completo
+2025-12,Pampeana,Pan de mesa,01.1.1,1.3733,86,completo
+2025-12,Pampeana,Polvo para flan,01.1.8,2.0061,123,completo
+2025-12,Pampeana,Sal fina,01.1.9,1.0071,126,completo
+2025-12,Pampeana,Salchicha tipo viena,01.1.2,2.3554,254,completo
+2025-12,Pampeana,Tomate entero en conserva,01.1.7,-4.7487,48,completo
+2025-12,Pampeana,Yerba mate,01.2.1,0.6133,801,completo
+2025-12,Pampeana,Yogur firme,01.1.4,1.8262,24,completo
+2025-12,Patagonia,Aceite de girasol,01.1.5,1.2489,78,completo
+2025-12,Patagonia,Agua sin gas,01.2.2,2.4781,249,completo
+2025-12,Patagonia,Arroz blanco simple,01.1.1,0.0762,57,completo
+2025-12,Patagonia,Arvejas secas remojadas,01.1.7,0.4975,47,completo
+2025-12,Patagonia,Azúcar,01.1.8,1.9008,25,completo
+2025-12,Patagonia,Café molido,01.2.1,2.3304,136,completo
+2025-12,Patagonia,Dulce de leche,01.1.8,1.9926,147,completo
+2025-12,Patagonia,Fideos secos tipo guisero,01.1.1,1.4641,230,completo
+2025-12,Patagonia,Galletitas de agua envasadas,01.1.1,1.8066,121,completo
+2025-12,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.7777,188,completo
+2025-12,Patagonia,Gaseosa base cola,01.2.2,3.2747,143,completo
+2025-12,Patagonia,Hamburguesas congeladas,01.1.2,5.4853,139,completo
+2025-12,Patagonia,Harina de trigo común 000,01.1.1,1.3049,35,completo
+2025-12,Patagonia,Leche en polvo entera,01.1.4,3.9521,5,completo
+2025-12,Patagonia,Leche fresca entera en sachet,01.1.4,-0.1197,43,completo
+2025-12,Patagonia,Manteca,01.1.5,0.7043,135,completo
+2025-12,Patagonia,Pan de mesa,01.1.1,0.6254,32,completo
+2025-12,Patagonia,Polvo para flan,01.1.8,2.8327,66,completo
+2025-12,Patagonia,Sal fina,01.1.9,0.0257,75,completo
+2025-12,Patagonia,Salchicha tipo viena,01.1.2,2.4795,138,completo
+2025-12,Patagonia,Tomate entero en conserva,01.1.7,-1.2876,23,completo
+2025-12,Patagonia,Yerba mate,01.2.1,0.6288,436,completo
+2025-12,Patagonia,Yogur firme,01.1.4,1.1543,17,completo
+2026-01,Cuyo,Aceite de girasol,01.1.5,4.6180,69,completo
+2026-01,Cuyo,Agua sin gas,01.2.2,1.2594,229,completo
+2026-01,Cuyo,Arroz blanco simple,01.1.1,-1.0667,51,completo
+2026-01,Cuyo,Arvejas secas remojadas,01.1.7,1.2099,41,completo
+2026-01,Cuyo,Azúcar,01.1.8,2.8046,28,completo
+2026-01,Cuyo,Café molido,01.2.1,2.3210,125,completo
+2026-01,Cuyo,Dulce de leche,01.1.8,1.4684,115,completo
+2026-01,Cuyo,Fideos secos tipo guisero,01.1.1,1.1013,209,completo
+2026-01,Cuyo,Galletitas de agua envasadas,01.1.1,2.1261,91,completo
+2026-01,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,3.1663,176,completo
+2026-01,Cuyo,Gaseosa base cola,01.2.2,2.1932,158,completo
+2026-01,Cuyo,Hamburguesas congeladas,01.1.2,7.9580,130,completo
+2026-01,Cuyo,Harina de trigo común 000,01.1.1,0.0566,31,completo
+2026-01,Cuyo,Leche en polvo entera,01.1.4,2.4977,9,completo
+2026-01,Cuyo,Leche fresca entera en sachet,01.1.4,2.3568,30,completo
+2026-01,Cuyo,Manteca,01.1.5,1.1533,114,completo
+2026-01,Cuyo,Pan de mesa,01.1.1,1.7672,49,completo
+2026-01,Cuyo,Polvo para flan,01.1.8,0.5272,58,completo
+2026-01,Cuyo,Sal fina,01.1.9,1.3654,68,completo
+2026-01,Cuyo,Salchicha tipo viena,01.1.2,2.2784,129,completo
+2026-01,Cuyo,Tomate entero en conserva,01.1.7,2.8289,21,completo
+2026-01,Cuyo,Yerba mate,01.2.1,0.0611,430,completo
+2026-01,Cuyo,Yogur firme,01.1.4,1.0885,14,completo
+2026-01,GBA,Aceite de girasol,01.1.5,4.3175,97,completo
+2026-01,GBA,Agua sin gas,01.2.2,1.3272,299,completo
+2026-01,GBA,Arroz blanco simple,01.1.1,1.2218,69,completo
+2026-01,GBA,Arvejas secas remojadas,01.1.7,1.5572,57,completo
+2026-01,GBA,Azúcar,01.1.8,1.8938,35,completo
+2026-01,GBA,Café molido,01.2.1,1.6019,149,completo
+2026-01,GBA,Dulce de leche,01.1.8,2.0603,153,completo
+2026-01,GBA,Fideos secos tipo guisero,01.1.1,2.4482,235,completo
+2026-01,GBA,Galletitas de agua envasadas,01.1.1,1.4722,112,completo
+2026-01,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.9921,205,completo
+2026-01,GBA,Gaseosa base cola,01.2.2,1.7007,183,completo
+2026-01,GBA,Hamburguesas congeladas,01.1.2,7.2470,150,completo
+2026-01,GBA,Harina de trigo común 000,01.1.1,0.5444,41,completo
+2026-01,GBA,Leche en polvo entera,01.1.4,2.9625,6,completo
+2026-01,GBA,Leche fresca entera en sachet,01.1.4,2.7009,44,completo
+2026-01,GBA,Manteca,01.1.5,1.4494,136,completo
+2026-01,GBA,Pan de mesa,01.1.1,1.2155,51,completo
+2026-01,GBA,Polvo para flan,01.1.8,0.5478,75,completo
+2026-01,GBA,Sal fina,01.1.9,1.9070,85,completo
+2026-01,GBA,Salchicha tipo viena,01.1.2,2.5712,148,completo
+2026-01,GBA,Tomate entero en conserva,01.1.7,9.7132,29,completo
+2026-01,GBA,Yerba mate,01.2.1,0.1733,531,completo
+2026-01,GBA,Yogur firme,01.1.4,1.9743,24,completo
+2026-01,Noreste,Aceite de girasol,01.1.5,3.8092,77,completo
+2026-01,Noreste,Agua sin gas,01.2.2,1.1094,201,completo
+2026-01,Noreste,Arroz blanco simple,01.1.1,-0.7586,51,completo
+2026-01,Noreste,Arvejas secas remojadas,01.1.7,0.9995,36,completo
+2026-01,Noreste,Azúcar,01.1.8,1.9773,21,completo
+2026-01,Noreste,Café molido,01.2.1,1.6186,122,completo
+2026-01,Noreste,Dulce de leche,01.1.8,1.7075,107,completo
+2026-01,Noreste,Fideos secos tipo guisero,01.1.1,1.0579,205,completo
+2026-01,Noreste,Galletitas de agua envasadas,01.1.1,1.6984,94,completo
+2026-01,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.9640,162,completo
+2026-01,Noreste,Gaseosa base cola,01.2.2,1.9346,139,completo
+2026-01,Noreste,Hamburguesas congeladas,01.1.2,7.0035,133,completo
+2026-01,Noreste,Harina de trigo común 000,01.1.1,-0.7051,34,completo
+2026-01,Noreste,Leche en polvo entera,01.1.4,1.1530,11,completo
+2026-01,Noreste,Leche fresca entera en sachet,01.1.4,2.0230,28,completo
+2026-01,Noreste,Manteca,01.1.5,1.4552,116,completo
+2026-01,Noreste,Pan de mesa,01.1.1,1.0344,35,completo
+2026-01,Noreste,Polvo para flan,01.1.8,0.6258,69,completo
+2026-01,Noreste,Sal fina,01.1.9,2.4200,72,completo
+2026-01,Noreste,Salchicha tipo viena,01.1.2,2.2642,134,completo
+2026-01,Noreste,Tomate entero en conserva,01.1.7,8.6485,25,completo
+2026-01,Noreste,Yerba mate,01.2.1,-0.2889,452,completo
+2026-01,Noreste,Yogur firme,01.1.4,1.5658,17,completo
+2026-01,Noroeste,Aceite de girasol,01.1.5,3.8205,57,completo
+2026-01,Noroeste,Agua sin gas,01.2.2,1.6567,189,completo
+2026-01,Noroeste,Arroz blanco simple,01.1.1,-1.5515,38,completo
+2026-01,Noroeste,Arvejas secas remojadas,01.1.7,0.4252,36,completo
+2026-01,Noroeste,Azúcar,01.1.8,1.4849,23,completo
+2026-01,Noroeste,Café molido,01.2.1,2.4253,109,completo
+2026-01,Noroeste,Dulce de leche,01.1.8,0.9145,88,completo
+2026-01,Noroeste,Fideos secos tipo guisero,01.1.1,0.6696,178,completo
+2026-01,Noroeste,Galletitas de agua envasadas,01.1.1,1.3958,73,completo
+2026-01,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,2.8068,140,completo
+2026-01,Noroeste,Gaseosa base cola,01.2.2,1.9035,141,completo
+2026-01,Noroeste,Hamburguesas congeladas,01.1.2,7.5546,100,completo
+2026-01,Noroeste,Harina de trigo común 000,01.1.1,-0.2009,28,completo
+2026-01,Noroeste,Leche en polvo entera,01.1.4,2.3324,9,completo
+2026-01,Noroeste,Leche fresca entera en sachet,01.1.4,1.5893,25,completo
+2026-01,Noroeste,Manteca,01.1.5,0.7847,91,completo
+2026-01,Noroeste,Pan de mesa,01.1.1,0.9172,37,completo
+2026-01,Noroeste,Polvo para flan,01.1.8,0.6760,46,completo
+2026-01,Noroeste,Sal fina,01.1.9,1.4891,61,completo
+2026-01,Noroeste,Salchicha tipo viena,01.1.2,2.1241,104,completo
+2026-01,Noroeste,Tomate entero en conserva,01.1.7,7.2178,17,completo
+2026-01,Noroeste,Yerba mate,01.2.1,-0.2971,322,completo
+2026-01,Noroeste,Yogur firme,01.1.4,1.4358,14,completo
+2026-01,Pampeana,Aceite de girasol,01.1.5,3.4019,128,completo
+2026-01,Pampeana,Agua sin gas,01.2.2,1.5606,447,completo
+2026-01,Pampeana,Arroz blanco simple,01.1.1,0.5295,94,completo
+2026-01,Pampeana,Arvejas secas remojadas,01.1.7,1.0429,88,completo
+2026-01,Pampeana,Azúcar,01.1.8,2.0701,54,completo
+2026-01,Pampeana,Café molido,01.2.1,1.8250,205,completo
+2026-01,Pampeana,Dulce de leche,01.1.8,2.0274,212,completo
+2026-01,Pampeana,Fideos secos tipo guisero,01.1.1,1.8342,349,completo
+2026-01,Pampeana,Galletitas de agua envasadas,01.1.1,1.2972,176,completo
+2026-01,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,2.6167,290,completo
+2026-01,Pampeana,Gaseosa base cola,01.2.2,2.2199,288,completo
+2026-01,Pampeana,Hamburguesas congeladas,01.1.2,8.0493,215,completo
+2026-01,Pampeana,Harina de trigo común 000,01.1.1,0.2128,52,completo
+2026-01,Pampeana,Leche en polvo entera,01.1.4,1.8973,16,completo
+2026-01,Pampeana,Leche fresca entera en sachet,01.1.4,2.7272,65,completo
+2026-01,Pampeana,Manteca,01.1.5,1.4082,200,completo
+2026-01,Pampeana,Pan de mesa,01.1.1,1.5666,88,completo
+2026-01,Pampeana,Polvo para flan,01.1.8,0.9586,125,completo
+2026-01,Pampeana,Sal fina,01.1.9,1.2543,124,completo
+2026-01,Pampeana,Salchicha tipo viena,01.1.2,3.2486,247,completo
+2026-01,Pampeana,Tomate entero en conserva,01.1.7,6.7540,48,completo
+2026-01,Pampeana,Yerba mate,01.2.1,0.4557,803,completo
+2026-01,Pampeana,Yogur firme,01.1.4,1.6083,30,completo
+2026-01,Patagonia,Aceite de girasol,01.1.5,4.2429,79,completo
+2026-01,Patagonia,Agua sin gas,01.2.2,1.6448,254,completo
+2026-01,Patagonia,Arroz blanco simple,01.1.1,1.9855,55,completo
+2026-01,Patagonia,Arvejas secas remojadas,01.1.7,0.8772,43,completo
+2026-01,Patagonia,Azúcar,01.1.8,1.3824,20,completo
+2026-01,Patagonia,Café molido,01.2.1,1.3348,132,completo
+2026-01,Patagonia,Dulce de leche,01.1.8,1.2149,144,completo
+2026-01,Patagonia,Fideos secos tipo guisero,01.1.1,1.0098,221,completo
+2026-01,Patagonia,Galletitas de agua envasadas,01.1.1,1.0538,104,completo
+2026-01,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.5014,182,completo
+2026-01,Patagonia,Gaseosa base cola,01.2.2,1.7639,132,completo
+2026-01,Patagonia,Hamburguesas congeladas,01.1.2,7.0931,133,completo
+2026-01,Patagonia,Harina de trigo común 000,01.1.1,-0.4431,34,completo
+2026-01,Patagonia,Leche en polvo entera,01.1.4,2.6629,5,completo
+2026-01,Patagonia,Leche fresca entera en sachet,01.1.4,1.7404,42,completo
+2026-01,Patagonia,Manteca,01.1.5,0.7081,124,completo
+2026-01,Patagonia,Pan de mesa,01.1.1,0.7782,34,completo
+2026-01,Patagonia,Polvo para flan,01.1.8,0.2519,68,completo
+2026-01,Patagonia,Sal fina,01.1.9,1.3576,74,completo
+2026-01,Patagonia,Salchicha tipo viena,01.1.2,1.9475,134,completo
+2026-01,Patagonia,Tomate entero en conserva,01.1.7,4.5636,24,completo
+2026-01,Patagonia,Yerba mate,01.2.1,0.0414,448,completo
+2026-01,Patagonia,Yogur firme,01.1.4,1.1438,16,completo
+2026-02,Cuyo,Aceite de girasol,01.1.5,3.3212,71,completo
+2026-02,Cuyo,Agua sin gas,01.2.2,2.3237,226,completo
+2026-02,Cuyo,Arroz blanco simple,01.1.1,0.4548,44,completo
+2026-02,Cuyo,Arvejas secas remojadas,01.1.7,1.4306,33,completo
+2026-02,Cuyo,Azúcar,01.1.8,1.5120,27,completo
+2026-02,Cuyo,Café molido,01.2.1,0.6413,125,completo
+2026-02,Cuyo,Dulce de leche,01.1.8,1.8483,104,completo
+2026-02,Cuyo,Fideos secos tipo guisero,01.1.1,1.2630,198,completo
+2026-02,Cuyo,Galletitas de agua envasadas,01.1.1,0.8995,73,completo
+2026-02,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.6802,152,completo
+2026-02,Cuyo,Gaseosa base cola,01.2.2,1.2655,151,completo
+2026-02,Cuyo,Hamburguesas congeladas,01.1.2,4.1770,131,completo
+2026-02,Cuyo,Harina de trigo común 000,01.1.1,-0.6471,31,completo
+2026-02,Cuyo,Leche en polvo entera,01.1.4,0.8077,9,completo
+2026-02,Cuyo,Leche fresca entera en sachet,01.1.4,2.7923,29,completo
+2026-02,Cuyo,Manteca,01.1.5,0.1836,109,completo
+2026-02,Cuyo,Pan de mesa,01.1.1,1.7010,47,completo
+2026-02,Cuyo,Polvo para flan,01.1.8,0.9650,58,completo
+2026-02,Cuyo,Sal fina,01.1.9,0.8737,67,completo
+2026-02,Cuyo,Salchicha tipo viena,01.1.2,2.4635,126,completo
+2026-02,Cuyo,Tomate entero en conserva,01.1.7,-1.2778,19,completo
+2026-02,Cuyo,Yerba mate,01.2.1,-0.1772,421,completo
+2026-02,Cuyo,Yogur firme,01.1.4,1.5876,7,completo
+2026-02,GBA,Aceite de girasol,01.1.5,3.1541,90,completo
+2026-02,GBA,Agua sin gas,01.2.2,2.3164,261,completo
+2026-02,GBA,Arroz blanco simple,01.1.1,0.4181,54,completo
+2026-02,GBA,Arvejas secas remojadas,01.1.7,2.2574,46,completo
+2026-02,GBA,Azúcar,01.1.8,2.0310,30,completo
+2026-02,GBA,Café molido,01.2.1,0.8077,133,completo
+2026-02,GBA,Dulce de leche,01.1.8,1.9128,145,completo
+2026-02,GBA,Fideos secos tipo guisero,01.1.1,0.5589,219,completo
+2026-02,GBA,Galletitas de agua envasadas,01.1.1,1.8007,90,completo
+2026-02,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.3577,173,completo
+2026-02,GBA,Gaseosa base cola,01.2.2,2.2666,175,completo
+2026-02,GBA,Hamburguesas congeladas,01.1.2,4.4085,152,completo
+2026-02,GBA,Harina de trigo común 000,01.1.1,-1.5372,37,completo
+2026-02,GBA,Leche en polvo entera,01.1.4,1.6093,6,completo
+2026-02,GBA,Leche fresca entera en sachet,01.1.4,2.2196,40,completo
+2026-02,GBA,Manteca,01.1.5,0.5975,137,completo
+2026-02,GBA,Pan de mesa,01.1.1,0.8035,52,completo
+2026-02,GBA,Polvo para flan,01.1.8,0.9235,76,completo
+2026-02,GBA,Sal fina,01.1.9,0.5169,80,completo
+2026-02,GBA,Salchicha tipo viena,01.1.2,3.1510,144,completo
+2026-02,GBA,Tomate entero en conserva,01.1.7,-2.2552,30,completo
+2026-02,GBA,Yerba mate,01.2.1,0.3495,486,completo
+2026-02,GBA,Yogur firme,01.1.4,1.5651,8,completo
+2026-02,Noreste,Aceite de girasol,01.1.5,3.3887,79,completo
+2026-02,Noreste,Agua sin gas,01.2.2,2.8634,196,completo
+2026-02,Noreste,Arroz blanco simple,01.1.1,0.5292,47,completo
+2026-02,Noreste,Arvejas secas remojadas,01.1.7,1.8131,32,completo
+2026-02,Noreste,Azúcar,01.1.8,3.3463,21,completo
+2026-02,Noreste,Café molido,01.2.1,1.0528,121,completo
+2026-02,Noreste,Dulce de leche,01.1.8,2.0133,105,completo
+2026-02,Noreste,Fideos secos tipo guisero,01.1.1,0.3753,197,completo
+2026-02,Noreste,Galletitas de agua envasadas,01.1.1,1.6321,80,completo
+2026-02,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.2648,138,completo
+2026-02,Noreste,Gaseosa base cola,01.2.2,1.9167,138,completo
+2026-02,Noreste,Hamburguesas congeladas,01.1.2,3.8827,135,completo
+2026-02,Noreste,Harina de trigo común 000,01.1.1,-1.2186,33,completo
+2026-02,Noreste,Leche en polvo entera,01.1.4,1.2537,11,completo
+2026-02,Noreste,Leche fresca entera en sachet,01.1.4,3.6607,28,completo
+2026-02,Noreste,Manteca,01.1.5,0.5162,112,completo
+2026-02,Noreste,Pan de mesa,01.1.1,1.0873,33,completo
+2026-02,Noreste,Polvo para flan,01.1.8,0.6135,69,completo
+2026-02,Noreste,Sal fina,01.1.9,0.0213,71,completo
+2026-02,Noreste,Salchicha tipo viena,01.1.2,2.6337,135,completo
+2026-02,Noreste,Tomate entero en conserva,01.1.7,-1.2310,24,completo
+2026-02,Noreste,Yerba mate,01.2.1,0.1419,438,completo
+2026-02,Noreste,Yogur firme,01.1.4,1.2810,4,completo
+2026-02,Noroeste,Aceite de girasol,01.1.5,2.7134,60,completo
+2026-02,Noroeste,Agua sin gas,01.2.2,1.7935,187,completo
+2026-02,Noroeste,Arroz blanco simple,01.1.1,-2.3468,33,completo
+2026-02,Noroeste,Arvejas secas remojadas,01.1.7,1.7620,32,completo
+2026-02,Noroeste,Azúcar,01.1.8,2.3610,21,completo
+2026-02,Noroeste,Café molido,01.2.1,0.0654,111,completo
+2026-02,Noroeste,Dulce de leche,01.1.8,1.5966,89,completo
+2026-02,Noroeste,Fideos secos tipo guisero,01.1.1,0.1106,174,completo
+2026-02,Noroeste,Galletitas de agua envasadas,01.1.1,0.7332,61,completo
+2026-02,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,0.9786,119,completo
+2026-02,Noroeste,Gaseosa base cola,01.2.2,1.2410,140,completo
+2026-02,Noroeste,Hamburguesas congeladas,01.1.2,3.7530,101,completo
+2026-02,Noroeste,Harina de trigo común 000,01.1.1,-1.1374,27,completo
+2026-02,Noroeste,Leche en polvo entera,01.1.4,1.1218,9,completo
+2026-02,Noroeste,Leche fresca entera en sachet,01.1.4,2.3827,25,completo
+2026-02,Noroeste,Manteca,01.1.5,-0.2133,88,completo
+2026-02,Noroeste,Pan de mesa,01.1.1,0.2106,35,completo
+2026-02,Noroeste,Polvo para flan,01.1.8,0.4981,46,completo
+2026-02,Noroeste,Sal fina,01.1.9,-0.1272,61,completo
+2026-02,Noroeste,Salchicha tipo viena,01.1.2,1.8900,101,completo
+2026-02,Noroeste,Tomate entero en conserva,01.1.7,-2.2963,16,completo
+2026-02,Noroeste,Yerba mate,01.2.1,-0.2806,315,completo
+2026-02,Noroeste,Yogur firme,01.1.4,2.8859,4,completo
+2026-02,Pampeana,Aceite de girasol,01.1.5,2.7417,130,completo
+2026-02,Pampeana,Agua sin gas,01.2.2,2.2432,439,completo
+2026-02,Pampeana,Arroz blanco simple,01.1.1,-0.0426,88,completo
+2026-02,Pampeana,Arvejas secas remojadas,01.1.7,0.8412,84,completo
+2026-02,Pampeana,Azúcar,01.1.8,2.3638,52,completo
+2026-02,Pampeana,Café molido,01.2.1,1.2665,208,completo
+2026-02,Pampeana,Dulce de leche,01.1.8,1.4457,207,completo
+2026-02,Pampeana,Fideos secos tipo guisero,01.1.1,0.3735,334,completo
+2026-02,Pampeana,Galletitas de agua envasadas,01.1.1,1.6699,145,completo
+2026-02,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.3532,256,completo
+2026-02,Pampeana,Gaseosa base cola,01.2.2,2.1519,278,completo
+2026-02,Pampeana,Hamburguesas congeladas,01.1.2,3.6043,222,completo
+2026-02,Pampeana,Harina de trigo común 000,01.1.1,-1.3017,51,completo
+2026-02,Pampeana,Leche en polvo entera,01.1.4,0.9123,15,completo
+2026-02,Pampeana,Leche fresca entera en sachet,01.1.4,1.6264,64,completo
+2026-02,Pampeana,Manteca,01.1.5,0.2306,201,completo
+2026-02,Pampeana,Pan de mesa,01.1.1,0.8269,85,completo
+2026-02,Pampeana,Polvo para flan,01.1.8,0.6650,129,completo
+2026-02,Pampeana,Sal fina,01.1.9,0.4627,122,completo
+2026-02,Pampeana,Salchicha tipo viena,01.1.2,2.3170,245,completo
+2026-02,Pampeana,Tomate entero en conserva,01.1.7,-1.5449,46,completo
+2026-02,Pampeana,Yerba mate,01.2.1,0.1193,805,completo
+2026-02,Pampeana,Yogur firme,01.1.4,1.5789,10,completo
+2026-02,Patagonia,Aceite de girasol,01.1.5,3.3985,82,completo
+2026-02,Patagonia,Agua sin gas,01.2.2,2.8001,246,completo
+2026-02,Patagonia,Arroz blanco simple,01.1.1,1.0247,51,completo
+2026-02,Patagonia,Arvejas secas remojadas,01.1.7,0.8169,38,completo
+2026-02,Patagonia,Azúcar,01.1.8,2.5794,21,completo
+2026-02,Patagonia,Café molido,01.2.1,1.1357,128,completo
+2026-02,Patagonia,Dulce de leche,01.1.8,0.5220,142,completo
+2026-02,Patagonia,Fideos secos tipo guisero,01.1.1,0.3797,206,completo
+2026-02,Patagonia,Galletitas de agua envasadas,01.1.1,1.8445,89,completo
+2026-02,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.1981,164,completo
+2026-02,Patagonia,Gaseosa base cola,01.2.2,2.3206,127,completo
+2026-02,Patagonia,Hamburguesas congeladas,01.1.2,3.9719,135,completo
+2026-02,Patagonia,Harina de trigo común 000,01.1.1,-1.4389,33,completo
+2026-02,Patagonia,Leche en polvo entera,01.1.4,1.0079,5,completo
+2026-02,Patagonia,Leche fresca entera en sachet,01.1.4,1.7256,41,completo
+2026-02,Patagonia,Manteca,01.1.5,-0.1570,122,completo
+2026-02,Patagonia,Pan de mesa,01.1.1,0.8008,31,completo
+2026-02,Patagonia,Polvo para flan,01.1.8,0.7089,68,completo
+2026-02,Patagonia,Sal fina,01.1.9,1.1801,72,completo
+2026-02,Patagonia,Salchicha tipo viena,01.1.2,3.1879,128,completo
+2026-02,Patagonia,Tomate entero en conserva,01.1.7,-0.9923,23,completo
+2026-02,Patagonia,Yerba mate,01.2.1,0.3513,462,completo
+2026-02,Patagonia,Yogur firme,01.1.4,1.9072,6,completo
+2026-03,Cuyo,Aceite de girasol,01.1.5,2.8635,65,completo
+2026-03,Cuyo,Agua sin gas,01.2.2,1.9969,223,completo
+2026-03,Cuyo,Arroz blanco simple,01.1.1,2.4117,45,completo
+2026-03,Cuyo,Arvejas secas remojadas,01.1.7,0.8373,36,completo
+2026-03,Cuyo,Azúcar,01.1.8,1.1635,28,completo
+2026-03,Cuyo,Café molido,01.2.1,0.7788,126,completo
+2026-03,Cuyo,Dulce de leche,01.1.8,0.8132,104,completo
+2026-03,Cuyo,Fideos secos tipo guisero,01.1.1,0.7137,204,completo
+2026-03,Cuyo,Galletitas de agua envasadas,01.1.1,2.0583,70,completo
+2026-03,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.4351,136,completo
+2026-03,Cuyo,Gaseosa base cola,01.2.2,2.0607,140,completo
+2026-03,Cuyo,Hamburguesas congeladas,01.1.2,3.4117,112,completo
+2026-03,Cuyo,Harina de trigo común 000,01.1.1,0.1338,30,completo
+2026-03,Cuyo,Leche en polvo entera,01.1.4,0.7167,9,completo
+2026-03,Cuyo,Leche fresca entera en sachet,01.1.4,1.4654,28,completo
+2026-03,Cuyo,Manteca,01.1.5,0.5633,105,completo
+2026-03,Cuyo,Pan de mesa,01.1.1,2.5481,46,completo
+2026-03,Cuyo,Polvo para flan,01.1.8,2.6016,58,completo
+2026-03,Cuyo,Sal fina,01.1.9,1.8249,61,completo
+2026-03,Cuyo,Salchicha tipo viena,01.1.2,2.5499,124,completo
+2026-03,Cuyo,Tomate entero en conserva,01.1.7,-3.1322,20,completo
+2026-03,Cuyo,Yerba mate,01.2.1,0.0477,413,completo
+2026-03,Cuyo,Yogur firme,01.1.4,2.1827,12,completo
+2026-03,GBA,Aceite de girasol,01.1.5,3.2869,86,completo
+2026-03,GBA,Agua sin gas,01.2.2,2.0321,256,completo
+2026-03,GBA,Arroz blanco simple,01.1.1,0.5084,54,completo
+2026-03,GBA,Arvejas secas remojadas,01.1.7,0.7973,45,completo
+2026-03,GBA,Azúcar,01.1.8,1.7568,30,completo
+2026-03,GBA,Café molido,01.2.1,0.6261,141,completo
+2026-03,GBA,Dulce de leche,01.1.8,0.8857,139,completo
+2026-03,GBA,Fideos secos tipo guisero,01.1.1,1.4476,229,completo
+2026-03,GBA,Galletitas de agua envasadas,01.1.1,1.8367,87,completo
+2026-03,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.5029,154,completo
+2026-03,GBA,Gaseosa base cola,01.2.2,1.1388,160,completo
+2026-03,GBA,Hamburguesas congeladas,01.1.2,3.0455,133,completo
+2026-03,GBA,Harina de trigo común 000,01.1.1,0.7388,38,completo
+2026-03,GBA,Leche en polvo entera,01.1.4,1.5186,6,completo
+2026-03,GBA,Leche fresca entera en sachet,01.1.4,1.4131,39,completo
+2026-03,GBA,Manteca,01.1.5,0.6255,130,completo
+2026-03,GBA,Pan de mesa,01.1.1,2.6834,50,completo
+2026-03,GBA,Polvo para flan,01.1.8,3.3644,76,completo
+2026-03,GBA,Sal fina,01.1.9,1.6185,75,completo
+2026-03,GBA,Salchicha tipo viena,01.1.2,2.4580,143,completo
+2026-03,GBA,Tomate entero en conserva,01.1.7,-1.1518,34,completo
+2026-03,GBA,Yerba mate,01.2.1,0.3661,478,completo
+2026-03,GBA,Yogur firme,01.1.4,1.5077,16,completo
+2026-03,Noreste,Aceite de girasol,01.1.5,3.0120,75,completo
+2026-03,Noreste,Agua sin gas,01.2.2,1.5200,194,completo
+2026-03,Noreste,Arroz blanco simple,01.1.1,0.9318,44,completo
+2026-03,Noreste,Arvejas secas remojadas,01.1.7,0.5673,31,completo
+2026-03,Noreste,Azúcar,01.1.8,2.2712,21,completo
+2026-03,Noreste,Café molido,01.2.1,0.7523,117,completo
+2026-03,Noreste,Dulce de leche,01.1.8,0.6433,96,completo
+2026-03,Noreste,Fideos secos tipo guisero,01.1.1,1.3420,200,completo
+2026-03,Noreste,Galletitas de agua envasadas,01.1.1,1.1518,79,completo
+2026-03,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.5106,115,completo
+2026-03,Noreste,Gaseosa base cola,01.2.2,1.9747,123,completo
+2026-03,Noreste,Hamburguesas congeladas,01.1.2,3.0780,125,completo
+2026-03,Noreste,Harina de trigo común 000,01.1.1,0.4168,32,completo
+2026-03,Noreste,Leche en polvo entera,01.1.4,0.7381,11,completo
+2026-03,Noreste,Leche fresca entera en sachet,01.1.4,1.0813,29,completo
+2026-03,Noreste,Manteca,01.1.5,0.9246,108,completo
+2026-03,Noreste,Pan de mesa,01.1.1,3.5223,33,completo
+2026-03,Noreste,Polvo para flan,01.1.8,1.9568,68,completo
+2026-03,Noreste,Sal fina,01.1.9,0.6774,69,completo
+2026-03,Noreste,Salchicha tipo viena,01.1.2,2.6730,130,completo
+2026-03,Noreste,Tomate entero en conserva,01.1.7,-1.7614,25,completo
+2026-03,Noreste,Yerba mate,01.2.1,-0.1401,439,completo
+2026-03,Noreste,Yogur firme,01.1.4,1.8165,9,completo
+2026-03,Noroeste,Aceite de girasol,01.1.5,3.1405,53,completo
+2026-03,Noroeste,Agua sin gas,01.2.2,1.8354,178,completo
+2026-03,Noroeste,Arroz blanco simple,01.1.1,1.5811,34,completo
+2026-03,Noroeste,Arvejas secas remojadas,01.1.7,0.8743,30,completo
+2026-03,Noroeste,Azúcar,01.1.8,3.5074,21,completo
+2026-03,Noroeste,Café molido,01.2.1,1.0126,109,completo
+2026-03,Noroeste,Dulce de leche,01.1.8,0.9714,84,completo
+2026-03,Noroeste,Fideos secos tipo guisero,01.1.1,0.5469,179,completo
+2026-03,Noroeste,Galletitas de agua envasadas,01.1.1,2.2348,56,completo
+2026-03,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.0841,101,completo
+2026-03,Noroeste,Gaseosa base cola,01.2.2,1.9758,126,completo
+2026-03,Noroeste,Hamburguesas congeladas,01.1.2,3.4546,86,completo
+2026-03,Noroeste,Harina de trigo común 000,01.1.1,0.4252,26,completo
+2026-03,Noroeste,Leche en polvo entera,01.1.4,0.8333,9,completo
+2026-03,Noroeste,Leche fresca entera en sachet,01.1.4,0.6886,24,completo
+2026-03,Noroeste,Manteca,01.1.5,0.4689,86,completo
+2026-03,Noroeste,Pan de mesa,01.1.1,4.4442,35,completo
+2026-03,Noroeste,Polvo para flan,01.1.8,2.2534,45,completo
+2026-03,Noroeste,Sal fina,01.1.9,0.9265,57,completo
+2026-03,Noroeste,Salchicha tipo viena,01.1.2,3.0942,99,completo
+2026-03,Noroeste,Tomate entero en conserva,01.1.7,-1.6137,17,completo
+2026-03,Noroeste,Yerba mate,01.2.1,-0.3169,315,completo
+2026-03,Noroeste,Yogur firme,01.1.4,1.7794,8,completo
+2026-03,Pampeana,Aceite de girasol,01.1.5,3.3107,126,completo
+2026-03,Pampeana,Agua sin gas,01.2.2,1.4846,434,completo
+2026-03,Pampeana,Arroz blanco simple,01.1.1,0.9350,89,completo
+2026-03,Pampeana,Arvejas secas remojadas,01.1.7,0.3619,82,completo
+2026-03,Pampeana,Azúcar,01.1.8,2.1196,54,completo
+2026-03,Pampeana,Café molido,01.2.1,0.7565,209,completo
+2026-03,Pampeana,Dulce de leche,01.1.8,1.0438,197,completo
+2026-03,Pampeana,Fideos secos tipo guisero,01.1.1,1.1091,336,completo
+2026-03,Pampeana,Galletitas de agua envasadas,01.1.1,1.5634,149,completo
+2026-03,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.2301,242,completo
+2026-03,Pampeana,Gaseosa base cola,01.2.2,2.1411,259,completo
+2026-03,Pampeana,Hamburguesas congeladas,01.1.2,2.8366,197,completo
+2026-03,Pampeana,Harina de trigo común 000,01.1.1,0.7741,52,completo
+2026-03,Pampeana,Leche en polvo entera,01.1.4,1.4068,15,completo
+2026-03,Pampeana,Leche fresca entera en sachet,01.1.4,1.0005,63,completo
+2026-03,Pampeana,Manteca,01.1.5,0.7253,195,completo
+2026-03,Pampeana,Pan de mesa,01.1.1,2.3241,82,completo
+2026-03,Pampeana,Polvo para flan,01.1.8,2.0101,127,completo
+2026-03,Pampeana,Sal fina,01.1.9,0.9982,119,completo
+2026-03,Pampeana,Salchicha tipo viena,01.1.2,1.8494,239,completo
+2026-03,Pampeana,Tomate entero en conserva,01.1.7,-1.0968,50,completo
+2026-03,Pampeana,Yerba mate,01.2.1,0.0051,796,completo
+2026-03,Pampeana,Yogur firme,01.1.4,2.3702,21,completo
+2026-03,Patagonia,Aceite de girasol,01.1.5,3.1036,78,completo
+2026-03,Patagonia,Agua sin gas,01.2.2,1.1640,244,completo
+2026-03,Patagonia,Arroz blanco simple,01.1.1,1.1159,51,completo
+2026-03,Patagonia,Arvejas secas remojadas,01.1.7,0.2213,39,completo
+2026-03,Patagonia,Azúcar,01.1.8,1.9335,28,completo
+2026-03,Patagonia,Café molido,01.2.1,1.0582,131,completo
+2026-03,Patagonia,Dulce de leche,01.1.8,1.4625,133,completo
+2026-03,Patagonia,Fideos secos tipo guisero,01.1.1,1.6603,210,completo
+2026-03,Patagonia,Galletitas de agua envasadas,01.1.1,1.7377,87,completo
+2026-03,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.6505,144,completo
+2026-03,Patagonia,Gaseosa base cola,01.2.2,1.8838,112,completo
+2026-03,Patagonia,Hamburguesas congeladas,01.1.2,2.7821,118,completo
+2026-03,Patagonia,Harina de trigo común 000,01.1.1,-0.3945,32,completo
+2026-03,Patagonia,Leche en polvo entera,01.1.4,1.0140,5,completo
+2026-03,Patagonia,Leche fresca entera en sachet,01.1.4,1.8952,39,completo
+2026-03,Patagonia,Manteca,01.1.5,0.7362,118,completo
+2026-03,Patagonia,Pan de mesa,01.1.1,2.4962,29,completo
+2026-03,Patagonia,Polvo para flan,01.1.8,3.0512,69,completo
+2026-03,Patagonia,Sal fina,01.1.9,2.4483,69,completo
+2026-03,Patagonia,Salchicha tipo viena,01.1.2,2.2101,123,completo
+2026-03,Patagonia,Tomate entero en conserva,01.1.7,-0.2168,26,completo
+2026-03,Patagonia,Yerba mate,01.2.1,0.4165,455,completo
+2026-03,Patagonia,Yogur firme,01.1.4,2.2364,12,completo
+2026-08,Cuyo,Aceite de girasol,01.1.5,1.6024,70,completo
+2026-08,Cuyo,Agua sin gas,01.2.2,1.6961,229,completo
+2026-08,Cuyo,Arroz blanco simple,01.1.1,-0.5555,49,completo
+2026-08,Cuyo,Arvejas secas remojadas,01.1.7,1.2542,41,completo
+2026-08,Cuyo,Azúcar,01.1.8,1.6139,22,completo
+2026-08,Cuyo,Café molido,01.2.1,0.2976,145,completo
+2026-08,Cuyo,Dulce de leche,01.1.8,0.1383,107,completo
+2026-08,Cuyo,Fideos secos tipo guisero,01.1.1,1.0326,189,completo
+2026-08,Cuyo,Galletitas de agua envasadas,01.1.1,1.2058,102,completo
+2026-08,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.1067,187,completo
+2026-08,Cuyo,Gaseosa base cola,01.2.2,1.7707,148,completo
+2026-08,Cuyo,Hamburguesas congeladas,01.1.2,-0.0392,109,completo
+2026-08,Cuyo,Harina de trigo común 000,01.1.1,-2.0911,30,completo
+2026-08,Cuyo,Leche en polvo entera,01.1.4,0.0150,5,completo
+2026-08,Cuyo,Leche fresca entera en sachet,01.1.4,0.0098,35,completo
+2026-08,Cuyo,Manteca,01.1.5,0.5549,92,completo
+2026-08,Cuyo,Pan de mesa,01.1.1,0.8287,43,completo
+2026-08,Cuyo,Polvo para flan,01.1.8,1.2960,58,completo
+2026-08,Cuyo,Sal fina,01.1.9,0.1329,56,completo
+2026-08,Cuyo,Salchicha tipo viena,01.1.2,1.0627,102,completo
+2026-08,Cuyo,Tomate entero en conserva,01.1.7,-3.0434,27,completo
+2026-08,Cuyo,Yerba mate,01.2.1,-0.1909,379,completo
+2026-08,Cuyo,Yogur firme,01.1.4,2.6942,9,completo
+2026-08,GBA,Aceite de girasol,01.1.5,2.2149,81,completo
+2026-08,GBA,Agua sin gas,01.2.2,0.9355,267,completo
+2026-08,GBA,Arroz blanco simple,01.1.1,1.7960,58,completo
+2026-08,GBA,Arvejas secas remojadas,01.1.7,1.2278,46,completo
+2026-08,GBA,Azúcar,01.1.8,2.0158,29,completo
+2026-08,GBA,Café molido,01.2.1,0.8431,157,completo
+2026-08,GBA,Dulce de leche,01.1.8,0.0779,128,completo
+2026-08,GBA,Fideos secos tipo guisero,01.1.1,0.8157,205,completo
+2026-08,GBA,Galletitas de agua envasadas,01.1.1,1.1380,117,completo
+2026-08,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.5497,200,completo
+2026-08,GBA,Gaseosa base cola,01.2.2,1.2897,174,completo
+2026-08,GBA,Hamburguesas congeladas,01.1.2,0.1081,132,completo
+2026-08,GBA,Harina de trigo común 000,01.1.1,-1.3935,35,completo
+2026-08,GBA,Leche en polvo entera,01.1.4,0.0150,5,completo
+2026-08,GBA,Leche fresca entera en sachet,01.1.4,1.2989,38,completo
+2026-08,GBA,Manteca,01.1.5,0.3594,110,completo
+2026-08,GBA,Pan de mesa,01.1.1,1.6056,54,completo
+2026-08,GBA,Polvo para flan,01.1.8,1.7351,73,completo
+2026-08,GBA,Sal fina,01.1.9,0.3589,68,completo
+2026-08,GBA,Salchicha tipo viena,01.1.2,0.4890,136,completo
+2026-08,GBA,Tomate entero en conserva,01.1.7,-0.2950,31,completo
+2026-08,GBA,Yerba mate,01.2.1,0.9019,454,completo
+2026-08,GBA,Yogur firme,01.1.4,1.1764,16,completo
+2026-08,Noreste,Aceite de girasol,01.1.5,2.6264,59,completo
+2026-08,Noreste,Agua sin gas,01.2.2,2.6133,162,completo
+2026-08,Noreste,Arroz blanco simple,01.1.1,-0.4683,39,completo
+2026-08,Noreste,Arvejas secas remojadas,01.1.7,1.9809,25,completo
+2026-08,Noreste,Azúcar,01.1.8,1.2111,16,completo
+2026-08,Noreste,Café molido,01.2.1,0.8621,93,completo
+2026-08,Noreste,Dulce de leche,01.1.8,0.1354,87,completo
+2026-08,Noreste,Fideos secos tipo guisero,01.1.1,1.7827,142,completo
+2026-08,Noreste,Galletitas de agua envasadas,01.1.1,2.1297,80,completo
+2026-08,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,2.4277,131,completo
+2026-08,Noreste,Gaseosa base cola,01.2.2,2.9376,96,completo
+2026-08,Noreste,Hamburguesas congeladas,01.1.2,1.4228,90,completo
+2026-08,Noreste,Harina de trigo común 000,01.1.1,-1.0643,24,completo
+2026-08,Noreste,Leche en polvo entera,01.1.4,0.4893,7,completo
+2026-08,Noreste,Leche fresca entera en sachet,01.1.4,0.7270,25,completo
+2026-08,Noreste,Manteca,01.1.5,0.5804,76,completo
+2026-08,Noreste,Pan de mesa,01.1.1,2.7113,26,completo
+2026-08,Noreste,Polvo para flan,01.1.8,1.6484,52,completo
+2026-08,Noreste,Sal fina,01.1.9,3.0001,47,completo
+2026-08,Noreste,Salchicha tipo viena,01.1.2,1.5953,102,completo
+2026-08,Noreste,Tomate entero en conserva,01.1.7,0.2029,19,completo
+2026-08,Noreste,Yerba mate,01.2.1,1.0774,304,completo
+2026-08,Noreste,Yogur firme,01.1.4,3.2777,5,completo
+2026-08,Noroeste,Aceite de girasol,01.1.5,1.6565,56,completo
+2026-08,Noroeste,Agua sin gas,01.2.2,2.6442,172,completo
+2026-08,Noroeste,Arroz blanco simple,01.1.1,-0.7360,36,completo
+2026-08,Noroeste,Arvejas secas remojadas,01.1.7,2.8218,24,completo
+2026-08,Noroeste,Azúcar,01.1.8,2.8050,17,completo
+2026-08,Noroeste,Café molido,01.2.1,0.4051,104,completo
+2026-08,Noroeste,Dulce de leche,01.1.8,0.6012,88,completo
+2026-08,Noroeste,Fideos secos tipo guisero,01.1.1,0.7594,147,completo
+2026-08,Noroeste,Galletitas de agua envasadas,01.1.1,1.9740,79,completo
+2026-08,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.0147,131,completo
+2026-08,Noroeste,Gaseosa base cola,01.2.2,3.0489,115,completo
+2026-08,Noroeste,Hamburguesas congeladas,01.1.2,0.9096,77,completo
+2026-08,Noroeste,Harina de trigo común 000,01.1.1,-2.4130,24,completo
+2026-08,Noroeste,Leche en polvo entera,01.1.4,-0.3783,6,completo
+2026-08,Noroeste,Leche fresca entera en sachet,01.1.4,-0.9142,27,completo
+2026-08,Noroeste,Manteca,01.1.5,1.0134,66,completo
+2026-08,Noroeste,Pan de mesa,01.1.1,1.2387,29,completo
+2026-08,Noroeste,Polvo para flan,01.1.8,2.1170,45,completo
+2026-08,Noroeste,Sal fina,01.1.9,0.1884,52,completo
+2026-08,Noroeste,Salchicha tipo viena,01.1.2,2.1516,91,completo
+2026-08,Noroeste,Tomate entero en conserva,01.1.7,-0.7726,17,completo
+2026-08,Noroeste,Yerba mate,01.2.1,-0.3879,275,completo
+2026-08,Noroeste,Yogur firme,01.1.4,2.8625,7,completo
+2026-08,Pampeana,Aceite de girasol,01.1.5,1.4231,108,completo
+2026-08,Pampeana,Agua sin gas,01.2.2,0.8943,397,completo
+2026-08,Pampeana,Arroz blanco simple,01.1.1,0.2753,76,completo
+2026-08,Pampeana,Arvejas secas remojadas,01.1.7,0.5047,78,completo
+2026-08,Pampeana,Azúcar,01.1.8,0.6052,47,completo
+2026-08,Pampeana,Café molido,01.2.1,0.2333,197,completo
+2026-08,Pampeana,Dulce de leche,01.1.8,0.6370,186,completo
+2026-08,Pampeana,Fideos secos tipo guisero,01.1.1,1.6184,269,completo
+2026-08,Pampeana,Galletitas de agua envasadas,01.1.1,0.9659,167,completo
+2026-08,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.7099,263,completo
+2026-08,Pampeana,Gaseosa base cola,01.2.2,1.7469,250,completo
+2026-08,Pampeana,Hamburguesas congeladas,01.1.2,0.0869,176,completo
+2026-08,Pampeana,Harina de trigo común 000,01.1.1,-0.0291,43,completo
+2026-08,Pampeana,Leche en polvo entera,01.1.4,0.1127,12,completo
+2026-08,Pampeana,Leche fresca entera en sachet,01.1.4,1.0318,58,completo
+2026-08,Pampeana,Manteca,01.1.5,0.8873,160,completo
+2026-08,Pampeana,Pan de mesa,01.1.1,1.6336,73,completo
+2026-08,Pampeana,Polvo para flan,01.1.8,1.3330,116,completo
+2026-08,Pampeana,Sal fina,01.1.9,0.2820,102,completo
+2026-08,Pampeana,Salchicha tipo viena,01.1.2,0.9637,198,completo
+2026-08,Pampeana,Tomate entero en conserva,01.1.7,-0.4845,45,completo
+2026-08,Pampeana,Yerba mate,01.2.1,0.2276,690,completo
+2026-08,Pampeana,Yogur firme,01.1.4,1.2190,15,completo
+2026-08,Patagonia,Aceite de girasol,01.1.5,2.2991,72,completo
+2026-08,Patagonia,Agua sin gas,01.2.2,0.8392,235,completo
+2026-08,Patagonia,Arroz blanco simple,01.1.1,1.5219,54,completo
+2026-08,Patagonia,Arvejas secas remojadas,01.1.7,1.4089,41,completo
+2026-08,Patagonia,Azúcar,01.1.8,1.7094,21,completo
+2026-08,Patagonia,Café molido,01.2.1,1.1981,152,completo
+2026-08,Patagonia,Dulce de leche,01.1.8,0.3375,123,completo
+2026-08,Patagonia,Fideos secos tipo guisero,01.1.1,1.5662,192,completo
+2026-08,Patagonia,Galletitas de agua envasadas,01.1.1,1.4632,111,completo
+2026-08,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.9691,188,completo
+2026-08,Patagonia,Gaseosa base cola,01.2.2,0.4481,115,completo
+2026-08,Patagonia,Hamburguesas congeladas,01.1.2,1.0977,113,completo
+2026-08,Patagonia,Harina de trigo común 000,01.1.1,0.0884,31,completo
+2026-08,Patagonia,Leche en polvo entera,01.1.4,2.4753,4,completo
+2026-08,Patagonia,Leche fresca entera en sachet,01.1.4,1.4143,40,completo
+2026-08,Patagonia,Manteca,01.1.5,0.7493,105,completo
+2026-08,Patagonia,Pan de mesa,01.1.1,1.6385,34,completo
+2026-08,Patagonia,Polvo para flan,01.1.8,0.9739,67,completo
+2026-08,Patagonia,Sal fina,01.1.9,0.9023,64,completo
+2026-08,Patagonia,Salchicha tipo viena,01.1.2,1.2667,112,completo
+2026-08,Patagonia,Tomate entero en conserva,01.1.7,1.7431,21,completo
+2026-08,Patagonia,Yerba mate,01.2.1,0.1913,419,completo
+2026-08,Patagonia,Yogur firme,01.1.4,2.2600,11,completo
+2026-09,Cuyo,Aceite de girasol,01.1.5,0.1788,66,completo
+2026-09,Cuyo,Agua sin gas,01.2.2,1.8728,222,completo
+2026-09,Cuyo,Arroz blanco simple,01.1.1,1.5743,49,completo
+2026-09,Cuyo,Arvejas secas remojadas,01.1.7,0.5053,48,completo
+2026-09,Cuyo,Azúcar,01.1.8,0.4285,25,completo
+2026-09,Cuyo,Café molido,01.2.1,0.7180,158,completo
+2026-09,Cuyo,Dulce de leche,01.1.8,1.0451,127,completo
+2026-09,Cuyo,Fideos secos tipo guisero,01.1.1,-0.0599,200,completo
+2026-09,Cuyo,Galletitas de agua envasadas,01.1.1,1.6740,90,completo
+2026-09,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.6160,178,completo
+2026-09,Cuyo,Gaseosa base cola,01.2.2,3.1404,148,completo
+2026-09,Cuyo,Hamburguesas congeladas,01.1.2,1.1289,103,completo
+2026-09,Cuyo,Harina de trigo común 000,01.1.1,0.0496,31,completo
+2026-09,Cuyo,Leche en polvo entera,01.1.4,8.4334,5,completo
+2026-09,Cuyo,Leche fresca entera en sachet,01.1.4,1.0166,36,completo
+2026-09,Cuyo,Manteca,01.1.5,1.9544,105,completo
+2026-09,Cuyo,Pan de mesa,01.1.1,0.5626,43,completo
+2026-09,Cuyo,Polvo para flan,01.1.8,1.9078,59,completo
+2026-09,Cuyo,Sal fina,01.1.9,1.4238,62,completo
+2026-09,Cuyo,Salchicha tipo viena,01.1.2,1.4999,119,completo
+2026-09,Cuyo,Tomate entero en conserva,01.1.7,6.0637,25,completo
+2026-09,Cuyo,Yerba mate,01.2.1,0.0075,391,completo
+2026-09,Cuyo,Yogur firme,01.1.4,1.1734,13,completo
+2026-09,GBA,Aceite de girasol,01.1.5,1.0293,86,completo
+2026-09,GBA,Agua sin gas,01.2.2,0.6661,277,completo
+2026-09,GBA,Arroz blanco simple,01.1.1,1.0242,59,completo
+2026-09,GBA,Arvejas secas remojadas,01.1.7,0.3745,56,completo
+2026-09,GBA,Azúcar,01.1.8,0.2450,31,completo
+2026-09,GBA,Café molido,01.2.1,1.7978,177,completo
+2026-09,GBA,Dulce de leche,01.1.8,1.5866,151,completo
+2026-09,GBA,Fideos secos tipo guisero,01.1.1,-0.2159,223,completo
+2026-09,GBA,Galletitas de agua envasadas,01.1.1,1.0671,108,completo
+2026-09,GBA,Galletitas dulces envasadas sin relleno,01.1.1,1.8135,201,completo
+2026-09,GBA,Gaseosa base cola,01.2.2,2.0135,192,completo
+2026-09,GBA,Hamburguesas congeladas,01.1.2,0.9649,122,completo
+2026-09,GBA,Harina de trigo común 000,01.1.1,1.3646,35,completo
+2026-09,GBA,Leche en polvo entera,01.1.4,7.0837,6,completo
+2026-09,GBA,Leche fresca entera en sachet,01.1.4,1.9424,43,completo
+2026-09,GBA,Manteca,01.1.5,1.5261,132,completo
+2026-09,GBA,Pan de mesa,01.1.1,0.8737,58,completo
+2026-09,GBA,Polvo para flan,01.1.8,1.4696,78,completo
+2026-09,GBA,Sal fina,01.1.9,1.1467,76,completo
+2026-09,GBA,Salchicha tipo viena,01.1.2,0.9196,137,completo
+2026-09,GBA,Tomate entero en conserva,01.1.7,6.5543,29,completo
+2026-09,GBA,Yerba mate,01.2.1,0.6539,474,completo
+2026-09,GBA,Yogur firme,01.1.4,0.4458,18,completo
+2026-09,Noreste,Aceite de girasol,01.1.5,0.3613,63,completo
+2026-09,Noreste,Agua sin gas,01.2.2,2.5892,170,completo
+2026-09,Noreste,Arroz blanco simple,01.1.1,2.1189,41,completo
+2026-09,Noreste,Arvejas secas remojadas,01.1.7,1.7553,37,completo
+2026-09,Noreste,Azúcar,01.1.8,1.8547,20,completo
+2026-09,Noreste,Café molido,01.2.1,2.1709,108,completo
+2026-09,Noreste,Dulce de leche,01.1.8,1.6870,104,completo
+2026-09,Noreste,Fideos secos tipo guisero,01.1.1,0.8477,151,completo
+2026-09,Noreste,Galletitas de agua envasadas,01.1.1,1.8389,79,completo
+2026-09,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.7893,134,completo
+2026-09,Noreste,Gaseosa base cola,01.2.2,3.2925,111,completo
+2026-09,Noreste,Hamburguesas congeladas,01.1.2,0.9348,94,completo
+2026-09,Noreste,Harina de trigo común 000,01.1.1,2.2079,26,completo
+2026-09,Noreste,Leche en polvo entera,01.1.4,5.9835,7,completo
+2026-09,Noreste,Leche fresca entera en sachet,01.1.4,2.2703,29,completo
+2026-09,Noreste,Manteca,01.1.5,1.7031,94,completo
+2026-09,Noreste,Pan de mesa,01.1.1,0.8111,27,completo
+2026-09,Noreste,Polvo para flan,01.1.8,1.3051,55,completo
+2026-09,Noreste,Sal fina,01.1.9,1.0480,57,completo
+2026-09,Noreste,Salchicha tipo viena,01.1.2,0.7138,113,completo
+2026-09,Noreste,Tomate entero en conserva,01.1.7,5.3796,21,completo
+2026-09,Noreste,Yerba mate,01.2.1,1.2302,327,completo
+2026-09,Noreste,Yogur firme,01.1.4,1.5068,10,completo
+2026-09,Noroeste,Aceite de girasol,01.1.5,0.3221,61,completo
+2026-09,Noroeste,Agua sin gas,01.2.2,2.2335,181,completo
+2026-09,Noroeste,Arroz blanco simple,01.1.1,1.3234,38,completo
+2026-09,Noroeste,Arvejas secas remojadas,01.1.7,2.0949,36,completo
+2026-09,Noroeste,Azúcar,01.1.8,0.1683,21,completo
+2026-09,Noroeste,Café molido,01.2.1,0.8046,121,completo
+2026-09,Noroeste,Dulce de leche,01.1.8,1.5109,108,completo
+2026-09,Noroeste,Fideos secos tipo guisero,01.1.1,-0.1119,157,completo
+2026-09,Noroeste,Galletitas de agua envasadas,01.1.1,1.1382,77,completo
+2026-09,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.7194,132,completo
+2026-09,Noroeste,Gaseosa base cola,01.2.2,3.1773,126,completo
+2026-09,Noroeste,Hamburguesas congeladas,01.1.2,0.6731,82,completo
+2026-09,Noroeste,Harina de trigo común 000,01.1.1,0.1302,26,completo
+2026-09,Noroeste,Leche en polvo entera,01.1.4,6.9800,6,completo
+2026-09,Noroeste,Leche fresca entera en sachet,01.1.4,1.8705,31,completo
+2026-09,Noroeste,Manteca,01.1.5,2.2404,82,completo
+2026-09,Noroeste,Pan de mesa,01.1.1,1.5945,30,completo
+2026-09,Noroeste,Polvo para flan,01.1.8,1.9601,47,completo
+2026-09,Noroeste,Sal fina,01.1.9,1.6935,59,completo
+2026-09,Noroeste,Salchicha tipo viena,01.1.2,1.2707,97,completo
+2026-09,Noroeste,Tomate entero en conserva,01.1.7,4.4890,19,completo
+2026-09,Noroeste,Yerba mate,01.2.1,0.1725,298,completo
+2026-09,Noroeste,Yogur firme,01.1.4,1.5385,11,completo
+2026-09,Pampeana,Aceite de girasol,01.1.5,0.5978,108,completo
+2026-09,Pampeana,Agua sin gas,01.2.2,1.1940,391,completo
+2026-09,Pampeana,Arroz blanco simple,01.1.1,1.0105,74,completo
+2026-09,Pampeana,Arvejas secas remojadas,01.1.7,0.4545,84,completo
+2026-09,Pampeana,Azúcar,01.1.8,0.2620,47,completo
+2026-09,Pampeana,Café molido,01.2.1,1.5578,214,completo
+2026-09,Pampeana,Dulce de leche,01.1.8,1.4820,198,completo
+2026-09,Pampeana,Fideos secos tipo guisero,01.1.1,0.0141,285,completo
+2026-09,Pampeana,Galletitas de agua envasadas,01.1.1,1.4865,134,completo
+2026-09,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.4579,244,completo
+2026-09,Pampeana,Gaseosa base cola,01.2.2,1.9023,250,completo
+2026-09,Pampeana,Hamburguesas congeladas,01.1.2,0.9627,150,completo
+2026-09,Pampeana,Harina de trigo común 000,01.1.1,0.5299,45,completo
+2026-09,Pampeana,Leche en polvo entera,01.1.4,5.0116,12,completo
+2026-09,Pampeana,Leche fresca entera en sachet,01.1.4,2.6343,60,completo
+2026-09,Pampeana,Manteca,01.1.5,1.0920,182,completo
+2026-09,Pampeana,Pan de mesa,01.1.1,0.6200,77,completo
+2026-09,Pampeana,Polvo para flan,01.1.8,1.0874,120,completo
+2026-09,Pampeana,Sal fina,01.1.9,0.6902,102,completo
+2026-09,Pampeana,Salchicha tipo viena,01.1.2,1.4381,188,completo
+2026-09,Pampeana,Tomate entero en conserva,01.1.7,5.4786,44,completo
+2026-09,Pampeana,Yerba mate,01.2.1,0.2685,701,completo
+2026-09,Pampeana,Yogur firme,01.1.4,0.9465,18,completo
+2026-09,Patagonia,Aceite de girasol,01.1.5,1.7004,77,completo
+2026-09,Patagonia,Agua sin gas,01.2.2,0.5392,242,completo
+2026-09,Patagonia,Arroz blanco simple,01.1.1,1.5241,55,completo
+2026-09,Patagonia,Arvejas secas remojadas,01.1.7,0.9513,49,completo
+2026-09,Patagonia,Azúcar,01.1.8,1.0767,25,completo
+2026-09,Patagonia,Café molido,01.2.1,0.9127,170,completo
+2026-09,Patagonia,Dulce de leche,01.1.8,0.9417,140,completo
+2026-09,Patagonia,Fideos secos tipo guisero,01.1.1,0.8643,203,completo
+2026-09,Patagonia,Galletitas de agua envasadas,01.1.1,1.3516,102,completo
+2026-09,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,2.0821,187,completo
+2026-09,Patagonia,Gaseosa base cola,01.2.2,2.4748,126,completo
+2026-09,Patagonia,Hamburguesas congeladas,01.1.2,0.5450,105,completo
+2026-09,Patagonia,Harina de trigo común 000,01.1.1,-0.3794,33,completo
+2026-09,Patagonia,Leche en polvo entera,01.1.4,8.8005,3,completo
+2026-09,Patagonia,Leche fresca entera en sachet,01.1.4,1.8367,45,completo
+2026-09,Patagonia,Manteca,01.1.5,1.0793,126,completo
+2026-09,Patagonia,Pan de mesa,01.1.1,0.9114,32,completo
+2026-09,Patagonia,Polvo para flan,01.1.8,1.0893,75,completo
+2026-09,Patagonia,Sal fina,01.1.9,0.6452,72,completo
+2026-09,Patagonia,Salchicha tipo viena,01.1.2,1.2128,121,completo
+2026-09,Patagonia,Tomate entero en conserva,01.1.7,4.4553,22,completo
+2026-09,Patagonia,Yerba mate,01.2.1,-0.6756,438,completo
+2026-09,Patagonia,Yogur firme,01.1.4,0.9696,13,completo
+2026-10,Cuyo,Aceite de girasol,01.1.5,-0.1211,64,completo
+2026-10,Cuyo,Agua sin gas,01.2.2,1.2816,211,completo
+2026-10,Cuyo,Arroz blanco simple,01.1.1,4.3735,43,completo
+2026-10,Cuyo,Arvejas secas remojadas,01.1.7,-0.0716,44,completo
+2026-10,Cuyo,Azúcar,01.1.8,-0.8855,19,completo
+2026-10,Cuyo,Café molido,01.2.1,3.3753,134,completo
+2026-10,Cuyo,Dulce de leche,01.1.8,1.5478,121,completo
+2026-10,Cuyo,Fideos secos tipo guisero,01.1.1,3.0702,178,completo
+2026-10,Cuyo,Galletitas de agua envasadas,01.1.1,4.0113,82,completo
+2026-10,Cuyo,Galletitas dulces envasadas sin relleno,01.1.1,1.2103,168,completo
+2026-10,Cuyo,Gaseosa base cola,01.2.2,1.0098,132,completo
+2026-10,Cuyo,Hamburguesas congeladas,01.1.2,1.7381,77,completo
+2026-10,Cuyo,Harina de trigo común 000,01.1.1,4.1164,31,completo
+2026-10,Cuyo,Leche en polvo entera,01.1.4,0.6642,5,completo
+2026-10,Cuyo,Leche fresca entera en sachet,01.1.4,-0.6842,34,completo
+2026-10,Cuyo,Manteca,01.1.5,-0.2182,95,completo
+2026-10,Cuyo,Pan de mesa,01.1.1,1.9028,39,completo
+2026-10,Cuyo,Polvo para flan,01.1.8,2.6768,56,completo
+2026-10,Cuyo,Sal fina,01.1.9,3.0625,62,completo
+2026-10,Cuyo,Salchicha tipo viena,01.1.2,1.0381,112,completo
+2026-10,Cuyo,Tomate entero en conserva,01.1.7,-1.5998,17,completo
+2026-10,Cuyo,Yerba mate,01.2.1,4.2076,356,completo
+2026-10,Cuyo,Yogur firme,01.1.4,0.0716,6,completo
+2026-10,GBA,Aceite de girasol,01.1.5,-0.1638,83,completo
+2026-10,GBA,Agua sin gas,01.2.2,1.5946,264,completo
+2026-10,GBA,Arroz blanco simple,01.1.1,3.1700,52,completo
+2026-10,GBA,Arvejas secas remojadas,01.1.7,1.0968,53,completo
+2026-10,GBA,Azúcar,01.1.8,0.8130,23,completo
+2026-10,GBA,Café molido,01.2.1,3.2544,153,completo
+2026-10,GBA,Dulce de leche,01.1.8,1.7157,144,completo
+2026-10,GBA,Fideos secos tipo guisero,01.1.1,2.6585,199,completo
+2026-10,GBA,Galletitas de agua envasadas,01.1.1,2.5040,102,completo
+2026-10,GBA,Galletitas dulces envasadas sin relleno,01.1.1,2.4488,191,completo
+2026-10,GBA,Gaseosa base cola,01.2.2,1.2059,171,completo
+2026-10,GBA,Hamburguesas congeladas,01.1.2,3.3599,92,completo
+2026-10,GBA,Harina de trigo común 000,01.1.1,2.6094,37,completo
+2026-10,GBA,Leche en polvo entera,01.1.4,-0.3099,6,completo
+2026-10,GBA,Leche fresca entera en sachet,01.1.4,1.1271,41,completo
+2026-10,GBA,Manteca,01.1.5,1.1192,122,completo
+2026-10,GBA,Pan de mesa,01.1.1,1.0874,54,completo
+2026-10,GBA,Polvo para flan,01.1.8,2.4006,77,completo
+2026-10,GBA,Sal fina,01.1.9,3.3236,74,completo
+2026-10,GBA,Salchicha tipo viena,01.1.2,1.3208,124,completo
+2026-10,GBA,Tomate entero en conserva,01.1.7,0.3671,22,completo
+2026-10,GBA,Yerba mate,01.2.1,1.7568,446,completo
+2026-10,GBA,Yogur firme,01.1.4,0.6032,7,completo
+2026-10,Noreste,Aceite de girasol,01.1.5,1.2832,62,completo
+2026-10,Noreste,Agua sin gas,01.2.2,0.9617,166,completo
+2026-10,Noreste,Arroz blanco simple,01.1.1,5.4048,36,completo
+2026-10,Noreste,Arvejas secas remojadas,01.1.7,3.2080,34,completo
+2026-10,Noreste,Azúcar,01.1.8,1.9812,17,completo
+2026-10,Noreste,Café molido,01.2.1,2.8216,93,completo
+2026-10,Noreste,Dulce de leche,01.1.8,0.4737,104,completo
+2026-10,Noreste,Fideos secos tipo guisero,01.1.1,3.1565,130,completo
+2026-10,Noreste,Galletitas de agua envasadas,01.1.1,1.7091,79,completo
+2026-10,Noreste,Galletitas dulces envasadas sin relleno,01.1.1,1.4864,129,completo
+2026-10,Noreste,Gaseosa base cola,01.2.2,1.4582,94,completo
+2026-10,Noreste,Hamburguesas congeladas,01.1.2,2.5178,81,completo
+2026-10,Noreste,Harina de trigo común 000,01.1.1,5.4075,25,completo
+2026-10,Noreste,Leche en polvo entera,01.1.4,0.4740,7,completo
+2026-10,Noreste,Leche fresca entera en sachet,01.1.4,-0.9896,28,completo
+2026-10,Noreste,Manteca,01.1.5,-0.6550,83,completo
+2026-10,Noreste,Pan de mesa,01.1.1,1.6385,26,completo
+2026-10,Noreste,Polvo para flan,01.1.8,1.9945,55,completo
+2026-10,Noreste,Sal fina,01.1.9,3.3045,56,completo
+2026-10,Noreste,Salchicha tipo viena,01.1.2,0.7917,103,completo
+2026-10,Noreste,Tomate entero en conserva,01.1.7,0.9102,15,completo
+2026-10,Noreste,Yerba mate,01.2.1,2.6030,314,completo
+2026-10,Noreste,Yogur firme,01.1.4,0.3489,5,completo
+2026-10,Noroeste,Aceite de girasol,01.1.5,3.1832,61,completo
+2026-10,Noroeste,Agua sin gas,01.2.2,1.0935,176,completo
+2026-10,Noroeste,Arroz blanco simple,01.1.1,5.3249,34,completo
+2026-10,Noroeste,Arvejas secas remojadas,01.1.7,1.0489,31,completo
+2026-10,Noroeste,Azúcar,01.1.8,1.6588,17,completo
+2026-10,Noroeste,Café molido,01.2.1,4.4315,103,completo
+2026-10,Noroeste,Dulce de leche,01.1.8,1.3049,108,completo
+2026-10,Noroeste,Fideos secos tipo guisero,01.1.1,4.1247,142,completo
+2026-10,Noroeste,Galletitas de agua envasadas,01.1.1,4.2149,74,completo
+2026-10,Noroeste,Galletitas dulces envasadas sin relleno,01.1.1,1.1744,125,completo
+2026-10,Noroeste,Gaseosa base cola,01.2.2,1.0649,112,completo
+2026-10,Noroeste,Hamburguesas congeladas,01.1.2,4.5050,65,completo
+2026-10,Noroeste,Harina de trigo común 000,01.1.1,5.9078,26,completo
+2026-10,Noroeste,Leche en polvo entera,01.1.4,1.5420,6,completo
+2026-10,Noroeste,Leche fresca entera en sachet,01.1.4,-0.1921,31,completo
+2026-10,Noroeste,Manteca,01.1.5,-0.7723,74,completo
+2026-10,Noroeste,Pan de mesa,01.1.1,0.8144,28,completo
+2026-10,Noroeste,Polvo para flan,01.1.8,2.8617,45,completo
+2026-10,Noroeste,Sal fina,01.1.9,3.2027,58,completo
+2026-10,Noroeste,Salchicha tipo viena,01.1.2,0.8773,91,completo
+2026-10,Noroeste,Tomate entero en conserva,01.1.7,1.0258,13,completo
+2026-10,Noroeste,Yerba mate,01.2.1,5.3369,282,completo
+2026-10,Noroeste,Yogur firme,01.1.4,0.0000,6,completo
+2026-10,Pampeana,Aceite de girasol,01.1.5,0.2390,113,completo
+2026-10,Pampeana,Agua sin gas,01.2.2,1.1225,376,completo
+2026-10,Pampeana,Arroz blanco simple,01.1.1,3.9638,67,completo
+2026-10,Pampeana,Arvejas secas remojadas,01.1.7,0.7405,82,completo
+2026-10,Pampeana,Azúcar,01.1.8,1.1255,38,completo
+2026-10,Pampeana,Café molido,01.2.1,3.0007,190,completo
+2026-10,Pampeana,Dulce de leche,01.1.8,0.8309,191,completo
+2026-10,Pampeana,Fideos secos tipo guisero,01.1.1,2.6959,252,completo
+2026-10,Pampeana,Galletitas de agua envasadas,01.1.1,0.7337,146,completo
+2026-10,Pampeana,Galletitas dulces envasadas sin relleno,01.1.1,1.4590,232,completo
+2026-10,Pampeana,Gaseosa base cola,01.2.2,1.2420,229,completo
+2026-10,Pampeana,Hamburguesas congeladas,01.1.2,2.7520,117,completo
+2026-10,Pampeana,Harina de trigo común 000,01.1.1,3.5049,45,completo
+2026-10,Pampeana,Leche en polvo entera,01.1.4,0.8435,12,completo
+2026-10,Pampeana,Leche fresca entera en sachet,01.1.4,0.3167,60,completo
+2026-10,Pampeana,Manteca,01.1.5,0.6960,168,completo
+2026-10,Pampeana,Pan de mesa,01.1.1,0.7737,71,completo
+2026-10,Pampeana,Polvo para flan,01.1.8,1.5442,117,completo
+2026-10,Pampeana,Sal fina,01.1.9,2.8580,101,completo
+2026-10,Pampeana,Salchicha tipo viena,01.1.2,1.3859,173,completo
+2026-10,Pampeana,Tomate entero en conserva,01.1.7,2.0308,34,completo
+2026-10,Pampeana,Yerba mate,01.2.1,1.7528,660,completo
+2026-10,Pampeana,Yogur firme,01.1.4,0.5023,10,completo
+2026-10,Patagonia,Aceite de girasol,01.1.5,0.8961,76,completo
+2026-10,Patagonia,Agua sin gas,01.2.2,1.2510,233,completo
+2026-10,Patagonia,Arroz blanco simple,01.1.1,3.4469,47,completo
+2026-10,Patagonia,Arvejas secas remojadas,01.1.7,0.6382,46,completo
+2026-10,Patagonia,Azúcar,01.1.8,0.2832,19,completo
+2026-10,Patagonia,Café molido,01.2.1,3.8125,149,completo
+2026-10,Patagonia,Dulce de leche,01.1.8,0.5959,127,completo
+2026-10,Patagonia,Fideos secos tipo guisero,01.1.1,2.6533,177,completo
+2026-10,Patagonia,Galletitas de agua envasadas,01.1.1,0.2862,103,completo
+2026-10,Patagonia,Galletitas dulces envasadas sin relleno,01.1.1,1.3987,178,completo
+2026-10,Patagonia,Gaseosa base cola,01.2.2,1.6085,114,completo
+2026-10,Patagonia,Hamburguesas congeladas,01.1.2,2.1167,83,completo
+2026-10,Patagonia,Harina de trigo común 000,01.1.1,5.2819,32,completo
+2026-10,Patagonia,Leche en polvo entera,01.1.4,3.7950,3,completo
+2026-10,Patagonia,Leche fresca entera en sachet,01.1.4,-1.4151,44,completo
+2026-10,Patagonia,Manteca,01.1.5,-0.2380,112,completo
+2026-10,Patagonia,Pan de mesa,01.1.1,0.8841,26,completo
+2026-10,Patagonia,Polvo para flan,01.1.8,1.3976,65,completo
+2026-10,Patagonia,Sal fina,01.1.9,2.1388,70,completo
+2026-10,Patagonia,Salchicha tipo viena,01.1.2,1.0814,106,completo
+2026-10,Patagonia,Tomate entero en conserva,01.1.7,1.0420,14,completo
+2026-10,Patagonia,Yerba mate,01.2.1,3.7554,410,completo
+2026-10,Patagonia,Yogur firme,01.1.4,-0.6201,10,completo

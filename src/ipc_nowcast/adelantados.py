@@ -33,7 +33,7 @@ OPCIONES = {
     "01.1.7": [["sepa"], ["may"]],
     "01.1.8": [["sepa"], ["sepa", "fx"]],
     "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"]],
-    "01.2.2": [["sepa"], ["sepa", "fx"]],
+    "01.2.2": [["sepa"], ["sepa", "fx"]],  # se probó "sepai" (solo productos que mide INDEC): no le gana a SEPA completo
     "07.2.2": [["nafta"], ["nafta", "fx"]],
     "07.1": [["fx"]],
     "03.1": [["fx"]],
@@ -62,7 +62,8 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "10": "Educación"}
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
-            "arr": "arrastre del mes anterior (SEPA)"}
+            "arr": "arrastre del mes anterior (SEPA)",
+            "sepai": "precios de SEPA de los productos que mide INDEC"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
 CORTES = ["15", "22", "completo"]  # precios hasta el día 15, hasta el 22 y mes completo
 CON_TENDENCIA = {"01.1.2"}
@@ -141,6 +142,16 @@ def tabla(nc, corte: str) -> pd.DataFrame:
     t = pd.DataFrame(filas)
     if t.empty:
         return t
+    # señal de SEPA hecha solo con los productos que INDEC mide (variedades con precio promedio publicado)
+    rv = sepa.SALIDA / "indices_variedades.csv"
+    if rv.exists():
+        iv = pd.read_csv(rv, dtype={"clase": str})
+        iv = iv[iv.corte.astype(str) == corte]
+        iv = iv.groupby(["mes", "region", "clase"])["var_%"].mean().rename("sepai").reset_index()
+        iv["mes"] = pd.to_datetime(iv.mes + "-01")
+        t = t.merge(iv, on=["mes", "region", "clase"], how="left")
+    else:
+        t["sepai"] = np.nan
     # arrastre del mes anterior medido con SEPA (se conoce el día 1): sorpresa respecto de su mediana reciente
     ra = sepa.SALIDA / "arrastre.csv"
     if ra.exists():
@@ -188,6 +199,8 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
     if "fx" in fuentes:
         cols.append(t["fx"].astype(float))
         cols.append(t["fx_l1"].astype(float))
+    if "sepai" in fuentes:
+        cols.append(t["sepai"].astype(float) - t.proy.astype(float))
     if "arr" in fuentes:
         cols.append(t["arr_s"].astype(float))
         cols.append(-t["arr_s"].astype(float))
@@ -236,6 +249,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["icl_a"].notna() & t["icl_m"].notna()
     if "arr" in fuentes:
         ok &= t["arr_s"].notna()
+    if "sepai" in fuentes:
+        ok &= t["sepai"].notna()
     return ok
 
 

@@ -42,9 +42,13 @@ TIENDAS = {
     "naldo": "https://www.naldo.com.ar",
     "cetrogar": "https://www.cetrogar.com.ar",
     "coppel": "https://www.coppel.com.ar",
+    "pardo": "https://www.pardo.com.ar",
+    "easy": "https://www.easy.com.ar",
+    "blaisten": "https://www.blaisten.com.ar",
 }
 RUBRO_TIENDA = {"equus": "ropa", "portsaid": "ropa", "tascani": "ropa", "levis": "ropa", "legacy": "ropa", "mimo": "ropa",
-                "topper": "calzado", "naldo": "electro", "cetrogar": "electro", "coppel": "electro"}
+                "topper": "calzado", "naldo": "electro", "cetrogar": "electro", "coppel": "electro",
+                "pardo": "electro", "easy": "hogar", "blaisten": "hogar"}
 
 # Departamentos que no aportan al IPC (o duplican otros) y se saltean
 EXCLUIR = {"test category", "gift cards", "garantía extendida", "sin categoría", "combos", "felices fiestas",

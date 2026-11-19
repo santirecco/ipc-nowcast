@@ -63,7 +63,7 @@ Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("D
 | Combustibles (surtidores.com.ar) | Precio mensual de nafta súper, premium y gasoil de YPF en CABA | Tabla publicada en surtidores.com.ar (el dataset oficial de Energía está caído) | desde 2018 (se usa desde 2024) |
 | Dólar mayorista (BCRA) | Tipo de cambio de referencia A 3500 | API pública del BCRA | desde 2017 (probado: hoy no mejora el pronóstico) |
 | Supermercados online | ~60.000 productos con stock en Carrefour, Jumbo, Disco, Vea y Día (GBA) | API pública de las tiendas (VTEX) | desde 18-nov-2026 |
-| Tiendas de ropa, calzado y electrónica | ~45.000 productos con stock de 10 tiendas online (Equus, Port Said, Tascani, Levi's, Legacy, Mimo, Topper, Naldo, Cetrogar, Coppel) | API pública de las tiendas (VTEX) | desde 18-nov-2026 (se evalúan cuando haya historia: electrónica en ~6 meses, ropa en ~1 año por la estacionalidad) |
+| Tiendas de ropa, calzado, electrónica y hogar | ~73.000 productos con stock de 13 tiendas online (Equus, Port Said, Tascani, Levi's, Legacy, Mimo, Topper, Naldo, Cetrogar, Coppel, Pardo) y hogar y materiales (Easy, Blaisten) | API pública de las tiendas (VTEX) | desde 18-nov-2026 (se evalúan cuando haya historia: electrónica en ~6 meses, ropa en ~1 año por la estacionalidad) |
 | IPC Ciudad de Buenos Aires | Anticipo del dato nacional | API de series de datos.gob.ar | desde 2012 |
 | REM del BCRA | Mediana de los analistas para la inflación mensual (solo referencia) | Planilla mensual publicada por el BCRA | se baja sola cada día |
 
