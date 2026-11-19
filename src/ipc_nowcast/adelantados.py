@@ -34,6 +34,8 @@ OPCIONES = {
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
     "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
+    # probada en nov-2026: canasta de variedades de INDEC en SEPA ("sepav"); mejora la clase pero empeora el fin de mes
+    # del índice (0,191 -> 0,199 últimos 16 meses). El índice se sigue calculando a diario.
     "01.1.8": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.2.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.2.2": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
@@ -94,6 +96,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "may2": "hacienda de dos meses antes",
             "naftap": "precio de surtidor: promedio del mes con la foto diaria (lo que compara INDEC)",
             "naftal": "precio de surtidor: solo el cambio del mes anterior (lo que arrastra al promedio del mes)",
+            "sepav": "canasta de verduras y frutas de INDEC en góndola (SEPA)",
             "pollo": "pollo en góndola (SEPA)", "cerdo": "cerdo en góndola (SEPA)", "fiambre": "fiambres y embutidos (SEPA)",
             "maya": "hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)"}
 MAYORISTA = {"01.1.7": "Mercado Central", "01.1.6": "Mercado Central", "01.1.2": "hacienda (Cañuelas)"}
@@ -215,6 +218,30 @@ def tabla(nc, corte: str) -> pd.DataFrame:
         t = t.merge(fr, on=["mes", "region", "clase"], how="left")
     else:
         t["sepaf"] = np.nan
+    # canasta de variedades de INDEC en SEPA (verduras y frutas): combinación con los pesos que revela INDEC en su
+    # propia historia (precios promedio publicados), estimados solo con los meses anteriores a cada mes
+    rvf = sepa.SALIDA / "indices_variedades_frescas.csv"
+    t["sepav"] = np.nan
+    if rvf.exists():
+        from . import frescos_sepa
+        vf = pd.read_csv(rvf)
+        vf = vf[vf.corte.astype(str) == corte]
+        vf["mes"] = pd.to_datetime(vf.mes + "-01")
+        tab = vf.pivot_table(index=["mes", "region", "grupo"], columns="clase", values="var_%")
+        cache_w = {}
+        vals = []
+        for f in t[["mes", "region", "clase"]].itertuples(index=False):
+            if f.clase not in frescos_sepa.VARIEDADES_FRESCAS or (f.mes, f.region, f.clase) not in tab.index:
+                vals.append(np.nan)
+                continue
+            if (f.mes, f.clase) not in cache_w:
+                cache_w[(f.mes, f.clase)] = frescos_sepa.pesos_variedades(f.mes, f.clase)
+            w = cache_w[(f.mes, f.clase)]
+            fila = tab.loc[(f.mes, f.region, f.clase)]
+            ok = {k: v for k, v in w.items() if k in fila.index and pd.notna(fila[k]) and v > 0}
+            tw = sum(ok.values())
+            vals.append(sum(v * fila[k] for k, v in ok.items()) / tw if tw > 0 and tw >= 0.5 * sum(w.values()) else np.nan)
+        t["sepav"] = vals
     # listas de precios de autos 0 km (aumento promedio del mes, igual para todas las regiones)
     if RUTA_AUTOS.exists():
         au = pd.read_csv(RUTA_AUTOS)
@@ -293,6 +320,8 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["ipc_l2"].astype(float) + 2.0 - t.proy.astype(float))
     if "sepaf" in fuentes:
         cols.append(t["sepaf"].astype(float) - t.proy.astype(float))
+    if "sepav" in fuentes:
+        cols.append(t["sepav"].astype(float) - t.proy.astype(float))
     if "autos" in fuentes:
         cols.append(t["autos"].astype(float) - t.proy.astype(float))
         cols.append(t["autos_l1"].astype(float) - t.proy.astype(float))
@@ -373,6 +402,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["autos"].notna() & t["autos_l1"].notna()
     if "sepaf" in fuentes:
         ok &= t["sepaf"].notna()
+    if "sepav" in fuentes:
+        ok &= t["sepav"].notna()
     if "ipcl" in fuentes:
         ok &= t["ipc_lag"].notna()
     if "alim1" in fuentes or "alim" in fuentes:

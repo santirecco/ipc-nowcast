@@ -49,3 +49,69 @@ def indices_frescos(mes: str, corte=None, origen=sepa.CACHE) -> pd.DataFrame:
         if not v.empty:
             out.append(v.assign(mes=mes))
     return pd.concat(out) if out else pd.DataFrame()
+
+
+# ---------------------------------------------------------------- canasta de variedades de INDEC
+# INDEC publica el precio promedio de estas variedades (GBA) desde 2016. La variación de verduras y frutas de INDEC
+# se explica muy bien con ellas (error medio ~2,3 pp en verduras, ~2 pp en frutas, pesos estimados con meses
+# anteriores). Se arma la misma canasta con los precios de SEPA, variedad por variedad.
+VARIEDADES_FRESCAS = {
+    "01.1.7": {"Tomate redondo": r"^tomate\b(?!.*\b(?:cherry|perita|pera|hidrop))", "Papa": r"^papas?\b",
+               "Cebolla": r"^cebollas?\b(?!.*\b(?:verdeo|morada))", "Lechuga": r"^lechugas?\b",
+               "Zapallo anco": r"^(?:zapallo|calabaza)\b(?!.*zapallito)", "Batata": r"^batatas?\b"},
+    "01.1.6": {"Banana": r"^bananas?\b", "Manzana deliciosa": r"^manzanas?\b(?!.*verde)", "Naranja": r"^naranjas?\b",
+               "Limón": r"^limon(?:es)?\b"},
+}
+
+
+def indices_variedades_frescas(mes: str, corte=None, origen=sepa.CACHE, cat=None) -> pd.DataFrame:
+    """Variación % mensual de cada variedad de la canasta de INDEC, por región (SEPA, solo frescos)."""
+    import polars as pl
+    cat = cat if cat is not None else catalogo()
+    previo = (pd.Timestamp(mes + "-01") - pd.offsets.MonthBegin(1)).strftime("%Y-%m")
+    out = []
+    for clase, vs in VARIEDADES_FRESCAS.items():
+        base = cat[cat.clase_f == clase]
+        filas = []
+        for v, rx in vs.items():
+            ids = base[base.n.str.contains(rx, regex=True)].id_producto.drop_duplicates()
+            filas += [(i, v) for i in ids]
+        if not filas:
+            continue
+        mapa = pl.DataFrame(filas, schema=["id_producto", "variedad"], orient="row").unique("id_producto")
+
+        def prom(m, c):
+            fs = [str(p) for p in sorted(origen.glob(f"{m}-??.parquet")) if c is None or int(p.stem[-2:]) <= c]
+            if not fs:
+                return pd.DataFrame()
+            lf = (pl.scan_parquet(fs).filter(pl.col("clase") == clase)
+                    .select("fecha", "id_comercio", "region", "id_producto", "precio").join(mapa.lazy(), on="id_producto"))
+            return (lf.group_by("id_comercio", "region", "id_producto", "variedad").agg(p=pl.col("precio").mean(), dias=pl.col("fecha").n_unique())
+                      .collect().to_pandas().rename(columns={"variedad": "clase"}))
+        a, b = prom(previo, None), prom(mes, corte)
+        if a.empty or b.empty:
+            continue
+        v = sepa.variacion(a, b, min_productos=1)
+        if not v.empty:
+            out.append(v.assign(mes=mes, grupo=clase))
+    return pd.concat(out) if out else pd.DataFrame()
+
+
+def pesos_variedades(hasta: pd.Timestamp, clase: str) -> dict:
+    """Pesos de cada variedad en la variación de INDEC de la clase (GBA), estimados con los meses anteriores a `hasta`."""
+    from scipy.optimize import nnls
+    from . import DATA
+    pp = pd.read_csv(DATA / "precios" / "indec" / "precios_promedio_gba.csv")
+    pp["mes"] = pd.to_datetime(pp.mes + "-01")
+    vs = list(VARIEDADES_FRESCAS[clase])
+    P = pp[pp.variedad.isin(vs)].pivot_table(index="mes", columns="variedad", values="precio")[vs]
+    X = (P / P.shift(1) - 1) * 100
+    y = pd.read_parquet(DATA / "processed" / "indec_aperturas.parquet")
+    y = y[(y.region == "GBA") & (y.codigo == clase)].set_index("periodo").indice.sort_index()
+    y = (y / y.shift(1) - 1) * 100
+    df = X.join(y.rename("y"), how="inner").dropna()
+    df = df[df.index < hasta]
+    if len(df) < 24:
+        return {}
+    w, _ = nnls(df[vs].values, df.y.values)
+    return dict(zip(vs, w))
