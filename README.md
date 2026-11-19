@@ -144,6 +144,10 @@ Cuarta tanda (nov-2026):
 - **Combustibles por día con el archivo web**: hay solo ~30 copias de la página de precios desde 2023, no alcanza.
   Queda la foto diaria propia (desde nov-2026) y la candidata con el promedio del mes, que entra sola con historia.
 - **Tiendas de ropa y electro** reconstruidas con el archivo web (`.github/workflows/wayback.yml`, corre sola).
+  Panel de hasta 40 productos por tienda y mes (los que más meses duran). En el archivo el mismo producto casi nunca
+  aparece en meses seguidos, así que el índice es de ventas repetidas (efecto producto + efecto mes), recalculado mes
+  a mes solo con lo que se sabría a esa fecha (`indicadores.serie_tiendas`). Candidatas `tienda` y `tiendal` en ropa,
+  calzado, equipamiento del hogar y equipos/recreación: entran solas si bajan el error de su clase con 6+ meses.
 
 Quinta tanda (nov-2026):
 - **SEPA ponderado por sucursales** (lo que más se vende pesa más; también raíz y por tamaño de cadena): mejora algo

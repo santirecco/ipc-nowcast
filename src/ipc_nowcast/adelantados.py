@@ -64,6 +64,10 @@ OPCIONES = {
     "12.resto": [["ipc"], ["sal"], ["fx"]],
 }
 CLASES = list(OPCIONES)
+# tiendas online (copias del archivo web): rubro que corresponde a cada clase
+RUBRO_CLASE = {"03.1": "ropa", "03.2": "ropa", "05": "electro", "05.resto": "electro", "09.resto": "electro"}
+for _c in RUBRO_CLASE:
+    OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
 ESTADISTICAS = {"ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
@@ -94,6 +98,8 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "alim1": "alimentos del mes anterior (INDEC)",
             "alim": "alimentos: mes anterior (INDEC) y góndolas del mes (SEPA)",
             "may2": "hacienda de dos meses antes",
+            "tienda": "precios publicados en tiendas online (archivo web): mes actual y anterior",
+            "tiendal": "precios publicados en tiendas online (archivo web): mes anterior",
             "naftap": "precio de surtidor: promedio del mes con la foto diaria (lo que compara INDEC)",
             "naftal": "precio de surtidor: solo el cambio del mes anterior (lo que arrastra al promedio del mes)",
             "sepav": "canasta de verduras y frutas de INDEC en góndola (SEPA)",
@@ -133,6 +139,9 @@ def _otros(corte: str) -> pd.DataFrame:
     o = o.join(indicadores.serie_nafta_promedio(c), how="outer")
     o["nafta_l1"] = nafta.shift(1, freq="MS").reindex(o.index)
     o["fx_l1"] = fx_full.shift(1, freq="MS").reindex(o.index)
+    tiendas = indicadores.serie_tiendas(c)
+    if not tiendas.empty:
+        o = o.join(tiendas, how="outer")
     sal = indicadores.serie_salarios()
     if not sal.empty:
         o = o.join(sal, how="outer")
@@ -194,7 +203,9 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
                               "ipc_l2": ipcs["l2"].get(mes, np.nan), "ipc_lag": ipcs["lag"].get(mes, np.nan),
-                              "alim_l1": float(alim_d[r].get(mes - pd.offsets.MonthBegin(1), np.nan))})
+                              "alim_l1": float(alim_d[r].get(mes - pd.offsets.MonthBegin(1), np.nan)),
+                              "tienda": ox(RUBRO_CLASE[c]) if c in RUBRO_CLASE else np.nan,
+                              "tienda_l1": ox(RUBRO_CLASE[c] + "_l1") if c in RUBRO_CLASE else np.nan})
     t = pd.DataFrame(filas)
     if t.empty:
         return t
@@ -307,6 +318,11 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["nafta_l1"].astype(float) - p)
     if "naftap" in fuentes:
         cols.append(t["naftap"].astype(float) - t.proy.astype(float))
+    if "tienda" in fuentes:
+        cols.append(t["tienda"].astype(float) - t.proy.astype(float))
+        cols.append(t["tienda_l1"].astype(float) - t.proy.astype(float))
+    if "tiendal" in fuentes:
+        cols.append(t["tienda_l1"].astype(float) - t.proy.astype(float))
     if "naftal" in fuentes:
         cols.append(t["nafta_l1"].astype(float) - t.proy.astype(float))
     if "fx" in fuentes:
@@ -419,6 +435,10 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
             ok &= t["sepa_" + k].notna()
     if "naftal" in fuentes:
         ok &= t["nafta_l1"].notna()
+    if "tienda" in fuentes:
+        ok &= t["tienda"].notna() & t["tienda_l1"].notna()
+    if "tiendal" in fuentes:
+        ok &= t["tienda_l1"].notna()
     if "naftap" in fuentes:
         ok &= t["naftap"].notna()
     return ok

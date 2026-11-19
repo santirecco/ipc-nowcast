@@ -8,6 +8,7 @@
 """
 from __future__ import annotations
 
+import functools
 import json
 import re
 import subprocess
@@ -202,3 +203,73 @@ def serie_salarios() -> pd.DataFrame:
     v = t["salarios"].pct_change() * 100
     sal = v.rolling(3).mean().shift(REZAGO_SALARIOS, freq="MS")
     return pd.DataFrame({"sal": sal})
+
+
+DIR_WAYBACK = DATA / "precios" / "wayback"
+RUBRO_TIENDA = {"tascani": "ropa", "levis": "ropa", "portsaid": "ropa", "equus": "ropa",
+                "coppel": "electro", "naldo": "electro", "pardo": "electro", "cetrogar": "electro"}
+MIN_PARES_TIENDA = 10   # productos comparables mínimos por tienda y mes
+
+
+def _efectos_mes(y, prod, mes, iters=60):
+    """Índice de ventas repetidas: log precio = efecto del producto + efecto del mes (mínimos cuadrados por
+    proyecciones alternadas). Devuelve el efecto de cada mes (Series), o vacío."""
+    d = pd.DataFrame({"y": y, "p": prod, "m": mes})
+    for _ in range(2):  # segunda pasada sin los saltos de más del doble (cambio de variante o mala lectura)
+        em = pd.Series(0.0, index=sorted(d.m.unique()))
+        for _ in range(iters):
+            ap = (d.y - d.m.map(em)).groupby(d.p).mean()
+            em = (d.y - d.p.map(ap)).groupby(d.m).mean()
+        res = d.y - d.p.map(ap) - d.m.map(em)
+        d = d[res.abs() < np.log(2) / 2]
+    return em
+
+
+@functools.lru_cache(maxsize=8)
+def serie_tiendas(corte: int | None = None) -> pd.DataFrame:
+    """Variación % mensual de precios publicados en tiendas online (copias del archivo web), por rubro.
+
+    En el archivo el mismo producto casi nunca aparece en meses seguidos: índice de ventas repetidas por tienda
+    (efecto producto + efecto mes), promedio simple entre tiendas del rubro. Sin mirar el futuro: la variación del
+    mes m se estima solo con copias hasta ese mes (y con `corte`, del mes m solo las de hasta ese día).
+    Columnas: ropa, ropa_l1, electro, electro_l1 (l1 = variación del mes anterior, con meses completos)."""
+    if not DIR_WAYBACK.exists():
+        return pd.DataFrame()
+    por_rubro = {}
+    for ruta in sorted(DIR_WAYBACK.glob("*.csv")):
+        rubro = RUBRO_TIENDA.get(ruta.stem)
+        if rubro is None:
+            continue
+        t = pd.read_csv(ruta, dtype={"mes": str, "timestamp": str})
+        t = t[pd.to_numeric(t.precio, errors="coerce") > 0].copy()
+        if t.empty:
+            continue
+        t["y"] = np.log(t.precio.astype(float))
+        t["dia"] = t.timestamp.str[6:8].astype(int)
+        t["mes"] = pd.to_datetime(t.mes + "01")
+        t = t.sort_values("timestamp").drop_duplicates(["url", "mes"], keep="last")
+        meses = sorted(t.mes.unique())
+
+        def var(m, dia_max):
+            d = t[(t.mes < m) | ((t.mes == m) & (t.dia <= dia_max))]
+            ant = m - pd.offsets.MonthBegin(1)
+            vistos = set(d[d.mes < m].url)
+            n_m = d[(d.mes == m) & d.url.isin(vistos)].shape[0]
+            if ant not in set(d.mes) or n_m < MIN_PARES_TIENDA:
+                return np.nan
+            d = d[d.url.map(d.url.value_counts()) >= 2]
+            em = _efectos_mes(d.y.values, d.url.values, d.mes.values)
+            if m not in em.index or ant not in em.index:
+                return np.nan
+            return float(np.exp(em[m] - em[ant]) - 1) * 100
+
+        cur = pd.Series({m: var(m, corte or 31) for m in meses}, dtype=float)
+        full = cur if not corte else pd.Series({m: var(m, 31) for m in meses}, dtype=float)
+        por_rubro.setdefault(rubro, []).append((cur, full))
+    out = pd.DataFrame()
+    for rubro, partes in por_rubro.items():
+        cur = pd.concat([p[0] for p in partes], axis=1).mean(axis=1)
+        full = pd.concat([p[1] for p in partes], axis=1).mean(axis=1)
+        o = pd.DataFrame({rubro: cur, rubro + "_l1": full.shift(1, freq="MS")})
+        out = o if out.empty else out.join(o, how="outer")
+    return out.sort_index()
