@@ -1,6 +1,6 @@
 # Indicadores adelantados de alimentos
 
-*Generado el 19/11/2026.*
+*Generado el 20/11/2026.*
 
 Para cada clase de alimentos se mide si los precios de góndola de todo el país (SEPA), los precios mayoristas
 de verduras y frutas (Mercado Central) y el precio de la hacienda (carne) anticipan el dato de INDEC mejor que la
@@ -35,13 +35,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | SEPA | 17 | 1,02 | 1,03 | no |
 | Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,18 | no |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
-| Frutas | mayorista | 4 | 4,07 | 4,17 | no |
+| Frutas | mayorista | 6 | 3,57 | 3,36 | sí, si falta la anterior |
 | Frutas | SEPA | 17 | 2,81 | 2,89 | no |
 | Frutas | sepaf | 18 | 2,82 | 2,54 | **sí** |
+| Frutas | sepaf+may | 2 | 4,16 | 3,41 | no |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
-| Verduras, tubérculos y legumbres | mayorista | 4 | 4,76 | 3,28 | no |
+| Verduras, tubérculos y legumbres | mayorista | 6 | 5,69 | 4,14 | **sí** |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,56 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,48 | **sí** |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,48 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | sepaf+may | 2 | 5,91 | 4,79 | no |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
 | Azúcar, dulces y golosinas | SEPA | 17 | 0,78 | 0,73 | **sí** |
 | Azúcar, dulces y golosinas | sepa+fx | 17 | 0,78 | 0,78 | no |
@@ -58,10 +60,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
+| Ropa | tiendal | 3 | 2,15 | 1,50 | no |
 | Calzado | fx | 34 | 2,39 | 2,70 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
+| Calzado | tiendal | 3 | 1,75 | 1,43 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
@@ -150,13 +154,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,01 | no |
 | Aceites, grasas y manteca | sepai | 18 | 0,99 | 0,77 | **sí** |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
-| Frutas | mayorista | 4 | 4,07 | 4,10 | no |
+| Frutas | mayorista | 23 | 2,76 | 2,69 | sí, si falta la anterior |
 | Frutas | SEPA | 17 | 2,81 | 2,86 | no |
-| Frutas | sepaf | 18 | 2,82 | 2,45 | **sí** |
+| Frutas | sepaf | 18 | 2,82 | 2,45 | sí, si falta la anterior |
+| Frutas | sepaf+may | 18 | 2,82 | 2,43 | **sí** |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
-| Verduras, tubérculos y legumbres | mayorista | 4 | 4,76 | 2,74 | no |
+| Verduras, tubérculos y legumbres | mayorista | 21 | 6,45 | 5,05 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,48 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,99 | **sí** |
+| Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,99 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | sepaf+may | 17 | 6,73 | 4,43 | **sí** |
 | Azúcar, dulces y golosinas | arr | 14 | 0,75 | 0,70 | sí, si falta la anterior |
 | Azúcar, dulces y golosinas | SEPA | 17 | 0,78 | 0,65 | **sí** |
 | Azúcar, dulces y golosinas | sepa+fx | 17 | 0,78 | 0,71 | sí, si falta la anterior |
@@ -176,10 +182,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
+| Ropa | tiendal | 3 | 2,15 | 1,50 | no |
 | Calzado | fx | 34 | 2,39 | 2,68 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
+| Calzado | tiendal | 3 | 1,75 | 1,43 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |

@@ -2,13 +2,13 @@
 
 *Calculado el 20/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 2,1% mensual (rango probable 1,8% a 2,4%)
+## 1,8% mensual (rango probable 1,5% a 2,1%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **2,06** |
-| Solo modelo estadístico | 1,97 |
-| Modelo + información del mes (de abajo hacia arriba) | 2,06 |
+| **Pronóstico** | **1,82** |
+| Solo modelo estadístico | 1,95 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,82 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -20,15 +20,15 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
-| Alimentos y bebidas no alcohólicas | 28,7 | 2,08 | 0,60 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 1,30 | 0,37 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
 | Transporte | 11,6 | 2,10 | 0,24 |
 | Recreación y cultura | 6,6 | 2,56 | 0,17 |
 | Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
 | Salud | 9,0 | 1,84 | 0,17 |
-| Equipamiento y mantenimiento del hogar | 5,0 | 2,30 | 0,12 |
+| Equipamiento y mantenimiento del hogar | 5,0 | 2,25 | 0,11 |
 | Bienes y servicios varios | 3,4 | 2,93 | 0,10 |
-| Prendas de vestir y calzado | 6,6 | 1,47 | 0,10 |
+| Prendas de vestir y calzado | 6,6 | 1,20 | 0,08 |
 | Comunicación | 2,6 | 2,09 | 0,06 |
 | Bebidas alcohólicas y tabaco | 2,4 | 1,56 | 0,04 |
 | Educación | 2,2 | 1,57 | 0,03 |
@@ -37,12 +37,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 2,05 |
-| Pampeana | 33,8 | 2,11 |
-| Noreste | 4,5 | 1,75 |
-| Noroeste | 6,8 | 1,95 |
-| Cuyo | 5,2 | 2,29 |
-| Patagonia | 4,5 | 2,03 |
+| GBA | 45,1 | 1,74 |
+| Pampeana | 33,8 | 1,96 |
+| Noreste | 4,5 | 1,60 |
+| Noroeste | 6,8 | 1,58 |
+| Cuyo | 5,2 | 1,98 |
+| Patagonia | 4,5 | 1,85 |
 
 ## Información del mes incorporada
 
@@ -85,12 +85,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 5,33 | 8,56 | -0,11 |
 | Cuyo | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 6,53 | 11,11 | -0,15 |
 | Patagonia | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,65 | 6,21 | 0,07 |
-| GBA | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,70 | -7,26 | 0,67 |
-| Pampeana | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -2,09 | -1,43 | -0,08 |
-| Noreste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,71 | -0,39 | -0,16 |
-| Noroeste | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,35 | -5,09 | 0,48 |
-| Cuyo | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | -1,39 | -4,30 | 0,41 |
-| Patagonia | 01.1.7 | Frutas y verduras frescas en góndola (SEPA) | 1,35 | 0,69 | 0,07 |
+| GBA | 01.1.7 | Mayorista: Mercado Central | -11,27 | -7,26 | -0,48 |
+| Pampeana | 01.1.7 | Mayorista: Mercado Central | -5,44 | -1,43 | -0,49 |
+| Noreste | 01.1.7 | Mayorista: Mercado Central | -4,40 | -0,39 | -0,50 |
+| Noroeste | 01.1.7 | Mayorista: Mercado Central | -9,10 | -5,09 | -0,52 |
+| Cuyo | 01.1.7 | Mayorista: Mercado Central | -8,31 | -4,30 | -0,56 |
+| Patagonia | 01.1.7 | Mayorista: Mercado Central | -3,31 | 0,69 | -0,45 |
 | GBA | 01.1.8 | Góndolas (SEPA) | 1,68 | 1,83 | -0,01 |
 | Pampeana | 01.1.8 | Góndolas (SEPA) | 1,86 | 2,14 | -0,01 |
 | Noreste | 01.1.8 | Góndolas (SEPA) | 1,80 | 1,90 | -0,00 |

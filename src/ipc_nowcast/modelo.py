@@ -88,6 +88,9 @@ PARTE_SUPER = 0.6  # parte de cada clase de alimentos que se toma de los superme
 
 
 # ---------------------------------------------------------------- proyección estadística
+DIVISIONES_TRANSABLES = set(__import__("os").environ.get("IPC_TRANSABLES", "03,05").split(",")) - {""}
+
+
 def proyeccion_estadistica(var: pd.DataFrame, nucleo: pd.Series, mes: pd.Timestamp) -> pd.Series:
     """Proyección de la variación % de cada columna de `var` para `mes`, con datos hasta el mes anterior."""
     pasado = var[var.index < mes].dropna(how="all")
@@ -98,6 +101,17 @@ def proyeccion_estadistica(var: pd.DataFrame, nucleo: pd.Series, mes: pd.Timesta
     mismos = [m for m in pasado.index if m.month == mes.month and m.year >= 2017 and m in nuc.index]
     desvios = pd.DataFrame({m: (pasado.loc[m] - nuc.loc[m]) / max(nuc.loc[m], 0.3) for m in mismos}).T
     estac_tipica = nuc3 * (1 + desvios.median())
+    # Bienes transables (ropa, equipamiento del hogar): su precio relativo frente a la núcleo cambia de régimen
+    # (hasta 2022 subían más que la núcleo; desde 2024, menos). La estacionalidad se mide neta de la tendencia
+    # relativa de los 12 meses que terminan en cada mes, y se le suma la tendencia relativa de los últimos 12 meses.
+    cols_t = [c for c in pasado.columns if isinstance(c, tuple) and c[1] in DIVISIONES_TRANSABLES]
+    if cols_t and len(mismos):
+        rel = pasado[cols_t].sub(nuc, axis=0).div(nuc.clip(lower=0.3), axis=0)
+        tend = rel.rolling(12, min_periods=10).mean()
+        neto = (rel.loc[mismos] - tend.loc[mismos]).median()
+        ajustada = nuc3 * (1 + neto + tend.iloc[-1])
+        estac_tipica = estac_tipica.copy()
+        estac_tipica[cols_t] = ajustada.where(ajustada.notna(), estac_tipica[cols_t])
     estac_ultima = nuc3 * (1 + desvios.iloc[-1]) if len(desvios) else estac_tipica
     reglas = pd.DataFrame({"persist": persist, "med3": med3, "estac": estac_tipica, "estac_ult": estac_ultima})
     return reglas.mean(axis=1)

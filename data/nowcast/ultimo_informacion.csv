@@ -36,12 +36,12 @@ Noreste,01.1.6,Frutas y verduras frescas en góndola (SEPA),1.8551,1.0000,,01,4.
 Noroeste,01.1.6,Frutas y verduras frescas en góndola (SEPA),5.3259,1.0000,,01,8.5589,5.3259,0.0354,-0.1145,False,True,2.4420,-0.0028
 Cuyo,01.1.6,Frutas y verduras frescas en góndola (SEPA),6.5268,1.0000,,01,11.1115,6.5268,0.0327,-0.1501,False,True,1.5755,-0.0024
 Patagonia,01.1.6,Frutas y verduras frescas en góndola (SEPA),7.6529,1.0000,,01,6.2098,7.6529,0.0457,0.0660,False,True,1.2558,0.0008
-GBA,01.1.7,Frutas y verduras frescas en góndola (SEPA),-1.6996,1.0000,,01,-7.2616,-1.6996,0.1208,0.6721,False,True,11.3893,0.0765
-Pampeana,01.1.7,Frutas y verduras frescas en góndola (SEPA),-2.0886,1.0000,,01,-1.4284,-2.0886,0.1212,-0.0800,False,True,10.3799,-0.0083
-Noreste,01.1.7,Frutas y verduras frescas en góndola (SEPA),-1.7111,1.0000,,01,-0.3933,-1.7111,0.1250,-0.1647,False,True,1.6826,-0.0028
-Noroeste,01.1.7,Frutas y verduras frescas en góndola (SEPA),-1.3494,1.0000,,01,-5.0913,-1.3494,0.1288,0.4820,False,True,2.4420,0.0118
-Cuyo,01.1.7,Frutas y verduras frescas en góndola (SEPA),-1.3905,1.0000,,01,-4.3047,-1.3905,0.1403,0.4090,False,True,1.5755,0.0064
-Patagonia,01.1.7,Frutas y verduras frescas en góndola (SEPA),1.3538,1.0000,,01,0.6941,1.3538,0.1111,0.0733,False,True,1.2558,0.0009
+GBA,01.1.7,Mayorista: Mercado Central,-11.2702,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,-7.2616,-11.2702,0.1208,-0.4844,False,True,11.3893,-0.0552
+Pampeana,01.1.7,Mayorista: Mercado Central,-5.4370,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,-1.4284,-5.4370,0.1212,-0.4859,False,True,10.3799,-0.0504
+Noreste,01.1.7,Mayorista: Mercado Central,-4.4019,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,-0.3933,-4.4019,0.1250,-0.5011,False,True,1.6826,-0.0084
+Noroeste,01.1.7,Mayorista: Mercado Central,-9.0999,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,-5.0913,-9.0999,0.1288,-0.5164,False,True,2.4420,-0.0126
+Cuyo,01.1.7,Mayorista: Mercado Central,-8.3133,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,-4.3047,-8.3133,0.1403,-0.5625,False,True,1.5755,-0.0089
+Patagonia,01.1.7,Mayorista: Mercado Central,-3.3145,1.0000,"Mercado Central −11,0% este mes y +7,3% el anterior",01,0.6941,-3.3145,0.1111,-0.4454,False,True,1.2558,-0.0056
 GBA,01.1.8,Góndolas (SEPA),1.6823,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,1.8311,1.6823,0.0598,-0.0089,False,True,11.3893,-0.0010
 Pampeana,01.1.8,Góndolas (SEPA),1.8626,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",01,2.1385,1.8626,0.0447,-0.0123,False,True,10.3799,-0.0013
 Noreste,01.1.8,Góndolas (SEPA),1.7990,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.9027,1.7990,0.0262,-0.0027,False,True,1.6826,-0.0000

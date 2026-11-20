@@ -29,7 +29,7 @@ import pandas as pd
 from . import DATA
 
 DIR = DATA / "precios" / "mayoristas"
-HISTORIA_INFORMES = __import__("os").environ.get("IPC_MC_INFORMES", "0") == "1"  # probada nov-2026: no entra (ver README)
+HISTORIA_INFORMES = __import__("os").environ.get("IPC_MC_INFORMES", "1") == "1"  # entra el 20-nov-2026 (ver README)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 MC_PAGINA = "https://mercadocentral.gob.ar/informacion/precios-mayoristas"
 HACIENDA_URL = ("https://www.mercadoagroganadero.com.ar/dll/hacienda1.dll/haciinfo000002"

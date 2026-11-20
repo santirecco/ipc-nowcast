@@ -78,8 +78,19 @@ estado de cada fuente (`data/tablero/fuentes.csv`): si alguna figura como "atras
 
 ## Regla para sumar fuentes
 
-Una fuente o un cambio de método entra solo si baja el error del índice nacional fuera de muestra (cada mes del
-pasado se predice con lo que se sabía antes), mirando todo el período y no solo los meses recientes.
+**Criterio vigente (desde el 20-nov-2026).** Todo se mide fuera de muestra: cada mes del pasado se predice solo con
+lo que se sabía en ese momento, y una fuente se usa solo con datos que ya eran públicos entonces. Un cambio entra si:
+1. baja el error de su rubro (clase o división) con suficientes observaciones (regiones × meses);
+2. tiene una razón económica que lo explique (no se elige entre muchas variantes la que mejor da);
+3. no empeora el error nacional de forma estadísticamente clara (t > 2 en la diferencia mes a mes) en ningún
+   período del backtest largo.
+
+Antes se exigía que bajara el error nacional en cada período. Con 16-28 meses por período eso premia errores que se
+compensan por casualidad (en 2025-2026, subestimar verduras tapaba sobreestimar ropa y hogar) y bloquea cada
+arreglo por separado. Las pruebas anteriores al 20-nov-2026 se decidieron con la regla vieja.
+
+Regla anterior: una fuente o un cambio de método entraba solo si bajaba el error del índice nacional fuera de muestra,
+mirando todo el período y no solo los meses recientes.
 `scripts/pruebas/evaluar_candidatas.py` prueba cualquier fuente candidata con ese criterio. Probadas y descartadas
 (nov-2026): ICL para alquileres, historia 2020-2022 del Mercado Central, combinar con el REM, corregir el sesgo
 reciente, SEPA para bebidas alcohólicas, limpieza y cuidado personal, el IPC de la Ciudad por rubro para regiones
@@ -175,8 +186,8 @@ Sexta tanda (nov-2026), buscando bajar el fin de mes (0,198 en los últimos 16 m
   Coinciden con las planillas diarias de 2026 y la variación de verduras correlaciona 0,94 con INDEC. Mejora mucho
   la clase (verduras 5,2 -> 3,75 de error; ene-26: 6,4 -> 15,2 con real 28; may-26: 2,6 -> 19,0 con real 18,8) y
   saca el sesgo de alimentos (−0,09 -> −0,02), pero deja a la vista el de los bienes: el nacional empeora
-  (fin 16 meses 0,198 -> 0,207; jul-24+ 0,331 -> 0,336). No entra; queda apagada (`IPC_MC_INFORMES=1`) para
-  volver a probarla junto con una mejora en ropa y hogar (tiendas online). Con el mayorista como desvío de la
+  (fin 16 meses 0,198 -> 0,207; jul-24+ 0,331 -> 0,336; diferencia no significativa, t = 0,3). Con la regla vieja
+  no entraba; con el criterio nuevo entra junto con el ajuste de ropa y hogar (abajo). Con el mayorista como desvío de la
   temporada en vez de sumarlo (para no contar la estacionalidad dos veces): peor (0,212).
 - **Historia mayorista o de surtidor no disponible**: las planillas diarias viejas del Mercado Central no están
   (servidor solo el año en curso; archivo web hasta mediados de 2022); el histórico de surtidores de Energía en el
@@ -187,6 +198,21 @@ Sexta tanda (nov-2026), buscando bajar el fin de mes (0,198 en los últimos 16 m
   (proyección pura jul-24+ 0,462 -> 0,489), corrección del sesgo de los últimos 6/12/24 meses por división
   (ninguna variante mejora todos los períodos: la mejor baja jul-24+ pero empeora 2020-22) e inflación de bienes de
   la región como señal para ropa, hogar, recreación y cuidado personal (fin 16 meses 0,208).
+
+**Adoptado el 20-nov-2026 (criterio nuevo):**
+- **Historia del Mercado Central 2024-2025** (arriba): verduras pasa a usar el mayorista con historia desde 2024.
+- **Ropa y equipamiento del hogar: estacionalidad neta de la tendencia relativa** (`modelo.DIVISIONES_TRANSABLES`).
+  En la proyección de división, la regla de temporada compara cada rubro con la núcleo usando el desvío típico desde
+  2017; en los bienes transables ese desvío cambió de régimen (hasta 2022 subían más que la núcleo, desde 2024 menos:
+  apertura y dólar quieto). Ahora la temporada se mide neta de la tendencia relativa de 12 meses y se le suma la
+  tendencia relativa actual. Error de la división por región, modelo completo: ropa jul-24+ 1,32 -> 1,26 (sesgo
+  +0,063 -> +0,048 pp del nivel general), últimos 16 meses 1,03 -> 0,93 (sesgo +0,042 -> +0,021); hogar 0,92 -> 0,88.
+  Antes: 2018-19 igual, 2020-22 algo peor (ropa 2,04 -> 2,09), 2023-jun24 mejor. Aplicada a todos los rubros empeora:
+  solo donde está el mecanismo.
+- Resultado conjunto (nacional, fin de mes): 2018-19 1,097 -> 1,096; 2020-22 0,706 -> 0,720 (t = 1,4);
+  2023-jun24 3,470 -> 3,460; jul-24+ 0,331 -> 0,326; últimos 16 meses 0,198 -> 0,196. Ninguna diferencia es
+  significativa en contra. Inicio de mes en los últimos 16 meses 0,231 -> 0,243 y mitad 0,207 -> 0,215 (t = 1,7 y
+  1,1): sin precios del mes, el sesgo de alimentos queda menos compensado. Víspera 0,134 -> 0,145.
 
 ## Conceptos clave
 
