@@ -3,18 +3,25 @@ y hacienda (Mercado Agroganadero de Cañuelas, ex Liniers).
 
 - Mercado Central publica un archivo por día hábil con el precio de cada especie (mínimo, modal y máximo por kg).
   Se usa el precio modal promedio de cada especie ("Prom.Esp.") y se arma un índice ponderado de las especies que
-  más pesan en el IPC. La historia diaria disponible arranca en enero de 2026.
+  más pesan en el IPC. La historia diaria disponible arranca en enero de 2026. Para 2024-2025 se usan los
+  promedios mensuales por especie que publica el propio Mercado Central en sus informes mensuales (Monitoreo
+  Federal; comparan cada mes con el anterior y con el mismo mes del año previo). Coinciden con el promedio de las
+  planillas diarias (verificado en 2026). Solo dan el mes completo: a mitad de mes no hay historia.
 - El Mercado Agroganadero publica precios por categoría para cualquier rango de fechas (historia desde 2017).
   Se usa el promedio de novillitos y vaquillonas (la hacienda de consumo), ponderado por kilos.
 """
 from __future__ import annotations
 
+import functools
+import glob
 import io
 import re
+import unicodedata
 import struct
 import subprocess
 import zipfile
 from datetime import date
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -22,6 +29,7 @@ import pandas as pd
 from . import DATA
 
 DIR = DATA / "precios" / "mayoristas"
+HISTORIA_INFORMES = __import__("os").environ.get("IPC_MC_INFORMES", "0") == "1"  # probada nov-2026: no entra (ver README)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 MC_PAGINA = "https://mercadocentral.gob.ar/informacion/precios-mayoristas"
 HACIENDA_URL = ("https://www.mercadoagroganadero.com.ar/dll/hacienda1.dll/haciinfo000002"
@@ -206,6 +214,82 @@ def indice_hacienda() -> pd.Series:
     return (p.pct_change() * 100).dropna().rename("01.1.2")
 
 
+# ------------------------------------------------------------------ informes mensuales (historia 2024-2025)
+_MESES = {"ENERO": 1, "FEBRERO": 2, "MARZO": 3, "ABRIL": 4, "MAYO": 5, "JUNIO": 6, "JULIO": 7, "AGOSTO": 8,
+          "SEPTIEMBRE": 9, "SETIEMBRE": 9, "OCTUBRE": 10, "NOVIEMBRE": 11, "DICIEMBRE": 12}
+_ARCH = {"Enero": 1, "Ene": 1, "Feb": 2, "Febrero": 2, "Marzo": 3, "Abril": 4, "Mayo": 5, "Junio": 6, "Julio": 7,
+         "Agosto": 8, "Septiembre": 9, "Octubre": 10, "Oct": 10, "Nov": 11, "Noviembre": 11, "Dic": 12, "Diciembre": 12}
+_NUM = r"\$\s*(\d[\d\.]*(?:,\d+)?)"
+_FILA = re.compile(r"([A-ZÁÉÍÓÚÑ][A-ZÁÉÍÓÚÑ\.]+(?:\s[A-ZÁÉÍÓÚÑ\.]+)?)\s+" + _NUM + r"\s+" + _NUM
+                   + r"\s+(-?\d[\d\.]*(?:,\d+)?)\s*%")
+
+
+@functools.lru_cache(maxsize=1)
+def promedios_informes() -> pd.DataFrame:
+    """Precio mayorista promedio del mes por especie según los informes mensuales del Mercado Central
+    (data/precios/mayoristas/monitoreo/*.txt, los baja scripts/pruebas/monitoreo_mc.py). Tablas "mes anterior vs
+    mes" y "mismo mes del año anterior vs este año"; cada fila se valida con la variación % que trae la tabla.
+    Si dos informes dan valores distintos (más de 10%) para el mismo mes y especie, se descarta."""
+    def num(x):
+        return float(x.replace(".", "").replace(",", "."))
+    filas = []
+    for f in sorted(glob.glob(str(DIR / "monitoreo" / "*.txt"))):
+        n = f.rsplit("/", 1)[-1]
+        m = re.search(r"monitoreo-(\d\d)-(20\d\d)", n)
+        if m:
+            mf = pd.Timestamp(int(m.group(2)), int(m.group(1)), 1)
+        else:
+            m = re.search(r"Federal-([A-Za-z]+?)(\d\d)", n)
+            if not m or m.group(1) not in _ARCH:
+                continue
+            mf = pd.Timestamp(2000 + int(m.group(2)), _ARCH[m.group(1)], 1)
+        hdr, desde = None, 0
+        for i, ln in enumerate(Path(f).read_text(encoding="utf-8").splitlines()):
+            if hdr is not None and i - desde > 45:
+                hdr = None
+            if "ESPECIE" in ln:
+                ms = [_MESES[w] for w in re.findall(r"[A-Z]+", ln) if w in _MESES]
+                ys = re.findall(r"\b(20\d\d)\b", ln)
+                if re.search(r"\d{1,2}[/-]", ln):
+                    hdr = None  # precios al principio y al final del mes: no es el promedio
+                elif len(ms) >= 2:
+                    hdr = (pd.Timestamp(mf.year if ms[0] <= mf.month else mf.year - 1, ms[0], 1), pd.Timestamp(mf.year, ms[1], 1))
+                elif len(ys) >= 2:
+                    hdr = (pd.Timestamp(int(ys[0]), mf.month, 1), pd.Timestamp(int(ys[1]), mf.month, 1))
+                else:
+                    hdr = None
+                desde = i
+                continue
+            if hdr is None:
+                continue
+            for x in _FILA.finditer(ln):
+                esp, a, b, dif = x.groups()
+                a, b, dif = num(a), num(b), num(dif)
+                if a > 0 and abs((b / a - 1) * 100 - dif) < 1.5:
+                    esp = unicodedata.normalize("NFKD", esp).encode("ascii", "ignore").decode().upper().strip()
+                    filas += [(hdr[0], esp, a), (hdr[1], esp, b)]
+    if not filas:
+        return pd.DataFrame(columns=["mes", "especie", "precio"])
+    t = pd.DataFrame(filas, columns=["mes", "especie", "precio"])
+    g = t.groupby(["mes", "especie"]).precio.agg(["median", "min", "max"])
+    g = g[g["max"] / g["min"] <= 1.10]["median"].rename("precio").reset_index()
+    return g
+
+
+def _con_informes(completo: pd.DataFrame) -> pd.DataFrame:
+    """Suma a la tabla de promedios diarios (tipo, especie) x mes los meses anteriores que solo están en informes."""
+    inf = promedios_informes()
+    if inf.empty:
+        return completo
+    inf = inf[inf.mes.dt.strftime("%Y-%m") < min(completo.columns)].copy()
+    tipo = {**{k: "hortalizas" for k in PESOS_VERDURAS}, **{k: "frutas" for k in PESOS_FRUTAS}}
+    inf = inf[inf.especie.isin(tipo)]
+    inf["tipo"] = inf.especie.map(tipo)
+    inf["mes"] = inf.mes.dt.strftime("%Y-%m")
+    previo = inf.pivot_table(index=["tipo", "especie"], columns="mes", values="precio")
+    return previo.join(completo, how="outer").sort_index(axis=1)
+
+
 # ------------------------------------------------------------------ series para la calibración
 def serie_mercado_central(corte: int | None = None) -> pd.DataFrame:
     """Para cada mes: variación mayorista (verduras 01.1.7 y frutas 01.1.6) del promedio de los días del mes
@@ -218,18 +302,22 @@ def serie_mercado_central(corte: int | None = None) -> pd.DataFrame:
     d["dia"] = d.fecha.str[8:10].astype(int)
     completo = d.groupby(["tipo", "especie", "mes"]).precio_kg.mean().unstack("mes")
     parcial = (d[d.dia <= corte] if corte else d).groupby(["tipo", "especie", "mes"]).precio_kg.mean().unstack("mes")
+    if HISTORIA_INFORMES:
+        completo = _con_informes(completo)
+        if not corte:
+            parcial = completo
     filas = []
-    meses = sorted(d.mes.unique())
+    meses = sorted(completo.columns)
     for ant, act in zip(meses[:-1], meses[1:]):
-        if act not in parcial:
+        if act not in parcial or pd.Timestamp(act + "-01") - pd.Timestamp(ant + "-01") > pd.Timedelta(days=31):
             continue
         fila = {"mes": pd.Timestamp(act + "-01"), "dias": int(d[(d.mes == act) & ((d.dia <= corte) if corte else True)].fecha.nunique())}
         for tipo, clase, pesos in [("hortalizas", "01.1.7", PESOS_VERDURAS), ("frutas", "01.1.6", PESOS_FRUTAS)]:
             m = pd.concat([completo[ant].xs(tipo), parcial[act].xs(tipo)], axis=1, keys=["a", "b"]).dropna()
             m = m.loc[[k for k in pesos if k in m.index]]
-            if m.empty:
-                continue
             w = pd.Series(pesos).reindex(m.index)
+            if m.empty or w.sum() < 0.6 * sum(pesos.values()):  # pocas especies: no se inventa
+                continue
             fila[clase] = (np.exp((np.log(m.b / m.a) * w).sum() / w.sum()) - 1) * 100
         filas.append(fila)
     return pd.DataFrame(filas).set_index("mes")

@@ -162,6 +162,32 @@ Quinta tanda (nov-2026):
   pronóstico en cada momento contra el dato, error por rubro y región, y qué señales acercaron o alejaron el
   pronóstico. Sale en `reports/informe_AAAA-MM.md` y en el JSON público (`informe`).
 
+Sexta tanda (nov-2026), buscando bajar el fin de mes (0,198 en los últimos 16 meses):
+- **Diagnóstico.** La réplica es exacta (con los rubros reales da error cero): todo el error es de pronóstico de
+  rubros. Desde jul-24, alimentos y transporte explican la mayor parte de lo que se mueve mes a mes (carnes,
+  verduras y el momento de los aumentos de combustible), y los bienes transables tienen un sesgo hacia arriba
+  persistente: ropa +0,063 pp del nivel general (18 de 28 meses), equipamiento del hogar +0,043 (22 de 28),
+  transporte +0,058. En los últimos 16 meses ese sesgo (+0,09 pp sin alimentos) lo compensaba un sesgo hacia abajo
+  de alimentos (−0,09).
+- **Historia del Mercado Central 2024-2025** (`mayoristas.promedios_informes`, textos en
+  `data/precios/mayoristas/monitoreo/`, los baja `scripts/pruebas/monitoreo_mc.py`): los informes mensuales
+  Monitoreo Federal traen el precio promedio del mes por especie (mes anterior y mismo mes del año previo).
+  Coinciden con las planillas diarias de 2026 y la variación de verduras correlaciona 0,94 con INDEC. Mejora mucho
+  la clase (verduras 5,2 -> 3,75 de error; ene-26: 6,4 -> 15,2 con real 28; may-26: 2,6 -> 19,0 con real 18,8) y
+  saca el sesgo de alimentos (−0,09 -> −0,02), pero deja a la vista el de los bienes: el nacional empeora
+  (fin 16 meses 0,198 -> 0,207; jul-24+ 0,331 -> 0,336). No entra; queda apagada (`IPC_MC_INFORMES=1`) para
+  volver a probarla junto con una mejora en ropa y hogar (tiendas online). Con el mayorista como desvío de la
+  temporada en vez de sumarlo (para no contar la estacionalidad dos veces): peor (0,212).
+- **Historia mayorista o de surtidor no disponible**: las planillas diarias viejas del Mercado Central no están
+  (servidor solo el año en curso; archivo web hasta mediados de 2022); el histórico de surtidores de Energía en el
+  archivo web es de dic-2023 y el servidor no responde desde fuera del país.
+- Descartadas también: promediar las fuentes que pasan la regla en cada clase (todas o las 2 mejores; mejora el
+  inicio de mes pero empeora el fin desde jul-24: 0,331 -> 0,344/0,353), promediar solo las reglas estadísticas
+  (fin jul-24+ 0,346), estacionalidad de la proyección de división neta de la tendencia relativa de cada rubro
+  (proyección pura jul-24+ 0,462 -> 0,489), corrección del sesgo de los últimos 6/12/24 meses por división
+  (ninguna variante mejora todos los períodos: la mejor baja jul-24+ pero empeora 2020-22) e inflación de bienes de
+  la región como señal para ropa, hogar, recreación y cuidado personal (fin 16 meses 0,208).
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).
