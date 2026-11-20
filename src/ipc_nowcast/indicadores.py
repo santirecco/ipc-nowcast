@@ -113,6 +113,35 @@ def serie_nafta_promedio(corte: int | None = None) -> pd.Series:
     return ((actual / completo.shift(1, freq="MS").reindex(actual.index) - 1) * 100).dropna().rename("naftap")
 
 
+def arrastre_nafta() -> pd.Series:
+    """Arrastre del surtidor: precio del último día del mes anterior respecto del promedio de ese mes (%). Si el
+    aumento fue a fin de mes, INDEC (que compara promedios) lo registra sobre todo en el mes siguiente; esto se sabe
+    el día 1. Solo meses con foto diaria casi completa (25+ días). Índice: el mes que arrastra."""
+    partes = []
+    for nombre in ("ypf_caba_wayback.csv", "ypf_caba_diario.csv"):
+        ruta = DIR_COMB / nombre
+        if ruta.exists():
+            partes.append(pd.read_csv(ruta, parse_dates=["fecha"])[["fecha", "producto", "precio"]])
+    if not partes:
+        return pd.Series(dtype=float, name="arrn")
+    t = pd.concat(partes)
+    t = t[t.producto.isin(["Super", "Premium", "Gasoil"]) & (t.precio > 0)]
+    if t.empty:
+        return pd.Series(dtype=float, name="arrn")
+    foto = t.groupby("fecha").precio.apply(lambda x: float(np.exp(np.log(x).mean()))).sort_index()
+    dias = pd.date_range(foto.index.min(), foto.index.max(), freq="D")
+    gap = pd.Series(foto.index, index=foto.index).reindex(dias).ffill()
+    dia = foto.reindex(dias).ffill()
+    dia = dia[(dia.index - gap).dt.days <= 10]
+    mes = dia.index.to_period("M").to_timestamp()
+    n, prom, ult = dia.groupby(mes).size(), dia.groupby(mes).mean(), dia.groupby(mes).last()
+    ultimo_dia = dia.groupby(mes).apply(lambda x: x.index.max().is_month_end)
+    ok = (n >= 25) & ultimo_dia
+    v = ((ult / prom - 1) * 100)[ok]
+    v.index = v.index + pd.offsets.MonthBegin(1)
+    return v.rename("arrn")
+
+
 # ------------------------------------------------------------------ tipo de cambio
 def actualizar_dolar(desde: str = "2016-12-01") -> pd.DataFrame:
     ruta = DIR_FX / "a3500.csv"

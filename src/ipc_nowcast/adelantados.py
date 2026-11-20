@@ -50,7 +50,7 @@ OPCIONES = {
     "04.5": [["ipc"], ["ipc2"]],
     "07.1": [["autos"], ["fx"]],
     "07.3": [["ipc"], ["ipc2"]],
-    "07.2.2": [["nafta"], ["nafta", "fx"], ["naftal"], ["naftap"]],
+    "07.2.2": [["nafta"], ["nafta", "fx"], ["naftal"], ["naftap"], ["arrn"]],
     "08.3": [["ipc"], ["ipcl"], ["ipc2"], ["fx"]],
     "09.4": [["ipc"], ["sal"], ["ipcl"], ["fx"]],
     "09.5": [["ipc"], ["fx"], ["ipcl"]],
@@ -70,11 +70,11 @@ for _c in RUBRO_CLASE:
     OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
-ESTADISTICAS = {"arrm", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"arrm", "arrn", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
 # solo para el pronóstico del día 1: cuando llegan los precios del mes, mandan esos (el arrastre ya está adentro)
-SOLO_INICIO = {"arrm"}
+SOLO_INICIO = {"arrm", "arrn"}
 RUTA_AUTOS = DATA / "precios" / "autos" / "listas_0km.csv"
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
@@ -94,6 +94,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
             "arrm": "arrastre mayorista del mes anterior",
+            "arrn": "arrastre del surtidor: cómo terminó el mes pasado respecto de su promedio",
             "sepai": "precios de SEPA de los productos que mide INDEC",
             "autos": "listas de precios de autos 0 km", "sepaf": "frutas y verduras frescas en góndola (SEPA)", "sal": "salarios registrados (INDEC)",
             "ipc2": "regla de ajuste: inflación de dos meses antes + 2%",
@@ -143,6 +144,7 @@ def _otros(corte: str) -> pd.DataFrame:
     fx, fx_full = indicadores.serie_dolar(c), indicadores.serie_dolar(None)
     o = pd.DataFrame({"nafta": nafta, "fx": fx})
     o = o.join(indicadores.serie_nafta_promedio(c), how="outer")
+    o = o.join(indicadores.arrastre_nafta(), how="outer")
     o["nafta_l1"] = nafta.shift(1, freq="MS").reindex(o.index)
     o["fx_l1"] = fx_full.shift(1, freq="MS").reindex(o.index)
     tiendas = indicadores.serie_tiendas(c)
@@ -206,7 +208,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
                 ma = may_d[c + "_arr"].get(mes, np.nan) if c + "_arr" in may_d else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1, "arrm": ma,
-                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
+                              "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "arrn": ox("arrn"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
                               "ipc_l2": ipcs["l2"].get(mes, np.nan), "ipc_lag": ipcs["lag"].get(mes, np.nan),
@@ -325,6 +327,9 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         cols.append(t["nafta_l1"].astype(float) - p)
     if "naftap" in fuentes:
         cols.append(t["naftap"].astype(float) - t.proy.astype(float))
+    if "arrn" in fuentes:  # arrastre del surtidor (día 1)
+        cols.append(t["arrn"].astype(float))
+        cols.append(-t["arrn"].astype(float))
     if "tienda" in fuentes:
         cols.append(t["tienda"].astype(float) - t.proy.astype(float))
         cols.append(t["tienda_l1"].astype(float) - t.proy.astype(float))
@@ -453,6 +458,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["tienda_l1"].notna()
     if "naftap" in fuentes:
         ok &= t["naftap"].notna()
+    if "arrn" in fuentes:
+        ok &= t["arrn"].notna()
     return ok
 
 
@@ -662,6 +669,8 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
             if "arrm" in fuentes and pd.notna(f.get("arrm")):
                 det.append(f"el mayorista terminó el mes pasado {pc(f['arrm'])} respecto de cómo lo empezó" if clase != "01.1.2"
                            else f"la hacienda cerró el mes pasado {pc(f['arrm'])} sobre su promedio")
+            if "arrn" in fuentes and pd.notna(f.get("arrn")):
+                det.append(f"el surtidor cerró el mes pasado {pc(f['arrn'])} sobre su promedio")
             if "arr" in fuentes and pd.notna(f["arr"]):
                 det.append(f"a fin del mes pasado los precios quedaron {pc(f['arr'])} sobre su promedio")
             if "icl" in fuentes:

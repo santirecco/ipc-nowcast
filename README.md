@@ -223,6 +223,10 @@ pronóstico de inicio de mes (`SOLO_INICIO`): usado también a fin de mes mejora
 nacional empeoraba con t = 2,0 (destapaba el error de combustibles de mar-26). Resultado: inicio de mes jul-24+
 0,379 -> 0,356 y últimos 16 meses 0,243 -> 0,197 (mejor en 11 de 18 meses); mitad jul-24+ 0,342 -> 0,335; fin
 0,326 -> 0,320; ningún período empeora. Correlación del arrastre con la sorpresa de verduras: 0,41.
+Combustibles (`arrn`, `indicadores.arrastre_nafta`): mismo criterio con la foto diaria del surtidor (último día del
+mes anterior contra su promedio; el error de mar-26 fue un aumento de fin de mes que INDEC repartió entre marzo y
+abril). La foto diaria empezó el 18-nov-2026: el primer arrastre sale en ene-2027 y la candidata se evalúa sola cuando
+junte meses.
 
 ## Conceptos clave
 
