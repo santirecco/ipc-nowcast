@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/probar_fuentes.py
       - scripts/pruebas/wayback.py
+      - scripts/pruebas/fuentes_historia.py
       - .github/workflows/prueba_fuentes.yml
   workflow_dispatch:
 
@@ -23,10 +24,11 @@ jobs:
           python-version: "3.12"
       - run: python scripts/probar_fuentes.py || true
       - run: python scripts/pruebas/wayback.py || true
+      - run: python scripts/pruebas/fuentes_historia.py || true
       - name: Guardar resultado
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add reports/prueba_fuentes.md reports/prueba_wayback.md
+          git add reports/prueba_fuentes.md reports/prueba_wayback.md reports/prueba_historia.md
           git commit -m "Prueba de fuentes desde GitHub Actions" || exit 0
           git pull --rebase -X theirs -q && git push
