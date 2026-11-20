@@ -28,12 +28,12 @@ from .modelo import proyeccion_componente
 # premian compensaciones de suerte). El backtest reaplica esta misma regla mes a mes con los meses anteriores.
 OPCIONES = {
     "01.1.1": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"], ["maya"], ["sepa_carne", "maya"]],
+    "01.1.2": [["may"], ["sepa"], ["sepa", "may"], ["sepa_carne"], ["sepa_carne", "may"], ["arr"], ["may", "may2"], ["maya"], ["sepa_carne", "maya"], ["arrm"], ["maya", "arrm"]],
     # probadas en nov-2026 y descartadas: sumar pollo, cerdo y fiambres de SEPA (no mejoran a cortes vacunos + hacienda)
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
-    "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"]],
+    "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"], ["may", "arrm"]],
+    "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"], ["may", "arrm"]],
     # probada en nov-2026: canasta de variedades de INDEC en SEPA ("sepav"); mejora la clase pero empeora el fin de mes
     # del índice (0,191 -> 0,199 últimos 16 meses). El índice se sigue calculando a diario.
     "01.1.8": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
@@ -70,9 +70,11 @@ for _c in RUBRO_CLASE:
     OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
-ESTADISTICAS = {"ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"arrm", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
+# solo para el pronóstico del día 1: cuando llegan los precios del mes, mandan esos (el arrastre ya está adentro)
+SOLO_INICIO = {"arrm"}
 RUTA_AUTOS = DATA / "precios" / "autos" / "listas_0km.csv"
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
            "01.1.5": "Aceites, grasas y manteca", "01.1.6": "Frutas", "01.1.7": "Verduras, tubérculos y legumbres",
@@ -91,6 +93,7 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
 ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndola (SEPA)", "may": "mayorista", "nafta": "precio de surtidor (YPF)", "fx": "dólar mayorista",
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
+            "arrm": "arrastre mayorista del mes anterior",
             "sepai": "precios de SEPA de los productos que mide INDEC",
             "autos": "listas de precios de autos 0 km", "sepaf": "frutas y verduras frescas en góndola (SEPA)", "sal": "salarios registrados (INDEC)",
             "ipc2": "regla de ajuste: inflación de dos meses antes + 2%",
@@ -128,6 +131,9 @@ def _mayorista(corte: str) -> pd.DataFrame:
             out[clase + "_l1"] = mc_full[clase].shift(1, freq="MS").reindex(out.index)
     out["01.1.2"] = hac
     out["01.1.2_l1"] = hac_full.shift(1, freq="MS").reindex(out.index)
+    # arrastre del mes anterior (se conoce el día 1): Mercado Central de punta a punta y hacienda 2da quincena
+    arr = mayoristas.arrastre_mercado_central().join(mayoristas.arrastre_hacienda(), how="outer")
+    out = out.join(arr.add_suffix("_arr"), how="outer")
     return out
 
 
@@ -198,7 +204,8 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                          for k in ("pollo", "cerdo", "fiambre")}
                 m0 = may_d[c].get(mes, np.nan) if c in may_d else np.nan
                 m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
-                filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1,
+                ma = may_d[c + "_arr"].get(mes, np.nan) if c + "_arr" in may_d else np.nan
+                filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1, "arrm": ma,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
@@ -341,6 +348,9 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
     if "autos" in fuentes:
         cols.append(t["autos"].astype(float) - t.proy.astype(float))
         cols.append(t["autos_l1"].astype(float) - t.proy.astype(float))
+    if "arrm" in fuentes:  # arrastre mayorista del mes anterior
+        cols.append(t["arrm"].astype(float))
+        cols.append(-t["arrm"].astype(float))
     if "arr" in fuentes:
         cols.append(t["arr_s"].astype(float))
         cols.append(-t["arr_s"].astype(float))
@@ -408,6 +418,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["icl_a"].notna() & t["icl_m"].notna()
     if "arr" in fuentes:
         ok &= t["arr_s"].notna()
+    if "arrm" in fuentes:
+        ok &= t["arrm"].notna()
     if "sepai" in fuentes:
         ok &= t["sepai"].notna()
     if "sal" in fuentes:
@@ -566,11 +578,12 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
                                 for k, o in enumerate(el)])
                 if pr.empty:
                     continue
-                mejor = pr.sort_values("orden").drop_duplicates(["region"]).assign(solo_inicio=False)
+                normal = np.array([not (set(str(x).split("+")) & SOLO_INICIO) for x in pr.fuentes], dtype=bool)
+                mejor = pr[normal].sort_values("orden").drop_duplicates(["region"]).assign(solo_inicio=False)
                 ini = np.array([set(str(x).split("+")) <= AL_INICIO for x in pr.fuentes], dtype=bool)
                 est = pr[ini].sort_values("orden").drop_duplicates(["region"])
-                ya = set(mejor[np.array([set(str(x).split("+")) <= AL_INICIO for x in mejor.fuentes], dtype=bool)].region)
-                est = est[~est.region.isin(ya)].assign(solo_inicio=True)
+                igual = est.region.map(mejor.set_index("region").fuentes) == est.fuentes
+                est = est[~igual.values].assign(solo_inicio=True)
                 backtests.append(pd.concat([mejor, est]).assign(corte=corte)[
                     ["mes", "corte", "region", "clase", "fuentes", "real", "proy", "pred", "solo_inicio"]])
     RUTA_CALIB.write_text("# Generado por scripts/calibrar_adelantados.py: no editar a mano.\n"
@@ -625,7 +638,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         for _, f in t[t.clase == clase].iterrows():
             fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal", "ipc_l2", "sepaf"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
-                        and (not temprano or set(o["fuentes"]) <= AL_INICIO)), None)
+                        and (set(o["fuentes"]) <= AL_INICIO if temprano else not (set(o["fuentes"]) & SOLO_INICIO))), None)
             if cfg is None:
                 continue
             fuentes, b = cfg["fuentes"], np.array(cfg["coef"])
@@ -646,6 +659,9 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
                 det.append(f"inflación general {pc(f['ipc_l1'])} el mes pasado y {pc(f['ipc_p3'])} promedio de 3 meses")
             if "autos" in fuentes and pd.notna(f["autos"]):
                 det.append(f"las automotrices subieron sus listas {pc(f['autos'])} este mes y {pc(f['autos_l1'])} el anterior")
+            if "arrm" in fuentes and pd.notna(f.get("arrm")):
+                det.append(f"el mayorista terminó el mes pasado {pc(f['arrm'])} respecto de cómo lo empezó" if clase != "01.1.2"
+                           else f"la hacienda cerró el mes pasado {pc(f['arrm'])} sobre su promedio")
             if "arr" in fuentes and pd.notna(f["arr"]):
                 det.append(f"a fin del mes pasado los precios quedaron {pc(f['arr'])} sobre su promedio")
             if "icl" in fuentes:
@@ -675,8 +691,9 @@ def informacion_historica(mes: pd.Timestamp, corte: str, solo_estadistica: bool 
     if "solo_inicio" not in bt:
         bt = bt.assign(solo_inicio=False)
     est = bt.fuentes.apply(lambda x: set(str(x).split("+")) <= AL_INICIO)
-    if solo_estadistica:
-        bt = bt[est]
+    if solo_estadistica:  # la mejor opción del día 1 por región y clase (la marcada solo_inicio, si la hay)
+        bt = bt[est].sort_values("solo_inicio", ascending=False).drop_duplicates(["region", "clase"])
+        est = est.loc[bt.index]
     else:
         bt = bt[~bt.solo_inicio.astype(bool)]
     return [{"region": f.region, "componente": f.clase, "fuente": f.fuentes, "valor": float(f.pred), "parte": 1.0,

@@ -214,6 +214,16 @@ Sexta tanda (nov-2026), buscando bajar el fin de mes (0,198 en los últimos 16 m
   significativa en contra. Inicio de mes en los últimos 16 meses 0,231 -> 0,243 y mitad 0,207 -> 0,215 (t = 1,7 y
   1,1): sin precios del mes, el sesgo de alimentos queda menos compensado. Víspera 0,134 -> 0,145.
 
+**Arrastre mayorista para el pronóstico del día 1 (20-nov-2026)** (`arrm`, `mayoristas.arrastre_mercado_central` y
+`arrastre_hacienda`). Un mes que termina más caro de lo que empezó arrastra suba al siguiente, y eso se sabe el día 1.
+Verduras y frutas: variación entre el primer y el último día del mes anterior en el Mercado Central (planillas
+diarias; antes, las tablas de precio al principio y al final del mes de los informes mensuales, que coinciden con las
+planillas en ene-26). Carnes: hacienda de consumo de la segunda quincena contra el promedio del mes. Solo para el
+pronóstico de inicio de mes (`SOLO_INICIO`): usado también a fin de mes mejoraba carnes (error 1,47 -> 1,20) pero el
+nacional empeoraba con t = 2,0 (destapaba el error de combustibles de mar-26). Resultado: inicio de mes jul-24+
+0,379 -> 0,356 y últimos 16 meses 0,243 -> 0,197 (mejor en 11 de 18 meses); mitad jul-24+ 0,342 -> 0,335; fin
+0,326 -> 0,320; ningún período empeora. Correlación del arrastre con la sorpresa de verduras: 0,41.
+
 ## Conceptos clave
 
 - **Peso base**: cuánto pesa cada rubro en la canasta de INDEC (ENGHo 2004/05, llevada a dic-2016).

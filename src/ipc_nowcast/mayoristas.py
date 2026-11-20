@@ -276,6 +276,106 @@ def promedios_informes() -> pd.DataFrame:
     return g
 
 
+_MES3 = {"ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6, "jul": 7, "ago": 8, "sep": 9, "set": 9, "oct": 10,
+         "nov": 11, "dic": 12}
+
+
+@functools.lru_cache(maxsize=1)
+def puntas_informes() -> pd.DataFrame:
+    """Precio mayorista por especie al principio y al final del mes, de las tablas con fechas de los informes
+    mensuales del Mercado Central (2024-2025). Columnas: mes, especie, p_ini, p_fin."""
+    def num(x):
+        return float(x.replace(".", "").replace(",", "."))
+    filas = []
+    for f in sorted(glob.glob(str(DIR / "monitoreo" / "*.txt"))):
+        hdr, desde = None, 0
+        for i, ln in enumerate(Path(f).read_text(encoding="utf-8").splitlines()):
+            if hdr is not None and i - desde > 45:
+                hdr = None
+            if "ESPECIE" in ln:
+                a = re.findall(r"(\d{1,2})/(\d{1,2})/(20\d\d)", ln)
+                b = re.findall(r"(\d{1,2})-([a-z]{3})-(\d\d)", ln)
+                if len(a) >= 2:
+                    d = [pd.Timestamp(int(x[2]), int(x[1]), int(x[0])) for x in a[:2]]
+                elif len(b) >= 2 and all(x[1] in _MES3 for x in b[:2]):
+                    d = [pd.Timestamp(2000 + int(x[2]), _MES3[x[1]], int(x[0])) for x in b[:2]]
+                else:
+                    d = None
+                # solo si las dos fechas son del mismo mes: principio (hasta el 7) y final (desde el 24)
+                hdr = d[0].to_period("M").to_timestamp() if d and d[0].month == d[1].month and d[0].day <= 7 and d[1].day >= 24 else None
+                desde = i
+                continue
+            if hdr is None:
+                continue
+            for x in _FILA.finditer(ln):
+                esp, a_, b_, dif = x.groups()
+                a_, b_, dif = num(a_), num(b_), num(dif)
+                if a_ > 0 and abs((b_ / a_ - 1) * 100 - dif) < 1.5:
+                    esp = unicodedata.normalize("NFKD", esp).encode("ascii", "ignore").decode().upper().strip()
+                    filas.append((hdr, esp, a_, b_))
+    t = pd.DataFrame(filas, columns=["mes", "especie", "p_ini", "p_fin"])
+    return t.drop_duplicates(["mes", "especie"])
+
+
+@functools.lru_cache(maxsize=1)
+def arrastre_mercado_central() -> pd.DataFrame:
+    """Arrastre mayorista: variación del precio entre el primer y el último día del mes anterior (%, media
+    geométrica ponderada por especie). Un mes que termina más caro de lo que empezó arrastra suba al siguiente.
+    Se conoce el día 1. Índice: el mes que arrastra. Planillas diarias cuando las hay; antes, las tablas de
+    precio al principio y al final del mes de los informes mensuales (coinciden con las planillas en ene-26)."""
+    ruta = DIR / "mercado_central.csv"
+    d = pd.read_csv(ruta) if ruta.exists() else pd.DataFrame()
+    filas = []
+    if not d.empty:
+        d = d.copy()
+        d["mes"] = d.fecha.str[:7]
+        ini = d[d.fecha == d.groupby("mes").fecha.transform("min")].groupby(["especie", "mes"]).precio_kg.mean()
+        fin = d[d.fecha == d.groupby("mes").fecha.transform("max")].groupby(["especie", "mes"]).precio_kg.mean()
+        meses_d = sorted(d.mes.unique())[:-1]  # el mes en curso todavía no terminó
+        x = pd.DataFrame({"ini": ini, "fin": fin}).reset_index()
+        filas.append(x[x.mes.isin(meses_d)])
+    pun = puntas_informes()
+    if not pun.empty:
+        x = pun.rename(columns={"p_ini": "ini", "p_fin": "fin"})
+        x["mes"] = x.mes.dt.strftime("%Y-%m")
+        if filas:
+            x = x[x.mes < min(filas[0].mes)]
+        filas.append(x[["especie", "mes", "ini", "fin"]])
+    if not filas:
+        return pd.DataFrame()
+    t = pd.concat(filas)
+    t["r"] = np.log(t.fin / t.ini)
+    t = t[t.r.abs() < np.log(3)]
+    out = {}
+    for clase, pesos in (("01.1.7", PESOS_VERDURAS), ("01.1.6", PESOS_FRUTAS)):
+        x = t[t.especie.isin(pesos)].copy()
+        x["w"] = x.especie.map(pesos)
+        g = x.groupby("mes").apply(lambda g: pd.Series({"v": (g.r * g.w).sum() / g.w.sum(), "cob": g.w.sum()}),
+                                   include_groups=False)
+        g = g[g.cob >= 0.6 * sum(pesos.values())]
+        v = (np.exp(g.v) - 1) * 100
+        v.index = pd.to_datetime(v.index + "-01") + pd.offsets.MonthBegin(1)
+        out[clase] = v
+    return pd.DataFrame(out)
+
+
+def arrastre_hacienda() -> pd.Series:
+    """Arrastre de la hacienda de consumo: precio de la segunda quincena del mes anterior respecto de su promedio
+    (%). Se conoce el día 1. Índice: el mes que arrastra."""
+    rc, rq = DIR / "hacienda.csv", DIR / "hacienda_quincena.csv"
+    if not rc.exists() or not rq.exists():
+        return pd.Series(dtype=float)
+    c, q = pd.read_csv(rc), pd.read_csv(rq)
+    if "hasta" in c:  # solo meses terminados (el mes en curso todavía no arrastra nada)
+        c = c[pd.to_datetime(c.hasta).dt.is_month_end]
+    m = c.merge(q, on=["categoria", "mes"], suffixes=("", "_q"))
+    m = m[(m.kgs - m.kgs_q) > 0]
+    m2 = m.assign(promedio=(m.promedio * m.kgs - m.promedio_q * m.kgs_q) / (m.kgs - m.kgs_q), kgs=m.kgs - m.kgs_q)
+    v = (_precio_consumo(m2) / _precio_consumo(c) - 1) * 100
+    v.index = v.index + pd.offsets.MonthBegin(1)
+    return v.dropna().rename("01.1.2")
+
+
 def _con_informes(completo: pd.DataFrame) -> pd.DataFrame:
     """Suma a la tabla de promedios diarios (tipo, especie) x mes los meses anteriores que solo están en informes."""
     inf = promedios_informes()

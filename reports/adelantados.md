@@ -19,14 +19,16 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Pan y cereales | SEPA | 17 | 0,70 | 0,53 | **sí** |
 | Pan y cereales | sepa+fx | 17 | 0,70 | 0,53 | sí, si falta la anterior |
 | Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
+| Carnes y derivados | arrm | 34 | 2,94 | 2,70 | **sí** |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,46 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,47 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,55 | sí, si falta la anterior |
+| Carnes y derivados | maya+arrm | 34 | 2,94 | 2,52 | sí, si falta la anterior |
 | Carnes y derivados | SEPA | 17 | 1,92 | 1,92 | no |
 | Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,87 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,95 | no |
 | Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,92 | no |
-| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,60 | **sí** |
+| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,60 | sí, si falta la anterior |
 | Leche, lácteos y huevos | arr | 14 | 1,15 | 1,17 | no |
 | Leche, lácteos y huevos | SEPA | 17 | 1,16 | 0,68 | **sí** |
 | Leche, lácteos y huevos | sepa+fx | 17 | 1,16 | 0,68 | sí, si falta la anterior |
@@ -35,12 +37,16 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | SEPA | 17 | 1,02 | 1,03 | no |
 | Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,18 | no |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
+| Frutas | arrm | 19 | 2,66 | 2,53 | sí, si falta la anterior |
 | Frutas | mayorista | 6 | 3,57 | 3,36 | sí, si falta la anterior |
+| Frutas | may+arrm | 6 | 3,57 | 3,24 | **sí** |
 | Frutas | SEPA | 17 | 2,81 | 2,89 | no |
-| Frutas | sepaf | 18 | 2,82 | 2,54 | **sí** |
+| Frutas | sepaf | 18 | 2,82 | 2,54 | sí, si falta la anterior |
 | Frutas | sepaf+may | 2 | 4,16 | 3,41 | no |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
-| Verduras, tubérculos y legumbres | mayorista | 6 | 5,69 | 4,14 | **sí** |
+| Verduras, tubérculos y legumbres | arrm | 21 | 6,45 | 5,33 | **sí** |
+| Verduras, tubérculos y legumbres | mayorista | 6 | 5,69 | 4,14 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | may+arrm | 6 | 5,69 | 3,92 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,56 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,48 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf+may | 2 | 5,91 | 4,79 | no |
@@ -60,12 +66,14 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
-| Ropa | tiendal | 3 | 2,15 | 1,50 | no |
+| Ropa | tienda | 5 | 1,05 | 2,43 | no |
+| Ropa | tiendal | 12 | 1,83 | 1,92 | no |
 | Calzado | fx | 34 | 2,39 | 2,70 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
-| Calzado | tiendal | 3 | 1,75 | 1,43 | no |
+| Calzado | tienda | 5 | 1,60 | 3,67 | no |
+| Calzado | tiendal | 12 | 1,64 | 1,84 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
@@ -76,11 +84,13 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,37 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
+| Equipamiento del hogar | tiendal | 4 | 0,82 | 0,76 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,80 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,73 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
+| Muebles, textiles y artefactos del hogar | tiendal | 4 | 0,62 | 0,64 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 17 | 0,89 | 0,53 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
@@ -108,6 +118,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
 | Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
 | Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
+| Equipos, juguetes y turismo | tiendal | 4 | 6,35 | 6,35 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
@@ -136,9 +147,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Pan y cereales | sepa+fx | 17 | 0,70 | 0,49 | sí, si falta la anterior |
 | Pan y cereales | sepai | 18 | 0,73 | 0,56 | sí, si falta la anterior |
 | Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
+| Carnes y derivados | arrm | 34 | 2,94 | 2,70 | sí, si falta la anterior |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,50 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,51 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,56 | sí, si falta la anterior |
+| Carnes y derivados | maya+arrm | 34 | 2,94 | 2,46 | sí, si falta la anterior |
 | Carnes y derivados | SEPA | 17 | 1,92 | 1,94 | no |
 | Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,75 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,96 | no |
@@ -154,12 +167,16 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,01 | no |
 | Aceites, grasas y manteca | sepai | 18 | 0,99 | 0,77 | **sí** |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
+| Frutas | arrm | 19 | 2,66 | 2,53 | sí, si falta la anterior |
 | Frutas | mayorista | 23 | 2,76 | 2,69 | sí, si falta la anterior |
+| Frutas | may+arrm | 19 | 2,66 | 2,52 | sí, si falta la anterior |
 | Frutas | SEPA | 17 | 2,81 | 2,86 | no |
 | Frutas | sepaf | 18 | 2,82 | 2,45 | sí, si falta la anterior |
 | Frutas | sepaf+may | 18 | 2,82 | 2,43 | **sí** |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
+| Verduras, tubérculos y legumbres | arrm | 21 | 6,45 | 5,33 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | mayorista | 21 | 6,45 | 5,05 | sí, si falta la anterior |
+| Verduras, tubérculos y legumbres | may+arrm | 18 | 5,85 | 5,10 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,48 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,99 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf+may | 17 | 6,73 | 4,43 | **sí** |
@@ -182,12 +199,14 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
-| Ropa | tiendal | 3 | 2,15 | 1,50 | no |
+| Ropa | tienda | 9 | 1,33 | 2,59 | no |
+| Ropa | tiendal | 12 | 1,83 | 1,92 | no |
 | Calzado | fx | 34 | 2,39 | 2,68 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
-| Calzado | tiendal | 3 | 1,75 | 1,43 | no |
+| Calzado | tienda | 9 | 1,31 | 2,37 | no |
+| Calzado | tiendal | 12 | 1,64 | 1,84 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
@@ -198,11 +217,15 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,32 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
+| Equipamiento del hogar | tienda | 1 | 0,47 | 0,69 | no |
+| Equipamiento del hogar | tiendal | 4 | 0,82 | 0,76 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,77 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,65 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
+| Muebles, textiles y artefactos del hogar | tienda | 1 | 0,38 | 0,35 | no |
+| Muebles, textiles y artefactos del hogar | tiendal | 4 | 0,62 | 0,64 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 17 | 0,89 | 0,58 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
@@ -230,6 +253,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
 | Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
 | Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
+| Equipos, juguetes y turismo | tienda | 1 | 6,40 | 6,73 | no |
+| Equipos, juguetes y turismo | tiendal | 4 | 6,35 | 6,35 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
