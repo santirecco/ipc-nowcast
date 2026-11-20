@@ -638,6 +638,17 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         if mes in mtd.index:
             t = t.copy()
             t.loc[t.clase == "01.1.2", "may"] = float(mtd.loc[mes])
+    # mayoristas entre cortes: como con SEPA, todos los días que van del mes (no solo hasta el 15 o el 22)
+    if corte != "completo" and hoy.day > int(corte):
+        mc = mayoristas.serie_mercado_central(hoy.day)
+        t = t.copy()
+        for c in ("01.1.7", "01.1.6"):
+            if mes in mc.index and c in mc and pd.notna(mc.loc[mes, c]):
+                t.loc[t.clase == c, "may"] = float(mc.loc[mes, c])
+        if hoy.day > 15:
+            mtd = mayoristas.serie_hacienda(None)
+            if mes in mtd.index:
+                t.loc[t.clase == "01.1.2", "may"] = float(mtd.loc[mes])
     info = []
     for clase, opciones in (calib.get(corte) or {}).items():
         if isinstance(opciones, dict):

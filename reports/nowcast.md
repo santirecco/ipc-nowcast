@@ -2,13 +2,13 @@
 
 *Calculado el 20/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,8% mensual (rango probable 1,5% a 2,1%)
+## 1,7% mensual (rango probable 1,4% a 2,0%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,82** |
+| **Pronóstico** | **1,70** |
 | Solo modelo estadístico | 1,95 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,82 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,70 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -20,8 +20,8 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
-| Alimentos y bebidas no alcohólicas | 28,7 | 1,30 | 0,37 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 0,89 | 0,26 |
 | Transporte | 11,6 | 2,10 | 0,24 |
 | Recreación y cultura | 6,6 | 2,56 | 0,17 |
 | Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
@@ -37,12 +37,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,74 |
-| Pampeana | 33,8 | 1,96 |
-| Noreste | 4,5 | 1,60 |
-| Noroeste | 6,8 | 1,58 |
-| Cuyo | 5,2 | 1,98 |
-| Patagonia | 4,5 | 1,85 |
+| GBA | 45,1 | 1,65 |
+| Pampeana | 33,8 | 1,84 |
+| Noreste | 4,5 | 1,44 |
+| Noroeste | 6,8 | 1,42 |
+| Cuyo | 5,2 | 1,84 |
+| Patagonia | 4,5 | 1,74 |
 
 ## Información del mes incorporada
 
@@ -67,12 +67,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.1.1 | Góndolas (SEPA) | 1,06 | 1,10 | -0,01 |
 | Cuyo | 01.1.1 | Góndolas (SEPA) | 1,19 | 0,86 | 0,06 |
 | Patagonia | 01.1.1 | Góndolas (SEPA) | 1,50 | 1,75 | -0,04 |
-| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,48 | 2,82 | -0,11 |
-| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,26 | 2,53 | -0,10 |
-| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,11 | 1,98 | 0,05 |
-| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,89 | 1,58 | 0,12 |
-| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,61 | 2,68 | -0,02 |
-| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,81 | 1,39 | 0,15 |
+| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,06 | 2,82 | -0,25 |
+| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,84 | 2,53 | -0,26 |
+| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,69 | 1,98 | -0,13 |
+| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,47 | 1,58 | -0,04 |
+| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,20 | 2,68 | -0,18 |
+| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,40 | 1,39 | 0,00 |
 | GBA | 01.1.4 | Góndolas (SEPA) | 0,59 | -0,43 | 0,17 |
 | Pampeana | 01.1.4 | Góndolas (SEPA) | 0,73 | -0,06 | 0,10 |
 | Noreste | 01.1.4 | Góndolas (SEPA) | 0,98 | 0,08 | 0,10 |
@@ -85,12 +85,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 5,33 | 8,56 | -0,11 |
 | Cuyo | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 6,53 | 11,11 | -0,15 |
 | Patagonia | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) | 7,65 | 6,21 | 0,07 |
-| GBA | 01.1.7 | Mayorista: Mercado Central | -11,27 | -7,26 | -0,48 |
-| Pampeana | 01.1.7 | Mayorista: Mercado Central | -5,44 | -1,43 | -0,49 |
-| Noreste | 01.1.7 | Mayorista: Mercado Central | -4,40 | -0,39 | -0,50 |
-| Noroeste | 01.1.7 | Mayorista: Mercado Central | -9,10 | -5,09 | -0,52 |
-| Cuyo | 01.1.7 | Mayorista: Mercado Central | -8,31 | -4,30 | -0,56 |
-| Patagonia | 01.1.7 | Mayorista: Mercado Central | -3,31 | 0,69 | -0,45 |
+| GBA | 01.1.7 | Mayorista: Mercado Central | -13,37 | -7,26 | -0,74 |
+| Pampeana | 01.1.7 | Mayorista: Mercado Central | -7,54 | -1,43 | -0,74 |
+| Noreste | 01.1.7 | Mayorista: Mercado Central | -6,51 | -0,39 | -0,76 |
+| Noroeste | 01.1.7 | Mayorista: Mercado Central | -11,20 | -5,09 | -0,79 |
+| Cuyo | 01.1.7 | Mayorista: Mercado Central | -10,42 | -4,30 | -0,86 |
+| Patagonia | 01.1.7 | Mayorista: Mercado Central | -5,42 | 0,69 | -0,68 |
 | GBA | 01.1.8 | Góndolas (SEPA) | 1,68 | 1,83 | -0,01 |
 | Pampeana | 01.1.8 | Góndolas (SEPA) | 1,86 | 2,14 | -0,01 |
 | Noreste | 01.1.8 | Góndolas (SEPA) | 1,80 | 1,90 | -0,00 |

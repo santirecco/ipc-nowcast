@@ -227,6 +227,9 @@ Combustibles (`arrn`, `indicadores.arrastre_nafta`): mismo criterio con la foto 
 mes anterior contra su promedio; el error de mar-26 fue un aumento de fin de mes que INDEC repartió entre marzo y
 abril). La foto diaria empezó el 18-nov-2026: el primer arrastre sale en ene-2027 y la candidata se evalúa sola cuando
 junte meses.
+Entre cortes (días 16-21 y 23 a fin de mes), el pronóstico en vivo usa todos los días que van del mes del Mercado
+Central y de la hacienda, como ya hacía con SEPA (antes se cortaba en el día 15 o 22 y se ignoraban hasta 6 días).
+No cambia el backtest, que se hace con cortes fijos.
 
 ## Conceptos clave
 
