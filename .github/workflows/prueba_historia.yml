@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - scripts/pruebas/fuentes_historia.py
+      - scripts/pruebas/monitoreo_mc.py
       - .github/workflows/prueba_historia.yml
   workflow_dispatch:
 
@@ -17,11 +18,15 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/pruebas/fuentes_historia.py || true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pdfplumber
+      - run: python scripts/pruebas/monitoreo_mc.py || true
       - name: Guardar resultado
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add reports/prueba_historia.md
-          git commit -m "Prueba de historia mayorista" || exit 0
+          git add data/precios/mayoristas/monitoreo
+          git commit -m "Informes Monitoreo Federal del Mercado Central (texto)" || exit 0
           for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 10; done
