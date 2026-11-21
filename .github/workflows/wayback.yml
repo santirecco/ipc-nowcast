@@ -2,14 +2,9 @@ name: Archivo web (reconstrucción de historia)
 
 # Reconstruye historia de precios con copias del archivo web (Wayback Machine): combustibles por día y
 # (después) tiendas de ropa y electro. Corre al modificar los scripts o a mano.
+# Apagado el 21-nov-2026: las tiendas no pasaron la evaluación (ver README). Queda solo a mano.
 on:
-  push:
-    paths:
-      - scripts/wayback_tiendas.py
-      - .github/workflows/wayback.yml
   workflow_dispatch:
-  schedule:
-    - cron: "37 */6 * * *"   # sigue sola hasta terminar (si no hay nada pendiente, termina enseguida)
 
 permissions:
   contents: write

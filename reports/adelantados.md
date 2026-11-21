@@ -1,6 +1,6 @@
 # Indicadores adelantados de alimentos
 
-*Generado el 20/11/2026.*
+*Generado el 21/11/2026.*
 
 Para cada clase de alimentos se mide si los precios de góndola de todo el país (SEPA), los precios mayoristas
 de verduras y frutas (Mercado Central) y el precio de la hacienda (carne) anticipan el dato de INDEC mejor que la
@@ -66,14 +66,10 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
-| Ropa | tienda | 5 | 1,05 | 2,43 | no |
-| Ropa | tiendal | 12 | 1,83 | 1,92 | no |
 | Calzado | fx | 34 | 2,39 | 2,70 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
-| Calzado | tienda | 5 | 1,60 | 3,67 | no |
-| Calzado | tiendal | 12 | 1,64 | 1,84 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
@@ -84,13 +80,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,37 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
-| Equipamiento del hogar | tiendal | 4 | 0,82 | 0,76 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,80 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,73 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
-| Muebles, textiles y artefactos del hogar | tiendal | 4 | 0,62 | 0,64 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 17 | 0,89 | 0,53 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
@@ -118,7 +112,6 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
 | Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
 | Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
-| Equipos, juguetes y turismo | tiendal | 4 | 6,35 | 6,35 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |
@@ -199,14 +192,10 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Ropa | ipc | 34 | 2,22 | 2,34 | no |
 | Ropa | ipcl | 34 | 2,22 | 2,28 | no |
 | Ropa | sal | 34 | 2,22 | 2,35 | no |
-| Ropa | tienda | 9 | 1,33 | 2,59 | no |
-| Ropa | tiendal | 12 | 1,83 | 1,92 | no |
 | Calzado | fx | 34 | 2,39 | 2,68 | no |
 | Calzado | ipc | 34 | 2,39 | 2,31 | **sí** |
 | Calzado | ipcl | 34 | 2,39 | 2,51 | no |
 | Calzado | sal | 34 | 2,39 | 2,65 | no |
-| Calzado | tienda | 9 | 1,31 | 2,37 | no |
-| Calzado | tiendal | 12 | 1,64 | 1,84 | no |
 | Alquiler de la vivienda | icl | 34 | 2,63 | 2,37 | sí, si falta la anterior |
 | Alquiler de la vivienda | icl+ipc | 34 | 2,63 | 2,29 | sí, si falta la anterior |
 | Alquiler de la vivienda | ipc | 34 | 2,63 | 2,31 | sí, si falta la anterior |
@@ -217,15 +206,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Electricidad, gas y otros combustibles | ipc2 | 34 | 6,58 | 5,15 | sí, si falta la anterior |
 | Equipamiento del hogar | fx | 34 | 2,13 | 2,32 | no |
 | Equipamiento del hogar | sal | 34 | 2,13 | 2,39 | no |
-| Equipamiento del hogar | tienda | 1 | 0,47 | 0,69 | no |
-| Equipamiento del hogar | tiendal | 4 | 0,82 | 0,76 | no |
 | Limpieza y mantenimiento del hogar | ipc | 34 | 2,18 | 1,54 | **sí** |
 | Limpieza y mantenimiento del hogar | SEPA | 17 | 0,78 | 0,77 | no |
 | Muebles, textiles y artefactos del hogar | fx | 34 | 1,94 | 2,65 | no |
 | Muebles, textiles y artefactos del hogar | ipc | 34 | 1,94 | 2,15 | no |
 | Muebles, textiles y artefactos del hogar | sal | 34 | 1,94 | 2,14 | no |
-| Muebles, textiles y artefactos del hogar | tienda | 1 | 0,38 | 0,35 | no |
-| Muebles, textiles y artefactos del hogar | tiendal | 4 | 0,62 | 0,64 | no |
 | Medicamentos | ipc | 34 | 2,05 | 1,63 | sí, si falta la anterior |
 | Medicamentos | SEPA | 17 | 0,89 | 0,58 | **sí** |
 | Otros gastos de salud | ipc | 34 | 2,59 | 2,70 | no |
@@ -253,8 +238,6 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Equipos, juguetes y turismo | ipc | 34 | 8,80 | 8,87 | no |
 | Equipos, juguetes y turismo | ipcl | 34 | 8,80 | 8,99 | no |
 | Equipos, juguetes y turismo | sal | 34 | 8,80 | 8,87 | no |
-| Equipos, juguetes y turismo | tienda | 1 | 6,40 | 6,73 | no |
-| Equipos, juguetes y turismo | tiendal | 4 | 6,35 | 6,35 | no |
 | Educación | ipc | 34 | 3,65 | 3,65 | no |
 | Educación | ipcl | 34 | 3,65 | 3,65 | no |
 | Educación | sal | 34 | 3,65 | 3,70 | no |

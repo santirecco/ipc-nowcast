@@ -159,6 +159,10 @@ Cuarta tanda (nov-2026):
   aparece en meses seguidos, así que el índice es de ventas repetidas (efecto producto + efecto mes), recalculado mes
   a mes solo con lo que se sabría a esa fecha (`indicadores.serie_tiendas`). Candidatas `tienda` y `tiendal` en ropa,
   calzado, equipamiento del hogar y equipos/recreación: entran solas si bajan el error de su clase con 6+ meses.
+  **Evaluadas el 21-nov-2026, no entran.** Con unos 7.100 precios de 8 tiendas (2023-2026), la variación mensual no
+  se parece a la de INDEC (correlación 0,02 en ropa y −0,17 en electro/hogar, saltos de ±15%: el archivo guarda sobre
+  todo liquidaciones y promociones sueltas). En el backtest se eligió solo un mes (equipos/recreación) y el fin de mes
+  jul-24+ empeoró de 0,320 a 0,326. Candidatas sacadas de `OPCIONES` y workflow apagado (queda a mano).
 
 Quinta tanda (nov-2026):
 - **SEPA ponderado por sucursales** (lo que más se vende pesa más; también raíz y por tamaño de cadena): mejora algo
@@ -221,8 +225,10 @@ diarias; antes, las tablas de precio al principio y al final del mes de los info
 planillas en ene-26). Carnes: hacienda de consumo de la segunda quincena contra el promedio del mes. Solo para el
 pronóstico de inicio de mes (`SOLO_INICIO`): usado también a fin de mes mejoraba carnes (error 1,47 -> 1,20) pero el
 nacional empeoraba con t = 2,0 (destapaba el error de combustibles de mar-26). Resultado: inicio de mes jul-24+
-0,379 -> 0,356 y últimos 16 meses 0,243 -> 0,197 (mejor en 11 de 18 meses); mitad jul-24+ 0,342 -> 0,335; fin
-0,326 -> 0,320; ningún período empeora. Correlación del arrastre con la sorpresa de verduras: 0,41.
+0,379 -> 0,356 y últimos 16 meses 0,243 -> 0,197 (mejor en 11 de 18 meses); ningún período empeora. Corrección
+del 21-nov: la baja de mitad y fin de mes jul-24+ que se vio ese día (0,342 -> 0,335 y 0,326 -> 0,320) venía de
+que el modelo eligió la señal de tiendas para ropa en dic-24 con datos parciales; sin tiendas, mitad y fin quedan
+igual que antes (0,342 y 0,326). Correlación del arrastre con la sorpresa de verduras: 0,41.
 Combustibles (`arrn`, `indicadores.arrastre_nafta`): mismo criterio con la foto diaria del surtidor (último día del
 mes anterior contra su promedio; el error de mar-26 fue un aumento de fin de mes que INDEC repartió entre marzo y
 abril). La foto diaria empezó el 18-nov-2026: el primer arrastre sale en ene-2027 y la candidata se evalúa sola cuando

@@ -1,6 +1,6 @@
 # Backtest del modelo
 
-*Generado el 20/11/2026.*
+*Generado el 21/11/2026.*
 
 Se simula el pronóstico de cada mes usando solo la información disponible en ese momento:
 - **Inicio de mes:** solo la proyección estadística por región y división.
@@ -26,9 +26,9 @@ paralelo de los próximos meses. Los meses sin datos de SEPA (abril a junio de 2
 | jul-24 en adelante | Inicio de mes (solo estadística) | 0,36 | ±0,61 | 1,40 | 28 |
 | jul-24 en adelante | Mitad de mes (+ precios hasta el día 15) | 0,34 | ±0,51 | 1,08 | 28 |
 | jul-24 en adelante | Día 22 (+ precios hasta el día 22) | 0,33 | ±0,52 | 1,07 | 28 |
-| jul-24 en adelante | Fin de mes (+ precios del mes completo) | 0,32 | ±0,57 | 0,95 | 28 |
+| jul-24 en adelante | Fin de mes (+ precios del mes completo) | 0,33 | ±0,57 | 0,95 | 28 |
 | jul-24 en adelante | IPC CABA solo | 0,36 | ±0,58 | 1,07 | 28 |
-| jul-24 en adelante | Víspera (modelo + IPC CABA) | 0,28 | ±0,51 | 0,82 | 28 |
+| jul-24 en adelante | Víspera (modelo + IPC CABA) | 0,28 | ±0,53 | 0,82 | 28 |
 | 2025-2026 | Inicio de mes (solo estadística) | 0,34 | ±0,56 | 1,40 | 22 |
 | 2025-2026 | Mitad de mes (+ precios hasta el día 15) | 0,32 | ±0,48 | 1,08 | 22 |
 | 2025-2026 | Día 22 (+ precios hasta el día 22) | 0,31 | ±0,47 | 1,07 | 22 |
@@ -68,7 +68,7 @@ paralelo de los próximos meses. Los meses sin datos de SEPA (abril a junio de 2
 | 03/2025 | 3,7 | 2,64 | 2,75 | 2,75 | 2,78 | 3,17 | 3,05 | 108 |
 | 02/2025 | 2,4 | 2,23 | 2,67 | 2,66 | 2,63 | 2,06 | 2,23 | 108 |
 | 01/2025 | 2,2 | 2,42 | 2,71 | 2,70 | 2,79 | 3,14 | 3,03 | 108 |
-| 12/2024 | 2,7 | 2,43 | 2,81 | 2,80 | 2,74 | 3,33 | 3,15 | 114 |
+| 12/2024 | 2,7 | 2,43 | 2,99 | 2,98 | 2,91 | 3,33 | 3,20 | 108 |
 | 11/2024 | 2,4 | 2,77 | 2,97 | 2,96 | 3,03 | 3,17 | 3,13 | 108 |
 | 10/2024 | 2,7 | 3,46 | 3,35 | 3,34 | 3,36 | 3,24 | 3,28 | 108 |
 | 09/2024 | 3,5 | 4,17 | 3,99 | 3,99 | 4,03 | 4,01 | 4,02 | 120 |

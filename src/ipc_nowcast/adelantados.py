@@ -66,8 +66,9 @@ OPCIONES = {
 CLASES = list(OPCIONES)
 # tiendas online (copias del archivo web): rubro que corresponde a cada clase
 RUBRO_CLASE = {"03.1": "ropa", "03.2": "ropa", "05": "electro", "05.resto": "electro", "09.resto": "electro"}
-for _c in RUBRO_CLASE:
-    OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
+# tiendas online (archivo web): evaluadas el 21-nov-2026, no entran (ver README); la candidata queda fuera
+# for _c in RUBRO_CLASE:
+#     OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
 ESTADISTICAS = {"arrm", "arrn", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
