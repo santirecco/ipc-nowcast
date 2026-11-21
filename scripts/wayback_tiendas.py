@@ -127,9 +127,8 @@ def main():
                 print("tiempo agotado: sigue en la próxima corrida", flush=True)
                 break
             for (n, u, m, ts), p in ex.map(bajar, orden[i:i + 20]):
-                if p is None:
-                    continue  # sin precio: se reintenta en otra corrida
-                archivos[n].write(f"{u},{m},{ts},{p}\n")
+                # sin precio (página sin precio legible o copia caída): se anota vacío para no reintentarla siempre
+                archivos[n].write(f"{u},{m},{ts},{'' if p is None else p}\n")
                 archivos[n].flush()
                 hechas += 1
             print(f"{min(i + 20, len(orden))}/{len(orden)} copias ({hechas} con precio)", flush=True)
