@@ -2,42 +2,56 @@ fecha,clase,indice,nombre
 2026-11-18,01.1.1,100.000,Pan y cereales
 2026-11-19,01.1.1,99.987,Pan y cereales
 2026-11-20,01.1.1,99.603,Pan y cereales
+2026-11-21,01.1.1,99.672,Pan y cereales
 2026-11-18,01.1.2,100.000,Carnes y derivados
 2026-11-19,01.1.2,100.015,Carnes y derivados
 2026-11-20,01.1.2,99.452,Carnes y derivados
+2026-11-21,01.1.2,99.437,Carnes y derivados
 2026-11-18,01.1.4,100.000,"Leche, lácteos y huevos"
 2026-11-19,01.1.4,99.974,"Leche, lácteos y huevos"
 2026-11-20,01.1.4,99.946,"Leche, lácteos y huevos"
+2026-11-21,01.1.4,99.963,"Leche, lácteos y huevos"
 2026-11-18,01.1.5,100.000,"Aceites, grasas y manteca"
 2026-11-19,01.1.5,100.024,"Aceites, grasas y manteca"
 2026-11-20,01.1.5,100.046,"Aceites, grasas y manteca"
+2026-11-21,01.1.5,100.080,"Aceites, grasas y manteca"
 2026-11-18,01.1.6,100.000,Frutas
 2026-11-19,01.1.6,99.954,Frutas
 2026-11-20,01.1.6,99.813,Frutas
+2026-11-21,01.1.6,99.711,Frutas
 2026-11-18,01.1.7,100.000,"Verduras, tubérculos y legumbres"
 2026-11-19,01.1.7,100.015,"Verduras, tubérculos y legumbres"
 2026-11-20,01.1.7,99.206,"Verduras, tubérculos y legumbres"
+2026-11-21,01.1.7,98.667,"Verduras, tubérculos y legumbres"
 2026-11-18,01.1.8,100.000,"Azúcar, dulces, chocolate, golosinas"
 2026-11-19,01.1.8,99.956,"Azúcar, dulces, chocolate, golosinas"
 2026-11-20,01.1.8,99.971,"Azúcar, dulces, chocolate, golosinas"
+2026-11-21,01.1.8,100.053,"Azúcar, dulces, chocolate, golosinas"
 2026-11-18,01.1.resto,100.000,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-19,01.1.resto,99.982,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-20,01.1.resto,99.984,"Otros alimentos (pescados, condimentos, etc.)"
+2026-11-21,01.1.resto,100.055,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-18,01.2.1,100.000,"Café, té, yerba y cacao"
 2026-11-19,01.2.1,99.998,"Café, té, yerba y cacao"
 2026-11-20,01.2.1,99.428,"Café, té, yerba y cacao"
+2026-11-21,01.2.1,99.449,"Café, té, yerba y cacao"
 2026-11-18,01.2.2,100.000,"Aguas, gaseosas y jugos"
 2026-11-19,01.2.2,100.015,"Aguas, gaseosas y jugos"
 2026-11-20,01.2.2,100.015,"Aguas, gaseosas y jugos"
+2026-11-21,01.2.2,99.950,"Aguas, gaseosas y jugos"
 2026-11-18,02.1,100.000,Bebidas alcohólicas
 2026-11-19,02.1,100.152,Bebidas alcohólicas
 2026-11-20,02.1,100.151,Bebidas alcohólicas
+2026-11-21,02.1,100.093,Bebidas alcohólicas
 2026-11-18,05.6,100.000,Limpieza y conservación del hogar
 2026-11-19,05.6,99.970,Limpieza y conservación del hogar
 2026-11-20,05.6,99.979,Limpieza y conservación del hogar
+2026-11-21,05.6,99.989,Limpieza y conservación del hogar
 2026-11-18,06.1,100.000,Productos medicinales
 2026-11-19,06.1,100.000,Productos medicinales
 2026-11-20,06.1,100.017,Productos medicinales
+2026-11-21,06.1,100.016,Productos medicinales
 2026-11-18,12.1,100.000,Cuidado personal
 2026-11-19,12.1,100.022,Cuidado personal
 2026-11-20,12.1,100.098,Cuidado personal
+2026-11-21,12.1,100.111,Cuidado personal
