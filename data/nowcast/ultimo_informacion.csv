@@ -12,69 +12,75 @@ Pampeana,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (prome
 Pampeana,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.8438,2.3000,0.3671,0.1675,,,3.2520,0.0054
 Patagonia,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.4646,2.9467,0.6643,-0.3440,,,0.6569,-0.0023
 Patagonia,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.6212,2.3000,0.4387,0.2978,,,0.2601,0.0008
-GBA,01.1.1,Góndolas (SEPA),1.4389,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,1.5903,1.4389,0.1338,-0.0203,False,True,11.3893,-0.0023
-Pampeana,01.1.1,Góndolas (SEPA),1.1318,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes",01,1.1596,1.1318,0.1633,-0.0045,False,True,10.3799,-0.0005
-Noreste,01.1.1,Góndolas (SEPA),0.8957,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",01,0.5107,0.8957,0.1459,0.0562,False,True,1.6826,0.0009
-Noroeste,01.1.1,Góndolas (SEPA),1.0853,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes",01,1.1003,1.0853,0.1709,-0.0025,False,True,2.4420,-0.0001
-Cuyo,01.1.1,Góndolas (SEPA),1.1997,1.0000,"Góndolas de todo el país (SEPA) +1,5% en lo que va del mes",01,0.8560,1.1997,0.1792,0.0616,False,True,1.5755,0.0010
-Patagonia,01.1.1,Góndolas (SEPA),1.5194,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,1.7510,1.5194,0.1647,-0.0381,False,True,1.2558,-0.0005
-GBA,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.0609,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.8242,2.0609,0.3217,-0.2456,False,True,11.3893,-0.0280
-Pampeana,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.8435,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.5286,1.8435,0.3733,-0.2558,False,True,10.3799,-0.0265
-Noreste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.6919,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,3% en lo que va del mes",01,1.9848,1.6919,0.4369,-0.1280,False,True,1.6826,-0.0022
-Noroeste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.4737,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,5% en lo que va del mes",01,1.5814,1.4737,0.4047,-0.0436,False,True,2.4420,-0.0011
-Cuyo,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.1968,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,4% en lo que va del mes",01,2.6763,2.1968,0.3822,-0.1833,False,True,1.5755,-0.0029
-Patagonia,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.3953,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,6% en lo que va del mes",01,1.3854,1.3953,0.3611,0.0036,False,True,1.2558,0.0000
-GBA,01.1.4,Góndolas (SEPA),0.6082,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.4281,0.6082,0.1624,0.1682,False,True,11.3893,0.0192
-Pampeana,01.1.4,Góndolas (SEPA),0.7487,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.0619,0.7487,0.1239,0.1005,False,True,10.3799,0.0104
-Noreste,01.1.4,Góndolas (SEPA),1.0027,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,0.0824,1.0027,0.1131,0.1041,False,True,1.6826,0.0018
-Noroeste,01.1.4,Góndolas (SEPA),0.8985,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,0.0495,0.8985,0.0995,0.0845,False,True,2.4420,0.0021
-Cuyo,01.1.4,Góndolas (SEPA),1.2080,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",01,0.2546,1.2080,0.1141,0.1088,False,True,1.5755,0.0017
-Patagonia,01.1.4,Góndolas (SEPA),1.3012,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,0.8191,1.3012,0.1370,0.0661,False,True,1.2558,0.0008
-GBA,01.1.6,Frutas y verduras frescas en góndola (SEPA),7.0683,1.0000,,01,7.4214,7.0683,0.0477,-0.0169,False,True,11.3893,-0.0019
-Pampeana,01.1.6,Frutas y verduras frescas en góndola (SEPA),5.0720,1.0000,,01,6.5917,5.0720,0.0430,-0.0654,False,True,10.3799,-0.0068
-Noreste,01.1.6,Frutas y verduras frescas en góndola (SEPA),1.8551,1.0000,,01,4.1263,1.8551,0.0367,-0.0834,False,True,1.6826,-0.0014
-Noroeste,01.1.6,Frutas y verduras frescas en góndola (SEPA),5.3259,1.0000,,01,8.5589,5.3259,0.0354,-0.1145,False,True,2.4420,-0.0028
-Cuyo,01.1.6,Frutas y verduras frescas en góndola (SEPA),6.5268,1.0000,,01,11.1115,6.5268,0.0327,-0.1501,False,True,1.5755,-0.0024
-Patagonia,01.1.6,Frutas y verduras frescas en góndola (SEPA),7.6529,1.0000,,01,6.2098,7.6529,0.0457,0.0660,False,True,1.2558,0.0008
-GBA,01.1.7,Mayorista: Mercado Central,-13.3744,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-7.2616,-13.3744,0.1208,-0.7387,False,True,11.3893,-0.0841
-Pampeana,01.1.7,Mayorista: Mercado Central,-7.5412,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-1.4284,-7.5412,0.1212,-0.7410,False,True,10.3799,-0.0769
-Noreste,01.1.7,Mayorista: Mercado Central,-6.5062,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-0.3933,-6.5062,0.1250,-0.7642,False,True,1.6826,-0.0129
-Noroeste,01.1.7,Mayorista: Mercado Central,-11.2042,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-5.0913,-11.2042,0.1288,-0.7874,False,True,2.4420,-0.0192
-Cuyo,01.1.7,Mayorista: Mercado Central,-10.4176,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-4.3047,-10.4176,0.1403,-0.8578,False,True,1.5755,-0.0135
-Patagonia,01.1.7,Mayorista: Mercado Central,-5.4188,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,0.6941,-5.4188,0.1111,-0.6793,False,True,1.2558,-0.0085
-GBA,01.1.8,Góndolas (SEPA),1.6850,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,1.8311,1.6850,0.0598,-0.0087,False,True,11.3893,-0.0010
-Pampeana,01.1.8,Góndolas (SEPA),1.8646,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,2.1385,1.8646,0.0447,-0.0122,False,True,10.3799,-0.0013
-Noreste,01.1.8,Góndolas (SEPA),1.8030,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.9027,1.8030,0.0262,-0.0026,False,True,1.6826,-0.0000
-Noroeste,01.1.8,Góndolas (SEPA),2.1570,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,2.3475,2.1570,0.0316,-0.0060,False,True,2.4420,-0.0001
-Cuyo,01.1.8,Góndolas (SEPA),1.7753,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.8436,1.7753,0.0300,-0.0020,False,True,1.5755,-0.0000
-Patagonia,01.1.8,Góndolas (SEPA),1.6727,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,1.7843,1.6727,0.0392,-0.0044,False,True,1.2558,-0.0001
-GBA,01.2.1,Góndolas (SEPA),1.2745,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",01,1.3830,1.2745,0.0261,-0.0028,False,True,11.3893,-0.0003
-Pampeana,01.2.1,Góndolas (SEPA),1.2383,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes",01,1.9404,1.2383,0.0241,-0.0169,False,True,10.3799,-0.0018
-Noreste,01.2.1,Góndolas (SEPA),1.5374,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,1.1341,1.5374,0.0192,0.0077,False,True,1.6826,0.0001
-Noroeste,01.2.1,Góndolas (SEPA),1.5879,1.0000,"Góndolas de todo el país (SEPA) +1,5% en lo que va del mes",01,1.7010,1.5879,0.0154,-0.0017,False,True,2.4420,-0.0000
-Cuyo,01.2.1,Góndolas (SEPA),1.5372,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",01,0.6505,1.5372,0.0200,0.0177,False,True,1.5755,0.0003
-Patagonia,01.2.1,Góndolas (SEPA),1.2449,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,1.1812,1.2449,0.0231,0.0015,False,True,1.2558,0.0000
-GBA,02.1,Góndolas (SEPA),1.5710,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",02,1.9624,1.5710,0.4635,-0.1814,False,True,1.0180,-0.0018
-Pampeana,02.1,Góndolas (SEPA),1.0099,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes",02,1.1319,1.0099,0.4745,-0.0579,False,True,0.8751,-0.0005
-Noreste,02.1,Góndolas (SEPA),0.8047,1.0000,"Góndolas de todo el país (SEPA) +0,8% en lo que va del mes",02,0.7547,0.8047,0.5875,0.0294,False,True,0.1123,0.0000
-Noroeste,02.1,Góndolas (SEPA),0.8213,1.0000,"Góndolas de todo el país (SEPA) +0,7% en lo que va del mes",02,0.9285,0.8213,0.4311,-0.0462,False,True,0.1370,-0.0001
-Cuyo,02.1,Góndolas (SEPA),1.0061,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",02,0.7241,1.0061,0.3868,0.1091,False,True,0.1181,0.0001
-Patagonia,02.1,Góndolas (SEPA),1.9907,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",02,2.9014,1.9907,0.4139,-0.3770,False,True,0.1090,-0.0004
-GBA,06.1,Góndolas (SEPA),1.6623,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",06,2.2769,1.6623,0.3727,-0.2291,False,True,4.2809,-0.0098
-Pampeana,06.1,Góndolas (SEPA),1.9042,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",06,2.2920,1.9042,0.4183,-0.1622,False,True,3.2520,-0.0053
-Noreste,06.1,Góndolas (SEPA),2.7494,1.0000,"Góndolas de todo el país (SEPA) +2,8% en lo que va del mes",06,2.6669,2.7494,0.4226,0.0349,False,True,0.2777,0.0001
-Noroeste,06.1,Góndolas (SEPA),2.5033,1.0000,"Góndolas de todo el país (SEPA) +2,6% en lo que va del mes",06,2.2693,2.5033,0.4723,0.1105,False,True,0.4965,0.0005
-Cuyo,06.1,Góndolas (SEPA),2.3874,1.0000,"Góndolas de todo el país (SEPA) +2,3% en lo que va del mes",06,2.5798,2.3874,0.5067,-0.0975,False,True,0.4511,-0.0004
-Patagonia,06.1,Góndolas (SEPA),1.9898,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",06,1.9437,1.9898,0.2437,0.0112,False,True,0.2601,0.0000
+GBA,01.1.1,Góndolas (SEPA) + dólar mayorista,1.4531,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.5903,1.4531,0.1338,-0.0183,False,True,11.3893,-0.0021
+Pampeana,01.1.1,Góndolas (SEPA) + dólar mayorista,1.1553,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.1596,1.1553,0.1633,-0.0007,False,True,10.3799,-0.0001
+Noreste,01.1.1,Góndolas (SEPA) + dólar mayorista,0.9521,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,0.5107,0.9521,0.1459,0.0644,False,True,1.6826,0.0011
+Noroeste,01.1.1,Góndolas (SEPA) + dólar mayorista,1.1192,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.1003,1.1192,0.1709,0.0032,False,True,2.4420,0.0001
+Cuyo,01.1.1,Góndolas (SEPA) + dólar mayorista,1.2610,1.0000,"Góndolas de todo el país (SEPA) +1,5% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,0.8560,1.2610,0.1792,0.0726,False,True,1.5755,0.0011
+Patagonia,01.1.1,Góndolas (SEPA) + dólar mayorista,1.5323,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.7510,1.5323,0.1647,-0.0360,False,True,1.2558,-0.0005
+GBA,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.3421,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.8242,2.3421,0.3217,-0.1551,False,True,11.3893,-0.0177
+Pampeana,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.1585,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.5286,2.1585,0.3733,-0.1382,False,True,10.3799,-0.0143
+Noreste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.0364,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,3% en lo que va del mes",01,1.9848,2.0364,0.4369,0.0225,False,True,1.6826,0.0004
+Noroeste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.8610,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,5% en lo que va del mes",01,1.5814,1.8610,0.4047,0.1132,False,True,2.4420,0.0028
+Cuyo,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.5295,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,4% en lo que va del mes",01,2.6763,2.5295,0.3822,-0.0561,False,True,1.5755,-0.0009
+Patagonia,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.7731,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,6% en lo que va del mes",01,1.3854,1.7731,0.3611,0.1400,False,True,1.2558,0.0018
+GBA,01.1.4,Góndolas (SEPA),0.6491,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.4281,0.6491,0.1624,0.1749,False,True,11.3893,0.0199
+Pampeana,01.1.4,Góndolas (SEPA),0.7811,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.0619,0.7811,0.1239,0.1045,False,True,10.3799,0.0108
+Noreste,01.1.4,Góndolas (SEPA),1.0459,1.0000,"Góndolas de todo el país (SEPA) +1,8% en lo que va del mes",01,0.0824,1.0459,0.1131,0.1090,False,True,1.6826,0.0018
+Noroeste,01.1.4,Góndolas (SEPA),0.9375,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,0.0495,0.9375,0.0995,0.0884,False,True,2.4420,0.0022
+Cuyo,01.1.4,Góndolas (SEPA),1.2573,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",01,0.2546,1.2573,0.1141,0.1144,False,True,1.5755,0.0018
+Patagonia,01.1.4,Góndolas (SEPA),1.3302,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,0.8191,1.3302,0.1370,0.0700,False,True,1.2558,0.0009
+GBA,01.1.6,Frutas y verduras frescas en góndola (SEPA),5.9242,1.0000,,01,7.4214,5.9242,0.0477,-0.0715,False,True,11.3893,-0.0081
+Pampeana,01.1.6,Frutas y verduras frescas en góndola (SEPA),4.0047,1.0000,,01,6.5917,4.0047,0.0430,-0.1113,False,True,10.3799,-0.0116
+Noreste,01.1.6,Frutas y verduras frescas en góndola (SEPA),1.6714,1.0000,,01,4.1263,1.6714,0.0367,-0.0901,False,True,1.6826,-0.0015
+Noroeste,01.1.6,Frutas y verduras frescas en góndola (SEPA),5.1627,1.0000,,01,8.5589,5.1627,0.0354,-0.1203,False,True,2.4420,-0.0029
+Cuyo,01.1.6,Frutas y verduras frescas en góndola (SEPA),6.5513,1.0000,,01,11.1115,6.5513,0.0327,-0.1493,False,True,1.5755,-0.0024
+Patagonia,01.1.6,Frutas y verduras frescas en góndola (SEPA),6.5888,1.0000,,01,6.2098,6.5888,0.0457,0.0173,False,True,1.2558,0.0002
+GBA,01.1.7,Mayorista: Mercado Central,-12.7346,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-7.2616,-12.7346,0.1208,-0.6613,False,True,11.3893,-0.0753
+Pampeana,01.1.7,Mayorista: Mercado Central,-6.9014,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-1.4284,-6.9014,0.1212,-0.6634,False,True,10.3799,-0.0689
+Noreste,01.1.7,Mayorista: Mercado Central,-5.8664,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-0.3933,-5.8664,0.1250,-0.6842,False,True,1.6826,-0.0115
+Noroeste,01.1.7,Mayorista: Mercado Central,-10.5643,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-5.0913,-10.5643,0.1288,-0.7050,False,True,2.4420,-0.0172
+Cuyo,01.1.7,Mayorista: Mercado Central,-9.7777,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,-4.3047,-9.7777,0.1403,-0.7680,False,True,1.5755,-0.0121
+Patagonia,01.1.7,Mayorista: Mercado Central,-4.7789,1.0000,"Mercado Central −16,3% este mes y +7,3% el anterior",01,0.6941,-4.7789,0.1111,-0.6082,False,True,1.2558,-0.0076
+GBA,01.1.8,Góndolas (SEPA),1.6563,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,1.8311,1.6563,0.0598,-0.0104,False,True,11.3893,-0.0012
+Pampeana,01.1.8,Góndolas (SEPA),1.8060,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,2.1385,1.8060,0.0447,-0.0149,False,True,10.3799,-0.0015
+Noreste,01.1.8,Góndolas (SEPA),1.7853,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.9027,1.7853,0.0262,-0.0031,False,True,1.6826,-0.0001
+Noroeste,01.1.8,Góndolas (SEPA),2.1186,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,2.3475,2.1186,0.0316,-0.0072,False,True,2.4420,-0.0002
+Cuyo,01.1.8,Góndolas (SEPA),1.7647,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.8436,1.7647,0.0300,-0.0024,False,True,1.5755,-0.0000
+Patagonia,01.1.8,Góndolas (SEPA),1.6519,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,1.7843,1.6519,0.0392,-0.0052,False,True,1.2558,-0.0001
+GBA,01.2.1,Góndolas (SEPA),1.2744,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",01,1.3830,1.2744,0.0261,-0.0028,False,True,11.3893,-0.0003
+Pampeana,01.2.1,Góndolas (SEPA),1.2003,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes",01,1.9404,1.2003,0.0241,-0.0178,False,True,10.3799,-0.0018
+Noreste,01.2.1,Góndolas (SEPA),1.5755,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",01,1.1341,1.5755,0.0192,0.0085,False,True,1.6826,0.0001
+Noroeste,01.2.1,Góndolas (SEPA),1.5936,1.0000,"Góndolas de todo el país (SEPA) +1,6% en lo que va del mes",01,1.7010,1.5936,0.0154,-0.0017,False,True,2.4420,-0.0000
+Cuyo,01.2.1,Góndolas (SEPA),1.6101,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",01,0.6505,1.6101,0.0200,0.0192,False,True,1.5755,0.0003
+Patagonia,01.2.1,Góndolas (SEPA),1.2693,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",01,1.1812,1.2693,0.0231,0.0020,False,True,1.2558,0.0000
+GBA,01.2.2,Góndolas (SEPA) + dólar mayorista,2.1919,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,3.3468,2.1919,0.0865,-0.0999,False,True,11.3893,-0.0114
+Pampeana,01.2.2,Góndolas (SEPA) + dólar mayorista,1.3586,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.5456,1.3586,0.0653,-0.0122,False,True,10.3799,-0.0013
+Noreste,01.2.2,Góndolas (SEPA) + dólar mayorista,1.5026,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,2.1912,1.5026,0.0618,-0.0425,False,True,1.6826,-0.0007
+Noroeste,01.2.2,Góndolas (SEPA) + dólar mayorista,1.0916,1.0000,"Góndolas de todo el país (SEPA) +0,6% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.5444,1.0916,0.0844,-0.0382,False,True,2.4420,-0.0009
+Cuyo,01.2.2,Góndolas (SEPA) + dólar mayorista,1.6584,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,2.0621,1.6584,0.0712,-0.0287,False,True,1.5755,-0.0005
+Patagonia,01.2.2,Góndolas (SEPA) + dólar mayorista,1.8857,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,2.4383,1.8857,0.0747,-0.0413,False,True,1.2558,-0.0005
+GBA,02.1,Góndolas (SEPA),1.5469,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",02,1.9624,1.5469,0.4635,-0.1926,False,True,1.0180,-0.0020
+Pampeana,02.1,Góndolas (SEPA),1.0053,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes",02,1.1319,1.0053,0.4745,-0.0601,False,True,0.8751,-0.0005
+Noreste,02.1,Góndolas (SEPA),0.8225,1.0000,"Góndolas de todo el país (SEPA) +0,9% en lo que va del mes",02,0.7547,0.8225,0.5875,0.0398,False,True,0.1123,0.0000
+Noroeste,02.1,Góndolas (SEPA),0.8164,1.0000,"Góndolas de todo el país (SEPA) +0,7% en lo que va del mes",02,0.9285,0.8164,0.4311,-0.0484,False,True,0.1370,-0.0001
+Cuyo,02.1,Góndolas (SEPA),1.0396,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes",02,0.7241,1.0396,0.3868,0.1220,False,True,0.1181,0.0001
+Patagonia,02.1,Góndolas (SEPA),1.9186,1.0000,"Góndolas de todo el país (SEPA) +1,2% en lo que va del mes",02,2.9014,1.9186,0.4139,-0.4068,False,True,0.1090,-0.0004
+GBA,06.1,Góndolas (SEPA),1.6532,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",06,2.2769,1.6532,0.3727,-0.2325,False,True,4.2809,-0.0100
+Pampeana,06.1,Góndolas (SEPA),1.8982,1.0000,"Góndolas de todo el país (SEPA) +1,7% en lo que va del mes",06,2.2920,1.8982,0.4183,-0.1647,False,True,3.2520,-0.0054
+Noreste,06.1,Góndolas (SEPA),2.7556,1.0000,"Góndolas de todo el país (SEPA) +2,8% en lo que va del mes",06,2.6669,2.7556,0.4226,0.0375,False,True,0.2777,0.0001
+Noroeste,06.1,Góndolas (SEPA),2.5154,1.0000,"Góndolas de todo el país (SEPA) +2,6% en lo que va del mes",06,2.2693,2.5154,0.4723,0.1163,False,True,0.4965,0.0006
+Cuyo,06.1,Góndolas (SEPA),2.3749,1.0000,"Góndolas de todo el país (SEPA) +2,3% en lo que va del mes",06,2.5798,2.3749,0.5067,-0.1038,False,True,0.4511,-0.0005
+Patagonia,06.1,Góndolas (SEPA),1.9974,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",06,1.9437,1.9974,0.2437,0.0131,False,True,0.2601,0.0000
 GBA,07.2.2,Precio de surtidor (YPF),1.2496,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.1865,1.2496,0.4143,0.0261,False,True,5.3227,0.0014
 Pampeana,07.2.2,Precio de surtidor (YPF),1.1863,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.0782,1.1863,0.4716,0.0510,False,True,3.7729,0.0019
 Noreste,07.2.2,Precio de surtidor (YPF),1.1099,1.0000,"Surtidor YPF +1,3% el mes anterior",07,0.9474,1.1099,0.4573,0.0743,False,True,0.4731,0.0004
 Noroeste,07.2.2,Precio de surtidor (YPF),1.3211,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.3090,1.3211,0.4851,0.0059,False,True,0.5969,0.0000
 Cuyo,07.2.2,Precio de surtidor (YPF),1.2525,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.1915,1.2525,0.4662,0.0284,False,True,0.7031,0.0002
 Patagonia,07.2.2,Precio de surtidor (YPF),1.1509,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.0175,1.1509,0.4601,0.0614,False,True,0.6896,0.0004
-GBA,09.resto,Dólar mayorista,0.5271,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,-0.0658,0.5271,0.1820,0.1079,False,True,3.1594,0.0034
-Pampeana,09.resto,Dólar mayorista,2.3741,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,1.7813,2.3741,0.2008,0.1190,False,True,2.3153,0.0028
-Noreste,09.resto,Dólar mayorista,2.4244,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,1.8316,2.4244,0.0873,0.0518,False,True,0.2350,0.0001
-Noroeste,09.resto,Dólar mayorista,-0.2573,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,-0.8501,-0.2573,0.1507,0.0893,False,True,0.3536,0.0003
-Cuyo,09.resto,Dólar mayorista,6.9221,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,6.3292,6.9221,0.1735,0.1028,False,True,0.2905,0.0003
-Patagonia,09.resto,Dólar mayorista,-1.9366,1.0000,"Dólar mayorista +1,4% este mes y +0,7% el anterior",09,-2.5295,-1.9366,0.1224,0.0726,False,True,0.2746,0.0002
+GBA,09.resto,Dólar mayorista,0.5694,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,-0.0658,0.5694,0.1820,0.1156,False,True,3.1594,0.0037
+Pampeana,09.resto,Dólar mayorista,2.4165,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,1.7813,2.4165,0.2008,0.1275,False,True,2.3153,0.0030
+Noreste,09.resto,Dólar mayorista,2.4668,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,1.8316,2.4668,0.0873,0.0555,False,True,0.2350,0.0001
+Noroeste,09.resto,Dólar mayorista,-0.2149,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,-0.8501,-0.2149,0.1507,0.0957,False,True,0.3536,0.0003
+Cuyo,09.resto,Dólar mayorista,6.9644,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,6.3292,6.9644,0.1735,0.1102,False,True,0.2905,0.0003
+Patagonia,09.resto,Dólar mayorista,-1.8943,1.0000,"Dólar mayorista +1,8% este mes y +0,7% el anterior",09,-2.5295,-1.8943,0.1224,0.0777,False,True,0.2746,0.0002
