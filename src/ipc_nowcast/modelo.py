@@ -145,10 +145,11 @@ def proyeccion_componente(var: pd.DataFrame, mes: pd.Timestamp) -> pd.Series:
 # - COHERENTE (todo): el valor que la proyección de la división supone para el componente (proyección del
 #   componente + desvío de la división respecto de la suma de sus componentes). Probado para las señales de precios:
 #   empeora (fin de mes últimos 16 meses 0,198 -> 0,233), queda apagado.
-COHERENTE = False
+COHERENTE = __import__("os").environ.get("IPC_COHERENTE", "0") == "1"
 # Probado nov-2026: medir las correcciones estadísticas del día 1 contra la base coherente empeora mucho
 # (inicio de mes, últimos 16 meses: 0,240 -> 0,313). Queda apagado.
-ESTADISTICAS_COHERENTES = False
+ESTADISTICAS_COHERENTES = __import__("os").environ.get("IPC_EST_COHERENTES", "1") == "1"
+METODO_EST_COHERENTES = __import__("os").environ.get("IPC_EST_METODO", "elegida")
 # Datos casi exactos (calendario de tarifas): se miden contra el valor que la proyección de la división supone para
 # el componente, armada con medianas de 6 meses. Con el dato que midió INDEC, el error de la división en toda la
 # historia (2018-2026) queda: luz y gas 2,29 -> 1,32; transporte 1,76 -> 1,70; prepagas 1,62 -> 1,52.
@@ -413,9 +414,11 @@ class Nowcast:
                 # base de la diferencia: la proyección elegida del componente. Se probó medirla contra la mediana
                 # de 6 meses (más coherente con la proyección de la división en teoría): empeora mucho el backtest
                 # honesto (fin de mes últimos 16: 0,204 -> 0,301), así que queda la elegida.
-                if COHERENTE:
+                if COHERENTE and it.get("fuente") not in FUENTES_COHERENTES:
                     base_c = self.base_coherente(r, c, mes)
-                elif it.get("fuente") in FUENTES_COHERENTES or (ESTADISTICAS_COHERENTES and it.get("estadistica")):
+                elif ESTADISTICAS_COHERENTES and it.get("estadistica"):
+                    base_c = self.base_coherente(r, c, mes, metodo=METODO_EST_COHERENTES)
+                elif it.get("fuente") in FUENTES_COHERENTES:
                     base_c = self.base_coherente(r, c, mes, metodo="p1")
                 elif it.get("senal"):
                     base_c = self.proy_comp(r, c, mes)

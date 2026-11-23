@@ -78,7 +78,13 @@ estado de cada fuente (`data/tablero/fuentes.csv`): si alguna figura como "atras
 
 ## Regla para sumar fuentes
 
-**Criterio vigente (desde el 20-nov-2026).** Todo se mide fuera de muestra: cada mes del pasado se predice solo con
+**Criterio vigente (desde el 23-nov-2026): rubro por rubro.** El camino es bajar el error de cada rubro; el
+nacional baja como consecuencia. Un cambio entra si baja el error fuera de muestra de su rubro (clase o división, con
+la contabilidad coherente de abajo) y tiene una razón que lo explique. El nacional se mira como control, sin vetar
+mejoras de rubro por errores que dejan de compensarse. Herramientas: `/home/claude/exp/rubros.py` (clases) y
+`divs.py`/`divs_cmp.py` (divisiones en día 1, mitad y fin).
+
+**Criterio anterior (20 al 23-nov-2026).** Todo se mide fuera de muestra: cada mes del pasado se predice solo con
 lo que se sabía en ese momento, y una fuente se usa solo con datos que ya eran públicos entonces. Un cambio entra si:
 1. baja el error de su rubro (clase o división) con suficientes observaciones (regiones × meses);
 2. tiene una razón económica que lo explique (no se elige entre muchas variantes la que mejor da);
@@ -245,6 +251,29 @@ del mes vale en todos los momentos; solo, sigue siendo solo del día 1). Carnes 
 jul-24+ 0,334 -> 0,318, fin 0,326 -> 0,327, últimos 16 meses fin 0,196 -> 0,204, mitad 0,215 -> 0,223.
 SEPA de carne vacuna reacciona menos que la carnicería (dic-24 +4,5% contra +8,2%; feb-25 +4,4% contra +7,9%): el
 coeficiente puede amplificarla (hasta 3).
+
+**Rubro por rubro (23-nov-2026).** Ranking de rubros por error aportado a fin de mes (últimos 16 meses): tarifas
+04.5 (0,126 pp), carnes (0,105), combustibles (0,102), verduras (0,087), turismo/juguetes (0,086), ropa (0,077),
+restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
+- **Contabilidad coherente para las correcciones estadísticas** (`modelo.ESTADISTICAS_COHERENTES`, base `elegida`):
+  cada corrección reemplaza la parte del rubro dentro de la proyección de la división, en vez de sumarse encima.
+  Sin esto, la inercia de ropa se sumaba al ajuste de transables de la división (doble conteo: sesgo de ropa
+  +0,021 -> −0,025).
+- **Inercia propia** (`propio`: mes anterior y promedio de 3 meses del rubro) como candidata en todos los rubros
+  (menos combustibles) y combinada con SEPA (`sepa+propio`): precios regulados o indexados suben en escalones
+  parecidos. Prepagas 1,26 -> 0,34; ropa 1,19 -> 1,00; calzado 1,50 -> 1,22; medicamentos 0,59 -> 0,46 (día 1).
+- **Prepagas** como rubro a pronosticar (desde 2024 aumentan según la inflación de dos meses antes).
+- **Combustibles a fin de mes sin el precio de cierre** (`NAFTA_FIN_DE_MES = False`): sin saber el día del aumento
+  exageraba los meses con aumentos tardíos (mar-26: 19% contra 7%). Rubro 16m 2,03 -> 1,49.
+- **Arrastre solo también a mitad de mes** (`ARRASTRE_A_MITAD`): verduras mitad 4,77 -> 4,27, frutas 2,95 -> 2,72.
+  Combinaciones `may+arrm` y `sepaf+may+arrm` disponibles (a día 22 verduras sigue eligiendo el arrastre: en los 6
+  meses comparables 3,40 contra 3,96 del Mercado Central del mes).
+- Resultado por división (error medio, puntos de la división): fin de mes 16m 0,770 -> 0,634, jul-24+ 1,041 -> 0,816;
+  día 1 16m 0,763 -> 0,664. Sumando el aporte de cada división: fin 16m 0,696 -> 0,573 (−18%), jul-24+ 0,965 -> 0,752
+  (−22%). Nacional: fin 16m 0,204 -> 0,197; jul-24+ 0,327 -> 0,359; día 1 16m 0,197 -> 0,246 (sesgo −0,10: tarifas
+  subestimadas en el backtest, que no tiene el calendario de resoluciones; en vivo sí lo usa). Pendiente: reconstruir
+  el calendario histórico de tarifas para medir bien 04.5, y verduras a mitad de mes (se arregla solo cuando el
+  Mercado Central diario junte meses).
 
 Entre cortes (días 16-21 y 23 a fin de mes), el pronóstico en vivo usa todos los días que van del mes del Mercado
 Central y de la hacienda, como ya hacía con SEPA (antes se cortaba en el día 15 o 22 y se ignoraban hasta 6 días).

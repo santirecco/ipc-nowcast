@@ -33,8 +33,8 @@ OPCIONES = {
     # probadas en nov-2026 y descartadas: sumar pollo, cerdo y fiambres de SEPA (no mejoran a cortes vacunos + hacienda)
     "01.1.4": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
     "01.1.5": [["sepa"], ["fx"], ["sepa", "fx"], ["arr"], ["sepai"]],
-    "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"]],
-    "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"]],
+    "01.1.6": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"], ["sepaf", "arrm"]],
+    "01.1.7": [["sepa"], ["may"], ["arr"], ["sepaf"], ["sepaf", "may"], ["arrm"], ["sepaf", "arrm"]],
     # probada en nov-2026: canasta de variedades de INDEC en SEPA ("sepav"); mejora la clase pero empeora el fin de mes
     # del índice (0,191 -> 0,199 últimos 16 meses). El índice se sigue calculando a diario.
     "01.1.8": [["sepa"], ["sepa", "fx"], ["arr"], ["sepai"]],
@@ -64,6 +64,20 @@ OPCIONES = {
     "09.resto": [["ipc"], ["fx"], ["sal"], ["ipcl"]],
     "12.resto": [["ipc"], ["sal"], ["fx"]],
 }
+# prepagas: desde 2024 aumentan según la inflación de dos meses antes
+OPCIONES.setdefault("06.4.1", [["ipc"], ["ipcl"], ["ipc2"]])
+# inercia propia: candidata en todos los rubros (cada uno decide con su error fuera de muestra)
+# (no en combustibles: tiene su propio precio medido y la inercia gana por ruido de selección)
+for _c in OPCIONES:
+    if _c != "07.2.2":
+        OPCIONES[_c] = OPCIONES[_c] + [["propio"]]
+# dato del mes combinado con inercia o arrastre: la regresión reparte el peso (no elegir entre una y otra)
+for _c, _ops in list(OPCIONES.items()):
+    for _f in ("sepa", "sepai"):
+        if [_f] in _ops and _c != "07.2.2":
+            OPCIONES[_c] = OPCIONES[_c] + [[_f, "propio"]]
+for _c in ("01.1.6", "01.1.7"):
+    OPCIONES[_c] = OPCIONES[_c] + [["may", "arrm"], ["sepaf", "may", "arrm"]]
 CLASES = list(OPCIONES)
 # tiendas online (copias del archivo web): rubro que corresponde a cada clase
 RUBRO_CLASE = {"03.1": "ropa", "03.2": "ropa", "05": "electro", "05.resto": "electro", "09.resto": "electro"}
@@ -72,16 +86,23 @@ RUBRO_CLASE = {"03.1": "ropa", "03.2": "ropa", "05": "electro", "05.resto": "ele
 #     OPCIONES[_c] = OPCIONES[_c] + [["tienda"], ["tiendal"]]
 MIN_MESES_ELEGIR = 6  # meses evaluados mínimos para decidir si una fuente sirve
 T_MINIMO = 0.0  # se probó exigir t >= 2 (nov-2026): descartaba demasiadas fuentes y empeoraba mitad y fin de mes
-ESTADISTICAS = {"arrm", "arrn", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
+ESTADISTICAS = {"propio", "arrm", "arrn", "ipc", "icl", "arr", "sal", "ipc2", "ipcl", "alim1"}  # fuentes que no son datos del mes sino una mejor estimación con la historia
 # fuentes que se conocen el día 1 del mes (se pueden usar al inicio): las estadísticas y las listas de autos 0 km
 AL_INICIO = ESTADISTICAS | {"autos"}
 # solo para el pronóstico del día 1: cuando llegan los precios del mes, mandan esos (el arrastre ya está adentro)
 SOLO_INICIO = {"arrm", "arrn"}
+# precio de surtidor del cierre del mes: sin saber el día del aumento, exagera los meses con aumentos tardíos
+NAFTA_FIN_DE_MES = os.environ.get("IPC_NAFTA_FIN", "0") == "1"
+# arrastre solo (sin datos del mes) también con el mes parcial
+ARRASTRE_A_MITAD = os.environ.get("IPC_ARRASTRE_MITAD", "1") == "1"
 
 
-def _solo_inicio(fuentes) -> bool:
-    """Opción de arrastre sin datos del mes: solo para el día 1 (combinada con datos del mes vale siempre)."""
+def _solo_inicio(fuentes, corte: str = "completo") -> bool:
+    """Opción de arrastre sin datos del mes: no se usa con el mes completo (mandan los precios del mes). Con
+    ARRASTRE_A_MITAD también vale con el mes parcial. Combinada con datos del mes vale siempre."""
     f = set(fuentes)
+    if ARRASTRE_A_MITAD and corte != "completo":
+        return False
     return bool(f & SOLO_INICIO) and f <= AL_INICIO
 RUTA_AUTOS = DATA / "precios" / "autos" / "listas_0km.csv"
 NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4": "Leche, lácteos y huevos",
@@ -93,7 +114,7 @@ NOMBRES = {"01.1.1": "Pan y cereales", "01.1.2": "Carnes y derivados", "01.1.4":
            "05.6": "Limpieza y mantenimiento del hogar", "06.1": "Medicamentos", "08.3": "Telefonía e internet",
            "09.5": "Diarios, libros y papelería", "11.1": "Restaurantes y comidas fuera del hogar", "12.1": "Cuidado personal",
            "10": "Educación", "09.4": "Servicios recreativos y culturales",
-           "04.5": "Electricidad, gas y otros combustibles", "07.3": "Transporte público",
+           "04.5": "Electricidad, gas y otros combustibles", "07.3": "Transporte público", "06.4.1": "Prepagas",
            "01.1.resto": "Otros alimentos (pescados, condimentos, comidas listas)", "04.1.resto": "Agua, expensas y otros gastos de la vivienda",
            "04.resto": "Mantenimiento de la vivienda y otros", "05.resto": "Muebles, textiles y artefactos del hogar",
            "06.resto": "Otros gastos de salud", "08.resto": "Equipos y servicios postales", "09.resto": "Equipos, juguetes y turismo",
@@ -102,6 +123,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "ipc": "inflación reciente", "icl": "índice de contratos de alquiler (ICL)",
             "arr": "arrastre del mes anterior (SEPA)",
             "arrm": "arrastre mayorista del mes anterior",
+            "propio": "inercia del propio rubro (mes anterior y últimos 3 meses)",
             "hacr": "hacienda de este mes y del anterior (la carnicería la sigue con rezago)",
             "arrn": "arrastre del surtidor: cómo terminó el mes pasado respecto de su promedio",
             "sepai": "precios de SEPA de los productos que mide INDEC",
@@ -208,6 +230,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 if vap_d[(r, c)] is None:
                     continue
                 real = vap_d[(r, c)].get(mes, np.nan)
+                hist = [vap_d[(r, c)].get(mes - pd.offsets.MonthBegin(k), np.nan) for k in (1, 2, 3)]
                 p = nc.base_comp_mes(r, c, mes)
                 s = sepa_d.get((mes, r, c), np.nan)
                 sc = sepa_d.get((mes, r, "01.1.2v"), np.nan) if c == "01.1.2" else np.nan
@@ -217,6 +240,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
                 ma = may_d[c + "_arr"].get(mes, np.nan) if c + "_arr" in may_d else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1, "arrm": ma,
+                              "prop_l1": hist[0], "prop_p3": float(np.mean(hist)) if not np.isnan(hist).any() else np.nan,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "arrn": ox("arrn"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
                               "ipc_l1": ipcs["l1"].get(mes, np.nan), "ipc_p3": ipcs["p3"].get(mes, np.nan),
@@ -335,7 +359,7 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         # a mitad de mes no se sabe todavía el precio de fin de mes: solo el cambio del mes anterior (arrastre)
         # forma "reemplazo": el precio de surtidor reemplaza a la proyección, repartido entre este mes y el anterior
         p = t.proy.astype(float)
-        if (t.corte == "completo").any():
+        if (t.corte == "completo").any() and NAFTA_FIN_DE_MES:
             cols.append(t["nafta"].astype(float) - p)
         cols.append(t["nafta_l1"].astype(float) - p)
     if "naftap" in fuentes:
@@ -376,6 +400,10 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         p = t.proy.astype(float)
         cols.append(t["icl_a"].astype(float) - p)
         cols.append(t["icl_m"].astype(float) - p)
+    if "propio" in fuentes:  # inercia del propio rubro: mes anterior y promedio de 3 meses (precios regulados/indexados)
+        p = t.proy.astype(float)
+        cols.append(t["prop_l1"].astype(float) - p)
+        cols.append(t["prop_p3"].astype(float) - p)
     if "ipc" in fuentes:
         p = t.proy.astype(float)
         cols.append(t["ipc_l1"].astype(float) - p)
@@ -432,6 +460,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["fx"].notna() & t["fx_l1"].notna()
     if "ipc" in fuentes:
         ok &= t["ipc_l1"].notna() & t["ipc_p3"].notna()
+    if "propio" in fuentes:
+        ok &= t["prop_l1"].notna() & t["prop_p3"].notna()
     if "icl" in fuentes:
         ok &= t["icl_a"].notna() & t["icl_m"].notna()
     if "arr" in fuentes:
@@ -600,7 +630,7 @@ def calibrar(nc) -> tuple[dict, pd.DataFrame, pd.DataFrame]:
                                 for k, o in enumerate(el)])
                 if pr.empty:
                     continue
-                normal = np.array([not _solo_inicio(str(x).split("+")) for x in pr.fuentes], dtype=bool)
+                normal = np.array([not _solo_inicio(str(x).split("+"), corte) for x in pr.fuentes], dtype=bool)
                 mejor = pr[normal].sort_values("orden").drop_duplicates(["region"]).assign(solo_inicio=False)
                 ini = np.array([set(str(x).split("+")) <= AL_INICIO for x in pr.fuentes], dtype=bool)
                 est = pr[ini].sort_values("orden").drop_duplicates(["region"])
@@ -671,7 +701,7 @@ def informacion(nc, mes: pd.Timestamp, hoy: pd.Timestamp | None = None) -> list[
         for _, f in t[t.clase == clase].iterrows():
             fila = f.to_frame().T.astype({k: float for k in ["sepa", "sepa_carne", "may", "may_l1", "proy", "tend", "nafta", "nafta_l1", "fx", "fx_l1", "ipc_l1", "ipc_p3", "icl_a", "icl_m", "arr", "autos", "autos_l1", "sal", "ipc_l2", "sepaf"]})
             cfg = next((o for o in opciones if _disponibles(fila.assign(real=0.0), o["fuentes"]).iloc[0]
-                        and (set(o["fuentes"]) <= AL_INICIO if temprano else not _solo_inicio(o["fuentes"]))), None)
+                        and (set(o["fuentes"]) <= AL_INICIO if temprano else not _solo_inicio(o["fuentes"], corte))), None)
             if cfg is None:
                 continue
             fuentes, b = cfg["fuentes"], np.array(cfg["coef"])
