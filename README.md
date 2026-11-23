@@ -274,6 +274,9 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   subestimadas en el backtest, que no tiene el calendario de resoluciones; en vivo sí lo usa). Pendiente: reconstruir
   el calendario histórico de tarifas para medir bien 04.5, y verduras a mitad de mes (se arregla solo cuando el
   Mercado Central diario junte meses).
+- Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
+  Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
+  nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.
 
 Entre cortes (días 16-21 y 23 a fin de mes), el pronóstico en vivo usa todos los días que van del mes del Mercado
 Central y de la hacienda, como ya hacía con SEPA (antes se cortaba en el día 15 o 22 y se ignoraban hasta 6 días).
