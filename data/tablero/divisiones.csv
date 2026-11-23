@@ -1,10 +1,10 @@
 division,nombre,variacion,peso,incidencia,cobertura
-01,Alimentos y bebidas no alcohólicas,0.423,28.725,0.121,0.961
-02,Bebidas alcohólicas y tabaco,1.564,2.37,0.037,0.466
+01,Alimentos y bebidas no alcohólicas,0.427,28.725,0.122,0.961
+02,Bebidas alcohólicas y tabaco,1.568,2.37,0.037,0.466
 03,Prendas de vestir y calzado,1.201,6.558,0.079,0.0
 04,"Vivienda, agua, electricidad, gas y otros combustibles",2.539,10.907,0.277,0.37
 05,Equipamiento y mantenimiento del hogar,2.247,5.024,0.113,0.0
-06,Salud,1.764,9.018,0.159,0.792
+06,Salud,1.765,9.018,0.159,0.792
 07,Transporte,1.98,11.558,0.229,0.873
 08,Comunicación,2.087,2.635,0.055,0.0
 09,Recreación y cultura,2.572,6.628,0.17,0.181

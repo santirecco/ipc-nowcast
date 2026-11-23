@@ -1,12 +1,12 @@
 fuente,que_aporta,ultimo_dato,frecuencia,estado
 INDEC,Dato oficial y pesos de la canasta,2026-10-31,mensual (día ~12),al día
 IPC Ciudad de Buenos Aires,Anticipo del dato nacional (víspera),2026-10-31,mensual,al día
-SEPA (Precios Claros),"Precios de góndola de ~17 cadenas, todo el país",2026-11-22,diaria,al día
-Supermercados online,Precios del GBA con stock,2026-11-22,diaria,al día
-Tiendas de ropa y electrónica,Se juntan desde nov-2026; se prueban cuando haya historia,2026-11-22,diaria,al día
+SEPA (Precios Claros),"Precios de góndola de ~17 cadenas, todo el país",2026-11-23,diaria,al día
+Supermercados online,Precios del GBA con stock,2026-11-23,diaria,al día
+Tiendas de ropa y electrónica,Se juntan desde nov-2026; se prueban cuando haya historia,2026-11-23,diaria,al día
 Mercado Central,Verduras y frutas mayoristas,2026-11-20,diaria (días hábiles),al día
-Hacienda (Cañuelas),Precio del ganado: anticipa la carne,2026-11-22,diaria,al día
-Combustibles (YPF),Precio en surtidor,2026-11-22,diaria,al día
+Hacienda (Cañuelas),Precio del ganado: anticipa la carne,2026-11-23,diaria,al día
+Combustibles (YPF),Precio en surtidor,2026-11-23,diaria,al día
 Dólar mayorista (BCRA),Se prueba como señal; hoy no se usa,2026-11-20,diaria,al día
 REM del BCRA,Expectativa de los analistas (relevamiento mensual),2026-10-31,mensual,al día
 Calendario de tarifas,Aumentos anunciados (revisión automática los lunes),2026-12-31,semanal,al día
