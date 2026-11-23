@@ -1,6 +1,6 @@
 # Indicadores adelantados de alimentos
 
-*Generado el 21/11/2026.*
+*Generado el 23/11/2026.*
 
 Para cada clase de alimentos se mide si los precios de góndola de todo el país (SEPA), los precios mayoristas
 de verduras y frutas (Mercado Central) y el precio de la hacienda (carne) anticipan el dato de INDEC mejor que la
@@ -19,7 +19,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Pan y cereales | SEPA | 17 | 0,70 | 0,53 | **sí** |
 | Pan y cereales | sepa+fx | 17 | 0,70 | 0,53 | sí, si falta la anterior |
 | Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
-| Carnes y derivados | arrm | 34 | 2,94 | 2,70 | **sí** |
+| Carnes y derivados | arrm | 34 | 2,94 | 2,70 | sí, si falta la anterior |
+| Carnes y derivados | hacr | 34 | 2,94 | 1,68 | sí, si falta la anterior |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,46 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,47 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,55 | sí, si falta la anterior |
@@ -27,8 +28,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Carnes y derivados | SEPA | 17 | 1,92 | 1,92 | no |
 | Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,87 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,95 | no |
+| Carnes y derivados | sepa_carne+hacr | 18 | 1,90 | 1,22 | **sí** |
+| Carnes y derivados | sepa_carne+hacr+arrm | 18 | 1,90 | 1,15 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,92 | no |
 | Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,60 | sí, si falta la anterior |
+| Carnes y derivados | sepa_carne+maya+arrm | 18 | 1,90 | 1,28 | sí, si falta la anterior |
 | Leche, lácteos y huevos | arr | 14 | 1,15 | 1,17 | no |
 | Leche, lácteos y huevos | SEPA | 17 | 1,16 | 0,68 | **sí** |
 | Leche, lácteos y huevos | sepa+fx | 17 | 1,16 | 0,68 | sí, si falta la anterior |
@@ -37,16 +41,14 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Aceites, grasas y manteca | SEPA | 17 | 1,02 | 1,03 | no |
 | Aceites, grasas y manteca | sepa+fx | 17 | 1,02 | 1,18 | no |
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
-| Frutas | arrm | 19 | 2,66 | 2,53 | sí, si falta la anterior |
+| Frutas | arrm | 19 | 2,66 | 2,53 | **sí** |
 | Frutas | mayorista | 6 | 3,57 | 3,36 | sí, si falta la anterior |
-| Frutas | may+arrm | 6 | 3,57 | 3,24 | **sí** |
 | Frutas | SEPA | 17 | 2,81 | 2,89 | no |
 | Frutas | sepaf | 18 | 2,82 | 2,54 | sí, si falta la anterior |
 | Frutas | sepaf+may | 2 | 4,16 | 3,41 | no |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
 | Verduras, tubérculos y legumbres | arrm | 21 | 6,45 | 5,33 | **sí** |
 | Verduras, tubérculos y legumbres | mayorista | 6 | 5,69 | 4,14 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | may+arrm | 6 | 5,69 | 3,92 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,56 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 5,48 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf+may | 2 | 5,91 | 4,79 | no |
@@ -141,6 +143,7 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Pan y cereales | sepai | 18 | 0,73 | 0,56 | sí, si falta la anterior |
 | Carnes y derivados | arr | 14 | 1,82 | 1,77 | sí, si falta la anterior |
 | Carnes y derivados | arrm | 34 | 2,94 | 2,70 | sí, si falta la anterior |
+| Carnes y derivados | hacr | 34 | 2,94 | 1,94 | sí, si falta la anterior |
 | Carnes y derivados | mayorista | 34 | 2,94 | 2,50 | sí, si falta la anterior |
 | Carnes y derivados | may+may2 | 34 | 2,94 | 2,51 | sí, si falta la anterior |
 | Carnes y derivados | maya | 34 | 2,94 | 2,56 | sí, si falta la anterior |
@@ -148,8 +151,11 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Carnes y derivados | SEPA | 17 | 1,92 | 1,94 | no |
 | Carnes y derivados | SEPA + mayorista | 17 | 1,92 | 1,75 | sí, si falta la anterior |
 | Carnes y derivados | sepa_carne | 18 | 1,90 | 1,96 | no |
+| Carnes y derivados | sepa_carne+hacr | 18 | 1,90 | 1,27 | sí, si falta la anterior |
+| Carnes y derivados | sepa_carne+hacr+arrm | 18 | 1,90 | 1,13 | **sí** |
 | Carnes y derivados | sepa_carne+may | 18 | 1,90 | 1,80 | sí, si falta la anterior |
-| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,58 | **sí** |
+| Carnes y derivados | sepa_carne+maya | 18 | 1,90 | 1,58 | sí, si falta la anterior |
+| Carnes y derivados | sepa_carne+maya+arrm | 18 | 1,90 | 1,23 | sí, si falta la anterior |
 | Leche, lácteos y huevos | arr | 14 | 1,15 | 1,17 | no |
 | Leche, lácteos y huevos | SEPA | 17 | 1,16 | 0,73 | **sí** |
 | Leche, lácteos y huevos | sepa+fx | 17 | 1,16 | 0,73 | sí, si falta la anterior |
@@ -162,14 +168,12 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Frutas | arr | 14 | 2,63 | 2,70 | no |
 | Frutas | arrm | 19 | 2,66 | 2,53 | sí, si falta la anterior |
 | Frutas | mayorista | 23 | 2,76 | 2,69 | sí, si falta la anterior |
-| Frutas | may+arrm | 19 | 2,66 | 2,52 | sí, si falta la anterior |
 | Frutas | SEPA | 17 | 2,81 | 2,86 | no |
 | Frutas | sepaf | 18 | 2,82 | 2,45 | sí, si falta la anterior |
 | Frutas | sepaf+may | 18 | 2,82 | 2,43 | **sí** |
 | Verduras, tubérculos y legumbres | arr | 14 | 5,71 | 6,14 | no |
 | Verduras, tubérculos y legumbres | arrm | 21 | 6,45 | 5,33 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | mayorista | 21 | 6,45 | 5,05 | sí, si falta la anterior |
-| Verduras, tubérculos y legumbres | may+arrm | 18 | 5,85 | 5,10 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | SEPA | 17 | 6,73 | 6,48 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf | 18 | 6,83 | 4,99 | sí, si falta la anterior |
 | Verduras, tubérculos y legumbres | sepaf+may | 17 | 6,73 | 4,43 | **sí** |

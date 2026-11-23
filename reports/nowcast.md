@@ -2,13 +2,13 @@
 
 *Calculado el 23/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,7% mensual (rango probable 1,4% a 1,9%)
+## 1,6% mensual (rango probable 1,3% a 1,8%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,68** |
+| **Pronóstico** | **1,55** |
 | Solo modelo estadístico | 1,95 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,68 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,55 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -21,11 +21,11 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
-| Alimentos y bebidas no alcohólicas | 28,7 | 0,88 | 0,25 |
 | Transporte | 11,6 | 1,98 | 0,23 |
 | Recreación y cultura | 6,6 | 2,57 | 0,17 |
 | Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
 | Salud | 9,0 | 1,76 | 0,16 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 0,42 | 0,12 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 2,25 | 0,11 |
 | Bienes y servicios varios | 3,4 | 2,93 | 0,10 |
 | Prendas de vestir y calzado | 6,6 | 1,20 | 0,08 |
@@ -37,12 +37,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,60 |
-| Pampeana | 33,8 | 1,83 |
-| Noreste | 4,5 | 1,42 |
-| Noroeste | 6,8 | 1,50 |
-| Cuyo | 5,2 | 1,85 |
-| Patagonia | 4,5 | 1,71 |
+| GBA | 45,1 | 1,50 |
+| Pampeana | 33,8 | 1,69 |
+| Noreste | 4,5 | 1,21 |
+| Noroeste | 6,8 | 1,31 |
+| Cuyo | 5,2 | 1,68 |
+| Patagonia | 4,5 | 1,57 |
 
 ## Información del mes incorporada
 
@@ -69,12 +69,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,12 | 1,10 | 0,00 |
 | Cuyo | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,26 | 0,86 | 0,07 |
 | Patagonia | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,53 | 1,75 | -0,04 |
-| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,95 | 2,82 | -0,28 |
-| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,77 | 2,53 | -0,28 |
-| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,65 | 1,98 | -0,15 |
-| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,47 | 1,58 | -0,04 |
-| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,14 | 2,68 | -0,20 |
-| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,38 | 1,39 | -0,00 |
+| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,70 | 2,82 | -0,68 |
+| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,55 | 2,53 | -0,74 |
+| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,35 | 1,98 | -0,71 |
+| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,17 | 1,58 | -0,57 |
+| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,74 | 2,68 | -0,74 |
+| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,08 | 1,39 | -0,47 |
 | GBA | 01.1.4 | Góndolas (SEPA) | 0,65 | -0,43 | 0,17 |
 | Pampeana | 01.1.4 | Góndolas (SEPA) | 0,78 | -0,06 | 0,10 |
 | Noreste | 01.1.4 | Góndolas (SEPA) | 1,05 | 0,08 | 0,11 |

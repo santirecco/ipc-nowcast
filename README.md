@@ -233,6 +233,19 @@ Combustibles (`arrn`, `indicadores.arrastre_nafta`): mismo criterio con la foto 
 mes anterior contra su promedio; el error de mar-26 fue un aumento de fin de mes que INDEC repartió entre marzo y
 abril). La foto diaria empezó el 18-nov-2026: el primer arrastre sale en ene-2027 y la candidata se evalúa sola cuando
 junte meses.
+**Carnes: hacienda en forma de reemplazo (23-nov-2026)** (`hacr`). A fin de mes carnes andaba peor que el día 1
+(error 1,47 contra 1,21 en los últimos 16 meses): la hacienda entraba como desvío de su tendencia sumado a la
+proyección de temporada, y así se perdía la señal (correlación con la sorpresa ≈ 0). Pero la carnicería sigue el
+nivel de la hacienda con un mes de rezago (correlación de la hacienda del mes anterior con la carne de INDEC: 0,80;
+nov-25 hacienda +15% -> carne +5,7% y +8,2% en dic). Ahora la hacienda de este mes y del anterior reemplaza en parte
+a la proyección (como el surtidor en combustibles), sola o con SEPA de cortes frescos (la mejor señal de góndola:
+0,61 con la sorpresa; pollo, cerdo y fiambres no suman) y con el arrastre del mes anterior (que combinado con datos
+del mes vale en todos los momentos; solo, sigue siendo solo del día 1). Carnes a fin de mes: jul-24+ 1,66 -> 1,29,
+últimos 16 meses 1,47 -> 1,07; mitad de mes 1,77 -> 1,38. Nacional, todo dentro del ruido (|t| < 0,6): día 22
+jul-24+ 0,334 -> 0,318, fin 0,326 -> 0,327, últimos 16 meses fin 0,196 -> 0,204, mitad 0,215 -> 0,223.
+SEPA de carne vacuna reacciona menos que la carnicería (dic-24 +4,5% contra +8,2%; feb-25 +4,4% contra +7,9%): el
+coeficiente puede amplificarla (hasta 3).
+
 Entre cortes (días 16-21 y 23 a fin de mes), el pronóstico en vivo usa todos los días que van del mes del Mercado
 Central y de la hacienda, como ya hacía con SEPA (antes se cortaba en el día 15 o 22 y se ignoraban hasta 6 días).
 No cambia el backtest, que se hace con cortes fijos.
