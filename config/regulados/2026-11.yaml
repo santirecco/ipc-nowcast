@@ -27,14 +27,14 @@ items:
     confianza: media
     fuente: https://www.diariojornada.com.ar/426187/economia/en_noviembre_vuelven_a_aumentan_las_tarifas_de_luz_y_gas
 
-  - nombre: Colectivos CABA y Provincia de Bs. As. (líneas nacionales sin cambios)
+  - nombre: Colectivos CABA (+3,93%, Res. 231/SECT/2026) y Provincia de Bs. As. (+5,02%), promedio
     componente: "07.3"
     parte: 0.45
     regiones: [GBA]
-    variacion: 3.9
+    variacion: 4.48
     vigencia: "2026-11-01"
     confianza: media
-    fuente: https://www.iprofesional.com/finanzas/467732-aumenta-el-transporte-en-noviembre-cuanto-costara-viajar-en-colectivo-y-subte.amp
+    fuente: https://revistacolectibondi.com.ar/2026/10/31/colectivos-del-amba-caba-oficializo-el-aumento-de-noviembre-y-el-boleto-minimo-llegara-a-95669/
 
   - nombre: Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios)
     componente: "07.3"
@@ -45,11 +45,56 @@ items:
     confianza: media
     fuente: https://www.canal26.com/economia/2026/10/30/colectivos-el-gobierno-aumentara-los-subsidios-y-definio-que-pasara-con-el-boleto-en-el-amba/
 
-  - nombre: Prepagas (promedio de las principales)
+  - nombre: Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)
     componente: "06.4.1"
     parte: 1.0
     regiones: [GBA, Pampeana, Noreste, Noroeste, Cuyo, Patagonia]
-    variacion: 2.3
+    variacion: 2.1
     vigencia: "2026-11-01"
     confianza: media
-    fuente: https://www.canal26.com/economia/2026/10/28/noviembre-llega-con-aumentos-en-transporte-alquileres-prepagas-y-mas-cuanto-suben-los-servicios/
+    fuente: https://www.infobae.com/economia/2026/11/02/noviembre-llega-con-aumentos-en-transporte-salud-alquileres-y-servicios/
+
+  - nombre: Subte de Buenos Aires ($1.817 a $1.887; 2% + IPC septiembre)
+    componente: "07.3"
+    parte: 0.10
+    regiones: [GBA]
+    variacion: 3.85
+    vigencia: "2026-11-01"
+    confianza: alta
+    fuente: https://boletinoficial.buenosaires.gob.ar/normativaba/norma/884083
+
+  - nombre: Trenes metropolitanos AMBA (sin cambios desde septiembre)
+    componente: "07.3"
+    parte: 0.10
+    regiones: [GBA]
+    variacion: 0.0
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://perfil.com/economia/aumentos-en-el-transporte-desde-noviembre-cuanto-cuesta-viajar-en-colectivo-subte-y-autopistas-aSRC61M76kfH
+
+  - nombre: Taxis CABA (bajada de bandera $1.920 a $2.550, Decreto 373/2026; Provincia sin dato)
+    componente: "07.3"
+    parte: 0.05
+    regiones: [GBA]
+    variacion: 32.8
+    vigencia: "2026-11-01"
+    confianza: alta
+    fuente: https://boletinoficial.buenosaires.gob.ar/normativaba/norma/885043
+
+  - nombre: Cuotas de colegios privados (CABA 2,7% promedio, Provincia hasta 3%)
+    componente: "10"
+    parte: 0.5
+    regiones: [GBA]
+    variacion: 2.85
+    vigencia: "2026-11-01"
+    confianza: media
+    fuente: https://www.iprofesional.com/actualidad/467559-aumentan-las-cuotas-de-colegios-privados-en-noviembre-y-diciembre
+
+  - nombre: Pan francés Tucumán (Centro Industriales Panaderos, +5%)
+    componente: "01.1.1"
+    parte: 0.3
+    regiones: [Noroeste]
+    variacion: 5.0
+    vigencia: "2026-11-02"
+    confianza: media
+    fuente: https://www.agencianova.com/interior-del-pais/2026/11/11/175124/aumenta-el-pan-en-tucuman-el-kilo-de-frances-llegara-a-los-4200-pesos/

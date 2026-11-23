@@ -1,14 +1,14 @@
 # Pronóstico IPC noviembre 2026
 
-*Calculado el 22/11/2026. Último dato oficial de INDEC: octubre 2026.*
+*Calculado el 23/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,7% mensual (rango probable 1,5% a 2,0%)
+## 1,7% mensual (rango probable 1,4% a 1,9%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,73** |
+| **Pronóstico** | **1,68** |
 | Solo modelo estadístico | 1,95 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,73 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,68 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -20,59 +20,61 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
-| Alimentos y bebidas no alcohólicas | 28,7 | 1,00 | 0,29 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,54 | 0,28 |
-| Transporte | 11,6 | 2,10 | 0,24 |
+| Alimentos y bebidas no alcohólicas | 28,7 | 0,88 | 0,25 |
+| Transporte | 11,6 | 1,98 | 0,23 |
 | Recreación y cultura | 6,6 | 2,57 | 0,17 |
 | Restaurantes y hoteles | 10,9 | 1,55 | 0,17 |
-| Salud | 9,0 | 1,84 | 0,17 |
+| Salud | 9,0 | 1,76 | 0,16 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 2,25 | 0,11 |
 | Bienes y servicios varios | 3,4 | 2,93 | 0,10 |
 | Prendas de vestir y calzado | 6,6 | 1,20 | 0,08 |
 | Comunicación | 2,6 | 2,09 | 0,06 |
+| Educación | 2,2 | 1,92 | 0,04 |
 | Bebidas alcohólicas y tabaco | 2,4 | 1,56 | 0,04 |
-| Educación | 2,2 | 1,57 | 0,03 |
 
 ## Por región
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,65 |
-| Pampeana | 33,8 | 1,88 |
-| Noreste | 4,5 | 1,51 |
-| Noroeste | 6,8 | 1,49 |
-| Cuyo | 5,2 | 1,90 |
-| Patagonia | 4,5 | 1,78 |
+| GBA | 45,1 | 1,60 |
+| Pampeana | 33,8 | 1,83 |
+| Noreste | 4,5 | 1,42 |
+| Noroeste | 6,8 | 1,50 |
+| Cuyo | 5,2 | 1,85 |
+| Patagonia | 4,5 | 1,71 |
 
 ## Información del mes incorporada
 
 | Región | Componente | Fuente | Dato % | Proyección estadística % | Efecto en la división (pp) |
 |---|---|---|---|---|---|
 | Cuyo | 04.5 | calendario de regulados | 2,17 | 3,26 | -0,30 |
-| Cuyo | 06.4.1 | calendario de regulados | 2,30 | 1,77 | 0,16 |
+| Cuyo | 06.4.1 | calendario de regulados | 2,10 | 1,77 | 0,10 |
 | GBA | 04.5 | calendario de regulados | 2,98 | 2,01 | 0,47 |
-| GBA | 06.4.1 | calendario de regulados | 2,30 | 1,68 | 0,27 |
-| GBA | 07.3 | calendario de regulados | 2,34 | 3,09 | -0,18 |
+| GBA | 06.4.1 | calendario de regulados | 2,10 | 1,68 | 0,18 |
+| GBA | 07.3 | calendario de regulados | 4,04 | 3,09 | 0,31 |
+| GBA | 10 | calendario de regulados | 2,85 | 1,71 | 0,57 |
 | Noreste | 04.5 | calendario de regulados | 2,17 | 2,04 | 0,04 |
-| Noreste | 06.4.1 | calendario de regulados | 2,30 | 2,24 | 0,02 |
+| Noreste | 06.4.1 | calendario de regulados | 2,10 | 2,24 | -0,05 |
+| Noroeste | 01.1.1 | calendario de regulados | 4,83 | 1,54 | 0,17 |
 | Noroeste | 04.5 | calendario de regulados | 2,17 | 2,37 | -0,06 |
-| Noroeste | 06.4.1 | calendario de regulados | 2,30 | 1,84 | 0,13 |
+| Noroeste | 06.4.1 | calendario de regulados | 2,10 | 1,84 | 0,07 |
 | Pampeana | 04.5 | calendario de regulados | 2,17 | 3,62 | -0,37 |
-| Pampeana | 06.4.1 | calendario de regulados | 2,30 | 1,84 | 0,17 |
+| Pampeana | 06.4.1 | calendario de regulados | 2,10 | 1,84 | 0,09 |
 | Patagonia | 04.5 | calendario de regulados | 2,17 | 3,46 | -0,34 |
-| Patagonia | 06.4.1 | calendario de regulados | 2,30 | 1,62 | 0,30 |
+| Patagonia | 06.4.1 | calendario de regulados | 2,10 | 1,62 | 0,21 |
 | GBA | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,45 | 1,59 | -0,02 |
 | Pampeana | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,16 | 1,16 | -0,00 |
 | Noreste | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 0,95 | 0,51 | 0,06 |
 | Noroeste | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,12 | 1,10 | 0,00 |
 | Cuyo | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,26 | 0,86 | 0,07 |
 | Patagonia | 01.1.1 | Góndolas (SEPA) + dólar mayorista | 1,53 | 1,75 | -0,04 |
-| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,34 | 2,82 | -0,16 |
-| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,16 | 2,53 | -0,14 |
-| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,04 | 1,98 | 0,02 |
-| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,86 | 1,58 | 0,11 |
-| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,53 | 2,68 | -0,06 |
-| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,77 | 1,39 | 0,14 |
+| GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,95 | 2,82 | -0,28 |
+| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,77 | 2,53 | -0,28 |
+| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,65 | 1,98 | -0,15 |
+| Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,47 | 1,58 | -0,04 |
+| Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 2,14 | 2,68 | -0,20 |
+| Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas) | 1,38 | 1,39 | -0,00 |
 | GBA | 01.1.4 | Góndolas (SEPA) | 0,65 | -0,43 | 0,17 |
 | Pampeana | 01.1.4 | Góndolas (SEPA) | 0,78 | -0,06 | 0,10 |
 | Noreste | 01.1.4 | Góndolas (SEPA) | 1,05 | 0,08 | 0,11 |
@@ -121,6 +123,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 06.1 | Góndolas (SEPA) | 2,52 | 2,27 | 0,12 |
 | Cuyo | 06.1 | Góndolas (SEPA) | 2,37 | 2,58 | -0,10 |
 | Patagonia | 06.1 | Góndolas (SEPA) | 2,00 | 1,94 | 0,01 |
+| GBA | 07.1 | Listas de precios de autos 0 km | 0,93 | 3,19 | -0,60 |
+| Pampeana | 07.1 | Listas de precios de autos 0 km | 0,80 | 0,81 | -0,01 |
+| Noreste | 07.1 | Listas de precios de autos 0 km | 0,85 | 1,68 | -0,23 |
+| Noroeste | 07.1 | Listas de precios de autos 0 km | 0,79 | 0,71 | 0,02 |
+| Cuyo | 07.1 | Listas de precios de autos 0 km | 0,80 | 0,95 | -0,04 |
+| Patagonia | 07.1 | Listas de precios de autos 0 km | 0,82 | 1,26 | -0,17 |
 | GBA | 07.2.2 | Precio de surtidor (YPF) | 1,25 | 1,19 | 0,03 |
 | Pampeana | 07.2.2 | Precio de surtidor (YPF) | 1,19 | 1,08 | 0,05 |
 | Noreste | 07.2.2 | Precio de surtidor (YPF) | 1,11 | 0,95 | 0,07 |

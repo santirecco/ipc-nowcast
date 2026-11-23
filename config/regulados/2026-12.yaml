@@ -9,7 +9,25 @@ items:
     variacion: 4.1
     vigencia: "2026-12-01"
     confianza: media
-    fuente: https://www.econoblog.com.ar/?p=161204
+    fuente: https://www.econoblog.com.ar/161204/nuevo-aumento-a-los-boletos-de-colectivos-en-diciembre-de-2026/
+
+  - nombre: Subte de Buenos Aires ($1.887 a ~$1.967; fórmula 2% + IPC octubre 2,2%, Res. SBASE 153/2026)
+    componente: "07.3"
+    parte: 0.10
+    regiones: [GBA]
+    variacion: 4.2
+    vigencia: "2026-12-01"
+    confianza: media
+    fuente: https://www.zonanortehoy.com/economia/aumentan-los-colectivos-en-diciembre-el-boleto-minimo-superaria-los-1-300-en-provincia-y-rozaria-los-1-000-en-caba/
+
+  - nombre: Cuotas de colegios privados (CABA 2,7% preacuerdo, Provincia 3%)
+    componente: "10"
+    parte: 0.5
+    regiones: [GBA]
+    variacion: 2.85
+    vigencia: "2026-12-01"
+    confianza: media
+    fuente: https://www.iprofesional.com/actualidad/467559-aumentan-las-cuotas-de-colegios-privados-en-noviembre-y-diciembre
 
   - nombre: Prepagas (estimación - suelen ajustar por el último IPC publicado)
     componente: "06.4.1"
@@ -18,4 +36,4 @@ items:
     variacion: 2.2
     vigencia: "2026-12-01"
     confianza: baja
-    fuente: "estimación: IPC octubre 2026 = 2,2% (reemplazar cuando las prepagas publiquen sus aumentos)"
+    fuente: "estimación: IPC octubre 2026 = 2,2% (reemplazar cuando las prepagas publiquen sus aumentos; al 23/11 solo hay cifras sin fuente en medios menores)"

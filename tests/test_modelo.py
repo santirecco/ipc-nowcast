@@ -46,5 +46,8 @@ def test_mes_anterior_solo_aporta_arrastre():
     a = pd.read_parquet(DATA / "processed" / "indec_aperturas.parquet")
     nc = modelo.Nowcast(d, a, None)
     info = nc.informacion_del_mes(pd.Timestamp("2026-12-01"), usar_super=False)
-    assert not [i for i in info if i["fuente"] == "arrastre del mes anterior"]
+    # solo pueden dejar arrastre los ítems de noviembre que entraron después del día 1
+    tardios = {it["nombre"] for it in modelo.leer_regulados(pd.Timestamp("2026-11-01"))
+               if pd.Timestamp(it["vigencia"]).day > 1}
+    assert not [i for i in info if i["fuente"] == "arrastre del mes anterior" and i["detalle"] not in tardios]
     assert all(i["valor"] > 0 for i in info)

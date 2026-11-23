@@ -1,29 +1,31 @@
 region,componente,fuente,valor,parte,detalle,division,proyeccion_estadistica,con_informacion,peso_en_division,efecto_en_division_pp,estadistica,senal,peso_celda_%,efecto_nacional_pp
 Cuyo,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.2611,2.8246,0.6923,-0.3021,,,0.6046,-0.0018
-Cuyo,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.7703,2.3000,0.2978,0.1577,,,0.4511,0.0007
+Cuyo,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,1.7703,2.1000,0.2978,0.0982,,,0.4511,0.0004
 GBA,04.5,calendario de regulados,2.9805,0.9500,"Electricidad AMBA (Edenor/Edesur, promedio); Gas natural por redes (promedio nacional)",04,2.0125,2.9321,0.5158,0.4743,,,4.9983,0.0237
-GBA,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.6804,2.3000,0.4363,0.2703,,,4.2809,0.0116
-GBA,07.3,calendario de regulados,2.3400,0.7500,"Colectivos CABA y Provincia de Bs. As. (líneas nacionales sin cambios); Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios)",07,3.0893,2.5273,0.3209,-0.1803,,,5.3227,-0.0096
+GBA,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,1.6804,2.1000,0.4363,0.1831,,,4.2809,0.0078
+GBA,07.3,calendario de regulados,4.0410,1.0000,"Colectivos CABA (+3,93%, Res. 231/SECT/2026) y Provincia de Bs. As. (+5,02%), promedio; Colectivos de jurisdicción nacional AMBA (sin aumento, cubierto con subsidios); Subte de Buenos Aires ($1.817 a $1.887; 2% + IPC septiembre); Trenes metropolitanos AMBA (sin cambios desde septiembre); Taxis CABA (bajada de bandera $1.920 a $2.550, Decreto 373/2026; Provincia sin dato)",07,3.0893,4.0410,0.3209,0.3054,,,5.3227,0.0163
+GBA,10,calendario de regulados,2.8500,0.5000,"Cuotas de colegios privados (CABA 2,7% promedio, Provincia hasta 3%)",10,1.7077,2.2789,1.0000,0.5711,,,1.3572,0.0078
 Noreste,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,2.0446,2.0948,0.7058,0.0354,,,0.5904,0.0002
-Noreste,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,2.2378,2.3000,0.3336,0.0207,,,0.2777,0.0001
+Noreste,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,2.2378,2.1000,0.3336,-0.0460,,,0.2777,-0.0001
+Noroeste,01.1.1,calendario de regulados,4.8333,0.3000,"Pan francés Tucumán (Centro Industriales Panaderos, +5%)",01,1.5409,2.5287,0.1709,0.1688,,,2.4420,0.0041
 Noroeste,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,2.3740,2.2924,0.7767,-0.0634,,,0.7246,-0.0005
-Noroeste,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.8397,2.3000,0.2755,0.1268,,,0.4965,0.0006
+Noroeste,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,1.8397,2.1000,0.2755,0.0717,,,0.4965,0.0004
 Pampeana,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.6187,3.0392,0.6438,-0.3731,,,3.3320,-0.0124
-Pampeana,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.8438,2.3000,0.3671,0.1675,,,3.2520,0.0054
+Pampeana,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,1.8438,2.1000,0.3671,0.0941,,,3.2520,0.0031
 Patagonia,04.5,calendario de regulados,2.1700,0.4000,Gas natural por redes (promedio nacional),04,3.4646,2.9467,0.6643,-0.3440,,,0.6569,-0.0023
-Patagonia,06.4.1,calendario de regulados,2.3000,1.0000,Prepagas (promedio de las principales),06,1.6212,2.3000,0.4387,0.2978,,,0.2601,0.0008
+Patagonia,06.4.1,calendario de regulados,2.1000,1.0000,"Prepagas (OSDE 1,7-2,2%, Swiss Medical 2,3%, Galeno 2,2%, Medifé 1,9%; promedio)",06,1.6212,2.1000,0.4387,0.2101,,,0.2601,0.0005
 GBA,01.1.1,Góndolas (SEPA) + dólar mayorista,1.4531,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.5903,1.4531,0.1338,-0.0183,False,True,11.3893,-0.0021
 Pampeana,01.1.1,Góndolas (SEPA) + dólar mayorista,1.1553,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.1596,1.1553,0.1633,-0.0007,False,True,10.3799,-0.0001
 Noreste,01.1.1,Góndolas (SEPA) + dólar mayorista,0.9521,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,0.5107,0.9521,0.1459,0.0644,False,True,1.6826,0.0011
-Noroeste,01.1.1,Góndolas (SEPA) + dólar mayorista,1.1192,1.0000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.1003,1.1192,0.1709,0.0032,False,True,2.4420,0.0001
+Noroeste,01.1.1,Góndolas (SEPA) + dólar mayorista,1.1192,0.7000,"Góndolas de todo el país (SEPA) +1,1% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.1003,1.1135,0.1709,0.0023,False,True,2.4420,0.0001
 Cuyo,01.1.1,Góndolas (SEPA) + dólar mayorista,1.2610,1.0000,"Góndolas de todo el país (SEPA) +1,5% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,0.8560,1.2610,0.1792,0.0726,False,True,1.5755,0.0011
 Patagonia,01.1.1,Góndolas (SEPA) + dólar mayorista,1.5323,1.0000,"Góndolas de todo el país (SEPA) +1,3% en lo que va del mes; dólar mayorista +1,8% este mes y +0,7% el anterior",01,1.7510,1.5323,0.1647,-0.0360,False,True,1.2558,-0.0005
-GBA,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.3421,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.8242,2.3421,0.3217,-0.1551,False,True,11.3893,-0.0177
-Pampeana,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.1585,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.5286,2.1585,0.3733,-0.1382,False,True,10.3799,-0.0143
-Noreste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.0364,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,3% en lo que va del mes",01,1.9848,2.0364,0.4369,0.0225,False,True,1.6826,0.0004
-Noroeste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.8610,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,5% en lo que va del mes",01,1.5814,1.8610,0.4047,0.1132,False,True,2.4420,0.0028
-Cuyo,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.5295,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,4% en lo que va del mes",01,2.6763,2.5295,0.3822,-0.0561,False,True,1.5755,-0.0009
-Patagonia,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.7731,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,6% en lo que va del mes",01,1.3854,1.7731,0.3611,0.1400,False,True,1.2558,0.0018
+GBA,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.9538,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.8242,1.9538,0.3217,-0.2800,False,True,11.3893,-0.0319
+Pampeana,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.7702,1.0000,"Cortes de carne fresca en góndola (SEPA) +0,7% en lo que va del mes",01,2.5286,1.7702,0.3733,-0.2831,False,True,10.3799,-0.0294
+Noreste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.6481,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,3% en lo que va del mes",01,1.9848,1.6481,0.4369,-0.1471,False,True,1.6826,-0.0025
+Noroeste,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.4727,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,5% en lo que va del mes",01,1.5814,1.4727,0.4047,-0.0440,False,True,2.4420,-0.0011
+Cuyo,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",2.1412,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,4% en lo que va del mes",01,2.6763,2.1412,0.3822,-0.2045,False,True,1.5755,-0.0032
+Patagonia,01.1.2,"Cortes frescos en góndola (SEPA) + hacienda, subas y bajas por separado (la carnicería traslada poco las bajas)",1.3849,1.0000,"Cortes de carne fresca en góndola (SEPA) +1,6% en lo que va del mes",01,1.3854,1.3849,0.3611,-0.0002,False,True,1.2558,-0.0000
 GBA,01.1.4,Góndolas (SEPA),0.6491,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.4281,0.6491,0.1624,0.1749,False,True,11.3893,0.0199
 Pampeana,01.1.4,Góndolas (SEPA),0.7811,1.0000,"Góndolas de todo el país (SEPA) +1,4% en lo que va del mes",01,-0.0619,0.7811,0.1239,0.1045,False,True,10.3799,0.0108
 Noreste,01.1.4,Góndolas (SEPA),1.0459,1.0000,"Góndolas de todo el país (SEPA) +1,8% en lo que va del mes",01,0.0824,1.0459,0.1131,0.1090,False,True,1.6826,0.0018
@@ -72,6 +74,12 @@ Noreste,06.1,Góndolas (SEPA),2.7556,1.0000,"Góndolas de todo el país (SEPA) +
 Noroeste,06.1,Góndolas (SEPA),2.5154,1.0000,"Góndolas de todo el país (SEPA) +2,6% en lo que va del mes",06,2.2693,2.5154,0.4723,0.1163,False,True,0.4965,0.0006
 Cuyo,06.1,Góndolas (SEPA),2.3749,1.0000,"Góndolas de todo el país (SEPA) +2,3% en lo que va del mes",06,2.5798,2.3749,0.5067,-0.1038,False,True,0.4511,-0.0005
 Patagonia,06.1,Góndolas (SEPA),1.9974,1.0000,"Góndolas de todo el país (SEPA) +2,0% en lo que va del mes",06,1.9437,1.9974,0.2437,0.0131,False,True,0.2601,0.0000
+GBA,07.1,Listas de precios de autos 0 km,0.9332,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,3.1891,0.9332,0.2649,-0.5975,False,True,5.3227,-0.0318
+Pampeana,07.1,Listas de precios de autos 0 km,0.7954,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,0.8131,0.7954,0.2966,-0.0053,False,True,3.7729,-0.0002
+Noreste,07.1,Listas de precios de autos 0 km,0.8457,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,1.6819,0.8457,0.2762,-0.2310,False,True,0.4731,-0.0011
+Noroeste,07.1,Listas de precios de autos 0 km,0.7892,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,0.7071,0.7892,0.2070,0.0170,False,True,0.5969,0.0001
+Cuyo,07.1,Listas de precios de autos 0 km,0.8031,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,0.9470,0.8031,0.2676,-0.0385,False,True,0.7031,-0.0003
+Patagonia,07.1,Listas de precios de autos 0 km,0.8212,1.0000,"Las automotrices subieron sus listas +0,7% este mes y +1,0% el anterior",07,1.2593,0.8212,0.3927,-0.1721,False,True,0.6896,-0.0012
 GBA,07.2.2,Precio de surtidor (YPF),1.2496,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.1865,1.2496,0.4143,0.0261,False,True,5.3227,0.0014
 Pampeana,07.2.2,Precio de surtidor (YPF),1.1863,1.0000,"Surtidor YPF +1,3% el mes anterior",07,1.0782,1.1863,0.4716,0.0510,False,True,3.7729,0.0019
 Noreste,07.2.2,Precio de surtidor (YPF),1.1099,1.0000,"Surtidor YPF +1,3% el mes anterior",07,0.9474,1.1099,0.4573,0.0743,False,True,0.4731,0.0004
