@@ -3,7 +3,7 @@
 - https://iiep.economicas.uba.ar/publicaciones/informes-reportes/: 0 bytes
 - https://iiep.economicas.uba.ar/publicaciones/informes-reportes/page/2/: 0 bytes
 - https://iiep.economicas.uba.ar/publicaciones/informes-reportes/page/3/: 0 bytes
-- candidatos: 36
+- candidatos: 225
   - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasAgosto2023.pdf: 74880 caracteres
   - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasJulio2023.pdf: 60105 caracteres
   - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasJunio2023.pdf: 74159 caracteres
