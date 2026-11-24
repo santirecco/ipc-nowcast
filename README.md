@@ -281,6 +281,13 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   pesos que revela INDEC (`sepaw`, casi nunca elegida) y SEPA del mes anterior (`sepa+sepal`: medicamentos 0,55 ->
   0,49 pero pan, azúcar y bebidas peor; en conjunto empate). Conclusión: para bajar el fin de mes, más que exprimir
   SEPA hay que relevar lo que hoy no se mide (tarifas, transporte público, cigarrillos, diarios, servicios).
+- **Calendario histórico de aumentos anunciados (24-nov-2026)** (`regulados_hist`, `data/precios/regulados/
+  eventos.csv`, candidata `cal`). Cada aumento con fecha de vigencia, ítem, componente, parte, regiones, % y fuente.
+  Se convierte a la variación del promedio del mes (un aumento del 29 pega casi entero en el mes siguiente); a mitad
+  de mes solo cuentan los aumentos vigentes hasta ese día. Empieza por cigarrillos (Massalin 72%, BAT 28%; precios
+  nacionales): sigue al tabaco de INDEC con correlación 0,88. Tabaco a fin de mes 16m 1,39 -> 0,52 (t = −2,5),
+  jul-24+ 1,58 -> 1,00. Nacional fin 16m 0,197 -> 0,193. Siguen: tarifas y transporte del AMBA (reportes mensuales
+  del IIEP-UBA), diarios y colegios.
 - Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
   Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
   nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.

@@ -1,14 +1,14 @@
 # Pronóstico IPC noviembre 2026
 
-*Calculado el 23/11/2026. Último dato oficial de INDEC: octubre 2026.*
+*Calculado el 24/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,7% mensual (rango probable 1,3% a 2,1%)
+## 1,7% mensual (rango probable 1,3% a 2,0%)
 
 | | % mensual |
 |---|---|
-| **Pronóstico** | **1,70** |
-| Solo modelo estadístico | 1,95 |
-| Modelo + información del mes (de abajo hacia arriba) | 1,70 |
+| **Pronóstico** | **1,68** |
+| Solo modelo estadístico | 1,93 |
+| Modelo + información del mes (de abajo hacia arriba) | 1,68 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
 | REM del BCRA (referencia) | 1,7 |
@@ -31,18 +31,18 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Bienes y servicios varios | 3,4 | 2,47 | 0,08 |
 | Comunicación | 2,6 | 2,04 | 0,05 |
 | Educación | 2,2 | 1,92 | 0,04 |
-| Bebidas alcohólicas y tabaco | 2,4 | 1,56 | 0,04 |
+| Bebidas alcohólicas y tabaco | 2,4 | 0,72 | 0,02 |
 
 ## Por región
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,73 |
-| Pampeana | 33,8 | 1,72 |
-| Noreste | 4,5 | 1,62 |
-| Noroeste | 6,8 | 1,56 |
-| Cuyo | 5,2 | 1,75 |
-| Patagonia | 4,5 | 1,63 |
+| GBA | 45,1 | 1,70 |
+| Pampeana | 33,8 | 1,70 |
+| Noreste | 4,5 | 1,60 |
+| Noroeste | 6,8 | 1,55 |
+| Cuyo | 5,2 | 1,73 |
+| Patagonia | 4,5 | 1,60 |
 
 ## Información del mes incorporada
 
@@ -105,6 +105,12 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,88 | 0,93 | -0,02 |
 | Cuyo | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,00 | 0,72 | 0,11 |
 | Patagonia | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,60 | 2,90 | -0,54 |
+| GBA | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,06 | 0,66 | -0,32 |
+| Pampeana | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,05 | 0,63 | -0,30 |
+| Noreste | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,05 | 0,59 | -0,22 |
+| Noroeste | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,05 | 0,62 | -0,32 |
+| Cuyo | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,06 | 0,66 | -0,37 |
+| Patagonia | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,06 | 0,69 | -0,37 |
 | GBA | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,59 | 0,94 | 0,39 |
 | Pampeana | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,42 | 0,79 | 0,39 |
 | Noreste | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,53 | 1,04 | 0,24 |

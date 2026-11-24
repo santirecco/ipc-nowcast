@@ -113,3 +113,37 @@ fecha,mes,region,componente,fuente,valor,parte,proyeccion_estadistica
 2026-11-23,2026-11,Noroeste,04.5,Inflación reciente,1.8225666378436025,0.6,2.406184741538066
 2026-11-23,2026-11,Cuyo,04.5,Inflación reciente,1.7979277533455493,0.6,3.6197981532519212
 2026-11-23,2026-11,Patagonia,04.5,Inflación reciente,1.881144437051815,0.6,3.4711619190792287
+2026-11-24,2026-11,Cuyo,04.5,calendario de regulados,2.17,0.4,3.261064202740876
+2026-11-24,2026-11,Cuyo,06.4.1,calendario de regulados,2.1,1.0,1.77030553659431
+2026-11-24,2026-11,GBA,04.5,calendario de regulados,2.9805263157894735,0.9500000000000001,2.0125349407041657
+2026-11-24,2026-11,GBA,06.4.1,calendario de regulados,2.1,1.0,1.680365205003802
+2026-11-24,2026-11,GBA,07.3,calendario de regulados,4.041,1.0,3.089274498321999
+2026-11-24,2026-11,GBA,10,calendario de regulados,2.85,0.5,1.7077389355067178
+2026-11-24,2026-11,Noreste,04.5,calendario de regulados,2.17,0.4,2.0445881120733675
+2026-11-24,2026-11,Noreste,06.4.1,calendario de regulados,2.1,1.0,2.2378324606443947
+2026-11-24,2026-11,Noroeste,01.1.1,calendario de regulados,4.833333333333333,0.3,1.5409346184500836
+2026-11-24,2026-11,Noroeste,04.5,calendario de regulados,2.17,0.4,2.3740316477317283
+2026-11-24,2026-11,Noroeste,06.4.1,calendario de regulados,2.1,1.0,1.8397446120581729
+2026-11-24,2026-11,Pampeana,04.5,calendario de regulados,2.17,0.4,3.618731283912067
+2026-11-24,2026-11,Pampeana,06.4.1,calendario de regulados,2.1,1.0,1.8437970627188038
+2026-11-24,2026-11,Patagonia,04.5,calendario de regulados,2.17,0.4,3.464557939233176
+2026-11-24,2026-11,Patagonia,06.4.1,calendario de regulados,2.1,1.0,1.6212199955913666
+2026-11-24,2026-11,Noroeste,01.1.1,Inercia del propio rubro (mes anterior y últimos 3 meses),1.4824042384767304,0.7,2.132326666112787
+2026-11-24,2026-11,GBA,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.7037277073593233,1.0,2.824203079265031
+2026-11-24,2026-11,Pampeana,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.547527512235352,1.0,2.5286436137416324
+2026-11-24,2026-11,Noreste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.3510086868345892,1.0,1.9848165491998637
+2026-11-24,2026-11,Noroeste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.1694833131649045,1.0,1.5813711952229692
+2026-11-24,2026-11,Cuyo,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.7431993396803707,1.0,2.676285879116902
+2026-11-24,2026-11,Patagonia,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.08020045291885292,1.0,1.385420237913304
+2026-11-24,2026-11,GBA,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,6.363834047531106,1.0,7.421380393260302
+2026-11-24,2026-11,Pampeana,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,4.452347547294319,1.0,6.591728453094814
+2026-11-24,2026-11,Noreste,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,2.11808279669617,1.0,4.12627683542639
+2026-11-24,2026-11,Noroeste,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,5.6163446985881915,1.0,8.558913692952299
+2026-11-24,2026-11,Cuyo,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,7.013541240584704,1.0,11.111509688634436
+2026-11-24,2026-11,Patagonia,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,7.014479320193756,1.0,6.209824515378083
+2026-11-24,2026-11,GBA,04.5,Inflación reciente,1.8900599421078428,0.04999999999999993,2.333583430422195
+2026-11-24,2026-11,Pampeana,04.5,Inflación reciente,1.947097039606677,0.6,3.0836855004013124
+2026-11-24,2026-11,Noreste,04.5,Inflación reciente,1.6711399552278383,0.6,2.0512831332834134
+2026-11-24,2026-11,Noroeste,04.5,Inflación reciente,1.8225666378436025,0.6,2.406184741538066
+2026-11-24,2026-11,Cuyo,04.5,Inflación reciente,1.7979277533455493,0.6,3.6197981532519212
+2026-11-24,2026-11,Patagonia,04.5,Inflación reciente,1.881144437051815,0.6,3.4711619190792287

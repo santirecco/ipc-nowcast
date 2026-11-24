@@ -71,6 +71,10 @@ OPCIONES.setdefault("06.4.1", [["ipc"], ["ipcl"], ["ipc2"]])
 for _c in OPCIONES:
     if _c != "07.2.2":
         OPCIONES[_c] = OPCIONES[_c] + [["propio"]]
+# calendario histórico de aumentos anunciados (data/precios/regulados/eventos.csv)
+for _c in ("02.2", "04.5", "07.3", "09.5", "10"):
+    if _c in OPCIONES:
+        OPCIONES[_c] = OPCIONES[_c] + [["cal"], ["cal", "propio"]]
 # dato del mes combinado con inercia o arrastre: la regresión reparte el peso (no elegir entre una y otra)
 for _c, _ops in list(OPCIONES.items()):
     for _f in ("sepa", "sepai"):
@@ -124,6 +128,7 @@ ETIQUETA = {"sepa": "góndolas (SEPA)", "sepa_carne": "cortes frescos en góndol
             "arr": "arrastre del mes anterior (SEPA)",
             "arrm": "arrastre mayorista del mes anterior",
             "propio": "inercia del propio rubro (mes anterior y últimos 3 meses)",
+            "cal": "aumentos anunciados (listas de precios y tarifas)",
             "hacr": "hacienda de este mes y del anterior (la carnicería la sigue con rezago)",
             "arrn": "arrastre del surtidor: cómo terminó el mes pasado respecto de su promedio",
             "sepai": "precios de SEPA de los productos que mide INDEC",
@@ -210,6 +215,10 @@ def tabla(nc, corte: str) -> pd.DataFrame:
         for f in idx[idx.cadenas >= 2][["mes", "region", "clase", "var_%"]].itertuples(index=False):
             sepa_d.setdefault((f[0], f[1], f[2]), float(f[3]))
     may_d = {k: may[k].to_dict() for k in may.columns}
+    from . import regulados_hist
+    cal_v = regulados_hist.variaciones(None if corte == "completo" else int(corte))
+    cal_d = {k: cal_v[k].to_dict() for k in cal_v.columns} if not cal_v.empty else {}
+    cal_p = regulados_hist.partes()
     otros_d = otros.to_dict("index")
     vap_d = {}
     alim_d = {r: nc.V[r]["01"].to_dict() for r in REGIONES}
@@ -240,6 +249,7 @@ def tabla(nc, corte: str) -> pd.DataFrame:
                 m1 = may_d[c + "_l1"].get(mes, np.nan) if c + "_l1" in may_d else np.nan
                 ma = may_d[c + "_arr"].get(mes, np.nan) if c + "_arr" in may_d else np.nan
                 filas.append({"mes": mes, "region": r, "clase": c, "corte": corte, "real": real, "proy": p, "sepa": s, "sepa_carne": sc, "sepa_pollo": tipos["pollo"], "sepa_cerdo": tipos["cerdo"], "sepa_fiambre": tipos["fiambre"], "may": m0, "may_l1": m1, "arrm": ma,
+                              "cal": (cal_p[(r, c)] * cal_d[(r, c)].get(mes, np.nan) + (1 - cal_p[(r, c)]) * p) if (r, c) in cal_d else np.nan,
                               "prop_l1": hist[0], "prop_p3": float(np.mean(hist)) if not np.isnan(hist).any() else np.nan,
                               "nafta": ox("nafta"), "nafta_l1": ox("nafta_l1"), "naftap": ox("naftap"), "arrn": ox("arrn"), "fx": ox("fx"), "fx_l1": ox("fx_l1"),
                               "icl_a": ox("icl_a"), "icl_m": ox("icl_m"), "sal": ox("sal"),
@@ -400,6 +410,8 @@ def _features(t: pd.DataFrame, fuentes: list[str]) -> np.ndarray:
         p = t.proy.astype(float)
         cols.append(t["icl_a"].astype(float) - p)
         cols.append(t["icl_m"].astype(float) - p)
+    if "cal" in fuentes:  # calendario de aumentos anunciados (precios regulados o de lista), promedio del mes
+        cols.append(t["cal"].astype(float) - t.proy.astype(float))
     if "propio" in fuentes:  # inercia del propio rubro: mes anterior y promedio de 3 meses (precios regulados/indexados)
         p = t.proy.astype(float)
         cols.append(t["prop_l1"].astype(float) - p)
@@ -462,6 +474,8 @@ def _disponibles(t: pd.DataFrame, fuentes: list[str]) -> pd.Series:
         ok &= t["ipc_l1"].notna() & t["ipc_p3"].notna()
     if "propio" in fuentes:
         ok &= t["prop_l1"].notna() & t["prop_p3"].notna()
+    if "cal" in fuentes:
+        ok &= t["cal"].notna()
     if "icl" in fuentes:
         ok &= t["icl_a"].notna() & t["icl_m"].notna()
     if "arr" in fuentes:
