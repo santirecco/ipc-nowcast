@@ -274,6 +274,13 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   subestimadas en el backtest, que no tiene el calendario de resoluciones; en vivo sí lo usa). Pendiente: reconstruir
   el calendario histórico de tarifas para medir bien 04.5, y verduras a mitad de mes (se arregla solo cuando el
   Mercado Central diario junte meses).
+- **Límite de SEPA (24-nov-2026).** Aun para el mismo producto, la variación mensual de SEPA y la del precio promedio
+  que publica INDEC casi no se parecen (leche fresca −0,01; pan 0,23; promedio de 23 variedades 0,40), aunque los
+  promedios de largo plazo coinciden. INDEC releva también almacenes y comercios de barrio, y su propia muestra tiene
+  ruido: SEPA no puede seguir eso mes a mes. Probadas sin ganancia: las variedades de INDEC en SEPA ponderadas con los
+  pesos que revela INDEC (`sepaw`, casi nunca elegida) y SEPA del mes anterior (`sepa+sepal`: medicamentos 0,55 ->
+  0,49 pero pan, azúcar y bebidas peor; en conjunto empate). Conclusión: para bajar el fin de mes, más que exprimir
+  SEPA hay que relevar lo que hoy no se mide (tarifas, transporte público, cigarrillos, diarios, servicios).
 - Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
   Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
   nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.
