@@ -18,3 +18,84 @@ fecha,item,componente,parte,regiones,aumento,confianza,fuente
 2026-03-07,Cigarrillos Massalin,02.2,0.72,todas,7.0,alta,https://infokioscos.com.ar/121980/aumento-de-cigarrillos-massalin-actualiza-sus-precios-desde-marzo-2026.html
 2026-06-06,Cigarrillos Massalin,02.2,0.72,todas,6.0,alta,https://www.elnueve.com/argentina/cigarrillos-con-un-nuevo-aumento-cuanto-cuesta-un-atado-de-20-en-junio-del-2026_20260611/
 2026-08-08,Cigarrillos Massalin,02.2,0.72,todas,7.0,alta,https://infokioscos.com.ar/123258/cigarrillos-aumentan-y-esta-es-la-lista-completa-y-los-que-mas-subieron.html
+2026-06-27,Cigarrillos BAT (fines de junio; % como Massalin de junio),02.2,0.28,todas,6.0,baja,https://www.iprofesional.com/negocios/462916-nuevo-aumento-de-cigarrillos-la-lista-de-precios-actualizada
+2026-08-24,Cigarrillos BAT,02.2,0.28,todas,7.0,alta,https://www.iprofesional.com/negocios/462916-nuevo-aumento-de-cigarrillos-la-lista-de-precios-actualizada
+2024-08-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,3.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2024.pdf
+2024-09-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,4.05,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2024.pdf
+2024-10-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,3.12,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2024.pdf
+2024-11-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,3.76,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2024.pdf
+2024-12-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.13,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2024.pdf
+2025-01-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.69,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2025.pdf
+2025-02-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.88,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-FEBRERO-2025.pdf
+2025-03-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.5,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MARZO-2025.pdf
+2025-04-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.03,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ABRIL-2025.pdf
+2025-05-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,3.65,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MAYO-2025.pdf
+2025-06-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.95,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JUNIO-2025.pdf
+2025-07-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.89,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JULIO-2025.pdf
+2025-08-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.82,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2025.pdf
+2025-09-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.95,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2025.pdf
+2025-10-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.61,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2025.pdf
+2025-11-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,3.74,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2025.pdf
+2025-12-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.74,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2025.pdf
+2026-01-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.51,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2026.pdf
+2026-02-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,10.77,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-FEBRERO-2026.pdf
+2026-03-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.78,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MARZO-2026.pdf
+2026-04-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.02,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-ABRIL-2026.pdf
+2026-05-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,7.32,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MAYO-2026.pdf
+2026-06-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.53,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JUNIO-2026.pdf
+2026-07-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,4.89,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JULIO-2026.pdf
+2026-08-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.94,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-AGOSTO-2026.pdf
+2026-09-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,-0.05,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-SEPTIEMBRE-2026.pdf
+2026-10-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,1.84,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-OCTUBRE-2026.pdf
+2026-11-01,Electricidad AMBA (cuadro tarifario; 30% cargo fijo y 70% variable),04.5,0.55,GBA,2.92,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-NOVIEMBRE-2026.pdf
+2024-08-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,4.0,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2024.pdf
+2024-09-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,3.45,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2024.pdf
+2024-10-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,-1.5,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2024.pdf
+2024-11-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.94,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2024.pdf
+2024-12-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.72,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2024.pdf
+2025-01-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.29,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2025.pdf
+2025-02-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.55,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-FEBRERO-2025.pdf
+2025-03-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MARZO-2025.pdf
+2025-04-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.17,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ABRIL-2025.pdf
+2025-05-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,0.76,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MAYO-2025.pdf
+2025-06-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.8,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JUNIO-2025.pdf
+2025-07-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.59,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JULIO-2025.pdf
+2025-08-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.71,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2025.pdf
+2025-09-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.05,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2025.pdf
+2025-10-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,-6.35,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2025.pdf
+2025-11-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,3.85,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2025.pdf
+2025-12-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.9,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2025.pdf
+2026-01-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.45,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2026.pdf
+2026-02-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,14.96,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-FEBRERO-2026.pdf
+2026-03-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,0.03,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MARZO-2026.pdf
+2026-04-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,0.54,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-ABRIL-2026.pdf
+2026-05-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,3.51,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MAYO-2026.pdf
+2026-06-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.86,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JUNIO-2026.pdf
+2026-07-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.94,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JULIO-2026.pdf
+2026-08-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,4.56,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-AGOSTO-2026.pdf
+2026-09-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.27,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-SEPTIEMBRE-2026.pdf
+2026-10-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,2.51,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-OCTUBRE-2026.pdf
+2026-11-01,Gas natural (cuadro tarifario AMBA; ENARGAS rige en todo el país),04.5,0.40,GBA;Pampeana;Noroeste;Cuyo;Patagonia,1.74,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-NOVIEMBRE-2026.pdf
+2024-08-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,14.5,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2024.pdf
+2024-09-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,20,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2024.pdf
+2025-03-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,10,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MARZO-2025.pdf
+2025-04-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.6,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ABRIL-2025.pdf
+2025-05-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.1,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-MAYO-2025.pdf
+2025-06-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,5.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JUNIO-2025.pdf
+2025-07-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,5.1,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-JULIO-2025.pdf
+2025-08-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,4.6,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2025.pdf
+2025-09-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.3,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2025.pdf
+2025-10-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.1,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2025.pdf
+2025-11-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,6.6,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2025.pdf
+2025-12-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.2,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2025.pdf
+2026-01-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2026.pdf
+2026-02-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.0,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-FEBRERO-2026.pdf
+2026-03-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,14.8,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MARZO-2026.pdf
+2026-04-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,6.1,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-ABRIL-2026.pdf
+2026-05-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.0,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-MAYO-2026.pdf
+2026-06-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,5.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JUNIO-2026.pdf
+2026-07-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.7,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-JULIO-2026.pdf
+2026-08-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.2,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-AGOSTO-2026.pdf
+2026-09-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.4,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-SEPTIEMBRE-2026.pdf
+2026-10-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.2,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-OCTUBRE-2026.pdf
+2026-11-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.4,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-NOVIEMBRE-2026.pdf
