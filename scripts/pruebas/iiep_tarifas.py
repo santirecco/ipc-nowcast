@@ -20,7 +20,7 @@ MESES = ["ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO
 
 
 def get(url, t=120):
-    r = subprocess.run(["curl", "-sSL", "--retry", "2", "--max-time", str(t), "-A", "Mozilla/5.0 (ipc-nowcast)", url],
+    r = subprocess.run(["curl", "-sSL", "--retry", "1", "--connect-timeout", "10", "--max-time", str(t), "-A", "Mozilla/5.0 (ipc-nowcast)", url],
                        capture_output=True)
     return r.stdout
 
@@ -43,12 +43,12 @@ def main():
                  if re.search(r"tarif", f[0], re.I) and f[0].lower().endswith(".pdf")}
     except Exception:  # noqa: BLE001
         pass
-    for anio in (2024, 2025, 2026):
-        for i, m in enumerate(MESES):
-            for sub in {f"{anio}/{i + 1:02d}", f"{anio}/{min(i + 2, 12):02d}"}:
-                for nombre in (f"INFORME-TARIFAS-Y-SUBSIDIOS-{m}-{anio}.pdf", f"Informe-tarifas-y-subsidios-{m.capitalize()}-{anio}.pdf",
-                               f"REPORTE-TARIFAS-Y-SUBSIDIOS-{m}-{anio}.pdf"):
-                    urls.add(f"https://economicas.uba.ar/iiep/wp-content/uploads/{sub}/{nombre}")
+    # si la página no dio links, probar el patrón conocido (un solo nombre por mes, subcarpeta del mes y la siguiente)
+    if len(urls) < 10:
+        for anio in (2024, 2025, 2026):
+            for i, m in enumerate(MESES):
+                for sub in (f"{anio}/{i + 1:02d}", f"{anio}/{min(i + 2, 12):02d}"):
+                    urls.add(f"https://economicas.uba.ar/iiep/wp-content/uploads/{sub}/INFORME-TARIFAS-Y-SUBSIDIOS-{m}-{anio}.pdf")
     log.append(f"- candidatos: {len(urls)}")
     hechos = {p.stem for p in DIR.glob("*.txt")}
     ok = 0
@@ -56,7 +56,7 @@ def main():
         nombre = u.rsplit("/", 1)[-1][:-4]
         if nombre in hechos:
             continue
-        b = get(u, 90)
+        b = get(u, 20)
         if b[:4] != b"%PDF":
             continue
         try:
