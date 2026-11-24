@@ -129,12 +129,12 @@ fecha,mes,region,componente,fuente,valor,parte,proyeccion_estadistica
 2026-11-24,2026-11,Patagonia,04.5,calendario de regulados,2.17,0.4,3.464557939233176
 2026-11-24,2026-11,Patagonia,06.4.1,calendario de regulados,2.1,1.0,1.6212199955913666
 2026-11-24,2026-11,Noroeste,01.1.1,Inercia del propio rubro (mes anterior y últimos 3 meses),1.4824042384767304,0.7,2.132326666112787
-2026-11-24,2026-11,GBA,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.7037277073593233,1.0,2.824203079265031
-2026-11-24,2026-11,Pampeana,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.547527512235352,1.0,2.5286436137416324
-2026-11-24,2026-11,Noreste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.3510086868345892,1.0,1.9848165491998637
-2026-11-24,2026-11,Noroeste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.1694833131649045,1.0,1.5813711952229692
-2026-11-24,2026-11,Cuyo,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.7431993396803707,1.0,2.676285879116902
-2026-11-24,2026-11,Patagonia,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.08020045291885292,1.0,1.385420237913304
+2026-11-24,2026-11,GBA,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.7003091899780785,1.0,2.824203079265031
+2026-11-24,2026-11,Pampeana,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.5441089948541071,1.0,2.5286436137416324
+2026-11-24,2026-11,Noreste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.34759016945334453,1.0,1.9848165491998637
+2026-11-24,2026-11,Noroeste,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.16606479578365962,1.0,1.5813711952229692
+2026-11-24,2026-11,Cuyo,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.739780822299126,1.0,2.676285879116902
+2026-11-24,2026-11,Patagonia,01.1.2,Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior,0.07678193553760826,1.0,1.385420237913304
 2026-11-24,2026-11,GBA,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,6.363834047531106,1.0,7.421380393260302
 2026-11-24,2026-11,Pampeana,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,4.452347547294319,1.0,6.591728453094814
 2026-11-24,2026-11,Noreste,01.1.6,Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior,2.11808279669617,1.0,4.12627683542639

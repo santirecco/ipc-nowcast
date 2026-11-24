@@ -1,16 +1,16 @@
 {
   "fecha_calculo": "2026-11-24",
   "mes": "2026-11",
-  "estimacion": 1.6843,
-  "rango_bajo": 1.327,
-  "rango_alto": 2.0416,
+  "estimacion": 1.6846,
+  "rango_bajo": 1.3273,
+  "rango_alto": 2.0419,
   "solo_modelo_estadistico": 1.9346,
   "proyeccion_pura": 1.7879,
-  "abajo_arriba": 1.6843,
+  "abajo_arriba": 1.6846,
   "ipc_caba": null,
   "ajuste_caba": 0.0,
   "rem": 1.7,
   "datos_incorporados": 93,
-  "dias_supermercados": 6,
+  "dias_supermercados": 7,
   "momento": "dia_22"
 }

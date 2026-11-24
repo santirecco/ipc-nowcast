@@ -24,7 +24,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,29 | 0,25 |
 | Transporte | 11,6 | 1,87 | 0,22 |
 | Restaurantes y hoteles | 10,9 | 1,84 | 0,20 |
-| Salud | 9,0 | 1,71 | 0,15 |
+| Salud | 9,0 | 1,72 | 0,15 |
 | Recreación y cultura | 6,6 | 2,05 | 0,14 |
 | Prendas de vestir y calzado | 6,6 | 1,55 | 0,10 |
 | Equipamiento y mantenimiento del hogar | 5,0 | 1,87 | 0,09 |
@@ -37,7 +37,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Región | Peso % | Variación % |
 |---|---|---|
-| GBA | 45,1 | 1,70 |
+| GBA | 45,1 | 1,71 |
 | Pampeana | 33,8 | 1,70 |
 | Noreste | 4,5 | 1,60 |
 | Noroeste | 6,8 | 1,55 |
@@ -64,16 +64,16 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Patagonia | 04.5 | calendario de regulados | 2,17 | 3,46 | -0,34 |
 | Patagonia | 06.4.1 | calendario de regulados | 2,10 | 1,62 | 0,21 |
 | GBA | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,70 | 2,82 | -0,68 |
-| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,55 | 2,53 | -0,74 |
-| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,35 | 1,98 | -0,71 |
+| Pampeana | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,54 | 2,53 | -0,74 |
+| Noreste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,35 | 1,98 | -0,72 |
 | Noroeste | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,17 | 1,58 | -0,57 |
 | Cuyo | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,74 | 2,68 | -0,74 |
 | Patagonia | 01.1.2 | Cortes frescos en góndola (SEPA) + hacienda de este mes y del anterior (la carnicería la sigue con rezago) + arrastre mayorista del mes anterior | 0,08 | 1,39 | -0,47 |
-| GBA | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,76 | -0,43 | 0,19 |
+| GBA | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,77 | -0,43 | 0,19 |
 | Pampeana | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,76 | -0,06 | 0,10 |
-| Noreste | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,06 | 0,08 | 0,11 |
-| Noroeste | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,14 | 0,05 | 0,11 |
-| Cuyo | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,25 | 0,25 | 0,11 |
+| Noreste | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,07 | 0,08 | 0,11 |
+| Noroeste | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,15 | 0,05 | 0,11 |
+| Cuyo | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,26 | 0,25 | 0,12 |
 | Patagonia | 01.1.4 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,12 | 0,82 | 0,04 |
 | GBA | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior | 6,36 | 7,42 | -0,05 |
 | Pampeana | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior | 4,45 | 6,59 | -0,09 |
@@ -81,30 +81,30 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior | 5,62 | 8,56 | -0,10 |
 | Cuyo | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior | 7,01 | 11,11 | -0,13 |
 | Patagonia | 01.1.6 | Frutas y verduras frescas en góndola (SEPA) + arrastre mayorista del mes anterior | 7,01 | 6,21 | 0,04 |
-| GBA | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,67 | 1,83 | -0,01 |
-| Pampeana | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,82 | 2,14 | -0,01 |
-| Noreste | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,79 | 1,90 | -0,00 |
-| Noroeste | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 2,15 | 2,35 | -0,01 |
-| Cuyo | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,81 | 1,84 | -0,00 |
-| Patagonia | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,62 | 1,78 | -0,01 |
-| GBA | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,53 | 1,38 | 0,00 |
+| GBA | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,68 | 1,83 | -0,01 |
+| Pampeana | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,83 | 2,14 | -0,01 |
+| Noreste | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,80 | 1,90 | -0,00 |
+| Noroeste | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 2,16 | 2,35 | -0,01 |
+| Cuyo | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,82 | 1,84 | -0,00 |
+| Patagonia | 01.1.8 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,63 | 1,78 | -0,01 |
+| GBA | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,54 | 1,38 | 0,00 |
 | Pampeana | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,26 | 1,94 | -0,02 |
-| Noreste | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,57 | 1,13 | 0,01 |
+| Noreste | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,58 | 1,13 | 0,01 |
 | Noroeste | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,64 | 1,70 | -0,00 |
 | Cuyo | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,63 | 0,65 | 0,02 |
-| Patagonia | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,29 | 1,18 | 0,00 |
-| GBA | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,94 | 3,35 | -0,12 |
+| Patagonia | 01.2.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,30 | 1,18 | 0,00 |
+| GBA | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,95 | 3,35 | -0,12 |
 | Pampeana | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,40 | 1,55 | -0,01 |
-| Noreste | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,28 | 2,19 | -0,06 |
-| Noroeste | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,93 | 1,54 | -0,05 |
-| Cuyo | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,68 | 2,06 | -0,03 |
-| Patagonia | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,82 | 2,44 | -0,05 |
-| GBA | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,58 | 1,96 | -0,18 |
-| Pampeana | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,17 | 1,13 | 0,02 |
-| Noreste | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,94 | 0,75 | 0,11 |
-| Noroeste | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,88 | 0,93 | -0,02 |
+| Noreste | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,29 | 2,19 | -0,06 |
+| Noroeste | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,94 | 1,54 | -0,05 |
+| Cuyo | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,69 | 2,06 | -0,03 |
+| Patagonia | 01.2.2 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,83 | 2,44 | -0,05 |
+| GBA | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,59 | 1,96 | -0,17 |
+| Pampeana | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,18 | 1,13 | 0,02 |
+| Noreste | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,95 | 0,75 | 0,12 |
+| Noroeste | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,89 | 0,93 | -0,02 |
 | Cuyo | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,00 | 0,72 | 0,11 |
-| Patagonia | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,60 | 2,90 | -0,54 |
+| Patagonia | 02.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,61 | 2,90 | -0,54 |
 | GBA | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,06 | 0,66 | -0,32 |
 | Pampeana | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,05 | 0,63 | -0,30 |
 | Noreste | 02.2 | Aumentos anunciados (listas de precios y tarifas) | 0,05 | 0,59 | -0,22 |
@@ -117,7 +117,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,57 | 0,72 | 0,53 |
 | Cuyo | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,39 | 0,60 | 0,47 |
 | Patagonia | 05.6 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,49 | 0,63 | 0,41 |
-| GBA | 06.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,50 | 2,28 | -0,29 |
+| GBA | 06.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,51 | 2,28 | -0,29 |
 | Pampeana | 06.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,90 | 2,29 | -0,16 |
 | Noreste | 06.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 2,33 | 2,67 | -0,14 |
 | Noroeste | 06.1 | Góndolas (SEPA) + inercia del propio rubro (mes anterior y últimos 3 meses) | 2,10 | 2,27 | -0,08 |
@@ -146,17 +146,17 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 
 | Clase | Días | Variación en lo que va del mes % | Variación mensual (promedio vs. mes anterior) % |
 |---|---|---|---|
-| Pan y cereales | 6 | 0,05 | — |
-| Carnes y derivados | 6 | -0,33 | — |
-| Leche, lácteos y huevos | 6 | -0,03 | — |
-| Aceites, grasas y manteca | 6 | 0,08 | — |
-| Frutas | 6 | -0,25 | — |
-| Verduras, tubérculos y legumbres | 6 | -1,19 | — |
-| Azúcar, dulces, chocolate, golosinas | 6 | 0,04 | — |
-| Otros alimentos (pescados, condimentos, etc.) | 6 | 0,06 | — |
-| Café, té, yerba y cacao | 6 | -0,55 | — |
-| Aguas, gaseosas y jugos | 6 | -0,05 | — |
-| Bebidas alcohólicas | 6 | 0,09 | — |
-| Limpieza y conservación del hogar | 6 | 0,00 | — |
-| Productos medicinales | 6 | 0,02 | — |
-| Cuidado personal | 6 | 0,31 | — |
+| Pan y cereales | 7 | 0,62 | — |
+| Carnes y derivados | 7 | 0,57 | — |
+| Leche, lácteos y huevos | 7 | 1,34 | — |
+| Aceites, grasas y manteca | 7 | 0,80 | — |
+| Frutas | 7 | 0,73 | — |
+| Verduras, tubérculos y legumbres | 7 | -0,36 | — |
+| Azúcar, dulces, chocolate, golosinas | 7 | 0,71 | — |
+| Otros alimentos (pescados, condimentos, etc.) | 7 | 0,84 | — |
+| Café, té, yerba y cacao | 7 | 0,52 | — |
+| Aguas, gaseosas y jugos | 7 | 1,06 | — |
+| Bebidas alcohólicas | 7 | 0,89 | — |
+| Limpieza y conservación del hogar | 7 | 1,35 | — |
+| Productos medicinales | 7 | 0,95 | — |
+| Cuidado personal | 7 | 1,94 | — |
