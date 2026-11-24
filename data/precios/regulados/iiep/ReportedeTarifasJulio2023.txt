@@ -1,0 +1,687 @@
+# https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasJulio2023.pdf
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+           REPORTE     DE   TARIFAS     y SUBSIDIOS      #04                      
+                                                                                  
+           Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JULIO 2023    
+                                                                                  
+                                                                                  
+                                                                                  
+                         SUBSIDIOS:  PRINCIPALES RUBROS                           
+        EN POCAS                                                                  
+                         Los principales subsidios económicos1 a los sectores Agua, Energía y Transporte tuvieron en
+        LÍNEAS           junio un crecimiento acumulado anual del 75,3% a.a. respecto de igual periodo del año an-
+                         terior. A su vez, la variación real indica una reducción del 17,3% a.a. en el período.2
+        -17,3%                                                                    
+                                GRÁFICO N° 1: Variación % real anual acumulada anual | Junio 2023
+        SUBSIDIOS                                                                 
+        En el primer semestre de                                                  
+        2023, los subsidios caen en                                               
+        términos reales un 17,3% a.a.                                             
+        explicado por una reducción                                               
+        real en transporte del 4,4%                                               
+        a.a, en energía del 20,1% a.a. y                                          
+        en agua del 17,4% a.a.                                                    
+        ……………………………………………………………                                                   
+        +8%                                                                       
+        TRANSPORTE SIN AA                                                         
+        Los subsidios al transporte                                               
+        (sin Aerolíneas Argentinas)                                               
+        crecen 123% a.a. nominal y 8%                                             
+        a.a. real en el primer semestre                                           
+        de 2023.                                                                  
+        ………………………………………………………………                                                  
+        COBERTURA TARIFARIA                                                       
+        En junio de 2023 los precios TABLA 1: SUBSIDIOS EN RUBROS SELECCIONADOS EN MILLONES DE $
+        pagados por la demanda                  Acumulado a Acumulado a Var. % a.a Var. % a.a
+        eléctrica residencial cubren            junio 2023 junio 2022 nominal real
+        el 100% del costo para los N 1,                                           
+                                AGUA             13.203 7.597 73,8% -17,4%        
+        el 14% para los N 2 y el 18%                                              
+                                AYSA             13.203 7.597 73,8% -17,4%        
+        para los hogares N 3.                                                     
+        Para el gas natural, los pre- ENERGÍA   1.430.699 842.041 69,9% -20,1%    
+        cios PIST pagados por usua- CAMMESA      690.322 560.682 23,1% -43,2%     
+        rios cubren el 53% del costo                                              
+                                ENARSA           687.468 242.421 183,6% 40,8%     
+        de abastecimiento de gas                                                  
+                                FONDO FID. PARA EL CONSUMO DE                     
+        para los N 1, el 16% para los N 2        11.153 16.043 -30,5% 15,2%       
+                                GLP Y GAS POR REDES                               
+        y el 20% hogares N 3                                                      
+        ……………………………………………………………… PLAN GAS.AR     41.756 9.863 323,3% 109,4%       
+        -3,4%                   PLAN GAS I, II y III 0  15    *   *               
+        DEMANDA ELÉCTRICA       PLAN GAS NO CONVENCIONAL - R/46 0 13.016 * *      
+        La demanda eléctrica indus- TRANSPORTE   364.486 181.895 100,4% -4,4%     
+        trial y comercial se redujo AEROLÍNEAS ARGENTINAS 22.500 28.745 -21,7% 27,1%
+        3,4% i.a. en mayo. Esto sugiere                                           
+                                FONDO FID. DEL SISTEMA DE                         
+        que la actividad económica               169.242 72.526 133,4% 15,2%      
+                                INFRAESTRUCTURA DEL TRANSPORTE                    
+        podría volver a caer en térmi-                                            
+        nos i.a. por segundo mes ADM. DE INFRAESTRUCTURAS 24.239 11.812 105,2% -1,1%
+                                FERROVIARIAS S.E. (ADIF S.E.)                     
+        consecutivo.                                                   +123% a.a. 
+        ……………………………………………………………… DESARROLLO DE CAPITAL HUMANO 6.826 2.569 165,7% 21,6% nominal y
+                                FERROVIARIO S.A.                                  
+        GASTO ENERGÉTICO                                               + 8% a.a.  
+                                                                        real      
+        El gasto en energía del mes FERROCARRILLES ARGENTINOS S.E 489 104 369,6% 109,3%
+        de junio representa el 5,3% del                                           
+        salario RIPTE para el nivel de                                            
+                                OPERADOR FERROVIARIO S.E. 141.189 66.138 113,5% 1,5%
+        altos ingresos (N 1), 2,1% para                                           
+        el nivel medio (N 3) y 1,8%                                               
+                                TOTAL            1.808.388 1.031.533 75,3% -17,3% 
+        para el nivel de ingresos ba-                                             
+        jos (N 2).                                                                
+                                Fuente: elaboración propia en base a Presupuesto Abierto e INDEC
+        1 Transferencias para gastos corrientes.                                  
+        2 La inflación de junio se estima como el promedio de los últimos tres meses.
+                                                             Iiep.economicas.uba.ar 1
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+             El crecimiento nominal de los principales rubros es liderado por Energía que ocupa el 79% de los subsidios
+             económicos y crece 69,9% a.a. mientras se reduce 20,1% a.a. real. A su vez, en términos absolutos, es el
+             rubro con mayor incremento nominal ($588.658 millones) lo cual explica el 76% del aumento en las trans-
+             ferencias.                                                           
+             Las transferencias devengadas por Energía Argentina S.A. (ENARSA, ex IEASA) en el primer semestre de
+             2023 aumentaron 183,6% a.a. nominal y 40,8% a.a. real mayormente explicado por la compra anticipada
+             de barcos de GNL. A su vez, CAMMESA tuvo transferencias nominales 23,1% a.a mayores mientras dismi-
+             nuyen 43,2% a.a. en términos reales.                                 
+             Las transferencias por el Plan Gas.Ar aumentaron 323,3% a.a. (+109,4% a.a. en términos reales).
+             Por otra parte, el Transporte ocupa el 20% de las transferencias y crece 100,4% a.a. a la vez que cae 4,4%
+             a.a. en términos reales. Dentro del mismo, la partida más relevante es el Fondo Fiduciario del Sistema de
+             Infraestructura del Transporte (FFSIT) que tiene como finalidad el financiamiento de la cobertura de los
+             subsidios al autotransporte de pasajeros y crece 133,4% a.a. en términos nominales (+15,2% real).
+                                                                                  
+             Se advierten dos particularidades: por un lado, la magnitud de los subsidios eléctricos (CAMMESA) deter-
+             mina el signo de la variación total nominal y real. Y por otro, sin considerar Aerolíneas, los subsidios al
+             transporte crecen en términos reales un 8% a.a.                      
+                 GRÁFICO N° 2: Subsidios reales | Acumulado anual junio 2023 vs 2022 en millones de $
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                        Fuente: elaboración propia en base a Presupuesto Abierto e INDEC
+                                                                                  
+             Los subsidios al servicio público del agua en el AMBA (AYSA) que representan solo el 1% de los subsidios
+             totales y se incrementan 73,8% a.a. mientras que tiene una reducción real del 17,4% a.a.
+             De esta forma, los subsidios acumulan $ 3.96 billones en los últimos doce meses a moneda de junio de
+             2023. Esto implica una caída real del 28% respecto al pico dado en igual periodo anterior (acumulados
+             entre julio de 2021 y junio de 2022).                                
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                             Iiep.economicas.uba.ar 2
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+         GRÁFICO N° 3: Subsidios reales acumulado en últimos 12 meses | Evolución a moneda de junio 2023 en billones de $
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                        Fuente: elaboración propia en base a Presupuesto Abierto e INDEC
+                                                                                  
+                                                                                  
+       Al analizar los datos de doce meses acumulados es relevante que los subsidios destinados a CAMMESA en el mes de julio de
+       2022 fueron $0 que, a diferencia de los meses de enero, es una situación poco probable dado el contexto: la estacionalidad
+       propia del pico de consumo de invierno y las transferencias realizadas en el mes anterior y posterior.
+       Por otra parte, la contribución al incremento de la deuda flotante3 del Estado Nacional es de $ 208.819 millones en términos
+       nominales. Esto indica que aumentó esta deuda respecto del acumulado a mayo en un 190%.
+                                                                                  
+           GRÁFICO N° 4 | Diferencia entre gasto devengado y pagado | Acumulado nominal año 2023 en millones de $
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                 Total $ 208.819  
+                                                                   millones       
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                       Fuente: elaboración propia en base a Presupuesto Abierto e INDEC
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+       3 Entendida como la diferencia entre los gastos corrientes devengados y los gastos corrientes pagados.
+                                                                                  
+                                                             Iiep.economicas.uba.ar 3
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+       SUBSIDIOS AL TRANSPORTE                                                    
+                                                                                  
+       Exceptuando las transferencias a Aerolíneas Argentinas, los subsidios al transporte automotor y Ferroviario suman $341.986
+       millones acumulados a junio de 2023. Esto implica un crecimiento del 123% nominal y del 8% real.
+       Dentro de estos, las transferencias al Fondo Fiduciario del Sistema de Infraestructura del Transporte (FFSIT) cubren las dife-
+       rencias entre costos e ingresos del transporte automotor y son las que tienen mayor peso en el rubro ya que explican el 46%
+       de los subsidios dentro del mismo.                                         
+       La mayor parte de estos subsidios al transporte automotor se explican por la resolución 178/2023 del Ministerio de Transporte
+       que ha establecido el reconocimiento de los costos e ingresos del transporte de pasajeros en la Región Metropolitana de
+       Buenos Aires. La diferencia entre ambos muestra la compensación requerida por pasaje pagado que suma $249.719 millones
+       a junio de 2023.                                                           
+       TABLA N° 2 | costos e ingresos medios del transporte de pasajeros urbanos y suburbanos de la Región Metropolitana de
+       Buenos Aires                                                               
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+       Fuente: Resolución 178/2023 Ministerio de Transporte                       
+                                                                                  
+       En enero de 2023 los ingresos alcanzaron a cubrir el 11% del costo de prestar el servicio mientras que en agosto se espera
+       llegar al 17%. Esta mayor cobertura se debe tanto a una leve baja de costos estimados en términos nominales como a un
+       aumento estimado de los ingresos a partir de incrementos en el valor del pasaje.
+                                                                                  
+        GRÁFICO N° 5 | Evolución de costos e ingresos año 2023 GRÁFICO N ° 6: Evolución de cobertura de costos año
+                    Ene-23=100                         2023                       
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+       Fuente: elaboración propia en base a Resolución 178/2023 Ministerio de Transporte.
+                                                                                  
+                                                                                  
+       SUBSIDIOS EN RELACIÓN AL GASTO Y AL DÉFICIT                                
+                                                                                  
+       Al primer semestre de 2023, los subsidios representan el 13% de los gastos primarios. Esto es 0,3 p.p. más que en el primer
+       semestre de 2022 mientras que duplica el peso promedio observado en el año 2019 y 2020.
+       Por otra parte, en el periodo los subsidios explicaron el 105% del Resultado Primario, es decir, el monto en subsidios fue mayor
+       al déficit primario observado en el primer semestre. Este indicador es variable en los años ya que para iguales periodos
+       anteriores explicó más que el déficit (2021) o bien se dio en conjunto con superávit (2019 y 2020).
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                             Iiep.economicas.uba.ar 4
+           @AFISPOP +INFO SOBRE INFORMES                                          
+       T A R IF A T É C N IC A (C O S T O )                                       
+       IN G R E S O M E D IO P O R P A S A JE R                                   
+       C O B E R T U R A                                                          
+       C O M P E N S A C IO N R E Q U E R ID A                                    
+       O T R A S C O M P E N S A C IO N E S                                       
+       T O T A L C O M P E N S A C IO N E S                                       
+                      O                                                           
+                         $                                                        
+                         $                                                        
+                         $                                                        
+                         $                                                        
+                         $                                                        
+                          E N E R O                                               
+                            2 3 0                                                 
+                             2 5                                                  
+                          1 1 %                                                   
+                          3 9 .1 2 7                                              
+                           1 .5 5 6                                               
+                          4 0 .6 8 3                                              
+                               F E B R E R O                                      
+                               $  2 2 2 $                                         
+                               $   2 5 $                                          
+                                 1 1 %                                            
+                               $ 3 9 .4 4 5 $                                     
+                               $   7 3 $                                          
+                               $ 3 9 .5 1 8 $                                     
+                                      M A R Z O                                   
+                                        2 1 2                                     
+                                         2 8                                      
+                                       1 3 %                                      
+                                       4 1 .4 3 3                                 
+                                         8 0                                      
+                                       4 1 .5 1 3                                 
+                                            $                                     
+                                            $                                     
+                                            $                                     
+                                            $                                     
+                                            $                                     
+                                             A B R IL                             
+                                               1 9                                
+                                               2                                  
+                                             1 5 %                                
+                                             4 1 .5 0                             
+                                               8                                  
+                                             4 1 .5 8                             
+                                                9                                 
+                                                9                                 
+                                                5                                 
+                                                0                                 
+                                                5                                 
+                                                   M A Y O                        
+                                                  $  2 0 4                        
+                                                  $   3 1                         
+                                                   1 5 %                          
+                                                  $ 4 3 .2 2 0                    
+                                                  $   8 6                         
+                                                  $ 4 3 .3 0 5                    
+                                                         JU N IO                  
+                                                        $  2 0 3                  
+                                                        $   3 2                   
+                                                          1 6 %                   
+                                                        $ 4 3 .0 3 0              
+                                                        $   8 6                   
+                                                        $ 4 3 .1 1 5              
+                                                              $                   
+                                                              $                   
+                                                              $                   
+                                                              $                   
+                                                              $                   
+                                                               JU L IO            
+                                                                 2 2              
+                                                                  3               
+                                                                1 4 %             
+                                                                4 3 .8 6          
+                                                                 1 .1 1           
+                                                                4 4 .9 7          
+                                                                     A G O S T O  
+                                                                   1 $  2 0 7     
+                                                                   2 $  3 4       
+                                                                      1 7 %       
+                                                                   1 $ 4 2 .0 6 5 
+                                                                   2 $  8 6       
+                                                                   3 $ 4 2 .1 5 0 
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+                                                                                  
+          GRÁFICO N° 7: Relación subsidios vs Gasto Primario GRÁFICO N ° 8: Relación subsidios vs Resultado Primario
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                 Fuente: elaboración propia en base a Presupuesto Abierto y Oficina de Presupuesto del Congreso.
+                                                                                  
+                                                                                  
+       ACTIVIDAD ECONÓMICA VS DEMANDA ELÉCTRICA                                   
+       La variación inter anual de la actividad económica, utilizando el Estimador de Actividad Económica (EMAE), presenta una
+       correlación positiva con la variación inter anual de la demanda de energía eléctrica industrial y comercial. En este sentido,
+       el dato eléctrico suele contar con una publicación más actualizada y por lo tanto puede utilizarse para observar, de manera
+       preliminar, el posible comportamiento futuro de la actividad en su conjunto.
+                                                                                  
+        GRÁFICO N° 9: Demanda eléctrica Industrial + Comercial y GRÁFICO N ° 10: Relación entre las tasas
+                    EMAE | Var. % i.a.                   de variación i.a.        
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+       Fuente: elaboración propia en base a CAMMESA e INDEC                       
+                                                                                  
+       En mayo, la demanda eléctrica industrial y comercial se redujo 3.4% i.a. De esta manera, existe una elevada probabilidad que
+       el índice de actividad económica empeore su tasa de crecimiento i.a. en mayo. Es decir, que la actividad i.a. tenga una tasa
+       de negativa por segundo mes consecutivo.                                   
+                                                                                  
+       EVOLUCIÓN DE LA TARIFA DEL AMBA EN TÉRMINOS REALES                         
+                                                                                  
+       Tanto la factura promedio energía eléctrica como la factura promedio del servicio de gas natural del AMBA se han reducido
+       en términos reales desde diciembre de 2019.                                
+       Es esperable que en ausencia de nuevos incrementos la factura final promedio de los servicios energéticos se reduzca en
+       términos reales hacia finales del año.                                     
+                                                                                  
+                                                                                  
+                                                                                  
+                                                             Iiep.economicas.uba.ar 5
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+                                                                                  
+           GRÁFICO N° 11: Factura final promedio del AMBA por servicio energético | a precios constantes de junio de 2023
+          11.1 - Energía eléctrica | Consumo de 300 Kwh/mes 11.2 - Gas natural | Consumo de 65 m3/mes
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+       Fuente: elaboración propia en base a ENRE, ENARGAS, Secretaría de Energía e INDEC.
+       Entre marzo de 2019 y agosto de 2022 la tarifa residencial para un consumo promedio de energía eléctrica se redujo 51% en
+       términos reales. A partir de entonces, y hasta junio de 2023, hubo una recomposición real del 209% en el caso de un usuario
+       de altos ingresos mientras los niveles N 2 y N 3 continúan su caída real.  
+                                                                                  
+       En este sentido, la factura promedio de energía eléctrica para los usuarios del Nivel 2 (bajos ingresos) y nivel 3 (ingresos
+       medios) cayeron en términos reales un 16% y 6% respecto de la factura pre-segmentación respectivamente.
+       El caso del gas muestra una dinámica similar. Entre enero de 2019 y febrero de 2023 la tarifa residencial para un consumo
+       promedio de gas natural se redujo 46% en términos reales. A partir de entonces, y hasta junio de 2023, hubo una recompo-
+       sición real del 14% en el caso de un usuario de altos ingresos mientras los niveles N 2 y N 3 continúan su caída real.
+       Por último, la factura promedio de gas para los usuarios del Nivel 2 (bajos ingresos) y nivel 3 (ingresos medios) cayeron en
+       términos reales un 28% y 18% respecto de la factura pre-segmentación respectivamente (febrero 2023).
+                                                                                  
+                                                                                  
+       ESTACIONALIDAD DE LAS FACTURAS | IMPACTO EN EL AMBA                        
+       Tanto las facturas de energía eléctrica como de gas natural presentan una fuerte estacionalidad en el consumo. Esto se
+       debe estrictamente a factores climáticos y la intensidad de uso que requiere el consumo de cada servicio en los hogares.
+                                                                                  
+       En este sentido, mientras el gas natural tiene un único pico estacional de consumo en los meses de invierno (junio-agosto)
+       la energía eléctrica lo tiene también en verano (junio-agosto y noviembre-febrero).
+       Por este motivo, ante un mismo cuadro tarifario, las facturas finales serán necesariamente muy diferentes en los meses de
+       alto consumo versus lo meses de consumo moderado.                          
+       Para graficar esta particularidad se presenta el gráfico N° 12 que muestra las facturas del AMBA en cada mes del año con los
+       cuadros tarifarios vigentes a junio. A su vez, se complementa con la relación entre el gasto total energético respecto al salario
+       representativo de cada segmento (a partir de junio el dato es estimado en función de las proyecciones de inflación).
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                             Iiep.economicas.uba.ar 6
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+         GRÁFICO N° 12: canasta energética del AMBA ajustada por estacionalidad | cuadros tarifarios vigentes a junio 2023
+                         Factura final con impuesto Factura sobre ingreso del segmento
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+               le                                                                 
+               v                                                                  
+               iN                                                                 
+                1                                                                 
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+               2                                                                  
+               le                                                                 
+               v                                                                  
+               iN                                                                 
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+               3                                                                  
+               le                                                                 
+               v                                                                  
+               iN                                                                 
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                  Fuente: elaboración propia en base a ENRE, ENARGAS, MTEySS, INDEC y MECON.
+       Para los usuarios N 2 el peso de los servicios energéticos en el pico de invierno representará el 7,4% del ingreso del segmento.
+       Mientras que para los usuarios N 1 y N 3 representarán el 2,2% y 3,1% del ingreso respectivamente.
+       Existen dos particularidades. En primer lugar, durante el pico de consumo invernal los usuarios de menores ingresos del AMBA
+       tendrán una carga en el salario más elevada que los restantes, esto es hasta 3.3 veces más que los usuarios de altos ingresos
+       y hasta 2.4 veces más que los usuarios de ingresos medios; en segundo lugar, pasado el pico de invierno el peso de los
+       servicios energéticos cae debido a un menor consumo estacional y al aumento nominal estimado de los salarios.
+                                                                                  
+                                                                                  
+       RELACIÓN ENTRE LA FACTURA FINAL Y EL SALARIO PROMEDIO                      
+       El salario RIPTE estimado4 en junio indica que el peso de los servicios energéticos de un usuario N 1, N 2 y N 3 representan el
+       5,3%, 2,1% y 1,8% del indicador respectivamente respectivamente.           
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+        4 Estimado en base a la variación mensual promedio de los últimos tres meses.
+                                                                                  
+                                                             Iiep.economicas.uba.ar 7
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+        GRÁFICO N° 13: Evolución de la relación entre RIPTE y servicios energéticos en el AMBA | junio 2023 (EDENOR y METROGAS)
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                          Fuente: elaboración propia en base a ENRE, ENARGAS y MTEySS
+                      Consumos de 300 KWh/mes (energía eléctrica) y de 65 m3/mes (gas natural)
+       El peso máximo de los servicios públicos energéticos sobre el salario se observa en junio de 2019 con una carga del 5,6%
+       sobre el salario promedio registrado.                                      
+                                                                                  
+                                                                                  
+       COBERTURA DE COSTOS ELÉCTRICOS Y DEL GAS NATURAL                           
+       Según se establece en la Resolución 323/23 de la Secretaría de Energía, que aprueba la Programación Estacional de Invierno
+       para el Mercado Mayorista Eléctrico, el Precio Estabilizado de la Energía (PEE) entre el 31 de mayo y el 1° de julio alcanza los
+       $21.208 por MWh para los hogares N 1, mientras que para los hogares N 2 y N 3 es de $/MWh 2.975 y $/MWh 3.748.5
+           GRÁFICO N° 14: Precio y coberturas eléctrica GRÁFICO N ° 15: % de subsidios eléctricos
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                           Fuente: elaboración propia en base a Resolución 323/23 SE
+       Con estos valores, la cobertura de costos eléctricos se da al 100% para los usuarios N 1 mientras que lo usuarios N 2 y N 3
+       pagan el 14% y 18% del costo de generación eléctrica respectivamente. Esto implica que para estos dos segmentos el estado
+       cubre con subsidios el 86% y 82% del costo.                                
+       Por otra parte, la cobertura de costos del gas natural no alcanza al 100% en ningún segmento de usuarios. En promedio, la
+       cobertura del costo de abastecimiento del gas es del 53% para los usuarios N 1 mientras que los usuarios N 2 y N 3 pagan el
+       16% y 20% del costo de abastecimiento respectivamente. La tabla N° 3 muestra los precios promedio pagados por distribui-
+       doras y segmentos de usuarios para la categoría R 2 1° en USD/MMbtu.       
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+        5 Valores indicados para las horas “resto”.                               
+                                                                                  
+                                                             Iiep.economicas.uba.ar 8
+           @AFISPOP +INFO SOBRE INFORMES                                          
+
+                                                                                  
+                                                                                  
+                                                                                  
+       REPORTE DE TARIFAS y SUBSIDIOS #03                                         
+       Observatorio de tarifas y subsidios IIEP (UBA-CONICET) | JUNIO 2023        
+                                                                                  
+       TABLA N° 3 | precios PIST pagados por usuarios y cobertura respecto del costo de abastecimiento de gas natural
+                                  PRECIO PIST EN FACTURA COBERTURA                
+                                  NIVEL 1 NIVEL 2 NIVEL 3 NIVEL 1 NIVEL 2 NIVEL 3 
+                                                                                  
+              Camuzzi Gas del Sur S.A. $ 2,02 $ 0,59 $ 0,76 32% 9% 12%            
+              Camuzzi Gas Pampeana S.A. $ 2,94 $ 0,86 $ 1,10 47% 14% 18%          
+              Distribuidora de Gas Cuyana S.A. $ 3,68 $ 1,08 $ 1,38 59% 17% 22%   
+              Distribuidora de Gas del Centro S.A. $ 3,55 $ 1,04 $ 1,33 57% 17% 21%
+                                                                                  
+              GasNea S.A.         $ 3,66 $ 1,07 $ 1,37 58%   17%  22%             
+              Gasnor S.A.         $ 3,06 $ 0,90 $ 1,15 49%   14%  18%             
+              Litoral Gas S.A.    $ 3,59 $ 1,05 $ 1,35 57%   17%  21%             
+              MetroGAS S.A.       $ 3,60 $ 1,05 $ 1,35 57%   17%  22%             
+              Naturgy BAN S.A.    $ 3,74 $ 1,09 $ 1,40 60%   17%  22%             
+                                                                                  
+              Redengas S.A.       $ 3,64 $ 1,07 $ 1,37 58%   17%  22%             
+              Promedio país       $ 3,35 $ 0,98 $ 1,26 53%   16%  20%             
+              Costo de abastecimiento estimado para junio 2023  $ 6,28            
+                                                                                  
+              Fuente: elaboración propia en base a ENARGAS, Secretaría de Energía y BCRA
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                                                  
+                                                             Iiep.economicas.uba.ar 9
+           @AFISPOP +INFO SOBRE INFORMES                                          

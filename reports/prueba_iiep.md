@@ -1,0 +1,41 @@
+# Reportes de tarifas del IIEP
+
+- https://iiep.economicas.uba.ar/publicaciones/informes-reportes/: 0 bytes
+- https://iiep.economicas.uba.ar/publicaciones/informes-reportes/page/2/: 0 bytes
+- https://iiep.economicas.uba.ar/publicaciones/informes-reportes/page/3/: 0 bytes
+- candidatos: 36
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasAgosto2023.pdf: 74880 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasJulio2023.pdf: 60105 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasJunio2023.pdf: 74159 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasMarzo2023.pdf: 42480 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasMayo2023.pdf: 51938 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasOctubre2023.pdf: 55626 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2023/10/ReportedeTarifasSeptiembre2023.pdf: 46364 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/01/Afispop-tarifas-subsidios-ene2024.pdf: 76791 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/01/InformeTarifasySubsidiosDiciembre2023.pdf: 73461 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/01/InformeTarifasySubsidiosNoviembre2023.pdf: 52050 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/02/INFORME-TARIFAS-Y-SUBSIDIOS-FEBRERO-2024.pdf: 82792 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/03/INFORME-TARIFAS-Y-SUBSIDIOS-MARZO-2024.pdf: 73568 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/04/INFORME-DE-TARIFAS-Y-SUBSIDIOS-ABRIL-2024.pdf: 91269 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/05/INFORME-TARIFAS-Y-SUBSIDIOS-MAYO-2024.pdf: 94015 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/06/INFORME-TARIFAS-Y-SUBSIDIOS-JUNIO-2024.pdf: 94623 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/07/INFORME-TARIFAS-Y-SUBSIDIOS-JULIO-2024.pdf: 92626 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/08/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2024.pdf: 88773 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/09/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2024.pdf: 102621 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/10/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2024.pdf: 92002 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/11/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2024.pdf: 106199 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2024/12/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2024.pdf: 102169 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/01/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2025.pdf: 104693 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/02/INFORME-TARIFAS-Y-SUBSIDIOS-FEBRERO-2025.pdf: 105049 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/03/INFORME-TARIFAS-Y-SUBSIDIOS-MARZO-2025.pdf: 115237 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/04/INFORME-TARIFAS-Y-SUBSIDIOS-ABRIL-2025.pdf: 116654 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/05/INFORME-TARIFAS-Y-SUBSIDIOS-MAYO-2025.pdf: 131672 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/06/INFORME-TARIFAS-Y-SUBSIDIOS-JUNIO-2025.pdf: 131638 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/07/INFORME-TARIFAS-Y-SUBSIDIOS-JULIO-2025.pdf: 154507 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/2025/08/INFORME-TARIFAS-Y-SUBSIDIOS-AGOSTO-2025.pdf: 159796 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-DICIEMBRE-2025.pdf: 174524 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-ENERO-2026.pdf: 197425 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-NOVIEMBRE-2025.pdf: 175129 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-OCTUBRE-2025.pdf: 139749 caracteres
+  - https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-TARIFAS-Y-SUBSIDIOS-SEPTIEMBRE-2025.pdf: 162102 caracteres
+- bajados: 34; total guardados: 34
