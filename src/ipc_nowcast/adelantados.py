@@ -72,7 +72,10 @@ for _c in OPCIONES:
     if _c != "07.2.2":
         OPCIONES[_c] = OPCIONES[_c] + [["propio"]]
 # calendario histórico de aumentos anunciados (data/precios/regulados/eventos.csv)
-for _c in ("02.2", "04.5", "07.3", "09.5", "10"):
+# (luz, gas y transporte AMBA se reconstruyeron con los reportes del IIEP y se probaron el 24-nov-2026: el cuadro
+# tarifario del usuario sin subsidio no explica el 04.5 de INDEC (correlación ~0 sin feb-26) y empeoró el rubro;
+# en transporte nunca ganó la selección. Quedan los datos, no la opción)
+for _c in ("02.2", "09.5", "10"):
     if _c in OPCIONES:
         OPCIONES[_c] = OPCIONES[_c] + [["cal"], ["cal", "propio"]]
 # dato del mes combinado con inercia o arrastre: la regresión reparte el peso (no elegir entre una y otra)
