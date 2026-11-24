@@ -457,20 +457,20 @@
   '02.2':
   - fuentes:
     - cal
-    - propio
     coef:
-    - 0.812
-    - 0.0
-    - 0.232
+    - 0.871
     error_proyeccion: 1.666
-    error_con_fuente: 0.713
+    error_con_fuente: 0.692
     meses: 24
   - fuentes:
     - cal
+    - propio
     coef:
-    - 0.87
+    - 0.817
+    - 0.0
+    - 0.208
     error_proyeccion: 1.666
-    error_con_fuente: 0.717
+    error_con_fuente: 0.715
     meses: 24
   - fuentes:
     - ipc
@@ -1413,19 +1413,19 @@
   - fuentes:
     - cal
     coef:
-    - 0.913
+    - 0.914
     error_proyeccion: 1.666
-    error_con_fuente: 0.648
+    error_con_fuente: 0.623
     meses: 24
   - fuentes:
     - cal
     - propio
     coef:
-    - 0.866
+    - 0.873
     - 0.0
-    - 0.168
+    - 0.141
     error_proyeccion: 1.666
-    error_con_fuente: 0.669
+    error_con_fuente: 0.663
     meses: 24
   - fuentes:
     - ipc
@@ -2526,19 +2526,19 @@ completo:
   - fuentes:
     - cal
     coef:
-    - 0.921
+    - 0.909
     error_proyeccion: 1.666
-    error_con_fuente: 0.613
+    error_con_fuente: 0.616
     meses: 24
   - fuentes:
     - cal
     - propio
     coef:
-    - 0.872
+    - 0.865
     - 0.0
-    - 0.177
+    - 0.156
     error_proyeccion: 1.666
-    error_con_fuente: 0.635
+    error_con_fuente: 0.646
     meses: 24
   - fuentes:
     - ipc

@@ -89,8 +89,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Bebidas alcohólicas | propio | 34 | 2,10 | 1,59 | sí, si falta la anterior |
 | Bebidas alcohólicas | SEPA | 17 | 0,89 | 0,64 | sí, si falta la anterior |
 | Bebidas alcohólicas | sepa+propio | 17 | 0,89 | 0,63 | **sí** |
-| Tabaco | cal | 24 | 1,67 | 0,72 | sí, si falta la anterior |
-| Tabaco | cal+propio | 24 | 1,67 | 0,71 | **sí** |
+| Tabaco | cal | 24 | 1,67 | 0,69 | **sí** |
+| Tabaco | cal+propio | 24 | 1,67 | 0,72 | sí, si falta la anterior |
 | Tabaco | ipc | 34 | 2,18 | 1,82 | sí, si falta la anterior |
 | Tabaco | propio | 34 | 2,18 | 2,30 | no |
 | Ropa | fx | 34 | 2,22 | 2,49 | no |
@@ -278,8 +278,8 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Bebidas alcohólicas | propio | 34 | 2,10 | 1,59 | sí, si falta la anterior |
 | Bebidas alcohólicas | SEPA | 17 | 0,89 | 0,65 | sí, si falta la anterior |
 | Bebidas alcohólicas | sepa+propio | 17 | 0,89 | 0,62 | **sí** |
-| Tabaco | cal | 24 | 1,67 | 0,61 | **sí** |
-| Tabaco | cal+propio | 24 | 1,67 | 0,63 | sí, si falta la anterior |
+| Tabaco | cal | 24 | 1,67 | 0,62 | **sí** |
+| Tabaco | cal+propio | 24 | 1,67 | 0,65 | sí, si falta la anterior |
 | Tabaco | ipc | 34 | 2,18 | 1,82 | sí, si falta la anterior |
 | Tabaco | propio | 34 | 2,18 | 2,30 | no |
 | Ropa | fx | 34 | 2,22 | 2,48 | no |

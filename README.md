@@ -286,8 +286,16 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   Se convierte a la variación del promedio del mes (un aumento del 29 pega casi entero en el mes siguiente); a mitad
   de mes solo cuentan los aumentos vigentes hasta ese día. Empieza por cigarrillos (Massalin 72%, BAT 28%; precios
   nacionales): sigue al tabaco de INDEC con correlación 0,88. Tabaco a fin de mes 16m 1,39 -> 0,52 (t = −2,5),
-  jul-24+ 1,58 -> 1,00. Nacional fin 16m 0,197 -> 0,193. Siguen: tarifas y transporte del AMBA (reportes mensuales
-  del IIEP-UBA), diarios y colegios.
+  jul-24+ 1,58 -> 1,00. Nacional fin 16m 0,197 -> 0,193. Con las listas de BAT de junio y agosto de 2026, tabaco a
+  mitad de mes 0,56 -> 0,53 y día 22 0,53 -> 0,50 (16m).
+- **Descartadas: luz, gas y transporte del AMBA en el calendario (24-nov-2026).** Se reconstruyeron mes a mes desde
+  jul-24 con los 44 reportes de tarifas del IIEP-UBA (`scripts/pruebas/iiep_tarifas.py`; cargo fijo y variable del
+  cuadro tarifario, y gasto en transporte). Quedan en `eventos.csv`, pero no como candidata: el cuadro del usuario sin
+  subsidio no sigue al 04.5 de INDEC (correlación 0,6 solo por la quita de subsidios de feb-26; sin ese mes, ~0), y
+  con el calendario el rubro empeoraba (fin 16m 2,40 -> 2,84, t = 2,0; nacional 0,193 -> 0,227). INDEC promedia
+  usuarios con y sin subsidio, y lo que mueve su índice son las bonificaciones y los topes de consumo subsidiado, que
+  el reporte no cuantifica. En transporte (correlación 0,62 con el 07.3 del GBA) la selección nunca la eligió frente a
+  la inflación reciente. Siguen: diarios y colegios.
 - Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
   Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
   nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.
