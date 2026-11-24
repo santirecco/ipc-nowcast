@@ -49,6 +49,9 @@ def main():
             for i, m in enumerate(MESES):
                 for sub in (f"{anio}/{i + 1:02d}", f"{anio}/{min(i + 2, 12):02d}"):
                     urls.add(f"https://economicas.uba.ar/iiep/wp-content/uploads/{sub}/INFORME-TARIFAS-Y-SUBSIDIOS-{m}-{anio}.pdf")
+    for anio in (2026, 2027):  # desde feb-2026 el nombre cambió
+        for m in MESES:
+            urls.add(f"https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-{m}-{anio}.pdf")
     log.append(f"- candidatos: {len(urls)}")
     hechos = {p.stem for p in DIR.glob("*.txt")}
     ok = 0
