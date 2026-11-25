@@ -19,6 +19,7 @@ Estructura (de abajo hacia arriba):
 from __future__ import annotations
 
 import calendar
+import os
 from datetime import date
 
 import numpy as np
@@ -85,6 +86,28 @@ def peso_caba_vigente() -> float:
 AJUSTE_CABA_UMBRAL = 0.2   # pp: correcciones menores se ignoran
 AJUSTE_CABA_FACTOR = 0.75  # se aplica el 75% del desvío típico (prudencia)
 PARTE_SUPER = 0.6  # parte de cada clase de alimentos que se toma de los supermercados online (a calibrar)
+
+# Subsidios al gas (04.5): cuando cambian las bonificaciones o los bloques de consumo subsidiado, la factura de los
+# hogares con subsidio se mueve distinto de la del cuadro tarifario. Brecha mensual (pp) entre la factura de gas de
+# los usuarios con subsidio y la de los usuarios sin subsidio, según los reportes del IIEP-UBA
+# (data/precios/regulados/subsidios_gas.csv). Hasta ene-26 se usa la factura (N2/N3 contra N1); desde abr-26 (esquema
+# SEF) el reporte da el cargo variable, que es cerca de la mitad de la factura.
+# Parte del 04.5 alcanzada = peso del gas en el 04.5 x hogares con subsidio (~50%). Solo en las regiones donde el gas
+# es calefacción: en GBA (la factura la domina la luz) y en el norte el 04.5 no respondió a la brecha en 2024-26.
+SUBSIDIOS_GAS = os.environ.get("IPC_SUBSIDIOS_GAS", "1") == "1"
+PARTE_SUBSIDIO_GAS = {"Pampeana": 0.45 * 0.5, "Cuyo": 0.45 * 0.5, "Patagonia": 0.55 * 0.5}
+FACTOR_MEDIDA = {"factura": 1.0, "variable": 0.5}
+
+
+def brecha_subsidio_gas(mes: pd.Timestamp) -> float | None:
+    ruta = DATA / "precios" / "regulados" / "subsidios_gas.csv"
+    if not ruta.exists():
+        return None
+    t = pd.read_csv(ruta)
+    f = t[t.mes == f"{mes:%Y-%m}"]
+    if f.empty:
+        return None
+    return float(f.brecha.iloc[0]) * FACTOR_MEDIDA.get(str(f.medida.iloc[0]), 1.0)
 
 
 # ---------------------------------------------------------------- proyección estadística
@@ -383,6 +406,13 @@ class Nowcast:
                     info.append({"region": r, "componente": "06.4.1", "fuente": "regla: IPC de dos meses antes",
                                  "valor": float(ipc.loc[m2]), "parte": 1.0,
                                  "detalle": f"Las prepagas ajustan por la inflación de dos meses antes ({ipc.loc[m2]:.1f}%)".replace(".", ",")})
+        brecha = brecha_subsidio_gas(mes) if (usar_reglas and SUBSIDIOS_GAS) else None
+        if brecha:
+            for r, parte in PARTE_SUBSIDIO_GAS.items():
+                info.append({"region": r, "componente": "04.5", "fuente": "regla: subsidios al gas",
+                             "valor": brecha, "parte": parte, "aditivo": True,
+                             "detalle": f"Factura de gas de los hogares con subsidio {brecha:+.1f} pp respecto de la de los "
+                                        f"hogares sin subsidio (bonificaciones y bloques de consumo)".replace(".", ",")})
         if usar_super and super_mensual is not None and not super_mensual.empty:
             sm = super_mensual[(super_mensual.mes == mes) & super_mensual["var_mensual_%"].notna()]
             for _, f in sm.iterrows():
