@@ -114,13 +114,23 @@ def brecha_subsidio_gas(mes: pd.Timestamp) -> float | None:
 DIVISIONES_TRANSABLES = set(__import__("os").environ.get("IPC_TRANSABLES", "03,05").split(",")) - {""}
 
 
+DIVISIONES_SALTO_MARZO = set(__import__("os").environ.get("IPC_SALTO_MARZO", "10").split(",")) - {""}
+
+
 def proyeccion_estadistica(var: pd.DataFrame, nucleo: pd.Series, mes: pd.Timestamp) -> pd.Series:
     """Proyección de la variación % de cada columna de `var` para `mes`, con datos hasta el mes anterior."""
     pasado = var[var.index < mes].dropna(how="all")
     nuc = nucleo[nucleo.index < mes].dropna()
     nuc3 = nuc.iloc[-3:].mean()
-    persist = pasado.iloc[-1]
+    persist = pasado.iloc[-1].copy()
     med3 = pasado.iloc[-3:].median()
+    # Educación: el salto de marzo (comienzo de clases) no se repite en abril; la persistencia y la mediana de 3
+    # meses se miden sin los marzos (2018-26: error de la división 2,60 -> 2,27; abril 5,7 -> 1,9; resto igual)
+    cols_m = [c for c in pasado.columns if isinstance(c, tuple) and c[1] in DIVISIONES_SALTO_MARZO]
+    if cols_m and mes.month != 3:
+        sin_marzo = pasado.loc[[m.month != 3 for m in pasado.index], cols_m]
+        persist[cols_m] = sin_marzo.iloc[-1]
+        med3[cols_m] = sin_marzo.iloc[-3:].median()
     mismos = [m for m in pasado.index if m.month == mes.month and m.year >= 2017 and m in nuc.index]
     desvios = pd.DataFrame({m: (pasado.loc[m] - nuc.loc[m]) / max(nuc.loc[m], 0.3) for m in mismos}).T
     estac_tipica = nuc3 * (1 + desvios.median())
