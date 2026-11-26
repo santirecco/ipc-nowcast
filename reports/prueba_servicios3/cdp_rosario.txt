@@ -1,0 +1,11 @@
+2027-11-26" } } { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "¿Cuánto sale el pasaje en micro desde Retiro Buenos Aires a Rosario?", "acceptedAnswer": { "@type": "Answer", "text": "El precio promedio de un pasaje de bus desde Retiro Buenos Aires a Rosario es de $35.827, y el pasaje más barato cuesta $23.000. Recordá que los precios de los pasajes dependen de la fecha
+-----
+ { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "¿Cuánto sale el pasaje en micro desde Retiro Buenos Aires a Rosario?", "acceptedAnswer": { "@type": "Answer", "text": "El precio promedio de un pasaje de bus desde Retiro Buenos Aires a Rosario es de $35.827, y el pasaje más barato cuesta $23.000. Recordá que los precios de los pasajes dependen de la fecha, la empresa y la calidad del servicio 
+-----
+ Información sobre tu viaje en micro desde Retiro Buenos Aires hacia Rosario Pasaje m&#225;s barato $23.000 
+-----
+ Pasaje m&#225;s barato $23.000 Precio promedio de pasajes $35.827 
+-----
+ Preguntas frecuentes para el viaje desde Retiro Buenos Aires a Rosario ¿Cuánto sale el pasaje en micro desde Retiro Buenos Aires a Rosario? El precio promedio de un pasaje de bus desde Retiro Buenos Aires a Rosario es de $35.827, y el pasaje más barato cuesta $23.000. Recordá que los precios de los pasajes dependen de la fecha
+-----
+ Preguntas frecuentes para el viaje desde Retiro Buenos Aires a Rosario ¿Cuánto sale el pasaje en micro desde Retiro Buenos Aires a Rosario? El precio promedio de un pasaje de bus desde Retiro Buenos Aires a Rosario es de $35.827, y el pasaje más barato cuesta $23.000. Recordá que los precios de los pasajes dependen de la fecha, la empresa y la calidad del servicio 
