@@ -114,7 +114,9 @@ def brecha_subsidio_gas(mes: pd.Timestamp) -> float | None:
 DIVISIONES_TRANSABLES = set(__import__("os").environ.get("IPC_TRANSABLES", "03,05").split(",")) - {""}
 
 
-DIVISIONES_SALTO_MARZO = set(__import__("os").environ.get("IPC_SALTO_MARZO", "10").split(",")) - {""}
+_MESES_SALTO_TODOS = {"10": {3}, "03": {3, 4, 9, 10}, "09": {1, 7}, "11": {1}}
+MESES_SALTO = {d: m for d, m in _MESES_SALTO_TODOS.items()
+               if d in __import__("os").environ.get("IPC_MESES_SALTO", "10,03,09,11").split(",")}
 
 
 def proyeccion_estadistica(var: pd.DataFrame, nucleo: pd.Series, mes: pd.Timestamp) -> pd.Series:
@@ -124,13 +126,15 @@ def proyeccion_estadistica(var: pd.DataFrame, nucleo: pd.Series, mes: pd.Timesta
     nuc3 = nuc.iloc[-3:].mean()
     persist = pasado.iloc[-1].copy()
     med3 = pasado.iloc[-3:].median()
-    # Educación: el salto de marzo (comienzo de clases) no se repite en abril; la persistencia y la mediana de 3
-    # meses se miden sin los marzos (2018-26: error de la división 2,60 -> 2,27; abril 5,7 -> 1,9; resto igual)
-    cols_m = [c for c in pasado.columns if isinstance(c, tuple) and c[1] in DIVISIONES_SALTO_MARZO]
-    if cols_m and mes.month != 3:
-        sin_marzo = pasado.loc[[m.month != 3 for m in pasado.index], cols_m]
-        persist[cols_m] = sin_marzo.iloc[-1]
-        med3[cols_m] = sin_marzo.iloc[-3:].median()
+    # Saltos de temporada que no se repiten al mes siguiente: la persistencia y la mediana de 3 meses se miden sin
+    # esos meses. Educación: comienzo de clases (marzo). Ropa: cambio de temporada (mar-abr, sep-oct). Recreación:
+    # vacaciones (enero y julio). Restaurantes: temporada de verano (enero). Ver README (26-nov-2026).
+    for div, meses_salto in MESES_SALTO.items():
+        cols_m = [c for c in pasado.columns if isinstance(c, tuple) and c[1] == div]
+        if cols_m:
+            sin_salto = pasado.loc[[m.month not in meses_salto for m in pasado.index], cols_m]
+            persist[cols_m] = sin_salto.iloc[-1]
+            med3[cols_m] = sin_salto.iloc[-3:].median()
     mismos = [m for m in pasado.index if m.month == mes.month and m.year >= 2017 and m in nuc.index]
     desvios = pd.DataFrame({m: (pasado.loc[m] - nuc.loc[m]) / max(nuc.loc[m], 0.3) for m in mismos}).T
     estac_tipica = nuc3 * (1 + desvios.median())
