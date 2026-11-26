@@ -324,6 +324,17 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   Corrientes (el +46% de nov-25 no aparece en el Noreste de INDEC) y Posadas (falta un aumento de jul-26), y Salta
   (historia incompleta). Los ítems sin eventos se toman sin cambios desde jul-24 (antes quedaban vacíos y anulaban la
   región). La tarea de los lunes agrega los aumentos nuevos de estas ciudades.
+- **Saltos de temporada que no persisten (26-nov-2026)** (`modelo.MESES_SALTO`). La proyección de cada división
+  promedia 4 reglas; dos de ellas (último mes y mediana de 3 meses) arrastraban al mes siguiente saltos que son de
+  temporada: en educación, el aumento de cuotas de marzo se proyectaba de nuevo en abril (error de abril 4,3 pp en
+  jul-24+). Ahora esas dos reglas se miden sin los meses de salto: educación marzo; ropa marzo-abril y
+  septiembre-octubre (cambio de temporada); recreación enero y julio (vacaciones); restaurantes enero. Educación a fin
+  de mes: jul-24+ 2,23 -> 2,00, 16m 1,34 -> 1,26, abril 4,27 -> 1,30; recreación 16m 1,06 -> 1,05; ropa igual (su
+  proyección la reemplazan las clases 03.1/03.2). Nacional fin: 16m 0,183 -> 0,178, jul-24+ 0,355 -> 0,348; backtest
+  largo 2018-19 1,095 -> 1,072, 2020-22 0,715 -> 0,696. Se probaron y no entraron: transporte enero-julio (peor en los
+  últimos meses), varios enero (mixto) y, en educación, usar solo las reglas estacionales en marzo (mejor en la
+  historia larga, peor en 16m porque mar-25 fue excepcional). El salto de marzo en sí sigue siendo el mayor error de
+  educación (mar-25: 16-32% contra 7-12% proyectado): lo resolvería un calendario de cuotas por provincia.
 - **Fuentes para restaurantes y turismo (26-nov-2026, `scripts/pruebas/servicios_sondeo*.py`).** Se sondearon ~40
   sitios. PedidosYa (403), Rappi (429), McDonald's, KFC, Starbucks, Despegar, Almundo, Turismocity y Flechabus
   bloquean a los servidores; Flybondi y JetSMART no responden; las cadenas con web propia (Mostaza, Burger King,
