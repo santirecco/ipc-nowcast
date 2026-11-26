@@ -33,7 +33,9 @@ def eventos() -> pd.DataFrame:
 
 
 def _variacion_item(g: pd.DataFrame, corte: int | None) -> pd.Series:
-    dias = pd.date_range(g.fecha.min() - pd.offsets.MonthBegin(2), pd.Timestamp.today().normalize() + pd.offsets.MonthEnd(1))
+    # el ítem existe desde el comienzo del calendario: sin eventos, su precio no cambió
+    inicio = min(g.fecha.min() - pd.offsets.MonthBegin(2), DESDE - pd.offsets.MonthBegin(1))
+    dias = pd.date_range(inicio, pd.Timestamp.today().normalize() + pd.offsets.MonthEnd(1))
     p = pd.Series(1.0, index=dias)
     for f in g.itertuples():
         p[p.index >= f.fecha] *= 1 + f.aumento / 100
