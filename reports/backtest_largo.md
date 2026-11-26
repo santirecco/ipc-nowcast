@@ -11,7 +11,7 @@ en esos años el modelo es solo estadístico (más el calendario de tarifas dond
 | 2020-2022 | Fin de mes | 0,72 | -0,04 | 2,36 | 36 |
 | 2023 a jun-2024 | Inicio de mes | 3,46 | 0,06 | 13,75 | 18 |
 | 2023 a jun-2024 | Fin de mes | 3,46 | 0,06 | 13,75 | 18 |
-| jul-2024 en adelante | Inicio de mes | 0,41 | 0,13 | 1,27 | 28 |
-| jul-2024 en adelante | Fin de mes | 0,36 | 0,16 | 1,15 | 28 |
-| últimos 16 meses | Inicio de mes | 0,25 | -0,10 | 0,48 | 16 |
-| últimos 16 meses | Fin de mes | 0,19 | -0,04 | 0,56 | 16 |
+| jul-2024 en adelante | Inicio de mes | 0,41 | 0,13 | 1,25 | 28 |
+| jul-2024 en adelante | Fin de mes | 0,35 | 0,16 | 1,12 | 28 |
+| últimos 16 meses | Inicio de mes | 0,24 | -0,10 | 0,48 | 16 |
+| últimos 16 meses | Fin de mes | 0,18 | -0,04 | 0,56 | 16 |

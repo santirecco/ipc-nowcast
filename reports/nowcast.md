@@ -1,6 +1,6 @@
 # Pronóstico IPC noviembre 2026
 
-*Calculado el 25/11/2026. Último dato oficial de INDEC: octubre 2026.*
+*Calculado el 26/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
 ## 1,7% mensual (rango probable 1,3% a 2,0%)
 
@@ -21,7 +21,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | División | Peso % | Variación % | Incidencia (pp) |
 |---|---|---|---|
 | Alimentos y bebidas no alcohólicas | 28,7 | 1,14 | 0,33 |
-| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,29 | 0,25 |
+| Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,31 | 0,25 |
 | Transporte | 11,6 | 1,87 | 0,22 |
 | Restaurantes y hoteles | 10,9 | 1,84 | 0,20 |
 | Salud | 9,0 | 1,72 | 0,15 |
@@ -38,11 +38,11 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Región | Peso % | Variación % |
 |---|---|---|
 | GBA | 45,1 | 1,70 |
-| Pampeana | 33,8 | 1,69 |
+| Pampeana | 33,8 | 1,70 |
 | Noreste | 4,5 | 1,59 |
 | Noroeste | 6,8 | 1,54 |
-| Cuyo | 5,2 | 1,72 |
-| Patagonia | 4,5 | 1,59 |
+| Cuyo | 5,2 | 1,73 |
+| Patagonia | 4,5 | 1,60 |
 
 ## Información del mes incorporada
 
@@ -141,6 +141,9 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 09.resto | Dólar mayorista | -0,21 | -0,85 | 0,10 |
 | Cuyo | 09.resto | Dólar mayorista | 6,96 | 6,33 | 0,11 |
 | Patagonia | 09.resto | Dólar mayorista | -1,89 | -2,53 | 0,08 |
+| Pampeana | 04.5 | regla: subsidios al gas | 0,25 | 3,24 | 0,04 |
+| Cuyo | 04.5 | regla: subsidios al gas | 0,25 | 2,18 | 0,04 |
+| Patagonia | 04.5 | regla: subsidios al gas | 0,25 | 2,38 | 0,05 |
 
 ## Supermercados online (último mes con datos)
 

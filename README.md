@@ -296,6 +296,21 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   usuarios con y sin subsidio, y lo que mueve su índice son las bonificaciones y los topes de consumo subsidiado, que
   el reporte no cuantifica. En transporte (correlación 0,62 con el 07.3 del GBA) la selección nunca la eligió frente a
   la inflación reciente. Siguen: diarios y colegios.
+- **Regla de subsidios al gas (26-nov-2026)** (`modelo.brecha_subsidio_gas`, `data/precios/regulados/
+  subsidios_gas.csv`). Lo que mueve el 04.5 de INDEC fuera del GBA no es el cuadro tarifario sino las bonificaciones
+  y los bloques de consumo subsidiado (ejemplo: en oct-26 terminó la bonificación extra de invierno del gas y el 04.5
+  subió 10-11% en Pampeana, Cuyo y Patagonia contra ~2% proyectado; fue −0,21 pp del error de ese mes). Los reportes
+  del IIEP traen, mes a mes, cuánto cambió la factura de gas de los hogares con subsidio y de los sin subsidio
+  (N2/N3 contra N1 hasta ene-26; cargo variable con y sin subsidio desde abr-26, que se toma a la mitad). La brecha
+  se suma al 04.5 con parte = peso del gas en el 04.5 × hogares con subsidio (~50%): Pampeana y Cuyo 0,225,
+  Patagonia 0,275. Se conoce antes del mes (resoluciones de la Secretaría de Energía) y la tarea de los lunes la
+  carga. La brecha sigue al error del 04.5 en esas tres regiones en los dos tramos (correlación 0,4-0,7 en 2024-25 y
+  0,7-0,9 en 2026); en GBA y el norte no (en GBA la factura la domina la luz; en el norte el gas no es calefacción),
+  así que ahí no se aplica. La elección de regiones se hizo mirando estos mismos datos: es la parte menos probada.
+  Resultado: división 04 a fin de mes 16m Pampeana 0,99 -> 0,78, Cuyo 1,53 -> 1,24, Patagonia 1,57 -> 1,40 (las
+  demás igual). Nacional 16m: inicio 0,246 -> 0,242, mitad 0,232 -> 0,221, día 22 0,208 -> 0,196, fin 0,193 -> 0,184,
+  víspera 0,163 -> 0,151; jul-24+ fin 0,358 -> 0,355. Oct-26 a fin de mes: 1,99 -> 2,10 (INDEC 2,17). No cubre la
+  quita de subsidios de feb-26 (+12% en todo el país), que cambió el esquema entero y no tiene una brecha comparable.
 - Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
   Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
   nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.
