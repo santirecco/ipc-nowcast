@@ -18,25 +18,14 @@ def get(path, t=30):
 
 
 log = []
-for bid, mid in ((11928, 2), (9118, None)):
-    if mid is None:
-        b, c = get(f"/api/diner/menu/{bid}/hash?orderModeId=1&orderModeId=2&orderModeId=3&")
-        log.append(f"hash {bid}: {c} {b[:200]}")
-        try:
-            mid = json.loads(b)["menuHashes"][0]["menuId"]
-        except Exception:  # noqa: BLE001
-            continue
-    b, c = get(f"/api/diner/{bid}/menu/{mid}?lazyPlates=true")
-    log.append(f"menu {bid}/{mid}: HTTP {c}, {len(b):,} bytes, price x{b.count('price')}: {b[:300]!r}")
-    (DIR / f"menu_{bid}_{mid}.json").write_text(b[:600000], encoding="utf-8")
-    try:
-        cats = json.loads(b).get("categories") or []
-    except Exception:  # noqa: BLE001
-        cats = []
-    for cat in cats[:2]:
-        cid = cat.get("id")
-        b2, c2 = get(f"/api/diner/{bid}/menu/{mid}/category/{cid}?page=0&size=50")
-        log.append(f"  cat {cid}: HTTP {c2}, {len(b2):,} bytes, price x{b2.count('price')}: {b2[:300]!r}")
-        (DIR / f"cat_{bid}_{mid}_{cid}.json").write_text(b2[:300000], encoding="utf-8")
+for path in ["/api/diner/11928/menu/2?lazyPlates=true", "/api/diner/11928/menu/2", "/api/diner/almacen-de-pizzas/menu/2?lazyPlates=true",
+             "/api/diner/11928/menu/81c463d0?lazyPlates=true", "/api/diner/11928/menu/d0fe19b7?lazyPlates=true",
+             "/api/diner/11928/menu/1?lazyPlates=true", "/api/diner/11928/menu/3?lazyPlates=true", "/api/diner/11928",
+             "/api/diner/almacen-de-pizzas", "/api/diner/branches/almacen-de-pizzas", "/api/diner/companies/almacen-de-pizzas",
+             "/api/diner/9118/menu/2?lazyPlates=true&orderModeId=2", "/api/plates?branchId=11928"]:
+    b, c = get(path)
+    log.append(f"{path}: HTTP {c}, {len(b):,} bytes, price x{b.count('price')}: {b[:400]!r}")
+    if c == "200" and len(b) > 100:
+        (DIR / (path.replace("/", "_").replace("?", "_").replace("&", "_").replace("=", "")[:90] + ".json")).write_text(b[:600000], encoding="utf-8")
 (DIR / "log.md").write_text("\n".join(log), encoding="utf-8")
 print("\n".join(log))
