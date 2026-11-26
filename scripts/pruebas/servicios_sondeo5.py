@@ -16,7 +16,7 @@ def get(url, t=30):
     return (out[:i] if i >= 0 else out).decode("utf-8", "ignore"), (out[i + 9:].decode() if i >= 0 else "000")
 
 
-B = "https://pedir.tucan.la"
+B = "https://app.loveat.la"
 log = []
 for n, path in enumerate([
         "/api/diner/branches/11928", "/api/diner/branches/?menu=11928", "/api/diner/branches/?alias=almacen-de-pizzas",
