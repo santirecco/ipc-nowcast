@@ -64,6 +64,7 @@ Se regenera todos los días: en GitHub, abrilo y tocá el botón de descarga ("D
 | Dólar mayorista (BCRA) | Tipo de cambio de referencia A 3500 | API pública del BCRA | desde 2017 (probado: hoy no mejora el pronóstico) |
 | Supermercados online | ~60.000 productos con stock en Carrefour, Jumbo, Disco, Vea y Día (GBA) | API pública de las tiendas (VTEX) | desde 18-nov-2026 |
 | Tiendas de ropa, calzado, electrónica y hogar | ~73.000 productos con stock de 13 tiendas online (Equus, Port Said, Tascani, Levi's, Legacy, Mimo, Topper, Naldo, Cetrogar, Coppel, Pardo) y hogar y materiales (Easy, Blaisten) | API pública de las tiendas (VTEX) | desde 18-nov-2026 (se evalúan cuando haya historia: electrónica en ~6 meses, ropa en ~1 año por la estacionalidad) |
+| Pasajes de micro de larga distancia | Pasaje más barato y precio promedio de 30 rutas desde Retiro (parte del 07.3 Transporte público) | Páginas de ruta de centraldepasajes.com.ar (`scripts/relevar_micros.py`) | desde 26-nov-2026 (se evalúa con ~6 meses de historia) |
 | IPC Ciudad de Buenos Aires | Anticipo del dato nacional | API de series de datos.gob.ar | desde 2012 |
 | REM del BCRA | Mediana de los analistas para la inflación mensual (solo referencia) | Planilla mensual publicada por el BCRA | se baja sola cada día |
 
@@ -311,6 +312,15 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   demás igual). Nacional 16m: inicio 0,246 -> 0,242, mitad 0,232 -> 0,221, día 22 0,208 -> 0,196, fin 0,193 -> 0,184,
   víspera 0,163 -> 0,151; jul-24+ fin 0,358 -> 0,355. Oct-26 a fin de mes: 1,99 -> 2,10 (INDEC 2,17). No cubre la
   quita de subsidios de feb-26 (+12% en todo el país), que cambió el esquema entero y no tiene una brecha comparable.
+- **Fuentes para restaurantes y turismo (26-nov-2026, `scripts/pruebas/servicios_sondeo*.py`).** Se sondearon ~40
+  sitios. PedidosYa (403), Rappi (429), McDonald's, KFC, Starbucks, Despegar, Almundo, Turismocity y Flechabus
+  bloquean a los servidores; Flybondi y JetSMART no responden; las cadenas con web propia (Mostaza, Burger King,
+  Kentucky, Grido, Havanna, Mi Gusto, El Noble) no publican precios en la web. Lo único que funcionó: (1) Central
+  de Pasajes publica el pasaje más barato y el promedio de cada ruta de micro: queda relevándose a diario (tabla de
+  fuentes); (2) Tucán, plataforma de pedidos propia de restaurantes argentinos, tiene un directorio público
+  (POST `app.loveat.la/api/menu/near`, ~620 comercios en CABA) pero el menú con precios
+  (`/api/diner/{sucursal}/menu/{menu}`) responde error 500 sin la sesión del navegador: pendiente. Pasajes aéreos y
+  paquetes turísticos: sin fuente por ahora.
 - Descartada: estacionalidad propia (mismo mes de los dos años anteriores) como candidata en todos los rubros.
   Empeora la mayoría de los rubros desde jul-24 (ropa 1,24 -> 1,71, educación 0,79 -> 1,93 en 16m) aunque el
   nacional de 16 meses bajaba (0,197 -> 0,168) por compensación.

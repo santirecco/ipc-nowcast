@@ -16,7 +16,6 @@ on:
       - scripts/pruebas/servicios_sondeo7.py
       - scripts/pruebas/servicios_sondeo8.py
       - scripts/pruebas/servicios_sondeo9.py
-      - scripts/relevar_micros.py
       - .github/workflows/prueba_historia.yml
   workflow_dispatch:
 
@@ -33,7 +32,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pdfplumber
-      - run: pip install pandas && python scripts/relevar_micros.py || true
+      - run: python scripts/pruebas/servicios_sondeo9.py || true
       - name: Guardar resultado
         if: always()
         run: |
