@@ -1,0 +1,7 @@
+near: HTTP 200, 28,289 bytes: '{"commerces":[{"branch":{"id":9118,"name":"El Desembarco","businessName":"El Desembarco","withCustomLogo":true,"alias":"eldesembarcoarg","contactsMaxAmount":0,"createdCategories":0},"branchContact":{"name":"El Desembarco","address":{"street":"Avenida Corrientes","number":"1206","city":"Buenos Aires"'
+/api/diner/menu/11928/hash?: HTTP 404, 25 bytes: 'No order mode id received'
+/api/diner/menu/11928/hash?orderModeId=1&: HTTP 200, 63 bytes: '{"menuHashes":[{"orderModeId":1,"menuId":2,"hash":"d0fe19b7"}]}'
+/api/diner/menu/11928/hash?orderModeId=2&: HTTP 200, 63 bytes: '{"menuHashes":[{"orderModeId":2,"menuId":2,"hash":"81c463d0"}]}'
+/api/diner/menu/11928/hash?orderModeId=3&: HTTP 200, 63 bytes: '{"menuHashes":[{"orderModeId":3,"menuId":2,"hash":"81c463d0"}]}'
+/api/ordermodes/11928: HTTP 404, 2,125 bytes: '\n\n<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <title>Not Found</title>\n        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+P'
+/api/diner/menu/11928?orderModeId=1: HTTP 404, 2,139 bytes: '\n\n<!DOCTYPE html>\n<html lang="en">\n    <head>\n        <title>Not Found</title>\n        <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlFJREFUeNqUU8tOFEEUPVVdNV3dPe8xYRBnjGhmBgKjKzCIiQvBoIaNbly5Z+P'
