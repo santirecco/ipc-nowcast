@@ -9,6 +9,7 @@ on:
       - scripts/pruebas/iiep_tarifas.py
       - scripts/pruebas/servicios_sondeo.py
       - scripts/pruebas/servicios_sondeo2.py
+      - scripts/pruebas/servicios_sondeo3.py
       - .github/workflows/prueba_historia.yml
   workflow_dispatch:
 
@@ -25,12 +26,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pdfplumber
-      - run: python scripts/pruebas/servicios_sondeo2.py || true
+      - run: python scripts/pruebas/servicios_sondeo3.py || true
       - name: Guardar resultado
         if: always()
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add reports/prueba_servicios*.md
+          git add reports/prueba_servicios*
           git commit -m "Sondeo de fuentes: restaurantes y turismo" || exit 0
           for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 10; done
