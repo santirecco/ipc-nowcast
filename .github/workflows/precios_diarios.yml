@@ -39,6 +39,9 @@ jobs:
       - name: Tiendas de ropa, calzado y electrónica (se juntan para evaluarlas cuando haya historia)
         continue-on-error: true
         run: python scripts/scrapear_supermercados.py --tiendas
+      - name: Pasajes de micro de larga distancia (se juntan para evaluarlos cuando haya historia)
+        continue-on-error: true
+        run: python scripts/relevar_micros.py
       - name: Recuperar precios SEPA ya procesados (caché)
         uses: actions/cache/restore@v4
         with:

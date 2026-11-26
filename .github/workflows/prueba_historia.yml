@@ -16,6 +16,7 @@ on:
       - scripts/pruebas/servicios_sondeo7.py
       - scripts/pruebas/servicios_sondeo8.py
       - scripts/pruebas/servicios_sondeo9.py
+      - scripts/relevar_micros.py
       - .github/workflows/prueba_historia.yml
   workflow_dispatch:
 
@@ -32,12 +33,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pdfplumber
-      - run: python scripts/pruebas/servicios_sondeo9.py || true
+      - run: pip install pandas && python scripts/relevar_micros.py || true
       - name: Guardar resultado
         if: always()
         run: |
           git config user.name "ipc-nowcast-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add reports/prueba_servicios*
+          git add reports/prueba_servicios* data/precios/servicios
           git commit -m "Sondeo de fuentes: restaurantes y turismo" || exit 0
           for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && exit 0; sleep 10; done
