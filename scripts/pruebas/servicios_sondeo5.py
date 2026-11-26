@@ -16,13 +16,13 @@ def get(url, t=30):
     return (out[:i] if i >= 0 else out).decode("utf-8", "ignore"), (out[i + 9:].decode() if i >= 0 else "000")
 
 
-B = "https://app.tucan.com.ar"
+B = "https://pedir.tucan.la"
 log = []
 for n, path in enumerate([
         "/api/diner/branches/11928", "/api/diner/branches/?menu=11928", "/api/diner/branches/?alias=almacen-de-pizzas",
         "/api/diner/menu/11928", "/api/diner/menu/?id=11928", "/api/diner/menu/almacen-de-pizzas",
         "/api/menu/near?lat=-34.6037&lng=-58.3816", "/api/menu/near?latitude=-34.6037&longitude=-58.3816",
-        "/api/categories", "/api/country/", "/api/ordermodes/?menu=11928"]):
+        "/api/categories", "/api/country/", "/api/ordermodes/?menu=11928", "/api/diner/menu/?menuId=11928", "/api/diner/menu/?alias=almacen-de-pizzas", "/api/diner/branches/?menuId=11928"]):
     b, c = get(B + path)
     log.append(f"{path}: HTTP {c}, {len(b):,} bytes, price x{b.lower().count('price')}: {b[:160]!r}")
     if c == "200" and len(b) > 50:
