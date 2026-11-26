@@ -99,3 +99,29 @@ fecha,item,componente,parte,regiones,aumento,confianza,fuente
 2026-09-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.4,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-SEPTIEMBRE-2026.pdf
 2026-10-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,2.2,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-OCTUBRE-2026.pdf
 2026-11-01,Transporte público AMBA (gasto promedio del mes según IIEP),07.3,0.60,GBA,3.4,media,https://economicas.uba.ar/iiep/wp-content/uploads/INFORME-IIEP-NOVIEMBRE-2026.pdf
+2024-07-18,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,18.18,alta,https://www.sitioandino.com.ar/sociedad/subio-el-boleto-la-provincia-mendoza-cuanto-aumentara-n5679808
+2024-11-01,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,30.77,alta,https://www.losandes.com.ar/politica/sube-1000-el-pasaje-del-colectivo-mendoza-cuando-n5944998
+2025-05-12,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,17.65,alta,https://www.losandes.com.ar/politica/sube-1000-el-pasaje-del-colectivo-mendoza-cuando-n5944998
+2025-11-10,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,20.0,alta,https://www.losandes.com.ar/sociedad/aumento-del-boleto-colectivo-aseguran-que-solo-4-cada-10-mendocinos-paga-la-tarifa-total-n5974878
+2026-01-01,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,16.67,alta,https://www.elsol.com.ar/mendoza/el-boleto-sube-a-1-400-como-impacta-el-nuevo-aumento-del-transporte-publico-en-mendoza/
+2026-07-13,Colectivo urbano Gran Mendoza,07.3,0.30,Cuyo,20.0,alta,https://www.diariouno.com.ar/sociedad/el-boleto-colectivo-sube-20-y-costara-1680-mendoza-el-lunes-13-julio-n1572946
+2024-09-23,Colectivo urbano San Miguel de Tucumán,07.3,0.20,Noroeste,37.68,alta,https://www.lagaceta.com.ar/nota/1052900/politica/crisis-transporte-usuarios-interior-tambien-afrontan-suba-boleto.html
+2025-12-15,Colectivo urbano San Miguel de Tucumán,07.3,0.20,Noroeste,31.58,media,https://www.contextotucuman.com/nota/369304/el-boleto-del-interior-tambien-sube-interurbano-y-rural-aumentaron-31-58_por_ciento-en-toda-la-provincia.html
+2026-07-01,Colectivo urbano San Miguel de Tucumán,07.3,0.20,Noroeste,36.0,alta,https://www.lagaceta.com.ar/nota/1144407/politica/con-suba-boleto-viajar-colectivo-puede-costar-hasta-90000-mes.html
+2025-11-03,Colectivo urbano Corrientes,07.3,0.15,Noreste,46.51,alta,https://noticiasdel6.com/tras-la-actualizacion-tarifaria-posadas-conserva-el-boleto-mas-bajo-del-nea
+2025-01-13,Colectivo urbano Posadas,07.3,0.15,Noreste,24.0,alta,https://www.primeraedicion.com.ar/nota/100963199/desde-hoy-rige-el-aumento-del-boleto-en-posadas-garupa-y-candelaria-los-nuevos-valores/
+2026-01-10,Colectivo urbano Posadas,07.3,0.15,Noreste,30.0,alta,https://economis.com.ar/?p=457081
+2024-07-27,Colectivo urbano Neuquén,07.3,0.12,Patagonia,13.18,alta,https://www.noticiasnqn.com.ar/noticias/2024/07/29/301028-aumento-el-cole-en-neuquen
+2024-11-15,Colectivo urbano Neuquén,07.3,0.12,Patagonia,9.43,media,https://www.lmneuquen.com/neuquen/aumenta-el-boleto-del-cole-neuquen-cuando-rige-y-cual-es-el-nuevo-valor-n1153541
+2025-06-21,Colectivo urbano Neuquén,07.3,0.12,Patagonia,21.28,alta,https://www.noticiasnqn.com.ar/noticias/2025/06/22/315539-aumento-el-cole-en-neuquen-de-940-a-1140
+2026-04-20,Colectivo urbano Neuquén,07.3,0.12,Patagonia,21.93,media,https://www.noticiasnqn.com.ar/noticias/2026/04/13/330877-neuquen-capital-actualizo-el-boleto-de-colectivo-sube-a-1390
+2026-10-17,Colectivo urbano Neuquén,07.3,0.12,Patagonia,21.58,alta,https://www.noticiasnqn.com.ar/noticias/2026/10/15/356681-el-boleto-de-cole-aumentara-en-las-proximas-horas-en-un-22por_ciento-y-pasara-a-costar-1690
+2024-08-10,Colectivo urbano Córdoba,07.3,0.10,Pampeana,34.29,alta,https://grupoclarin-la-voz-prod.cdn.arcpublishing.com/ciudadanos/el-boleto-de-transporte-urbano-sube-a-940
+2024-11-16,Colectivo urbano Córdoba,07.3,0.10,Pampeana,27.66,alta,https://www.cadena3.com/noticia/sociedad/el-boleto-de-colectivo-aumento-mas-de-200-en-cordoba-tambien-suben-taxis_400933
+2025-05-31,Colectivo urbano Córdoba,07.3,0.10,Pampeana,31.67,alta,https://viapais.com.ar/cordoba/aumento-el-precio-del-boleto-del-transporte-urbano-de-cordoba-cuanto-cuesta/
+2025-11-15,Colectivo urbano Córdoba,07.3,0.10,Pampeana,8.86,alta,https://www.cadena3.com/noticia/sociedad/aumenta-88-el-boleto-urbano-en-cordoba-capital-pasara-a-costar-1720_486655
+2026-07-18,Colectivo urbano Córdoba,07.3,0.10,Pampeana,25.0,alta,https://hoydia.com.ar/hoy-cordoba/el-boleto-del-transporte-urbano-aumenta-desde-este-sabado/
+2024-10-14,Colectivo urbano Rosario,07.3,0.08,Pampeana,27.66,alta,https://www.lacapital.com.ar/la-ciudad/nuevo-aumento-del-boleto-rosario-pasara-costar-1200-el-14-octubre-n10156338.html
+2025-08-04,Colectivo urbano Rosario,07.3,0.08,Pampeana,31.67,alta,https://www.lacapital.com.ar/la-ciudad/aumento-del-boleto-colectivo-rosario-no-esperamos-una-caida-pasajeros-n10210775.html/amp
+2026-02-23,Colectivo urbano Rosario,07.3,0.08,Pampeana,8.86,alta,https://www.lacapital.com.ar/la-ciudad/aumento-el-boleto-colectivo-rosario-despues-seis-meses-n10245888.html
+2026-10-05,Colectivo urbano Rosario,07.3,0.08,Pampeana,25.0,alta,https://www.conclusion.com.ar/la-ciudad/este-lunes-el-boleto-de-colectivo-aumenta-un-25-en-rosario-y-pasara-a-costar-2-150/10/2026/
