@@ -11,6 +11,7 @@ on:
       - scripts/pruebas/servicios_sondeo2.py
       - scripts/pruebas/servicios_sondeo3.py
       - scripts/pruebas/servicios_sondeo4.py
+      - scripts/pruebas/servicios_sondeo5.py
       - .github/workflows/prueba_historia.yml
   workflow_dispatch:
 
@@ -27,7 +28,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pdfplumber
-      - run: python scripts/pruebas/servicios_sondeo4.py || true
+      - run: python scripts/pruebas/servicios_sondeo5.py || true
       - name: Guardar resultado
         if: always()
         run: |
