@@ -7,6 +7,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.1,100.046,Pan y cereales
 2026-11-24,01.1.1,100.619,Pan y cereales
 2026-11-25,01.1.1,99.980,Pan y cereales
+2026-11-26,01.1.1,100.046,Pan y cereales
 2026-11-18,01.1.2,100.000,Carnes y derivados
 2026-11-19,01.1.2,100.015,Carnes y derivados
 2026-11-20,01.1.2,99.452,Carnes y derivados
@@ -15,6 +16,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.2,99.674,Carnes y derivados
 2026-11-24,01.1.2,100.574,Carnes y derivados
 2026-11-25,01.1.2,99.755,Carnes y derivados
+2026-11-26,01.1.2,99.778,Carnes y derivados
 2026-11-18,01.1.4,100.000,"Leche, lácteos y huevos"
 2026-11-19,01.1.4,99.974,"Leche, lácteos y huevos"
 2026-11-20,01.1.4,99.946,"Leche, lácteos y huevos"
@@ -23,6 +25,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.4,99.972,"Leche, lácteos y huevos"
 2026-11-24,01.1.4,101.340,"Leche, lácteos y huevos"
 2026-11-25,01.1.4,100.471,"Leche, lácteos y huevos"
+2026-11-26,01.1.4,100.418,"Leche, lácteos y huevos"
 2026-11-18,01.1.5,100.000,"Aceites, grasas y manteca"
 2026-11-19,01.1.5,100.024,"Aceites, grasas y manteca"
 2026-11-20,01.1.5,100.046,"Aceites, grasas y manteca"
@@ -31,6 +34,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.5,100.078,"Aceites, grasas y manteca"
 2026-11-24,01.1.5,100.801,"Aceites, grasas y manteca"
 2026-11-25,01.1.5,100.742,"Aceites, grasas y manteca"
+2026-11-26,01.1.5,100.721,"Aceites, grasas y manteca"
 2026-11-18,01.1.6,100.000,Frutas
 2026-11-19,01.1.6,99.954,Frutas
 2026-11-20,01.1.6,99.813,Frutas
@@ -39,6 +43,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.6,99.752,Frutas
 2026-11-24,01.1.6,100.733,Frutas
 2026-11-25,01.1.6,99.687,Frutas
+2026-11-26,01.1.6,99.765,Frutas
 2026-11-18,01.1.7,100.000,"Verduras, tubérculos y legumbres"
 2026-11-19,01.1.7,100.015,"Verduras, tubérculos y legumbres"
 2026-11-20,01.1.7,99.206,"Verduras, tubérculos y legumbres"
@@ -47,6 +52,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.7,98.811,"Verduras, tubérculos y legumbres"
 2026-11-24,01.1.7,99.641,"Verduras, tubérculos y legumbres"
 2026-11-25,01.1.7,98.988,"Verduras, tubérculos y legumbres"
+2026-11-26,01.1.7,99.031,"Verduras, tubérculos y legumbres"
 2026-11-18,01.1.8,100.000,"Azúcar, dulces, chocolate, golosinas"
 2026-11-19,01.1.8,99.956,"Azúcar, dulces, chocolate, golosinas"
 2026-11-20,01.1.8,99.971,"Azúcar, dulces, chocolate, golosinas"
@@ -55,6 +61,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.8,100.042,"Azúcar, dulces, chocolate, golosinas"
 2026-11-24,01.1.8,100.705,"Azúcar, dulces, chocolate, golosinas"
 2026-11-25,01.1.8,100.977,"Azúcar, dulces, chocolate, golosinas"
+2026-11-26,01.1.8,100.998,"Azúcar, dulces, chocolate, golosinas"
 2026-11-18,01.1.resto,100.000,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-19,01.1.resto,99.982,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-20,01.1.resto,99.984,"Otros alimentos (pescados, condimentos, etc.)"
@@ -63,6 +70,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.1.resto,100.062,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-24,01.1.resto,100.836,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-25,01.1.resto,100.456,"Otros alimentos (pescados, condimentos, etc.)"
+2026-11-26,01.1.resto,100.468,"Otros alimentos (pescados, condimentos, etc.)"
 2026-11-18,01.2.1,100.000,"Café, té, yerba y cacao"
 2026-11-19,01.2.1,99.998,"Café, té, yerba y cacao"
 2026-11-20,01.2.1,99.428,"Café, té, yerba y cacao"
@@ -71,6 +79,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.2.1,99.449,"Café, té, yerba y cacao"
 2026-11-24,01.2.1,100.516,"Café, té, yerba y cacao"
 2026-11-25,01.2.1,100.615,"Café, té, yerba y cacao"
+2026-11-26,01.2.1,100.622,"Café, té, yerba y cacao"
 2026-11-18,01.2.2,100.000,"Aguas, gaseosas y jugos"
 2026-11-19,01.2.2,100.015,"Aguas, gaseosas y jugos"
 2026-11-20,01.2.2,100.015,"Aguas, gaseosas y jugos"
@@ -79,6 +88,7 @@ fecha,clase,indice,nombre
 2026-11-23,01.2.2,99.947,"Aguas, gaseosas y jugos"
 2026-11-24,01.2.2,101.058,"Aguas, gaseosas y jugos"
 2026-11-25,01.2.2,99.619,"Aguas, gaseosas y jugos"
+2026-11-26,01.2.2,99.684,"Aguas, gaseosas y jugos"
 2026-11-18,02.1,100.000,Bebidas alcohólicas
 2026-11-19,02.1,100.152,Bebidas alcohólicas
 2026-11-20,02.1,100.151,Bebidas alcohólicas
@@ -87,6 +97,7 @@ fecha,clase,indice,nombre
 2026-11-23,02.1,100.093,Bebidas alcohólicas
 2026-11-24,02.1,100.894,Bebidas alcohólicas
 2026-11-25,02.1,100.567,Bebidas alcohólicas
+2026-11-26,02.1,100.590,Bebidas alcohólicas
 2026-11-18,05.6,100.000,Limpieza y conservación del hogar
 2026-11-19,05.6,99.970,Limpieza y conservación del hogar
 2026-11-20,05.6,99.979,Limpieza y conservación del hogar
@@ -95,6 +106,7 @@ fecha,clase,indice,nombre
 2026-11-23,05.6,100.003,Limpieza y conservación del hogar
 2026-11-24,05.6,101.352,Limpieza y conservación del hogar
 2026-11-25,05.6,100.327,Limpieza y conservación del hogar
+2026-11-26,05.6,100.310,Limpieza y conservación del hogar
 2026-11-18,06.1,100.000,Productos medicinales
 2026-11-19,06.1,100.000,Productos medicinales
 2026-11-20,06.1,100.017,Productos medicinales
@@ -103,6 +115,7 @@ fecha,clase,indice,nombre
 2026-11-23,06.1,100.016,Productos medicinales
 2026-11-24,06.1,100.949,Productos medicinales
 2026-11-25,06.1,101.674,Productos medicinales
+2026-11-26,06.1,101.747,Productos medicinales
 2026-11-18,12.1,100.000,Cuidado personal
 2026-11-19,12.1,100.022,Cuidado personal
 2026-11-20,12.1,100.098,Cuidado personal
@@ -111,3 +124,4 @@ fecha,clase,indice,nombre
 2026-11-23,12.1,100.314,Cuidado personal
 2026-11-24,12.1,101.937,Cuidado personal
 2026-11-25,12.1,101.536,Cuidado personal
+2026-11-26,12.1,101.499,Cuidado personal
