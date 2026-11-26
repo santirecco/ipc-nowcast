@@ -2,12 +2,12 @@
 
 *Calculado el 26/11/2026. Último dato oficial de INDEC: octubre 2026.*
 
-## 1,7% mensual (rango probable 1,3% a 2,0%)
+## 1,7% mensual (rango probable 1,4% a 2,0%)
 
 | | % mensual |
 |---|---|
 | **Pronóstico** | **1,68** |
-| Solo modelo estadístico | 1,93 |
+| Solo modelo estadístico | 1,90 |
 | Modelo + información del mes (de abajo hacia arriba) | 1,68 |
 | IPC Ciudad de Buenos Aires del mes | — (todavía no publicado) |
 | Ajuste estacional al IPC Ciudad (pp) | 0,00 |
@@ -22,7 +22,7 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 |---|---|---|---|
 | Alimentos y bebidas no alcohólicas | 28,7 | 1,14 | 0,33 |
 | Vivienda, agua, electricidad, gas y otros combustibles | 10,9 | 2,31 | 0,25 |
-| Transporte | 11,6 | 1,87 | 0,22 |
+| Transporte | 11,6 | 1,82 | 0,21 |
 | Restaurantes y hoteles | 10,9 | 1,84 | 0,20 |
 | Salud | 9,0 | 1,72 | 0,15 |
 | Recreación y cultura | 6,6 | 2,05 | 0,14 |
@@ -38,11 +38,11 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Región | Peso % | Variación % |
 |---|---|---|
 | GBA | 45,1 | 1,70 |
-| Pampeana | 33,8 | 1,70 |
+| Pampeana | 33,8 | 1,69 |
 | Noreste | 4,5 | 1,59 |
-| Noroeste | 6,8 | 1,54 |
-| Cuyo | 5,2 | 1,73 |
-| Patagonia | 4,5 | 1,60 |
+| Noroeste | 6,8 | 1,51 |
+| Cuyo | 5,2 | 1,68 |
+| Patagonia | 4,5 | 1,65 |
 
 ## Información del mes incorporada
 
@@ -129,6 +129,10 @@ El rango cubre el 80% de los errores del backtest de los últimos 16 meses para 
 | Noroeste | 07.1 | Listas de precios de autos 0 km | 0,79 | 0,71 | 0,02 |
 | Cuyo | 07.1 | Listas de precios de autos 0 km | 0,80 | 0,95 | -0,04 |
 | Patagonia | 07.1 | Listas de precios de autos 0 km | 0,82 | 1,26 | -0,17 |
+| Pampeana | 07.3 | Aumentos anunciados (listas de precios y tarifas) + inercia del propio rubro (mes anterior y últimos 3 meses) | 1,15 | 0,52 | 0,15 |
+| Noroeste | 07.3 | Aumentos anunciados (listas de precios y tarifas) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,57 | 0,50 | 0,02 |
+| Cuyo | 07.3 | Aumentos anunciados (listas de precios y tarifas) + inercia del propio rubro (mes anterior y últimos 3 meses) | 0,24 | -0,64 | 0,23 |
+| Patagonia | 07.3 | Aumentos anunciados (listas de precios y tarifas) + inercia del propio rubro (mes anterior y últimos 3 meses) | 3,22 | 2,15 | 0,16 |
 | GBA | 07.2.2 | Precio de surtidor (YPF) | 1,25 | 1,19 | 0,03 |
 | Pampeana | 07.2.2 | Precio de surtidor (YPF) | 1,19 | 1,08 | 0,05 |
 | Noreste | 07.2.2 | Precio de surtidor (YPF) | 1,11 | 0,95 | 0,07 |

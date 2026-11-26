@@ -312,6 +312,18 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   demás igual). Nacional 16m: inicio 0,246 -> 0,242, mitad 0,232 -> 0,221, día 22 0,208 -> 0,196, fin 0,193 -> 0,184,
   víspera 0,163 -> 0,151; jul-24+ fin 0,358 -> 0,355. Oct-26 a fin de mes: 1,99 -> 2,10 (INDEC 2,17). No cubre la
   quita de subsidios de feb-26 (+12% en todo el país), que cambió el esquema entero y no tiene una brecha comparable.
+- **Boleto de colectivo urbano del interior en el calendario (26-nov-2026).** El 07.3 (transporte público) tenía
+  mucho más error fuera del GBA (16m: Cuyo 2,89, Noroeste 2,23, Patagonia 2,01) y los saltos coincidían con aumentos
+  del boleto que fijan provincias y municipios con días o semanas de anticipación (ej.: Cuyo +13,8% en ene-26, cuando
+  Mendoza pasó de $1.200 a $1.400 el 1/1, contra −0,2% proyectado). Se reconstruyó con la prensa local el boleto desde
+  jul-24 de Mendoza (parte 0,30 del 07.3 de Cuyo), San Miguel de Tucumán (0,20 de Noroeste), Neuquén (0,12 de
+  Patagonia), Córdoba (0,06) y Rosario (0,05 de Pampeana), con fecha de vigencia y fuente de cada aumento en
+  `eventos.csv`; vuelve `cal` como candidata del 07.3. Resultado a fin de mes 16m: 07.3 2,02 -> 1,75 (Cuyo 2,89 ->
+  1,94, Noroeste 2,23 -> 1,82, Patagonia 2,01 -> 1,88, GBA 1,50 -> 1,40 con el gasto en transporte del IIEP, Pampeana
+  y Noreste igual). Nacional 16m: mitad 0,221 -> 0,216, día 22 0,196 -> 0,191, fin 0,184 -> 0,183. Quedaron afuera
+  Corrientes (el +46% de nov-25 no aparece en el Noreste de INDEC) y Posadas (falta un aumento de jul-26), y Salta
+  (historia incompleta). Los ítems sin eventos se toman sin cambios desde jul-24 (antes quedaban vacíos y anulaban la
+  región). La tarea de los lunes agrega los aumentos nuevos de estas ciudades.
 - **Fuentes para restaurantes y turismo (26-nov-2026, `scripts/pruebas/servicios_sondeo*.py`).** Se sondearon ~40
   sitios. PedidosYa (403), Rappi (429), McDonald's, KFC, Starbucks, Despegar, Almundo, Turismocity y Flechabus
   bloquean a los servidores; Flybondi y JetSMART no responden; las cadenas con web propia (Mostaza, Burger King,

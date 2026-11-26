@@ -142,7 +142,9 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Combustibles | nafta | 29 | 2,10 | 1,59 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,10 | 1,59 | sí, si falta la anterior |
 | Combustibles | naftal | 29 | 2,10 | 1,59 | sí, si falta la anterior |
-| Transporte público | ipc | 34 | 4,80 | 4,67 | **sí** |
+| Transporte público | cal | 24 | 2,07 | 1,96 | sí, si falta la anterior |
+| Transporte público | cal+propio | 24 | 2,07 | 1,78 | **sí** |
+| Transporte público | ipc | 34 | 4,80 | 4,67 | sí, si falta la anterior |
 | Transporte público | ipc2 | 34 | 4,80 | 4,70 | sí, si falta la anterior |
 | Transporte público | propio | 34 | 4,80 | 5,00 | no |
 | Telefonía e internet | fx | 34 | 2,61 | 2,10 | sí, si falta la anterior |
@@ -331,7 +333,9 @@ meses en que falta algún dato (por ejemplo, SEPA no tiene abril a junio de 2026
 | Combustibles | nafta | 29 | 2,10 | 1,59 | **sí** |
 | Combustibles | nafta+fx | 29 | 2,10 | 1,59 | sí, si falta la anterior |
 | Combustibles | naftal | 29 | 2,10 | 1,59 | sí, si falta la anterior |
-| Transporte público | ipc | 34 | 4,80 | 4,67 | **sí** |
+| Transporte público | cal | 24 | 2,07 | 1,96 | sí, si falta la anterior |
+| Transporte público | cal+propio | 24 | 2,07 | 1,79 | **sí** |
+| Transporte público | ipc | 34 | 4,80 | 4,67 | sí, si falta la anterior |
 | Transporte público | ipc2 | 34 | 4,80 | 4,70 | sí, si falta la anterior |
 | Transporte público | propio | 34 | 4,80 | 5,00 | no |
 | Telefonía e internet | fx | 34 | 2,61 | 2,10 | sí, si falta la anterior |
