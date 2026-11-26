@@ -147,6 +147,7 @@ def exportar_json():
             puente.append({"paso": "Interacciones y ajustes", "valor": round(resto, 3), "tipo": "delta"})
         puente.append({"paso": "Pronóstico", "valor": round(float(ult["estimacion"]), 3), "tipo": "total"})
     relevamiento = relevamiento_fuentes()
+    medicion = medicion_por_rubro(div)
     celdas = []
     rc = NC / "ultimo_celdas.csv"
     if rc.exists():
@@ -160,7 +161,7 @@ def exportar_json():
         "divisiones": limpio(div), "regiones": limpio(reg), "informacion_grupos": grupos, "informacion_top": top,
         "indec": limpio(serie.round(3)), "backtest": limpio(bt[["mes", "indec", "inicio_de_mes", "mitad_de_mes", "dia_22", "fin_de_mes", "vispera"]]),
         "errores": errores, "fuentes": limpio(pd.read_csv(OUT / "fuentes.csv")),
-        "precision": precision, "puente": puente, "celdas": celdas, "relevamiento": relevamiento["fuentes"], "relevamiento_total": {k: v for k, v in relevamiento.items() if k != "fuentes"},
+        "precision": precision, "puente": puente, "celdas": celdas, "medicion": medicion, "relevamiento": relevamiento["fuentes"], "relevamiento_total": {k: v for k, v in relevamiento.items() if k != "fuentes"},
     }
     inf = NC / "informe_ultimo.json"
     if inf.exists():
@@ -168,6 +169,103 @@ def exportar_json():
     dest = DATA.parent / "publico"
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "ipc_predictor.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
+def _tipo_fuente(fuente: str) -> str:
+    f = str(fuente).lower()
+    if f.startswith("regla"):
+        return "regla"
+    if "dólar" in f:
+        return "indicador"
+    if any(k in f for k in ("sepa", "góndola", "surtidor", "autos 0 km", "hacienda", "mayorista", "mercado central",
+                            "supermercados")):
+        return "precios"
+    if "calendario" in f or "anunciado" in f or f == "arrastre del mes anterior":
+        return "anunciado"
+    return "indicador"
+
+
+def _fuente_corta(fuente: str, detalle: str, tipo: str) -> str:
+    f = str(fuente)
+    fl = f.lower()
+    if tipo == "regla":
+        return "Regla: " + f.split(":", 1)[-1].strip()
+    if tipo == "anunciado":
+        if fl == "arrastre del mes anterior":
+            return "Aumentos del mes anterior que siguen pegando"
+        if "calendario" in fl:
+            d = str(detalle or "").split(";")[0].split("(")[0].strip()
+            return "Aumento anunciado" + (f": {d}" if d and d != "nan" else "")
+        return "Listas de precios anunciadas"
+    if tipo == "precios":
+        partes = []
+        if "sepa" in fl or "góndola" in fl:
+            partes.append("Góndolas (SEPA)")
+        if "hacienda" in fl:
+            partes.append("hacienda")
+        if "mayorista" in fl or "mercado central" in fl:
+            if "hacienda" not in fl:
+                partes.append("Mercado Central")
+        if "surtidor" in fl:
+            partes.append("Surtidores YPF")
+        if "autos 0 km" in fl:
+            partes.append("Listas de autos 0 km")
+        if "supermercados" in fl:
+            partes.append("Supermercados online")
+        return " + ".join(partes) or f
+    return f
+
+
+def _detalle(g: pd.DataFrame):
+    """Lo que dice el dato relevado (texto del modelo), del GBA si está."""
+    gg = g[g.region == "GBA"] if (g.region == "GBA").any() else g
+    d = gg.detalle.dropna()
+    if d.empty:
+        return None
+    txt = str(d.iloc[0])[:220]
+    return txt + (" (GBA)" if (g.region == "GBA").any() and g.region.nunique() > 1 and "%" in txt else "")
+
+
+def medicion_por_rubro(div: pd.DataFrame) -> list:
+    """Qué se mide en cada rubro y qué dice: un registro por (división, componente, fuente), agregado a nivel
+    nacional con el peso de cada región. dato = lo que da la información del mes; proyeccion = lo que daba la
+    historia para esa parte; efecto_nacional = cuánto movió el nivel general (pp); cubre = parte del rubro que
+    cubre (como en la cobertura del tablero: no cuentan las mejoras estadísticas ni los ajustes aditivos)."""
+    ruta = NC / "ultimo_informacion.csv"
+    if not ruta.exists():
+        return []
+    i = pd.read_csv(ruta, dtype={"componente": str, "division": str})
+    if i.empty:
+        return []
+    from ipc_nowcast.adelantados import NOMBRES
+    i["division"] = i.division.str.zfill(2)
+    i["nombre"] = i.componente.map(COMPONENTES).fillna(i.componente.map(NOMBRES)).fillna(i.componente)
+    for c in ("estadistica", "aditivo"):
+        i[c] = i[c].fillna(False).astype(bool) if c in i else False
+    i["w"] = i["peso_celda_%"] * i.peso_en_division
+    i["tipo"] = i.fuente.map(_tipo_fuente)
+    i.loc[i.estadistica, "tipo"] = "estadistica"
+    peso_div = div.set_index("division").peso
+    out = []
+    for (d, comp, fte), g in i.groupby(["division", "componente", "fuente"], sort=False):
+        w = g.w.where(g.w > 0, 1e-9)
+        tipo = g.tipo.iloc[0]
+        cuenta = (tipo != "estadistica") and not g.aditivo.any()
+        pdv = float(peso_div.get(d, float("nan")))
+        out.append({
+            "division": d, "componente": comp, "nombre": g.nombre.iloc[0], "tipo": tipo,
+            "fuente": _fuente_corta(fte, g.detalle.iloc[0], tipo), "fuente_larga": str(fte),
+            "detalle": _detalle(g),
+            "regiones": sorted(g.region.unique().tolist()), "aditivo": bool(g.aditivo.any()),
+            "dato": round(float((g.valor * w).sum() / w.sum()), 3),
+            "proyeccion": round(float((g.proyeccion_estadistica * w).sum() / w.sum()), 3),
+            "con": round(float((g.con_informacion * w).sum() / w.sum()), 3),
+            "efecto_nacional": round(float(g.efecto_nacional_pp.sum()), 4),
+            "efecto_rubro": round(float(g.efecto_nacional_pp.sum() / (pdv / 100)), 3) if pdv == pdv and pdv > 0 else None,
+            "cubre": round(float((g.w * g.parte).sum() / pdv), 3) if cuenta and pdv == pdv and pdv > 0 else 0.0,
+        })
+    out.sort(key=lambda x: (x["division"], -abs(x["efecto_nacional"])))
+    return out
 
 
 def relevamiento_fuentes() -> list:
