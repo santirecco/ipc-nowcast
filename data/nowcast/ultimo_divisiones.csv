@@ -1,10 +1,10 @@
 division,variacion_%,peso_%,incidencia_pp,nombre,cobertura
-01,1.1432,28.7250,0.3284,Alimentos y bebidas no alcohólicas,0.6903
-02,0.7313,2.3695,0.0173,Bebidas alcohólicas y tabaco,1.0000
+01,1.1253,28.7250,0.3233,Alimentos y bebidas no alcohólicas,0.6903
+02,0.7345,2.3695,0.0174,Bebidas alcohólicas y tabaco,1.0000
 03,1.5492,6.5581,0.1016,Prendas de vestir y calzado,0.0000
 04,2.3104,10.9068,0.2520,"Vivienda, agua, electricidad, gas y otros combustibles",0.3705
-05,1.8727,5.0236,0.0941,Equipamiento y mantenimiento del hogar,0.5947
-06,1.7165,9.0182,0.1548,Salud,0.7916
+05,1.8734,5.0236,0.0941,Equipamiento y mantenimiento del hogar,0.5947
+06,1.7171,9.0182,0.1549,Salud,0.7916
 07,1.8169,11.5582,0.2100,Transporte,0.9891
 08,2.0368,2.6349,0.0537,Comunicación,0.0000
 09,2.0524,6.6284,0.1360,Recreación y cultura,0.1807
