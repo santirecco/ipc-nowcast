@@ -335,6 +335,15 @@ restaurantes (0,070), transporte público (0,048), prepagas (0,046). Cambios:
   últimos meses), varios enero (mixto) y, en educación, usar solo las reglas estacionales en marzo (mejor en la
   historia larga, peor en 16m porque mar-25 fue excepcional). El salto de marzo en sí sigue siendo el mayor error de
   educación (mar-25: 16-32% contra 7-12% proyectado): lo resolvería un calendario de cuotas por provincia.
+- **Probado y descartado el 27-nov-2026.** (1) Tendencia de precio relativo (la corrección de ropa y hogar) en
+  todas las divisiones: Vivienda tiene un sesgo grande y persistente (16m −0,95 pp por mes: tarifas −1,6 y alquileres
+  −0,8 en las clases), pero la corrección casi no lo mueve y el nacional empeora (fin 16m 0,178 -> 0,186, jul-24+
+  t = 2,6). (2) Corregir cada clase por su sesgo de los 6 o 12 meses anteriores (entero o a la mitad): en promedio
+  no mejora (1,336 -> 1,337-1,404); solo ayudaría en tabaco y lácteos, y elegir esas a mano sería ajustar al ruido.
+  (3) IPC provinciales como anticipo para la víspera (como el de CABA): Córdoba, Mendoza y Neuquén publican el mismo
+  día que INDEC, no antes. (4) Parte de cigarrillos según participación de mercado (Massalin 0,60, BAT 0,20): el
+  calendario pasa ~92% de las listas al dato de INDEC, pero el coeficiente de la regresión ya lo compensa (tabaco
+  igual); se revirtió.
 - **Fuentes para restaurantes y turismo (26-nov-2026, `scripts/pruebas/servicios_sondeo*.py`).** Se sondearon ~40
   sitios. PedidosYa (403), Rappi (429), McDonald's, KFC, Starbucks, Despegar, Almundo, Turismocity y Flechabus
   bloquean a los servidores; Flybondi y JetSMART no responden; las cadenas con web propia (Mostaza, Burger King,
